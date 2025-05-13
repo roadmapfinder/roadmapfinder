@@ -1,4 +1,6 @@
 // app/layout.js
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import { Sora } from "next/font/google";
 
@@ -58,7 +60,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className="font-sora bg-[#F9FAFB] text-gray-900">{children}</body>
+      <body className="font-sora bg-[#F9FAFB] text-gray-900">{children}  <Analytics /> 
+      <SpeedInsights /> </body>
     </html>
   );
 }

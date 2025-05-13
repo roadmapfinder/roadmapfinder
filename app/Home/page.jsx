@@ -215,9 +215,13 @@ export default function HomePage() {
           <header className="flex justify-between items-center mb-6 md:hidden">
             <h1 className="text-2xl font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-4 items-center">
+           
               <button className="text-gray-800">
+                 <Link href="/Notification">
                 <Bell size={24} />
+                   </Link>
               </button>
+             
               <button className="text-gray-800" onClick={toggleMobileMenu}>
                 <Menu size={28} />
               </button>
@@ -232,7 +236,9 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-4">
               <button className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
+                <Link href="/Notification">
                 <Bell size={22} className="text-gray-700" />
+                  </Link>
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               <div className="flex items-center gap-3 bg-white py-2 px-4 rounded-full shadow-sm">
@@ -261,7 +267,7 @@ export default function HomePage() {
               </div>
             </div>
             <p className="text-gray-500 text-sm mb-1">Welcome, {username}</p>
-            <p className="text-medium text-gray-600 mb-4">
+            <p className="text-medium text-[#6B7280] mb-4">
               Expert roadmaps, smart resources and AI-powered guidance to build
               your success journey
             </p>

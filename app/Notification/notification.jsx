@@ -1,264 +1,325 @@
 "use client"
-import { useEffect, useState } from "react";
-import {
-  BookOpen,
-  Map,
-  Wrench,
-  GraduationCap,
-  Check,
-  ChevronRight,
-} from "lucide-react";
+import { useState, useEffect } from 'react';
+import { BellRing, Bell, X, ChevronRight, BookOpen, Video, PenTool, Clock } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-export default function Notifications() {
-  const [notifications, setNotifications] = useState([
-    {
-      id: 1,
-      title: "New course",
-      description: "A TypeScript course has been added",
-      time: "2h ago",
-      isNew: true,
-      icon: <GraduationCap className="text-blue-500" size={24} />,
-      category: "today",
-      read: false,
-    },
-    {
-      id: 2,
-      title: "New docs",
-      description: "Concurrency documentations are now available",
-      time: "6h ago",
-      isNew: false,
-      icon: <BookOpen className="text-teal-500" size={24} />,
-      category: "today",
-      read: false,
-    },
-    {
-      id: 3,
-      title: "New tools",
-      description: "We added a few new tools to our collection",
-      time: "23h ago",
-      isNew: false,
-      icon: <Wrench className="text-red-400" size={24} />,
-      category: "yesterday",
-      read: true,
-    },
-    {
-      id: 4,
-      title: "New roadmap",
-      description: "An iOS developer roadmap is now live",
-      time: "1d ago",
-      isNew: false,
-      icon: <Map className="text-yellow-400" size={24} />,
-      category: "yesterday",
-      read: false,
-    },
-  ]);
+// Mock authentication context - replace with your actual Firebase Auth implementation
+const useAuth = () => {
+  // For demo purposes - toggle this to see different states
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
-  const [unreadCount, setUnreadCount] = useState(0);
-  const [activeTab, setActiveTab] = useState("all");
-  const [showClearConfirm, setShowClearConfirm] = useState(false);
-
-  // Calculate unread count
+  // Simulate auth check
   useEffect(() => {
-    setUnreadCount(notifications.filter((n) => !n.read).length);
-  }, [notifications]);
-
-  // Mark notification as read
-  const markAsRead = (id) => {
-    setNotifications((prev) =>
-      prev.map((notification) =>
-        notification.id === id ? { ...notification, read: true } : notification
-      )
-    );
-  };
-
-  // Clear all notifications
-  const clearAllNotifications = () => {
-    setNotifications([]);
-    setShowClearConfirm(false);
-  };
-
-  // Filter notifications based on active tab
-  const filteredNotifications = notifications.filter((notification) => {
-    if (activeTab === "all") return true;
-    if (activeTab === "unread") return !notification.read;
-    return notification.category === activeTab;
-  });
-
-  // Group notifications by category
-  const groupedNotifications = filteredNotifications.reduce(
-    (acc, notification) => {
-      if (!acc[notification.category]) {
-        acc[notification.category] = [];
+    // Mock Firebase auth state change
+    const checkAuth = () => {
+      // Get from local storage for demo purposes
+      const savedAuthState = localStorage.getItem('authState');
+      if (savedAuthState === 'loggedIn') {
+        setIsLoggedIn(true);
+        setUser({ 
+          uid: 'user123', 
+          email: 'user@example.com',
+          displayName: 'Demo User' 
+        });
       }
-      acc[notification.category].push(notification);
-      return acc;
-    },
-    {}
-  );
+    };
+
+    checkAuth();
+  }, []);
+
+  // Mock sign in/out functions
+  const login = () => {
+    setIsLoggedIn(true);
+    setUser({ uid: 'user123', email: 'user@example.com', displayName: 'Demo User' });
+    localStorage.setItem('authState', 'loggedIn');
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false);
+    setUser(null);
+    localStorage.setItem('authState', 'loggedOut');
+  };
+
+  return { isLoggedIn, user, login, logout };
+};
+
+// Sample notification data
+const sampleNotifications = [
+  {
+    id: 'notif1',
+    type: 'roadmap',
+    title: 'New Roadmap: Advanced React Patterns',
+    description: 'Learn component composition, render props, HOCs and more',
+    timestamp: new Date(Date.now() - 1000 * 60 * 30),
+    isRead: false,
+    icon: 'BookOpen'
+  },
+  {
+    id: 'notif2',
+    type: 'course',
+    title: 'New Course: Firebase Authentication',
+    description: 'Master user authentication and session management',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 3),
+    isRead: true,
+    icon: 'Video'
+  },
+  {
+    id: 'notif3',
+    type: 'tool',
+    title: 'New Tool: Performance Profiler',
+    description: 'Optimize your React applications with our new tool',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 24),
+    isRead: false,
+    icon: 'Tool'
+  }
+];
+
+// Format relative time
+const formatRelativeTime = (date) => {
+  const now = new Date();
+  const diffInSeconds = Math.floor((now - date) / 1000);
+
+  if (diffInSeconds < 60) {
+    return 'Just now';
+  } else if (diffInSeconds < 3600) {
+    const minutes = Math.floor(diffInSeconds / 60);
+    return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+  } else if (diffInSeconds < 86400) {
+    const hours = Math.floor(diffInSeconds / 3600);
+    return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+  } else {
+    const days = Math.floor(diffInSeconds / 86400);
+    return `${days} day${days > 1 ? 's' : ''} ago`;
+  }
+};
+
+// NotificationCard Component
+const NotificationCard = ({ notification, onMarkAsRead }) => {
+  const IconComponent = {
+    'BookOpen': BookOpen,
+    'Video': Video,
+    'Tool': PenTool
+  }[notification.icon] || Bell;
+
+  const iconColors = {
+    'roadmap': 'text-blue-500',
+    'course': 'text-purple-500',
+    'tool': 'text-green-500'
+  };
+
+  const bgColors = {
+    'roadmap': 'bg-blue-50',
+    'course': 'bg-purple-50',
+    'tool': 'bg-green-50'
+  };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 min-h-screen p-4 md:p-6">
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        {/* Header with tabs */}
-        <header className="px-4 py-5 bg-white border-b border-gray-100">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Notifications
-            </h1>
-            <div className="flex items-center">
-              {unreadCount > 0 && (
-                <span className="bg-red-500 text-white text-xs font-medium rounded-full h-5 w-5 flex items-center justify-center mr-2">
-                  {unreadCount}
-                </span>
-              )}
-              <button
-                onClick={() => setShowClearConfirm(true)}
-                className="text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors duration-200"
-              >
-                Clear all
-              </button>
-            </div>
-          </div>
-
-          {/* Tabs */}
-          <div className="flex space-x-1 overflow-x-auto scrollbar-hide">
-            {["all", "unread", "today", "yesterday"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-3 py-1.5 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
-                  activeTab === tab
-                    ? "bg-blue-100 text-blue-700"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
-          </div>
-        </header>
-
-        {/* Empty state */}
-        {Object.keys(groupedNotifications).length === 0 && (
-          <div className="p-8 text-center">
-            <div className="bg-gray-100 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
-              <Check className="text-gray-400" size={32} />
-            </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-1">
-              All caught up!
-            </h3>
-            <p className="text-gray-500">
-              You have no {activeTab !== "all" ? activeTab : ""} notifications.
-            </p>
-          </div>
-        )}
-
-        {/* Notifications list */}
-        <div className="max-h-[70vh] overflow-y-auto">
-          {Object.keys(groupedNotifications).map((category) => (
-            <div key={category} className="mb-2 last:mb-0">
-              <h2 className="text-xs font-medium uppercase text-gray-500 px-4 py-2 sticky top-0 bg-gray-50">
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </h2>
-              <div className="space-y-1">
-                {groupedNotifications[category].map((notification) => (
-                  <div
-                    key={notification.id}
-                    className={`px-4 py-3 hover:bg-gray-50 transition-colors duration-200 cursor-pointer border-l-4 ${
-                      notification.read
-                        ? "border-transparent"
-                        : "border-blue-500"
-                    }`}
-                    onClick={() => markAsRead(notification.id)}
-                  >
-                    <div className="flex items-start">
-                      <div
-                        className={`mr-3 p-2 rounded-lg ${
-                          notification.read ? "bg-gray-100" : "bg-blue-50"
-                        }`}
-                      >
-                        {notification.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center">
-                            <h3
-                              className={`font-medium text-base ${
-                                notification.read
-                                  ? "text-gray-700"
-                                  : "text-gray-900"
-                              }`}
-                            >
-                              {notification.title}
-                            </h3>
-                            {notification.isNew && (
-                              <span className="ml-2 bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full animate-pulse">
-                                New
-                              </span>
-                            )}
-                          </div>
-                          <span className="text-gray-400 text-xs">
-                            {notification.time}
-                          </span>
-                        </div>
-                        <p
-                          className={`text-sm mt-0.5 ${
-                            notification.read
-                              ? "text-gray-500"
-                              : "text-gray-600"
-                          }`}
-                        >
-                          {notification.description}
-                        </p>
-                        <div className="flex items-center justify-end mt-1">
-                          <button className="flex items-center text-xs font-medium text-blue-600 hover:text-blue-800 transition-colors">
-                            View details{" "}
-                            <ChevronRight size={14} className="ml-0.5" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+    <div 
+      className={`p-4 mb-3 rounded-lg transition-all duration-300 hover:shadow-md ${notification.isRead ? 'bg-gray-50' : `${bgColors[notification.type]} border-l-4 border-${iconColors[notification.type].replace('text-', '')}`}`}
+    >
+      <div className="flex items-start">
+        <div className={`p-2 rounded-full ${bgColors[notification.type]} mr-3`}>
+          <IconComponent className={`${iconColors[notification.type]} h-5 w-5`} />
         </div>
+        <div className="flex-1">
+          <div className="flex justify-between items-start">
+            <h3 className="font-medium text-gray-900">{notification.title}</h3>
+            {!notification.isRead && (
+              <span onClick={() => onMarkAsRead(notification.id)} className="text-gray-400 hover:text-gray-600 cursor-pointer">
+                <X size={16} />
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-gray-600 mt-1">{notification.description}</p>
+          <div className="flex items-center mt-2 text-xs text-gray-500">
+            <Clock size={12} className="mr-1" />
+            <span>{formatRelativeTime(notification.timestamp)}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-        {/* Footer */}
-        <div className="p-4 text-center text-xs text-gray-500 border-t border-gray-100">
-          <p>You're all caught up with your notifications.</p>
-          <button className="text-blue-600 hover:text-blue-800 font-medium mt-1 transition-colors">
-            Manage notification settings
-          </button>
+// Empty State Component
+const EmptyNotifications = () => (
+  <div className="flex flex-col items-center justify-center py-12 text-center">
+    <div className="bg-gray-100 p-4 rounded-full mb-4">
+      <BellRing className="h-10 w-10 text-gray-400" />
+    </div>
+    <h3 className="text-lg font-medium text-gray-900 mb-1">All caught up!</h3>
+    <p className="text-gray-500 max-w-xs">You don't have any new notifications right now. Check back later.</p>
+  </div>
+);
+
+// Login Prompt Component
+const LoginPrompt = ({ onLogin }) => {
+  const router = useRouter();
+
+  const handleSignUp = () => {
+    router.push('/Signup');
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center py-12 text-center bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-sm">
+      <div className="bg-white p-4 rounded-full mb-6 shadow-md">
+        <BellRing className="h-10 w-10 text-blue-500" />
+      </div>
+      <h2 className="text-2xl font-bold text-gray-900 mb-2">Stay Updated</h2>
+      <p className="text-gray-600 max-w-md mb-6 px-4">
+        Subscribe to get the latest resources delivered directly to you. Never miss a new roadmap, course, or tool again.
+      </p>
+      <button 
+        onClick={handleSignUp}
+        className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center"
+      >
+        Connect to Stay Updated
+        <ChevronRight className="ml-1 h-5 w-5" />
+      </button>
+    </div>
+  );
+};
+
+// Main Notification Panel Component
+const NotificationPanel = () => {
+  const [notifications, setNotifications] = useState(sampleNotifications);
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  const markAsRead = (id) => {
+    setNotifications(notifications.map(notif => 
+      notif.id === id ? { ...notif, isRead: true } : notif
+    ));
+  };
+
+  const unreadCount = notifications.filter(n => !n.isRead).length;
+
+  // Simulate new notification arrival
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const newNotification = {
+        id: `notif${Date.now()}`,
+        type: 'roadmap',
+        title: 'Just Added: Next.js Performance Tips',
+        description: 'Learn how to optimize your Next.js applications',
+        timestamp: new Date(),
+        isRead: false,
+        icon: 'BookOpen'
+      };
+
+      setNotifications(prev => [newNotification, ...prev]);
+      setShowAnimation(true);
+
+      setTimeout(() => {
+        setShowAnimation(false);
+      }, 3000);
+    }, 5000); // Add a new notification after 5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="w-full max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+      <div className="px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-bold text-white">Notifications</h2>
+          {unreadCount > 0 && (
+            <span className="bg-white text-blue-600 text-xs font-medium px-2 py-1 rounded-full">
+              {unreadCount} new
+            </span>
+          )}
         </div>
       </div>
 
-      {/* Clear confirmation modal */}
-      {showClearConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg p-6 max-w-sm w-full shadow-xl animate-fade-in">
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Clear all notifications?
-            </h3>
-            <p className="text-gray-500 mb-6">This action cannot be undone.</p>
-            <div className="flex space-x-3 justify-end">
-              <button
-                onClick={() => setShowClearConfirm(false)}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={clearAllNotifications}
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-              >
-                Clear all
-              </button>
-            </div>
+      <div className="p-4 max-h-96 overflow-y-auto">
+        {notifications.length > 0 ? (
+          <div className={`${showAnimation ? 'animate-pulse' : ''}`}>
+            {notifications.map((notification, index) => (
+              <NotificationCard 
+                key={notification.id} 
+                notification={notification} 
+                onMarkAsRead={markAsRead} 
+                isNew={index === 0 && showAnimation}
+              />
+            ))}
+          </div>
+        ) : (
+          <EmptyNotifications />
+        )}
+      </div>
+    </div>
+  );
+};
+
+// Main Notification Page Component
+export default function NotificationPage() {
+  const { isLoggedIn, login } = useAuth();
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4 md:p-8">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+          RoadmapFinder Notifications
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            {isLoggedIn ? <NotificationPanel /> : <LoginPrompt onLogin={login} />}
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow-md">
+            <h2 className="text-xl font-semibold mb-4 text-gray-800">Notification Settings</h2>
+
+            {isLoggedIn ? (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-700">New roadmaps</span>
+                  <div className="relative inline-block w-12 h-6 transition duration-200 ease-in-out bg-gray-200 rounded-full cursor-pointer">
+                    <label className="absolute left-0 w-6 h-6 transition duration-100 ease-in-out transform bg-white border-2 rounded-full cursor-pointer peer-checked:translate-x-full peer-checked:border-blue-500" htmlFor="roadmap-toggle"></label>
+                    <input type="checkbox" id="roadmap-toggle" className="peer sr-only" defaultChecked />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-700">New courses</span>
+                  <div className="relative inline-block w-12 h-6 transition duration-200 ease-in-out bg-gray-200 rounded-full cursor-pointer">
+                    <label className="absolute left-0 w-6 h-6 transition duration-100 ease-in-out transform bg-white border-2 rounded-full cursor-pointer peer-checked:translate-x-full peer-checked:border-blue-500" htmlFor="course-toggle"></label>
+                    <input type="checkbox" id="course-toggle" className="peer sr-only" defaultChecked />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-700">New tools</span>
+                  <div className="relative inline-block w-12 h-6 transition duration-200 ease-in-out bg-gray-200 rounded-full cursor-pointer">
+                    <label className="absolute left-0 w-6 h-6 transition duration-100 ease-in-out transform bg-white border-2 rounded-full cursor-pointer peer-checked:translate-x-full peer-checked:border-blue-500" htmlFor="tools-toggle"></label>
+                    <input type="checkbox" id="tools-toggle" className="peer sr-only" defaultChecked />
+                  </div>
+                </div>
+
+                <button className="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
+                  Save Preferences
+                </button>
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <p className="text-gray-500 mb-4">Sign in to manage your notification preferences</p>
+                <button 
+                  onClick={login} 
+                  className="px-4 py-2 bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200 transition-colors"
+                >
+                  Demo Login
+                </button>
+              </div>
+            )}
           </div>
         </div>
-      )}
+
+        <div className="mt-8 text-center text-sm text-gray-500">
+          <button onClick={login} className="text-blue-500 hover:underline">
+            Toggle Login State (Demo)
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

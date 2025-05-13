@@ -53,6 +53,10 @@ import syss from "../CoursesImage/syss.jpg";
 import ai from "../CoursesImage/ai.jpg"
 import ml from"../CoursesImage/ml.jpg"
 import deep from "../CoursesImage/deep.jpg"
+import git from "../CoursesImage/git.jpg"
+import githube from "../CoursesImage/Githube.jpg"
+import githubh from "../CoursesImage/githubh.jpg"
+
 export default function CoursePlatform() {
   const [activeTab, setActiveTab] = useState("All");
   const [windowWidth, setWindowWidth] = useState(null);
@@ -122,6 +126,7 @@ export default function CoursePlatform() {
     "UI/UX Design",
     "Graphic Design",
     "Programming",
+    "Git & Github",
     "DataStructure & Algorithms",
     "DataBases",
     "Blockchain",
@@ -570,6 +575,36 @@ export default function CoursePlatform() {
       rating: 4.9,
       image: ai,
       videoId: "https://youtu.be/5NgNicANyqM",
+      badge: "POPULAR",
+    },
+    {
+      id: 40,
+      category: "Git & Github",
+      title: "Git & Github Complete course",
+      level: "Beginner to Advance",
+      rating: 4.9,
+      image: git,
+      videoId: "https://youtu.be/q8EevlEpQ2A",
+      badge: "POPULAR",
+    },
+    {
+      id: 41,
+      category: "Git & Github",
+      title: "Git & Github Crash Course",
+      level: "Beginner to Intermediate ",
+      rating: 4.9,
+      image: githubh,
+      videoId: "https://youtu.be/RDxQEzXN8AU",
+      badge: "POPULAR",
+    },
+    {
+      id: 42,
+      category: "AI & ML",
+      title: "Git & Github  Course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: githube,
+      videoId: "https://youtu.be/S7XpTAnSDL4",
       badge: "POPULAR",
     },
   ];
