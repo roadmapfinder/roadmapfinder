@@ -595,17 +595,17 @@ export default function CoursePlatform() {
       rating: 4.9,
       image: githubh,
       videoId: "https://youtu.be/RDxQEzXN8AU",
-      badge: "POPULAR",
+      badge: "NEW",
     },
     {
       id: 42,
-      category: "AI & ML",
+      category: "Git & Github",
       title: "Git & Github  Course",
       level: "Beginner to Intermediate",
       rating: 4.9,
       image: githube,
       videoId: "https://youtu.be/S7XpTAnSDL4",
-      badge: "POPULAR",
+      badge: "TRENDING",
     },
   ];
 
