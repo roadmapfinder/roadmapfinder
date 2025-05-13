@@ -22,7 +22,7 @@ import roadmap from "../Images/roadmap.png";
 import Link from "next/link";
 
 export default function HomePage() {
-  const [username, setUsername] = useState("Sohel");
+  const [username, setUsername] = useState("User");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState("popular");
@@ -144,11 +144,10 @@ export default function HomePage() {
               ))}
             </nav>
           </div>
-
         </div>
       </aside>
 
-      {/* Mobile Menu Overlay - Always present in DOM but conditionally visible */}
+      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-gray-800 md:hidden transition-opacity duration-300 ease-in-out z-30 ${
           isMobileMenuOpen
@@ -158,7 +157,7 @@ export default function HomePage() {
         onClick={toggleMobileMenu}
       ></div>
 
-      {/* Mobile Menu - Always in DOM but slides in/out */}
+      {/* Mobile Menu */}
       <div
         className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
@@ -173,8 +172,6 @@ export default function HomePage() {
         </div>
 
         <div className="p-5">
-       
-
           <nav className="space-y-6">
             {navItems.map((item, index) => (
               <Link
@@ -193,17 +190,8 @@ export default function HomePage() {
             ))}
           </nav>
 
-          {/* Added Settings and Logout to mobile menu */}
           <div className="mt-8 pt-5 border-t">
             <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
-            <Link
-              href="/settings"
-              className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
-              onClick={toggleMobileMenu}
-            >
-              <Settings size={20} className="mr-3" />
-              <span>Settings</span>
-            </Link>
             <Link
               href="/logout"
               className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
@@ -223,8 +211,8 @@ export default function HomePage() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 py-6">
-          {/* Header - Only shown on mobile */}
-          <header className="flex justify-between items-center mb-10 md:hidden">
+          {/* Mobile Header */}
+          <header className="flex justify-between items-center mb-6 md:hidden">
             <h1 className="text-2xl font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-4 items-center">
               <button className="text-gray-800">
@@ -236,7 +224,7 @@ export default function HomePage() {
             </div>
           </header>
 
-          {/* Desktop header with notification */}
+          {/* Desktop Header */}
           <header className="hidden md:flex justify-between items-center mb-8">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
@@ -256,31 +244,40 @@ export default function HomePage() {
             </div>
           </header>
 
-          {/* Mobile Welcome Section - Original layout preserved */}
-          <section className="md:hidden mb-5">
+          {/* Mobile Hero Section */}
+          <section className="md:hidden mb-6">
+            <div className="relative h-48 w-full rounded-xl overflow-hidden mb-4">
+              <Image
+                src={roadmap}
+                alt="Roadmap illustration"
+                layout="fill"
+                objectFit="cover"
+                className="brightness-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                <h2 className="text-2xl font-bold text-white leading-tight">
+                  Find your perfect path to success
+                </h2>
+              </div>
+            </div>
             <p className="text-gray-500 text-sm mb-1">Welcome, {username}</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight mb-3">
-              Find your perfect path and turn your dream into success.
-            </h2>
-          </section>
-
-          {/* Mobile Subtitle - Original layout preserved */}
-          <section className="md:hidden mb-5">
-            <p className="text-medium text-gray-500">
-              Expert roadmaps, Smart resources and AI-powered guidance - build
-              your own success journey
+            <p className="text-medium text-gray-600 mb-4">
+              Expert roadmaps, smart resources and AI-powered guidance to build
+              your success journey
             </p>
           </section>
 
-          {/* Mobile Action Buttons - Original layout preserved */}
-          <section className="flex gap-4 mb-7 md:hidden">
+          {/* Mobile Action Buttons */}
+          <section className="flex gap-3 mb-8 md:hidden">
             <Link href="/Roadmap" className="flex-1">
-              <button className="bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-xl font-bold w-full hover:bg-blue-700 mt-1 transition-colors">
+              <button className="bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold w-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                <ChevronRight size={18} />
                 Roadmap
               </button>
             </Link>
             <Link href="/Courses" className="flex-1">
-              <button className="bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-xl font-bold border border-blue-600 hover:bg-blue-50 mt-1 transition-colors w-full">
+              <button className="bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-colors w-full flex items-center justify-center gap-2">
+                <BookOpen size={18} />
                 Courses
               </button>
             </Link>
@@ -357,7 +354,83 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Featured Content Section - Desktop only */}
+          {/* Mobile Featured Roadmaps Section */}
+          <section className="md:hidden mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Popular Roadmaps
+            </h3>
+            <div className="space-y-4">
+              {featuredRoadmaps.map((roadmap, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <ChevronRight size={20} className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">
+                        {roadmap.title}
+                      </h4>
+                      <p className="text-sm text-gray-500">
+                        {roadmap.users} users
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
+                      {roadmap.level}
+                    </span>
+                    <Link href="/Roadmap">
+                      <button className="text-blue-600 text-sm font-medium flex items-center gap-1">
+                        View <ArrowRight size={14} />
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Mobile Popular Courses Section */}
+          <section className="md:hidden mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Featured Courses
+            </h3>
+            <div className="space-y-4">
+              {popularCourses.map((course, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <BookOpen size={20} className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">
+                        {course.title}
+                      </h4>
+                      <p className="text-sm text-gray-500">{course.duration}</p>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="bg-yellow-50 text-yellow-700 px-2 py-1 rounded-full text-xs flex items-center">
+                      ★ {course.rating}
+                    </span>
+                    <Link href="/Courses">
+                      <button className="text-blue-600 text-sm font-medium flex items-center gap-1">
+                        Start <ArrowRight size={14} />
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Desktop Featured Content Section */}
           <section className="hidden md:block mb-12">
             {activeTab === "popular" && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -444,7 +517,7 @@ export default function HomePage() {
             )}
           </section>
 
-          {/* How it works - Enhanced version */}
+          {/* How it works Section */}
           <section className="mt-12 mb-12">
             <h3 className="text-gray-900 text-2xl font-bold text-center mb-8">
               How RoadmapFinder Works
@@ -455,29 +528,28 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-blue-600 font-bold text-xl">1</span>
                 </div>
-                <h4 className="text-gray-900 font-bold text-xl mb-3">
+                <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
                   Choose a Roadmap
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm md:text-base">
                   Select from our curated collection of career paths and
                   development roadmaps designed by industry experts
                 </p>
               </div>
 
               <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center relative">
-                {/* Connection lines */}
                 <div className="hidden md:block absolute top-16 -left-4 w-8 border-t-2 border-dashed border-blue-200"></div>
                 <div className="hidden md:block absolute top-16 -right-4 w-8 border-t-2 border-dashed border-blue-200"></div>
 
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-blue-600 font-bold text-xl">2</span>
                 </div>
-                <h4 className="text-gray-900 font-bold text-xl mb-3">
-                  Follow the Path
+                <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
+                  Follow the Best Course
                 </h4>
-                <p className="text-gray-600">
-                  Track your progress with interactive checkpoints and access
-                  recommended resources at each step
+                <p className="text-gray-600 text-sm md:text-base">
+                  Follow best curated course step by step and keep practice to
+                  master.
                 </p>
               </div>
 
@@ -485,33 +557,13 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-blue-600 font-bold text-xl">3</span>
                 </div>
-                <h4 className="text-gray-900 font-bold text-xl mb-3">
-                  Get AI Guidance
+                <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
+                  Get Tools & Docs
                 </h4>
-                <p className="text-gray-600">
-                  Receive personalized recommendations and answers to your
-                  questions from our intelligent AI mentor
+                <p className="text-gray-600 text-sm md:text-base">
+                  Get best Tech tools or Docs that enhanced your Skills.
                 </p>
               </div>
-            </div>
-          </section>
-
-          {/* Call to Action - Desktop enhancement */}
-          <section className="hidden md:block bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-2xl text-white mb-8">
-            <div className="md:flex items-center justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">
-                  Ready to start your journey?
-                </h3>
-                <p className="text-blue-100 mb-0 md:mb-0">
-                  Unlock premium roadmaps and AI-powered personalized guidance
-                </p>
-              </div>
-              <Link href="/upgrade">
-                <button className="mt-4 md:mt-0 bg-white text-blue-600 py-3 px-6 rounded-xl font-bold hover:bg-blue-50 transition-colors">
-                  Upgrade to Pro
-                </button>
-              </Link>
             </div>
           </section>
         </div>
