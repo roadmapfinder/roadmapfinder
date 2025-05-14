@@ -27,7 +27,7 @@ export const metadata = {
   keywords:
     "technology roadmap, skill roadmap, learn coding, frontend roadmap, backend roadmap, ai ml roadmap, dev roadmap, web development, programming tools, roadmapfinder",
   applicationName: "RoadmapFinder",
-  authors: [{ name: "RoadmapFinder Team", url: "https://roadmapfinder.in" }],
+  authors: [{ name: "RoadmapFinder Team", url: "https://roadmapfinder.tech" }],
   creator: "RoadmapFinder Team",
   publisher: "RoadmapFinder",
   robots: "index, follow",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "RoadmapFinder - Your Personalized Tech Skill Roadmaps",
     description:
       "Discover curated roadmaps and tools to master web development, AI/ML, design, and more.",
-    url: "https://roadmapfinder.in",
+    url: "https://roadmapfinder.tech",
     siteName: "RoadmapFinder",
     locale: "en_US",
     type: "website",
@@ -49,7 +49,7 @@ export const metadata = {
     creator: "@roadmapfinder",
   
   },
-  metadataBase: new URL("https://roadmapfinder.in"),
+  metadataBase: new URL("https://roadmapfinder.tech"),
 };
 
 export default function RootLayout({ children }) {

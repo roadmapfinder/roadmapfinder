@@ -1,54 +1,70 @@
 "use client";
-// app/login/page.js
+
 import { useState } from "react";
-
 import { useRouter } from "next/navigation";
-
+import Head from "next/head";
 import Link from "next/link";
+import { loginWithEmail, loginWithGoogle } from "../lib/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [error, setError] = useState("");
   const router = useRouter();
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
 
-    // Here you would normally handle form submission to your backend
-    // Example:
-    // const response = await fetch('/api/login', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email, password }),
-    // });
-
-    // Simulating API call with timeout
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      await loginWithEmail(email, password);
       router.push("/Home"); // Redirect after successful login
-    }, 1500);
+    } catch (err) {
+      console.error("Email login error:", err);
+      setError(err.message || "Failed to login. Please check your credentials.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleGoogleSignIn = () => {
-    // Implement Google Sign-in functionality
-    console.log("Google Sign-in clicked");
+  const handleGoogleSignIn = async () => {
+    setIsLoading(true);
+    setError("");
+
+    try {
+      await loginWithGoogle();
+      router.push("/Home");
+    } catch (err) {
+      console.error("Google sign-in error:", err);
+      setError(err.message || "Failed to login with Google. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4">
+      <Head>
+        <title>Login - RoadmapFinder</title>
+      </Head>
+
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
           <div className="flex justify-center mb-6">
             <div className="flex items-center">
-          
+              {/* Logo could go here */}
             </div>
           </div>
           <h2 className="mt-6 text-4xl font-bold text-gray-900">Log in</h2>
         </div>
+
+        {error && (
+          <div className="text-red-600 text-sm text-center bg-red-100 p-2 rounded-md">
+            {error}
+          </div>
+        )}
 
         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
           <div>
@@ -122,7 +138,8 @@ export default function Login() {
         <div>
           <button
             onClick={handleGoogleSignIn}
-            className="group relative flex w-full justify-center items-center rounded-md border border-gray-300 bg-white py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            disabled={isLoading}
+            className="group relative flex w-full justify-center items-center rounded-md border border-gray-300 bg-white py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
           >
             <span className="mr-2">
               <svg width="20" height="20" viewBox="0 0 24 24">

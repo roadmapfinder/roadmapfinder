@@ -3,16 +3,17 @@ import { useState, useEffect } from "react";
 import { Bookmark, Download, Settings, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-// Directly import the user image
-import user from "../Images/user.jpg";
+// Import a default placeholder image to use when no user image is available
+import defaultUserImage from "../Images/user.jpg"; // Make sure this path is correct
 import { auth } from "../lib/firebase";
 import { onAuthStateChanged, updateProfile, updateEmail } from "firebase/auth";
 
 export default function ProfilePage() {
+  // Initialize state with null values to properly handle loading states
   const [profileData, setProfileData] = useState({
     name: "",
     email: "",
-    avatarUrl: user,
+    avatarUrl: null, // Start with null instead of assuming an image exists
   });
 
   const [isEditing, setIsEditing] = useState(false);
@@ -20,6 +21,7 @@ export default function ProfilePage() {
   const [newEmail, setNewEmail] = useState("");
   const [newAvatar, setNewAvatar] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   // Fetch user data from Firebase Auth when component mounts
   useEffect(() => {
@@ -28,13 +30,19 @@ export default function ProfilePage() {
         setProfileData({
           name: currentUser.displayName || "User",
           email: currentUser.email || "",
-          avatarUrl: currentUser.photoURL || user,
+          avatarUrl: currentUser.photoURL || null, // Set to null if no photo URL
         });
         setNewName(currentUser.displayName || "User");
         setNewEmail(currentUser.email || "");
       } else {
         // Handle case when user is not logged in
         console.log("No user is signed in");
+        // Set some default values when not logged in
+        setProfileData({
+          name: "Guest User",
+          email: "Not logged in",
+          avatarUrl: null,
+        });
       }
       setLoading(false);
     });
@@ -43,14 +51,21 @@ export default function ProfilePage() {
     return () => unsubscribe();
   }, []);
 
+  // Handle file selection for avatar change
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+      // Create a local URL for preview only
       const imageUrl = URL.createObjectURL(file);
-      setNewAvatar(imageUrl);
+      setNewAvatar({
+        file: file, // Store the actual file for later upload
+        previewUrl: imageUrl, // URL for preview
+      });
+      setImageError(false); // Reset error state when new image is selected
     }
   };
 
+  // Handle save button click
   const handleSave = async () => {
     try {
       const currentUser = auth.currentUser;
@@ -61,27 +76,33 @@ export default function ProfilePage() {
             displayName: newName,
           });
         }
-        
+
         if (newEmail !== profileData.email) {
           await updateEmail(currentUser, newEmail);
         }
-        
+
         // For avatar update, you would need Firebase Storage
         // This is a simplified version just updating the state
+        // In a real implementation, you would upload the image to Firebase Storage
+        // and then update the photoURL property of the user profile
+
+        // For now, we'll just update the local state
         setProfileData({
           ...profileData,
           name: newName,
           email: newEmail,
-          ...(newAvatar && { avatarUrl: newAvatar }),
+          ...(newAvatar && { avatarUrl: newAvatar.previewUrl }),
         });
       }
       setIsEditing(false);
     } catch (error) {
       console.error("Error updating profile:", error);
       // You might want to show an error message to the user
+      alert("Failed to update profile: " + error.message);
     }
   };
 
+  // Handle cancel button click
   const handleCancel = () => {
     setNewName(profileData.name);
     setNewEmail(profileData.email);
@@ -89,6 +110,13 @@ export default function ProfilePage() {
     setIsEditing(false);
   };
 
+  // Handle image loading error
+  const handleImageError = () => {
+    setImageError(true);
+    console.error("Failed to load profile image");
+  };
+
+  // Display loading state
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -96,6 +124,13 @@ export default function ProfilePage() {
       </div>
     );
   }
+
+  // Determine which image source to use, with fallback to default image if there's an error
+  const displayImageSrc = imageError 
+    ? defaultUserImage 
+    : (isEditing && newAvatar 
+        ? newAvatar.previewUrl 
+        : profileData.avatarUrl || defaultUserImage);
 
   return (
     <>
@@ -125,13 +160,15 @@ export default function ProfilePage() {
                   <div className="relative mr-4 sm:mr-5 mb-4 sm:mb-0">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-sm transform -translate-x-1 -translate-y-1"></div>
                     <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-white shadow-md">
+                      {/* Use a fallback if image fails to load */}
                       <Image
-                        src={profileData.avatarUrl}
+                        src={displayImageSrc}
                         alt={profileData.name}
                         fill
                         sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                         style={{ objectFit: "cover" }}
                         priority
+                        onError={handleImageError}
                       />
                     </div>
                   </div>
@@ -162,12 +199,13 @@ export default function ProfilePage() {
                   <div className="flex justify-center">
                     <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md group">
                       <Image
-                        src={newAvatar || profileData.avatarUrl}
+                        src={newAvatar ? newAvatar.previewUrl : displayImageSrc}
                         alt="Profile Preview"
                         fill
                         sizes="96px"
                         style={{ objectFit: "cover" }}
                         priority
+                        onError={handleImageError}
                       />
                       <label className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity text-white text-sm font-medium">
                         Change Photo

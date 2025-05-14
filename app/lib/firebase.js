@@ -1,8 +1,8 @@
-// lib/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
+  
   apiKey: "AIzaSyCw1BqUuctfKOgJXqyTLmox2qw1F0fQCKo",
   authDomain: "roadmapfinder-de61d.firebaseapp.com",
   projectId: "roadmapfinder-de61d",
@@ -12,10 +12,14 @@ const firebaseConfig = {
   measurementId: "G-16MV33H4NL",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Auth
 const auth = getAuth(app);
+
+// Configure Google provider with proper scopes and settings
 const provider = new GoogleAuthProvider();
 
-export { auth, provider };
 
-//project-813692536552
+export { auth, provider };
