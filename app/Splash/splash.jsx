@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import logo from "../Images/logo.png";
 
 const Splash = () => {
@@ -18,7 +18,8 @@ const Splash = () => {
 
   return (
     <div className="fixed inset-0 bg-white flex items-center justify-center">
-      <Image src={logo} alt="Logo" className="w-80 h-100 object-contain" />
+      <Image src={logo} alt="Logo" className="w-
+        50 h-50 object-contain" />
     </div>
   );
 };

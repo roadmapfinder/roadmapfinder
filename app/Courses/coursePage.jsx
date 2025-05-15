@@ -13,6 +13,7 @@ import {
 
 import Link from "next/link";
 
+
 // thumbnail for cards
 import Image from "next/image";
 import sigma from "../CoursesImage/sigma.png";
@@ -854,7 +855,7 @@ export default function CoursePlatform() {
                         <Image
                           src={course.image}
                           alt={course.title}
-                          fill
+                          fill = "true"
                           sizes="(max-width: 768px) 100vw, 300px"
                           className="object-cover"
                           priority={course.id <= 6} // Prioritize loading of first visible courses

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Bookmark, Download, Settings, Mail } from "lucide-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 // Import a default placeholder image to use when no user image is available
 import defaultUserImage from "../Images/user.jpg"; // Make sure this path is correct
