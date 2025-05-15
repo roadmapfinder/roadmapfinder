@@ -194,6 +194,25 @@ export default function TechRoadmap() {
       bgColor: "from-emerald-500 to-teal-600",
     },
     {
+      id: "devops",
+      title: "Devops",
+      icon: (
+        <svg
+          className="w-5 h-5 text-white"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <circle cx="12" cy="12" r="1"></circle>
+          <circle cx="19" cy="12" r="1"></circle>
+          <circle cx="5" cy="12" r="1"></circle>
+        </svg>
+      ),
+      link: "Devops",
+      bgColor: "from-gray-700 to-gray-900",
+    },
+    {
       id: "dsa",
       title: "DSA",
       icon: (
