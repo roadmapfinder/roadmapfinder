@@ -60,6 +60,13 @@ import deep from "../CoursesImage/deep.jpg";
 import git from "../CoursesImage/git.jpg";
 import githube from "../CoursesImage/Githube.jpg";
 import githubh from "../CoursesImage/githubh.jpg";
+import os from "../CoursesImage/os.jpg";
+import osa from "../CoursesImage/osa.jpg";
+import osf from "../CoursesImage/osf.jpg";
+import osb from "../CoursesImage/osb.jpg";
+import networking from "../CoursesImage/networking.jpg";
+import networkingk from "../CoursesImage/networkingk.jpg";
+import networkingf from "../CoursesImage/networkingf.jpg";
 
 export default function CoursePlatform() {
   const [activeTab, setActiveTab] = useState("All");
@@ -170,7 +177,9 @@ export default function CoursePlatform() {
     "Blockchain",
     "Data Analysis & Science",
     "Video Editing",
-    "AI & ML"
+    "AI & ML",
+    "Networking",
+    "Operating System",
   ];
 
   // Sample courses data with direct YouTube links and language information
@@ -678,6 +687,77 @@ export default function CoursePlatform() {
       rating: 4.9,
       image: githube,
       videoId: "https://youtu.be/S7XpTAnSDL4",
+      badge: "TRENDING",
+      language: "English"
+    },
+    {
+      id: 45,
+      category: "Operating System",
+      title: "Operating System Course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: osf,
+      videoId: "https://youtu.be/yK1uBHPdp30",
+      badge: "TRENDING",
+      language: "English"
+    }, {
+      id: 46,
+      category: "Operating System",
+      title: "Operating System Complete Course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: os,
+      videoId: "https://youtu.be/A4G0hOI6XyQ",
+      badge: "TRENDING",
+      language: "Hindi"
+    }, {
+      id: 47,
+      category: "Operating System",
+      title: "Operating Sytem Crash Course",
+      level: "Beginner to Advance",
+      rating: 4.9,
+      image: osb,
+      videoId: "https://youtu.be/3obEP8eLsCw",
+      badge: "TRENDING",
+      language: "Hindi"
+    }, {
+      id: 48,
+      category: "Operating System",
+      title: "Operating System in one shot",
+      level: "Beginner",
+      rating: 4.9,
+      image: osa,
+      videoId: "https://youtu.be/8XBtAjKwCm4",
+      badge: "TRENDING",
+      language: "Hindi"
+    }, {
+      id: 49,
+      category: "Networking",
+      title: "Networking Complete course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: networkingk,
+      videoId: "https://youtu.be/IPvYjXCsTg8",
+      badge: "TRENDING",
+      language: "English"
+    }, {
+      id: 50,
+      category: "Networking",
+      title: "networkingf",
+      level: "Beginner to Advanced",
+      rating: 4.9,
+      image: networkingf,
+      videoId: "https://youtu.be/qiQR5rTSshw",
+      badge: "TRENDING",
+      language: "English"
+    }, {
+      id: 51,
+      category: "Networking",
+      title: "Complete Networkng course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: networking,
+      videoId: "https://youtu.be/qiQR5rTSshw",
       badge: "TRENDING",
       language: "English"
     },
