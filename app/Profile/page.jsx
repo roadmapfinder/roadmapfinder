@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Bookmark, Download, Settings, Mail } from "lucide-react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 // Import a default placeholder image to use when no user image is available
 import defaultUserImage from "../Images/user.jpg"; // Make sure this path is correct
@@ -278,7 +278,9 @@ export default function ProfilePage() {
               <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
                 <Download className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
               </div>
+              <Link href="/Downloads">
               <span>Downloaded Roadmaps</span>
+                </Link>
             </button>
 
             <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">

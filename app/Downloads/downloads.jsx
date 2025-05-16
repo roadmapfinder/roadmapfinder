@@ -1,92 +1,267 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/navigation";
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 export default function Downloads() {
-  const [darkMode, setDarkMode] = useState(false);
   const [downloadedRoadmaps, setDownloadedRoadmaps] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  const [regenerating, setRegenerating] = useState(false);
+  const router = useRouter();
 
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-  // Load downloaded roadmaps from localStorage on component mount
   useEffect(() => {
-    setLoading(true);
-    try {
-      // Get the dark mode preference
+    // Check if local storage is available
+    const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
+
+    if (isLocalStorageAvailable) {
+      // Load dark mode setting
       const savedDarkMode = localStorage.getItem('darkMode');
-      if (savedDarkMode) {
+      if (savedDarkMode !== null) {
         setDarkMode(JSON.parse(savedDarkMode));
       }
 
-      // Check for downloaded roadmaps
-      const roadmapData = localStorage.getItem('downloadedRoadmap');
-
-      if (roadmapData) {
-        // Get the download timestamp
-        const timestamp = localStorage.getItem('downloadTimestamp') || new Date().toISOString();
-
-        // Parse the roadmap data and add it to state with timestamp
-        setDownloadedRoadmaps([{
-          id: "ai-ml-roadmap",
-          title: "AI/ML Engineer Roadmap",
-          data: JSON.parse(roadmapData),
-          timestamp: timestamp,
-          sections: JSON.parse(roadmapData).length
-        }]);
+      // Load downloaded roadmaps
+      try {
+        const roadmapData = localStorage.getItem('downloadedRoadmap');
+        if (roadmapData) {
+          setDownloadedRoadmaps([{
+            id: 'ai-ml-roadmap',
+            title: 'AI/ML Engineer Roadmap',
+            date: new Date().toLocaleDateString(),
+            data: JSON.parse(roadmapData)
+          }]);
+        }
+      } catch (error) {
+        console.error("Error loading roadmap data:", error);
       }
-    } catch (error) {
-      console.error("Error loading downloaded roadmaps:", error);
-    } finally {
-      setLoading(false);
     }
   }, []);
 
-  // Save dark mode preference when it changes
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-  }, [darkMode]);
-
-  // Handle deleting a roadmap
-  const handleDeleteRoadmap = (id) => {
-    if (confirm("Are you sure you want to delete this roadmap?")) {
-      // Remove from state
-      setDownloadedRoadmaps(downloadedRoadmaps.filter(roadmap => roadmap.id !== id));
-
-      // Remove from localStorage
-      localStorage.removeItem('downloadedRoadmap');
-      localStorage.removeItem('downloadTimestamp');
-    }
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', JSON.stringify(newDarkMode));
   };
 
-  // Handle downloading a roadmap again
-  const handleDownloadAgain = (data) => {
-    // Store the current timestamp
-    const timestamp = new Date().toISOString();
-    localStorage.setItem('downloadTimestamp', timestamp);
-
-    // Use the jsPDF and html2canvas to download the PDF again
-    // This functionality would be similar to the one in Home.jsx
-    alert("Download functionality would be implemented here.");
+  // Navigate back to home
+  const goToHome = () => {
+    router.push('/Roadmap');
   };
 
-  // Format timestamp to readable date
-  const formatDate = (timestamp) => {
+  // Regenerate PDF from stored data
+  const regeneratePDF = async (roadmapData) => {
+    setRegenerating(true);
+
     try {
-      const date = new Date(timestamp);
-      return date.toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
+      // Create a temporary div to render the roadmap content
+      const downloadDiv = document.createElement('div');
+      downloadDiv.className = "roadmap-download-content";
+
+      // Set styles for better PDF output
+      downloadDiv.style.padding = "20px";
+      downloadDiv.style.color = "black";
+      downloadDiv.style.backgroundColor = "white";
+      downloadDiv.style.fontFamily = "Arial, sans-serif";
+
+      // Add title
+      const title = document.createElement('h1');
+      title.style.textAlign = "center";
+      title.style.marginBottom = "20px";
+      title.textContent = "AI/ML Engineer Roadmap";
+      downloadDiv.appendChild(title);
+
+      // Add roadmap content
+      roadmapData.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.style.marginBottom = "30px";
+
+        // Section header
+        const header = document.createElement('h2');
+        header.style.backgroundColor = "#f0f0f0";
+        header.style.padding = "10px";
+        header.style.borderRadius = "5px";
+        header.textContent = `${section.id}. ${section.title}`;
+        sectionDiv.appendChild(header);
+
+        // Section description
+        const desc = document.createElement('p');
+        desc.style.marginBottom = "15px";
+        desc.style.fontStyle = "italic";
+        desc.textContent = section.description;
+        sectionDiv.appendChild(desc);
+
+        // What to Learn
+        const whatToLearn = document.createElement('div');
+        whatToLearn.style.marginBottom = "15px";
+
+        const whatToLearnTitle = document.createElement('h3');
+        whatToLearnTitle.textContent = "✅ What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+
+        const whatToLearnList = document.createElement('ul');
+        section.content.whatToLearn.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          whatToLearnList.appendChild(li);
+        });
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+
+        // Best Courses
+        const bestCourses = document.createElement('div');
+        bestCourses.style.marginBottom = "15px";
+
+        const bestCoursesTitle = document.createElement('h3');
+        bestCoursesTitle.textContent = "📚 Best Courses";
+        bestCourses.appendChild(bestCoursesTitle);
+
+        // English courses
+        const englishTitle = document.createElement('h4');
+        englishTitle.textContent = "In English:";
+        bestCourses.appendChild(englishTitle);
+
+        const englishList = document.createElement('ul');
+        section.content.bestCourses.english.forEach(course => {
+          const li = document.createElement('li');
+          li.textContent = course;
+          englishList.appendChild(li);
+        });
+        bestCourses.appendChild(englishList);
+
+        // Hindi courses
+        const hindiTitle = document.createElement('h4');
+        hindiTitle.textContent = "In Hindi:";
+        bestCourses.appendChild(hindiTitle);
+
+        const hindiList = document.createElement('ul');
+        section.content.bestCourses.hindi.forEach(course => {
+          const li = document.createElement('li');
+          li.textContent = course;
+          hindiList.appendChild(li);
+        });
+        bestCourses.appendChild(hindiList);
+        sectionDiv.appendChild(bestCourses);
+
+        // Tools to Use
+        const tools = document.createElement('div');
+        tools.style.marginBottom = "15px";
+
+        const toolsTitle = document.createElement('h3');
+        toolsTitle.textContent = "🧰 Tools to Use";
+        tools.appendChild(toolsTitle);
+
+        const toolsList = document.createElement('ul');
+        section.content.toolsToUse.forEach(tool => {
+          const li = document.createElement('li');
+          li.textContent = tool;
+          toolsList.appendChild(li);
+        });
+        tools.appendChild(toolsList);
+        sectionDiv.appendChild(tools);
+
+        // Docs & Websites
+        const docs = document.createElement('div');
+        docs.style.marginBottom = "15px";
+
+        const docsTitle = document.createElement('h3');
+        docsTitle.textContent = "📘 Docs & Websites";
+        docs.appendChild(docsTitle);
+
+        const docsList = document.createElement('ul');
+        section.content.docsAndWebsites.forEach(doc => {
+          const li = document.createElement('li');
+          li.textContent = doc;
+          docsList.appendChild(li);
+        });
+        docs.appendChild(docsList);
+        sectionDiv.appendChild(docs);
+
+        // Project Ideas
+        const projects = document.createElement('div');
+        projects.style.marginBottom = "15px";
+
+        const projectsTitle = document.createElement('h3');
+        projectsTitle.textContent = "💡 Project Ideas";
+        projects.appendChild(projectsTitle);
+
+        const projectsList = document.createElement('ul');
+        section.content.projectIdeas.forEach(project => {
+          const li = document.createElement('li');
+          li.textContent = project;
+          projectsList.appendChild(li);
+        });
+        projects.appendChild(projectsList);
+        sectionDiv.appendChild(projects);
+
+        downloadDiv.appendChild(sectionDiv);
       });
-    } catch {
-      return "Unknown date";
+
+      // Temporarily add the div to the document to render it
+      document.body.appendChild(downloadDiv);
+
+      // Use html2canvas to create an image of the content
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 1,
+        useCORS: true,
+        logging: false,
+      });
+
+      // Remove the temporary div
+      document.body.removeChild(downloadDiv);
+
+      // Create PDF from the canvas
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
+
+      // Calculate the required height based on canvas dimensions to fit the page width
+      const imgWidth = 210; // A4 width in mm (210mm)
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+
+      // Add image to PDF (first page)
+      pdf.addImage(
+        canvas.toDataURL('image/png'),
+        'PNG',
+        0,
+        0,
+        imgWidth,
+        imgHeight
+      );
+
+      // If the content requires multiple pages
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      // Subtract the height of the first page
+      heightLeft -= 297; // A4 height in mm (297mm)
+
+      // Add subsequent pages if needed
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(
+          canvas.toDataURL('image/png'),
+          'PNG',
+          0,
+          position,
+          imgWidth,
+          imgHeight
+        );
+        heightLeft -= 297;
+      }
+
+      // Save the PDF
+      pdf.save("AI_ML_Engineer_Roadmap.pdf");
+    } catch (error) {
+      console.error("Error regenerating PDF:", error);
+      alert("There was an error regenerating the PDF. Please try again.");
+    } finally {
+      setRegenerating(false);
     }
   };
 
@@ -97,29 +272,45 @@ export default function Downloads() {
       }`}
     >
       <Head>
-        <title>Downloaded Roadmaps</title>
-        <meta name="description" content="Your downloaded roadmaps" />
+        <title>Downloads | AI/ML Engineer Roadmap</title>
+        <meta
+          name="description"
+          content="Your downloaded roadmaps"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Navigation Bar */}
+      {/* Sticky Navigation Bar */}
       <nav
         className={`sticky top-0 z-10 ${
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">Downloaded Roadmaps</h1>
+        <h1 className="text-xl md:text-2xl font-bold">Downloads</h1>
         <div className="flex items-center space-x-3">
-          {/* Back to Roadmap Button */}
-          <Link href="/"
+          {/* Back to Home Button */}
+          <button
+            onClick={goToHome}
             className={`px-4 py-2 rounded-md ${
-              darkMode
-                ? "bg-blue-600 hover:bg-blue-700"
-                : "bg-blue-500 hover:bg-blue-600"
-            } text-white transition-colors`}
+              darkMode 
+                ? "bg-gray-700 hover:bg-gray-600" 
+                : "bg-gray-200 hover:bg-gray-300"
+            } transition-colors flex items-center`}
           >
+            <svg 
+              className="w-4 h-4 mr-2" 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" 
+                clipRule="evenodd"
+              />
+            </svg>
             Back to Roadmap
-          </Link>
+          </button>
 
           {/* Dark Mode Toggle */}
           <button
@@ -165,24 +356,98 @@ export default function Downloads() {
             darkMode ? "bg-gray-800" : "bg-white"
           } shadow-md transition-colors duration-300`}
         >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">Your Downloaded Roadmaps</h2>
+          <h2 className="text-xl md:text-2xl font-semibold mb-3">
+            Your Downloaded Resources
+          </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            View and manage the roadmaps you've downloaded for offline reference. 
-            From here, you can download them again or delete them if needed.
+            Here you can find all the roadmaps and resources you've downloaded for offline use. 
+            Click on any card to reopen the PDF.
           </p>
         </div>
 
-        {/* Loading State */}
-        {loading && (
-          <div className="flex justify-center items-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        {/* Downloaded Roadmaps */}
+        {downloadedRoadmaps.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {downloadedRoadmaps.map((roadmap) => (
+              <div
+                key={roadmap.id}
+                onClick={() => regeneratePDF(roadmap.data)}
+                className={`cursor-pointer rounded-lg shadow-md p-6 flex flex-col transition-transform duration-200 transform hover:scale-105 ${
+                  darkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"
+                }`}
+              >
+                <div className="flex items-center justify-center bg-blue-100 text-blue-600 w-12 h-12 rounded-full mb-4">
+                  <svg 
+                    className="w-6 h-6" 
+                    fill="currentColor" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{roadmap.title}</h3>
+                <p 
+                  className={`text-sm mb-4 ${
+                    darkMode ? "text-gray-400" : "text-gray-600"
+                  }`}
+                >
+                  Downloaded: {roadmap.date}
+                </p>
+                <div className="mt-auto">
+                  <button
+                    className={`w-full py-2 rounded-md text-white ${
+                      regenerating 
+                        ? "bg-gray-500 cursor-not-allowed" 
+                        : "bg-blue-600 hover:bg-blue-700"
+                    } transition-colors flex items-center justify-center`}
+                    disabled={regenerating}
+                  >
+                    {regenerating ? (
+                      <>
+                        <svg 
+                          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          fill="none" 
+                          viewBox="0 0 24 24"
+                        >
+                          <circle 
+                            className="opacity-25" 
+                            cx="12" 
+                            cy="12" 
+                            r="10" 
+                            stroke="currentColor" 
+                            strokeWidth="4"
+                          ></circle>
+                          <path 
+                            className="opacity-75" 
+                            fill="currentColor" 
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Processing...
+                      </>
+                    ) : (
+                      <>
+                        <svg 
+                          className="w-4 h-4 mr-2" 
+                          fill="currentColor" 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M13 8V2H7v6H2l8 8 8-8h-5z" />
+                        </svg>
+                        Open PDF
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        )}
-
-        {/* No Roadmaps State */}
-        {!loading && downloadedRoadmaps.length === 0 && (
+        ) : (
           <div 
-            className={`p-6 rounded-lg ${
+            className={`p-10 rounded-lg ${
               darkMode ? "bg-gray-800" : "bg-white"
             } shadow-md text-center`}
           >
@@ -198,151 +463,20 @@ export default function Downloads() {
               <path 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" 
-              />
+                strokeWidth="2" 
+                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+              ></path>
             </svg>
-            <h3 className="text-xl font-medium mb-2">No Downloads Yet</h3>
-            <p className={`mb-4 ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-              You haven't downloaded any roadmaps yet. Go to the roadmap page to download one.
+            <h3 className="text-xl font-semibold mb-2">No Downloads Yet</h3>
+            <p className={`${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+              Return to the roadmap page and download a roadmap to see it here.
             </p>
-            <Link href="/"
-              className={`inline-block px-4 py-2 rounded-md ${
-                darkMode
-                  ? "bg-blue-600 hover:bg-blue-700"
-                  : "bg-blue-500 hover:bg-blue-600"
-              } text-white transition-colors`}
+            <button
+              onClick={goToHome}
+              className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
             >
-              Go to Roadmaps
-            </Link>
-          </div>
-        )}
-
-        {/* Roadmap Cards */}
-        {!loading && downloadedRoadmaps.length > 0 && (
-          <div className="grid grid-cols-1 gap-6">
-            {downloadedRoadmaps.map((roadmap) => (
-              <div 
-                key={roadmap.id}
-                className={`rounded-lg shadow-md overflow-hidden ${
-                  darkMode ? "bg-gray-800" : "bg-white"
-                }`}
-              >
-                {/* Card Header */}
-                <div 
-                  className={`px-6 py-4 ${
-                    darkMode ? "bg-gray-700" : "bg-blue-50"
-                  }`}
-                >
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-semibold">{roadmap.title}</h3>
-                    <span 
-                      className={`text-xs px-2 py-1 rounded-full ${
-                        darkMode 
-                          ? "bg-blue-600 text-white" 
-                          : "bg-blue-100 text-blue-800"
-                      }`}
-                    >
-                      {roadmap.sections} Sections
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="px-6 py-4">
-                  <div className="mb-4">
-                    <h4 className={`text-sm font-medium mb-1 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-                      Downloaded on:
-                    </h4>
-                    <p className="text-sm">{formatDate(roadmap.timestamp)}</p>
-                  </div>
-
-                  <div className="mb-4">
-                    <h4 className={`text-sm font-medium mb-1 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-                      Sections:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {roadmap.data.slice(0, 5).map((section, index) => (
-                        <span
-                          key={index}
-                          className={`px-2 py-1 rounded-full text-xs ${
-                            darkMode
-                              ? "bg-gray-700 text-gray-200"
-                              : "bg-gray-100 text-gray-800"
-                          }`}
-                        >
-                          {section.title}
-                        </span>
-                      ))}
-                      {roadmap.data.length > 5 && (
-                        <span
-                          className={`px-2 py-1 rounded-full text-xs ${
-                            darkMode
-                              ? "bg-gray-700 text-gray-300"
-                              : "bg-gray-100 text-gray-600"
-                          }`}
-                        >
-                          +{roadmap.data.length - 5} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Actions */}
-                <div 
-                  className={`px-6 py-4 flex justify-between items-center border-t ${
-                    darkMode ? "border-gray-700" : "border-gray-100"
-                  }`}
-                >
-                  <button
-                    onClick={() => handleDeleteRoadmap(roadmap.id)}
-                    className={`px-3 py-1 rounded ${
-                      darkMode
-                        ? "text-red-400 hover:bg-red-900 hover:bg-opacity-20"
-                        : "text-red-600 hover:bg-red-50"
-                    } transition-colors`}
-                  >
-                    <div className="flex items-center">
-                      <svg 
-                        className="w-4 h-4 mr-1" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24" 
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" 
-                        />
-                      </svg>
-                      Delete
-                    </div>
-                  </button>
-
-                  <button
-                    onClick={() => handleDownloadAgain(roadmap.data)}
-                    className={`px-3 py-1 rounded ${
-                      darkMode
-                        ? "bg-blue-600 hover:bg-blue-700"
-                        : "bg-blue-500 hover:bg-blue-600"
-                    } text-white transition-colors flex items-center`}
-                  >
-                    <svg 
-                      className="w-4 h-4 mr-1" 
-                      fill="currentColor" 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                    </svg>
-                    Download Again
-                  </button>
-                </div>
-              </div>
-            ))}
+              Go Back to Roadmap
+            </button>
           </div>
         )}
       </main>
