@@ -236,10 +236,6 @@ export default function NotificationPage() {
                   key={notification.id}
                   className="opacity-100 transform-none transition-opacity duration-300"
                 >
-                  <Link 
-                    href={`/notifications/${notification.id}`}
-                    onClick={() => handleNotificationClick(notification.id)}
-                  >
                     <div 
                       className={`p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border-l-4 ${
                         !notification.read ? 'border-indigo-500' : 'border-transparent'
@@ -259,7 +255,7 @@ export default function NotificationPage() {
                         )}
                       </div>
                     </div>
-                  </Link>
+                  
                 </li>
               ))}
             </ul>
