@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/navigation"
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 // Roadmap data structure
 const roadmapData = [
@@ -499,6 +502,9 @@ const roadmapData = [
 export default function Data() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const router = useRouter();
+
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -508,6 +514,323 @@ export default function Data() {
   // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+  // Function to handle the download process
+  const handleDownload = async () => {
+    setDownloading(true);
+
+    try {
+      // Create a temporary div to render the roadmap content for downloading
+      const downloadDiv = document.createElement('div');
+      downloadDiv.className = "roadmap-download-content";
+
+      // Set styles for better PDF output
+      downloadDiv.style.padding = "20px";
+      downloadDiv.style.color = "black";
+      downloadDiv.style.backgroundColor = "white";
+      downloadDiv.style.fontFamily = "'Inter', sans-serif";
+      downloadDiv.style.width = "800px"; // Fixed width for better quality
+
+      // Add title
+      const title = document.createElement('h1');
+      title.style.textAlign = "center";
+      title.style.marginBottom = "20px";
+      title.style.fontSize = "24px";
+      title.style.fontWeight = "bold";
+      title.textContent = "Data Analyst & Data Scientist Roadmap";
+      downloadDiv.appendChild(title);
+
+      // Add subtitle/description
+      const subtitle = document.createElement('p');
+      subtitle.style.textAlign = "center";
+      subtitle.style.marginBottom = "30px";
+      subtitle.style.fontSize = "14px";
+      subtitle.textContent = "Your comprehensive guide to becoming a data professional";
+      downloadDiv.appendChild(subtitle);
+
+      // Add roadmap content - loop through each section
+      roadmapData.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.style.marginBottom = "40px";
+        sectionDiv.style.pageBreakInside = "avoid";
+
+        // Section header
+        const header = document.createElement('h2');
+        header.style.backgroundColor = "#f0f7ff";
+        header.style.padding = "10px 15px";
+        header.style.borderRadius = "8px";
+        header.style.marginBottom = "15px";
+        header.style.fontSize = "18px";
+        header.style.fontWeight = "600";
+        header.textContent = `${section.id}. ${section.title}`;
+        sectionDiv.appendChild(header);
+
+        // Section description
+        const desc = document.createElement('p');
+        desc.style.marginBottom = "15px";
+        desc.style.fontStyle = "italic";
+        desc.style.color = "#4a5568";
+        desc.style.fontSize = "14px";
+        desc.textContent = section.description;
+        sectionDiv.appendChild(desc);
+
+        // What to Learn
+        const whatToLearn = document.createElement('div');
+        whatToLearn.style.marginBottom = "20px";
+
+        const whatToLearnTitle = document.createElement('h3');
+        whatToLearnTitle.style.fontSize = "16px";
+        whatToLearnTitle.style.fontWeight = "600";
+        whatToLearnTitle.style.marginBottom = "10px";
+        whatToLearnTitle.textContent = "📚 What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+
+        const whatToLearnList = document.createElement('ul');
+        whatToLearnList.style.paddingLeft = "20px";
+        whatToLearnList.style.columns = "2";
+        whatToLearnList.style.columnGap = "20px";
+        section.content.whatToLearn.forEach(item => {
+          const li = document.createElement('li');
+          li.style.marginBottom = "5px";
+          li.style.fontSize = "13px";
+          li.textContent = item;
+          whatToLearnList.appendChild(li);
+        });
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+
+        // Best Courses
+        const bestCourses = document.createElement('div');
+        bestCourses.style.marginBottom = "20px";
+
+        const bestCoursesTitle = document.createElement('h3');
+        bestCoursesTitle.style.fontSize = "16px";
+        bestCoursesTitle.style.fontWeight = "600";
+        bestCoursesTitle.style.marginBottom = "10px";
+        bestCoursesTitle.textContent = "🎓 Best Courses";
+        bestCourses.appendChild(bestCoursesTitle);
+
+        // English courses
+        const englishTitle = document.createElement('h4');
+        englishTitle.style.fontSize = "14px";
+        englishTitle.style.fontWeight = "500";
+        englishTitle.style.marginBottom = "5px";
+        englishTitle.textContent = "In English:";
+        bestCourses.appendChild(englishTitle);
+
+        const englishList = document.createElement('ul');
+        englishList.style.paddingLeft = "20px";
+        englishList.style.marginBottom = "10px";
+        section.content.bestCourses.english.forEach(course => {
+          const li = document.createElement('li');
+          li.style.marginBottom = "3px";
+          li.style.fontSize = "13px";
+          li.textContent = course;
+          englishList.appendChild(li);
+        });
+        bestCourses.appendChild(englishList);
+
+        // Hindi courses
+        const hindiTitle = document.createElement('h4');
+        hindiTitle.style.fontSize = "14px";
+        hindiTitle.style.fontWeight = "500";
+        hindiTitle.style.marginBottom = "5px";
+        hindiTitle.textContent = "In Hindi:";
+        bestCourses.appendChild(hindiTitle);
+
+        const hindiList = document.createElement('ul');
+        hindiList.style.paddingLeft = "20px";
+        section.content.bestCourses.hindi.forEach(course => {
+          const li = document.createElement('li');
+          li.style.marginBottom = "3px";
+          li.style.fontSize = "13px";
+          li.textContent = course;
+          hindiList.appendChild(li);
+        });
+        bestCourses.appendChild(hindiList);
+        sectionDiv.appendChild(bestCourses);
+
+        // Tools to Use
+        const tools = document.createElement('div');
+        tools.style.marginBottom = "20px";
+
+        const toolsTitle = document.createElement('h3');
+        toolsTitle.style.fontSize = "16px";
+        toolsTitle.style.fontWeight = "600";
+        toolsTitle.style.marginBottom = "10px";
+        toolsTitle.textContent = "🛠️ Tools to Use";
+        tools.appendChild(toolsTitle);
+
+        const toolsDiv = document.createElement('div');
+        toolsDiv.style.display = "flex";
+        toolsDiv.style.flexWrap = "wrap";
+        toolsDiv.style.gap = "8px";
+
+        section.content.toolsToUse.forEach(tool => {
+          const toolSpan = document.createElement('span');
+          toolSpan.style.padding = "4px 12px";
+          toolSpan.style.backgroundColor = "#EDF2F7";
+          toolSpan.style.borderRadius = "16px";
+          toolSpan.style.fontSize = "13px";
+          toolSpan.textContent = tool;
+          toolsDiv.appendChild(toolSpan);
+        });
+        tools.appendChild(toolsDiv);
+        sectionDiv.appendChild(tools);
+
+        // Docs & Websites
+        const docs = document.createElement('div');
+        docs.style.marginBottom = "20px";
+
+        const docsTitle = document.createElement('h3');
+        docsTitle.style.fontSize = "16px";
+        docsTitle.style.fontWeight = "600";
+        docsTitle.style.marginBottom = "10px";
+        docsTitle.textContent = "🔗 Docs & Websites";
+        docs.appendChild(docsTitle);
+
+        const docsList = document.createElement('ul');
+        docsList.style.paddingLeft = "20px";
+        docsList.style.columns = "2";
+        docsList.style.columnGap = "20px";
+        section.content.docsAndWebsites.forEach(doc => {
+          const li = document.createElement('li');
+          li.style.marginBottom = "5px";
+          li.style.fontSize = "13px";
+          li.textContent = doc;
+          docsList.appendChild(li);
+        });
+        docs.appendChild(docsList);
+        sectionDiv.appendChild(docs);
+
+        // Project Ideas
+        const projects = document.createElement('div');
+        projects.style.marginBottom = "20px";
+
+        const projectsTitle = document.createElement('h3');
+        projectsTitle.style.fontSize = "16px";
+        projectsTitle.style.fontWeight = "600";
+        projectsTitle.style.marginBottom = "10px";
+        projectsTitle.textContent = "💡 Project Ideas";
+        projects.appendChild(projectsTitle);
+
+        const projectsGrid = document.createElement('div');
+        projectsGrid.style.display = "grid";
+        projectsGrid.style.gridTemplateColumns = "repeat(2, 1fr)";
+        projectsGrid.style.gap = "10px";
+
+        section.content.projectIdeas.forEach(project => {
+          const projectDiv = document.createElement('div');
+          projectDiv.style.padding = "8px 12px";
+          projectDiv.style.backgroundColor = "#F7FAFC";
+          projectDiv.style.borderRadius = "6px";
+          projectDiv.style.fontSize = "13px";
+          projectDiv.textContent = project;
+          projectsGrid.appendChild(projectDiv);
+        });
+        projects.appendChild(projectsGrid);
+        sectionDiv.appendChild(projects);
+
+        downloadDiv.appendChild(sectionDiv);
+      });
+
+      // Add a footer with date
+      const footer = document.createElement('div');
+      footer.style.borderTop = "1px solid #E2E8F0";
+      footer.style.paddingTop = "15px";
+      footer.style.marginTop = "30px";
+      footer.style.textAlign = "center";
+      footer.style.fontSize = "12px";
+      footer.style.color = "#718096";
+      footer.textContent = `Generated on ${new Date().toLocaleDateString()} • Data Analyst & Data Scientist Roadmap`;
+      downloadDiv.appendChild(footer);
+
+      // Temporarily add the div to the document to render it
+      document.body.appendChild(downloadDiv);
+
+      // Use html2canvas to create an image of the content
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        logging: false,
+        windowWidth: 800,
+        onclone: (doc) => {
+          // Fix for any dynamic content
+          const clonedDiv = doc.querySelector('.roadmap-download-content');
+          if (clonedDiv) {
+            clonedDiv.style.width = "800px";
+          }
+        }
+      });
+
+      // Remove the temporary div
+      document.body.removeChild(downloadDiv);
+
+      // Create PDF from the canvas
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
+
+      // Calculate the required height based on canvas dimensions to fit the page width
+      const imgWidth = 210; // A4 width in mm (210mm)
+      const pageHeight = 297; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      let heightLeft = imgHeight;
+      let position = 0;
+      let pageIndex = 0;
+
+      // Add first page
+      pdf.addImage(
+        canvas.toDataURL('image/jpeg', 0.95), // Use JPEG with 0.95 quality for smaller file size
+        'JPEG',
+        0,
+        position,
+        imgWidth,
+        imgHeight
+      );
+
+      // Add subsequent pages if needed
+      heightLeft -= pageHeight;
+
+      while (heightLeft > 0) {
+        pageIndex++;
+        position = -pageHeight * pageIndex;
+
+        pdf.addPage();
+        pdf.addImage(
+          canvas.toDataURL('image/jpeg', 0.95),
+          'JPEG',
+          0,
+          position,
+          imgWidth,
+          imgHeight
+        );
+
+        heightLeft -= pageHeight;
+      }
+
+      // Save the PDF
+      pdf.save("Data_Analyst_Data_Scientist_Roadmap.pdf");
+
+      // Optional: Store the downloaded roadmap data in localStorage if you want to track downloads
+      localStorage.setItem('downloadedRoadmap', JSON.stringify({
+        type: 'data_analyst',
+        date: new Date().toISOString(),
+        sections: roadmapData.length
+      }));
+
+      // Show success message
+      alert("Roadmap PDF successfully downloaded!");
+
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("There was an error generating the PDF. Please try again.");
+    } finally {
+      setDownloading(false);
+    }
   };
 
   return (
@@ -538,6 +861,54 @@ export default function Data() {
         <h1 className="text-xl md:text-2xl font-bold">
           Data Analyst & Data Scientist Roadmap
         </h1>
+        <button
+          onClick={handleDownload}
+          disabled={downloading}
+          className={`fixed bottom-6 right-6 px-4 py-3 rounded-full shadow-lg flex items-center space-x-2 z-10 
+            ${darkMode 
+              ? "bg-blue-600 hover:bg-blue-700 text-white" 
+              : "bg-blue-500 hover:bg-blue-600 text-white"} 
+            transition-colors duration-300`}
+        >
+          {downloading ? (
+            <>
+              <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+                <circle 
+                  className="opacity-25" 
+                  cx="12" 
+                  cy="12" 
+                  r="10" 
+                  stroke="currentColor" 
+                  strokeWidth="4"
+                  fill="none"
+                />
+                <path 
+                  className="opacity-75" 
+                  fill="currentColor" 
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                />
+              </svg>
+              <span>Generating PDF...</span>
+            </>
+          ) : (
+            <>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-5 w-5" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path 
+                  fillRule="evenodd" 
+                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" 
+                  clipRule="evenodd" 
+                />
+              </svg>
+              <span>Download Roadmap</span>
+            </>
+          )}
+        </button>
+
         <button
           onClick={toggleDarkMode}
           className={`p-2 rounded-full ${
@@ -807,41 +1178,6 @@ export default function Data() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer
-        className={`mt-12 py-8 px-4 ${
-          darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-        }`}
-      >
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-lg font-semibold mb-2">
-                Data Analyst & Data Scientist Roadmap
-              </h3>
-              <p className="text-sm">
-                Your comprehensive guide to becoming a data professional
-              </p>
-            </div>
-            <div className="flex flex-col items-center md:items-end">
-              <div className="flex space-x-4 mb-2">
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  Twitter
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  GitHub
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  LinkedIn
-                </a>
-              </div>
-              <p className="text-xs">
-                © 2025 Data Science Roadmap. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

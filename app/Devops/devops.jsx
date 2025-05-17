@@ -4,6 +4,9 @@ import {
   Server, Database, Terminal, Layers, Globe, CloudCog, 
   Shield, GitBranch, Container, LineChart, Workflow, Code
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 // DevOps roadmap data structure
 const roadmapData = [
@@ -420,6 +423,9 @@ const roadmapData = [
 export default function DevOps() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const router = useRouter();
+
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -430,7 +436,335 @@ export default function DevOps() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+  const handleDownload = async () => {
+    // Prevent multiple clicks
+    if (downloading) return;
 
+    setDownloading(true);
+
+    try {
+      // Create a temporary div to render the roadmap content for downloading
+      const downloadDiv = document.createElement('div');
+      downloadDiv.className = "roadmap-download-content";
+
+      // Set styles for better PDF output
+      downloadDiv.style.padding = "20px";
+      downloadDiv.style.color = "black";
+      downloadDiv.style.backgroundColor = "white";
+      downloadDiv.style.fontFamily = "Arial, sans-serif";
+      downloadDiv.style.width = "800px"; // Set fixed width for consistent rendering
+
+      // Add title
+      const title = document.createElement('h1');
+      title.style.textAlign = "center";
+      title.style.marginBottom = "20px";
+      title.style.color = "#333";
+      title.style.fontSize = "24px";
+      title.textContent = "DevOps Engineer Roadmap";
+      downloadDiv.appendChild(title);
+
+      // Add subtitle
+      const subtitle = document.createElement('p');
+      subtitle.style.textAlign = "center";
+      subtitle.style.marginBottom = "30px";
+      subtitle.style.color = "#666";
+      subtitle.textContent = "Your comprehensive guide to becoming a DevOps Engineer";
+      downloadDiv.appendChild(subtitle);
+
+      // Add roadmap content
+      roadmapData.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.style.marginBottom = "30px";
+        sectionDiv.style.pageBreakInside = "avoid"; // Try to avoid page breaks within sections
+
+        // Section header
+        const header = document.createElement('h2');
+        header.style.backgroundColor = "#f0f0f0";
+        header.style.padding = "10px";
+        header.style.borderRadius = "5px";
+        header.style.color = "#333";
+        header.textContent = `${section.id}. ${section.title}`;
+        sectionDiv.appendChild(header);
+
+        // Section description
+        const desc = document.createElement('p');
+        desc.style.marginBottom = "15px";
+        desc.style.fontStyle = "italic";
+        desc.style.color = "#555";
+        desc.textContent = section.description;
+        sectionDiv.appendChild(desc);
+
+        // What to Learn
+        const whatToLearn = document.createElement('div');
+        whatToLearn.style.marginBottom = "15px";
+
+        const whatToLearnTitle = document.createElement('h3');
+        whatToLearnTitle.style.color = "#444";
+        whatToLearnTitle.style.borderBottom = "1px solid #ddd";
+        whatToLearnTitle.style.paddingBottom = "5px";
+        whatToLearnTitle.textContent = "✅ What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+
+        const whatToLearnList = document.createElement('ul');
+        whatToLearnList.style.paddingLeft = "20px";
+        section.content.whatToLearn.forEach(item => {
+          const li = document.createElement('li');
+          li.style.margin = "5px 0";
+          li.textContent = item;
+          whatToLearnList.appendChild(li);
+        });
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+
+        // Best Courses
+        const bestCourses = document.createElement('div');
+        bestCourses.style.marginBottom = "15px";
+
+        const bestCoursesTitle = document.createElement('h3');
+        bestCoursesTitle.style.color = "#444";
+        bestCoursesTitle.style.borderBottom = "1px solid #ddd";
+        bestCoursesTitle.style.paddingBottom = "5px";
+        bestCoursesTitle.textContent = "📚 Best Courses";
+        bestCourses.appendChild(bestCoursesTitle);
+
+        // English courses
+        const englishTitle = document.createElement('h4');
+        englishTitle.style.marginTop = "10px";
+        englishTitle.style.marginBottom = "5px";
+        englishTitle.style.color = "#555";
+        englishTitle.textContent = "In English:";
+        bestCourses.appendChild(englishTitle);
+
+        const englishList = document.createElement('ul');
+        englishList.style.paddingLeft = "20px";
+        section.content.bestCourses.english.forEach(course => {
+          const li = document.createElement('li');
+          li.style.margin = "5px 0";
+          li.textContent = course;
+          englishList.appendChild(li);
+        });
+        bestCourses.appendChild(englishList);
+
+        // Hindi courses
+        const hindiTitle = document.createElement('h4');
+        hindiTitle.style.marginTop = "10px";
+        hindiTitle.style.marginBottom = "5px";
+        hindiTitle.style.color = "#555";
+        hindiTitle.textContent = "In Hindi:";
+        bestCourses.appendChild(hindiTitle);
+
+        const hindiList = document.createElement('ul');
+        hindiList.style.paddingLeft = "20px";
+        section.content.bestCourses.hindi.forEach(course => {
+          const li = document.createElement('li');
+          li.style.margin = "5px 0";
+          li.textContent = course;
+          hindiList.appendChild(li);
+        });
+        bestCourses.appendChild(hindiList);
+        sectionDiv.appendChild(bestCourses);
+
+        // Tools to Use
+        const tools = document.createElement('div');
+        tools.style.marginBottom = "15px";
+
+        const toolsTitle = document.createElement('h3');
+        toolsTitle.style.color = "#444";
+        toolsTitle.style.borderBottom = "1px solid #ddd";
+        toolsTitle.style.paddingBottom = "5px";
+        toolsTitle.textContent = "🧰 Tools to Use";
+        tools.appendChild(toolsTitle);
+
+        const toolsList = document.createElement('ul');
+        toolsList.style.paddingLeft = "20px";
+        section.content.toolsToUse.forEach(tool => {
+          const li = document.createElement('li');
+          li.style.margin = "5px 0";
+          li.textContent = tool;
+          toolsList.appendChild(li);
+        });
+        tools.appendChild(toolsList);
+        sectionDiv.appendChild(tools);
+
+        // Docs & Websites
+        const docs = document.createElement('div');
+        docs.style.marginBottom = "15px";
+
+        const docsTitle = document.createElement('h3');
+        docsTitle.style.color = "#444";
+        docsTitle.style.borderBottom = "1px solid #ddd";
+        docsTitle.style.paddingBottom = "5px";
+        docsTitle.textContent = "📘 Docs & Websites";
+        docs.appendChild(docsTitle);
+
+        const docsList = document.createElement('ul');
+        docsList.style.paddingLeft = "20px";
+        section.content.docsAndWebsites.forEach(doc => {
+          const li = document.createElement('li');
+          li.style.margin = "5px 0";
+          li.textContent = doc;
+          docsList.appendChild(li);
+        });
+        docs.appendChild(docsList);
+        sectionDiv.appendChild(docs);
+
+        // Project Ideas
+        const projects = document.createElement('div');
+        projects.style.marginBottom = "15px";
+
+        const projectsTitle = document.createElement('h3');
+        projectsTitle.style.color = "#444";
+        projectsTitle.style.borderBottom = "1px solid #ddd";
+        projectsTitle.style.paddingBottom = "5px";
+        projectsTitle.textContent = "💡 Project Ideas";
+        projects.appendChild(projectsTitle);
+
+        const projectsList = document.createElement('ul');
+        projectsList.style.paddingLeft = "20px";
+        section.content.projectIdeas.forEach(project => {
+          const li = document.createElement('li');
+          li.style.margin = "5px 0";
+          li.textContent = project;
+          projectsList.appendChild(li);
+        });
+        projects.appendChild(projectsList);
+        sectionDiv.appendChild(projects);
+
+        downloadDiv.appendChild(sectionDiv);
+      });
+
+      // Add footer
+      const footer = document.createElement('div');
+      footer.style.marginTop = "30px";
+      footer.style.borderTop = "1px solid #ddd";
+      footer.style.paddingTop = "10px";
+      footer.style.textAlign = "center";
+      footer.style.color = "#777";
+      footer.style.fontSize = "12px";
+      footer.textContent = `© ${new Date().getFullYear()} DevOps Engineer Roadmap. All rights reserved.`;
+      downloadDiv.appendChild(footer);
+
+      // Hide the div from view but keep it in the DOM for rendering
+      downloadDiv.style.position = "absolute";
+      downloadDiv.style.left = "-9999px";
+      document.body.appendChild(downloadDiv);
+
+      // Use html2canvas to create an image of the content with better quality settings
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        logging: false,
+        backgroundColor: "#ffffff",
+        windowWidth: 800,
+        onclone: (clonedDoc) => {
+          // Any adjustments needed to the cloned document before rendering
+          const clonedElement = clonedDoc.querySelector('.roadmap-download-content');
+          if (clonedElement) {
+            clonedElement.style.width = "800px";
+          }
+        }
+      });
+
+      // Remove the temporary div
+      document.body.removeChild(downloadDiv);
+
+      // Create PDF using jsPDF
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+        compress: true, // Compress the PDF to reduce size
+      });
+
+      // Define PDF dimensions
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      // Calculate image dimensions to fit within PDF
+      const imgWidth = pageWidth - 20; // 10mm margins on each side
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // Add metadata to PDF
+      pdf.setProperties({
+        title: 'DevOps Engineer Roadmap',
+        subject: 'A comprehensive guide to becoming a DevOps Engineer',
+        author: 'DevOps Roadmap',
+        creator: 'DevOps Roadmap PDF Generator',
+        keywords: 'devops, engineer, roadmap, career, guide',
+      });
+
+      let position = 10; // Start position from top (10mm margin)
+
+      // Function to add content across multiple pages if needed
+      const addImageToPDF = (pdf, canvas, position) => {
+        // Add image to current page
+        pdf.addImage(
+          canvas.toDataURL('image/jpeg', 0.95), // Use JPEG with 95% quality for smaller file size
+          'JPEG',
+          10, // 10mm left margin
+          position,
+          imgWidth,
+          imgHeight
+        );
+
+        // Check if we need additional pages
+        let heightLeft = imgHeight;
+        let offsetPosition = 0;
+
+        while (heightLeft > pageHeight - position) {
+          heightLeft -= (pageHeight - position);
+          offsetPosition += (pageHeight - position);
+          pdf.addPage();
+
+          pdf.addImage(
+            canvas.toDataURL('image/jpeg', 0.95),
+            'JPEG',
+            10,
+            10 - offsetPosition, // Start from top of new page with adjustment
+            imgWidth,
+            imgHeight
+          );
+
+          position = 10; // Reset position for new pages
+        }
+      };
+
+      // Add content to PDF
+      addImageToPDF(pdf, canvas, position);
+
+      // Save the PDF with a timestamp to prevent caching issues
+      const timestamp = new Date().getTime();
+      pdf.save(`DevOps_Engineer_Roadmap_${timestamp}.pdf`);
+
+      // Optional: Store the downloaded roadmap data in localStorage
+      try {
+        localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+        // You could also store the timestamp or other metadata
+        localStorage.setItem('lastDownload', timestamp.toString());
+      } catch (storageError) {
+        console.warn("Unable to store roadmap in localStorage:", storageError);
+        // Continue even if localStorage fails - not critical
+      }
+
+      // Optional: Track the download event
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'download_roadmap', {
+          roadmap_type: 'devops',
+          dark_mode: darkMode
+        });
+      }
+
+      return true;
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+
+      // Show user-friendly error message
+      alert("There was an error generating the PDF. Please try again.");
+      return false;
+    } finally {
+      setDownloading(false);
+    }
+  };
   return (
     <div
       className={`min-h-screen ${
@@ -446,6 +780,62 @@ export default function DevOps() {
         <h1 className="text-xl md:text-2xl font-bold">
           DevOps Engineer Roadmap
         </h1>
+        <button
+          onClick={handleDownload}
+          disabled={downloading}
+          className={`flex items-center justify-center px-4 py-2 rounded-md transition-colors duration-300 ${
+            downloading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-opacity-90'
+          } ${
+            darkMode
+              ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+              : 'bg-indigo-500 text-white hover:bg-indigo-600'
+          }`}
+          aria-label="Download Roadmap as PDF"
+        >
+          {downloading ? (
+            <>
+              <svg
+                className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Processing...
+            </>
+          ) : (
+            <>
+              <svg
+                className="w-4 h-4 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              Download as PDF
+            </>
+          )}
+        </button>
         <button
           onClick={toggleDarkMode}
           className={`p-2 rounded-full ${

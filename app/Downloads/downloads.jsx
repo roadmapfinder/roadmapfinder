@@ -7,37 +7,87 @@ import html2canvas from "html2canvas";
 
 export default function Downloads() {
   const [downloadedRoadmaps, setDownloadedRoadmaps] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
-  const [regenerating, setRegenerating] = useState(false);
+  const [processingRoadmapId, setProcessingRoadmapId] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
-    // Check if local storage is available
-    const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
-
-    if (isLocalStorageAvailable) {
+    // Check if local storage is available and load settings
+    if (typeof window !== 'undefined' && window.localStorage) {
       // Load dark mode setting
       const savedDarkMode = localStorage.getItem('darkMode');
       if (savedDarkMode !== null) {
         setDarkMode(JSON.parse(savedDarkMode));
       }
 
-      // Load downloaded roadmaps
-      try {
-        const roadmapData = localStorage.getItem('downloadedRoadmap');
-        if (roadmapData) {
-          setDownloadedRoadmaps([{
-            id: 'ai-ml-roadmap',
-            title: 'AI/ML Engineer Roadmap',
-            date: new Date().toLocaleDateString(),
-            data: JSON.parse(roadmapData)
-          }]);
-        }
-      } catch (error) {
-        console.error("Error loading roadmap data:", error);
-      }
+      // Load all downloaded roadmaps
+      loadRoadmapsFromStorage();
     }
+
+    setIsLoading(false);
   }, []);
+
+  // Load all roadmaps from localStorage
+  const loadRoadmapsFromStorage = () => {
+    try {
+      // Get all keys from localStorage
+      const allKeys = Object.keys(localStorage);
+
+      // Filter for roadmap keys (roadmap-[id] or the legacy key)
+      const roadmapKeys = allKeys.filter(key => 
+        key.startsWith('roadmap-') || key === 'downloadedRoadmap'
+      );
+
+      const roadmaps = [];
+
+      // Process each roadmap in storage
+      roadmapKeys.forEach(key => {
+        try {
+          const roadmapData = localStorage.getItem(key);
+          if (roadmapData) {
+            // Parse the stored data
+            const parsedData = JSON.parse(roadmapData);
+
+            // Handle the legacy format (stored directly as array)
+            if (Array.isArray(parsedData)) {
+              roadmaps.push({
+                id: key === 'downloadedRoadmap' ? 'ai-ml-roadmap' : key.replace('roadmap-', ''),
+                title: key === 'downloadedRoadmap' ? 'AI/ML Engineer Roadmap' : getTitleFromData(parsedData),
+                date: new Date().toLocaleDateString(),
+                data: parsedData
+              });
+            } 
+            // Handle the structured format (with metadata)
+            else if (parsedData.data && parsedData.title) {
+              roadmaps.push({
+                id: key.replace('roadmap-', ''),
+                title: parsedData.title,
+                date: parsedData.date || new Date().toLocaleDateString(),
+                data: parsedData.data
+              });
+            }
+          }
+        } catch (err) {
+          console.error(`Error processing roadmap ${key}:`, err);
+        }
+      });
+
+      setDownloadedRoadmaps(roadmaps);
+    } catch (error) {
+      console.error("Error loading roadmap data:", error);
+    }
+  };
+
+  // Helper function to extract a title from roadmap data if not explicitly stored
+  const getTitleFromData = (data) => {
+    if (data && data.length > 0 && data[0].title) {
+      return data[0].title.includes('Roadmap') ? 
+        data[0].title : 
+        `${data[0].title} Roadmap`;
+    }
+    return "Roadmap";
+  };
 
   // Toggle dark mode
   const toggleDarkMode = () => {
@@ -51,30 +101,29 @@ export default function Downloads() {
     router.push('/Roadmap');
   };
 
-  // Regenerate PDF from stored data
-  const regeneratePDF = async (roadmapData) => {
-    setRegenerating(true);
+  // Generate PDF from stored data
+  const generatePDF = async (roadmap) => {
+    setProcessingRoadmapId(roadmap.id);
 
     try {
       // Create a temporary div to render the roadmap content
       const downloadDiv = document.createElement('div');
       downloadDiv.className = "roadmap-download-content";
-
-      // Set styles for better PDF output
       downloadDiv.style.padding = "20px";
       downloadDiv.style.color = "black";
       downloadDiv.style.backgroundColor = "white";
       downloadDiv.style.fontFamily = "Arial, sans-serif";
+      downloadDiv.style.width = "800px"; // Set fixed width for better PDF output
 
       // Add title
       const title = document.createElement('h1');
       title.style.textAlign = "center";
       title.style.marginBottom = "20px";
-      title.textContent = "AI/ML Engineer Roadmap";
+      title.textContent = roadmap.title;
       downloadDiv.appendChild(title);
 
       // Add roadmap content
-      roadmapData.forEach(section => {
+      roadmap.data.forEach(section => {
         const sectionDiv = document.createElement('div');
         sectionDiv.style.marginBottom = "30px";
 
@@ -94,159 +143,177 @@ export default function Downloads() {
         sectionDiv.appendChild(desc);
 
         // What to Learn
-        const whatToLearn = document.createElement('div');
-        whatToLearn.style.marginBottom = "15px";
+        if (section.content?.whatToLearn?.length > 0) {
+          const whatToLearn = document.createElement('div');
+          whatToLearn.style.marginBottom = "15px";
 
-        const whatToLearnTitle = document.createElement('h3');
-        whatToLearnTitle.textContent = "✅ What to Learn";
-        whatToLearn.appendChild(whatToLearnTitle);
+          const whatToLearnTitle = document.createElement('h3');
+          whatToLearnTitle.textContent = "✅ What to Learn";
+          whatToLearn.appendChild(whatToLearnTitle);
 
-        const whatToLearnList = document.createElement('ul');
-        section.content.whatToLearn.forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item;
-          whatToLearnList.appendChild(li);
-        });
-        whatToLearn.appendChild(whatToLearnList);
-        sectionDiv.appendChild(whatToLearn);
+          const whatToLearnList = document.createElement('ul');
+          section.content.whatToLearn.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            whatToLearnList.appendChild(li);
+          });
+          whatToLearn.appendChild(whatToLearnList);
+          sectionDiv.appendChild(whatToLearn);
+        }
 
         // Best Courses
-        const bestCourses = document.createElement('div');
-        bestCourses.style.marginBottom = "15px";
+        if (section.content?.bestCourses) {
+          const bestCourses = document.createElement('div');
+          bestCourses.style.marginBottom = "15px";
 
-        const bestCoursesTitle = document.createElement('h3');
-        bestCoursesTitle.textContent = "📚 Best Courses";
-        bestCourses.appendChild(bestCoursesTitle);
+          const bestCoursesTitle = document.createElement('h3');
+          bestCoursesTitle.textContent = "📚 Best Courses";
+          bestCourses.appendChild(bestCoursesTitle);
 
-        // English courses
-        const englishTitle = document.createElement('h4');
-        englishTitle.textContent = "In English:";
-        bestCourses.appendChild(englishTitle);
+          // English courses
+          if (section.content.bestCourses.english?.length > 0) {
+            const englishTitle = document.createElement('h4');
+            englishTitle.textContent = "In English:";
+            bestCourses.appendChild(englishTitle);
 
-        const englishList = document.createElement('ul');
-        section.content.bestCourses.english.forEach(course => {
-          const li = document.createElement('li');
-          li.textContent = course;
-          englishList.appendChild(li);
-        });
-        bestCourses.appendChild(englishList);
+            const englishList = document.createElement('ul');
+            section.content.bestCourses.english.forEach(course => {
+              const li = document.createElement('li');
+              li.textContent = course;
+              englishList.appendChild(li);
+            });
+            bestCourses.appendChild(englishList);
+          }
 
-        // Hindi courses
-        const hindiTitle = document.createElement('h4');
-        hindiTitle.textContent = "In Hindi:";
-        bestCourses.appendChild(hindiTitle);
+          // Hindi courses
+          if (section.content.bestCourses.hindi?.length > 0) {
+            const hindiTitle = document.createElement('h4');
+            hindiTitle.textContent = "In Hindi:";
+            bestCourses.appendChild(hindiTitle);
 
-        const hindiList = document.createElement('ul');
-        section.content.bestCourses.hindi.forEach(course => {
-          const li = document.createElement('li');
-          li.textContent = course;
-          hindiList.appendChild(li);
-        });
-        bestCourses.appendChild(hindiList);
-        sectionDiv.appendChild(bestCourses);
+            const hindiList = document.createElement('ul');
+            section.content.bestCourses.hindi.forEach(course => {
+              const li = document.createElement('li');
+              li.textContent = course;
+              hindiList.appendChild(li);
+            });
+            bestCourses.appendChild(hindiList);
+          }
+
+          sectionDiv.appendChild(bestCourses);
+        }
 
         // Tools to Use
-        const tools = document.createElement('div');
-        tools.style.marginBottom = "15px";
+        if (section.content?.toolsToUse?.length > 0) {
+          const tools = document.createElement('div');
+          tools.style.marginBottom = "15px";
 
-        const toolsTitle = document.createElement('h3');
-        toolsTitle.textContent = "🧰 Tools to Use";
-        tools.appendChild(toolsTitle);
+          const toolsTitle = document.createElement('h3');
+          toolsTitle.textContent = "🧰 Tools to Use";
+          tools.appendChild(toolsTitle);
 
-        const toolsList = document.createElement('ul');
-        section.content.toolsToUse.forEach(tool => {
-          const li = document.createElement('li');
-          li.textContent = tool;
-          toolsList.appendChild(li);
-        });
-        tools.appendChild(toolsList);
-        sectionDiv.appendChild(tools);
+          const toolsList = document.createElement('ul');
+          section.content.toolsToUse.forEach(tool => {
+            const li = document.createElement('li');
+            li.textContent = tool;
+            toolsList.appendChild(li);
+          });
+          tools.appendChild(toolsList);
+          sectionDiv.appendChild(tools);
+        }
 
         // Docs & Websites
-        const docs = document.createElement('div');
-        docs.style.marginBottom = "15px";
+        if (section.content?.docsAndWebsites?.length > 0) {
+          const docs = document.createElement('div');
+          docs.style.marginBottom = "15px";
 
-        const docsTitle = document.createElement('h3');
-        docsTitle.textContent = "📘 Docs & Websites";
-        docs.appendChild(docsTitle);
+          const docsTitle = document.createElement('h3');
+          docsTitle.textContent = "📘 Docs & Websites";
+          docs.appendChild(docsTitle);
 
-        const docsList = document.createElement('ul');
-        section.content.docsAndWebsites.forEach(doc => {
-          const li = document.createElement('li');
-          li.textContent = doc;
-          docsList.appendChild(li);
-        });
-        docs.appendChild(docsList);
-        sectionDiv.appendChild(docs);
+          const docsList = document.createElement('ul');
+          section.content.docsAndWebsites.forEach(doc => {
+            const li = document.createElement('li');
+            li.textContent = doc;
+            docsList.appendChild(li);
+          });
+          docs.appendChild(docsList);
+          sectionDiv.appendChild(docs);
+        }
 
         // Project Ideas
-        const projects = document.createElement('div');
-        projects.style.marginBottom = "15px";
+        if (section.content?.projectIdeas?.length > 0) {
+          const projects = document.createElement('div');
+          projects.style.marginBottom = "15px";
 
-        const projectsTitle = document.createElement('h3');
-        projectsTitle.textContent = "💡 Project Ideas";
-        projects.appendChild(projectsTitle);
+          const projectsTitle = document.createElement('h3');
+          projectsTitle.textContent = "💡 Project Ideas";
+          projects.appendChild(projectsTitle);
 
-        const projectsList = document.createElement('ul');
-        section.content.projectIdeas.forEach(project => {
-          const li = document.createElement('li');
-          li.textContent = project;
-          projectsList.appendChild(li);
-        });
-        projects.appendChild(projectsList);
-        sectionDiv.appendChild(projects);
+          const projectsList = document.createElement('ul');
+          section.content.projectIdeas.forEach(project => {
+            const li = document.createElement('li');
+            li.textContent = project;
+            projectsList.appendChild(li);
+          });
+          projects.appendChild(projectsList);
+          sectionDiv.appendChild(projects);
+        }
 
         downloadDiv.appendChild(sectionDiv);
       });
 
-      // Temporarily add the div to the document to render it
+      // Temporarily add the div to the document for rendering
       document.body.appendChild(downloadDiv);
+      downloadDiv.style.position = "absolute";
+      downloadDiv.style.left = "-9999px";
 
-      // Use html2canvas to create an image of the content
+      // Use html2canvas with improved settings
       const canvas = await html2canvas(downloadDiv, {
-        scale: 1,
+        scale: 2, // Higher quality
         useCORS: true,
         logging: false,
+        allowTaint: true,
+        backgroundColor: "#ffffff"
       });
 
       // Remove the temporary div
       document.body.removeChild(downloadDiv);
 
-      // Create PDF from the canvas
+      // Create PDF with optimal settings
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
+        compress: true
       });
 
-      // Calculate the required height based on canvas dimensions to fit the page width
+      // Calculate dimensions to fit the page width
       const imgWidth = 210; // A4 width in mm (210mm)
       const imgHeight = canvas.height * imgWidth / canvas.width;
 
-      // Add image to PDF (first page)
+      // Add image to first page
       pdf.addImage(
-        canvas.toDataURL('image/png'),
-        'PNG',
+        canvas.toDataURL('image/jpeg', 0.95), // Use JPEG for smaller file size
+        'JPEG',
         0,
         0,
         imgWidth,
         imgHeight
       );
 
-      // If the content requires multiple pages
+      // Handle multi-page content
       let heightLeft = imgHeight;
       let position = 0;
-
-      // Subtract the height of the first page
-      heightLeft -= 297; // A4 height in mm (297mm)
+      heightLeft -= 297; // A4 height (297mm)
 
       // Add subsequent pages if needed
       while (heightLeft > 0) {
         position = heightLeft - imgHeight;
         pdf.addPage();
         pdf.addImage(
-          canvas.toDataURL('image/png'),
-          'PNG',
+          canvas.toDataURL('image/jpeg', 0.95),
+          'JPEG',
           0,
           position,
           imgWidth,
@@ -255,13 +322,41 @@ export default function Downloads() {
         heightLeft -= 297;
       }
 
+      // Generate a clean filename from the roadmap title
+      const cleanTitle = roadmap.title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
       // Save the PDF
-      pdf.save("AI_ML_Engineer_Roadmap.pdf");
+      pdf.save(`${cleanTitle}.pdf`);
     } catch (error) {
-      console.error("Error regenerating PDF:", error);
-      alert("There was an error regenerating the PDF. Please try again.");
+      console.error("Error generating PDF:", error);
+      alert("There was an error generating the PDF. Please try again.");
     } finally {
-      setRegenerating(false);
+      setProcessingRoadmapId(null);
+    }
+  };
+
+  // Delete a roadmap
+  const deleteRoadmap = (e, roadmap) => {
+    e.stopPropagation(); // Prevent triggering the card click event
+
+    // Ask for confirmation
+    if (window.confirm(`Are you sure you want to delete "${roadmap.title}"?`)) {
+      try {
+        // Remove from localStorage
+        if (roadmap.id === 'ai-ml-roadmap') {
+          localStorage.removeItem('downloadedRoadmap');
+        } else {
+          localStorage.removeItem(`roadmap-${roadmap.id}`);
+        }
+
+        // Update state
+        setDownloadedRoadmaps(prevRoadmaps => 
+          prevRoadmaps.filter(r => r.id !== roadmap.id)
+        );
+      } catch (error) {
+        console.error("Error deleting roadmap:", error);
+        alert("There was an error deleting the roadmap.");
+      }
     }
   };
 
@@ -272,7 +367,7 @@ export default function Downloads() {
       }`}
     >
       <Head>
-        <title>Downloads | AI/ML Engineer Roadmap</title>
+        <title>Downloads | Your Learning Roadmaps</title>
         <meta
           name="description"
           content="Your downloaded roadmaps"
@@ -296,6 +391,7 @@ export default function Downloads() {
                 ? "bg-gray-700 hover:bg-gray-600" 
                 : "bg-gray-200 hover:bg-gray-300"
             } transition-colors flex items-center`}
+            aria-label="Back to Roadmap"
           >
             <svg 
               className="w-4 h-4 mr-2" 
@@ -328,6 +424,7 @@ export default function Downloads() {
                 className="h-5 w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -341,6 +438,7 @@ export default function Downloads() {
                 className="h-5 w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
+                aria-hidden="true"
               >
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
@@ -361,55 +459,90 @@ export default function Downloads() {
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
             Here you can find all the roadmaps and resources you've downloaded for offline use. 
-            Click on any card to reopen the PDF.
+            Click on any card to generate and open the PDF.
           </p>
         </div>
 
-        {/* Downloaded Roadmaps */}
-        {downloadedRoadmaps.length > 0 ? (
+        {/* Loading State */}
+        {isLoading ? (
+          <div className="flex justify-center items-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        ) : downloadedRoadmaps.length > 0 ? (
+          /* Downloaded Roadmaps Grid */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {downloadedRoadmaps.map((roadmap) => (
               <div
                 key={roadmap.id}
-                onClick={() => regeneratePDF(roadmap.data)}
-                className={`cursor-pointer rounded-lg shadow-md p-6 flex flex-col transition-transform duration-200 transform hover:scale-105 ${
-                  darkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"
+                className={`rounded-lg shadow-md overflow-hidden transition-transform duration-200 transform hover:shadow-lg ${
+                  darkMode ? "bg-gray-800" : "bg-white"
                 }`}
               >
-                <div className="flex items-center justify-center bg-blue-100 text-blue-600 w-12 h-12 rounded-full mb-4">
-                  <svg 
-                    className="w-6 h-6" 
-                    fill="currentColor" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 20 20"
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-center bg-blue-100 text-blue-600 w-12 h-12 rounded-full">
+                      <svg 
+                        className="w-6 h-6" 
+                        fill="currentColor" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/>
+                      </svg>
+                    </div>
+                    <button
+                      onClick={(e) => deleteRoadmap(e, roadmap)}
+                      className={`p-2 rounded-full ${
+                        darkMode ? "text-gray-400 hover:text-red-400" : "text-gray-500 hover:text-red-500"
+                      } transition-colors`}
+                      aria-label={`Delete ${roadmap.title}`}
+                    >
+                      <svg 
+                        className="w-5 h-5" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth="2" 
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{roadmap.title}</h3>
+                  <p 
+                    className={`text-sm mb-4 ${
+                      darkMode ? "text-gray-400" : "text-gray-600"
+                    }`}
                   >
-                    <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/>
-                  </svg>
+                    Downloaded: {roadmap.date}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{roadmap.title}</h3>
-                <p 
-                  className={`text-sm mb-4 ${
-                    darkMode ? "text-gray-400" : "text-gray-600"
-                  }`}
-                >
-                  Downloaded: {roadmap.date}
-                </p>
-                <div className="mt-auto">
+                <div className="px-6 pb-6">
                   <button
-                    className={`w-full py-2 rounded-md text-white ${
-                      regenerating 
+                    onClick={() => generatePDF(roadmap)}
+                    className={`w-full py-3 rounded-md text-white font-medium ${
+                      processingRoadmapId === roadmap.id
                         ? "bg-gray-500 cursor-not-allowed" 
                         : "bg-blue-600 hover:bg-blue-700"
                     } transition-colors flex items-center justify-center`}
-                    disabled={regenerating}
+                    disabled={processingRoadmapId === roadmap.id}
+                    aria-busy={processingRoadmapId === roadmap.id}
                   >
-                    {regenerating ? (
+                    {processingRoadmapId === roadmap.id ? (
                       <>
                         <svg 
                           className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" 
                           xmlns="http://www.w3.org/2000/svg" 
                           fill="none" 
                           viewBox="0 0 24 24"
+                          aria-hidden="true"
                         >
                           <circle 
                             className="opacity-25" 
@@ -425,7 +558,7 @@ export default function Downloads() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           ></path>
                         </svg>
-                        Processing...
+                        Generating PDF...
                       </>
                     ) : (
                       <>
@@ -434,10 +567,11 @@ export default function Downloads() {
                           fill="currentColor" 
                           xmlns="http://www.w3.org/2000/svg" 
                           viewBox="0 0 20 20"
+                          aria-hidden="true"
                         >
                           <path d="M13 8V2H7v6H2l8 8 8-8h-5z" />
                         </svg>
-                        Open PDF
+                        Open as PDF
                       </>
                     )}
                   </button>
@@ -446,6 +580,7 @@ export default function Downloads() {
             ))}
           </div>
         ) : (
+          /* Empty State */
           <div 
             className={`p-10 rounded-lg ${
               darkMode ? "bg-gray-800" : "bg-white"
@@ -459,6 +594,7 @@ export default function Downloads() {
               stroke="currentColor" 
               viewBox="0 0 24 24" 
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path 
                 strokeLinecap="round" 
@@ -474,6 +610,7 @@ export default function Downloads() {
             <button
               onClick={goToHome}
               className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              aria-label="Go back to Roadmap page"
             >
               Go Back to Roadmap
             </button>

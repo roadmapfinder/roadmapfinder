@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Github, Twitter, Linkedin, Sun, Moon } from "lucide-react";
+import { Github, Twitter, Linkedin, Sun, Moon , Download} from "lucide-react";
 
 // Roadmap data structure
 const roadmapData = [
@@ -357,66 +357,358 @@ const roadmapData = [
   },
 ];
 
-export default function Home() {
-  const [openSection, setOpenSection] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Toggle section open/close
-  const toggleSection = (id) => {
-    setOpenSection(openSection === id ? null : id);
-  };
 
   // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+        let html2canvas;
+        let jsPDF;
 
-  return (
-    <div
-      className={`min-h-screen ${
-        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-      } transition-colors duration-300`}
-    >
-      {/* Sticky Navigation Bar */}
-      <nav
-        className={`sticky top-0 z-10 ${
-          darkMode ? "bg-gray-800" : "bg-white"
-        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
-      >
-        <h1 className="text-xl md:text-2xl font-bold">
-          Roadmap to Become a Blockchain Developer
-        </h1>
-        <button
-          onClick={toggleDarkMode}
-          className={`p-2 rounded-full ${
-            darkMode
-              ? "bg-gray-700 text-yellow-300"
-              : "bg-gray-200 text-gray-700"
-          }`}
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-      </nav>
+        // This ensures these modules are only imported on the client side
+        if (typeof window !== 'undefined') {
+          import('html2canvas').then((module) => {
+            html2canvas = module.default;
+          });
+          import('jspdf').then((module) => {
+            jsPDF = module.default;
+          });
+        }
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Introduction */}
-        <section
-          className={`mb-8 p-6 rounded-lg ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md transition-colors duration-300`}
-        >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Blockchain Developer Roadmap
-          </h2>
-          <p className="text-sm md:text-base leading-relaxed">
-            This roadmap will guide you through the essential skills, tools, and
-            resources needed to become a proficient Blockchain Developer. Each
-            section contains curated resources in both English and Hindi to help
-            you master each stage of your blockchain journey. Click on any
-            section to expand it and explore its contents.
-          </p>
-        </section>
+        export default function Home() {
+          const [openSection, setOpenSection] = useState(null);
+          const [darkMode, setDarkMode] = useState(false);
+          const [downloading, setDownloading] = useState(false);
+
+          // Toggle section open/close
+          const toggleSection = (id) => {
+            setOpenSection(openSection === id ? null : id);
+          };
+
+          // Toggle dark mode
+          const toggleDarkMode = () => {
+            setDarkMode(!darkMode);
+          };
+
+          // Function to handle the download process
+          const handleDownload = async () => {
+            if (!html2canvas || !jsPDF) {
+              alert("PDF generation libraries are still loading. Please try again in a moment.");
+              return;
+            }
+
+            setDownloading(true);
+
+            try {
+              // Create a temporary div to render the roadmap content for downloading
+              const downloadDiv = document.createElement('div');
+              downloadDiv.className = "roadmap-download-content";
+
+              // Set styles for better PDF output
+              downloadDiv.style.padding = "20px";
+              downloadDiv.style.color = "black";
+              downloadDiv.style.backgroundColor = "white";
+              downloadDiv.style.fontFamily = "Arial, sans-serif";
+
+              // Add title
+              const title = document.createElement('h1');
+              title.style.textAlign = "center";
+              title.style.marginBottom = "20px";
+              title.textContent = "Blockchain Developer Roadmap";
+              downloadDiv.appendChild(title);
+
+              // Add roadmap content
+              roadmapData.forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.style.marginBottom = "30px";
+
+                // Section header
+                const header = document.createElement('h2');
+                header.style.backgroundColor = "#f0f0f0";
+                header.style.padding = "10px";
+                header.style.borderRadius = "5px";
+                header.textContent = `${section.id}. ${section.title}`;
+                sectionDiv.appendChild(header);
+
+                // Section description
+                const desc = document.createElement('p');
+                desc.style.marginBottom = "15px";
+                desc.style.fontStyle = "italic";
+                desc.textContent = section.description;
+                sectionDiv.appendChild(desc);
+
+                // What to Learn
+                const whatToLearn = document.createElement('div');
+                whatToLearn.style.marginBottom = "15px";
+
+                const whatToLearnTitle = document.createElement('h3');
+                whatToLearnTitle.textContent = "✅ What to Learn";
+                whatToLearn.appendChild(whatToLearnTitle);
+
+                const whatToLearnList = document.createElement('ul');
+                section.content.whatToLearn.forEach(item => {
+                  const li = document.createElement('li');
+                  li.textContent = item;
+                  whatToLearnList.appendChild(li);
+                });
+                whatToLearn.appendChild(whatToLearnList);
+                sectionDiv.appendChild(whatToLearn);
+
+                // Best Courses
+                const bestCourses = document.createElement('div');
+                bestCourses.style.marginBottom = "15px";
+
+                const bestCoursesTitle = document.createElement('h3');
+                bestCoursesTitle.textContent = "📚 Best Courses";
+                bestCourses.appendChild(bestCoursesTitle);
+
+                // English courses
+                const englishTitle = document.createElement('h4');
+                englishTitle.textContent = "In English:";
+                bestCourses.appendChild(englishTitle);
+
+                const englishList = document.createElement('ul');
+                section.content.bestCourses.english.forEach(course => {
+                  const li = document.createElement('li');
+                  li.textContent = course;
+                  englishList.appendChild(li);
+                });
+                bestCourses.appendChild(englishList);
+
+                // Hindi courses
+                const hindiTitle = document.createElement('h4');
+                hindiTitle.textContent = "In Hindi:";
+                bestCourses.appendChild(hindiTitle);
+
+                const hindiList = document.createElement('ul');
+                section.content.bestCourses.hindi.forEach(course => {
+                  const li = document.createElement('li');
+                  li.textContent = course;
+                  hindiList.appendChild(li);
+                });
+                bestCourses.appendChild(hindiList);
+                sectionDiv.appendChild(bestCourses);
+
+                // Tools to Use
+                const tools = document.createElement('div');
+                tools.style.marginBottom = "15px";
+
+                const toolsTitle = document.createElement('h3');
+                toolsTitle.textContent = "🧰 Tools to Use";
+                tools.appendChild(toolsTitle);
+
+                const toolsList = document.createElement('ul');
+                section.content.toolsToUse.forEach(tool => {
+                  const li = document.createElement('li');
+                  li.textContent = tool;
+                  toolsList.appendChild(li);
+                });
+                tools.appendChild(toolsList);
+                sectionDiv.appendChild(tools);
+
+                // Docs & Websites
+                const docs = document.createElement('div');
+                docs.style.marginBottom = "15px";
+
+                const docsTitle = document.createElement('h3');
+                docsTitle.textContent = "📘 Docs & Websites";
+                docs.appendChild(docsTitle);
+
+                const docsList = document.createElement('ul');
+                section.content.docsAndWebsites.forEach(doc => {
+                  const li = document.createElement('li');
+                  li.textContent = doc;
+                  docsList.appendChild(li);
+                });
+                docs.appendChild(docsList);
+                sectionDiv.appendChild(docs);
+
+                // Project Ideas
+                const projects = document.createElement('div');
+                projects.style.marginBottom = "15px";
+
+                const projectsTitle = document.createElement('h3');
+                projectsTitle.textContent = "💡 Project Ideas";
+                projects.appendChild(projectsTitle);
+
+                const projectsList = document.createElement('ul');
+                section.content.projectIdeas.forEach(project => {
+                  const li = document.createElement('li');
+                  li.textContent = project;
+                  projectsList.appendChild(li);
+                });
+                projects.appendChild(projectsList);
+                sectionDiv.appendChild(projects);
+
+                downloadDiv.appendChild(sectionDiv);
+              });
+
+              // Temporarily add the div to the document to render it
+              document.body.appendChild(downloadDiv);
+
+              // Use html2canvas to create an image of the content
+              const canvas = await html2canvas(downloadDiv, {
+                scale: 1,
+                useCORS: true,
+                logging: false,
+              });
+
+              // Remove the temporary div
+              document.body.removeChild(downloadDiv);
+
+              // Create PDF from the canvas
+              const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4',
+              });
+
+              // Calculate the required height based on canvas dimensions to fit the page width
+              const imgWidth = 210; // A4 width in mm (210mm)
+              const imgHeight = canvas.height * imgWidth / canvas.width;
+
+              // Add image to PDF (first page)
+              pdf.addImage(
+                canvas.toDataURL('image/png'),
+                'PNG',
+                0,
+                0,
+                imgWidth,
+                imgHeight
+              );
+
+              // If the content requires multiple pages
+              let heightLeft = imgHeight;
+              let position = 0;
+
+              // Subtract the height of the first page
+              heightLeft -= 297; // A4 height in mm (297mm)
+
+              // Add subsequent pages if needed
+              while (heightLeft > 0) {
+                position = heightLeft - imgHeight;
+                pdf.addPage();
+                pdf.addImage(
+                  canvas.toDataURL('image/png'),
+                  'PNG',
+                  0,
+                  position,
+                  imgWidth,
+                  imgHeight
+                );
+                heightLeft -= 297;
+              }
+
+              // Save the PDF
+              pdf.save("Blockchain_Developer_Roadmap.pdf");
+
+              // Store the downloaded roadmap data to localStorage for potential future use
+              localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+
+            } catch (error) {
+              console.error("Error generating PDF:", error);
+              alert("There was an error generating the PDF. Please try again.");
+            } finally {
+              setDownloading(false);
+            }
+          };
+
+          return (
+            <div
+              className={`min-h-screen ${
+                darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+              } transition-colors duration-300`}
+            >
+              {/* Sticky Navigation Bar */}
+              <nav
+                className={`sticky top-0 z-10 ${
+                  darkMode ? "bg-gray-800" : "bg-white"
+                } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+              >
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Roadmap to Become a Blockchain Developer
+                </h1>
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={handleDownload}
+                    disabled={downloading}
+                    className={`p-2 rounded-full mr-2 ${
+                      darkMode
+                        ? "bg-blue-600 text-white hover:bg-blue-700"
+                        : "bg-blue-500 text-white hover:bg-blue-600"
+                    } ${downloading ? "opacity-50 cursor-not-allowed" : ""}`}
+                    aria-label="Download Roadmap"
+                  >
+                    {downloading ? (
+                      <span className="flex items-center">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Processing
+                      </span>
+                    ) : (
+                      <Download size={20} />
+                    )}
+                  </button>
+                  <button
+                    onClick={toggleDarkMode}
+                    className={`p-2 rounded-full ${
+                      darkMode
+                        ? "bg-gray-700 text-yellow-300"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                    aria-label="Toggle Dark Mode"
+                  >
+                    {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+                  </button>
+                </div>
+              </nav>
+
+              <main className="container mx-auto px-4 py-8 max-w-4xl">
+                {/* Introduction */}
+                <section
+                  className={`mb-8 p-6 rounded-lg ${
+                    darkMode ? "bg-gray-800" : "bg-white"
+                  } shadow-md transition-colors duration-300`}
+                >
+                  <div className="flex justify-between items-center mb-3">
+                    <h2 className="text-xl md:text-2xl font-semibold">
+                      Welcome to the Blockchain Developer Roadmap
+                    </h2>
+                    <button
+                      onClick={handleDownload}
+                      disabled={downloading}
+                      className={`px-4 py-2 rounded-md flex items-center ${
+                        darkMode
+                          ? "bg-blue-600 text-white hover:bg-blue-700"
+                          : "bg-blue-500 text-white hover:bg-blue-600"
+                      } ${downloading ? "opacity-50 cursor-not-allowed" : ""}`}
+                    >
+                      {downloading ? (
+                        <span className="flex items-center">
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Generating PDF...
+                        </span>
+                      ) : (
+                        <>
+                          <Download size={16} className="mr-2" />
+                          Download as PDF
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  <p className="text-sm md:text-base leading-relaxed">
+                    This roadmap will guide you through the essential skills, tools, and
+                    resources needed to become a proficient Blockchain Developer. Each
+                    section contains curated resources in both English and Hindi to help
+                    you master each stage of your blockchain journey. Click on any
+                    section to expand it and explore its contents.
+                  </p>
+                </section>
 
         {/* Roadmap Sections */}
         <div className="space-y-4">
@@ -632,41 +924,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer
-        className={`mt-12 py-8 px-4 ${
-          darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-        }`}
-      >
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-lg font-semibold mb-2">
-                Blockchain Developer Roadmap
-              </h3>
-              <p className="text-sm">
-                Your comprehensive guide to becoming a Blockchain Developer
-              </p>
-            </div>
-            <div className="flex flex-col items-center md:items-end">
-              <div className="flex space-x-4 mb-2">
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  <Twitter size={18} />
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  <Github size={18} />
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  <Linkedin size={18} />
-                </a>
-              </div>
-              <p className="text-xs">
-                © 2025 Blockchain Developer Roadmap. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }

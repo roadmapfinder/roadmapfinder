@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
-
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+import { useRouter } from "next/navigation"
 // DSA Roadmap data structure
 const roadmapData = [
   {
@@ -362,6 +364,8 @@ const roadmapData = [
 export default function DSARoadmap() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const router = useRouter();
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -373,65 +377,330 @@ export default function DSARoadmap() {
     setDarkMode(!darkMode);
   };
 
+  // Function to handle the download process
+  const handleDownload = async () => {
+    setDownloading(true);
+
+    try {
+      // Create a temporary div to render the roadmap content for downloading
+      const downloadDiv = document.createElement('div');
+      downloadDiv.className = "roadmap-download-content";
+
+      // Set styles for better PDF output
+      downloadDiv.style.padding = "20px";
+      downloadDiv.style.color = "black";
+      downloadDiv.style.backgroundColor = "white";
+      downloadDiv.style.fontFamily = "Arial, sans-serif";
+
+      // Add title
+      const title = document.createElement('h1');
+      title.style.textAlign = "center";
+      title.style.marginBottom = "20px";
+      title.textContent = "DSA Mastery Roadmap";
+      downloadDiv.appendChild(title);
+
+      // Add introduction
+      const intro = document.createElement('div');
+      intro.style.marginBottom = "20px";
+      intro.style.textAlign = "center";
+
+      const introParagraph = document.createElement('p');
+      introParagraph.textContent = "This comprehensive roadmap will guide you through learning Data Structures and Algorithms efficiently. From programming fundamentals to advanced algorithm techniques, interview preparation, and competitive programming.";
+      intro.appendChild(introParagraph);
+      downloadDiv.appendChild(intro);
+
+      // Add roadmap content
+      roadmapData.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.style.marginBottom = "30px";
+        sectionDiv.style.pageBreakInside = "avoid";
+        if (section.id > 1) {
+          // Add page break hint before new sections except the first one
+          sectionDiv.style.pageBreakBefore = "auto";
+        }
+
+        // Section header
+        const header = document.createElement('h2');
+        header.style.backgroundColor = "#f0f0f0";
+        header.style.padding = "10px";
+        header.style.borderRadius = "5px";
+        header.textContent = `${section.id}. ${section.title}`;
+        sectionDiv.appendChild(header);
+
+        // Section description
+        const desc = document.createElement('p');
+        desc.style.marginBottom = "15px";
+        desc.style.fontStyle = "italic";
+        desc.textContent = section.description;
+        sectionDiv.appendChild(desc);
+
+        // What to Learn
+        const whatToLearn = document.createElement('div');
+        whatToLearn.style.marginBottom = "15px";
+
+        const whatToLearnTitle = document.createElement('h3');
+        whatToLearnTitle.textContent = "📚 What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+
+        const whatToLearnList = document.createElement('ul');
+        section.content.whatToLearn.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          whatToLearnList.appendChild(li);
+        });
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+
+        // Resources
+        const resources = document.createElement('div');
+        resources.style.marginBottom = "15px";
+
+        const resourcesTitle = document.createElement('h3');
+        resourcesTitle.textContent = "🔍 Resources";
+        resources.appendChild(resourcesTitle);
+
+        const resourcesList = document.createElement('ul');
+        section.content.resources.forEach(resource => {
+          const li = document.createElement('li');
+          li.textContent = resource;
+          resourcesList.appendChild(li);
+        });
+        resources.appendChild(resourcesList);
+        sectionDiv.appendChild(resources);
+
+        // Tools to Use
+        const tools = document.createElement('div');
+        tools.style.marginBottom = "15px";
+
+        const toolsTitle = document.createElement('h3');
+        toolsTitle.textContent = "🧰 Tools to Use";
+        tools.appendChild(toolsTitle);
+
+        const toolsList = document.createElement('ul');
+        section.content.toolsToUse.forEach(tool => {
+          const li = document.createElement('li');
+          li.textContent = tool;
+          toolsList.appendChild(li);
+        });
+        tools.appendChild(toolsList);
+        sectionDiv.appendChild(tools);
+
+        // Practice Ideas
+        const projects = document.createElement('div');
+        projects.style.marginBottom = "15px";
+
+        const projectsTitle = document.createElement('h3');
+        projectsTitle.textContent = "💡 Practice Ideas";
+        projects.appendChild(projectsTitle);
+
+        const projectsList = document.createElement('ul');
+        section.content.practiceIdeas.forEach(project => {
+          const li = document.createElement('li');
+          li.textContent = project;
+          projectsList.appendChild(li);
+        });
+        projects.appendChild(projectsList);
+        sectionDiv.appendChild(projects);
+
+        downloadDiv.appendChild(sectionDiv);
+      });
+
+      // Footer with credits
+      const footer = document.createElement('div');
+      footer.style.marginTop = "30px";
+      footer.style.borderTop = "1px solid #ccc";
+      footer.style.paddingTop = "10px";
+      footer.style.textAlign = "center";
+      footer.style.fontSize = "12px";
+      footer.style.color = "#666";
+
+      const footerText = document.createElement('p');
+      footerText.textContent = "© 2025 DSA Mastery Roadmap. Created with html2canvas and jsPDF.";
+      footer.appendChild(footerText);
+
+      downloadDiv.appendChild(footer);
+
+      // Temporarily add the div to the document to render it
+      document.body.appendChild(downloadDiv);
+
+      // Use html2canvas to create an image of the content
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        logging: false,
+        allowTaint: true,
+        windowWidth: 1200, // Fixed width to avoid layout issues
+      });
+
+      // Remove the temporary div
+      document.body.removeChild(downloadDiv);
+
+      // Create PDF from the canvas
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
+
+      // A4 dimensions (210mm × 297mm)
+      const pageWidth = 210;
+      const pageHeight = 297;
+
+      // Calculate the required height based on canvas dimensions to fit the page width
+      const imgWidth = pageWidth - 20; // Leaving 10mm margin on each side
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // Adding content to multiple pages if necessary
+      let heightLeft = imgHeight;
+      let position = 10; // starting position (10mm from top)
+      let pageNumber = 1;
+
+      // Add image to first page
+      pdf.addImage(
+        canvas.toDataURL('image/png'),
+        'PNG',
+        10, // x position (10mm from left)
+        position, // y position
+        imgWidth,
+        imgHeight
+      );
+
+      // Adding page numbers
+      pdf.setFontSize(10);
+      pdf.text(`Page ${pageNumber}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+
+      // Add subsequent pages if content overflows
+      while (heightLeft > pageHeight - 20) { // 20mm total margin (10mm top + 10mm bottom)
+        // Calculate how much of the image to use on this page
+        const cropHeight = pageHeight - 20; // usable page height
+        heightLeft -= cropHeight;
+        position -= cropHeight;
+
+        // Add new page
+        pdf.addPage();
+        pageNumber++;
+
+        // Add image portion to new page
+        pdf.addImage(
+          canvas.toDataURL('image/png'),
+          'PNG',
+          10,
+          10, // Start at top margin again
+          imgWidth,
+          imgHeight,
+          '', // No alias
+          'FAST', // Fast compression
+          0, // Rotation
+          position // Y position to crop from original image
+        );
+
+        // Add page number to new page
+        pdf.text(`Page ${pageNumber}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+      }
+
+      // Save the PDF
+      pdf.save("DSA_Mastery_Roadmap.pdf");
+
+      // Store the downloaded roadmap data in localStorage (optional)
+      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+
+      // You can navigate to a Downloads page or show a success message here
+      // For simplicity, we'll just log to console
+      console.log('Roadmap successfully downloaded!');
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("There was an error generating the PDF. Please try again.");
+    } finally {
+      setDownloading(false);
+    }
+  };
   return (
-    <div
-      className={`min-h-screen ${
-        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-      }`}
-    >
-      <Head>
-        <title>DSA Mastery Roadmap</title>
-        <meta
-          name="description"
-          content="Complete roadmap for mastering Data Structures and Algorithms"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      {/* Sticky Navigation Bar */}
-      <nav
-        className={`sticky top-0 z-10 ${
-          darkMode ? "bg-gray-800" : "bg-white"
-        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
-      >
-        <h1 className="text-xl md:text-2xl font-bold">
-          DSA Mastery Roadmap 🧠
-        </h1>
-        <button
-          onClick={toggleDarkMode}
-          className={`p-2 rounded-full ${
-            darkMode
-              ? "bg-gray-700 text-yellow-300"
-              : "bg-gray-200 text-gray-700"
+    
+        <div
+          className={`min-h-screen ${
+            darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
           }`}
-          aria-label="Toggle Dark Mode"
         >
-          {darkMode ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          )}
-        </button>
-      </nav>
+          <Head>
+            <title>DSA Mastery Roadmap</title>
+            <meta
+              name="description"
+              content="Complete roadmap for mastering Data Structures and Algorithms"
+            />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
 
+          {/* Sticky Navigation Bar */}
+          <nav
+            className={`sticky top-0 z-10 ${
+              darkMode ? "bg-gray-800" : "bg-white"
+            } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+          >
+            <h1 className="text-xl md:text-2xl font-bold">
+              DSA Mastery Roadmap 🧠
+            </h1>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={handleDownload}
+                disabled={downloading}
+                className={`px-4 py-2 rounded-md transition-colors duration-300 ${
+                  darkMode ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"
+                } text-white flex items-center ${downloading ? "opacity-70 cursor-not-allowed" : ""}`}
+                aria-label="Download Roadmap"
+              >
+                {downloading ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Processing...
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download PDF
+                  </>
+                )}
+              </button>
+              <button
+                onClick={toggleDarkMode}
+                className={`p-2 rounded-full ${
+                  darkMode
+                    ? "bg-gray-700 text-yellow-300"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+                aria-label="Toggle Dark Mode"
+              >
+                {darkMode ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  </svg>
+                )}
+              </button>
+            </div>
+          </nav>
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Introduction */}
         <section
@@ -599,42 +868,8 @@ export default function DSARoadmap() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer
-        className={`mt-12 py-8 px-4 ${
-          darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-        }`}
-      >
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-lg font-semibold mb-2">
-                DSA Mastery Roadmap
-              </h3>
-              <p className="text-sm">
-                Your comprehensive guide to mastering Data Structures and
-                Algorithms
-              </p>
-            </div>
-            <div className="flex flex-col items-center md:items-end">
-              <div className="flex space-x-4 mb-2">
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  Twitter
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  GitHub
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  LinkedIn
-                </a>
-              </div>
-              <p className="text-xs">
-                © 2025 DSA Mastery Roadmap. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
     </div>
-  );
+  )
+
 }

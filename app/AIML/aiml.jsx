@@ -908,41 +908,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer
-        className={`mt-12 py-8 px-4 ${
-          darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
-        }`}
-      >
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-lg font-semibold mb-2">
-                AI/ML Engineer Roadmap
-              </h3>
-              <p className="text-sm">
-                Your comprehensive guide to becoming an AI/ML Engineer
-              </p>
-            </div>
-            <div className="flex flex-col items-center md:items-end">
-              <div className="flex space-x-4 mb-2">
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  Twitter
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  GitHub
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  LinkedIn
-                </a>
-              </div>
-              <p className="text-xs">
-                © 2025 AI/ML Engineer Roadmap. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
