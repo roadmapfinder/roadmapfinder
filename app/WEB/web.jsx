@@ -375,24 +375,75 @@ export default function Home() {
     setDownloading(true);
 
     try {
-      // Create a temporary div to render the roadmap content for downloading
       const downloadDiv = document.createElement('div');
       downloadDiv.className = "roadmap-download-content";
-
-      // Set styles for better PDF output
       downloadDiv.style.padding = "20px";
       downloadDiv.style.color = "black";
       downloadDiv.style.backgroundColor = "white";
       downloadDiv.style.fontFamily = "Arial, sans-serif";
-      downloadDiv.style.width = "800px"; // Set fixed width for better quality
+      downloadDiv.style.width = "800px";
 
-      // Add title
       const title = document.createElement('h1');
       title.style.textAlign = "center";
       title.style.marginBottom = "20px";
       title.style.fontSize = "24px";
       title.textContent = "Web Developer Roadmap";
       downloadDiv.appendChild(title);
+
+      // Create PDF and save to localStorage
+      document.body.appendChild(downloadDiv);
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 2,
+        useCORS: true,
+        logging: false
+      });
+      document.body.removeChild(downloadDiv);
+
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      const imgWidth = 210;
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+
+      pdf.addImage(
+        canvas.toDataURL('image/jpeg', 0.95),
+        'JPEG',
+        0,
+        0,
+        imgWidth,
+        imgHeight
+      );
+
+      // Generate unique ID for the roadmap
+      const roadmapId = `web-${Date.now()}`;
+      
+      // Store roadmap data in localStorage
+      const roadmapData = {
+        id: roadmapId,
+        title: "Web Developer Roadmap",
+        date: new Date().toLocaleDateString(),
+        content: roadmapContent,
+        category: "Web Development",
+        pdfData: btoa(pdf.output('rawdata'))
+      };
+      
+      localStorage.setItem(`roadmap-${roadmapId}`, JSON.stringify(roadmapData));
+
+      // Save the PDF
+      pdf.save("Web_Developer_Roadmap.pdf");
+
+      // Redirect to Downloads page
+      router.push('/Downloads');
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("Error generating PDF. Please try again.");
+    } finally {
+      setDownloading(false);
+    }
+  };
 
       // Add roadmap content
       roadmapData.forEach(section => {
