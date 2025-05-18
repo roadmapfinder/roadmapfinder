@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="logo" href="/logo.png" />
       </head>
       <body className="font-sora bg-[#F9FAFB] text-gray-900">{children}  <Analytics /> 
       <SpeedInsights /> </body>

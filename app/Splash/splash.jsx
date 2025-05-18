@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "../Images/logo.png";
+import logo from "../Images/splash.png";
 
 const Splash = () => {
   const [redirect, setRedirect] = useState(false);
