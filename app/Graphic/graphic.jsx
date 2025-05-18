@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 // Roadmap data structure
 const roadmapData = [
@@ -390,6 +392,8 @@ const roadmapData = [
 export default function GraphicDesignRoadmap() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+ 
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -399,6 +403,207 @@ export default function GraphicDesignRoadmap() {
   // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  // Handle download functionality
+  const handleDownload = async () => {
+    setDownloading(true);
+
+    try {
+      // Create a temporary div to render the roadmap content for downloading
+      const downloadDiv = document.createElement('div');
+      downloadDiv.className = "roadmap-download-content";
+
+      // Set styles for better PDF output
+      downloadDiv.style.padding = "20px";
+      downloadDiv.style.color = "black";
+      downloadDiv.style.backgroundColor = "white";
+      downloadDiv.style.fontFamily = "Arial, sans-serif";
+
+      // Add title
+      const title = document.createElement('h1');
+      title.style.textAlign = "center";
+      title.style.marginBottom = "20px";
+      title.textContent = "Graphic Design Roadmap";
+      downloadDiv.appendChild(title);
+
+      // Add subtitle
+      const subtitle = document.createElement('p');
+      subtitle.style.textAlign = "center";
+      subtitle.style.marginBottom = "30px";
+      subtitle.style.fontStyle = "italic";
+      subtitle.textContent = "Your comprehensive guide to becoming a Graphic Designer";
+      downloadDiv.appendChild(subtitle);
+
+      // Add roadmap content
+      roadmapData.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.style.marginBottom = "30px";
+
+        // Section header
+        const header = document.createElement('h2');
+        header.style.backgroundColor = "#f0f0f0";
+        header.style.padding = "10px";
+        header.style.borderRadius = "5px";
+        header.textContent = `${section.id}. ${section.title}`;
+        sectionDiv.appendChild(header);
+
+        // Section description
+        const desc = document.createElement('p');
+        desc.style.marginBottom = "15px";
+        desc.style.fontStyle = "italic";
+        desc.textContent = section.description;
+        sectionDiv.appendChild(desc);
+
+        // What to Learn
+        const whatToLearn = document.createElement('div');
+        whatToLearn.style.marginBottom = "15px";
+
+        const whatToLearnTitle = document.createElement('h3');
+        whatToLearnTitle.textContent = "📚 What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+
+        const whatToLearnList = document.createElement('ul');
+        section.content.whatToLearn.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          whatToLearnList.appendChild(li);
+        });
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+
+        // Resources
+        const resources = document.createElement('div');
+        resources.style.marginBottom = "15px";
+
+        const resourcesTitle = document.createElement('h3');
+        resourcesTitle.textContent = "🔍 Resources";
+        resources.appendChild(resourcesTitle);
+
+        const resourcesList = document.createElement('ul');
+        section.content.resources.forEach(resource => {
+          const li = document.createElement('li');
+          li.textContent = resource;
+          resourcesList.appendChild(li);
+        });
+        resources.appendChild(resourcesList);
+        sectionDiv.appendChild(resources);
+
+        // Tools to Use
+        const tools = document.createElement('div');
+        tools.style.marginBottom = "15px";
+
+        const toolsTitle = document.createElement('h3');
+        toolsTitle.textContent = "🧰 Tools to Use";
+        tools.appendChild(toolsTitle);
+
+        const toolsList = document.createElement('ul');
+        section.content.toolsToUse.forEach(tool => {
+          const li = document.createElement('li');
+          li.textContent = tool;
+          toolsList.appendChild(li);
+        });
+        tools.appendChild(toolsList);
+        sectionDiv.appendChild(tools);
+
+        // Practice Ideas
+        const projects = document.createElement('div');
+        projects.style.marginBottom = "15px";
+
+        const projectsTitle = document.createElement('h3');
+        projectsTitle.textContent = "💡 Practice Ideas";
+        projects.appendChild(projectsTitle);
+
+        const projectsList = document.createElement('ul');
+        section.content.practiceIdeas.forEach(project => {
+          const li = document.createElement('li');
+          li.textContent = project;
+          projectsList.appendChild(li);
+        });
+        projects.appendChild(projectsList);
+        sectionDiv.appendChild(projects);
+
+        downloadDiv.appendChild(sectionDiv);
+      });
+
+      // Add footer
+      const footer = document.createElement('footer');
+      footer.style.marginTop = "30px";
+      footer.style.textAlign = "center";
+      footer.style.fontSize = "12px";
+      footer.textContent = "© 2025 Graphic Designing Roadmap. All rights reserved.";
+      downloadDiv.appendChild(footer);
+
+      // Temporarily add the div to the document to render it
+      document.body.appendChild(downloadDiv);
+
+      // Use html2canvas to create an image of the content
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 1.5, // Higher scale for better quality
+        useCORS: true,
+        logging: false,
+      });
+
+      // Remove the temporary div
+      document.body.removeChild(downloadDiv);
+
+      // Create PDF from the canvas
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
+
+      // Calculate the required height based on canvas dimensions to fit the page width
+      const imgWidth = 210; // A4 width in mm (210mm)
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+
+      // Add image to PDF (first page)
+      pdf.addImage(
+        canvas.toDataURL('image/png'),
+        'PNG',
+        0,
+        0,
+        imgWidth,
+        imgHeight
+      );
+
+      // If the content requires multiple pages
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      // Subtract the height of the first page
+      heightLeft -= 297; // A4 height in mm (297mm)
+
+      // Add subsequent pages if needed
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(
+          canvas.toDataURL('image/png'),
+          'PNG',
+          0,
+          position,
+          imgWidth,
+          imgHeight
+        );
+        heightLeft -= 297;
+      }
+
+      // Save the PDF
+      pdf.save("Graphic_Design_Roadmap.pdf");
+
+      // Store the downloaded roadmap data to local storage if needed
+      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+
+      // Optionally navigate to Downloads page if you have one
+      // router.push('/Downloads');
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("There was an error generating the PDF. Please try again.");
+    } finally {
+      setDownloading(false);
+    }
   };
 
   return (
@@ -425,39 +630,82 @@ export default function GraphicDesignRoadmap() {
         <h1 className="text-xl md:text-2xl font-bold">
           Graphic Designing Roadmap 🧑‍🎨
         </h1>
-        <button
-          onClick={toggleDarkMode}
-          className={`p-2 rounded-full ${
-            darkMode
-              ? "bg-gray-700 text-yellow-300"
-              : "bg-gray-200 text-gray-700"
-          }`}
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          )}
-        </button>
+        <div className="flex items-center space-x-3">
+          {/* Download Button */}
+          <button
+            onClick={handleDownload}
+            disabled={downloading}
+            className={`px-3 py-2 rounded ${
+              darkMode 
+                ? "bg-pink-600 hover:bg-pink-700 text-white" 
+                : "bg-pink-500 hover:bg-pink-600 text-white"
+            } transition-colors flex items-center ${downloading ? "opacity-70 cursor-not-allowed" : ""}`}
+            aria-label="Download Roadmap"
+          >
+            {downloading ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Downloading...
+              </>
+            ) : (
+              <>
+                <svg 
+                  className="w-4 h-4 mr-2" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="2" 
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                Download PDF
+              </>
+            )}
+          </button>
+
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className={`p-2 rounded-full ${
+              darkMode
+                ? "bg-gray-700 text-yellow-300"
+                : "bg-gray-200 text-gray-700"
+            }`}
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            )}
+          </button>
+        </div>
       </nav>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">

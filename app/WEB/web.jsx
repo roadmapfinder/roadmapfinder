@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Head from "next/head";
+
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 // Roadmap data structure
 const roadmapData = [
@@ -356,7 +358,7 @@ const roadmapData = [
 export default function Home() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
-
+  const [downloading, setDownloading] = useState(false);
   // Toggle section open/close
   const toggleSection = (id) => {
     setOpenSection(openSection === id ? null : id);
@@ -366,6 +368,273 @@ export default function Home() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+  
+
+  // Function to handle the download process
+  const handleDownload = async () => {
+    setDownloading(true);
+
+    try {
+      // Create a temporary div to render the roadmap content for downloading
+      const downloadDiv = document.createElement('div');
+      downloadDiv.className = "roadmap-download-content";
+
+      // Set styles for better PDF output
+      downloadDiv.style.padding = "20px";
+      downloadDiv.style.color = "black";
+      downloadDiv.style.backgroundColor = "white";
+      downloadDiv.style.fontFamily = "Arial, sans-serif";
+      downloadDiv.style.width = "800px"; // Set fixed width for better quality
+
+      // Add title
+      const title = document.createElement('h1');
+      title.style.textAlign = "center";
+      title.style.marginBottom = "20px";
+      title.style.fontSize = "24px";
+      title.textContent = "Web Developer Roadmap";
+      downloadDiv.appendChild(title);
+
+      // Add roadmap content
+      roadmapData.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.style.marginBottom = "30px";
+        sectionDiv.style.breakInside = "avoid";
+        sectionDiv.style.pageBreakInside = "avoid";
+
+        // Section header
+        const header = document.createElement('h2');
+        header.style.backgroundColor = "#f0f0f0";
+        header.style.padding = "10px";
+        header.style.borderRadius = "5px";
+        header.style.fontSize = "20px";
+        header.textContent = `${section.id}. ${section.title}`;
+        sectionDiv.appendChild(header);
+
+        // Section description
+        const desc = document.createElement('p');
+        desc.style.marginBottom = "15px";
+        desc.style.fontStyle = "italic";
+        desc.style.fontSize = "14px";
+        desc.textContent = section.description;
+        sectionDiv.appendChild(desc);
+
+        // What to Learn
+        const whatToLearn = document.createElement('div');
+        whatToLearn.style.marginBottom = "15px";
+
+        const whatToLearnTitle = document.createElement('h3');
+        whatToLearnTitle.style.fontSize = "16px";
+        whatToLearnTitle.textContent = "✅ What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+
+        const whatToLearnList = document.createElement('ul');
+        whatToLearnList.style.paddingLeft = "20px";
+        section.content.whatToLearn.forEach(item => {
+          const li = document.createElement('li');
+          li.style.fontSize = "14px";
+          li.style.marginBottom = "5px";
+          li.textContent = item;
+          whatToLearnList.appendChild(li);
+        });
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+
+        // Best Courses
+        const bestCourses = document.createElement('div');
+        bestCourses.style.marginBottom = "15px";
+
+        const bestCoursesTitle = document.createElement('h3');
+        bestCoursesTitle.style.fontSize = "16px";
+        bestCoursesTitle.textContent = "📚 Best Courses";
+        bestCourses.appendChild(bestCoursesTitle);
+
+        // English courses
+        const englishTitle = document.createElement('h4');
+        englishTitle.style.fontSize = "15px";
+        englishTitle.style.marginBottom = "5px";
+        englishTitle.textContent = "In English:";
+        bestCourses.appendChild(englishTitle);
+
+        const englishList = document.createElement('ul');
+        englishList.style.paddingLeft = "20px";
+        englishList.style.marginBottom = "10px";
+        section.content.bestCourses.english.forEach(course => {
+          const li = document.createElement('li');
+          li.style.fontSize = "14px";
+          li.style.marginBottom = "5px";
+          li.textContent = course;
+          englishList.appendChild(li);
+        });
+        bestCourses.appendChild(englishList);
+
+        // Hindi courses
+        const hindiTitle = document.createElement('h4');
+        hindiTitle.style.fontSize = "15px";
+        hindiTitle.style.marginBottom = "5px";
+        hindiTitle.textContent = "In Hindi:";
+        bestCourses.appendChild(hindiTitle);
+
+        const hindiList = document.createElement('ul');
+        hindiList.style.paddingLeft = "20px";
+        section.content.bestCourses.hindi.forEach(course => {
+          const li = document.createElement('li');
+          li.style.fontSize = "14px";
+          li.style.marginBottom = "5px";
+          li.textContent = course;
+          hindiList.appendChild(li);
+        });
+        bestCourses.appendChild(hindiList);
+        sectionDiv.appendChild(bestCourses);
+
+        // Tools to Use
+        const tools = document.createElement('div');
+        tools.style.marginBottom = "15px";
+
+        const toolsTitle = document.createElement('h3');
+        toolsTitle.style.fontSize = "16px";
+        toolsTitle.textContent = "🧰 Tools to Use";
+        tools.appendChild(toolsTitle);
+
+        const toolsList = document.createElement('ul');
+        toolsList.style.paddingLeft = "20px";
+        section.content.toolsToUse.forEach(tool => {
+          const li = document.createElement('li');
+          li.style.fontSize = "14px";
+          li.style.marginBottom = "5px";
+          li.textContent = tool;
+          toolsList.appendChild(li);
+        });
+        tools.appendChild(toolsList);
+        sectionDiv.appendChild(tools);
+
+        // Docs & Websites
+        const docs = document.createElement('div');
+        docs.style.marginBottom = "15px";
+
+        const docsTitle = document.createElement('h3');
+        docsTitle.style.fontSize = "16px";
+        docsTitle.textContent = "📘 Docs & Websites";
+        docs.appendChild(docsTitle);
+
+        const docsList = document.createElement('ul');
+        docsList.style.paddingLeft = "20px";
+        section.content.docsAndWebsites.forEach(doc => {
+          const li = document.createElement('li');
+          li.style.fontSize = "14px";
+          li.style.marginBottom = "5px";
+          li.textContent = doc;
+          docsList.appendChild(li);
+        });
+        docs.appendChild(docsList);
+        sectionDiv.appendChild(docs);
+
+        // Project Ideas
+        const projects = document.createElement('div');
+        projects.style.marginBottom = "15px";
+
+        const projectsTitle = document.createElement('h3');
+        projectsTitle.style.fontSize = "16px";
+        projectsTitle.textContent = "💡 Project Ideas";
+        projects.appendChild(projectsTitle);
+
+        const projectsList = document.createElement('ul');
+        projectsList.style.paddingLeft = "20px";
+        section.content.projectIdeas.forEach(project => {
+          const li = document.createElement('li');
+          li.style.fontSize = "14px";
+          li.style.marginBottom = "5px";
+          li.textContent = project;
+          projectsList.appendChild(li);
+        });
+        projects.appendChild(projectsList);
+        sectionDiv.appendChild(projects);
+
+        downloadDiv.appendChild(sectionDiv);
+      });
+
+      // Temporarily add the div to the document to render it
+      document.body.appendChild(downloadDiv);
+
+      // Use html2canvas to create an image of the content
+      const canvas = await html2canvas(downloadDiv, {
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        logging: false,
+        allowTaint: true,
+        onclone: (clonedDoc) => {
+          // You can modify the cloned document before rendering if needed
+          const clonedDiv = clonedDoc.querySelector('.roadmap-download-content');
+          if (clonedDiv) {
+            clonedDiv.style.width = '800px';
+          }
+        }
+      });
+
+      // Remove the temporary div
+      document.body.removeChild(downloadDiv);
+
+      // Create PDF from the canvas
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
+
+      // Calculate the required height based on canvas dimensions to fit the page width
+      const imgWidth = 210; // A4 width in mm (210mm)
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // Split content into multiple pages if needed
+      let heightLeft = imgHeight;
+      let position = 0;
+      let pageHeight = 297; // A4 height in mm
+
+      // Add first page
+      pdf.addImage(
+        canvas.toDataURL('image/jpeg', 0.95), // Use JPEG with high quality for smaller size
+        'JPEG',
+        0,
+        position,
+        imgWidth,
+        imgHeight
+      );
+
+      // Add subsequent pages if needed
+      heightLeft -= pageHeight;
+
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(
+          canvas.toDataURL('image/jpeg', 0.95),
+          'JPEG',
+          0,
+          position,
+          imgWidth,
+          imgHeight
+        );
+        heightLeft -= pageHeight;
+      }
+
+      // Save the PDF
+      pdf.save("Web_Developer_Roadmap.pdf");
+
+      // Store the downloaded roadmap data to localStorage
+      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+
+      // Show success notification
+      // If you have a notification system, you can use it here
+      alert("Roadmap downloaded successfully!");
+
+      // Optional: Navigate to Downloads page if you have one
+      // router.push('/downloads');
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("There was an error generating the PDF. Please try again.");
+    } finally {
+      setDownloading(false);
+    }
+  };
 
   return (
     <div
@@ -373,55 +642,74 @@ export default function Home() {
         darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
       }`}
     >
-      <Head>
-        <title>Web Developer Roadmap</title>
-        <meta
-          name="description"
-          content="Complete roadmap for becoming a Web Developer"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      {/* Rest of your existing code */}
 
-      {/* Sticky Navigation Bar */}
+      {/* Add Download Button to Navigation Bar */}
       <nav
         className={`sticky top-0 z-10 ${
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
         <h1 className="text-xl md:text-2xl font-bold">Web Developer Roadmap</h1>
-        <button
-          onClick={toggleDarkMode}
-          className={`p-2 rounded-full ${
-            darkMode
-              ? "bg-gray-700 text-yellow-300"
-              : "bg-gray-200 text-gray-700"
-          }`}
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          )}
-        </button>
+        <div className="flex items-center space-x-3">
+          <button
+            onClick={handleDownload}
+            disabled={downloading}
+            className={`px-4 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors flex items-center ${
+              downloading ? "opacity-70 cursor-not-allowed" : ""
+            }`}
+          >
+            {downloading ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Processing...
+              </>
+            ) : (
+              <>
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Download PDF
+              </>
+            )}
+          </button>
+          <button
+            onClick={toggleDarkMode}
+            className={`p-2 rounded-full ${
+              darkMode
+                ? "bg-gray-700 text-yellow-300"
+                : "bg-gray-200 text-gray-700"
+            }`}
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            )}
+          </button>
+        </div>
       </nav>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
