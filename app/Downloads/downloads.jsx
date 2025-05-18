@@ -34,7 +34,7 @@ export default function Downloads() {
       // Get all keys from localStorage
       const allKeys = Object.keys(localStorage);
 
-      // Filter for roadmap keys (roadmap-[id] or the legacy key)
+      // Filter for roadmap keys
       const roadmapKeys = allKeys.filter(key => 
         key.startsWith('roadmap-') || key === 'downloadedRoadmap'
       );
@@ -46,26 +46,34 @@ export default function Downloads() {
         try {
           const roadmapData = localStorage.getItem(key);
           if (roadmapData) {
-            // Parse the stored data
             const parsedData = JSON.parse(roadmapData);
+            let roadmapInfo;
 
-            // Handle the legacy format (stored directly as array)
+            // Handle different data formats
             if (Array.isArray(parsedData)) {
-              roadmaps.push({
+              // Legacy AIML format
+              roadmapInfo = {
                 id: key === 'downloadedRoadmap' ? 'ai-ml-roadmap' : key.replace('roadmap-', ''),
                 title: key === 'downloadedRoadmap' ? 'AI/ML Engineer Roadmap' : getTitleFromData(parsedData),
                 date: new Date().toLocaleDateString(),
-                data: parsedData
-              });
-            } 
-            // Handle the structured format (with metadata)
-            else if (parsedData.data && parsedData.title) {
-              roadmaps.push({
+                data: parsedData,
+                pdfUrl: localStorage.getItem(`${key}-pdf`)
+              };
+            } else if (parsedData.data && parsedData.title) {
+              // New structured format
+              roadmapInfo = {
                 id: key.replace('roadmap-', ''),
                 title: parsedData.title,
                 date: parsedData.date || new Date().toLocaleDateString(),
-                data: parsedData.data
-              });
+                data: parsedData.data,
+                pdfUrl: localStorage.getItem(`${key}-pdf`)
+              };
+            }
+
+            if (roadmapInfo) {
+              // Add category info based on ID
+              roadmapInfo.category = getRoadmapCategory(roadmapInfo.id);
+              roadmaps.push(roadmapInfo);
             }
           }
         } catch (err) {
@@ -77,6 +85,25 @@ export default function Downloads() {
     } catch (error) {
       console.error("Error loading roadmap data:", error);
     }
+  };
+
+  // Helper function to determine roadmap category
+  const getRoadmapCategory = (id) => {
+    const categories = {
+      'web': 'Web Development',
+      'app': 'Mobile Development',
+      'uiux': 'UI/UX Design',
+      'ai-ml-roadmap': 'AI/ML',
+      'data': 'Data Science',
+      'cloud': 'Cloud Computing',
+      'blockchain': 'Blockchain',
+      'system': 'System Design',
+      'devops': 'DevOps',
+      'graphic': 'Graphic Design',
+      'video': 'Video Editing',
+      'dsa': 'DSA'
+    };
+    return categories[id.toLowerCase()] || 'Other';
   };
 
   // Helper function to extract a title from roadmap data if not explicitly stored
