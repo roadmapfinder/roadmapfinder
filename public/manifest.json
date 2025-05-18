@@ -1,0 +1,20 @@
+{
+  "name": "RoadmapFinder",
+  "short_name": "RoadmapFinder",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/roadmapfinder.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

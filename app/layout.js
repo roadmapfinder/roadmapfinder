@@ -59,6 +59,7 @@ export default function RootLayout({ children }) {
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/roadmapfinder.svg" />
+        <link rel="manifest"    href="/manifest.json" />
 
       </head>
       <body className="font-sora bg-[#F9FAFB] text-gray-900">{children}  <Analytics /> 
