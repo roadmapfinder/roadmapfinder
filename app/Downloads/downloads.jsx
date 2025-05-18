@@ -1,4 +1,3 @@
-
 "use client";
 import { useState, useEffect } from "react";
 import Head from "next/head";
@@ -14,7 +13,8 @@ export default function Downloads() {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    // Check if local storage is available and load settings
+    if (typeof window !== 'undefined' && window.localStorage) {
       const savedDarkMode = localStorage.getItem('darkMode');
       if (savedDarkMode !== null) {
         setDarkMode(JSON.parse(savedDarkMode));
@@ -26,9 +26,12 @@ export default function Downloads() {
 
   const loadDownloadedRoadmaps = () => {
     try {
+      // Get all keys from localStorage
       const allKeys = Object.keys(localStorage);
+
+      // Filter for roadmap keys
       const roadmapKeys = allKeys.filter(key => key.startsWith('roadmap-'));
-      
+
       const roadmaps = roadmapKeys.map(key => {
         const data = JSON.parse(localStorage.getItem(key));
         return {
@@ -36,24 +39,13 @@ export default function Downloads() {
           title: data.title || "Untitled Roadmap",
           date: data.date || new Date().toLocaleDateString(),
           content: data.content,
-          category: data.category || "Other",
-          pdfData: data.pdfData // Store PDF data
+          category: data.category || "Other"
         };
       });
 
       setDownloadedRoadmaps(roadmaps);
     } catch (error) {
       console.error("Error loading roadmaps:", error);
-    }
-  };
-
-  const openPDF = (roadmap) => {
-    if (roadmap.pdfData) {
-      const blob = new Blob([atob(roadmap.pdfData)], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      window.open(url, '_blank');
-    } else {
-      generatePDF(roadmap);
     }
   };
 
@@ -69,12 +61,14 @@ export default function Downloads() {
       downloadDiv.style.fontFamily = "Arial, sans-serif";
       downloadDiv.style.width = "800px";
 
+      // Add roadmap content
       const title = document.createElement('h1');
       title.style.textAlign = "center";
       title.style.marginBottom = "20px";
       title.textContent = roadmap.title;
       downloadDiv.appendChild(title);
 
+      // Add content sections
       if (roadmap.content) {
         Object.entries(roadmap.content).forEach(([section, content]) => {
           const sectionDiv = document.createElement('div');
@@ -110,18 +104,6 @@ export default function Downloads() {
         imgHeight
       );
 
-      const pdfOutput = pdf.output('arraybuffer');
-      const base64PDF = btoa(String.fromCharCode(...new Uint8Array(pdfOutput)));
-
-      // Update localStorage with PDF data
-      const updatedRoadmap = {
-        ...roadmap,
-        pdfData: base64PDF
-      };
-      localStorage.setItem(`roadmap-${roadmap.id}`, JSON.stringify(updatedRoadmap));
-      loadDownloadedRoadmaps(); // Reload the list
-
-      // Open PDF
       pdf.save(`${roadmap.title.replace(/\s+/g, '_')}.pdf`);
     } catch (error) {
       console.error("Error generating PDF:", error);
@@ -146,6 +128,7 @@ export default function Downloads() {
         <meta name="description" content="Your downloaded roadmaps" />
       </Head>
 
+      {/* Header */}
       <nav className={`sticky top-0 z-10 ${darkMode ? "bg-gray-800" : "bg-white"} shadow-md px-4 py-4 flex justify-between items-center`}>
         <h1 className="text-xl md:text-2xl font-bold">Downloads</h1>
         <div className="flex items-center space-x-3">
@@ -173,7 +156,7 @@ export default function Downloads() {
                 className={`rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300 ${
                   darkMode ? "bg-gray-800" : "bg-white"
                 }`}
-                onClick={() => openPDF(roadmap)}
+                onClick={() => generatePDF(roadmap)}
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
