@@ -606,11 +606,14 @@ export default function WebRoadmap() {
         heightLeft -= pageHeight;
       }
 
+      // Generate PDF blob URL
+      const pdfBlob = pdf.output('blob');
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+
       // Save the PDF
       pdf.save("Web_Developer_Roadmap.pdf");
 
-
-      // Save roadmap data to localStorage
+      // Store the downloaded roadmap data to localStorage
       const timestamp = Date.now();
       const roadmapKey = `roadmap-${timestamp}`;
       const roadmapDataToSave = {
@@ -618,6 +621,7 @@ export default function WebRoadmap() {
         title: "Web Developer Roadmap",
         date: new Date().toLocaleDateString(),
         category: "Web Development",
+        pdfPath: pdfUrl,
         content: roadmapData
       };
       localStorage.setItem(roadmapKey, JSON.stringify(roadmapDataToSave));
