@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
@@ -359,6 +360,7 @@ export default function Home() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const router = useRouter();
   // Toggle section open/close
   const toggleSection = (id) => {
     setOpenSection(openSection === id ? null : id);
@@ -368,7 +370,7 @@ export default function Home() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  
+
 
   // Function to handle the download process
   const handleDownload = async () => {
@@ -619,15 +621,8 @@ export default function Home() {
       // Save the PDF
       pdf.save("Web_Developer_Roadmap.pdf");
 
-      // Store the downloaded roadmap data to localStorage
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
-
-      // Show success notification
-      // If you have a notification system, you can use it here
-      alert("Roadmap downloaded successfully!");
-
-      // Optional: Navigate to Downloads page if you have one
-      // router.push('/downloads');
+      // Navigate to Downloads page
+      router.push('/Downloads');
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("There was an error generating the PDF. Please try again.");

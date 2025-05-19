@@ -1,11 +1,6 @@
-import React from 'react'
-import Downloads from "./downloads"
 
-const page = ()=>{
-  return(
-    <div>
-      <Downloads />
-    </div>
-  )
+import Downloads from './downloads';
+
+export default function DownloadsPage() {
+  return <Downloads />;
 }
-export default page
