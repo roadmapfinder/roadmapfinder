@@ -151,9 +151,12 @@ export default function CoursePlatform() {
         newBookmarks = [...prevBookmarks, courseId];
       }
 
-      // Save to localStorage
+      // Save bookmark IDs to localStorage
       if (typeof window !== "undefined") {
         localStorage.setItem("courseBookmarks", JSON.stringify(newBookmarks));
+        
+        // Save all courses data to localStorage
+        localStorage.setItem("allCourses", JSON.stringify(courses));
       }
 
       return newBookmarks;
