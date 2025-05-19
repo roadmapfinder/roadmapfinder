@@ -13,7 +13,6 @@ import {
 
 import Link from "next/link";
 
-
 // thumbnail for cards
 import Image from "next/image";
 import sigma from "../CoursesImage/sigma.png";
@@ -120,21 +119,27 @@ export default function CoursePlatform() {
   };
 
   // Optimize scroll functions using useCallback
-  const scrollLeft = useCallback((category) => {
-    if (scrollContainerRefs.current[category]) {
-      const container = scrollContainerRefs.current[category];
-      const scrollAmount = windowWidth >= 768 ? -400 : -280;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  }, [windowWidth]);
+  const scrollLeft = useCallback(
+    (category) => {
+      if (scrollContainerRefs.current[category]) {
+        const container = scrollContainerRefs.current[category];
+        const scrollAmount = windowWidth >= 768 ? -400 : -280;
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    },
+    [windowWidth],
+  );
 
-  const scrollRight = useCallback((category) => {
-    if (scrollContainerRefs.current[category]) {
-      const container = scrollContainerRefs.current[category];
-      const scrollAmount = windowWidth >= 768 ? 400 : 280;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  }, [windowWidth]);
+  const scrollRight = useCallback(
+    (category) => {
+      if (scrollContainerRefs.current[category]) {
+        const container = scrollContainerRefs.current[category];
+        const scrollAmount = windowWidth >= 768 ? 400 : 280;
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    },
+    [windowWidth],
+  );
 
   // Function to handle bookmark toggling
   const toggleBookmark = useCallback((courseId) => {
@@ -182,7 +187,7 @@ export default function CoursePlatform() {
     "AI & ML",
     "Networking",
     "Operating System",
-    "CyberSecurity"
+    "CyberSecurity",
   ];
 
   // Sample courses data with direct YouTube links and language information
@@ -197,9 +202,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.8,
       image: sigma,
-      videoId: "https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
+      videoId:
+        "https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
       badge: "TRENDING",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 2,
@@ -208,9 +214,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.9,
       image: babbar,
-      videoId: "https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD",
+      videoId:
+        "https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD",
       badge: "NEW",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 3,
@@ -219,9 +226,10 @@ export default function CoursePlatform() {
       level: "Beginner to advance",
       rating: 4.7,
       image: backend,
-      videoId: "https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo",
+      videoId:
+        "https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 4,
@@ -230,9 +238,10 @@ export default function CoursePlatform() {
       level: "Beginner to advance",
       rating: 4.7,
       image: apna,
-      videoId: "https://youtu.be/HcOc7P5BMi4?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i",
+      videoId:
+        "https://youtu.be/HcOc7P5BMi4?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i",
       badge: "HOT",
-      language: "Hindi"
+      language: "Hindi",
     },
 
     // App Development
@@ -243,9 +252,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.7,
       image: native,
-      videoId: "https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c",
+      videoId:
+        "https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c",
       badge: "TRENDING",
-      language: "English"
+      language: "English",
     },
     {
       id: 6,
@@ -255,7 +265,7 @@ export default function CoursePlatform() {
       rating: 4.6,
       image: native2,
       videoId: "https://youtu.be/KBWWxJdsFlY",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 7,
@@ -266,7 +276,7 @@ export default function CoursePlatform() {
       image: kotlin,
       videoId: "https://youtu.be/BxM2DayeOBE",
       badge: "NEW",
-      language: "English"
+      language: "English",
     },
     {
       id: 8,
@@ -277,7 +287,7 @@ export default function CoursePlatform() {
       image: flutter,
       videoId: "https://youtu.be/CzRQ9mnmh44",
       badge: "NEW",
-      language: "English"
+      language: "English",
     },
 
     // UI/UX Design
@@ -288,9 +298,10 @@ export default function CoursePlatform() {
       level: "Beginner to Advanced",
       rating: 4.9,
       image: figma,
-      videoId: "https://youtu.be/bI6q16ffdgQ?list=PLlHtucAD9KT19ckHqXpPSStZOyDSq9AW-",
+      videoId:
+        "https://youtu.be/bI6q16ffdgQ?list=PLlHtucAD9KT19ckHqXpPSStZOyDSq9AW-",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 10,
@@ -299,9 +310,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.8,
       image: ui,
-      videoId: "https://youtu.be/O5IXf8qB9U4?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_",
+      videoId:
+        "https://youtu.be/O5IXf8qB9U4?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_",
       badge: "NEW",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 11,
@@ -312,7 +324,7 @@ export default function CoursePlatform() {
       image: design,
       videoId: "https://youtu.be/j6Ule7GXaRs",
       badge: "HOT",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 12,
@@ -323,7 +335,7 @@ export default function CoursePlatform() {
       image: uiux,
       videoId: "https://youtu.be/kbZejnPXyLM",
       badge: "HOT",
-      language: "English"
+      language: "English",
     },
 
     // Graphic Design
@@ -336,7 +348,7 @@ export default function CoursePlatform() {
       image: graphic,
       videoId: "https://youtu.be/90Zaa8dH4SU",
       badge: "NEW",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 14,
@@ -347,7 +359,7 @@ export default function CoursePlatform() {
       image: graphics,
       videoId: "https://youtu.be/e_dv7GBHka8",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 15,
@@ -356,8 +368,9 @@ export default function CoursePlatform() {
       level: "Beginner to Advanced",
       rating: 4.9,
       image: logo,
-      videoId: "https://youtu.be/l9_BM1opTj8?list=PL-c9Rq56P4KmK4sVH49C4rjYh5VH6uK4o",
-      language: "English"
+      videoId:
+        "https://youtu.be/l9_BM1opTj8?list=PL-c9Rq56P4KmK4sVH49C4rjYh5VH6uK4o",
+      language: "English",
     },
     {
       id: 16,
@@ -367,7 +380,7 @@ export default function CoursePlatform() {
       rating: 4.9,
       image: canva,
       videoId: "https://youtu.be/rXLvN1FEkOE",
-      language: "Hindi"
+      language: "Hindi",
     },
 
     // Programming
@@ -380,7 +393,7 @@ export default function CoursePlatform() {
       image: python,
       videoId: "https://youtu.be/ERCMXc8x7mc",
       badge: "BESTSELLER",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 18,
@@ -389,9 +402,10 @@ export default function CoursePlatform() {
       level: "Beginner to Advance",
       rating: 4.7,
       image: java,
-      videoId: "https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr",
+      videoId:
+        "https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr",
       badge: "HOT",
-      language: "English"
+      language: "English",
     },
     {
       id: 19,
@@ -402,7 +416,7 @@ export default function CoursePlatform() {
       image: php,
       videoId: "https://youtu.be/z8gIVootnUQ",
       badge: "BESTSELLER",
-      language: "English"
+      language: "English",
     },
     {
       id: 20,
@@ -413,7 +427,7 @@ export default function CoursePlatform() {
       image: c,
       videoId: "https://youtu.be/aZb0iu4uGwA",
       badge: "NEW",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 21,
@@ -422,9 +436,10 @@ export default function CoursePlatform() {
       level: "Beginner to Advance",
       rating: 4.8,
       image: cpp,
-      videoId: "https://youtu.be/WQoB2z67hvY?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA",
+      videoId:
+        "https://youtu.be/WQoB2z67hvY?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA",
       badge: "TRENDING",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 22,
@@ -433,9 +448,10 @@ export default function CoursePlatform() {
       level: "Beginner to Advance",
       rating: 4.8,
       image: js,
-      videoId: "https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
+      videoId:
+        "https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
       badge: "HOT",
-      language: "English"
+      language: "English",
     },
 
     // Blockchain
@@ -448,7 +464,7 @@ export default function CoursePlatform() {
       image: blockchain,
       videoId: "https://youtu.be/gyMwXuJrbJQ",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 24,
@@ -459,7 +475,7 @@ export default function CoursePlatform() {
       image: web3,
       videoId: "https://youtu.be/ERAxd8gl1Eg",
       badge: "NEW",
-      language: "English"
+      language: "English",
     },
     {
       id: 25,
@@ -470,7 +486,7 @@ export default function CoursePlatform() {
       image: block,
       videoId: "https://youtu.be/6aF6p2VUORE",
       badge: "POPULAR",
-      language: "Hindi"
+      language: "Hindi",
     },
 
     // Dsa
@@ -481,9 +497,10 @@ export default function CoursePlatform() {
       level: "Beginner to Advanced",
       rating: 4.7,
       image: dsajava,
-      videoId: "https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S",
+      videoId:
+        "https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 27,
@@ -492,9 +509,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.8,
       image: cppdsa,
-      videoId: "https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt",
+      videoId:
+        "https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt",
       badge: "NEW",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 28,
@@ -505,7 +523,7 @@ export default function CoursePlatform() {
       image: dsapy,
       videoId: "https://youtu.be/f9Aje_cN_CY",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 29,
@@ -514,9 +532,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.9,
       image: dsajs,
-      videoId: "https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr",
+      videoId:
+        "https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr",
       badge: "NEW",
-      language: "Hindi"
+      language: "Hindi",
     },
 
     // Database
@@ -529,7 +548,7 @@ export default function CoursePlatform() {
       image: dbms,
       videoId: "https://youtu.be/dl00fOOYLOM",
       badge: "POPULAR",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 31,
@@ -540,7 +559,7 @@ export default function CoursePlatform() {
       image: sql,
       videoId: "https://youtu.be/hlGoQC332VM",
       badge: "NEW",
-      language: "English"
+      language: "English",
     },
     {
       id: 32,
@@ -551,7 +570,7 @@ export default function CoursePlatform() {
       image: mongo,
       videoId: "https://youtu.be/rU9ZODw5yvU",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
 
     // Data Analysis & Science
@@ -564,7 +583,7 @@ export default function CoursePlatform() {
       image: dataa,
       videoId: "https://youtu.be/wQQR60KtnFY",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 34,
@@ -573,9 +592,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.9,
       image: dataaw,
-      videoId: "https://youtu.be/VaSjiJMrq24?list=PLjVLYmrlmjGdRs1sGqRrTE-EMraLclJga",
+      videoId:
+        "https://youtu.be/VaSjiJMrq24?list=PLjVLYmrlmjGdRs1sGqRrTE-EMraLclJga",
       badge: "HOT",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 35,
@@ -586,7 +606,7 @@ export default function CoursePlatform() {
       image: datas,
       videoId: "https://youtu.be/gDZ6czwuQ18",
       badge: "DEMANDED",
-      language: "English"
+      language: "English",
     },
 
     // System Design
@@ -597,9 +617,10 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.9,
       image: syss,
-      videoId: "https://youtu.be/SqcXvc3ZmRU?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX",
+      videoId:
+        "https://youtu.be/SqcXvc3ZmRU?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
     {
       id: 37,
@@ -608,9 +629,10 @@ export default function CoursePlatform() {
       level: "Beginner to Advance",
       rating: 4.9,
       image: syse,
-      videoId: "https://youtu.be/43-X22tdxiI?list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM",
+      videoId:
+        "https://youtu.be/43-X22tdxiI?list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM",
       badge: "POPULAR",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 38,
@@ -621,7 +643,7 @@ export default function CoursePlatform() {
       image: sys,
       videoId: "https://youtu.be/m8Icp_Cid5o",
       badge: "POPULAR",
-      language: "English"
+      language: "English",
     },
 
     // AI & ML
@@ -634,7 +656,7 @@ export default function CoursePlatform() {
       image: deep,
       videoId: "https://youtu.be/rU9ZODw5yvU",
       badge: "DEMANDED",
-      language: "English"
+      language: "English",
     },
     {
       id: 40,
@@ -645,7 +667,7 @@ export default function CoursePlatform() {
       image: ml,
       videoId: "https://youtu.be/LvC68w9JS4Y",
       badge: "NEW",
-      language: "English"
+      language: "English",
     },
     {
       id: 41,
@@ -656,7 +678,7 @@ export default function CoursePlatform() {
       image: ai,
       videoId: "https://youtu.be/5NgNicANyqM",
       badge: "POPULAR",
-      language: "Hindi"
+      language: "Hindi",
     },
 
     // Git & Github
@@ -669,7 +691,7 @@ export default function CoursePlatform() {
       image: git,
       videoId: "https://youtu.be/q8EevlEpQ2A",
       badge: "POPULAR",
-      language: "Hindi"
+      language: "Hindi",
     },
     {
       id: 43,
@@ -680,7 +702,7 @@ export default function CoursePlatform() {
       image: githubh,
       videoId: "https://youtu.be/RDxQEzXN8AU",
       badge: "NEW",
-      language: "English"
+      language: "English",
     },
     {
       id: 44,
@@ -691,7 +713,7 @@ export default function CoursePlatform() {
       image: githube,
       videoId: "https://youtu.be/S7XpTAnSDL4",
       badge: "TRENDING",
-      language: "English"
+      language: "English",
     },
     {
       id: 45,
@@ -702,8 +724,9 @@ export default function CoursePlatform() {
       image: osf,
       videoId: "https://youtu.be/yK1uBHPdp30",
       badge: "TRENDING",
-      language: "English"
-    }, {
+      language: "English",
+    },
+    {
       id: 46,
       category: "Operating System",
       title: "Operating System Complete Course",
@@ -712,8 +735,9 @@ export default function CoursePlatform() {
       image: os,
       videoId: "https://youtu.be/A4G0hOI6XyQ",
       badge: "TRENDING",
-      language: "Hindi"
-    }, {
+      language: "Hindi",
+    },
+    {
       id: 47,
       category: "Operating System",
       title: "Operating Sytem Crash Course",
@@ -722,8 +746,9 @@ export default function CoursePlatform() {
       image: osb,
       videoId: "https://youtu.be/3obEP8eLsCw",
       badge: "TRENDING",
-      language: "Hindi"
-    }, {
+      language: "Hindi",
+    },
+    {
       id: 48,
       category: "Operating System",
       title: "Operating System in one shot",
@@ -732,8 +757,9 @@ export default function CoursePlatform() {
       image: osa,
       videoId: "https://youtu.be/8XBtAjKwCm4",
       badge: "TRENDING",
-      language: "Hindi"
-    }, {
+      language: "Hindi",
+    },
+    {
       id: 49,
       category: "Networking",
       title: "Networking Complete course",
@@ -742,8 +768,9 @@ export default function CoursePlatform() {
       image: networkingk,
       videoId: "https://youtu.be/IPvYjXCsTg8",
       badge: "TRENDING",
-      language: "English"
-    }, {
+      language: "English",
+    },
+    {
       id: 50,
       category: "Networking",
       title: "networkingf",
@@ -752,9 +779,9 @@ export default function CoursePlatform() {
       image: networkingf,
       videoId: "https://youtu.be/qiQR5rTSshw",
       badge: "TRENDING",
-      language: "English"
-    }, 
-    
+      language: "English",
+    },
+
     {
       id: 51,
       category: "Networking",
@@ -764,7 +791,7 @@ export default function CoursePlatform() {
       image: networking,
       videoId: "https://youtu.be/qiQR5rTSshw",
       badge: "TRENDING",
-      language: "English"
+      language: "English",
     },
     {
       id: 51,
@@ -773,10 +800,12 @@ export default function CoursePlatform() {
       level: "Beginner to Intermediate",
       rating: 4.9,
       image: cybere,
-      videoId: "https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL",
+      videoId:
+        "https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL",
       badge: "TRENDING",
-      language: "English"
-    },{
+      language: "English",
+    },
+    {
       id: 51,
       category: "CyberSecurity",
       title: "Complete CyberSecurity course",
@@ -785,9 +814,9 @@ export default function CoursePlatform() {
       image: cyberh,
       videoId: "https://youtu.be/v3iUx2SNspY",
       badge: "TRENDING",
-      language: "Hindi"
+      language: "Hindi",
     },
-  ]
+  ];
 
   // Optimized filtering using useMemo
   const filteredCourses = useMemo(() => {
@@ -803,11 +832,14 @@ export default function CoursePlatform() {
       const matchesTab =
         activeTab === "All" ||
         (activeTab === "Popular" &&
-          ["BESTSELLER", "POPULAR", "HOT", "TRENDING"].includes(course.badge)) ||
+          ["BESTSELLER", "POPULAR", "HOT", "TRENDING"].includes(
+            course.badge,
+          )) ||
         (activeTab === "New" && course.badge === "NEW");
 
       // Bookmarks filter
-      const matchesBookmarks = !showBookmarksOnly || bookmarks.includes(course.id);
+      const matchesBookmarks =
+        !showBookmarksOnly || bookmarks.includes(course.id);
 
       return matchesSearch && matchesTab && matchesBookmarks;
     });
@@ -908,171 +940,174 @@ export default function CoursePlatform() {
       {filteredCategories.map((category) => {
         // Filter courses by category (after search and tab filtering)
         const categoryCourses = filteredCourses.filter(
-          (course) => course.category === category
+          (course) => course.category === category,
         );
 
         // Skip rendering if no courses in this category
         if (categoryCourses.length === 0) return null;
 
-      return (
-              <div key={category} className="mb-8 px-4 md:px-6 lg:px-8">
-                <div className="max-w-7xl mx-auto">
-                  {/* Category Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-lg md:text-xl font-bold text-gray-800">
-                      {category}
-                    </h2>
-                    <a
-                      href="#"
-                      className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+        return (
+          <div key={category} className="mb-8 px-4 md:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              {/* Category Header */}
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg md:text-xl font-bold text-gray-800">
+                  {category}
+                </h2>
+                <a
+                  href="#"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                  View All
+                </a>
+              </div>
+
+              {/* Horizontal Scrollable Cards */}
+              <div className="relative">
+                {categoryCourses.length > 3 && (
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                    <button
+                      onClick={() => scrollLeft(category)}
+                      className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
+                      aria-label="Scroll left"
                     >
-                      View All
-                    </a>
+                      <ChevronLeft size={windowWidth < 640 ? 16 : 20} />
+                    </button>
                   </div>
+                )}
 
-                  {/* Horizontal Scrollable Cards */}
-                  <div className="relative">
-                    {categoryCourses.length > 3 && (
-                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
-                        <button
-                          onClick={() => scrollLeft(category)}
-                          className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
-                          aria-label="Scroll left"
+                <div
+                  ref={(el) => (scrollContainerRefs.current[category] = el)}
+                  className="flex overflow-x-auto scrollbar-hide py-2 space-x-4 snap-x"
+                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                  {categoryCourses && categoryCourses.length > 0 ? (
+                    categoryCourses.map((course, index) => (
+                      <div
+                        key={`${course.id}-${index}`}
+                        className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
+                      >
+                        <div
+                          className="relative w-full h-36 cursor-pointer"
+                          onClick={() => redirectToYoutube(course.videoId)}
                         >
-                          <ChevronLeft size={windowWidth < 640 ? 16 : 20} />
-                        </button>
-                      </div>
-                    )}
+                          <Image
+                            src={course.image}
+                            alt={course.title}
+                            fill={true}
+                            sizes="(max-width: 768px) 100vw, 300px"
+                            className="object-cover"
+                            priority={course.id <= 6} // Prioritize loading of first visible courses
+                          />
 
-                    <div
-                      ref={(el) => (scrollContainerRefs.current[category] = el)}
-                      className="flex overflow-x-auto scrollbar-hide py-2 space-x-4 snap-x"
-                      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                    >
-                      {categoryCourses && categoryCourses.length > 0 ? (
-                        categoryCourses.map((course) => (
-                          <div
-                            key={course.id}
-                            className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
-                          >
-                            <div
-                              className="relative w-full h-36 cursor-pointer"
-                              onClick={() => redirectToYoutube(course.videoId)}
-                            >
-                              <Image
-                                src={course.image}
-                                alt={course.title}
-                                fill={true}
-                                sizes="(max-width: 768px) 100vw, 300px"
-                                className="object-cover"
-                                priority={course.id <= 6} // Prioritize loading of first visible courses
-                              />
-                        
-                              {/* Play button overlay */}
-                              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
-                                <ExternalLink size={46} className="text-white" />
-                              </div>
+                          {/* Play button overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
+                            <ExternalLink size={46} className="text-white" />
+                          </div>
 
-                              {/* Badge (optional) */}
-                              {course.badge && (
-                                <div className="absolute top-2 right-2">
-                                  <span
-                                    className={`text-xs font-bold px-2 py-1 rounded ${
-                                      course.badge === "HOT"
-                                        ? "bg-red-500 text-white"
-                                        : course.badge === "NEW"
-                                        ? "bg-green-500 text-white"
-                                        : course.badge === "BESTSELLER"
+                          {/* Badge (optional) */}
+                          {course.badge && (
+                            <div className="absolute top-2 right-2">
+                              <span
+                                className={`text-xs font-bold px-2 py-1 rounded ${
+                                  course.badge === "HOT"
+                                    ? "bg-red-500 text-white"
+                                    : course.badge === "NEW"
+                                      ? "bg-green-500 text-white"
+                                      : course.badge === "BESTSELLER"
                                         ? "bg-yellow-500 text-black"
                                         : course.badge === "TRENDING"
-                                        ? "bg-purple-500 text-white"
-                                        : course.badge === "POPULAR"
-                                        ? "bg-blue-500 text-white"
-                                        : "bg-gray-700 text-white"
-                                    }`}
-                                  >
-                                    {course.badge}
-                                  </span>
-                                </div>
-                              )}
-
-                              {/* Language badge */}
-                              <div className="absolute bottom-2 left-2">
-                                <span className="bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center">
-                                  <Globe size={12} className="mr-1" />
-                                  {course.language}
-                                </span>
-                              </div>
-
-                              {/* Bookmark button */}
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation(); // Prevent triggering redirectToYoutube
-                                  toggleBookmark(course.id);
-                                }}
-                                className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
+                                          ? "bg-purple-500 text-white"
+                                          : course.badge === "POPULAR"
+                                            ? "bg-blue-500 text-white"
+                                            : "bg-gray-700 text-white"
+                                }`}
                               >
-                                {bookmarks.includes(course.id) ? (
-                                  <BookmarkCheck size={16} className="text-blue-600" />
-                                ) : (
-                                  <Bookmark size={16} className="text-gray-700" />
-                                )}
-                              </button>
+                                {course.badge}
+                              </span>
                             </div>
+                          )}
 
-                            <div className="p-3">
-                              <h3 className="font-medium text-sm line-clamp-2 h-10 mb-2">
-                                {course.title}
-                              </h3>
+                          {/* Language badge */}
+                          <div className="absolute bottom-2 left-2">
+                            <span className="bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center">
+                              <Globe size={12} className="mr-1" />
+                              {course.language}
+                            </span>
+                          </div>
 
-                              <div className="flex justify-between items-center mb-3">
-                                <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
-                                  {course.level}
-                                </span>
-                                <div className="flex items-center">
-                                  <Star
-                                    size={14}
-                                    className="text-yellow-400 fill-yellow-400 mr-1"
-                                  />
-                                  <span className="text-xs font-medium">
-                                    {course.rating}
-                                  </span>
-                                </div>
-                              </div>
+                          {/* Bookmark button */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation(); // Prevent triggering redirectToYoutube
+                              toggleBookmark(course.id);
+                            }}
+                            className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
+                          >
+                            {bookmarks.includes(course.id) ? (
+                              <BookmarkCheck
+                                size={16}
+                                className="text-blue-600"
+                              />
+                            ) : (
+                              <Bookmark size={16} className="text-gray-700" />
+                            )}
+                          </button>
+                        </div>
 
-                              <button
-                                onClick={() => redirectToYoutube(course.videoId)}
-                                className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
-                              >
-                                <span>Watch on YouTube</span>
-                                <ExternalLink size={14} className="ml-1" />
-                              </button>
+                        <div className="p-3">
+                          <h3 className="font-medium text-sm line-clamp-2 h-10 mb-2">
+                            {course.title}
+                          </h3>
+
+                          <div className="flex justify-between items-center mb-3">
+                            <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                              {course.level}
+                            </span>
+                            <div className="flex items-center">
+                              <Star
+                                size={14}
+                                className="text-yellow-400 fill-yellow-400 mr-1"
+                              />
+                              <span className="text-xs font-medium">
+                                {course.rating}
+                              </span>
                             </div>
                           </div>
-                        ))
-                      ) : (
-                        <div className="w-full text-center py-4 text-gray-500">
-                          No courses available in this category
-                        </div>
-                      )}
-                    </div>
 
-                    {categoryCourses.length > 3 && (
-                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
-                        <button
-                          onClick={() => scrollRight(category)}
-                          className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
-                          aria-label="Scroll right"
-                        >
-                          <ChevronRight size={windowWidth < 640 ? 16 : 20} />
-                        </button>
+                          <button
+                            onClick={() => redirectToYoutube(course.videoId)}
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
+                          >
+                            <span>Watch on YouTube</span>
+                            <ExternalLink size={14} className="ml-1" />
+                          </button>
+                        </div>
                       </div>
-                    )}
-                  </div>
+                    ))
+                  ) : (
+                    <div className="w-full text-center py-4 text-gray-500">
+                      No courses available in this category
+                    </div>
+                  )}
                 </div>
+
+                {categoryCourses.length > 3 && (
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+                    <button
+                      onClick={() => scrollRight(category)}
+                      className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
+                      aria-label="Scroll right"
+                    >
+                      <ChevronRight size={windowWidth < 640 ? 16 : 20} />
+                    </button>
+                  </div>
+                )}
               </div>
-            );
-          })}
-        </div>
-      );
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
