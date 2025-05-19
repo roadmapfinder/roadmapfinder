@@ -621,6 +621,18 @@ export default function Home() {
       // Save the PDF
       pdf.save("Web_Developer_Roadmap.pdf");
 
+      // Save roadmap data to localStorage
+      const timestamp = Date.now();
+      const roadmapKey = `roadmap-${timestamp}`;
+      const roadmapData = {
+        id: timestamp,
+        title: "Web Developer Roadmap",
+        date: new Date().toLocaleDateString(),
+        category: "Web Development",
+        content: roadmapData
+      };
+      localStorage.setItem(roadmapKey, JSON.stringify(roadmapData));
+
       // Navigate to Downloads page
       router.push('/Downloads');
     } catch (error) {
