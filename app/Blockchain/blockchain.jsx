@@ -602,9 +602,11 @@ const roadmapData = [
               // Save the PDF
               pdf.save("Blockchain_Developer_Roadmap.pdf");
 
-              // Store the downloaded roadmap data to localStorage for potential future use
+              // Store the downloaded roadmap data to localStorage
               localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
 
+              // Navigate to Downloads page
+              router.push('/Downloads');
             } catch (error) {
               console.error("Error generating PDF:", error);
               alert("There was an error generating the PDF. Please try again.");
@@ -924,7 +926,7 @@ const roadmapData = [
         </div>
       </main>
 
-      
+
     </div>
   );
 }

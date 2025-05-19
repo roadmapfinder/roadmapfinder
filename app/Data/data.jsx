@@ -815,6 +815,12 @@ export default function Data() {
       // Save the PDF
       pdf.save("Data_Analyst_Data_Scientist_Roadmap.pdf");
 
+      // Store the downloaded roadmap data to localStorage
+      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+
+      // Navigate to Downloads page
+      router.push('/Downloads');
+
       // Optional: Store the downloaded roadmap data in localStorage if you want to track downloads
       localStorage.setItem('downloadedRoadmap', JSON.stringify({
         type: 'data_analyst',

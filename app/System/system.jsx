@@ -698,6 +698,12 @@ export default function Home() {
       // Save the PDF
       pdf.save("System_Design_Roadmap.pdf");
 
+      // Store the downloaded roadmap data to localStorage
+      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+
+      // Navigate to Downloads page
+      router.push('/Downloads');
+
       // Store the downloaded roadmap data to local storage if needed
       localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
 
