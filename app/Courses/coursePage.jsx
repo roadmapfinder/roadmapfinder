@@ -142,6 +142,8 @@ export default function CoursePlatform() {
   );
 
   // Function to handle bookmark toggling
+  const [showNotification, setShowNotification] = useState(false);
+
   const toggleBookmark = useCallback((courseId) => {
     setBookmarks((prevBookmarks) => {
       let newBookmarks;
@@ -149,6 +151,9 @@ export default function CoursePlatform() {
         newBookmarks = prevBookmarks.filter((id) => id !== courseId);
       } else {
         newBookmarks = [...prevBookmarks, courseId];
+        // Show notification only when adding bookmark
+        setShowNotification(true);
+        setTimeout(() => setShowNotification(false), 3000); // Hide after 3 seconds
       }
 
       // Save bookmark IDs to localStorage
@@ -854,7 +859,19 @@ export default function CoursePlatform() {
   }, [filteredCourses]);
 
   return (
-    <div className="w-full mx-auto bg-gray-50 font-['Sora'] pb-12">
+    <div className="w-full mx-auto bg-gray-50 font-['Sora'] pb-12 relative">
+      {/* Notification Popup */}
+      {showNotification && (
+        <div className="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg z-50 flex items-center space-x-3 border border-blue-100">
+          <BookmarkCheck className="text-blue-600 w-5 h-5" />
+          <div>
+            <p className="text-gray-800 font-medium">Course Bookmarked!</p>
+            <Link href="/Bookmarks" className="text-blue-600 text-sm hover:underline">
+              View your bookmarks
+            </Link>
+          </div>
+        </div>
+      )}
       {/* Header Section */}
       <div className="px-4 pt-4 pb-2">
         <Link href="/">
