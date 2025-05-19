@@ -927,7 +927,6 @@ export default function Home() {
                             className={`flex items-center ${
                               darkMode ? "text-gray-300" : "text-gray-700"
                             }`}
-```text
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
                             {resource}
