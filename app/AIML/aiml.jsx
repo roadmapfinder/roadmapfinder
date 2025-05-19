@@ -397,30 +397,6 @@ export default function Home() {
       roadmapData.forEach(section => {
         const sectionDiv = document.createElement('div');
         sectionDiv.style.marginBottom = "30px";
-        sectionDiv.style.pageBreakInside = "avoid";
-
-        // Generate PDF blob URL
-        const pdfBlob = pdf.output('blob');
-        const pdfUrl = URL.createObjectURL(pdfBlob);
-
-        // Save the PDF
-        pdf.save("AIML_Engineer_Roadmap.pdf");
-
-        // Store the downloaded roadmap data
-        const timestamp = Date.now();
-        const roadmapKey = `roadmap-${timestamp}`;
-        const roadmapDataToSave = {
-          id: timestamp,
-          title: "AI/ML Engineer Roadmap",
-          date: new Date().toLocaleDateString(),
-          category: "Artificial Intelligence",
-          pdfPath: pdfUrl,
-          content: roadmapData
-        };
-        localStorage.setItem(roadmapKey, JSON.stringify(roadmapDataToSave));
-
-        // Navigate to Downloads page
-        router.push('/Downloads');
 
         // Section header
         const header = document.createElement('h2');
