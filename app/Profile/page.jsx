@@ -271,7 +271,9 @@ export default function ProfilePage() {
               <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
                 <Bookmark className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
               </div>
+              <Link href="/Bookmarks">
               <span>Bookmarks</span>
+                </Link>
             </button>
 
             <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
