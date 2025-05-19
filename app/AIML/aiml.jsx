@@ -3,7 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import { useRouter } from "next/navigation";
+
 
 // Roadmap data structure
 const roadmapData = [
@@ -359,7 +359,7 @@ export default function Home() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const router = useRouter();
+
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -578,17 +578,7 @@ export default function Home() {
       // Save the PDF
       pdf.save("AI_ML_Engineer_Roadmap.pdf");
 
-      // Store the downloaded roadmap data to localStorage
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
-
-      // Navigate to Downloads page
-      router.push('/Downloads');
-
-      // Store the downloaded roadmap data to Downloads.jsx
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
-
-      // Navigate to Downloads page
-      router.push('/Downloads');
+ 
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
