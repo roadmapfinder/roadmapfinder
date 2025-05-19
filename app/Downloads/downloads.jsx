@@ -2,14 +2,12 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import Link from "next/link";
 
 export default function Downloads() {
   const [downloadedRoadmaps, setDownloadedRoadmaps] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
-  const [processingRoadmapId, setProcessingRoadmapId] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -38,8 +36,8 @@ export default function Downloads() {
           id: key.replace('roadmap-', ''),
           title: data.title || "Untitled Roadmap",
           date: data.date || new Date().toLocaleDateString(),
-          content: data.content,
-          category: data.category || "Other"
+          category: data.category || "Other",
+          pdfPath: data.pdfPath
         };
       });
 
@@ -49,67 +47,9 @@ export default function Downloads() {
     }
   };
 
-  const generatePDF = async (roadmap) => {
-    setProcessingRoadmapId(roadmap.id);
-
-    try {
-      const downloadDiv = document.createElement('div');
-      downloadDiv.className = "roadmap-download-content";
-      downloadDiv.style.padding = "20px";
-      downloadDiv.style.color = "black";
-      downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "Arial, sans-serif";
-      downloadDiv.style.width = "800px";
-
-      // Add roadmap content
-      const title = document.createElement('h1');
-      title.style.textAlign = "center";
-      title.style.marginBottom = "20px";
-      title.textContent = roadmap.title;
-      downloadDiv.appendChild(title);
-
-      // Add content sections
-      if (roadmap.content) {
-        Object.entries(roadmap.content).forEach(([section, content]) => {
-          const sectionDiv = document.createElement('div');
-          sectionDiv.style.marginBottom = "30px";
-          sectionDiv.innerHTML = content;
-          downloadDiv.appendChild(sectionDiv);
-        });
-      }
-
-      document.body.appendChild(downloadDiv);
-      const canvas = await html2canvas(downloadDiv, {
-        scale: 2,
-        useCORS: true,
-        logging: false
-      });
-      document.body.removeChild(downloadDiv);
-
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4'
-      });
-
-      const imgWidth = 210;
-      const imgHeight = canvas.height * imgWidth / canvas.width;
-
-      pdf.addImage(
-        canvas.toDataURL('image/jpeg', 0.95),
-        'JPEG',
-        0,
-        0,
-        imgWidth,
-        imgHeight
-      );
-
-      pdf.save(`${roadmap.title.replace(/\s+/g, '_')}.pdf`);
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-      alert("Error generating PDF. Please try again.");
-    } finally {
-      setProcessingRoadmapId(null);
+  const openPDF = (pdfPath) => {
+    if (pdfPath) {
+      window.open(pdfPath, '_blank');
     }
   };
 
@@ -156,7 +96,6 @@ export default function Downloads() {
                 className={`rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300 ${
                   darkMode ? "bg-gray-800" : "bg-white"
                 }`}
-                onClick={() => generatePDF(roadmap)}
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -184,29 +123,13 @@ export default function Downloads() {
                 </div>
                 <div className="px-6 pb-6">
                   <button
-                    className={`w-full py-3 rounded-md ${
-                      processingRoadmapId === roadmap.id
-                        ? "bg-gray-400"
-                        : "bg-blue-600 hover:bg-blue-700"
-                    } text-white font-medium flex items-center justify-center`}
-                    disabled={processingRoadmapId === roadmap.id}
+                    onClick={() => openPDF(roadmap.pdfPath)}
+                    className="w-full py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-medium flex items-center justify-center gap-2"
                   >
-                    {processingRoadmapId === roadmap.id ? (
-                      <>
-                        <svg className="animate-spin -ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Open PDF
-                      </>
-                    )}
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Open PDF
                   </button>
                 </div>
               </div>
