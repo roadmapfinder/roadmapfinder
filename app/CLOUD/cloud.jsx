@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 // Cloud Computing Engineer Roadmap data structure
@@ -981,15 +983,15 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center md:items-end">
               <div className="flex space-x-4 mb-2">
-                <a href="#" className="hover:text-blue-500 transition-colors">
+                <Link href="/twitter" className="hover:text-blue-500 transition-colors">
                   Twitter
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
+                </Link>
+                <Link href="/github" className="hover:text-blue-500 transition-colors">
                   GitHub
-                </a>
-                <a href="#" className="hover:text-blue-500 transition-colors">
+                </Link>
+                <Link href="/linkedin" className="hover:text-blue-500 transition-colors">
                   LinkedIn
-                </a>
+                </Link>
               </div>
               <p className="text-xs">
                 © 2025 Cloud Computing Engineer Roadmap. All rights reserved.
