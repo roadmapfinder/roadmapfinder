@@ -3,7 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
-import { useRouter } from "next/navigation"
+
 // DSA Roadmap data structure
 const roadmapData = [
   {
@@ -365,7 +365,7 @@ export default function DSARoadmap() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const router = useRouter();
+  
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -604,8 +604,7 @@ export default function DSARoadmap() {
       // Store the downloaded roadmap data to localStorage
       localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
 
-      // Navigate to Downloads page
-      router.push('/Downloads');
+     
 
       // Store the downloaded roadmap data in localStorage (optional)
       localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));

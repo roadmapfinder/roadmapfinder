@@ -4,7 +4,7 @@ import {
   Server, Database, Terminal, Layers, Globe, CloudCog, 
   Shield, GitBranch, Container, LineChart, Workflow, Code
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 
@@ -424,7 +424,7 @@ export default function DevOps() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const router = useRouter();
+
 
 
   // Toggle section open/close
@@ -756,8 +756,6 @@ export default function DevOps() {
             // Store the downloaded roadmap data to localStorage
       localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
 
-      // Navigate to Downloads page
-      router.push('/Downloads');
 
       return true;
     } catch (error) {

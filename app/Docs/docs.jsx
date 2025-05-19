@@ -35,9 +35,12 @@ import mongo from "../Icons/mongo.png";
 import kotlin from "../Icons/kotlin.png";
 import leetcode from "../Icons/leetcode.png"
 import geeks from "../Icons/geeks.png"
+import chai from "../DocIcons/chai.png"
+import harry from "../DocIcons/harry.png"
+import tuf from "../DocIcons/tuf.png"
+import w3 from "../DocIcons/w3.png"
 // Define a default placeholder for images that fail to load
-const DEFAULT_PLACEHOLDER =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='12' fill='%239ca3af' text-anchor='middle' dominant-baseline='middle'%3ELogo%3C/text%3E%3C/svg%3E";
+
 
 export default function Docs() {
   // State management
@@ -254,8 +257,8 @@ export default function Docs() {
       id: "takeuforward",
       category: "dsa",
       name: "Take U Forward DSA",
-      logo: DEFAULT_PLACEHOLDER,
-      url: "https://www.youtube.com/c/takeUforward",
+      logo: tuf,
+      url: "https://takeuforward.org/",
       description:
         "Striver's DSA playlist with comprehensive algorithm coverage",
     },
@@ -265,8 +268,8 @@ export default function Docs() {
       id: "chaiaurcode",
       category: "influencer",
       name: "Chai aur Code GitHub",
-      logo: DEFAULT_PLACEHOLDER,
-      url: "https://github.com/ChaiAurCode",
+      logo: chai,
+      url: "https://docs.chaicode.com/",
       description: "Hitesh Choudhary's coding tutorials and notes repository",
       featured: true,
     },
@@ -274,10 +277,20 @@ export default function Docs() {
       id: "codewithharry",
       category: "influencer",
       name: "CodeWithHarry Notes",
-      logo: DEFAULT_PLACEHOLDER,
+      logo: harry,
       url: "https://codewithharry.com/notes",
       description: "Programming notes and cheat sheets by Harry",
     },
+    {
+      id: "w3 Schools",
+      category: "w3 schools explore",
+      name: "w3 Schools Coding docs",
+      logo: w3,
+      url: "https://www.w3schools.com/",
+      description: "Programming docs and compiler by W3 schools",
+    },
+
+    
   ];
 
   // Filter resources based on search and category

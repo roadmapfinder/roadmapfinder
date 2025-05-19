@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
-import { useRouter } from "next/navigation"
+
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 
@@ -503,7 +503,7 @@ export default function Data() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const router = useRouter();
+
 
 
   // Toggle section open/close
@@ -818,8 +818,7 @@ export default function Data() {
       // Store the downloaded roadmap data to localStorage
       localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
 
-      // Navigate to Downloads page
-      router.push('/Downloads');
+
 
       // Optional: Store the downloaded roadmap data in localStorage if you want to track downloads
       localStorage.setItem('downloadedRoadmap', JSON.stringify({

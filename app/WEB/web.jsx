@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from 'next/navigation';
+
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 
@@ -356,7 +356,6 @@ const roadmapData = [
 
 export default function WebRoadmap() {
   const [downloading, setDownloading] = useState(false);
-  const router = useRouter();
 
   // Function to handle the download process
   const handleDownload = async () => {
@@ -627,7 +626,7 @@ export default function WebRoadmap() {
       localStorage.setItem(roadmapKey, JSON.stringify(roadmapDataToSave));
 
       // Navigate to Downloads page
-      router.push('/Downloads');
+
     } catch (error) {
       console.error('Error generating PDF:', error);
       alert('Error generating PDF!');

@@ -567,9 +567,8 @@ export default function Home() {
       // Store the downloaded roadmap data to localStorage
       localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
 
-      // Navigate to Downloads page
-      router.push('/Downloads');
 
+      
       // Store the downloaded roadmap data (optional)
       localStorage.setItem("downloadedRoadmap", JSON.stringify(roadmapData));
 
