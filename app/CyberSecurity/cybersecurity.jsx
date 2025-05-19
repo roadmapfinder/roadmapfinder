@@ -635,321 +635,321 @@ export default function Home() {
       setDownloading(false);
     }
   };
-
-  return (
-    <div
-      className={`min-h-screen ${
-        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-      }`}
-    >
-      <Head>
-        <title>Cybersecurity Engineer Roadmap</title>
-        <meta
-          name="description"
-          content="Complete roadmap for becoming a Cybersecurity Engineer"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {/* Sticky Navigation Bar */}
-      <nav
-        className={`sticky top-0 z-10 ${
-          darkMode ? "bg-gray-800" : "bg-white"
-        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
-      >
-        <h1 className="text-xl md:text-2xl font-bold">
-          Cybersecurity Engineer Roadmap
-        </h1>
-        <div className="flex items-center space-x-3">
-          {/* Download Button */}
-          <button
-            onClick={handleDownload}
-            disabled={downloading}
-            className={`px-4 py-2 rounded-md text-white ${
-              downloading 
-                ? "bg-gray-500 cursor-not-allowed" 
-                : "bg-blue-600 hover:bg-blue-700"
-            } transition-colors flex items-center`}
-          >
-            {downloading ? (
-              <>
-                <svg 
-                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24"
-                >
-                  <circle 
-                    className="opacity-25" 
-                    cx="12" 
-                    cy="12" 
-                    r="10" 
-                    stroke="currentColor" 
-                    strokeWidth="4"
-                  ></circle>
-                  <path 
-                    className="opacity-75" 
-                    fill="currentColor" 
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
-                Processing...
-              </>
-            ) : (
-              <>
-                <Download className="w-4 h-4 mr-2" />
-                Download Roadmap
-              </>
-            )}
-          </button>
-
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={toggleDarkMode}
-            className={`p-2 rounded-full ${
-              darkMode
-                ? "bg-gray-700 text-yellow-300"
-                : "bg-gray-200 text-gray-700"
-            }`}
-            aria-label="Toggle Dark Mode"
-          >
-            {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </button>
-        </div>
-      </nav>
-
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Introduction */}
-        <div
-          className={`mb-8 p-6 rounded-lg ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md transition-colors duration-300`}
-        >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Cybersecurity Engineer Roadmap
-          </h2>
-          <p className="text-sm md:text-base leading-relaxed">
-            This roadmap will guide you through the essential skills, tools, and
-            resources needed to become a proficient Cybersecurity Engineer. Each section
-            contains curated resources in both English and Hindi to help you
-            master each stage of your cybersecurity journey. Click on any
-            section to expand it and explore its contents. You can also download the 
-            complete roadmap for offline reference.
-          </p>
-        </div>
-
-        {/* Roadmap Sections */}
-        <div className="space-y-4">
-          {roadmapData.map((section) => (
-            <div
-              key={section.id}
-              className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
-                darkMode
-                  ? "bg-gray-800 hover:bg-gray-750"
-                  : "bg-white hover:bg-gray-50"
-              }`}
-            >
-              {/* Section Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
-                aria-expanded={openSection === section.id}
-              >
-                <div className="flex items-center">
-                  <span
-                    className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
-                      darkMode ? "bg-green-600" : "bg-green-500"
-                    } text-white font-medium`}
-                  >
-                    {section.id}
-                  </span>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-lg">{section.title}</h3>
-                    <p
-                      className={`text-sm ${
-                        darkMode ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      {section.description}
-                    </p>
-                  </div>
-                </div>
-                <svg
-                  className={`w-5 h-5 transform transition-transform duration-300 ${
-                    openSection === section.id ? "rotate-180" : "rotate-0"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-
-              {/* Section Content */}
-              {openSection === section.id && (
+              return (
                 <div
-                  className={`px-6 pb-6 pt-2 border-t ${
-                    darkMode ? "border-gray-700" : "border-gray-200"
-                  } animate-fadeIn`}
+                  className={`min-h-screen ${
+                    darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+                  }`}
                 >
-                  {/* What to Learn */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">✅</span>What to Learn
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.whatToLearn.map((item, index) => (
-                        <li
-                          key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <Head>
+                    <title>Cybersecurity Engineer Roadmap</title>
+                    <meta
+                      name="description"
+                      content="Complete roadmap for becoming a Cybersecurity Engineer"
+                    />
+                    <link rel="icon" href="/favicon.ico" />
+                  </Head>
 
-                  {/* Best Courses */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">📚</span>Best Courses
-                    </h4>
+                  {/* Sticky Navigation Bar */}
+                  <nav
+                    className={`sticky top-0 z-10 ${
+                      darkMode ? "bg-gray-800" : "bg-white"
+                    } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+                  >
+                    <h1 className="text-xl md:text-2xl font-bold">
+                      Cybersecurity Engineer Roadmap
+                    </h1>
+                    <div className="flex items-center space-x-3">
+                      {/* Download Button */}
+                      <button
+                        onClick={handleDownload}
+                        disabled={downloading}
+                        className={`px-4 py-2 rounded-md text-white ${
+                          downloading 
+                            ? "bg-gray-500 cursor-not-allowed" 
+                            : "bg-blue-600 hover:bg-blue-700"
+                        } transition-colors flex items-center`}
+                      >
+                        {downloading ? (
+                          <>
+                            <svg 
+                              className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              fill="none" 
+                              viewBox="0 0 24 24"
+                            >
+                              <circle 
+                                className="opacity-25" 
+                                cx="12" 
+                                cy="12" 
+                                r="10" 
+                                stroke="currentColor" 
+                                strokeWidth="4"
+                              ></circle>
+                              <path 
+                                className="opacity-75" 
+                                fill="currentColor" 
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            Processing...
+                          </>
+                        ) : (
+                          <>
+                            <Download className="w-4 h-4 mr-2" />
+                            Download Roadmap
+                          </>
+                        )}
+                      </button>
 
-                    <div className="space-y-4">
-                      {/* English Courses */}
-                      <div>
-                        <h5
-                          className={`font-medium mb-2 ${
-                            darkMode ? "text-gray-200" : "text-gray-800"
-                          }`}
-                        >
-                          In English:
-                        </h5>
-                        <ul className="space-y-1">
-                          {section.content.bestCourses.english.map(
-                            (course, index) => (
-                              <li
-                                key={index}
-                                className={`flex items-start ${
-                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                }`}
-                              >
-                                <span className="min-w-4 text-green-500 mr-2">
-                                  •
-                                </span>
-                                {course}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
+                      {/* Dark Mode Toggle */}
+                      <button
+                        onClick={toggleDarkMode}
+                        className={`p-2 rounded-full ${
+                          darkMode
+                            ? "bg-gray-700 text-yellow-300"
+                            : "bg-gray-200 text-gray-700"
+                        }`}
+                        aria-label="Toggle Dark Mode"
+                      >
+                        {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                      </button>
+                    </div>
+                  </nav>
 
-                      {/* Hindi Courses */}
-                      <div>
-                        <h5
-                          className={`font-medium mb-2 ${
-                            darkMode ? "text-gray-200" : "text-gray-800"
-                          }`}
-                        >
-                          In Hindi:
-                        </h5>
-                        <ul className="space-y-1">
-                          {section.content.bestCourses.hindi.map(
-                            (course, index) => (
-                              <li
-                                key={index}
-                                className={`flex items-start ${
-                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                }`}
-                              >
-                                <span className="min-w-4 text-green-500 mr-2">
-                                  •
-                                </span>
-                                {course}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
+                  <main className="container mx-auto px-4 py-8 max-w-4xl">
+                    {/* Introduction */}
+                    <div
+                      className={`mb-8 p-6 rounded-lg ${
+                        darkMode ? "bg-gray-800" : "bg-white"
+                      } shadow-md transition-colors duration-300`}
+                    >
+                      <h2 className="text-xl md:text-2xl font-semibold mb-3">
+                        Welcome to the Cybersecurity Engineer Roadmap
+                      </h2>
+                      <p className="text-sm md:text-base leading-relaxed">
+                        This roadmap will guide you through the essential skills, tools, and
+                        resources needed to become a proficient Cybersecurity Engineer. Each section
+                        contains curated resources in both English and Hindi to help you
+                        master each stage of your cybersecurity journey. Click on any
+                        section to expand it and explore its contents. You can also download the 
+                        complete roadmap for offline reference.
+                      </p>
                     </div>
 
-                                      {/* Tools to Use */}
-                                      <div className="mb-6">
-                                        <h4 className="flex items-center text-lg font-medium mb-3">
-                                          <span className="mr-2">🧰</span>Tools to Use
-                                        </h4>
-                                        <div className="flex flex-wrap gap-2">
-                                          {section.content.toolsToUse.map((tool, index) => (
-                                            <span
-                                              key={index}
-                                              className={`px-3 py-1 rounded-full text-sm ${
-                                                darkMode
-                                                  ? "bg-gray-700 text-gray-200"
-                                                  : "bg-gray-200 text-gray-800"
-                                              }`}
-                                            >
-                                              {tool}
-                                            </span>
-                                          ))}
-                                        </div>
-                                      </div>
-
-                                      {/* Docs & Websites */}
-                                      <div className="mb-6">
-                                        <h4 className="flex items-center text-lg font-medium mb-3">
-                                          <span className="mr-2">📘</span>Docs & Websites
-                                        </h4>
-                                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                          {section.content.docsAndWebsites.map(
-                                            (resource, index) => (
-                                              <li
-                                                key={index}
-                                                className={`flex items-center ${
-                                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                                }`}
-                                              >
-                                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                                                {resource}
-                                              </li>
-                                            )
-                                          )}
-                                        </ul>
-                                      </div>
-
-                                      {/* Project Ideas */}
-                                      <div>
-                                        <h4 className="flex items-center text-lg font-medium mb-3">
-                                          <span className="mr-2">💡</span>Project Ideas
-                                        </h4>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                          {section.content.projectIdeas.map((project, index) => (
-                                            <div
-                                              key={index}
-                                              className={`p-3 rounded-md ${
-                                                darkMode
-                                                  ? "bg-gray-700 text-gray-200"
-                                                  : "bg-gray-100 text-gray-800"
-                                              }`}
-                                            >
-                                              {project}
-                                            </div>
-                                          ))}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  )}
-                                </div>
-                              ))}
+                    {/* Roadmap Sections */}
+                    <div className="space-y-4">
+                      {roadmapData.map((section) => (
+                        <div
+                          key={section.id}
+                          className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
+                            darkMode
+                              ? "bg-gray-800 hover:bg-gray-750"
+                              : "bg-white hover:bg-gray-50"
+                          }`}
+                        >
+                          {/* Section Header */}
+                          <button
+                            onClick={() => toggleSection(section.id)}
+                            className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
+                            aria-expanded={openSection === section.id}
+                          >
+                            <div className="flex items-center">
+                              <span
+                                className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
+                                  darkMode ? "bg-green-600" : "bg-green-500"
+                                } text-white font-medium`}
+                              >
+                                {section.id}
+                              </span>
+                              <div className="text-left">
+                                <h3 className="font-semibold text-lg">{section.title}</h3>
+                                <p
+                                  className={`text-sm ${
+                                    darkMode ? "text-gray-300" : "text-gray-600"
+                                  }`}
+                                >
+                                  {section.description}
+                                </p>
+                              </div>
                             </div>
-                        
+                            <svg
+                              className={`w-5 h-5 transform transition-transform duration-300 ${
+                                openSection === section.id ? "rotate-180" : "rotate-0"
+                              }`}
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </button>
 
-                      );
-                    }
+                          {/* Section Content */}
+                          {openSection === section.id && (
+                            <div
+                              className={`px-6 pb-6 pt-2 border-t ${
+                                darkMode ? "border-gray-700" : "border-gray-200"
+                              } animate-fadeIn`}
+                            >
+                              {/* What to Learn */}
+                              <div className="mb-6">
+                                <h4 className="flex items-center text-lg font-medium mb-3">
+                                  <span className="mr-2">✅</span>What to Learn
+                                </h4>
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                  {section.content.whatToLearn.map((item, index) => (
+                                    <li
+                                      key={index}
+                                      className={`flex items-center ${
+                                        darkMode ? "text-gray-300" : "text-gray-700"
+                                      }`}
+                                    >
+                                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Best Courses */}
+                              <div className="mb-6">
+                                <h4 className="flex items-center text-lg font-medium mb-3">
+                                  <span className="mr-2">📚</span>Best Courses
+                                </h4>
+
+                                <div className="space-y-4">
+                                  {/* English Courses */}
+                                  <div>
+                                    <h5
+                                      className={`font-medium mb-2 ${
+                                        darkMode ? "text-gray-200" : "text-gray-800"
+                                      }`}
+                                    >
+                                      In English:
+                                    </h5>
+                                    <ul className="space-y-1">
+                                      {section.content.bestCourses.english.map(
+                                        (course, index) => (
+                                          <li
+                                            key={index}
+                                            className={`flex items-start ${
+                                              darkMode ? "text-gray-300" : "text-gray-700"
+                                            }`}
+                                          >
+                                            <span className="min-w-4 text-green-500 mr-2">
+                                              •
+                                            </span>
+                                            {course}
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+
+                                  {/* Hindi Courses */}
+                                  <div>
+                                    <h5
+                                      className={`font-medium mb-2 ${
+                                        darkMode ? "text-gray-200" : "text-gray-800"
+                                      }`}
+                                    >
+                                      In Hindi:
+                                    </h5>
+                                    <ul className="space-y-1">
+                                      {section.content.bestCourses.hindi.map(
+                                        (course, index) => (
+                                          <li
+                                            key={index}
+                                            className={`flex items-start ${
+                                              darkMode ? "text-gray-300" : "text-gray-700"
+                                            }`}
+                                          >
+                                            <span className="min-w-4 text-green-500 mr-2">
+                                              •
+                                            </span>
+                                            {course}
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Tools to Use */}
+                              <div className="mb-6">
+                                <h4 className="flex items-center text-lg font-medium mb-3">
+                                  <span className="mr-2">🧰</span>Tools to Use
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                  {section.content.toolsToUse.map((tool, index) => (
+                                    <span
+                                      key={index}
+                                      className={`px-3 py-1 rounded-full text-sm ${
+                                        darkMode
+                                          ? "bg-gray-700 text-gray-200"
+                                          : "bg-gray-200 text-gray-800"
+                                      }`}
+                                    >
+                                      {tool}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Docs & Websites */}
+                              <div className="mb-6">
+                                <h4 className="flex items-center text-lg font-medium mb-3">
+                                  <span className="mr-2">📘</span>Docs & Websites
+                                </h4>
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                  {section.content.docsAndWebsites.map(
+                                    (resource, index) => (
+                                      <li
+                                        key={index}
+                                        className={`flex items-center ${
+                                          darkMode ? "text-gray-300" : "text-gray-700"
+                                        }`}
+                                      >
+                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                                        {resource}
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+
+                              {/* Project Ideas */}
+                              <div>
+                                <h4 className="flex items-center text-lg font-medium mb-3">
+                                  <span className="mr-2">💡</span>Project Ideas
+                                </h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                  {section.content.projectIdeas.map((project, index) => (
+                                    <div
+                                      key={index}
+                                      className={`p-3 rounded-md ${
+                                        darkMode
+                                          ? "bg-gray-700 text-gray-200"
+                                          : "bg-gray-100 text-gray-800"
+                                      }`}
+                                    >
+                                      {project}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </main>
+                </div>
+              );
+}

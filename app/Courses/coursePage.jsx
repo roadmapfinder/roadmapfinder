@@ -67,6 +67,8 @@ import osb from "../CoursesImage/osb.jpg";
 import networking from "../CoursesImage/networking.jpg";
 import networkingk from "../CoursesImage/networkingk.jpg";
 import networkingf from "../CoursesImage/networkingf.jpg";
+import cybere from "../CoursesImage/cybere.jpg";
+import cyberh from "../CoursesImage/cyberh.jpg";
 
 export default function CoursePlatform() {
   const [activeTab, setActiveTab] = useState("All");
@@ -180,6 +182,7 @@ export default function CoursePlatform() {
     "AI & ML",
     "Networking",
     "Operating System",
+    "CyberSecurity"
   ];
 
   // Sample courses data with direct YouTube links and language information
@@ -750,7 +753,9 @@ export default function CoursePlatform() {
       videoId: "https://youtu.be/qiQR5rTSshw",
       badge: "TRENDING",
       language: "English"
-    }, {
+    }, 
+    
+    {
       id: 51,
       category: "Networking",
       title: "Complete Networkng course",
@@ -760,6 +765,27 @@ export default function CoursePlatform() {
       videoId: "https://youtu.be/qiQR5rTSshw",
       badge: "TRENDING",
       language: "English"
+    },
+    {
+      id: 51,
+      category: "CyberSecurity",
+      title: "Complete CyberSecurity course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: cybere,
+      videoId: "https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL",
+      badge: "TRENDING",
+      language: "English"
+    },{
+      id: 51,
+      category: "CyberSecurity",
+      title: "Complete CyberSecurity course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: cyberh,
+      videoId: "https://youtu.be/v3iUx2SNspY",
+      badge: "TRENDING",
+      language: "Hindi"
     },
   ]
 
@@ -888,159 +914,165 @@ export default function CoursePlatform() {
         // Skip rendering if no courses in this category
         if (categoryCourses.length === 0) return null;
 
-        return (
-          <div key={category} className="mb-8 px-4 md:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              {/* Category Header */}
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg md:text-xl font-bold text-gray-800">
-                  {category}
-                </h2>
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                >
-                  View All
-                </a>
-              </div>
-
-              {/* Horizontal Scrollable Cards */}
-              <div className="relative">
-                {categoryCourses.length > 3 && (
-                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
-                    <button
-                      onClick={() => scrollLeft(category)}
-                      className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
-                      aria-label="Scroll left"
+      return (
+              <div key={category} className="mb-8 px-4 md:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                  {/* Category Header */}
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-lg md:text-xl font-bold text-gray-800">
+                      {category}
+                    </h2>
+                    <a
+                      href="#"
+                      className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
-                      <ChevronLeft size={windowWidth < 640 ? 16 : 20} />
-                    </button>
+                      View All
+                    </a>
                   </div>
-                )}
 
-                <div
-                  ref={(el) => (scrollContainerRefs.current[category] = el)}
-                  className="flex overflow-x-auto scrollbar-hide py-2 space-x-4 snap-x"
-                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                >
-                  {categoryCourses.map((course) => (
+                  {/* Horizontal Scrollable Cards */}
+                  <div className="relative">
+                    {categoryCourses.length > 3 && (
+                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                        <button
+                          onClick={() => scrollLeft(category)}
+                          className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
+                          aria-label="Scroll left"
+                        >
+                          <ChevronLeft size={windowWidth < 640 ? 16 : 20} />
+                        </button>
+                      </div>
+                    )}
+
                     <div
-                      key={course.id}
-                      className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
+                      ref={(el) => (scrollContainerRefs.current[category] = el)}
+                      className="flex overflow-x-auto scrollbar-hide py-2 space-x-4 snap-x"
+                      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                     >
-                      <div
-                        className="relative w-full h-36 cursor-pointer"
-                        onClick={() => redirectToYoutube(course.videoId)}
-                      >
-                        <Image
-                          src={course.image}
-                          alt={course.title}
-                          fill = "true"
-                          sizes="(max-width: 768px) 100vw, 300px"
-                          className="object-cover"
-                          priority={course.id <= 6} // Prioritize loading of first visible courses
-                        />
-
-                        {/* Play button overlay */}
-                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
-                          <ExternalLink size={46} className="text-white" />
-                        </div>
-
-                        {/* Badge (optional) */}
-                        {course.badge && (
-                          <div className="absolute top-2 right-2">
-                            <span
-                              className={`text-xs font-bold px-2 py-1 rounded ${
-                                course.badge === "HOT"
-                                  ? "bg-red-500 text-white"
-                                  : course.badge === "NEW"
-                                  ? "bg-green-500 text-white"
-                                  : course.badge === "BESTSELLER"
-                                  ? "bg-yellow-500 text-black"
-                                  : course.badge === "TRENDING"
-                                  ? "bg-purple-500 text-white"
-                                  : course.badge === "POPULAR"
-                                  ? "bg-blue-500 text-white"
-                                  : "bg-gray-700 text-white"
-                              }`}
+                      {categoryCourses && categoryCourses.length > 0 ? (
+                        categoryCourses.map((course) => (
+                          <div
+                            key={course.id}
+                            className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
+                          >
+                            <div
+                              className="relative w-full h-36 cursor-pointer"
+                              onClick={() => redirectToYoutube(course.videoId)}
                             >
-                              {course.badge}
-                            </span>
+                              <Image
+                                src={course.image}
+                                alt={course.title}
+                                fill={true}
+                                sizes="(max-width: 768px) 100vw, 300px"
+                                className="object-cover"
+                                priority={course.id <= 6} // Prioritize loading of first visible courses
+                              />
+                        
+                              {/* Play button overlay */}
+                              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
+                                <ExternalLink size={46} className="text-white" />
+                              </div>
+
+                              {/* Badge (optional) */}
+                              {course.badge && (
+                                <div className="absolute top-2 right-2">
+                                  <span
+                                    className={`text-xs font-bold px-2 py-1 rounded ${
+                                      course.badge === "HOT"
+                                        ? "bg-red-500 text-white"
+                                        : course.badge === "NEW"
+                                        ? "bg-green-500 text-white"
+                                        : course.badge === "BESTSELLER"
+                                        ? "bg-yellow-500 text-black"
+                                        : course.badge === "TRENDING"
+                                        ? "bg-purple-500 text-white"
+                                        : course.badge === "POPULAR"
+                                        ? "bg-blue-500 text-white"
+                                        : "bg-gray-700 text-white"
+                                    }`}
+                                  >
+                                    {course.badge}
+                                  </span>
+                                </div>
+                              )}
+
+                              {/* Language badge */}
+                              <div className="absolute bottom-2 left-2">
+                                <span className="bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center">
+                                  <Globe size={12} className="mr-1" />
+                                  {course.language}
+                                </span>
+                              </div>
+
+                              {/* Bookmark button */}
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation(); // Prevent triggering redirectToYoutube
+                                  toggleBookmark(course.id);
+                                }}
+                                className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
+                              >
+                                {bookmarks.includes(course.id) ? (
+                                  <BookmarkCheck size={16} className="text-blue-600" />
+                                ) : (
+                                  <Bookmark size={16} className="text-gray-700" />
+                                )}
+                              </button>
+                            </div>
+
+                            <div className="p-3">
+                              <h3 className="font-medium text-sm line-clamp-2 h-10 mb-2">
+                                {course.title}
+                              </h3>
+
+                              <div className="flex justify-between items-center mb-3">
+                                <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                                  {course.level}
+                                </span>
+                                <div className="flex items-center">
+                                  <Star
+                                    size={14}
+                                    className="text-yellow-400 fill-yellow-400 mr-1"
+                                  />
+                                  <span className="text-xs font-medium">
+                                    {course.rating}
+                                  </span>
+                                </div>
+                              </div>
+
+                              <button
+                                onClick={() => redirectToYoutube(course.videoId)}
+                                className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
+                              >
+                                <span>Watch on YouTube</span>
+                                <ExternalLink size={14} className="ml-1" />
+                              </button>
+                            </div>
                           </div>
-                        )}
-
-                        {/* Language badge */}
-                        <div className="absolute bottom-2 left-2">
-                          <span className="bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center">
-                            <Globe size={12} className="mr-1" />
-                            {course.language}
-                          </span>
+                        ))
+                      ) : (
+                        <div className="w-full text-center py-4 text-gray-500">
+                          No courses available in this category
                         </div>
-
-                        {/* Bookmark button */}
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation(); // Prevent triggering redirectToYoutube
-                            toggleBookmark(course.id);
-                          }}
-                          className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
-                        >
-                          {bookmarks.includes(course.id) ? (
-                            <BookmarkCheck size={16} className="text-blue-600" />
-                          ) : (
-                            <Bookmark size={16} className="text-gray-700" />
-                          )}
-                        </button>
-                      </div>
-
-                      <div className="p-3">
-                        <h3 className="font-medium text-sm line-clamp-2 h-10 mb-2">
-                          {course.title}
-                        </h3>
-
-                        <div className="flex justify-between items-center mb-3">
-                          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
-                            {course.level}
-                          </span>
-                          <div className="flex items-center">
-                            <Star
-                              size={14}
-                              className="text-yellow-400 fill-yellow-400 mr-1"
-                            />
-                            <span className="text-xs font-medium">
-                              {course.rating}
-                            </span>
-                          </div>
-                        </div>
-
-                        <button
-                          onClick={() => redirectToYoutube(course.videoId)}
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
-                        >
-                          <span>Watch on YouTube</span>
-                          <ExternalLink size={14} className="ml-1" />
-                        </button>
-                      </div>
+                      )}
                     </div>
-                  ))}
-                </div>
 
-                {categoryCourses.length > 3 && (
-                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
-                    <button
-                      onClick={() => scrollRight(category)}
-                      className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
-                      aria-label="Scroll right"
-                    >
-                      <ChevronRight size={windowWidth < 640 ? 16 : 20} />
-                    </button>
+                    {categoryCourses.length > 3 && (
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+                        <button
+                          onClick={() => scrollRight(category)}
+                          className="p-2 bg-white rounded-full shadow-lg text-gray-700 hover:bg-gray-100 focus:outline-none"
+                          aria-label="Scroll right"
+                        >
+                          <ChevronRight size={windowWidth < 640 ? 16 : 20} />
+                        </button>
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+            );
+          })}
+        </div>
+      );
 }
