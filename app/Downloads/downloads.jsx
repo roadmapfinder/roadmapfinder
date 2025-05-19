@@ -50,7 +50,11 @@ export default function Downloads() {
 
   const openPDF = (pdfPath) => {
     if (pdfPath) {
+      // Open PDF in new tab
       window.open(pdfPath, '_blank');
+    } else {
+      console.error('PDF path not found');
+      alert('Sorry, the PDF file is not available.');
     }
   };
 
