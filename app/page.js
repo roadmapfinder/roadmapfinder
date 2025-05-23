@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home/home";
 import Splash from "./Splash/page";
 import Footer from "./Footer/page";
@@ -17,35 +16,17 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <>
       {showSplash && <Splash />}
       <div
         className={`transition-opacity duration-500 ${
           showSplash ? "opacity-0" : "opacity-100"
         }`}
       >
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              <>
-                <Home />
-                <Footer />
-              </>
-            } 
-          />
-          <Route 
-            path="/home" 
-            element={
-              <>
-                <Home />
-                <Footer />
-              </>
-            } 
-          />
-        </Routes>
+        <Home />
+        <Footer />
       </div>
-    </Router>
+    </>
   );
 };
 
