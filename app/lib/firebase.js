@@ -1,3 +1,4 @@
+// lib/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
@@ -20,6 +21,7 @@ const auth = getAuth(app);
 
 // Configure Google provider with proper scopes and settings
 const provider = new GoogleAuthProvider();
-
+provider.addScope('profile');
+provider.addScope('email');
 
 export { auth, provider };

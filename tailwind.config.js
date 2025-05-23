@@ -11,6 +11,8 @@ module.exports = {
         sans: ["Sora", "Arial", "Helvetica", "sans-serif"],
         sora: ["Sora", "sans-serif"],
       },
+   
+     
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

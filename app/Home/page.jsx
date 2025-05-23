@@ -455,6 +455,7 @@ export default function HomePage() {
                 layout="fill"
                 objectFit="cover"
                 className="brightness-90"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
                 <h2 className="text-2xl font-bold text-white leading-tight">

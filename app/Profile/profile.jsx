@@ -289,7 +289,9 @@ export default function ProfilePage() {
               <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
                 <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
               </div>
-              <span>Settings</span>
+              <Link href="/Logout">
+                <span>Logout</span>
+                  </Link>
             </button>
           </div>
         </div>

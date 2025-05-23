@@ -4,12 +4,36 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+// Mock auth function for demonstration - replace with your actual auth import
+const mockOnAuthStateChanged = (callback) => {
+  // Simulate authentication check
+  setTimeout(() => {
+    // For demo purposes, randomly simulate logged in/out state
+    const isLoggedIn = Math.random() > 0.5;
+    if (isLoggedIn) {
+      callback({
+        uid: 'user123',
+        email: 'user@example.com',
+        displayName: 'John Doe'
+      });
+    } else {
+      callback(null);
+    }
+  }, 1000);
+
+  // Return unsubscribe function
+  return () => {};
+};
+
 export default function NotificationPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [notifications, setNotifications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showSignupPopup, setShowSignupPopup] = useState(false);
+  const [authError, setAuthError] = useState(null);
+  const [authInitialized, setAuthInitialized] = useState(false);
 
   const router = useRouter();
 
@@ -66,113 +90,273 @@ export default function NotificationPage() {
     { id: 'docs', label: 'Docs' }
   ], []);
 
-  // Check login status and load notifications
+  // Load notifications - using in-memory storage instead of localStorage
+  const loadNotifications = useCallback((userId) => {
+    try {
+      // In a real app, you'd fetch from your backend API
+      // For now, we'll use the default notifications
+      setNotifications(defaultNotifications);
+    } catch (error) {
+      console.error("Error loading notifications:", error);
+      setNotifications(defaultNotifications);
+    }
+  }, [defaultNotifications]);
+
+  // Save notifications - placeholder for API call
+  const saveNotifications = useCallback((userId, notificationsData) => {
+    try {
+      // In a real app, you'd save to your backend API
+      console.log("Saving notifications for user:", userId, notificationsData);
+    } catch (error) {
+      console.error("Error saving notifications:", error);
+    }
+  }, []);
+
+  // Initialize authentication with proper error handling
   useEffect(() => {
-    const checkLoginStatus = () => {
+    let unsubscribe = null;
+    let mounted = true;
+    let timeoutId = null;
+
+    const initAuth = async () => {
       try {
-        // Check if user is logged in (you can replace this with your auth logic)
-        const userToken = sessionStorage.getItem('userToken') || null;
-        const loggedIn = Boolean(userToken);
-
-        setIsLoggedIn(loggedIn);
-
-        if (loggedIn) {
-          // Load notifications for logged-in users
-          const savedNotifications = sessionStorage.getItem('notifications');
-          if (savedNotifications) {
-            setNotifications(JSON.parse(savedNotifications));
-          } else {
-            setNotifications(defaultNotifications);
-          }
-        } else {
-          // Show signup popup after a delay for non-logged-in users
-          const timer = setTimeout(() => {
-            setShowSignupPopup(true);
-          }, 1500);
-          return () => clearTimeout(timer);
+        // Ensure we're in the browser environment
+        if (typeof window === 'undefined') {
+          return;
         }
+
+        setIsLoading(true);
+        setAuthError(null);
+
+        // Timeout for auth initialization
+        timeoutId = setTimeout(() => {
+          if (mounted && !authInitialized) {
+            console.warn("Auth initialization timeout - falling back to guest mode");
+            setAuthError(new Error("Authentication service timeout"));
+            setIsLoading(false);
+            setAuthInitialized(true);
+          }
+        }, 5000);
+
+        // Try to set up auth state listener with error handling
+        try {
+          // Replace mockOnAuthStateChanged with your actual onAuthStateChanged import
+          // import { onAuthStateChanged } from '../lib/auth';
+          unsubscribe = mockOnAuthStateChanged((user) => {
+            if (!mounted) return;
+
+            clearTimeout(timeoutId);
+            setAuthInitialized(true);
+
+            if (user) {
+              // User is signed in
+              setUser(user);
+              setIsLoggedIn(true);
+              loadNotifications(user.uid);
+              setShowSignupPopup(false);
+              console.log("User authenticated:", user.email);
+            } else {
+              // User is signed out
+              setUser(null);
+              setIsLoggedIn(false);
+              setNotifications([]);
+
+              // Show signup popup after a delay for non-logged-in users
+              const popupTimer = setTimeout(() => {
+                if (mounted && !isLoggedIn) {
+                  setShowSignupPopup(true);
+                }
+              }, 2000);
+
+              // Store cleanup function for popup timer
+              return () => clearTimeout(popupTimer);
+            }
+
+            setIsLoading(false);
+          });
+
+        } catch (authSetupError) {
+          console.error("Auth setup error:", authSetupError);
+          throw new Error(`Authentication setup failed: ${authSetupError.message}`);
+        }
+
       } catch (error) {
-        console.error("Error checking login status:", error);
-        setIsLoggedIn(false);
-      } finally {
-        setIsLoading(false);
+        console.error("Auth initialization error:", error);
+        if (mounted) {
+          setAuthError(error);
+          setIsLoading(false);
+          setAuthInitialized(true);
+
+          // Fallback to non-authenticated state
+          setUser(null);
+          setIsLoggedIn(false);
+          setNotifications([]);
+        }
       }
     };
 
-    checkLoginStatus();
-  }, [defaultNotifications]);
+    initAuth();
+
+    // Cleanup function
+    return () => {
+      mounted = false;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      if (unsubscribe && typeof unsubscribe === 'function') {
+        try {
+          unsubscribe();
+        } catch (error) {
+          console.error("Error unsubscribing from auth:", error);
+        }
+      }
+    };
+  }, [loadNotifications, isLoggedIn]);
 
   // Format timestamp for display
   const formatTimestamp = useCallback((dateStr) => {
-    const date = new Date(dateStr);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffMinutes = Math.floor(diffMs / (1000 * 60));
-    const diffHours = Math.floor(diffMinutes / 60);
-    const diffDays = Math.floor(diffHours / 24);
+    try {
+      const date = new Date(dateStr);
+      const now = new Date();
+      const diffMs = now - date;
+      const diffMinutes = Math.floor(diffMs / (1000 * 60));
+      const diffHours = Math.floor(diffMinutes / 60);
+      const diffDays = Math.floor(diffHours / 24);
 
-    if (diffMinutes < 1) return 'Just now';
-    if (diffMinutes < 60) return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`;
-    if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
-    if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
-    return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) > 1 ? 's' : ''} ago`;
+      if (diffMinutes < 1) return 'Just now';
+      if (diffMinutes < 60) return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`;
+      if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+      if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+      return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) > 1 ? 's' : ''} ago`;
+    } catch (error) {
+      console.error("Error formatting timestamp:", error);
+      return 'Unknown time';
+    }
   }, []);
 
-  // Handle signup navigation
+  // Handle navigation with error handling
   const handleSignup = useCallback(() => {
-    router.push('/Signup');
-    setShowSignupPopup(false);
+    try {
+      router.push('/Signup');
+      setShowSignupPopup(false);
+    } catch (error) {
+      console.error("Navigation error:", error);
+      // Fallback: try window.location
+      window.location.href = '/Signup';
+    }
   }, [router]);
 
-  // Handle login navigation
   const handleLogin = useCallback(() => {
-    router.push('/Login');
-    setShowSignupPopup(false);
+    try {
+      router.push('/Login');
+      setShowSignupPopup(false);
+    } catch (error) {
+      console.error("Navigation error:", error);
+      // Fallback: try window.location
+      window.location.href = '/Login';
+    }
   }, [router]);
 
-  // Handle popup close
   const handleClosePopup = useCallback(() => {
     setShowSignupPopup(false);
   }, []);
 
-  // Handle notification click
+  // Handle notification click with error handling
   const handleNotificationClick = useCallback((notification) => {
-    // Mark as read
-    const updatedNotifications = notifications.map(item => 
-      item.id === notification.id ? { ...item, read: true } : item
-    );
-    setNotifications(updatedNotifications);
-
-    // Save updated notifications
     try {
-      sessionStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+      if (!user) {
+        console.warn("User not logged in, cannot mark notification as read");
+        return;
+      }
+
+      // Mark as read
+      const updatedNotifications = notifications.map(item => 
+        item.id === notification.id ? { ...item, read: true } : item
+      );
+      setNotifications(updatedNotifications);
+
+      // Save updated notifications
+      saveNotifications(user.uid, updatedNotifications);
+
+      // Navigate based on notification type
+      const routeMap = {
+        course: '/Courses',
+        roadmap: '/Roadmap',
+        tool: '/TOOLS',
+        doc: '/Docs'
+      };
+
+      const route = routeMap[notification.type];
+      if (route) {
+        try {
+          router.push(route);
+        } catch (navError) {
+          console.error("Navigation error:", navError);
+          // Fallback: try window.location
+          window.location.href = route;
+        }
+      }
     } catch (error) {
-      console.error("Error saving notifications:", error);
+      console.error("Error handling notification click:", error);
     }
-
-    // Navigate based on notification type
-    const routeMap = {
-      course: '/Courses',
-      roadmap: '/Roadmap',
-      tool: '/TOOLS',
-      doc: '/Docs'
-    };
-
-    const route = routeMap[notification.type];
-    if (route) {
-      router.push(route);
-    }
-  }, [notifications, router]);
+  }, [notifications, user, router, saveNotifications]);
 
   // Filter notifications based on active tab
   const filteredNotifications = useMemo(() => {
-    if (activeTab === 'all') return notifications;
+    try {
+      if (activeTab === 'all') return notifications;
 
-    const singularType = activeTab.endsWith('s') ? activeTab.slice(0, -1) : activeTab;
-    return notifications.filter(notification => 
-      notification.type === singularType.toLowerCase()
-    );
+      const singularType = activeTab.endsWith('s') ? activeTab.slice(0, -1) : activeTab;
+      return notifications.filter(notification => 
+        notification.type === singularType.toLowerCase()
+      );
+    } catch (error) {
+      console.error("Error filtering notifications:", error);
+      return notifications;
+    }
   }, [notifications, activeTab]);
+
+  // Retry auth initialization
+  const retryAuth = useCallback(() => {
+    setAuthError(null);
+    setIsLoading(true);
+    setAuthInitialized(false);
+    window.location.reload();
+  }, []);
+
+  // Error state with retry option
+  if (authError) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+        <div className="text-center max-w-md mx-auto p-6">
+          <div className="text-4xl mb-4">⚠️</div>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">Connection Issue</h2>
+          <p className="text-gray-600 mb-4 text-sm">
+            {authError.message || "There was a problem connecting to the authentication service."}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button 
+              onClick={retryAuth}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            >
+              Retry Connection
+            </button>
+            <button 
+              onClick={() => {
+                setAuthError(null);
+                setIsLoading(false);
+                setIsLoggedIn(false);
+                setUser(null);
+              }}
+              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+            >
+              Continue as Guest
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // Loading state
   if (isLoading) {
@@ -279,7 +463,12 @@ export default function NotificationPage() {
         {/* Header */}
         <header className="sticky top-0 z-10 bg-white shadow-sm">
           <div className="px-4 py-4 border-b flex justify-between items-center">
-            <h1 className="text-xl font-bold text-gray-800">Notifications</h1>
+            <div>
+              <h1 className="text-xl font-bold text-gray-800">Notifications</h1>
+              {user && (
+                <p className="text-sm text-gray-500">Welcome back, {user.displayName || user.email}</p>
+              )}
+            </div>
             <span className="text-sm text-gray-500">
               {notifications.filter(n => !n.read).length} unread
             </span>
