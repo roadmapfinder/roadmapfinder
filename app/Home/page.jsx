@@ -1,6 +1,6 @@
 "use client";
-import Head from "next/head";
-import Image from "next/legacy/image";
+
+import Image from "next/image";
 import {
   Bell,
   Menu,
@@ -23,10 +23,15 @@ import Link from "next/link";
 import Logout from "../Logout/logout";
 
 export default function HomePage() {
-  const [username, setUsername] = useState("User");
+  const [username, setUsername] = useState(null); // Changed to null to indicate not signed in
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState("popular");
+  const [showSignupAlert, setShowSignupAlert] = useState(false);
+  const [alertTriggered, setAlertTriggered] = useState(false);
+
+  // Check if user is signed in
+  const isSignedIn = username !== null;
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -36,6 +41,16 @@ export default function HomePage() {
   // Toggle sidebar collapsed state
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
+  };
+
+  // Show signup alert when trying to access features
+  const showAlertIfNotSignedIn = (action) => {
+    if (!isSignedIn) {
+      setShowSignupAlert(true);
+      setAlertTriggered(true);
+      return false;
+    }
+    return true;
   };
 
   // Close mobile menu when screen gets larger
@@ -50,32 +65,49 @@ export default function HomePage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Show alert on first render if not signed in
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isSignedIn && !alertTriggered) {
+        setShowSignupAlert(true);
+        setAlertTriggered(true);
+      }
+    }, 3000); // Show after 3 seconds
+
+    return () => clearTimeout(timer);
+  }, [isSignedIn, alertTriggered]);
+
   const navItems = [
     { name: "Home", icon: <Home size={24} className="mr-3" />, href: "/" },
     {
       name: "Roadmap",
       icon: <ChevronRight size={24} className="mr-3" />,
       href: "/Roadmap",
+      onClick: () => showAlertIfNotSignedIn("access roadmaps"),
     },
     {
       name: "Courses",
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
+      onClick: () => showAlertIfNotSignedIn("access courses"),
     },
     {
       name: "Docs",
       icon: <FileText size={24} className="mr-3" />,
       href: "/Docs",
+      onClick: () => showAlertIfNotSignedIn("access docs"),
     },
     {
       name: "Tools",
       icon: <PenTool size={24} className="mr-3" />,
       href: "/TOOLS",
+      onClick: () => showAlertIfNotSignedIn("access tools"),
     },
     {
       name: "Profile",
       icon: <User size={24} className="mr-3" />,
       href: "/Profile",
+      onClick: () => showAlertIfNotSignedIn("access profile"),
     },
     {
       name: "Logout",
@@ -99,7 +131,45 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex font-['Sora']">
+    <div className="min-h-screen bg-gray-50 flex font-['Sora'] relative">
+      {/* Signup Alert Popup */}
+      {showSignupAlert && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-xl">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-xl font-bold text-gray-900">
+                Unlock Full Access
+              </h3>
+              <button
+                onClick={() => setShowSignupAlert(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Sign up to download roadmaps, bookmark courses, and get
+              notifications about the best resources tailored for you.
+            </p>
+            <div className="flex flex-col space-y-3">
+              <Link
+                href="/Signup"
+                className="bg-blue-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                onClick={() => setShowSignupAlert(false)}
+              >
+                Sign Up Now
+              </Link>
+              <button
+                onClick={() => setShowSignupAlert(false)}
+                className="text-blue-600 text-center py-2 px-4 rounded-lg font-medium hover:bg-blue-50 transition-colors"
+              >
+                Maybe Later
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Desktop Sidebar */}
       <aside
         className={`bg-white shadow-lg fixed inset-y-0 left-0 z-20 transform transition-all duration-300 ease-in-out
@@ -133,7 +203,7 @@ export default function HomePage() {
               {navItems.map((item, index) => (
                 <Link
                   key={index}
-                  href={item.href}
+                  href={isSignedIn ? item.href : "#"}
                   className={`flex items-center ${
                     item.href === "/Roadmap"
                       ? "text-blue-600 font-semibold"
@@ -141,6 +211,12 @@ export default function HomePage() {
                   } hover:text-blue-600 transition-colors py-2 px-3 rounded-lg ${
                     item.href === "/Roadmap" ? "bg-blue-50" : ""
                   } hover:bg-blue-50`}
+                  onClick={(e) => {
+                    if (!isSignedIn && item.onClick) {
+                      e.preventDefault();
+                      item.onClick();
+                    }
+                  }}
                 >
                   <div className={isSidebarCollapsed ? "mx-auto" : ""}>
                     {item.icon}
@@ -182,13 +258,19 @@ export default function HomePage() {
             {navItems.map((item, index) => (
               <Link
                 key={index}
-                href={item.href}
+                href={isSignedIn ? item.href : "#"}
                 className={`flex items-center ${
                   item.href === "/Roadmap"
                     ? "text-blue-600 font-semibold"
                     : "text-gray-600"
                 } hover:text-blue-600 transition-colors`}
-                onClick={toggleMobileMenu}
+                onClick={(e) => {
+                  toggleMobileMenu();
+                  if (!isSignedIn && item.onClick) {
+                    e.preventDefault();
+                    item.onClick();
+                  }
+                }}
               >
                 {item.icon}
                 <span>{item.name}</span>
@@ -198,14 +280,25 @@ export default function HomePage() {
 
           <div className="mt-8 pt-5 border-t">
             <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
-            <Link
-              href="/logout"
-              className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
-              onClick={toggleMobileMenu}
-            >
-              <LogOut size={20} className="mr-3" />
-              <span>Logout</span>
-            </Link>
+            {isSignedIn ? (
+              <Link
+                href="/Logout"
+                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
+                onClick={toggleMobileMenu}
+              >
+                <LogOut size={20} className="mr-3" />
+                <span>Logout</span>
+              </Link>
+            ) : (
+              <Link
+                href="/Signup"
+                className="flex items-center text-blue-600 hover:text-blue-700 transition-colors py-2 font-medium"
+                onClick={toggleMobileMenu}
+              >
+                <User size={20} className="mr-3" />
+                <span>Sign Up</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -221,13 +314,19 @@ export default function HomePage() {
           <header className="flex justify-between items-center mb-6 md:hidden">
             <h1 className="text-2xl font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-4 items-center">
-           
-              <button className="text-gray-800">
-                 <Link href="/Notification">
-                <Bell size={24} />
-                   </Link>
+              <button
+                className="text-gray-800"
+                onClick={() =>
+                  !isSignedIn
+                    ? showAlertIfNotSignedIn("view notifications")
+                    : null
+                }
+              >
+                <Link href={isSignedIn ? "/Notification" : "#"}>
+                  <Bell size={24} />
+                </Link>
               </button>
-             
+
               <button className="text-gray-800" onClick={toggleMobileMenu}>
                 <Menu size={28} />
               </button>
@@ -238,20 +337,33 @@ export default function HomePage() {
           <header className="hidden md:flex justify-between items-center mb-8">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
-              <p className="text-gray-500">Welcome back, {username}</p>
+              <p className="text-gray-500">
+                {isSignedIn
+                  ? `Welcome back, ${username}`
+                  : "Welcome to RoadmapFinder"}
+              </p>
             </div>
             <div className="flex items-center gap-4">
-              <button className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
-                <Link href="/Notification">
-                <Bell size={22} className="text-gray-700" />
-                  </Link>
+              <button
+                className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all"
+                onClick={() =>
+                  !isSignedIn
+                    ? showAlertIfNotSignedIn("view notifications")
+                    : null
+                }
+              >
+                <Link href={isSignedIn ? "/Notification" : "#"}>
+                  <Bell size={22} className="text-gray-700" />
+                </Link>
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               <div className="flex items-center gap-3 bg-white py-2 px-4 rounded-full shadow-sm">
                 <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
                   <User size={16} className="text-blue-600" />
                 </div>
-                <span className="text-gray-800 font-medium">{username}</span>
+                <span className="text-gray-800 font-medium">
+                  {isSignedIn ? username : "Guest"}
+                </span>
               </div>
             </div>
           </header>
@@ -272,7 +384,9 @@ export default function HomePage() {
                 </h2>
               </div>
             </div>
-            <p className="text-gray-500 text-sm mb-1">Welcome, {username}</p>
+            <p className="text-gray-500 text-sm mb-1">
+              {isSignedIn ? `Welcome, ${username}` : "Welcome to RoadmapFinder"}
+            </p>
             <p className="text-medium text-[#6B7280] mb-4">
               Expert roadmaps, smart resources and AI-powered guidance to build
               your success journey
@@ -281,14 +395,30 @@ export default function HomePage() {
 
           {/* Mobile Action Buttons */}
           <section className="flex gap-3 mb-8 md:hidden">
-            <Link href="/Roadmap" className="flex-1">
-              <button className="bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold w-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+            <Link href={isSignedIn ? "/Roadmap" : "#"} className="flex-1">
+              <button
+                className="bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold w-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  if (!isSignedIn) {
+                    e.preventDefault();
+                    showAlertIfNotSignedIn("access roadmaps");
+                  }
+                }}
+              >
                 <ChevronRight size={18} />
                 Roadmap
               </button>
             </Link>
-            <Link href="/Courses" className="flex-1">
-              <button className="bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-colors w-full flex items-center justify-center gap-2">
+            <Link href={isSignedIn ? "/Courses" : "#"} className="flex-1">
+              <button
+                className="bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-colors w-full flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  if (!isSignedIn) {
+                    e.preventDefault();
+                    showAlertIfNotSignedIn("access courses");
+                  }
+                }}
+              >
                 <BookOpen size={18} />
                 Courses
               </button>
@@ -306,14 +436,30 @@ export default function HomePage() {
                 build your own success journey
               </p>
               <div className="flex gap-4">
-                <Link href="/Roadmap" className="flex-none">
-                  <button className="bg-blue-600 text-white text-center py-3 px-6 rounded-xl text-lg font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                <Link href={isSignedIn ? "/Roadmap" : "#"} className="flex-none">
+                  <button
+                    className="bg-blue-600 text-white text-center py-3 px-6 rounded-xl text-lg font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                    onClick={(e) => {
+                      if (!isSignedIn) {
+                        e.preventDefault();
+                        showAlertIfNotSignedIn("access roadmaps");
+                      }
+                    }}
+                  >
                     Explore Roadmaps
                     <ArrowRight size={18} />
                   </button>
                 </Link>
-                <Link href="/Courses" className="flex-none">
-                  <button className="bg-white text-blue-600 text-center py-3 px-6 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-colors">
+                <Link href={isSignedIn ? "/Courses" : "#"} className="flex-none">
+                  <button
+                    className="bg-white text-blue-600 text-center py-3 px-6 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-colors"
+                    onClick={(e) => {
+                      if (!isSignedIn) {
+                        e.preventDefault();
+                        showAlertIfNotSignedIn("access courses");
+                      }
+                    }}
+                  >
                     Browse Courses
                   </button>
                 </Link>
@@ -359,7 +505,13 @@ export default function HomePage() {
                     ? "text-blue-600 border-b-2 border-blue-600"
                     : "text-gray-500"
                 }`}
-                onClick={() => setActiveTab("progress")}
+                onClick={() => {
+                  if (!isSignedIn) {
+                    showAlertIfNotSignedIn("view progress");
+                  } else {
+                    setActiveTab("progress");
+                  }
+                }}
               >
                 Your Progress
               </button>
@@ -394,8 +546,16 @@ export default function HomePage() {
                     <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
                       {roadmap.level}
                     </span>
-                    <Link href="/Roadmap">
-                      <button className="text-blue-600 text-sm font-medium flex items-center gap-1">
+                    <Link href={isSignedIn ? "/Roadmap" : "#"}>
+                      <button
+                        className="text-blue-600 text-sm font-medium flex items-center gap-1"
+                        onClick={(e) => {
+                          if (!isSignedIn) {
+                            e.preventDefault();
+                            showAlertIfNotSignedIn("view roadmap");
+                          }
+                        }}
+                      >
                         View <ArrowRight size={14} />
                       </button>
                     </Link>
@@ -431,8 +591,16 @@ export default function HomePage() {
                     <span className="bg-yellow-50 text-yellow-700 px-2 py-1 rounded-full text-xs flex items-center">
                       ★ {course.rating}
                     </span>
-                    <Link href="/Courses">
-                      <button className="text-blue-600 text-sm font-medium flex items-center gap-1">
+                    <Link href={isSignedIn ? "/Courses" : "#"}>
+                      <button
+                        className="text-blue-600 text-sm font-medium flex items-center gap-1"
+                        onClick={(e) => {
+                          if (!isSignedIn) {
+                            e.preventDefault();
+                            showAlertIfNotSignedIn("view course");
+                          }
+                        }}
+                      >
                         Start <ArrowRight size={14} />
                       </button>
                     </Link>
@@ -465,8 +633,16 @@ export default function HomePage() {
                     <p className="text-gray-500 mb-4">
                       {roadmap.users} users following
                     </p>
-                    <Link href="/Roadmap">
-                      <button className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                    <Link href={isSignedIn ? "/Roadmap" : "#"}>
+                      <button
+                        className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all"
+                        onClick={(e) => {
+                          if (!isSignedIn) {
+                            e.preventDefault();
+                            showAlertIfNotSignedIn("view roadmap");
+                          }
+                        }}
+                      >
                         View Roadmap <ArrowRight size={16} />
                       </button>
                     </Link>
@@ -496,8 +672,16 @@ export default function HomePage() {
                     <p className="text-gray-500 mb-4">
                       Duration: {course.duration}
                     </p>
-                    <Link href="/Course">
-                      <button className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                    <Link href={isSignedIn ? "/Course" : "#"}>
+                      <button
+                        className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all"
+                        onClick={(e) => {
+                          if (!isSignedIn) {
+                            e.preventDefault();
+                            showAlertIfNotSignedIn("view course");
+                          }
+                        }}
+                      >
                         Start Learning <ArrowRight size={16} />
                       </button>
                     </Link>
@@ -515,15 +699,32 @@ export default function HomePage() {
                   Track Your Progress
                 </h3>
                 <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                  Start a roadmap or course to track your learning journey and
-                  see your progress here
+                  {isSignedIn
+                    ? "Start a roadmap or course to track your learning journey and see your progress here"
+                    : "Sign up to track your learning progress and save your bookmarks"}
                 </p>
                 <div className="flex justify-center gap-4">
-                  <Link href="/Roadmap">
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                      Find a Roadmap
-                    </button>
-                  </Link>
+                  {isSignedIn ? (
+                    <Link href="/Roadmap">
+                      <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                        Find a Roadmap
+                      </button>
+                    </Link>
+                  ) : (
+                    <>
+                      <Link href="/Signup">
+                        <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                          Sign Up Now
+                        </button>
+                      </Link>
+                      <button
+                        onClick={() => setShowSignupAlert(false)}
+                        className="text-blue-600 py-2 px-4 rounded-lg font-medium hover:bg-blue-50 transition-colors"
+                      >
+                        Maybe Later
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             )}
