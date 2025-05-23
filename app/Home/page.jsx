@@ -22,10 +22,44 @@ import roadmap from "../Images/roadmap.png";
 import Link from "next/link";
 
 export default function HomePage() {
-  const [username, setUsername] = useState("User");
+  const [username, setUsername] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState("popular");
+  const [showAuthPopup, setShowAuthPopup] = useState(false);
+
+  // Check authentication status on component mount
+  useEffect(() => {
+    // Check if user is logged in (you can replace this with your actual auth logic)
+    const token = localStorage.getItem('authToken');
+    const storedUsername = localStorage.getItem('username');
+
+    if (token && storedUsername) {
+      setIsLoggedIn(true);
+      setUsername(storedUsername);
+    } else {
+      setIsLoggedIn(false);
+      setUsername("Guest");
+    }
+  }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('username');
+    setIsLoggedIn(false);
+    setUsername("Guest");
+    setShowAuthPopup(true);
+  };
+
+  // Handle protected route access
+  const handleProtectedRouteClick = (e, href) => {
+    if (!isLoggedIn && href !== "/" && href !== "/login" && href !== "/signup") {
+      e.preventDefault();
+      setShowAuthPopup(true);
+    }
+  };
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -94,6 +128,45 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex font-['Sora']">
+      {/* Auth Popup */}
+      {showAuthPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <User size={32} className="text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {isLoggedIn ? "Logged Out Successfully" : "Authentication Required"}
+              </h3>
+              <p className="text-gray-600 mb-6">
+                {isLoggedIn 
+                  ? "You have been logged out successfully." 
+                  : "Please sign in to access this feature and continue your learning journey."}
+              </p>
+              <div className="flex gap-3">
+                <Link href="/Login" className="flex-1">
+                  <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                    Sign In
+                  </button>
+                </Link>
+                <Link href="/Signup" className="flex-1">
+                  <button className="w-full bg-white text-blue-600 py-3 px-4 rounded-xl font-semibold border border-blue-600 hover:bg-blue-50 transition-colors">
+                    Sign Up
+                  </button>
+                </Link>
+              </div>
+              <button
+                onClick={() => setShowAuthPopup(false)}
+                className="mt-4 text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Desktop Sidebar */}
       <aside
         className={`bg-white shadow-lg fixed inset-y-0 left-0 z-20 transform transition-all duration-300 ease-in-out
@@ -128,6 +201,7 @@ export default function HomePage() {
                 <Link
                   key={index}
                   href={item.href}
+                  onClick={(e) => handleProtectedRouteClick(e, item.href)}
                   className={`flex items-center ${
                     item.href === "/Roadmap"
                       ? "text-blue-600 font-semibold"
@@ -142,6 +216,29 @@ export default function HomePage() {
                   {!isSidebarCollapsed && <span>{item.name}</span>}
                 </Link>
               ))}
+
+              {/* Logout Button */}
+              {isLoggedIn ? (
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center w-full text-gray-600 hover:text-red-600 transition-colors py-2 px-3 rounded-lg hover:bg-red-50"
+                >
+                  <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                    <LogOut size={24} className="mr-3" />
+                  </div>
+                  {!isSidebarCollapsed && <span>Logout</span>}
+                </button>
+              ) : (
+                <Link
+                  href="/Login"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                    <User size={24} className="mr-3" />
+                  </div>
+                  {!isSidebarCollapsed && <span>Sign In</span>}
+                </Link>
+              )}
             </nav>
           </div>
         </div>
@@ -177,12 +274,15 @@ export default function HomePage() {
               <Link
                 key={index}
                 href={item.href}
+                onClick={(e) => {
+                  handleProtectedRouteClick(e, item.href);
+                  toggleMobileMenu();
+                }}
                 className={`flex items-center ${
                   item.href === "/Roadmap"
                     ? "text-blue-600 font-semibold"
                     : "text-gray-600"
                 } hover:text-blue-600 transition-colors`}
-                onClick={toggleMobileMenu}
               >
                 {item.icon}
                 <span>{item.name}</span>
@@ -192,14 +292,37 @@ export default function HomePage() {
 
           <div className="mt-8 pt-5 border-t">
             <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
-            <Link
-              href="/logout"
-              className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
-              onClick={toggleMobileMenu}
-            >
-              <LogOut size={20} className="mr-3" />
-              <span>Logout</span>
-            </Link>
+            {isLoggedIn ? (
+              <button
+                onClick={() => {
+                  handleLogout();
+                  toggleMobileMenu();
+                }}
+                className="flex items-center text-gray-600 hover:text-red-600 transition-colors py-2 w-full"
+              >
+                <LogOut size={20} className="mr-3" />
+                <span>Logout</span>
+              </button>
+            ) : (
+              <div className="space-y-3">
+                <Link
+                  href="/Login"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
+                  onClick={toggleMobileMenu}
+                >
+                  <User size={20} className="mr-3" />
+                  <span>Sign In</span>
+                </Link>
+                <Link
+                  href="/Signup"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
+                  onClick={toggleMobileMenu}
+                >
+                  <User size={20} className="mr-3" />
+                  <span>Sign Up</span>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -215,13 +338,14 @@ export default function HomePage() {
           <header className="flex justify-between items-center mb-6 md:hidden">
             <h1 className="text-2xl font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-4 items-center">
-           
-              <button className="text-gray-800">
-                 <Link href="/Notification">
-                <Bell size={24} />
-                   </Link>
+              <button 
+                className="text-gray-800"
+                onClick={(e) => handleProtectedRouteClick(e, "/Notification")}
+              >
+                <Link href="/Notification">
+                  <Bell size={24} />
+                </Link>
               </button>
-             
               <button className="text-gray-800" onClick={toggleMobileMenu}>
                 <Menu size={28} />
               </button>
@@ -232,20 +356,27 @@ export default function HomePage() {
           <header className="hidden md:flex justify-between items-center mb-8">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
-              <p className="text-gray-500">Welcome back, {username}</p>
+              <p className="text-gray-500">
+                Welcome back, {isLoggedIn ? username : "Guest"}
+              </p>
             </div>
             <div className="flex items-center gap-4">
-              <button className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
+              <button 
+                className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all"
+                onClick={(e) => handleProtectedRouteClick(e, "/Notification")}
+              >
                 <Link href="/Notification">
-                <Bell size={22} className="text-gray-700" />
-                  </Link>
+                  <Bell size={22} className="text-gray-700" />
+                </Link>
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               <div className="flex items-center gap-3 bg-white py-2 px-4 rounded-full shadow-sm">
                 <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
                   <User size={16} className="text-blue-600" />
                 </div>
-                <span className="text-gray-800 font-medium">{username}</span>
+                <span className="text-gray-800 font-medium">
+                  {isLoggedIn ? username : "Guest"}
+                </span>
               </div>
             </div>
           </header>
@@ -266,7 +397,9 @@ export default function HomePage() {
                 </h2>
               </div>
             </div>
-            <p className="text-gray-500 text-sm mb-1">Welcome, {username}</p>
+            <p className="text-gray-500 text-sm mb-1">
+              Welcome, {isLoggedIn ? username : "Guest"}
+            </p>
             <p className="text-medium text-[#6B7280] mb-4">
               Expert roadmaps, smart resources and AI-powered guidance to build
               your success journey
@@ -276,13 +409,19 @@ export default function HomePage() {
           {/* Mobile Action Buttons */}
           <section className="flex gap-3 mb-8 md:hidden">
             <Link href="/Roadmap" className="flex-1">
-              <button className="bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold w-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+              <button 
+                onClick={(e) => handleProtectedRouteClick(e, "/Roadmap")}
+                className="bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold w-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+              >
                 <ChevronRight size={18} />
                 Roadmap
               </button>
             </Link>
             <Link href="/Courses" className="flex-1">
-              <button className="bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-colors w-full flex items-center justify-center gap-2">
+              <button 
+                onClick={(e) => handleProtectedRouteClick(e, "/Courses")}
+                className="bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-colors w-full flex items-center justify-center gap-2"
+              >
                 <BookOpen size={18} />
                 Courses
               </button>
@@ -301,13 +440,19 @@ export default function HomePage() {
               </p>
               <div className="flex gap-4">
                 <Link href="/Roadmap" className="flex-none">
-                  <button className="bg-blue-600 text-white text-center py-3 px-6 rounded-xl text-lg font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={(e) => handleProtectedRouteClick(e, "/Roadmap")}
+                    className="bg-blue-600 text-white text-center py-3 px-6 rounded-xl text-lg font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  >
                     Explore Roadmaps
                     <ArrowRight size={18} />
                   </button>
                 </Link>
                 <Link href="/Courses" className="flex-none">
-                  <button className="bg-white text-blue-600 text-center py-3 px-6 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-colors">
+                  <button 
+                    onClick={(e) => handleProtectedRouteClick(e, "/Courses")}
+                    className="bg-white text-blue-600 text-center py-3 px-6 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-colors"
+                  >
                     Browse Courses
                   </button>
                 </Link>
@@ -389,7 +534,10 @@ export default function HomePage() {
                       {roadmap.level}
                     </span>
                     <Link href="/Roadmap">
-                      <button className="text-blue-600 text-sm font-medium flex items-center gap-1">
+                      <button 
+                        onClick={(e) => handleProtectedRouteClick(e, "/Roadmap")}
+                        className="text-blue-600 text-sm font-medium flex items-center gap-1"
+                      >
                         View <ArrowRight size={14} />
                       </button>
                     </Link>
@@ -426,7 +574,10 @@ export default function HomePage() {
                       ★ {course.rating}
                     </span>
                     <Link href="/Courses">
-                      <button className="text-blue-600 text-sm font-medium flex items-center gap-1">
+                      <button 
+                        onClick={(e) => handleProtectedRouteClick(e, "/Courses")}
+                        className="text-blue-600 text-sm font-medium flex items-center gap-1"
+                      >
                         Start <ArrowRight size={14} />
                       </button>
                     </Link>
@@ -460,7 +611,10 @@ export default function HomePage() {
                       {roadmap.users} users following
                     </p>
                     <Link href="/Roadmap">
-                      <button className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                      <button 
+                        onClick={(e) => handleProtectedRouteClick(e, "/Roadmap")}
+                        className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all"
+                      >
                         View Roadmap <ArrowRight size={16} />
                       </button>
                     </Link>
@@ -491,7 +645,10 @@ export default function HomePage() {
                       Duration: {course.duration}
                     </p>
                     <Link href="/Course">
-                      <button className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                      <button 
+                        onClick={(e) => handleProtectedRouteClick(e, "/Course")}
+                        className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all"
+                      >
                         Start Learning <ArrowRight size={16} />
                       </button>
                     </Link>
@@ -514,7 +671,10 @@ export default function HomePage() {
                 </p>
                 <div className="flex justify-center gap-4">
                   <Link href="/Roadmap">
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                    <button 
+                      onClick={(e) => handleProtectedRouteClick(e, "/Roadmap")}
+                      className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
                       Find a Roadmap
                     </button>
                   </Link>
@@ -542,7 +702,6 @@ export default function HomePage() {
                   development roadmaps designed by industry experts
                 </p>
               </div>
-
               <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center relative">
                 <div className="hidden md:block absolute top-16 -left-4 w-8 border-t-2 border-dashed border-blue-200"></div>
                 <div className="hidden md:block absolute top-16 -right-4 w-8 border-t-2 border-dashed border-blue-200"></div>
