@@ -1,0 +1,388 @@
+{
+  "categories": [
+    { "id": "all", "name": "All", "icon": "FileText" },
+    { "id": "programming", "name": "Programming Languages", "icon": "Code" },
+    { "id": "frameworks", "name": "Development Frameworks", "icon": "Database" },
+    { "id": "app", "name": "App Development", "icon": "Smartphone" },
+    { "id": "vcs", "name": "Version Control", "icon": "GitBranch" },
+    { "id": "dsa", "name": "DSA", "icon": "Code" },
+    { "id": "influencer", "name": "Influencer Notes", "icon": "Youtube" },
+    { "id": "cloud", "name": "Cloud & DevOps", "icon": "Cloud" },
+    { "id": "tools", "name": "Development Tools", "icon": "Settings" }
+  ],
+  "resources": [
+    {
+      "id": "python",
+      "category": "programming",
+      "name": "Python Documentation",
+      "logo": "py",
+      "url": "https://docs.python.org/",
+      "description": "Official Python language documentation with comprehensive guides and references",
+      "featured": true,
+      "tags": ["backend", "scripting", "data-science"]
+    },
+    {
+      "id": "javascript",
+      "category": "programming",
+      "name": "JavaScript (MDN)",
+      "logo": "js",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "description": "Mozilla Developer Network's comprehensive JavaScript documentation",
+      "featured": true,
+      "tags": ["frontend", "backend", "web"]
+    },
+    {
+      "id": "typescript",
+      "category": "programming",
+      "name": "TypeScript Documentation",
+      "logo": "typescript",
+      "url": "https://www.typescriptlang.org/docs/",
+      "description": "Official TypeScript documentation for typed JavaScript development",
+      "featured": true,
+      "tags": ["frontend", "backend", "typed"]
+    },
+    {
+      "id": "nodejs",
+      "category": "programming",
+      "name": "Node.js Documentation",
+      "logo": "nodejs",
+      "url": "https://nodejs.org/en/docs/",
+      "description": "Official Node.js documentation for server-side JavaScript runtime",
+      "featured": true,
+      "tags": ["backend", "runtime", "server"]
+    },
+    {
+      "id": "java",
+      "category": "programming",
+      "name": "Java Documentation",
+      "logo": "java",
+      "url": "https://docs.oracle.com/javase/",
+      "description": "Official Java SE documentation from Oracle",
+      "tags": ["enterprise", "backend", "oop"]
+    },
+    {
+      "id": "cpp",
+      "category": "programming",
+      "name": "C++ Reference",
+      "logo": "cpp",
+      "url": "https://cplusplus.com/",
+      "description": "Complete C++ language and standard library reference",
+      "tags": ["systems", "performance", "low-level"]
+    },
+    {
+      "id": "php",
+      "category": "programming",
+      "name": "php programming",
+      "logo": "php",
+      "url": "https://www.php.net/docs.php",
+      "description": "Complete php language offical documentation ",
+      "tags": ["web apps", "performance", "backend"]
+    },
+    {
+      "id": "rust",
+      "category": "programming",
+      "name": "Rust Documentation",
+      "logo": "rust",
+      "url": "https://doc.rust-lang.org/",
+      "description": "Official Rust programming language documentation for systems programming",
+      "featured": true,
+      "tags": ["systems", "memory-safe", "performance"]
+    },
+    {
+      "id": "golang",
+      "category": "programming",
+      "name": "Go Documentation",
+      "logo": "golang",
+      "url": "https://golang.org/doc/",
+      "description": "Official Go programming language documentation for concurrent programming",
+      "featured": true,
+      "tags": ["backend", "concurrent", "cloud-native"]
+    },
+    {
+      "id": "react",
+      "category": "frameworks",
+      "name": "React Documentation",
+      "logo": "react",
+      "url": "https://react.dev/",
+      "description": "Official React library documentation for building user interfaces",
+      "featured": true,
+      "tags": ["frontend", "spa", "component-based"]
+    },
+    {
+      "id": "nextjs",
+      "category": "frameworks",
+      "name": "Next.js Documentation",
+      "logo": "next",
+      "url": "https://nextjs.org/docs",
+      "description": "The React framework for production with SSR and static generation",
+      "featured": true,
+      "tags": ["fullstack", "ssr", "static-site"]
+    },
+    {
+      "id": "express",
+      "category": "frameworks",
+      "name": "Express.js Documentation",
+      "logo": "express",
+      "url": "https://expressjs.com/",
+      "description": "Fast, unopinionated, minimalist web framework for Node.js",
+      "tags": ["backend", "api", "middleware"]
+    },
+    {
+      "id": "django",
+      "category": "frameworks",
+      "name": "Django Documentation",
+      "logo": "django",
+      "url": "https://docs.djangoproject.com/",
+      "description": "High-level Python web framework for rapid development",
+      "featured": true,
+      "tags": ["backend", "mvc", "orm"]
+    },
+    {
+      "id": "spring-boot",
+      "category": "frameworks",
+      "name": "Spring Boot Documentation",
+      "logo": "spring",
+      "url": "https://spring.io/projects/spring-boot",
+      "description": "Java framework for building production-ready applications",
+      "featured": true,
+      "tags": ["java", "microservices", "enterprise"]
+    },
+    {
+      "id": "vue",
+      "category": "frameworks",
+      "name": "Vue.js Documentation",
+      "logo": "vue",
+      "url": "https://vuejs.org/guide/",
+      "description": "Progressive JavaScript framework for building user interfaces",
+      "tags": ["frontend", "progressive", "component-based"]
+    },
+    {
+      "id": "angular",
+      "category": "frameworks",
+      "name": "Angular Documentation",
+      "logo": "angular",
+      "url": "https://angular.io/docs",
+      "description": "Platform for building mobile and desktop web applications",
+      "tags": ["frontend", "typescript", "enterprise"]
+    },
+    {
+      "id": "mongodb",
+      "category": "frameworks",
+      "name": "MongoDB Documentation",
+      "logo": "mongo",
+      "url": "https://docs.mongodb.com/",
+      "description": "Official MongoDB NoSQL database documentation",
+      "featured": true,
+      "tags": ["database", "nosql", "document"]
+    },
+    {
+      "id": "mysql",
+      "category": "frameworks",
+      "name": "MySQL Documentation",
+      "logo": "sql",
+      "url": "https://dev.mysql.com/doc/",
+      "description": "Reference manual for the MySQL relational database",
+      "tags": ["database", "sql", "relational"]
+    },
+    {
+      "id": "postgresql",
+      "category": "frameworks",
+      "name": "PostgreSQL Documentation",
+      "logo": "postgresql",
+      "url": "https://www.postgresql.org/docs/",
+      "description": "Advanced open source relational database documentation",
+      "featured": true,
+      "tags": ["database", "sql", "advanced"]
+    },
+    {
+      "id": "reactnative",
+      "category": "app",
+      "name": "React Native",
+      "logo": "native",
+      "url": "https://reactnative.dev/",
+      "description": "Learn once, write anywhere mobile framework",
+      "featured": true,
+      "tags": ["mobile", "cross-platform", "react"]
+    },
+    {
+      "id": "flutter",
+      "category": "app",
+      "name": "Flutter Documentation",
+      "logo": "flutter",
+      "url": "https://flutter.dev/docs",
+      "description": "Google's UI toolkit for building natively compiled applications",
+      "featured": true,
+      "tags": ["mobile", "cross-platform", "dart"]
+    },
+    {
+      "id": "kotlin",
+      "category": "app",
+      "name": "Kotlin Documentation",
+      "logo": "kotlin",
+      "url": "https://kotlinlang.org/docs/",
+      "description": "Modern programming language for Android development",
+      "tags": ["android", "mobile", "jvm"]
+    },
+    {
+      "id": "swift",
+      "category": "app",
+      "name": "Swift Documentation",
+      "logo": "swift",
+      "url": "https://swift.org/documentation/",
+      "description": "Apple's programming language for iOS and macOS development",
+      "tags": ["ios", "mobile", "apple"]
+    },
+    {
+      "id": "git",
+      "category": "vcs",
+      "name": "Git Documentation",
+      "logo": "git",
+      "url": "https://git-scm.com/doc",
+      "description": "Official documentation for Git version control system",
+      "featured": true,
+      "tags": ["version-control", "collaboration"]
+    },
+    {
+      "id": "github",
+      "category": "vcs",
+      "name": "GitHub Docs",
+      "logo": "github",
+      "url": "https://docs.github.com/",
+      "description": "Learn how to use GitHub with comprehensive guides",
+      "tags": ["git", "collaboration", "hosting"]
+    },
+    {
+      "id": "docker",
+      "category": "cloud",
+      "name": "Docker Documentation",
+      "logo": "docker",
+      "url": "https://docs.docker.com/",
+      "description": "Official Docker documentation for containerization",
+      "featured": true,
+      "tags": ["containerization", "devops", "deployment"]
+    },
+    {
+      "id": "kubernetes",
+      "category": "cloud",
+      "name": "Kubernetes Documentation",
+      "logo": "kubernetes",
+      "url": "https://kubernetes.io/docs/",
+      "description": "Production-grade container orchestration system documentation",
+      "featured": true,
+      "tags": ["orchestration", "devops", "cloud-native"]
+    },
+    {
+      "id": "aws",
+      "category": "cloud",
+      "name": "AWS Documentation",
+      "logo": "aws",
+      "url": "https://docs.aws.amazon.com/",
+      "description": "Amazon Web Services comprehensive cloud documentation",
+      "featured": true,
+      "tags": ["cloud", "infrastructure", "serverless"]
+    },
+    {
+      "id": "azure",
+      "category": "cloud",
+      "name": "Azure Documentation",
+      "logo": "azure",
+      "url": "https://docs.microsoft.com/en-us/azure/",
+      "description": "Microsoft Azure cloud platform documentation",
+      "tags": ["cloud", "microsoft", "enterprise"]
+    },
+    {
+      "id": "gcp",
+      "category": "cloud",
+      "name": "Google Cloud Documentation",
+      "logo": "gcp",
+      "url": "https://cloud.google.com/docs",
+      "description": "Google Cloud Platform comprehensive documentation",
+      "tags": ["cloud", "google", "ai-ml"]
+    },
+    {
+      "id": "vscode",
+      "category": "tools",
+      "name": "VS Code Documentation",
+      "logo": "vscode",
+      "url": "https://code.visualstudio.com/docs",
+      "description": "Visual Studio Code editor documentation and guides",
+      "tags": ["editor", "development", "extensions"]
+    },
+    {
+      "id": "webpack",
+      "category": "tools",
+      "name": "Webpack Documentation",
+      "logo": "webpack",
+      "url": "https://webpack.js.org/concepts/",
+      "description": "Static module bundler for modern JavaScript applications",
+      "tags": ["build-tool", "bundler", "frontend"]
+    },
+    {
+      "id": "vite",
+      "category": "tools",
+      "name": "Vite Documentation",
+      "logo": "vite",
+      "url": "https://vitejs.dev/guide/",
+      "description": "Next generation frontend tooling for faster builds",
+      "featured": true,
+      "tags": ["build-tool", "fast", "modern"]
+    },
+    {
+      "id": "geeksforgeeks",
+      "category": "dsa",
+      "name": "GeeksforGeeks DSA",
+      "logo": "geeks",
+      "url": "https://www.geeksforgeeks.org/data-structures/",
+      "description": "Comprehensive DSA tutorials and practice problems",
+      "featured": true,
+      "tags": ["algorithms", "interview-prep", "competitive"]
+    },
+    {
+      "id": "leetcode",
+      "category": "dsa",
+      "name": "LeetCode Explore",
+      "logo": "leetcode",
+      "url": "https://leetcode.com/explore/",
+      "description": "Curated coding interview preparation with structured learning paths",
+      "featured": true,
+      "tags": ["interview-prep", "coding-challenges"]
+    },
+    {
+      "id": "takeuforward",
+      "category": "dsa",
+      "name": "Take U Forward DSA",
+      "logo": "tuf",
+      "url": "https://takeuforward.org/",
+      "description": "Striver's DSA playlist with comprehensive algorithm coverage",
+      "tags": ["youtube", "structured-learning"]
+    },
+    {
+      "id": "chaiaurcode",
+      "category": "influencer",
+      "name": "Chai aur Code",
+      "logo": "chai",
+      "url": "https://docs.chaicode.com/",
+      "description": "Hitesh Choudhary's coding tutorials and notes repository",
+      "featured": true,
+      "tags": ["hindi", "tutorials", "practical"]
+    },
+    {
+      "id": "codewithharry",
+      "category": "influencer",
+      "name": "CodeWithHarry Notes",
+      "logo": "harry",
+      "url": "https://codewithharry.com/notes",
+      "description": "Programming notes and cheat sheets by Harry",
+      "tags": ["hindi", "notes", "beginner-friendly"]
+    },
+    {
+      "id": "w3schools",
+      "category": "influencer",
+      "name": "W3Schools",
+      "logo": "w3",
+      "url": "https://www.w3schools.com/",
+      "description": "Web development tutorials and online code editor",
+      "tags": ["tutorials", "interactive", "beginner"]
+    }
+  ]
+}
