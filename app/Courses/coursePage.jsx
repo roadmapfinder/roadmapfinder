@@ -68,6 +68,9 @@ import networkingk from "../CoursesImage/networkingk.jpg";
 import networkingf from "../CoursesImage/networkingf.jpg";
 import cybere from "../CoursesImage/cybere.jpg";
 import cyberh from "../CoursesImage/cyberh.jpg";
+import capcut from "../CoursesImage/capcut.jpg";
+import premire from "../CoursesImage/premire.jpg";
+import davanci from "../CoursesImage/davanci.jpg";
 
 export default function CoursePlatform() {
   const [activeTab, setActiveTab] = useState("All");
@@ -196,6 +199,7 @@ export default function CoursePlatform() {
     "Networking",
     "Operating System",
     "CyberSecurity",
+    "Video Editing",
   ];
 
   // Sample courses data with direct YouTube links and language information
@@ -237,7 +241,7 @@ export default function CoursePlatform() {
       videoId:
         "https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo",
       badge: "POPULAR",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 4,
@@ -284,7 +288,7 @@ export default function CoursePlatform() {
       image: kotlin,
       videoId: "https://youtu.be/BxM2DayeOBE",
       badge: "NEW",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 8,
@@ -295,7 +299,7 @@ export default function CoursePlatform() {
       image: flutter,
       videoId: "https://youtu.be/CzRQ9mnmh44",
       badge: "NEW",
-      language: "English",
+      language: "Hindi",
     },
 
     // UI/UX Design
@@ -332,7 +336,7 @@ export default function CoursePlatform() {
       image: design,
       videoId: "https://youtu.be/j6Ule7GXaRs",
       badge: "HOT",
-      language: "Hindi",
+      language: "English",
     },
     {
       id: 12,
@@ -367,7 +371,7 @@ export default function CoursePlatform() {
       image: graphics,
       videoId: "https://youtu.be/e_dv7GBHka8",
       badge: "POPULAR",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 15,
@@ -413,7 +417,7 @@ export default function CoursePlatform() {
       videoId:
         "https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr",
       badge: "HOT",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 19,
@@ -424,7 +428,7 @@ export default function CoursePlatform() {
       image: php,
       videoId: "https://youtu.be/z8gIVootnUQ",
       badge: "BESTSELLER",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 20,
@@ -459,7 +463,7 @@ export default function CoursePlatform() {
       videoId:
         "https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
       badge: "HOT",
-      language: "English",
+      language: "Hindi",
     },
 
     // Blockchain
@@ -508,7 +512,7 @@ export default function CoursePlatform() {
       videoId:
         "https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S",
       badge: "POPULAR",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 27,
@@ -531,7 +535,7 @@ export default function CoursePlatform() {
       image: dsapy,
       videoId: "https://youtu.be/f9Aje_cN_CY",
       badge: "POPULAR",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 29,
@@ -567,7 +571,7 @@ export default function CoursePlatform() {
       image: sql,
       videoId: "https://youtu.be/hlGoQC332VM",
       badge: "NEW",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 32,
@@ -578,7 +582,7 @@ export default function CoursePlatform() {
       image: mongo,
       videoId: "https://youtu.be/rU9ZODw5yvU",
       badge: "POPULAR",
-      language: "English",
+      language: "Hindi",
     },
 
     // Data Analysis & Science
@@ -614,7 +618,7 @@ export default function CoursePlatform() {
       image: datas,
       videoId: "https://youtu.be/gDZ6czwuQ18",
       badge: "DEMANDED",
-      language: "English",
+      language: "Hindi",
     },
 
     // System Design
@@ -628,7 +632,7 @@ export default function CoursePlatform() {
       videoId:
         "https://youtu.be/SqcXvc3ZmRU?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX",
       badge: "POPULAR",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 37,
@@ -664,7 +668,7 @@ export default function CoursePlatform() {
       image: deep,
       videoId: "https://youtu.be/rU9ZODw5yvU",
       badge: "DEMANDED",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 40,
@@ -675,7 +679,7 @@ export default function CoursePlatform() {
       image: ml,
       videoId: "https://youtu.be/LvC68w9JS4Y",
       badge: "NEW",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 41,
@@ -686,7 +690,7 @@ export default function CoursePlatform() {
       image: ai,
       videoId: "https://youtu.be/5NgNicANyqM",
       badge: "POPULAR",
-      language: "Hindi",
+      language: "English",
     },
 
     // Git & Github
@@ -710,7 +714,7 @@ export default function CoursePlatform() {
       image: githubh,
       videoId: "https://youtu.be/RDxQEzXN8AU",
       badge: "NEW",
-      language: "English",
+      language: "Hindi",
     },
     {
       id: 44,
@@ -723,6 +727,8 @@ export default function CoursePlatform() {
       badge: "TRENDING",
       language: "English",
     },
+    
+    // Operating System
     {
       id: 45,
       category: "Operating System",
@@ -767,6 +773,8 @@ export default function CoursePlatform() {
       badge: "TRENDING",
       language: "Hindi",
     },
+
+    // Networking
     {
       id: 49,
       category: "Networking",
@@ -801,6 +809,8 @@ export default function CoursePlatform() {
       badge: "TRENDING",
       language: "English",
     },
+
+    // CyberSecurity
     {
       id: 51,
       category: "CyberSecurity",
@@ -824,6 +834,42 @@ export default function CoursePlatform() {
       badge: "TRENDING",
       language: "Hindi",
     },
+
+    // Video Editing
+    {
+      id: 51,
+      category: "Video Editing",
+      title: "Complete Premimium pro course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: premire,
+      videoId: "https://youtu.be/CVH6TKL12Wg",
+      badge: "TRENDING",
+      language: "Hindi",
+    },
+    {
+      id: 51,
+      category: "Video Editing",
+      title: "Complete Capcut course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: capcut,
+      videoId: "https://youtu.be/fL-0G-2b3Sg",
+      badge: "HOT",
+      language: "Hindi",
+    },
+    {
+      id: 51,
+      category: "Video Editing",
+      title: "Complete Davanci course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: davanci,
+      videoId: "https://youtu.be/qDHnCFMZ9HA",
+      badge: "DEMANDED",
+      language: "English",
+    },
+    
   ];
 
   // Optimized filtering using useMemo

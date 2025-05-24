@@ -62,11 +62,18 @@ const Footer = () => {
                 Courses
               </Link>
               <Link
-                href="/ai-mentor"
+                href="/Docs"
                 className="text-gray-700 hover:text-blue-500 transition-colors"
               >
-                AI Mentor
+              Docs
               </Link>
+              <Link
+                href="/Tools"
+                className="text-gray-700 hover:text-blue-500 transition-colors"
+              >
+          Tools
+              </Link>
+              
               <Link
                 href="/Login"
                 className="text-gray-700 hover:text-blue-500 transition-colors"
