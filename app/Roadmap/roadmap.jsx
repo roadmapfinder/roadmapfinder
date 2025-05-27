@@ -101,7 +101,7 @@ export default function TechRoadmap() {
       id: "devops",
       title: "DevOps",
       icon: <Server className="w-5 h-5 text-white" />,
-      link: "/DevOps",
+      link: "/Devops",
       bgColor: "from-gray-700 to-gray-900",
     },
     {

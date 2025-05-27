@@ -4,6 +4,7 @@ import Home from "./Home/home";
 import Splash from "./Splash/page";
 import Footer from "./Footer/page";
 
+
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
 

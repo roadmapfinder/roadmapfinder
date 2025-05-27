@@ -368,7 +368,7 @@ export default function HomePage() {
             <div className="mt-8 pt-5 border-t">
               <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
               <Link
-                href="/logout"
+                href="/Logout"
                 className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
                 onClick={toggleMobileMenu}
               >

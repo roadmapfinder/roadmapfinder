@@ -377,125 +377,195 @@ export default function DSARoadmap() {
     setDarkMode(!darkMode);
   };
 
-  // Function to handle the download process
   const handleDownload = async () => {
     setDownloading(true);
 
     try {
       // Create a temporary div to render the roadmap content for downloading
-      const downloadDiv = document.createElement('div');
+      const downloadDiv = document.createElement("div");
       downloadDiv.className = "roadmap-download-content";
 
-      // Set styles for better PDF output
-      downloadDiv.style.padding = "20px";
-      downloadDiv.style.color = "black";
+      // IMPROVED STYLES for better PDF output and readability
+      downloadDiv.style.padding = "40px";
+      downloadDiv.style.color = "#2c3e50";
       downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "Arial, sans-serif";
+      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+      downloadDiv.style.fontSize = "14px";
+      downloadDiv.style.lineHeight = "1.6";
+      downloadDiv.style.maxWidth = "800px";
+      downloadDiv.style.margin = "0 auto";
 
-      // Add title
-      const title = document.createElement('h1');
+      // Add title with better styling
+      const title = document.createElement("h1");
       title.style.textAlign = "center";
-      title.style.marginBottom = "20px";
+      title.style.marginBottom = "30px";
+      title.style.fontSize = "32px";
+      title.style.fontWeight = "700";
+      title.style.color = "#2c3e50";
+      title.style.borderBottom = "3px solid #3498db";
+      title.style.paddingBottom = "15px";
       title.textContent = "DSA Mastery Roadmap";
       downloadDiv.appendChild(title);
 
-      // Add introduction
-      const intro = document.createElement('div');
-      intro.style.marginBottom = "20px";
+      // Add introduction with better styling
+      const intro = document.createElement("div");
+      intro.style.marginBottom = "40px";
       intro.style.textAlign = "center";
+      intro.style.padding = "20px";
+      intro.style.backgroundColor = "#f8f9fa";
+      intro.style.borderRadius = "10px";
+      intro.style.border = "1px solid #e9ecef";
 
-      const introParagraph = document.createElement('p');
+      const introParagraph = document.createElement("p");
+      introParagraph.style.fontSize = "16px";
+      introParagraph.style.lineHeight = "1.7";
+      introParagraph.style.color = "#495057";
+      introParagraph.style.fontStyle = "italic";
+      introParagraph.style.margin = "0";
       introParagraph.textContent = "This comprehensive roadmap will guide you through learning Data Structures and Algorithms efficiently. From programming fundamentals to advanced algorithm techniques, interview preparation, and competitive programming.";
       intro.appendChild(introParagraph);
       downloadDiv.appendChild(intro);
 
-      // Add roadmap content
-      roadmapData.forEach(section => {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.style.marginBottom = "30px";
-        sectionDiv.style.pageBreakInside = "avoid";
-        if (section.id > 1) {
-          // Add page break hint before new sections except the first one
-          sectionDiv.style.pageBreakBefore = "auto";
-        }
+      // Add roadmap content with improved styling
+      roadmapData.forEach((section) => {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.style.marginBottom = "40px";
+        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
 
-        // Section header
-        const header = document.createElement('h2');
-        header.style.backgroundColor = "#f0f0f0";
-        header.style.padding = "10px";
-        header.style.borderRadius = "5px";
+        // Section header with better design
+        const header = document.createElement("h2");
+        header.style.backgroundColor = "#ecf0f1";
+        header.style.padding = "15px 20px";
+        header.style.borderRadius = "8px";
+        header.style.borderLeft = "5px solid #3498db";
+        header.style.fontSize = "20px";
+        header.style.fontWeight = "600";
+        header.style.color = "#2c3e50";
+        header.style.marginBottom = "20px";
         header.textContent = `${section.id}. ${section.title}`;
         sectionDiv.appendChild(header);
 
-        // Section description
-        const desc = document.createElement('p');
-        desc.style.marginBottom = "15px";
+        // Section description with better typography
+        const desc = document.createElement("p");
+        desc.style.marginBottom = "25px";
         desc.style.fontStyle = "italic";
+        desc.style.fontSize = "15px";
+        desc.style.color = "#7f8c8d";
+        desc.style.lineHeight = "1.7";
+        desc.style.padding = "0 10px";
         desc.textContent = section.description;
         sectionDiv.appendChild(desc);
 
-        // What to Learn
-        const whatToLearn = document.createElement('div');
-        whatToLearn.style.marginBottom = "15px";
+        // What to Learn with improved styling
+        const whatToLearn = document.createElement("div");
+        whatToLearn.style.marginBottom = "25px";
 
-        const whatToLearnTitle = document.createElement('h3');
+        const whatToLearnTitle = document.createElement("h3");
+        whatToLearnTitle.style.fontSize = "18px";
+        whatToLearnTitle.style.fontWeight = "600";
+        whatToLearnTitle.style.color = "#27ae60";
+        whatToLearnTitle.style.marginBottom = "12px";
+        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
+        whatToLearnTitle.style.paddingBottom = "5px";
         whatToLearnTitle.textContent = "📚 What to Learn";
         whatToLearn.appendChild(whatToLearnTitle);
 
-        const whatToLearnList = document.createElement('ul');
-        section.content.whatToLearn.forEach(item => {
-          const li = document.createElement('li');
+        const whatToLearnList = document.createElement("ul");
+        whatToLearnList.style.paddingLeft = "25px";
+        whatToLearnList.style.margin = "15px 0";
+        section.content.whatToLearn.forEach((item) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = item;
           whatToLearnList.appendChild(li);
         });
         whatToLearn.appendChild(whatToLearnList);
         sectionDiv.appendChild(whatToLearn);
 
-        // Resources
-        const resources = document.createElement('div');
-        resources.style.marginBottom = "15px";
+        // Resources with better styling
+        const resources = document.createElement("div");
+        resources.style.marginBottom = "25px";
 
-        const resourcesTitle = document.createElement('h3');
+        const resourcesTitle = document.createElement("h3");
+        resourcesTitle.style.fontSize = "18px";
+        resourcesTitle.style.fontWeight = "600";
+        resourcesTitle.style.color = "#3498db";
+        resourcesTitle.style.marginBottom = "12px";
+        resourcesTitle.style.borderBottom = "2px solid #3498db";
+        resourcesTitle.style.paddingBottom = "5px";
         resourcesTitle.textContent = "🔍 Resources";
         resources.appendChild(resourcesTitle);
 
-        const resourcesList = document.createElement('ul');
-        section.content.resources.forEach(resource => {
-          const li = document.createElement('li');
+        const resourcesList = document.createElement("ul");
+        resourcesList.style.paddingLeft = "25px";
+        resourcesList.style.margin = "15px 0";
+        section.content.resources.forEach((resource) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = resource;
           resourcesList.appendChild(li);
         });
         resources.appendChild(resourcesList);
         sectionDiv.appendChild(resources);
 
-        // Tools to Use
-        const tools = document.createElement('div');
-        tools.style.marginBottom = "15px";
+        // Tools to Use with better styling
+        const tools = document.createElement("div");
+        tools.style.marginBottom = "25px";
 
-        const toolsTitle = document.createElement('h3');
+        const toolsTitle = document.createElement("h3");
+        toolsTitle.style.fontSize = "18px";
+        toolsTitle.style.fontWeight = "600";
+        toolsTitle.style.color = "#f39c12";
+        toolsTitle.style.marginBottom = "12px";
+        toolsTitle.style.borderBottom = "2px solid #f39c12";
+        toolsTitle.style.paddingBottom = "5px";
         toolsTitle.textContent = "🧰 Tools to Use";
         tools.appendChild(toolsTitle);
 
-        const toolsList = document.createElement('ul');
-        section.content.toolsToUse.forEach(tool => {
-          const li = document.createElement('li');
+        const toolsList = document.createElement("ul");
+        toolsList.style.paddingLeft = "25px";
+        toolsList.style.margin = "15px 0";
+        section.content.toolsToUse.forEach((tool) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = tool;
           toolsList.appendChild(li);
         });
         tools.appendChild(toolsList);
         sectionDiv.appendChild(tools);
 
-        // Practice Ideas
-        const projects = document.createElement('div');
-        projects.style.marginBottom = "15px";
+        // Practice Ideas with better styling
+        const projects = document.createElement("div");
+        projects.style.marginBottom = "25px";
 
-        const projectsTitle = document.createElement('h3');
+        const projectsTitle = document.createElement("h3");
+        projectsTitle.style.fontSize = "18px";
+        projectsTitle.style.fontWeight = "600";
+        projectsTitle.style.color = "#9b59b6";
+        projectsTitle.style.marginBottom = "12px";
+        projectsTitle.style.borderBottom = "2px solid #9b59b6";
+        projectsTitle.style.paddingBottom = "5px";
         projectsTitle.textContent = "💡 Practice Ideas";
         projects.appendChild(projectsTitle);
 
-        const projectsList = document.createElement('ul');
-        section.content.practiceIdeas.forEach(project => {
-          const li = document.createElement('li');
+        const projectsList = document.createElement("ul");
+        projectsList.style.paddingLeft = "25px";
+        projectsList.style.margin = "15px 0";
+        section.content.practiceIdeas.forEach((project) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = project;
           projectsList.appendChild(li);
         });
@@ -505,16 +575,21 @@ export default function DSARoadmap() {
         downloadDiv.appendChild(sectionDiv);
       });
 
-      // Footer with credits
-      const footer = document.createElement('div');
-      footer.style.marginTop = "30px";
-      footer.style.borderTop = "1px solid #ccc";
-      footer.style.paddingTop = "10px";
+      // Footer with improved styling
+      const footer = document.createElement("div");
+      footer.style.marginTop = "40px";
+      footer.style.borderTop = "2px solid #ecf0f1";
+      footer.style.paddingTop = "20px";
       footer.style.textAlign = "center";
-      footer.style.fontSize = "12px";
-      footer.style.color = "#666";
+      footer.style.backgroundColor = "#f8f9fa";
+      footer.style.borderRadius = "8px";
+      footer.style.padding = "20px";
 
-      const footerText = document.createElement('p');
+      const footerText = document.createElement("p");
+      footerText.style.fontSize = "12px";
+      footerText.style.color = "#6c757d";
+      footerText.style.margin = "0";
+      footerText.style.fontWeight = "500";
       footerText.textContent = "© 2025 DSA Mastery Roadmap. Created with html2canvas and jsPDF.";
       footer.appendChild(footerText);
 
@@ -523,95 +598,73 @@ export default function DSARoadmap() {
       // Temporarily add the div to the document to render it
       document.body.appendChild(downloadDiv);
 
-      // Use html2canvas to create an image of the content
+      // IMPROVED html2canvas settings for better quality
       const canvas = await html2canvas(downloadDiv, {
         scale: 2, // Higher scale for better quality
         useCORS: true,
         logging: false,
+        letterRendering: true, // Better text rendering
         allowTaint: true,
-        windowWidth: 1200, // Fixed width to avoid layout issues
+        backgroundColor: "#ffffff",
+        width: downloadDiv.scrollWidth,
+        height: downloadDiv.scrollHeight,
+        scrollX: 0,
+        scrollY: 0
       });
 
       // Remove the temporary div
       document.body.removeChild(downloadDiv);
 
-      // Create PDF from the canvas
+      // Create PDF with better settings
       const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+        compress: true, // Compress for smaller file size
+        precision: 2
       });
 
-      // A4 dimensions (210mm × 297mm)
-      const pageWidth = 210;
-      const pageHeight = 297;
-
-      // Calculate the required height based on canvas dimensions to fit the page width
-      const imgWidth = pageWidth - 20; // Leaving 10mm margin on each side
+      // Calculate dimensions for better fitting
+      const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const pageHeight = 297; // A4 height in mm
 
-      // Adding content to multiple pages if necessary
       let heightLeft = imgHeight;
-      let position = 10; // starting position (10mm from top)
-      let pageNumber = 1;
+      let position = 0;
 
-      // Add image to first page
+      // Add first page
       pdf.addImage(
-        canvas.toDataURL('image/png'),
-        'PNG',
-        10, // x position (10mm from left)
-        position, // y position
+        canvas.toDataURL("image/jpeg", 0.95), // Use JPEG with high quality
+        "JPEG",
+        0,
+        0,
         imgWidth,
-        imgHeight
+        imgHeight,
       );
+      heightLeft -= pageHeight;
 
-      // Adding page numbers
-      pdf.setFontSize(10);
-      pdf.text(`Page ${pageNumber}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
-
-      // Add subsequent pages if content overflows
-      while (heightLeft > pageHeight - 20) { // 20mm total margin (10mm top + 10mm bottom)
-        // Calculate how much of the image to use on this page
-        const cropHeight = pageHeight - 20; // usable page height
-        heightLeft -= cropHeight;
-        position -= cropHeight;
-
-        // Add new page
+      // Add additional pages if needed
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
         pdf.addPage();
-        pageNumber++;
-
-        // Add image portion to new page
         pdf.addImage(
-          canvas.toDataURL('image/png'),
-          'PNG',
-          10,
-          10, // Start at top margin again
+          canvas.toDataURL("image/jpeg", 0.95),
+          "JPEG",
+          0,
+          position,
           imgWidth,
           imgHeight,
-          '', // No alias
-          'FAST', // Fast compression
-          0, // Rotation
-          position // Y position to crop from original image
         );
-
-        // Add page number to new page
-        pdf.text(`Page ${pageNumber}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+        heightLeft -= pageHeight;
       }
 
       // Save the PDF
       pdf.save("DSA_Mastery_Roadmap.pdf");
 
-      // Store the downloaded roadmap data to localStorage
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
+      // Store the downloaded roadmap data (if needed)
+      // Note: Removed localStorage usage as per requirements
+      console.log('DSA Roadmap successfully downloaded!');
 
-     
-
-      // Store the downloaded roadmap data in localStorage (optional)
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
-
-      // You can navigate to a Downloads page or show a success message here
-      // For simplicity, we'll just log to console
-      console.log('Roadmap successfully downloaded!');
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("There was an error generating the PDF. Please try again.");

@@ -109,7 +109,8 @@ const roadmapData = [
   {
     id: 3,
     title: "Web & Application Security",
-    description: "Learn to identify and mitigate web application vulnerabilities",
+    description:
+      "Learn to identify and mitigate web application vulnerabilities",
     content: {
       whatToLearn: [
         "HTTP/HTTPS Protocols",
@@ -422,145 +423,240 @@ export default function Home() {
     setDarkMode(!darkMode);
   };
 
-  // Function to handle the download process
+  // Function to handle the download process with enhanced styling
   const handleDownload = async () => {
     setDownloading(true);
 
     try {
       // Create a temporary div to render the roadmap content for downloading
-      const downloadDiv = document.createElement('div');
+      const downloadDiv = document.createElement("div");
       downloadDiv.className = "roadmap-download-content";
 
-      // Set styles for better PDF output
-      downloadDiv.style.padding = "20px";
-      downloadDiv.style.color = "black";
+      // IMPROVED STYLES for better PDF output and readability
+      downloadDiv.style.padding = "40px";
+      downloadDiv.style.color = "#2c3e50";
       downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "Arial, sans-serif";
+      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+      downloadDiv.style.fontSize = "14px";
+      downloadDiv.style.lineHeight = "1.6";
+      downloadDiv.style.maxWidth = "800px";
+      downloadDiv.style.margin = "0 auto";
 
-      // Add title
-      const title = document.createElement('h1');
+      // Add title with better styling
+      const title = document.createElement("h1");
       title.style.textAlign = "center";
-      title.style.marginBottom = "20px";
+      title.style.marginBottom = "30px";
+      title.style.fontSize = "32px";
+      title.style.fontWeight = "700";
+      title.style.color = "#2c3e50";
+      title.style.borderBottom = "3px solid #3498db";
+      title.style.paddingBottom = "15px";
       title.textContent = "Cybersecurity Engineer Roadmap";
       downloadDiv.appendChild(title);
 
-      // Add roadmap content
-      roadmapData.forEach(section => {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.style.marginBottom = "30px";
+      // Add roadmap content with improved styling
+      roadmapData.forEach((section) => {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.style.marginBottom = "40px";
+        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
 
-        // Section header
-        const header = document.createElement('h2');
-        header.style.backgroundColor = "#f0f0f0";
-        header.style.padding = "10px";
-        header.style.borderRadius = "5px";
+        // Section header with better design
+        const header = document.createElement("h2");
+        header.style.backgroundColor = "#ecf0f1";
+        header.style.padding = "15px 20px";
+        header.style.borderRadius = "8px";
+        header.style.borderLeft = "5px solid #3498db";
+        header.style.fontSize = "20px";
+        header.style.fontWeight = "600";
+        header.style.color = "#2c3e50";
+        header.style.marginBottom = "20px";
         header.textContent = `${section.id}. ${section.title}`;
         sectionDiv.appendChild(header);
 
-        // Section description
-        const desc = document.createElement('p');
-        desc.style.marginBottom = "15px";
+        // Section description with better typography
+        const desc = document.createElement("p");
+        desc.style.marginBottom = "25px";
         desc.style.fontStyle = "italic";
+        desc.style.fontSize = "15px";
+        desc.style.color = "#7f8c8d";
+        desc.style.lineHeight = "1.7";
+        desc.style.padding = "0 10px";
         desc.textContent = section.description;
         sectionDiv.appendChild(desc);
 
-        // What to Learn
-        const whatToLearn = document.createElement('div');
-        whatToLearn.style.marginBottom = "15px";
+        // What to Learn with improved styling
+        const whatToLearn = document.createElement("div");
+        whatToLearn.style.marginBottom = "25px";
 
-        const whatToLearnTitle = document.createElement('h3');
+        const whatToLearnTitle = document.createElement("h3");
+        whatToLearnTitle.style.fontSize = "18px";
+        whatToLearnTitle.style.fontWeight = "600";
+        whatToLearnTitle.style.color = "#27ae60";
+        whatToLearnTitle.style.marginBottom = "12px";
+        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
+        whatToLearnTitle.style.paddingBottom = "5px";
         whatToLearnTitle.textContent = "✅ What to Learn";
         whatToLearn.appendChild(whatToLearnTitle);
 
-        const whatToLearnList = document.createElement('ul');
-        section.content.whatToLearn.forEach(item => {
-          const li = document.createElement('li');
+        const whatToLearnList = document.createElement("ul");
+        whatToLearnList.style.paddingLeft = "25px";
+        whatToLearnList.style.margin = "15px 0";
+        section.content.whatToLearn.forEach((item) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = item;
           whatToLearnList.appendChild(li);
         });
         whatToLearn.appendChild(whatToLearnList);
         sectionDiv.appendChild(whatToLearn);
 
-        // Best Courses
-        const bestCourses = document.createElement('div');
-        bestCourses.style.marginBottom = "15px";
+        // Best Courses with better organization
+        const bestCourses = document.createElement("div");
+        bestCourses.style.marginBottom = "25px";
 
-        const bestCoursesTitle = document.createElement('h3');
+        const bestCoursesTitle = document.createElement("h3");
+        bestCoursesTitle.style.fontSize = "18px";
+        bestCoursesTitle.style.fontWeight = "600";
+        bestCoursesTitle.style.color = "#3498db";
+        bestCoursesTitle.style.marginBottom = "12px";
+        bestCoursesTitle.style.borderBottom = "2px solid #3498db";
+        bestCoursesTitle.style.paddingBottom = "5px";
         bestCoursesTitle.textContent = "📚 Best Courses";
         bestCourses.appendChild(bestCoursesTitle);
 
         // English courses
-        const englishTitle = document.createElement('h4');
+        const englishTitle = document.createElement("h4");
+        englishTitle.style.fontSize = "16px";
+        englishTitle.style.fontWeight = "500";
+        englishTitle.style.color = "#2c3e50";
+        englishTitle.style.marginTop = "15px";
+        englishTitle.style.marginBottom = "10px";
         englishTitle.textContent = "In English:";
         bestCourses.appendChild(englishTitle);
 
-        const englishList = document.createElement('ul');
-        section.content.bestCourses.english.forEach(course => {
-          const li = document.createElement('li');
+        const englishList = document.createElement("ul");
+        englishList.style.paddingLeft = "25px";
+        englishList.style.margin = "10px 0";
+        section.content.bestCourses.english.forEach((course) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "6px";
+          li.style.fontSize = "13px";
+          li.style.lineHeight = "1.5";
+          li.style.color = "#34495e";
           li.textContent = course;
           englishList.appendChild(li);
         });
         bestCourses.appendChild(englishList);
 
         // Hindi courses
-        const hindiTitle = document.createElement('h4');
+        const hindiTitle = document.createElement("h4");
+        hindiTitle.style.fontSize = "16px";
+        hindiTitle.style.fontWeight = "500";
+        hindiTitle.style.color = "#2c3e50";
+        hindiTitle.style.marginTop = "15px";
+        hindiTitle.style.marginBottom = "10px";
         hindiTitle.textContent = "In Hindi:";
         bestCourses.appendChild(hindiTitle);
 
-        const hindiList = document.createElement('ul');
-        section.content.bestCourses.hindi.forEach(course => {
-          const li = document.createElement('li');
+        const hindiList = document.createElement("ul");
+        hindiList.style.paddingLeft = "25px";
+        hindiList.style.margin = "10px 0";
+        section.content.bestCourses.hindi.forEach((course) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "6px";
+          li.style.fontSize = "13px";
+          li.style.lineHeight = "1.5";
+          li.style.color = "#34495e";
           li.textContent = course;
           hindiList.appendChild(li);
         });
         bestCourses.appendChild(hindiList);
         sectionDiv.appendChild(bestCourses);
 
-        // Tools to Use
-        const tools = document.createElement('div');
-        tools.style.marginBottom = "15px";
+        // Tools to Use with better styling
+        const tools = document.createElement("div");
+        tools.style.marginBottom = "25px";
 
-        const toolsTitle = document.createElement('h3');
+        const toolsTitle = document.createElement("h3");
+        toolsTitle.style.fontSize = "18px";
+        toolsTitle.style.fontWeight = "600";
+        toolsTitle.style.color = "#f39c12";
+        toolsTitle.style.marginBottom = "12px";
+        toolsTitle.style.borderBottom = "2px solid #f39c12";
+        toolsTitle.style.paddingBottom = "5px";
         toolsTitle.textContent = "🧰 Tools to Use";
         tools.appendChild(toolsTitle);
 
-        const toolsList = document.createElement('ul');
-        section.content.toolsToUse.forEach(tool => {
-          const li = document.createElement('li');
+        const toolsList = document.createElement("ul");
+        toolsList.style.paddingLeft = "25px";
+        toolsList.style.margin = "15px 0";
+        section.content.toolsToUse.forEach((tool) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = tool;
           toolsList.appendChild(li);
         });
         tools.appendChild(toolsList);
         sectionDiv.appendChild(tools);
 
-        // Docs & Websites
-        const docs = document.createElement('div');
-        docs.style.marginBottom = "15px";
+        // Docs & Websites with better styling
+        const docs = document.createElement("div");
+        docs.style.marginBottom = "25px";
 
-        const docsTitle = document.createElement('h3');
+        const docsTitle = document.createElement("h3");
+        docsTitle.style.fontSize = "18px";
+        docsTitle.style.fontWeight = "600";
+        docsTitle.style.color = "#e74c3c";
+        docsTitle.style.marginBottom = "12px";
+        docsTitle.style.borderBottom = "2px solid #e74c3c";
+        docsTitle.style.paddingBottom = "5px";
         docsTitle.textContent = "📘 Docs & Websites";
         docs.appendChild(docsTitle);
 
-        const docsList = document.createElement('ul');
-        section.content.docsAndWebsites.forEach(doc => {
-          const li = document.createElement('li');
+        const docsList = document.createElement("ul");
+        docsList.style.paddingLeft = "25px";
+        docsList.style.margin = "15px 0";
+        section.content.docsAndWebsites.forEach((doc) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = doc;
           docsList.appendChild(li);
         });
         docs.appendChild(docsList);
         sectionDiv.appendChild(docs);
 
-        // Project Ideas
-        const projects = document.createElement('div');
-        projects.style.marginBottom = "15px";
+        // Project Ideas with better styling
+        const projects = document.createElement("div");
+        projects.style.marginBottom = "25px";
 
-        const projectsTitle = document.createElement('h3');
+        const projectsTitle = document.createElement("h3");
+        projectsTitle.style.fontSize = "18px";
+        projectsTitle.style.fontWeight = "600";
+        projectsTitle.style.color = "#9b59b6";
+        projectsTitle.style.marginBottom = "12px";
+        projectsTitle.style.borderBottom = "2px solid #9b59b6";
+        projectsTitle.style.paddingBottom = "5px";
         projectsTitle.textContent = "💡 Project Ideas";
         projects.appendChild(projectsTitle);
 
-        const projectsList = document.createElement('ul');
-        section.content.projectIdeas.forEach(project => {
-          const li = document.createElement('li');
+        const projectsList = document.createElement("ul");
+        projectsList.style.paddingLeft = "25px";
+        projectsList.style.margin = "15px 0";
+        section.content.projectIdeas.forEach((project) => {
+          const li = document.createElement("li");
+          li.style.marginBottom = "8px";
+          li.style.fontSize = "14px";
+          li.style.lineHeight = "1.6";
+          li.style.color = "#34495e";
           li.textContent = project;
           projectsList.appendChild(li);
         });
@@ -573,61 +669,69 @@ export default function Home() {
       // Temporarily add the div to the document to render it
       document.body.appendChild(downloadDiv);
 
-      // Use html2canvas to create an image of the content
+      // IMPROVED html2canvas settings for better quality
       const canvas = await html2canvas(downloadDiv, {
-        scale: 1,
+        scale: 2, // Higher scale for better quality
         useCORS: true,
         logging: false,
+        letterRendering: true, // Better text rendering
+        allowTaint: true,
+        backgroundColor: "#ffffff",
+        width: downloadDiv.scrollWidth,
+        height: downloadDiv.scrollHeight,
+        scrollX: 0,
+        scrollY: 0
       });
 
       // Remove the temporary div
       document.body.removeChild(downloadDiv);
 
-      // Create PDF from the canvas
+      // Create PDF with better settings
       const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+        compress: true, // Compress for smaller file size
+        precision: 2
       });
 
-      // Calculate the required height based on canvas dimensions to fit the page width
-      const imgWidth = 210; // A4 width in mm (210mm)
-      const imgHeight = canvas.height * imgWidth / canvas.width;
+      // Calculate dimensions for better fitting
+      const imgWidth = 210; // A4 width in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const pageHeight = 297; // A4 height in mm
 
-      // Add image to PDF (first page)
-      pdf.addImage(
-        canvas.toDataURL('image/png'),
-        'PNG',
-        0,
-        0,
-        imgWidth,
-        imgHeight
-      );
-
-      // If the content requires multiple pages
       let heightLeft = imgHeight;
       let position = 0;
 
-      // Subtract the height of the first page
-      heightLeft -= 297; // A4 height in mm (297mm)
+      // Add first page
+      pdf.addImage(
+        canvas.toDataURL("image/jpeg", 0.95), // Use JPEG with high quality
+        "JPEG",
+        0,
+        0,
+        imgWidth,
+        imgHeight,
+      );
+      heightLeft -= pageHeight;
 
-      // Add subsequent pages if needed
+      // Add additional pages if needed
       while (heightLeft > 0) {
         position = heightLeft - imgHeight;
         pdf.addPage();
         pdf.addImage(
-          canvas.toDataURL('image/png'),
-          'PNG',
+          canvas.toDataURL("image/jpeg", 0.95),
+          "JPEG",
           0,
           position,
           imgWidth,
-          imgHeight
+          imgHeight,
         );
-        heightLeft -= 297;
+        heightLeft -= pageHeight;
       }
 
       // Save the PDF
       pdf.save("Cybersecurity_Engineer_Roadmap.pdf");
+
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
@@ -635,321 +739,325 @@ export default function Home() {
       setDownloading(false);
     }
   };
-              return (
-                <div
-                  className={`min-h-screen ${
-                    darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-                  }`}
+  return (
+    <div
+      className={`min-h-screen ${
+        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+      }`}
+    >
+      <Head>
+        <title>Cybersecurity Engineer Roadmap</title>
+        <meta
+          name="description"
+          content="Complete roadmap for becoming a Cybersecurity Engineer"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {/* Sticky Navigation Bar */}
+      <nav
+        className={`sticky top-0 z-10 ${
+          darkMode ? "bg-gray-800" : "bg-white"
+        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+      >
+        <h1 className="text-xl md:text-2xl font-bold">
+          Cybersecurity Engineer Roadmap
+        </h1>
+        <div className="flex items-center space-x-3">
+          {/* Download Button */}
+          <button
+            onClick={handleDownload}
+            disabled={downloading}
+            className={`px-4 py-2 rounded-md text-white ${
+              downloading
+                ? "bg-gray-500 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            } transition-colors flex items-center`}
+          >
+            {downloading ? (
+              <>
+                <svg
+                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
                 >
-                  <Head>
-                    <title>Cybersecurity Engineer Roadmap</title>
-                    <meta
-                      name="description"
-                      content="Complete roadmap for becoming a Cybersecurity Engineer"
-                    />
-                    <link rel="icon" href="/favicon.ico" />
-                  </Head>
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Processing...
+              </>
+            ) : (
+              <>
+                <Download className="w-4 h-4 mr-2" />
+                Download Roadmap
+              </>
+            )}
+          </button>
 
-                  {/* Sticky Navigation Bar */}
-                  <nav
-                    className={`sticky top-0 z-10 ${
-                      darkMode ? "bg-gray-800" : "bg-white"
-                    } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className={`p-2 rounded-full ${
+              darkMode
+                ? "bg-gray-700 text-yellow-300"
+                : "bg-gray-200 text-gray-700"
+            }`}
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </button>
+        </div>
+      </nav>
+
+      <main className="container mx-auto px-4 py-8 max-w-4xl">
+        {/* Introduction */}
+        <div
+          className={`mb-8 p-6 rounded-lg ${
+            darkMode ? "bg-gray-800" : "bg-white"
+          } shadow-md transition-colors duration-300`}
+        >
+          <h2 className="text-xl md:text-2xl font-semibold mb-3">
+            Welcome to the Cybersecurity Engineer Roadmap
+          </h2>
+          <p className="text-sm md:text-base leading-relaxed">
+            This roadmap will guide you through the essential skills, tools, and
+            resources needed to become a proficient Cybersecurity Engineer. Each
+            section contains curated resources in both English and Hindi to help
+            you master each stage of your cybersecurity journey. Click on any
+            section to expand it and explore its contents. You can also download
+            the complete roadmap for offline reference.
+          </p>
+        </div>
+
+        {/* Roadmap Sections */}
+        <div className="space-y-4">
+          {roadmapData.map((section) => (
+            <div
+              key={section.id}
+              className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
+                darkMode
+                  ? "bg-gray-800 hover:bg-gray-750"
+                  : "bg-white hover:bg-gray-50"
+              }`}
+            >
+              {/* Section Header */}
+              <button
+                onClick={() => toggleSection(section.id)}
+                className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
+                aria-expanded={openSection === section.id}
+              >
+                <div className="flex items-center">
+                  <span
+                    className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
+                      darkMode ? "bg-green-600" : "bg-green-500"
+                    } text-white font-medium`}
                   >
-                    <h1 className="text-xl md:text-2xl font-bold">
-                      Cybersecurity Engineer Roadmap
-                    </h1>
-                    <div className="flex items-center space-x-3">
-                      {/* Download Button */}
-                      <button
-                        onClick={handleDownload}
-                        disabled={downloading}
-                        className={`px-4 py-2 rounded-md text-white ${
-                          downloading 
-                            ? "bg-gray-500 cursor-not-allowed" 
-                            : "bg-blue-600 hover:bg-blue-700"
-                        } transition-colors flex items-center`}
-                      >
-                        {downloading ? (
-                          <>
-                            <svg 
-                              className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" 
-                              xmlns="http://www.w3.org/2000/svg" 
-                              fill="none" 
-                              viewBox="0 0 24 24"
-                            >
-                              <circle 
-                                className="opacity-25" 
-                                cx="12" 
-                                cy="12" 
-                                r="10" 
-                                stroke="currentColor" 
-                                strokeWidth="4"
-                              ></circle>
-                              <path 
-                                className="opacity-75" 
-                                fill="currentColor" 
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              ></path>
-                            </svg>
-                            Processing...
-                          </>
-                        ) : (
-                          <>
-                            <Download className="w-4 h-4 mr-2" />
-                            Download Roadmap
-                          </>
-                        )}
-                      </button>
-
-                      {/* Dark Mode Toggle */}
-                      <button
-                        onClick={toggleDarkMode}
-                        className={`p-2 rounded-full ${
-                          darkMode
-                            ? "bg-gray-700 text-yellow-300"
-                            : "bg-gray-200 text-gray-700"
-                        }`}
-                        aria-label="Toggle Dark Mode"
-                      >
-                        {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                      </button>
-                    </div>
-                  </nav>
-
-                  <main className="container mx-auto px-4 py-8 max-w-4xl">
-                    {/* Introduction */}
-                    <div
-                      className={`mb-8 p-6 rounded-lg ${
-                        darkMode ? "bg-gray-800" : "bg-white"
-                      } shadow-md transition-colors duration-300`}
+                    {section.id}
+                  </span>
+                  <div className="text-left">
+                    <h3 className="font-semibold text-lg">{section.title}</h3>
+                    <p
+                      className={`text-sm ${
+                        darkMode ? "text-gray-300" : "text-gray-600"
+                      }`}
                     >
-                      <h2 className="text-xl md:text-2xl font-semibold mb-3">
-                        Welcome to the Cybersecurity Engineer Roadmap
-                      </h2>
-                      <p className="text-sm md:text-base leading-relaxed">
-                        This roadmap will guide you through the essential skills, tools, and
-                        resources needed to become a proficient Cybersecurity Engineer. Each section
-                        contains curated resources in both English and Hindi to help you
-                        master each stage of your cybersecurity journey. Click on any
-                        section to expand it and explore its contents. You can also download the 
-                        complete roadmap for offline reference.
-                      </p>
-                    </div>
+                      {section.description}
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  className={`w-5 h-5 transform transition-transform duration-300 ${
+                    openSection === section.id ? "rotate-180" : "rotate-0"
+                  }`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
 
-                    {/* Roadmap Sections */}
-                    <div className="space-y-4">
-                      {roadmapData.map((section) => (
-                        <div
-                          key={section.id}
-                          className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
-                            darkMode
-                              ? "bg-gray-800 hover:bg-gray-750"
-                              : "bg-white hover:bg-gray-50"
+              {/* Section Content */}
+              {openSection === section.id && (
+                <div
+                  className={`px-6 pb-6 pt-2 border-t ${
+                    darkMode ? "border-gray-700" : "border-gray-200"
+                  } animate-fadeIn`}
+                >
+                  {/* What to Learn */}
+                  <div className="mb-6">
+                    <h4 className="flex items-center text-lg font-medium mb-3">
+                      <span className="mr-2">✅</span>What to Learn
+                    </h4>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {section.content.whatToLearn.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`flex items-center ${
+                            darkMode ? "text-gray-300" : "text-gray-700"
                           }`}
                         >
-                          {/* Section Header */}
-                          <button
-                            onClick={() => toggleSection(section.id)}
-                            className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
-                            aria-expanded={openSection === section.id}
-                          >
-                            <div className="flex items-center">
-                              <span
-                                className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
-                                  darkMode ? "bg-green-600" : "bg-green-500"
-                                } text-white font-medium`}
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Best Courses */}
+                  <div className="mb-6">
+                    <h4 className="flex items-center text-lg font-medium mb-3">
+                      <span className="mr-2">📚</span>Best Courses
+                    </h4>
+
+                    <div className="space-y-4">
+                      {/* English Courses */}
+                      <div>
+                        <h5
+                          className={`font-medium mb-2 ${
+                            darkMode ? "text-gray-200" : "text-gray-800"
+                          }`}
+                        >
+                          In English:
+                        </h5>
+                        <ul className="space-y-1">
+                          {section.content.bestCourses.english.map(
+                            (course, index) => (
+                              <li
+                                key={index}
+                                className={`flex items-start ${
+                                  darkMode ? "text-gray-300" : "text-gray-700"
+                                }`}
                               >
-                                {section.id}
-                              </span>
-                              <div className="text-left">
-                                <h3 className="font-semibold text-lg">{section.title}</h3>
-                                <p
-                                  className={`text-sm ${
-                                    darkMode ? "text-gray-300" : "text-gray-600"
-                                  }`}
-                                >
-                                  {section.description}
-                                </p>
-                              </div>
-                            </div>
-                            <svg
-                              className={`w-5 h-5 transform transition-transform duration-300 ${
-                                openSection === section.id ? "rotate-180" : "rotate-0"
-                              }`}
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </button>
-
-                          {/* Section Content */}
-                          {openSection === section.id && (
-                            <div
-                              className={`px-6 pb-6 pt-2 border-t ${
-                                darkMode ? "border-gray-700" : "border-gray-200"
-                              } animate-fadeIn`}
-                            >
-                              {/* What to Learn */}
-                              <div className="mb-6">
-                                <h4 className="flex items-center text-lg font-medium mb-3">
-                                  <span className="mr-2">✅</span>What to Learn
-                                </h4>
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                  {section.content.whatToLearn.map((item, index) => (
-                                    <li
-                                      key={index}
-                                      className={`flex items-center ${
-                                        darkMode ? "text-gray-300" : "text-gray-700"
-                                      }`}
-                                    >
-                                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
-                                      {item}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-
-                              {/* Best Courses */}
-                              <div className="mb-6">
-                                <h4 className="flex items-center text-lg font-medium mb-3">
-                                  <span className="mr-2">📚</span>Best Courses
-                                </h4>
-
-                                <div className="space-y-4">
-                                  {/* English Courses */}
-                                  <div>
-                                    <h5
-                                      className={`font-medium mb-2 ${
-                                        darkMode ? "text-gray-200" : "text-gray-800"
-                                      }`}
-                                    >
-                                      In English:
-                                    </h5>
-                                    <ul className="space-y-1">
-                                      {section.content.bestCourses.english.map(
-                                        (course, index) => (
-                                          <li
-                                            key={index}
-                                            className={`flex items-start ${
-                                              darkMode ? "text-gray-300" : "text-gray-700"
-                                            }`}
-                                          >
-                                            <span className="min-w-4 text-green-500 mr-2">
-                                              •
-                                            </span>
-                                            {course}
-                                          </li>
-                                        )
-                                      )}
-                                    </ul>
-                                  </div>
-
-                                  {/* Hindi Courses */}
-                                  <div>
-                                    <h5
-                                      className={`font-medium mb-2 ${
-                                        darkMode ? "text-gray-200" : "text-gray-800"
-                                      }`}
-                                    >
-                                      In Hindi:
-                                    </h5>
-                                    <ul className="space-y-1">
-                                      {section.content.bestCourses.hindi.map(
-                                        (course, index) => (
-                                          <li
-                                            key={index}
-                                            className={`flex items-start ${
-                                              darkMode ? "text-gray-300" : "text-gray-700"
-                                            }`}
-                                          >
-                                            <span className="min-w-4 text-green-500 mr-2">
-                                              •
-                                            </span>
-                                            {course}
-                                          </li>
-                                        )
-                                      )}
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Tools to Use */}
-                              <div className="mb-6">
-                                <h4 className="flex items-center text-lg font-medium mb-3">
-                                  <span className="mr-2">🧰</span>Tools to Use
-                                </h4>
-                                <div className="flex flex-wrap gap-2">
-                                  {section.content.toolsToUse.map((tool, index) => (
-                                    <span
-                                      key={index}
-                                      className={`px-3 py-1 rounded-full text-sm ${
-                                        darkMode
-                                          ? "bg-gray-700 text-gray-200"
-                                          : "bg-gray-200 text-gray-800"
-                                      }`}
-                                    >
-                                      {tool}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Docs & Websites */}
-                              <div className="mb-6">
-                                <h4 className="flex items-center text-lg font-medium mb-3">
-                                  <span className="mr-2">📘</span>Docs & Websites
-                                </h4>
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                  {section.content.docsAndWebsites.map(
-                                    (resource, index) => (
-                                      <li
-                                        key={index}
-                                        className={`flex items-center ${
-                                          darkMode ? "text-gray-300" : "text-gray-700"
-                                        }`}
-                                      >
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                                        {resource}
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              </div>
-
-                              {/* Project Ideas */}
-                              <div>
-                                <h4 className="flex items-center text-lg font-medium mb-3">
-                                  <span className="mr-2">💡</span>Project Ideas
-                                </h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                  {section.content.projectIdeas.map((project, index) => (
-                                    <div
-                                      key={index}
-                                      className={`p-3 rounded-md ${
-                                        darkMode
-                                          ? "bg-gray-700 text-gray-200"
-                                          : "bg-gray-100 text-gray-800"
-                                      }`}
-                                    >
-                                      {project}
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
+                                <span className="min-w-4 text-green-500 mr-2">
+                                  •
+                                </span>
+                                {course}
+                              </li>
+                            ),
                           )}
+                        </ul>
+                      </div>
+
+                      {/* Hindi Courses */}
+                      <div>
+                        <h5
+                          className={`font-medium mb-2 ${
+                            darkMode ? "text-gray-200" : "text-gray-800"
+                          }`}
+                        >
+                          In Hindi:
+                        </h5>
+                        <ul className="space-y-1">
+                          {section.content.bestCourses.hindi.map(
+                            (course, index) => (
+                              <li
+                                key={index}
+                                className={`flex items-start ${
+                                  darkMode ? "text-gray-300" : "text-gray-700"
+                                }`}
+                              >
+                                <span className="min-w-4 text-green-500 mr-2">
+                                  •
+                                </span>
+                                {course}
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tools to Use */}
+                  <div className="mb-6">
+                    <h4 className="flex items-center text-lg font-medium mb-3">
+                      <span className="mr-2">🧰</span>Tools to Use
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {section.content.toolsToUse.map((tool, index) => (
+                        <span
+                          key={index}
+                          className={`px-3 py-1 rounded-full text-sm ${
+                            darkMode
+                              ? "bg-gray-700 text-gray-200"
+                              : "bg-gray-200 text-gray-800"
+                          }`}
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Docs & Websites */}
+                  <div className="mb-6">
+                    <h4 className="flex items-center text-lg font-medium mb-3">
+                      <span className="mr-2">📘</span>Docs & Websites
+                    </h4>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {section.content.docsAndWebsites.map(
+                        (resource, index) => (
+                          <li
+                            key={index}
+                            className={`flex items-center ${
+                              darkMode ? "text-gray-300" : "text-gray-700"
+                            }`}
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                            {resource}
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* Project Ideas */}
+                  <div>
+                    <h4 className="flex items-center text-lg font-medium mb-3">
+                      <span className="mr-2">💡</span>Project Ideas
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {section.content.projectIdeas.map((project, index) => (
+                        <div
+                          key={index}
+                          className={`p-3 rounded-md ${
+                            darkMode
+                              ? "bg-gray-700 text-gray-200"
+                              : "bg-gray-100 text-gray-800"
+                          }`}
+                        >
+                          {project}
                         </div>
                       ))}
                     </div>
-                  </main>
+                  </div>
                 </div>
-              );
+              )}
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
 }
