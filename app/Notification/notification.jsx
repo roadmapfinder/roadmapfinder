@@ -2,42 +2,20 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-
-// Mock auth function for demonstration - replace with your actual auth import
-const mockOnAuthStateChanged = (callback) => {
-  // Simulate authentication check
-  setTimeout(() => {
-    // For demo purposes, randomly simulate logged in/out state
-    const isLoggedIn = Math.random() > 0.5;
-    if (isLoggedIn) {
-      callback({
-        uid: 'user123',
-        email: 'user@example.com',
-        displayName: 'John Doe'
-      });
-    } else {
-      callback(null);
-    }
-  }, 1000);
-
-  // Return unsubscribe function
-  return () => {};
-};
+import { onAuthStateChanged } from '../lib/auth';
+import { auth } from '../lib/firebase';
 
 export default function NotificationPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [notifications, setNotifications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showSignupPopup, setShowSignupPopup] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
   const [authError, setAuthError] = useState(null);
-  const [authInitialized, setAuthInitialized] = useState(false);
 
   const router = useRouter();
 
-  // Default notifications data
+  // Default notifications data - only shown to authenticated users
   const defaultNotifications = useMemo(() => [
     {
       id: 1,
@@ -47,7 +25,7 @@ export default function NotificationPage() {
       message: 'New module available: "Custom Hooks for State Management"',
       timestamp: '2 hours ago',
       read: false,
-      createdAt: '2025-05-21T08:30:00.000Z'
+      createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()
     },
     {
       id: 2,
@@ -57,7 +35,7 @@ export default function NotificationPage() {
       message: 'Your roadmap has been updated with new Backend technologies',
       timestamp: '1 day ago',
       read: false,
-      createdAt: '2025-05-20T10:15:00.000Z'
+      createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     },
     {
       id: 3,
@@ -67,7 +45,7 @@ export default function NotificationPage() {
       message: 'New recommended extensions for React development added',
       timestamp: '3 days ago',
       read: true,
-      createdAt: '2025-05-18T14:22:00.000Z'
+      createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()
     },
     {
       id: 4,
@@ -77,146 +55,154 @@ export default function NotificationPage() {
       message: 'Updated guides on Advanced Types and Generics',
       timestamp: '5 days ago',
       read: true,
-      createdAt: '2025-05-16T09:45:00.000Z'
+      createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: 5,
+      type: 'course',
+      icon: '⚛️',
+      title: 'Next.js Fundamentals',
+      message: 'New chapter on App Router and Server Components',
+      timestamp: '1 week ago',
+      read: false,
+      createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
     }
   ], []);
 
-  // Tab options
+  // Tab configuration
   const tabs = useMemo(() => [
-    { id: 'all', label: 'All' },
-    { id: 'courses', label: 'Courses' },
-    { id: 'roadmaps', label: 'Roadmaps' },
-    { id: 'tools', label: 'Tools' },
-    { id: 'docs', label: 'Docs' }
+    { id: 'all', label: 'All', count: 0 },
+    { id: 'courses', label: 'Courses', count: 0 },
+    { id: 'roadmaps', label: 'Roadmaps', count: 0 },
+    { id: 'tools', label: 'Tools', count: 0 },
+    { id: 'docs', label: 'Docs', count: 0 }
   ], []);
 
-  // Load notifications - using in-memory storage instead of localStorage
-  const loadNotifications = useCallback((userId) => {
-    try {
-      // In a real app, you'd fetch from your backend API
-      // For now, we'll use the default notifications
-      setNotifications(defaultNotifications);
-    } catch (error) {
-      console.error("Error loading notifications:", error);
-      setNotifications(defaultNotifications);
-    }
-  }, [defaultNotifications]);
-
-  // Save notifications - placeholder for API call
-  const saveNotifications = useCallback((userId, notificationsData) => {
-    try {
-      // In a real app, you'd save to your backend API
-      console.log("Saving notifications for user:", userId, notificationsData);
-    } catch (error) {
-      console.error("Error saving notifications:", error);
-    }
-  }, []);
-
-  // Initialize authentication with proper error handling
+  // Enhanced authentication state management
   useEffect(() => {
-    let unsubscribe = null;
     let mounted = true;
-    let timeoutId = null;
 
-    const initAuth = async () => {
-      try {
-        // Ensure we're in the browser environment
-        if (typeof window === 'undefined') {
-          return;
-        }
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (currentUser) => {
+        if (!mounted) return;
 
-        setIsLoading(true);
+        console.log('Auth state changed:', currentUser ? 'User logged in' : 'User logged out');
+
+        setUser(currentUser);
+        setAuthChecked(true);
         setAuthError(null);
 
-        // Timeout for auth initialization
-        timeoutId = setTimeout(() => {
-          if (mounted && !authInitialized) {
-            console.warn("Auth initialization timeout - falling back to guest mode");
-            setAuthError(new Error("Authentication service timeout"));
-            setIsLoading(false);
-            setAuthInitialized(true);
-          }
-        }, 5000);
-
-        // Try to set up auth state listener with error handling
-        try {
-          // Replace mockOnAuthStateChanged with your actual onAuthStateChanged import
-          // import { onAuthStateChanged } from '../lib/auth';
-          unsubscribe = mockOnAuthStateChanged((user) => {
-            if (!mounted) return;
-
-            clearTimeout(timeoutId);
-            setAuthInitialized(true);
-
-            if (user) {
-              // User is signed in
-              setUser(user);
-              setIsLoggedIn(true);
-              loadNotifications(user.uid);
-              setShowSignupPopup(false);
-              console.log("User authenticated:", user.email);
-            } else {
-              // User is signed out
-              setUser(null);
-              setIsLoggedIn(false);
-              setNotifications([]);
-
-              // Show signup popup after a delay for non-logged-in users
-              const popupTimer = setTimeout(() => {
-                if (mounted && !isLoggedIn) {
-                  setShowSignupPopup(true);
-                }
-              }, 2000);
-
-              // Store cleanup function for popup timer
-              return () => clearTimeout(popupTimer);
-            }
-
-            setIsLoading(false);
-          });
-
-        } catch (authSetupError) {
-          console.error("Auth setup error:", authSetupError);
-          throw new Error(`Authentication setup failed: ${authSetupError.message}`);
-        }
-
-      } catch (error) {
-        console.error("Auth initialization error:", error);
-        if (mounted) {
-          setAuthError(error);
-          setIsLoading(false);
-          setAuthInitialized(true);
-
-          // Fallback to non-authenticated state
-          setUser(null);
-          setIsLoggedIn(false);
+        // Load notifications only for authenticated users
+        if (currentUser) {
+          setNotifications(defaultNotifications);
+          console.log('Notifications loaded for authenticated user');
+        } else {
           setNotifications([]);
+          console.log('Notifications cleared - user not authenticated');
         }
-      }
-    };
 
-    initAuth();
+        setIsLoading(false);
+      },
+      (error) => {
+        if (!mounted) return;
+
+        console.error('Authentication error:', error);
+        setAuthError(error.message);
+        setUser(null);
+        setNotifications([]);
+        setAuthChecked(true);
+        setIsLoading(false);
+      }
+    );
 
     // Cleanup function
     return () => {
       mounted = false;
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      if (unsubscribe && typeof unsubscribe === 'function') {
-        try {
-          unsubscribe();
-        } catch (error) {
-          console.error("Error unsubscribing from auth:", error);
-        }
+      if (unsubscribe) {
+        unsubscribe();
       }
     };
-  }, [loadNotifications, isLoggedIn]);
+  }, [defaultNotifications]);
 
-  // Format timestamp for display
+  // Navigation handlers with error handling
+  const handleSignup = useCallback(() => {
+    try {
+      router.push('/Signup');
+    } catch (error) {
+      console.error('Navigation error to signup:', error);
+    }
+  }, [router]);
+
+  const handleLogin = useCallback(() => {
+    try {
+      router.push('/Login');
+    } catch (error) {
+      console.error('Navigation error to login:', error);
+    }
+  }, [router]);
+
+  const handleHome = useCallback(() => {
+    try {
+      router.push('/Home');
+    } catch (error) {
+      console.error('Navigation error to home:', error);
+    }
+  }, [router]);
+
+  // Enhanced notification click handler
+  const handleNotificationClick = useCallback((notification) => {
+    if (!user) {
+      console.warn('Notification clicked but user not authenticated');
+      return;
+    }
+
+    const routeMap = {
+      course: '/Courses',
+      roadmap: '/Roadmap',
+      tool: '/TOOLS',
+      doc: '/Docs'
+    };
+
+    try {
+      // Mark notification as read
+      setNotifications(prevNotifications => 
+        prevNotifications.map(item => 
+          item.id === notification.id ? { ...item, read: true } : item
+        )
+      );
+
+      // Navigate to appropriate page
+      const route = routeMap[notification.type];
+      if (route) {
+        router.push(route);
+        console.log(`Navigating to ${route} for notification type: ${notification.type}`);
+      } else {
+        console.warn(`No route found for notification type: ${notification.type}`);
+      }
+    } catch (error) {
+      console.error('Error handling notification click:', error);
+    }
+  }, [router, user]);
+
+  // Mark all notifications as read
+  const handleMarkAllAsRead = useCallback(() => {
+    if (!user) return;
+
+    setNotifications(prevNotifications => 
+      prevNotifications.map(notification => ({ ...notification, read: true }))
+    );
+    console.log('All notifications marked as read');
+  }, [user]);
+
+  // Enhanced timestamp formatting
   const formatTimestamp = useCallback((dateStr) => {
     try {
       const date = new Date(dateStr);
+      if (isNaN(date.getTime())) {
+        return 'Unknown time';
+      }
+
       const now = new Date();
       const diffMs = now - date;
       const diffMinutes = Math.floor(diffMs / (1000 * 60));
@@ -229,149 +215,72 @@ export default function NotificationPage() {
       if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
       return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) > 1 ? 's' : ''} ago`;
     } catch (error) {
-      console.error("Error formatting timestamp:", error);
+      console.error('Error formatting timestamp:', error);
       return 'Unknown time';
     }
   }, []);
 
-  // Handle navigation with error handling
-  const handleSignup = useCallback(() => {
-    try {
-      router.push('/Signup');
-      setShowSignupPopup(false);
-    } catch (error) {
-      console.error("Navigation error:", error);
-      // Fallback: try window.location
-      window.location.href = '/Signup';
-    }
-  }, [router]);
-
-  const handleLogin = useCallback(() => {
-    try {
-      router.push('/Login');
-      setShowSignupPopup(false);
-    } catch (error) {
-      console.error("Navigation error:", error);
-      // Fallback: try window.location
-      window.location.href = '/Login';
-    }
-  }, [router]);
-
-  const handleClosePopup = useCallback(() => {
-    setShowSignupPopup(false);
-  }, []);
-
-  // Handle notification click with error handling
-  const handleNotificationClick = useCallback((notification) => {
-    try {
-      if (!user) {
-        console.warn("User not logged in, cannot mark notification as read");
-        return;
-      }
-
-      // Mark as read
-      const updatedNotifications = notifications.map(item => 
-        item.id === notification.id ? { ...item, read: true } : item
-      );
-      setNotifications(updatedNotifications);
-
-      // Save updated notifications
-      saveNotifications(user.uid, updatedNotifications);
-
-      // Navigate based on notification type
-      const routeMap = {
-        course: '/Courses',
-        roadmap: '/Roadmap',
-        tool: '/TOOLS',
-        doc: '/Docs'
-      };
-
-      const route = routeMap[notification.type];
-      if (route) {
-        try {
-          router.push(route);
-        } catch (navError) {
-          console.error("Navigation error:", navError);
-          // Fallback: try window.location
-          window.location.href = route;
-        }
-      }
-    } catch (error) {
-      console.error("Error handling notification click:", error);
-    }
-  }, [notifications, user, router, saveNotifications]);
-
   // Filter notifications based on active tab
   const filteredNotifications = useMemo(() => {
-    try {
-      if (activeTab === 'all') return notifications;
+    if (activeTab === 'all') return notifications;
 
-      const singularType = activeTab.endsWith('s') ? activeTab.slice(0, -1) : activeTab;
-      return notifications.filter(notification => 
-        notification.type === singularType.toLowerCase()
-      );
-    } catch (error) {
-      console.error("Error filtering notifications:", error);
-      return notifications;
-    }
+    const typeMap = {
+      'courses': 'course',
+      'roadmaps': 'roadmap',
+      'tools': 'tool',
+      'docs': 'doc'
+    };
+
+    const targetType = typeMap[activeTab];
+    return notifications.filter(notification => 
+      notification.type === targetType
+    );
   }, [notifications, activeTab]);
 
-  // Retry auth initialization
-  const retryAuth = useCallback(() => {
-    setAuthError(null);
-    setIsLoading(true);
-    setAuthInitialized(false);
-    window.location.reload();
-  }, []);
+  // Calculate counts for tabs and unread notifications
+  const { unreadCount, tabCounts } = useMemo(() => {
+    const unread = notifications.filter(n => !n.read).length;
+    const counts = {
+      all: notifications.length,
+      courses: notifications.filter(n => n.type === 'course').length,
+      roadmaps: notifications.filter(n => n.type === 'roadmap').length,
+      tools: notifications.filter(n => n.type === 'tool').length,
+      docs: notifications.filter(n => n.type === 'doc').length,
+    };
 
-  // Error state with retry option
-  if (authError) {
+    return { unreadCount: unread, tabCounts: counts };
+  }, [notifications]);
+
+  // User authentication status check
+  const isUserAuthenticated = useMemo(() => {
+    return authChecked && user !== null;
+  }, [authChecked, user]);
+
+  const isUserNotAuthenticated = useMemo(() => {
+    return authChecked && user === null;
+  }, [authChecked, user]);
+
+  // Loading state - show while checking authentication
+  if (isLoading || !authChecked) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <div className="text-center max-w-md mx-auto p-6">
-          <div className="text-4xl mb-4">⚠️</div>
-          <h2 className="text-xl font-bold text-gray-800 mb-2">Connection Issue</h2>
-          <p className="text-gray-600 mb-4 text-sm">
-            {authError.message || "There was a problem connecting to the authentication service."}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button 
-              onClick={retryAuth}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-            >
-              Retry Connection
-            </button>
-            <button 
-              onClick={() => {
-                setAuthError(null);
-                setIsLoading(false);
-                setIsLoggedIn(false);
-                setUser(null);
-              }}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
-            >
-              Continue as Guest
-            </button>
+        <div className="flex flex-col items-center space-y-4">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 border-3 border-indigo-600 rounded-full animate-spin border-t-transparent"></div>
+            <span className="text-indigo-700 font-medium text-lg">Checking authentication...</span>
           </div>
+          {authError && (
+            <div className="text-red-600 text-sm text-center max-w-md">
+              Authentication error: {authError}
+            </div>
+          )}
         </div>
       </div>
     );
   }
 
-  // Loading state
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <div className="flex items-center space-x-2">
-          <div className="w-6 h-6 border-2 border-indigo-600 rounded-full animate-spin border-t-transparent"></div>
-          <span className="text-indigo-700 font-medium">Loading notifications...</span>
-        </div>
-      </div>
-    );
-  }
-
-  // Not logged in state - show main content with popup
-  if (!isLoggedIn) {
+  // NOT AUTHENTICATED - Show signup/login prompt
+  if (isUserNotAuthenticated) {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-3xl mx-auto">
@@ -379,84 +288,87 @@ export default function NotificationPage() {
           <header className="sticky top-0 z-10 bg-white shadow-sm">
             <div className="px-4 py-4 border-b flex justify-between items-center">
               <h1 className="text-xl font-bold text-gray-800">Notifications</h1>
+              <div className="flex items-center space-x-2">
+                <button 
+                  onClick={handleLogin}
+                  className="px-4 py-2 text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded-md transition-all duration-200"
+                >
+                  Sign In
+                </button>
+                <button 
+                  onClick={handleSignup}
+                  className="px-4 py-2 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-sm"
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
           </header>
 
-          {/* Empty state for non-logged users */}
+          {/* Authentication Required Prompt */}
           <div className="flex flex-col items-center justify-center py-20 text-center px-4">
-            <div className="text-6xl mb-6">🔔</div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Stay in the Loop!</h2>
-            <p className="text-gray-600 text-lg mb-8 max-w-md">
-              Get notified about new courses, roadmaps, tools, and documentation updates.
+            <div className="text-6xl mb-6 animate-bounce">🔔</div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Stay in the Loop!</h2>
+            <p className="text-gray-600 text-lg mb-2 max-w-2xl leading-relaxed">
+              Get instant notifications about new courses, roadmaps, tools, and documentation updates.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={handleLogin}
-                className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-200"
-              >
-                Sign In
-              </button>
+            <p className="text-gray-500 text-base mb-8 max-w-md">
+              Join our community to never miss important updates!
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button 
                 onClick={handleSignup}
-                className="px-6 py-3 bg-white text-indigo-600 border-2 border-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors duration-200"
+                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
               >
-                Create Account
+                🚀 Get Started - It's Free!
+              </button>
+              <button 
+                onClick={handleLogin}
+                className="px-8 py-4 bg-white text-indigo-600 border-2 border-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transform hover:scale-105 transition-all duration-200 shadow-sm"
+              >
+                📱 Already Have Account?
               </button>
             </div>
-          </div>
-        </div>
 
-        {/* Signup Popup */}
-        {showSignupPopup && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 transform transition-all duration-300">
-              <div className="flex justify-between items-start mb-4">
-                <div className="flex items-center">
-                  <span className="text-3xl mr-3">🔔</span>
-                  <h2 className="text-xl font-bold text-gray-800">Never Miss an Update!</h2>
-                </div>
-                <button 
-                  onClick={handleClosePopup}
-                  className="text-gray-400 hover:text-gray-600 transition-colors"
-                >
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+            {/* Feature highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mt-12">
+              <div className="text-center p-4">
+                <div className="text-2xl mb-2">📚</div>
+                <h3 className="font-semibold text-gray-800 mb-1">Course Updates</h3>
+                <p className="text-sm text-gray-600">New modules and lessons</p>
               </div>
-
-              <p className="text-gray-600 mb-6">
-                Join thousands of developers getting updates on the latest tech roadmaps, courses, and tools.
-              </p>
-
-              <div className="flex flex-col space-y-3">
-                <button 
-                  onClick={handleSignup}
-                  className="w-full py-3 px-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-                >
-                  Create Free Account
-                </button>
-                <button 
-                  onClick={handleLogin}
-                  className="w-full py-3 px-6 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-all duration-300"
-                >
-                  I Already Have an Account
-                </button>
-                <button 
-                  onClick={handleClosePopup}
-                  className="w-full py-2 text-gray-500 text-sm hover:text-gray-700 transition-colors"
-                >
-                  Maybe Later
-                </button>
+              <div className="text-center p-4">
+                <div className="text-2xl mb-2">🗺️</div>
+                <h3 className="font-semibold text-gray-800 mb-1">Roadmap Changes</h3>
+                <p className="text-sm text-gray-600">Updated learning paths</p>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-2xl mb-2">🛠️</div>
+                <h3 className="font-semibold text-gray-800 mb-1">New Tools</h3>
+                <p className="text-sm text-gray-600">Latest development resources</p>
               </div>
             </div>
           </div>
-        )}
+
+          {/* Home Button */}
+          <div className="fixed bottom-6 right-6">
+            <button 
+              onClick={handleHome}
+              className="p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hover:scale-110 transition-all duration-200 group"
+              aria-label="Go to Home"
+            >
+              <svg className="h-6 w-6 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
 
-  // Logged in state - show full notifications
+  // AUTHENTICATED - Show notifications interface
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto pb-20">
@@ -465,28 +377,48 @@ export default function NotificationPage() {
           <div className="px-4 py-4 border-b flex justify-between items-center">
             <div>
               <h1 className="text-xl font-bold text-gray-800">Notifications</h1>
-              {user && (
-                <p className="text-sm text-gray-500">Welcome back, {user.displayName || user.email}</p>
+              <p className="text-sm text-gray-500">
+                Welcome back, {user.displayName || user.email?.split('@')[0] || 'User'}! 👋
+              </p>
+            </div>
+            <div className="flex items-center space-x-3">
+              {unreadCount > 0 && (
+                <div className="flex items-center space-x-2">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                    {unreadCount} unread
+                  </span>
+                  <button
+                    onClick={handleMarkAllAsRead}
+                    className="text-xs text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
+                  >
+                    Mark all read
+                  </button>
+                </div>
+              )}
+              {unreadCount === 0 && (
+                <span className="text-sm text-green-600 font-medium">✅ All caught up!</span>
               )}
             </div>
-            <span className="text-sm text-gray-500">
-              {notifications.filter(n => !n.read).length} unread
-            </span>
           </div>
 
-          {/* Tab Menu */}
+          {/* Enhanced Tab Menu */}
           <div className="flex overflow-x-auto">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 min-w-fit px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                className={`flex-1 min-w-fit px-4 py-3 text-sm font-medium transition-all duration-200 relative ${
                   activeTab === tab.id
                     ? 'text-indigo-600 border-b-2 border-indigo-600 bg-indigo-50'
                     : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                {tab.label}
+                <span>{tab.label}</span>
+                {tabCounts[tab.id] > 0 && (
+                  <span className="ml-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-600 bg-indigo-100 rounded-full">
+                    {tabCounts[tab.id]}
+                  </span>
+                )}
               </button>
             ))}
           </div>
@@ -495,20 +427,20 @@ export default function NotificationPage() {
         {/* Notification List */}
         <div className="px-4 py-2">
           {filteredNotifications.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-12 text-center">
-              <div className="text-4xl mb-4">📭</div>
-              <h2 className="text-lg font-medium text-gray-800 mb-2">
+            <div className="flex flex-col items-center justify-center py-16 text-center">
+              <div className="text-5xl mb-6">📭</div>
+              <h2 className="text-xl font-semibold text-gray-800 mb-3">
                 No {activeTab !== 'all' ? activeTab.toLowerCase() : ''} notifications
               </h2>
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 text-base max-w-md">
                 {activeTab === 'all' 
-                  ? "We'll notify you when there are new updates"
-                  : `No ${activeTab.toLowerCase()} updates at the moment`
+                  ? "We'll notify you when there are new updates across all categories"
+                  : `No ${activeTab.toLowerCase()} updates at the moment. Check back later!`
                 }
               </p>
             </div>
           ) : (
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-4">
               {filteredNotifications.map((notification) => (
                 <div
                   key={notification.id}
@@ -516,30 +448,35 @@ export default function NotificationPage() {
                   onClick={() => handleNotificationClick(notification)}
                 >
                   <div 
-                    className={`p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 border-l-4 group-hover:scale-[1.01] ${
+                    className={`p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border-l-4 group-hover:scale-[1.02] ${
                       !notification.read 
-                        ? 'border-indigo-500 bg-indigo-50/30' 
-                        : 'border-transparent'
+                        ? 'border-indigo-500 bg-gradient-to-r from-indigo-50/50 to-white' 
+                        : 'border-transparent hover:border-gray-200'
                     }`}
                   >
                     <div className="flex items-start">
-                      <div className="text-2xl mr-3 flex-shrink-0">
+                      <div className="text-3xl mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                         {notification.icon}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-gray-800 mb-1 line-clamp-1">
+                        <h3 className="font-semibold text-gray-800 mb-2 line-clamp-1 group-hover:text-indigo-700 transition-colors">
                           {notification.title}
                         </h3>
-                        <p className="text-gray-600 text-sm mb-2 line-clamp-2">
+                        <p className="text-gray-600 text-sm mb-3 line-clamp-2 leading-relaxed">
                           {notification.message}
                         </p>
-                        <span className="text-xs text-gray-500">
-                          {notification.timestamp || formatTimestamp(notification.createdAt)}
-                        </span>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-500 font-medium">
+                            {notification.timestamp || formatTimestamp(notification.createdAt)}
+                          </span>
+                          <span className="text-xs text-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                            Click to view →
+                          </span>
+                        </div>
                       </div>
                       {!notification.read && (
-                        <div className="flex-shrink-0 ml-2">
-                          <span className="h-2 w-2 bg-indigo-500 rounded-full block"></span>
+                        <div className="flex-shrink-0 ml-3">
+                          <span className="h-3 w-3 bg-indigo-500 rounded-full block animate-pulse"></span>
                         </div>
                       )}
                     </div>
@@ -552,13 +489,15 @@ export default function NotificationPage() {
 
         {/* Home Button */}
         <div className="fixed bottom-6 right-6">
-          <Link href="/Home">
-            <button className="p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hover:scale-110 transition-all duration-200">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-            </button>
-          </Link>
+          <button 
+            onClick={handleHome}
+            className="p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hover:scale-110 transition-all duration-200 group"
+            aria-label="Go to Home"
+          >
+            <svg className="h-6 w-6 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
