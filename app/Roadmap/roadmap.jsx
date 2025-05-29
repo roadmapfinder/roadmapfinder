@@ -17,7 +17,10 @@ import {
   Shield, 
   ChevronLeft, 
   Search, 
-  X
+  X,
+  Code,
+  FileCode,
+  Terminal
 } from "lucide-react";
 
 export default function TechRoadmap() {
@@ -40,6 +43,27 @@ export default function TechRoadmap() {
       icon: <Globe className="w-5 h-5 text-white" />,
       link: "/WEB",
       bgColor: "from-blue-600 to-blue-400",
+    },
+    {
+      id: "javascript",
+      title: "JavaScript",
+      icon: <Code className="w-5 h-5 text-white" />,
+      link: "/Javascript",
+      bgColor: "from-yellow-400 to-yellow-600",
+    },
+    {
+      id: "python",
+      title: "Python",
+      icon: <Terminal className="w-5 h-5 text-white" />,
+      link: "/Python",
+      bgColor: "from-blue-500 to-green-500",
+    },
+    {
+      id: "java",
+      title: "Java",
+      icon: <FileCode className="w-5 h-5 text-white" />,
+      link: "/Java",
+      bgColor: "from-orange-500 to-red-600",
     },
     {
       id: "data",
@@ -151,8 +175,8 @@ export default function TechRoadmap() {
     Math.ceil(filteredCategories.length / 2)
   );
 
-  // Popular search tags (added Cybersecurity)
-  const popularTags = ["AI", "Web", "Data", "Mobile", "CyberSecurity"];
+  // Popular search tags (updated to include programming languages)
+  const popularTags = ["AI", "Web", "JavaScript", "Python", "Java", "Data", "Mobile"];
 
   return (
     <div className="max-w-md mx-auto px-4 pt-6 pb-12 font-sans md:max-w-4xl bg-gray-50 min-h-screen">
@@ -172,7 +196,7 @@ export default function TechRoadmap() {
 
           <h1 className="text-3xl font-bold mb-2">Tech Learning Paths</h1>
           <p className="text-blue-100">
-            Discover curated roadmaps for various tech domains
+            Discover curated roadmaps for various tech domains & programming languages
           </p>
         </div>
       </div>
