@@ -20,7 +20,12 @@ import {
   X,
   Code,
   FileCode,
-  Terminal
+  Terminal,
+  Zap,
+  GitBranch,
+  Cpu,
+  Triangle,
+  Binary
 } from "lucide-react";
 
 export default function TechRoadmap() {
@@ -64,6 +69,62 @@ export default function TechRoadmap() {
       icon: <FileCode className="w-5 h-5 text-white" />,
       link: "/Java",
       bgColor: "from-orange-500 to-red-600",
+    },
+    {
+      id: "rust",
+      title: "Rust",
+      icon: <Zap className="w-5 h-5 text-white" />,
+      link: "/Rust",
+      bgColor: "from-orange-600 to-red-700",
+    },
+    {
+      id: "php",
+      title: "PHP",
+      icon: <Code className="w-5 h-5 text-white" />,
+      link: "/Php",
+      bgColor: "from-purple-600 to-blue-600",
+    },
+    {
+      id: "sql",
+      title: "SQL",
+      icon: <Database className="w-5 h-5 text-white" />,
+      link: "/Sql",
+      bgColor: "from-blue-700 to-indigo-800",
+    },
+    {
+      id: "golang",
+      title: "Go (Golang)",
+      icon: <GitBranch className="w-5 h-5 text-white" />,
+      link: "/Go",
+      bgColor: "from-cyan-500 to-blue-500",
+    },
+    {
+      id: "swift",
+      title: "Swift",
+      icon: <Triangle className="w-5 h-5 text-white" />,
+      link: "/Swift",
+      bgColor: "from-orange-400 to-red-500",
+    },
+    {
+      id: "cpp",
+      title: "C++",
+      icon: <Cpu className="w-5 h-5 text-white" />,
+      link: "/Cpp",
+      bgColor: "from-blue-800 to-indigo-900",
+    },
+    {
+      id: "C",
+      title: "C language",
+      icon: <Cpu className="w-5 h-5 text-white" />,
+      link: "/C",
+      bgColor: "from-blue-800 to-indigo-900",
+    },
+    {
+      id: "kotlin",
+      title: "Kotlin",
+      icon: <Binary className="w-5 h-5 text-white" />,
+      link: "/Kotlin",
+      bgColor: "from-purple-500 to-pink-600",
     },
     {
       id: "data",
@@ -175,8 +236,8 @@ export default function TechRoadmap() {
     Math.ceil(filteredCategories.length / 2)
   );
 
-  // Popular search tags (updated to include programming languages)
-  const popularTags = ["AI", "Web", "JavaScript", "Python", "Java", "Data", "Mobile"];
+  // Popular search tags (updated to include more programming languages)
+  const popularTags = ["AI", "Web", "JavaScript", "Python", "Java", "Rust", "Go", "Swift"];
 
   return (
     <div className="max-w-md mx-auto px-4 pt-6 pb-12 font-sans md:max-w-4xl bg-gray-50 min-h-screen">

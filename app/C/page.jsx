@@ -1,9 +1,9 @@
-import C from "./c"
+import CRoadmapComponent from "./c"
 
 const page = ()=>{
   return(
     <>
-    <C />
+    <CRoadmapComponent />
     </>
   )
 }
