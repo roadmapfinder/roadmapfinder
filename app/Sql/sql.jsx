@@ -1,509 +1,526 @@
 "use client";
 import { useState } from "react";
 import {
-  Book,
-  Wrench,
-  Lightbulb,
+  Database,
+  Search,
+  BarChart3,
+  Zap,
+  Trophy,
   FileText,
-  ExternalLink,
-  Code,
   ChevronDown,
   ChevronUp,
-  Target,
-  Globe,
-  Database,
-  Bot,
-  CircuitBoard,
+  Download,
+  Moon,
+  Sun,
+  Table,
+  Filter,
+  TrendingUp,
+  Brain,
+  Award,
+  Briefcase,
 } from "lucide-react";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
 
-// Python Roadmap Data Structure
-const pythonRoadmap = [
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+// SQL Roadmap Data Structure
+const sqlRoadmap = [
   {
     id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
-    icon: <Code className="w-6 h-6" />,
+    title: "Introduction to SQL (Beginner Level)",
+    description: "Foundation of SQL and database concepts for beginners",
+    icon: <Database className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500",
     content: {
       whatToLearn: [
-        "Python Syntax & Indentation",
-        "Variables & Data Types",
-        "Input/Output Operations",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
-        "Comments & Documentation",
+        "What is a Database?",
+        "What is SQL? History and Importance",
+        "Types of Databases: Relational (MySQL, PostgreSQL), NoSQL",
+        "Basic SQL Commands: SELECT, INSERT, UPDATE, DELETE",
+        "SQL Data Types (VARCHAR, INT, DATE, etc.)",
+        "Primary Keys and Foreign Keys",
+        "Basic Database Design Principles",
+        "SQL Syntax and Structure",
+        "Creating and Managing Tables",
       ],
       toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
+        "DB Browser for SQLite",
+        "MySQL Workbench",
+        "PgAdmin (PostgreSQL)",
+        "phpMyAdmin",
+        "SQL Server Management Studio",
+        "Online SQL Editors (W3Schools, SQLiteStudio)",
+        "DBeaver (Universal Database Tool)",
+        "HeidiSQL",
       ],
       bestCourses: {
         english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
+          "freeCodeCamp SQL Tutorial (YouTube)",
+          "Kudvenkat SQL Server Tutorial (YouTube)",
+          "SQL Tutorial - Full Database Course for Beginners",
+          "Khan Academy - Intro to SQL",
+          "Codecademy SQL Course",
         ],
         hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
+          "CodeWithHarry SQL Full Course (YouTube)",
+          "WsCube Tech SQL Hindi (YouTube)",
+          "Apna College SQL Complete Course",
+          "TechGun SQL Tutorial Hindi",
+          "Geeky Shows SQL Course Hindi",
         ],
       },
       documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
+        "W3Schools SQL Tutorial",
+        "SQLBolt Interactive Tutorial",
+        "Mode Analytics SQL Tutorial",
+        "MySQL Official Documentation",
+        "PostgreSQL Tutorial",
       ],
       projectIdeas: [
-        "Simple Calculator",
-        "Number Guessing Game",
-        "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
+        "Student Database System",
+        "Simple Employee Management DB",
+        "Library Management System",
+        "Basic Inventory Tracker",
+        "Personal Expense Tracker DB",
+        "Contact Management System",
+        "Simple Blog Database",
       ],
       practicePlatforms: [
-        "HackerRank Python",
-        "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
+        "LeetCode SQL (Easy Problems)",
+        "HackerRank SQL Domain",
+        "W3Schools SQL Exercises",
+        "SQLBolt Practice",
+        "SQL-Practice.com",
       ],
     },
   },
   {
     id: 2,
-    title: "Data Structures & OOP",
-    description:
-      "Master Python's built-in data structures and object-oriented programming",
-    icon: <Database className="w-6 h-6" />,
+    title: "Intermediate SQL",
+    description: "Advanced querying techniques and database operations",
+    icon: <Filter className="w-6 h-6" />,
     gradient: "from-purple-500 to-pink-500",
     content: {
       whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
-        "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
+        "WHERE, ORDER BY, GROUP BY, HAVING Clauses",
+        "Aggregate Functions: COUNT, AVG, SUM, MIN, MAX",
+        "Joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN",
+        "Subqueries and Nested Queries",
+        "SQL Views and Aliases",
+        "UNION, INTERSECT, EXCEPT Operations",
+        "String Functions and Date Functions",
+        "Conditional Logic (CASE WHEN)",
+        "NULL Handling and COALESCE",
+        "Data Filtering and Sorting Techniques",
       ],
       toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
-        "UML Diagram Tools",
-        "Class Diagram Generators",
-        "Python Debugger (pdb)",
+        "PostgreSQL with PgAdmin",
+        "MySQL Community Server",
+        "SQL Server Management Studio",
+        "Oracle SQL Developer",
+        "DataGrip (JetBrains)",
+        "Sequel Pro (Mac)",
+        "TablePlus",
+        "Azure Data Studio",
       ],
       bestCourses: {
         english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
+          "The Complete SQL Bootcamp - Udemy",
+          "Khan Academy - Advanced SQL",
+          "Coursera SQL for Data Science",
+          "edX Introduction to Databases",
+          "Pluralsight SQL Server Fundamentals",
         ],
         hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
+          "WsCube Tech Intermediate SQL",
+          "Apna College Advanced SQL",
+          "CodeWithHarry SQL Advanced Topics",
+          "Unacademy SQL Course",
+          "TechWorld with Nana SQL",
         ],
       },
       documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
+        "GeeksforGeeks SQL Tutorial",
+        "TutorialsPoint SQL Guide",
+        "PostgreSQL Documentation",
+        "MySQL Reference Manual",
+        "SQL Server Documentation",
       ],
       projectIdeas: [
-        "Student Management System",
-        "Library Management System",
-        "Bank Account Simulation",
-        "Inventory Management",
-        "Simple Game using Classes",
+        "Inventory Management System",
+        "Movie Recommendation Database",
+        "Mini e-Commerce Database",
+        "Sales Analytics Dashboard DB",
+        "University Course Management",
+        "Restaurant Order Management",
+        "Real Estate Property DB",
       ],
       practicePlatforms: [
-        "LeetCode (Easy Problems)",
-        "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
+        "LeetCode SQL (Medium Problems)",
+        "HackerRank Intermediate SQL",
+        "DataCamp SQL Practice",
+        "Kaggle Learn SQL",
+        "StrataScratch SQL Questions",
       ],
     },
   },
   {
     id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
+    title: "Advanced SQL (Expert Level)",
+    description: "Master advanced SQL concepts and database optimization",
+    icon: <TrendingUp className="w-6 h-6" />,
     gradient: "from-green-500 to-teal-500",
     content: {
       whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
+        "Window Functions (RANK(), ROW_NUMBER(), LEAD(), LAG())",
+        "Common Table Expressions (CTEs)",
+        "Recursive Queries",
+        "Database Indexing and Optimization",
+        "Query Performance Tuning",
+        "Transactions (ACID Properties, COMMIT, ROLLBACK)",
+        "Triggers and Stored Procedures",
+        "User-Defined Functions",
+        "Partitioning and Sharding",
+        "Database Security and Permissions",
       ],
       toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
+        "Apache Superset",
+        "DBeaver Professional",
+        "Google BigQuery",
+        "Snowflake",
+        "Amazon Redshift",
+        "Microsoft Azure SQL",
+        "Query Performance Analyzers",
+        "Database Monitoring Tools",
       ],
       bestCourses: {
         english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
+          "Advanced SQL for Data Scientists - Udemy",
+          "SQL for Data Analysis - Udacity",
+          "The Complete SQL Bootcamp by Jose Portilla",
+          "Advanced Database Systems - Coursera",
+          "SQL Server Performance Tuning",
         ],
         hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
+          "Unacademy SQL Advanced Course",
+          "Advanced SQL Hindi - WsCube Tech",
+          "Database Optimization Hindi - TechGun",
+          "SQL Performance Tuning Hindi",
+          "Advanced Database Concepts Hindi",
         ],
       },
       documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
+        "Mode Analytics Advanced SQL",
+        "PostgreSQL Advanced Documentation",
+        "SQL Server Query Optimization Guide",
+        "BigQuery Documentation",
+        "Snowflake SQL Reference",
       ],
       projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
+        "Financial Dashboard Database",
+        "Hospital Management System DB",
+        "Custom CRM Database",
+        "Data Warehouse Design",
+        "Real-time Analytics Platform",
+        "Multi-tenant SaaS Database",
+        "Business Intelligence Dashboard",
       ],
       practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
+        "LeetCode SQL (Hard Problems)",
+        "HackerRank Advanced SQL",
+        "DataLemur SQL Questions",
+        "InterviewQuery SQL Practice",
+        "SQL Murder Mystery",
       ],
     },
   },
   {
     id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
+    title: "Database Design & Architecture",
+    description: "Learn database design principles and system architecture",
+    icon: <BarChart3 className="w-6 h-6" />,
     gradient: "from-orange-500 to-red-500",
     content: {
       whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
+        "Database Normalization (1NF, 2NF, 3NF, BCNF)",
+        "Entity-Relationship (ER) Modeling",
+        "Database Schema Design",
+        "Data Modeling Best Practices",
+        "ACID Properties and Transaction Management",
+        "Concurrency Control",
+        "Database Backup and Recovery",
+        "Replication and High Availability",
+        "Scalability Patterns",
+        "Data Warehousing Concepts",
       ],
       toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
+        "ER Diagram Tools (Lucidchart, Draw.io)",
+        "MySQL Workbench (Design Mode)",
+        "DbSchema",
+        "Vertabelo",
+        "SQL Power Architect",
+        "Database Design Tools",
+        "Backup and Recovery Tools",
+        "Monitoring Solutions",
       ],
       bestCourses: {
         english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
+          "Database Design Course - Coursera",
+          "Database Systems - Stanford Online",
+          "Data Modeling Fundamentals",
+          "Database Administration Course",
+          "System Design for Databases",
         ],
         hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
+          "Database Design Hindi - CodeWithHarry",
+          "DBMS Complete Course Hindi",
+          "Database Architecture Hindi",
+          "System Design Hindi - Apna College",
+          "Database Management Hindi",
         ],
       },
       documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
+        "Database Design Guide",
+        "Normalization Tutorial",
+        "ER Modeling Best Practices",
+        "Database Administration Guide",
+        "High Availability Documentation",
       ],
       projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
+        "E-commerce Platform Database",
+        "Social Media Database Design",
+        "Banking System Database",
+        "Healthcare Records System",
+        "Educational Management System",
+        "Supply Chain Database",
+        "Multi-tenant Application DB",
       ],
       practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
+        "Database Design Challenges",
+        "System Design Interviews",
+        "Real-world Case Studies",
+        "Database Certification Prep",
+        "Architecture Review Sessions",
       ],
     },
   },
   {
     id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
+    title: "SQL for Data Analysis & BI",
+    description: "Master SQL for data analysis and business intelligence",
+    icon: <Brain className="w-6 h-6" />,
     gradient: "from-indigo-500 to-purple-600",
     content: {
       whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
+        "Analytical Functions and Window Functions",
+        "Statistical Functions in SQL",
+        "Data Aggregation and Summarization",
+        "Time Series Analysis with SQL",
+        "Cohort Analysis and Retention Metrics",
+        "A/B Testing with SQL",
+        "Data Cleaning and Transformation",
+        "Report Generation with SQL",
+        "SQL for ETL Processes",
+        "Integration with BI Tools",
       ],
       toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
+        "Tableau (SQL Integration)",
+        "Power BI",
+        "Looker",
+        "Google Data Studio",
+        "Apache Airflow",
+        "dbt (Data Build Tool)",
+        "Jupyter Notebooks with SQL",
         "Google Colab",
-        "Plotly",
       ],
       bestCourses: {
         english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
+          "SQL for Data Analysis - Udacity",
+          "Data Analysis with SQL - Coursera",
+          "Business Intelligence with SQL",
+          "Advanced Analytics with SQL",
+          "SQL for Data Scientists",
         ],
         hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
+          "Data Analysis SQL Hindi - WsCube Tech",
+          "Business Intelligence Hindi Course",
+          "SQL for Analytics Hindi - Unacademy",
+          "Data Science SQL Hindi",
+          "BI Tools with SQL Hindi",
         ],
       },
       documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
+        "SQL for Data Analysis Guide",
+        "Business Intelligence Best Practices",
+        "Statistical Functions Reference",
+        "Time Series Analysis with SQL",
+        "Data Warehouse SQL Patterns",
       ],
       projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
+        "Sales Performance Dashboard",
+        "Customer Analytics Platform",
+        "Marketing Campaign Analysis",
+        "Financial Reporting System",
+        "Operational Analytics Dashboard",
+        "Product Usage Analytics",
+        "Supply Chain Analytics",
       ],
       practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
+        "Kaggle SQL Competitions",
+        "DataCamp Projects",
+        "Mode Analytics Public Datasets",
+        "Google BigQuery Public Data",
+        "Real Business Case Studies",
       ],
     },
   },
   {
     id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
+    title: "Modern SQL & Cloud Databases",
+    description: "Explore modern SQL features and cloud database platforms",
+    icon: <Zap className="w-6 h-6" />,
     gradient: "from-cyan-500 to-blue-600",
     content: {
       whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
+        "JSON Support in SQL (PostgreSQL, MySQL)",
+        "NoSQL Integration with SQL",
+        "Graph Database Queries",
+        "Cloud Database Platforms",
+        "Serverless SQL Solutions",
+        "Real-time Data Processing",
+        "Distributed SQL Systems",
+        "SQL on Big Data (Spark SQL, Presto)",
+        "API Integration with Databases",
+        "Modern SQL Standards (SQL:2016, SQL:2023)",
       ],
       toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
+        "Google BigQuery",
+        "Amazon Redshift",
+        "Snowflake",
+        "Azure Synapse Analytics",
+        "CockroachDB",
+        "Apache Spark SQL",
+        "Presto/Trino",
+        "ClickHouse",
       ],
       bestCourses: {
         english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
+          "Modern SQL on Cloud Platforms",
+          "Big Data SQL - Coursera",
+          "Cloud Database Architecture",
+          "Distributed Systems and SQL",
+          "Real-time Analytics with SQL",
         ],
         hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
+          "Cloud Databases Hindi Course",
+          "Modern SQL Features Hindi",
+          "Big Data SQL Hindi Tutorial",
+          "Cloud Computing with SQL Hindi",
+          "Distributed Databases Hindi",
         ],
       },
       documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
+        "Cloud SQL Documentation",
+        "Modern SQL Features Guide",
+        "Distributed SQL Best Practices",
+        "JSON in SQL Tutorial",
+        "Real-time SQL Processing",
       ],
       projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
+        "Real-time Analytics Dashboard",
+        "Serverless Data Pipeline",
+        "Multi-cloud Database Solution",
+        "IoT Data Processing System",
+        "Machine Learning Feature Store",
+        "Event-driven Data Architecture",
+        "Global Distributed Application",
       ],
       practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
+        "Cloud Platform Challenges",
+        "BigQuery Public Datasets",
+        "Snowflake Hands-on Labs",
+        "AWS Data Analytics Challenges",
+        "Modern SQL Competitions",
       ],
     },
   },
   {
     id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
-    content: {
-      whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
-      ],
-      toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
-      ],
-      bestCourses: {
-        english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
-        ],
-        hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
-        ],
-      },
-      documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
-      ],
-      projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
-      ],
-      practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
-        "TopCoder",
-      ],
-    },
-  },
-  {
-    id: 8,
-    title: "Portfolio + Resume + Interview",
+    title: "Career & Certification Path",
     description:
-      "Build your professional profile and prepare for job interviews",
-    icon: <Wrench className="w-6 h-6" />,
+      "Build your SQL career with certifications and portfolio projects",
+    icon: <Award className="w-6 h-6" />,
     gradient: "from-emerald-500 to-green-600",
     content: {
       whatToLearn: [
-        "GitHub Profile Optimization",
-        "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
+        "SQL Certification Preparation",
+        "Database Administrator Skills",
+        "Data Analyst Career Path",
+        "Data Engineer SQL Skills",
+        "Business Intelligence Developer",
+        "Interview Preparation",
+        "Portfolio Development",
+        "Open Source Contributions",
+        "Professional Networking",
+        "Continuous Learning Strategies",
       ],
       toolsToUse: [
-        "GitHub",
-        "LinkedIn",
+        "Certification Platforms",
         "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
-        "HackerRank",
-        "Interview Platforms",
+        "GitHub for SQL Projects",
+        "LinkedIn Learning",
+        "Professional Forums",
+        "Meetup Groups",
+        "Conference Platforms",
+        "Mentoring Platforms",
       ],
       bestCourses: {
         english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
+          "SQL Certification Bootcamp",
+          "Database Career Fundamentals",
+          "Data Professional Skills",
+          "SQL Interview Preparation",
+          "Portfolio Building for Data Roles",
         ],
         hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
+          "SQL Career Guide Hindi",
+          "Database Jobs Preparation Hindi",
+          "Data Analyst Career Hindi",
+          "SQL Interview Hindi - Love Babbar",
+          "Tech Career Guidance Hindi",
         ],
       },
       documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
+        "SQL Certification Guide",
+        "Database Career Roadmap",
+        "Interview Question Banks",
+        "Portfolio Project Templates",
+        "Professional Development Resources",
       ],
       projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
+        "Complete E-commerce Database",
+        "Data Analytics Portfolio",
+        "Open Source Database Tool",
+        "SQL Tutorial Blog/Website",
+        "Database Performance Optimizer",
+        "Real-time Dashboard Application",
+        "Industry-specific Database Solutions",
+        "SQL Code Review Platform",
+        "Database Migration Tool",
+        "Custom Reporting Framework",
       ],
       practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
+        "Certification Practice Tests",
+        "Mock Interview Platforms",
+        "GitHub Portfolio Reviews",
+        "Professional Communities",
+        "Industry Challenges",
+        "Hackathons and Competitions",
       ],
     },
   },
 ];
-  const PythonRoadmapComponent = () => {
+
+const SqlRoadmapComponent = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
@@ -515,6 +532,7 @@ const pythonRoadmap = [
   const toggleSection = (sectionId) => {
     setOpenSection(openSection === sectionId ? null : sectionId);
   };
+
   const handleDownload = async () => {
     setDownloading(true);
 
@@ -527,7 +545,8 @@ const pythonRoadmap = [
       downloadDiv.style.padding = "40px";
       downloadDiv.style.color = "#2c3e50";
       downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+      downloadDiv.style.fontFamily =
+        "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
       downloadDiv.style.fontSize = "14px";
       downloadDiv.style.lineHeight = "1.6";
       downloadDiv.style.maxWidth = "800px";
@@ -542,7 +561,7 @@ const pythonRoadmap = [
       title.style.color = "#2c3e50";
       title.style.borderBottom = "3px solid #3776ab"; // Python blue color
       title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
+      title.textContent = "Sql Learning Roadmap";
       downloadDiv.appendChild(title);
 
       // Add Python logo/icon (optional text representation)
@@ -552,11 +571,11 @@ const pythonRoadmap = [
       subtitle.style.color = "#7f8c8d";
       subtitle.style.marginBottom = "40px";
       subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
+      subtitle.textContent = "🐍 Complete Guide to Master Sql Programming";
       downloadDiv.appendChild(subtitle);
 
       // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
+      sqlRoadmap.forEach((section) => {
         const sectionDiv = document.createElement("div");
         sectionDiv.style.marginBottom = "40px";
         sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
@@ -804,7 +823,7 @@ const pythonRoadmap = [
       footer.style.textAlign = "center";
       footer.style.fontSize = "12px";
       footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Python Learning Roadmap`;
+      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Rust Learning Roadmap`;
       downloadDiv.appendChild(footer);
 
       // Temporarily add the div to the document to render it
@@ -821,7 +840,7 @@ const pythonRoadmap = [
         width: downloadDiv.scrollWidth,
         height: downloadDiv.scrollHeight,
         scrollX: 0,
-        scrollY: 0
+        scrollY: 0,
       });
 
       // Remove the temporary div
@@ -833,7 +852,7 @@ const pythonRoadmap = [
         unit: "mm",
         format: "a4",
         compress: true, // Compress for smaller file size
-        precision: 2
+        precision: 2,
       });
 
       // Calculate dimensions for better fitting
@@ -871,20 +890,19 @@ const pythonRoadmap = [
       }
 
       // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
+      pdf.save("Sql_Learning_Roadmap.pdf");
 
       // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
       // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
+      console.log("Sql roadmap PDF generated successfully!");
 
       // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
+      alert("Sql Learning Roadmap PDF downloaded successfully!");
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
-
     } catch (error) {
-      console.error("Error generating Python roadmap PDF:", error);
+      console.error("Error generating Rust roadmap PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
     } finally {
       setDownloading(false);
@@ -903,8 +921,9 @@ const pythonRoadmap = [
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
+        <h1 className="text-xl md:text-2xl font-bold flex items-center">
+          <span className="mr-2">🦀</span>
+          Sql Learning Roadmap
         </h1>
         <div className="flex items-center space-x-3">
           {/* Download Button */}
@@ -914,7 +933,7 @@ const pythonRoadmap = [
             className={`px-4 py-2 rounded-md text-white ${
               downloading
                 ? "bg-gray-500 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
+                : "bg-orange-600 hover:bg-orange-700"
             } transition-colors flex items-center`}
           >
             {downloading ? (
@@ -1000,22 +1019,24 @@ const pythonRoadmap = [
             darkMode ? "bg-gray-800" : "bg-white"
           } shadow-md transition-colors duration-300`}
         >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+          <h2 className="text-xl md:text-2xl font-semibold mb-3 flex items-center">
+            <span className="mr-2">🦀</span>
+            Welcome to the Rust Learning Roadmap
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
-            learning journey, from basic syntax to advanced concepts. Each
-            section contains curated resources in both English and Hindi, along
-            with practical projects and hands-on exercises. Click on any section
-            to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+            This comprehensive roadmap will guide you through your Sql
+            programming learning journey, from basic syntax to advanced
+            concepts. Each section contains curated resources in both English
+            and Hindi, along with practical projects and hands-on exercises.
+            Click on any section to expand it and explore detailed learning
+            materials, tools, and project ideas that will help you master Sql
+            programming.
           </p>
         </div>
 
         {/* Roadmap Sections */}
         <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+          {sqlRoadmap.map((section) => (
             <div
               key={section.id}
               className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
@@ -1255,7 +1276,7 @@ const pythonRoadmap = [
           <p
             className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
-            🚀 Start your Python journey today! Remember, consistency is key to
+            🚀 Start your Sql journey today! Remember, consistency is key to
             mastering programming.
           </p>
         </div>
@@ -1278,5 +1299,5 @@ const pythonRoadmap = [
       `}</style>
     </div>
   );
-}
-export default PythonRoadmapComponent
+};
+export default SqlRoadmapComponent;

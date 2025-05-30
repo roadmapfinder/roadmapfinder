@@ -14,496 +14,632 @@ import {
   Database,
   Bot,
   CircuitBoard,
+  Coffee,
+  Server,
+  Shield,
+  Layers,
+  Zap,
+  Rocket,
+  Star,
+  Settings,
+  Terminal,
+  Package,
+  Cpu,
+  Lock,
+  Network,
+  Bug,
+  Cog
 } from "lucide-react";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
 
-// Python Roadmap Data Structure
-const pythonRoadmap = [
+
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+
+// Rust Roadmap Data Structure
+const rustRoadmap = [
   {
     id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
-    icon: <Code className="w-6 h-6" />,
-    gradient: "from-blue-500 to-cyan-500",
+    title: "Rust Fundamentals & Setup",
+    description: "Get started with Rust programming language basics and environment setup",
+    icon: <Settings className="w-6 h-6" />,
+    gradient: "from-orange-500 to-red-500",
     content: {
       whatToLearn: [
-        "Python Syntax & Indentation",
-        "Variables & Data Types",
-        "Input/Output Operations",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
+        "Installing Rust & Cargo",
+        "Variables & Mutability",
+        "Data Types (Scalar & Compound)",
+        "Functions & Control Flow",
         "Comments & Documentation",
+        "Basic Input/Output",
+        "Cargo Package Manager",
+        "Hello World & Basic Programs",
       ],
       toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
+        "Rust Compiler (rustc)",
+        "Cargo Package Manager",
+        "VS Code with rust-analyzer",
+        "IntelliJ IDEA with Rust Plugin",
+        "Rustup (Rust Toolchain Installer)",
+        "Clippy (Rust Linter)",
       ],
       bestCourses: {
         english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
+          "The Rust Programming Language (Official Book) - Free",
+          "Rust Programming Course - freeCodeCamp YouTube",
+          "Rust Crash Course - Traversy Media",
+          "Learn Rust - Codecademy",
         ],
         hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
+          "Rust Programming Hindi - CodeWithHarry",
+          "Rust Tutorial Hindi - Thapa Technical",
+          "Rust Complete Course Hindi - Apna College",
+          "Rust Basics Hindi - Tech With Tim Hindi",
         ],
       },
       documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
+        "The Rust Programming Language Book",
+        "Rust by Example",
+        "Rust Reference",
+        "Cargo Book",
       ],
       projectIdeas: [
+        "Hello World Program",
         "Simple Calculator",
-        "Number Guessing Game",
         "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
+        "Number Guessing Game",
+        "Basic CLI Tool",
       ],
       practicePlatforms: [
-        "HackerRank Python",
-        "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
+        "Rustlings (Interactive Exercises)",
+        "Exercism Rust Track",
+        "Codewars Rust",
+        "HackerRank Rust",
       ],
     },
   },
   {
     id: 2,
-    title: "Data Structures & OOP",
-    description:
-      "Master Python's built-in data structures and object-oriented programming",
-    icon: <Database className="w-6 h-6" />,
-    gradient: "from-purple-500 to-pink-500",
+    title: "Ownership & Memory Management",
+    description: "Master Rust's unique ownership system and memory safety",
+    icon: <Lock className="w-6 h-6" />,
+    gradient: "from-red-500 to-pink-500",
     content: {
       whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
-        "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
+        "Ownership Rules & Move Semantics",
+        "Borrowing & References",
+        "Mutable & Immutable References",
+        "Lifetimes Basics",
+        "Slice Type",
+        "Memory Safety Without Garbage Collection",
+        "Stack vs Heap",
+        "Drop Trait & RAII",
       ],
       toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
-        "UML Diagram Tools",
-        "Class Diagram Generators",
-        "Python Debugger (pdb)",
+        "Rust Analyzer (VS Code)",
+        "Miri (Memory Safety Checker)",
+        "Valgrind (Memory Debugging)",
+        "AddressSanitizer",
+        "Rust Playground",
+        "cargo check & cargo clippy",
       ],
       bestCourses: {
         english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
+          "Rust Ownership Explained - Jon Gjengset YouTube",
+          "Understanding Rust Ownership - Microsoft Learn",
+          "Rust Memory Management - Udemy",
+          "Zero To Production In Rust - LukeMathWalker",
         ],
         hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
+          "Rust Ownership Hindi - Hitesh Choudhary",
+          "Memory Management Rust Hindi - CodeWithHarry",
+          "Rust Borrowing Hindi - Indian Coders",
+          "Rust Lifetimes Hindi - Tech Gun",
         ],
       },
       documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
+        "Understanding Ownership - Rust Book Ch4",
+        "References and Borrowing - Rust Book",
+        "The Slice Type - Rust Book",
+        "Rust Ownership Visualizer",
       ],
       projectIdeas: [
-        "Student Management System",
-        "Library Management System",
-        "Bank Account Simulation",
-        "Inventory Management",
-        "Simple Game using Classes",
+        "String Manipulation Library",
+        "Vector Operations Program",
+        "Memory Usage Analyzer",
+        "Reference Counter Implementation",
+        "Simple Buffer Manager",
       ],
       practicePlatforms: [
-        "LeetCode (Easy Problems)",
-        "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
+        "Ownership Exercises - Rustlings",
+        "Borrowing Challenges - Exercism",
+        "Memory Safety Puzzles",
+        "Rust Quiz - dtolnay",
       ],
     },
   },
   {
     id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
-    gradient: "from-green-500 to-teal-500",
+    title: "Structs, Enums & Pattern Matching",
+    description: "Learn Rust's powerful data structures and pattern matching",
+    icon: <Package className="w-6 h-6" />,
+    gradient: "from-blue-500 to-indigo-500",
     content: {
       whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
+        "Defining & Instantiating Structs",
+        "Method Syntax & Associated Functions",
+        "Enums & Variants",
+        "Option & Result Enums",
+        "Match Control Flow",
+        "If Let & While Let",
+        "Patterns & Destructuring",
+        "Struct Update Syntax",
       ],
       toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
+        "rust-analyzer IntelliSense",
+        "Serde for Serialization",
+        "Debug Derive Macro",
+        "Pattern Matching Debugger",
+        "Rust Playground",
+        "cargo expand (Macro Expansion)",
       ],
       bestCourses: {
         english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
+          "Rust Structs & Enums - The Net Ninja",
+          "Pattern Matching in Rust - Jon Gjengset",
+          "Rust Data Structures - Udemy",
+          "Advanced Rust Patterns - Pluralsight",
         ],
         hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
+          "Rust Structs Hindi - CodeWithHarry",
+          "Enums & Pattern Matching Hindi - Thapa Technical",
+          "Rust Data Types Hindi - Indian Programming",
+          "Match Statement Hindi - Coding Blocks",
         ],
       },
       documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
+        "Structs - Rust Book Ch5",
+        "Enums and Pattern Matching - Ch6",
+        "Patterns and Matching - Ch18",
+        "Option and Result Types Guide",
       ],
       projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
+        "Employee Management System",
+        "JSON Parser with Enums",
+        "Command Line Parser",
+        "State Machine Implementation",
+        "Card Game with Enums",
       ],
       practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
+        "Struct Exercises - Rustlings",
+        "Enum Challenges - Exercism",
+        "Pattern Matching Katas",
+        "Data Structure Implementations",
       ],
     },
   },
   {
     id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
-    gradient: "from-orange-500 to-red-500",
+    title: "Error Handling & Advanced Features",
+    description: "Master error handling and explore advanced Rust features",
+    icon: <Bug className="w-6 h-6" />,
+    gradient: "from-purple-500 to-violet-500",
     content: {
       whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
+        "Result<T, E> Type & Error Propagation",
+        "panic! Macro & Unrecoverable Errors",
+        "Custom Error Types",
+        "Error Handling Best Practices",
+        "Generic Types & Traits",
+        "Trait Bounds & Associated Types",
+        "Lifetime Parameters",
+        "Closures & Functional Programming",
       ],
       toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
+        "anyhow (Error Handling)",
+        "thiserror (Custom Errors)",
+        "eyre (Error Reporting)",
+        "color-eyre (Pretty Errors)",
+        "tracing (Logging)",
+        "log (Logging Facade)",
       ],
       bestCourses: {
         english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
+          "Error Handling in Rust - Jon Gjengset",
+          "Rust Generics & Traits - The Net Ninja",
+          "Advanced Rust Programming - Udemy",
+          "Functional Programming in Rust",
         ],
         hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
+          "Error Handling Rust Hindi - Hitesh Choudhary",
+          "Generics & Traits Hindi - CodeWithHarry",
+          "Advanced Rust Hindi - Indian Coders",
+          "Functional Programming Hindi - Tech With Tim",
         ],
       },
       documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
+        "Error Handling - Rust Book Ch9",
+        "Generic Types & Traits - Ch10",
+        "Lifetimes - Rust Book Ch10",
+        "Closures - Rust Book Ch13",
       ],
       projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
+        "Error Handling Library",
+        "File Processing Tool with Error Recovery",
+        "Network Client with Retry Logic",
+        "Configuration Parser with Validation",
+        "Generic Data Structure Library",
       ],
       practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
+        "Error Handling Exercises - Rustlings",
+        "Generic Programming Challenges",
+        "Trait Implementation Practice",
+        "Functional Programming Katas",
       ],
     },
   },
   {
     id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
-    gradient: "from-indigo-500 to-purple-600",
+    title: "Collections & Iterators",
+    description: "Work with Rust's powerful collection types and iterator patterns",
+    icon: <Database className="w-6 h-6" />,
+    gradient: "from-green-500 to-emerald-500",
     content: {
       whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
+        "Vectors & Dynamic Arrays",
+        "HashMaps & Key-Value Stores",
+        "Strings & String Literals",
+        "Iterator Pattern & Lazy Evaluation",
+        "Iterator Adaptors & Consumers",
+        "Collecting & Reducing",
+        "Custom Iterators",
+        "Performance Considerations",
       ],
       toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
-        "Google Colab",
-        "Plotly",
+        "std::collections Module",
+        "itertools Crate",
+        "rayon (Parallel Iterators)",
+        "hashbrown (Faster HashMap)",
+        "SmallVec (Stack-allocated Vectors)",
+        "criterion (Benchmarking)",
       ],
       bestCourses: {
         english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
+          "Rust Collections & Iterators - Udemy",
+          "Iterator Patterns in Rust - Jon Gjengset",
+          "Data Structures in Rust - Pluralsight",
+          "Performance Programming in Rust",
         ],
         hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
+          "Rust Collections Hindi - CodeWithHarry",
+          "Iterators & Closures Hindi - Thapa Technical",
+          "Data Structures Hindi - Indian Programming",
+          "Performance Optimization Hindi - Coding Blocks",
         ],
       },
       documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
+        "Collections - Rust Book Ch8",
+        "Iterators & Closures - Ch13",
+        "std::collections Documentation",
+        "Iterator Trait Documentation",
       ],
       projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
+        "Word Frequency Counter",
+        "Data Processing Pipeline",
+        "Custom Collection Type",
+        "Text Analysis Tool",
+        "Performance Benchmark Suite",
       ],
       practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
+        "Iterator Exercises - Rustlings",
+        "Collection Challenges - Exercism",
+        "Algorithm Implementation Practice",
+        "Performance Optimization Tasks",
       ],
     },
   },
   {
     id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
-    gradient: "from-cyan-500 to-blue-600",
+    title: "Concurrency & Async Programming",
+    description: "Master concurrent programming and asynchronous patterns in Rust",
+    icon: <Zap className="w-6 h-6" />,
+    gradient: "from-yellow-500 to-orange-500",
     content: {
       whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
+        "Threads & Thread Safety",
+        "Message Passing with Channels",
+        "Shared State Concurrency",
+        "Mutex & Arc (Atomic Reference Counting)",
+        "Async/Await Syntax",
+        "Futures & Executors",
+        "Tokio Runtime",
+        "Async Traits & Error Handling",
       ],
       toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
+        "Tokio (Async Runtime)",
+        "async-std (Alternative Runtime)",
+        "Rayon (Data Parallelism)",
+        "Crossbeam (Lock-free Programming)",
+        "Futures Crate",
+        "Tower (Service Abstraction)",
       ],
       bestCourses: {
         english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
+          "Async Programming in Rust - Jon Gjengset",
+          "Rust Concurrency - Zero To Production",
+          "Tokio Tutorial - Official Docs",
+          "Concurrent Programming in Rust Book",
         ],
         hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
+          "Async Rust Hindi - Hitesh Choudhary",
+          "Concurrency Rust Hindi - CodeWithHarry",
+          "Tokio Tutorial Hindi - Indian Coders",
+          "Parallel Programming Hindi - Tech Gun",
         ],
       },
       documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
+        "Concurrency - Rust Book Ch16",
+        "Async Programming in Rust Book",
+        "Tokio Documentation",
+        "Futures Documentation",
       ],
       projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
+        "Concurrent Web Scraper",
+        "Chat Server with Tokio",
+        "Parallel Image Processing",
+        "Async File Processor",
+        "Multi-threaded Download Manager",
       ],
       practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
+        "Async Exercises - Tokio Tutorial",
+        "Concurrency Challenges - Exercism",
+        "Thread Safety Practice",
+        "Performance Comparison Tasks",
       ],
     },
   },
   {
     id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
+    title: "Web Development & APIs",
+    description: "Build web applications and APIs using Rust frameworks",
+    icon: <Globe className="w-6 h-6" />,
+    gradient: "from-teal-500 to-cyan-500",
     content: {
       whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
+        "HTTP Basics & Web Fundamentals",
+        "Actix-Web or Axum Framework",
+        "Routing & Middleware",
+        "JSON Serialization with Serde",
+        "Database Integration (SQLx, Diesel)",
+        "Authentication & Authorization",
+        "Testing Web Applications",
+        "Deployment & Production Setup",
       ],
       toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
+        "Actix-Web or Axum",
+        "Serde (Serialization)",
+        "SQLx or Diesel (Database)",
+        "Reqwest (HTTP Client)",
+        "Tower (Middleware)",
+        "Tracing (Logging)",
       ],
       bestCourses: {
         english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
+          "Zero To Production In Rust - Luca Palmieri",
+          "Rust Web Development - Udemy",
+          "Actix-Web Tutorial - Official Docs",
+          "Building APIs with Rust - Pluralsight",
         ],
         hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
+          "Rust Web Development Hindi - Hitesh Choudhary",
+          "API Development Rust Hindi - CodeWithHarry",
+          "Web Server Rust Hindi - Indian Programming",
+          "Database Integration Hindi - Coding Blocks",
         ],
       },
       documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
+        "Actix-Web Documentation",
+        "Axum Documentation",
+        "Serde Documentation",
+        "SQLx Documentation",
       ],
       projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
+        "REST API with Authentication",
+        "Blog Platform Backend",
+        "E-commerce API",
+        "Real-time Chat API",
+        "Microservices Architecture",
       ],
       practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
-        "TopCoder",
+        "Web Development Challenges",
+        "API Design Practice",
+        "Integration Testing Exercises",
+        "Performance Benchmarking",
       ],
     },
   },
   {
     id: 8,
-    title: "Portfolio + Resume + Interview",
-    description:
-      "Build your professional profile and prepare for job interviews",
-    icon: <Wrench className="w-6 h-6" />,
-    gradient: "from-emerald-500 to-green-600",
+    title: "Systems Programming & Performance",
+    description: "Dive into systems programming and performance optimization",
+    icon: <Cpu className="w-6 h-6" />,
+    gradient: "from-indigo-500 to-purple-500",
     content: {
       whatToLearn: [
-        "GitHub Profile Optimization",
-        "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
+        "Unsafe Rust & Raw Pointers",
+        "Foreign Function Interface (FFI)",
+        "Memory Layout & Optimization",
+        "SIMD & Vectorization",
+        "Custom Allocators",
+        "Embedded Rust Programming",
+        "Operating System Interfaces",
+        "Performance Profiling & Benchmarking",
       ],
       toolsToUse: [
-        "GitHub",
-        "LinkedIn",
-        "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
-        "HackerRank",
-        "Interview Platforms",
+        "Criterion (Benchmarking)",
+        "Perf & Flamegraph",
+        "Valgrind & Heaptrack",
+        "cargo-asm (Assembly Output)",
+        "bindgen (C Bindings)",
+        "cc Crate (C/C++ Integration)",
       ],
       bestCourses: {
         english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
+          "Systems Programming in Rust - Jon Gjengset",
+          "Unsafe Rust Programming - Udemy",
+          "Embedded Rust - The Embedded Rust Book",
+          "Performance Engineering with Rust",
         ],
         hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
+          "Systems Programming Hindi - Hitesh Choudhary",
+          "Unsafe Rust Hindi - Indian Coders",
+          "Performance Optimization Hindi - Tech Gun",
+          "Embedded Programming Hindi - CodeWithHarry",
         ],
       },
       documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
+        "Unsafe Rust - Rust Book Ch19",
+        "The Rustonomicon",
+        "Embedded Rust Book",
+        "Performance Optimization Guide",
       ],
       projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
+        "Custom Memory Allocator",
+        "Operating System Kernel Module",
+        "High-Performance Parser",
+        "Embedded IoT Application",
+        "C Library Rust Bindings",
       ],
       practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
+        "Systems Programming Challenges",
+        "Performance Optimization Tasks",
+        "Unsafe Code Review Exercises",
+        "Embedded Programming Projects",
+      ],
+    },
+  },
+  {
+    id: 9,
+    title: "Advanced Topics & Ecosystem",
+    description: "Explore advanced Rust topics and the broader ecosystem",
+    icon: <Rocket className="w-6 h-6" />,
+    gradient: "from-pink-500 to-rose-500",
+    content: {
+      whatToLearn: [
+        "Procedural Macros & Code Generation",
+        "Advanced Trait Usage",
+        "Type-Level Programming",
+        "WebAssembly with Rust",
+        "Blockchain & Cryptography",
+        "Game Development with Rust",
+        "CLI Tools & System Utilities",
+        "Contributing to Open Source",
+      ],
+      toolsToUse: [
+        "wasm-pack (WebAssembly)",
+        "Bevy (Game Engine)",
+        "clap (CLI Framework)",
+        "syn & quote (Macro Development)",
+        "cargo-expand (Macro Debugging)",
+        "wasm-bindgen (WASM Bindings)",
+      ],
+      bestCourses: {
+        english: [
+          "Advanced Rust Programming - Jon Gjengset",
+          "WebAssembly with Rust - Mozilla",
+          "Game Development in Rust - Bevy Tutorial",
+          "Macro Development in Rust - Udemy",
+        ],
+        hindi: [
+          "Advanced Rust Hindi - Hitesh Choudhary",
+          "WebAssembly Rust Hindi - Indian Programming",
+          "Game Development Hindi - CodeWithHarry",
+          "Macro Programming Hindi - Tech With Tim",
+        ],
+      },
+      documentation: [
+        "Macros - Rust Book Ch19",
+        "WebAssembly Book",
+        "Bevy Game Engine Guide",
+        "Advanced Traits Guide",
+      ],
+      projectIdeas: [
+        "Procedural Macro Library",
+        "WebAssembly Game",
+        "Command Line Tool Suite",
+        "Blockchain Implementation",
+        "Custom Game Engine",
+      ],
+      practicePlatforms: [
+        "Advanced Rust Challenges",
+        "Open Source Contributions",
+        "Macro Development Practice",
+        "WebAssembly Projects",
+      ],
+    },
+  },
+  {
+    id: 10,
+    title: "Career & Professional Development",
+    description: "Prepare for Rust developer roles and build your professional profile",
+    icon: <Target className="w-6 h-6" />,
+    gradient: "from-emerald-500 to-teal-500",
+    content: {
+      whatToLearn: [
+        "Rust Interview Preparation",
+        "System Design with Rust",
+        "Code Review Best Practices",
+        "Documentation & Technical Writing",
+        "Testing Strategies & TDD",
+        "Deployment & DevOps for Rust",
+        "Building Developer Tools",
+        "Community Engagement & Networking",
+      ],
+      toolsToUse: [
+        "GitHub Actions (CI/CD)",
+        "Docker & Containerization",
+        "cargo-audit (Security)",
+        "cargo-tarpaulin (Coverage)",
+        "mdBook (Documentation)",
+        "Kubernetes for Deployment",
+      ],
+      bestCourses: {
+        english: [
+          "Rust Interview Preparation - LeetCode",
+          "System Design for Rust Developers",
+          "DevOps with Rust Applications",
+          "Technical Writing for Developers",
+        ],
+        hindi: [
+          "Rust Job Interview Hindi - CodeWithHarry",
+          "System Design Hindi - Indian Programming",
+          "DevOps Rust Hindi - Hitesh Choudhary",
+          "Portfolio Building Hindi - Coding Blocks",
+        ],
+      },
+      documentation: [
+        "Rust Interview Handbook",
+        "System Design Primer",
+        "Rust Career Guide",
+        "Open Source Contribution Guide",
+      ],
+      projectIdeas: [
+        "Complete Full-Stack Application",
+        "Open Source Rust Library",
+        "Technical Blog Platform",
+        "Developer Portfolio Website",
+        "System Design Case Study",
+      ],
+      practicePlatforms: [
+        "LeetCode Rust Problems",
+        "System Design Interview Practice",
+        "Open Source Project Contributions",
+        "Technical Writing Platforms",
       ],
     },
   },
 ];
-  const PythonRoadmapComponent = () => {
+
+const RustRoadmapComponent = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
@@ -542,7 +678,7 @@ const pythonRoadmap = [
       title.style.color = "#2c3e50";
       title.style.borderBottom = "3px solid #3776ab"; // Python blue color
       title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
+      title.textContent = "Rust Learning Roadmap";
       downloadDiv.appendChild(title);
 
       // Add Python logo/icon (optional text representation)
@@ -552,11 +688,11 @@ const pythonRoadmap = [
       subtitle.style.color = "#7f8c8d";
       subtitle.style.marginBottom = "40px";
       subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
+      subtitle.textContent = "🐍 Complete Guide to Master Rust Programming";
       downloadDiv.appendChild(subtitle);
 
       // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
+      rustRoadmap.forEach((section) => {
         const sectionDiv = document.createElement("div");
         sectionDiv.style.marginBottom = "40px";
         sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
@@ -804,7 +940,7 @@ const pythonRoadmap = [
       footer.style.textAlign = "center";
       footer.style.fontSize = "12px";
       footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Python Learning Roadmap`;
+      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Rust Learning Roadmap`;
       downloadDiv.appendChild(footer);
 
       // Temporarily add the div to the document to render it
@@ -871,20 +1007,20 @@ const pythonRoadmap = [
       }
 
       // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
+      pdf.save("Rust_Learning_Roadmap.pdf");
 
       // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
       // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
+      console.log("Rust roadmap PDF generated successfully!");
 
       // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
+      alert("Rust Learning Roadmap PDF downloaded successfully!");
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
 
     } catch (error) {
-      console.error("Error generating Python roadmap PDF:", error);
+      console.error("Error generating Rust roadmap PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
     } finally {
       setDownloading(false);
@@ -903,8 +1039,9 @@ const pythonRoadmap = [
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
+        <h1 className="text-xl md:text-2xl font-bold flex items-center">
+          <span className="mr-2">🦀</span>
+          Rust Learning Roadmap
         </h1>
         <div className="flex items-center space-x-3">
           {/* Download Button */}
@@ -914,7 +1051,7 @@ const pythonRoadmap = [
             className={`px-4 py-2 rounded-md text-white ${
               downloading
                 ? "bg-gray-500 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
+                : "bg-orange-600 hover:bg-orange-700"
             } transition-colors flex items-center`}
           >
             {downloading ? (
@@ -1000,22 +1137,23 @@ const pythonRoadmap = [
             darkMode ? "bg-gray-800" : "bg-white"
           } shadow-md transition-colors duration-300`}
         >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+          <h2 className="text-xl md:text-2xl font-semibold mb-3 flex items-center">
+            <span className="mr-2">🦀</span>
+            Welcome to the Rust Learning Roadmap
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
+            This comprehensive roadmap will guide you through your Rust
             learning journey, from basic syntax to advanced concepts. Each
             section contains curated resources in both English and Hindi, along
             with practical projects and hands-on exercises. Click on any section
             to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+            project ideas that will help you master Rust programming.
           </p>
-        </div>
+          </div>
 
-        {/* Roadmap Sections */}
-        <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+          {/* Roadmap Sections */}
+          <div className="space-y-4">
+          {rustRoadmap.map((section) => (
             <div
               key={section.id}
               className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
@@ -1244,25 +1382,25 @@ const pythonRoadmap = [
               )}
             </div>
           ))}
-        </div>
+          </div>
 
-        {/* Footer */}
-        <div
+          {/* Footer */}
+          <div
           className={`mt-12 p-6 rounded-lg text-center ${
             darkMode ? "bg-gray-800" : "bg-white"
           } shadow-md`}
-        >
+          >
           <p
             className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
-            🚀 Start your Python journey today! Remember, consistency is key to
+            🚀 Start your Rust journey today! Remember, consistency is key to
             mastering programming.
           </p>
-        </div>
-      </main>
+          </div>
+          </main>
 
-      <style jsx>{`
-        @keyframes fadeIn {
+          <style jsx>{`
+          @keyframes fadeIn {
           from {
             opacity: 0;
             transform: translateY(-10px);
@@ -1271,12 +1409,12 @@ const pythonRoadmap = [
             opacity: 1;
             transform: translateY(0);
           }
-        }
-        .animate-fadeIn {
+          }
+          .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
-        }
-      `}</style>
-    </div>
-  );
-}
-export default PythonRoadmapComponent
+          }
+          `}</style>
+          </div>
+          );
+          }
+          export default RustRoadmapComponent;

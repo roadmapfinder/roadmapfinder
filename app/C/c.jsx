@@ -2,508 +2,415 @@
 import { useState } from "react";
 import {
   Book,
-  Wrench,
-  Lightbulb,
-  FileText,
-  ExternalLink,
   Code,
+  Database,
+  Target,
+  Trophy,
+  FileText,
   ChevronDown,
   ChevronUp,
-  Target,
+  Download,
+  Moon,
+  Sun,
+  Cpu,
+  Layers,
+  Zap,
+  Brain,
+  Award,
+  Briefcase,
+  Terminal,
+  Settings,
   Globe,
-  Database,
-  Bot,
-  CircuitBoard,
+  Users,
 } from "lucide-react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-
-// Python Roadmap Data Structure
-const pythonRoadmap = [
+// C Programming Roadmap Data Structure
+const cRoadmap = [
   {
     id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
+    title: "Beginner Stage - C Basics",
+    description:
+      "Foundation of C programming language and fundamental concepts",
     icon: <Code className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500",
     content: {
       whatToLearn: [
-        "Python Syntax & Indentation",
-        "Variables & Data Types",
-        "Input/Output Operations",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
-        "Comments & Documentation",
+        "C Programming Introduction & History",
+        "Setting up Development Environment",
+        "C Syntax & Basic Structure",
+        "Variables & Data Types (int, float, char, double)",
+        "Constants & Literals",
+        "Input/Output Operations (printf, scanf)",
+        "Operators (Arithmetic, Relational, Logical, Bitwise)",
+        "Control Flow Statements (if/else, switch-case)",
+        "Loops (for, while, do-while)",
+        "Functions & Function Parameters",
+        "Local vs Global Variables",
+        "Storage Classes (auto, static, extern, register)",
       ],
       toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
+        "Code::Blocks IDE",
+        "Visual Studio Code with C/C++ Extension",
+        "Dev-C++",
+        "GCC Compiler (MinGW for Windows)",
+        "Turbo C++ (Legacy)",
+        "CLion (JetBrains)",
+        "Sublime Text with C Build System",
+        "Online Compilers (OnlineGDB, Programiz)",
       ],
       bestCourses: {
         english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
+          "C Programming Tutorial - freeCodeCamp",
+          "C Programming Course - Codecademy",
+          "Learn C Programming - edX MIT",
+          "C Programming Fundamentals - Coursera",
+          "Programming in C - Udemy",
+          "C Programming Bootcamp - The Odin Project",
         ],
         hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
+          "C Programming Complete Course - CodeWithHarry",
+          "C Language Tutorial Hindi - Apna College",
+          "C Programming Hindi - Jenny's Lectures",
+          "Complete C Course Hindi - Geeky Shows",
+          "C Tutorial Hindi - MySirG.com",
+          "C Programming Hindi - Tech Gun",
         ],
       },
       documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
+        "C Reference - cppreference.com",
+        "C Programming - GeeksforGeeks",
+        "GNU C Library Documentation",
+        "C Programming - Tutorialspoint",
+        "C Language Reference - Microsoft Docs",
+        "The C Programming Language Book (K&R)",
       ],
       projectIdeas: [
-        "Simple Calculator",
+        "Simple Calculator (Basic Operations)",
+        "Temperature Converter (Celsius/Fahrenheit)",
         "Number Guessing Game",
-        "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
+        "Simple Interest Calculator",
+        "Grade Calculator for Students",
+        "Basic Menu-Driven Program",
+        "Prime Number Checker",
+        "Factorial Calculator",
+        "Fibonacci Series Generator",
+        "Simple ATM Simulator",
       ],
       practicePlatforms: [
-        "HackerRank Python",
-        "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
+        "HackerRank C Domain",
+        "GeeksforGeeks Practice",
+        "Programiz C Examples",
+        "W3Schools C Exercises",
+        "Coding Bat (C Problems)",
+        "Practice.GeeksforGeeks.org",
       ],
     },
   },
   {
     id: 2,
-    title: "Data Structures & OOP",
+    title: "Intermediate Stage - Pointers, Arrays, Strings & Memory",
     description:
-      "Master Python's built-in data structures and object-oriented programming",
+      "Advanced C concepts focusing on memory management and data structures",
     icon: <Database className="w-6 h-6" />,
     gradient: "from-purple-500 to-pink-500",
     content: {
       whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
-        "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
+        "Arrays (1D and 2D Arrays)",
+        "Pointers & Pointer Arithmetic",
+        "Relationship between Arrays and Pointers",
+        "Dynamic Memory Allocation (malloc, calloc, realloc, free)",
+        "Strings and String Functions (strcpy, strlen, strcat, strcmp)",
+        "Pointer to Pointer (Double Pointers)",
+        "Function Pointers",
+        "Structures and Unions",
+        "Nested Structures & Array of Structures",
+        "Typedef and Enum",
+        "Bitwise Operations & Bit Manipulation",
+        "Preprocessor Directives (#define, #include, #ifdef)",
+        "Header Files Creation",
+        "Command Line Arguments",
       ],
       toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
-        "UML Diagram Tools",
-        "Class Diagram Generators",
-        "Python Debugger (pdb)",
+        "Valgrind (Memory Leak Detection)",
+        "GDB Debugger",
+        "AddressSanitizer (Memory Error Detection)",
+        "Static Analysis Tools (Cppcheck)",
+        "Memory Profilers",
+        "Hex Editors for Memory Analysis",
+        "Visual Studio Debugger",
+        "DDD (Data Display Debugger)",
       ],
       bestCourses: {
         english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
+          "Pointers in C Programming - Udemy",
+          "Advanced C Programming - Coursera",
+          "C Programming: Pointers and Memory Management",
+          "Data Structures in C - edX",
+          "C Programming: Advanced Topics",
+          "Memory Management in C - Pluralsight",
         ],
         hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
+          "C Pointers Complete Tutorial - CodeWithHarry",
+          "Arrays and Pointers Hindi - Apna College",
+          "C Memory Management Hindi - Jenny's Lectures",
+          "Advanced C Programming Hindi - Geeky Shows",
+          "C Structures Hindi - MySirG.com",
+          "Dynamic Memory Allocation Hindi - Tech With Tim",
         ],
       },
       documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
+        "C Pointers Guide - GeeksforGeeks",
+        "Dynamic Memory Allocation in C",
+        "C Structures and Unions Reference",
+        "String Handling in C - cppreference",
+        "C Preprocessor Documentation",
+        "Memory Management Best Practices",
       ],
       projectIdeas: [
-        "Student Management System",
+        "Student Record Management System",
         "Library Management System",
-        "Bank Account Simulation",
-        "Inventory Management",
-        "Simple Game using Classes",
+        "Dynamic Array Implementation",
+        "String Manipulation Toolkit",
+        "Memory Pool Allocator",
+        "Simple Database Engine",
+        "Text File Parser",
+        "Contact Management System",
+        "Matrix Operations Calculator",
+        "Custom String Library",
+        "Linked List Implementation",
+        "Stack and Queue using Arrays",
       ],
       practicePlatforms: [
-        "LeetCode (Easy Problems)",
+        "LeetCode Easy-Medium Problems",
         "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
+        "CodeChef Beginner Problems",
+        "GeeksforGeeks Practice Problems",
+        "InterviewBit Programming",
+        "Sphere Online Judge (SPOJ)",
       ],
     },
   },
   {
     id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
+    title:
+      "Advanced Stage - File Handling, Data Structures & System Programming",
+    description:
+      "Professional C programming with system-level programming concepts",
+    icon: <Brain className="w-6 h-6" />,
     gradient: "from-green-500 to-teal-500",
     content: {
       whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
+        "File Handling (fopen, fclose, fread, fwrite, fseek)",
+        "Binary vs Text File Operations",
+        "Error Handling and errno",
+        "Advanced Data Structures (Linked Lists, Stacks, Queues)",
+        "Trees (Binary Trees, BST) Implementation",
+        "Graph Representation and Basic Algorithms",
+        "Hashing and Hash Tables",
+        "Sorting Algorithms (Bubble, Selection, Insertion, Quick, Merge)",
+        "Searching Algorithms (Linear, Binary)",
+        "Recursion and Recursive Algorithms",
+        "System Calls and OS Interface",
+        "Process Management (fork, exec, wait)",
+        "Inter-Process Communication (IPC)",
+        "Signal Handling",
+        "Network Programming Basics (Sockets)",
+        "Multi-threading with pthreads",
+        "Shared Memory and Semaphores",
       ],
       toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
+        "Make and Makefiles",
+        "CMake Build System",
+        "Git Version Control",
+        "Profiling Tools (gprof, perf)",
+        "Static Code Analyzers",
+        "Unit Testing Frameworks (CUnit, Check)",
+        "Docker for Development Environment",
+        "Linux System Tools (strace, ltrace)",
+        "Debugging Tools (GDB, Valgrind)",
       ],
       bestCourses: {
         english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
+          "Advanced C Programming Techniques",
+          "System Programming in C - Linux",
+          "Data Structures and Algorithms in C",
+          "C Programming: Advanced Concepts",
+          "Unix System Programming",
+          "Network Programming with C",
         ],
         hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
+          "Advanced C Programming Hindi - CodeWithHarry",
+          "File Handling in C Hindi - Apna College",
+          "Data Structures Implementation Hindi - Jenny's Lectures",
+          "System Programming Hindi - Geeky Shows",
+          "C Advanced Topics Hindi - MySirG.com",
+          "Operating System Concepts Hindi - Gate Smashers",
         ],
       },
       documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
+        "Advanced C Programming - GNU Documentation",
+        "Linux System Programming Guide",
+        "File I/O in C - cppreference",
+        "POSIX Programming Manual",
+        "Data Structures Documentation",
+        "Network Programming Guide",
       ],
       projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
+        "Custom Operating System Kernel (Basic)",
+        "File Compression Utility",
+        "Database Management System",
+        "Web Server Implementation",
+        "Memory Allocator (malloc implementation)",
+        "Shell Implementation (Command Line Interface)",
+        "Network Chat Application",
+        "File System Implementation",
+        "Process Monitor Tool",
+        "Custom Compiler (Simple Language)",
+        "Encryption/Decryption Tool",
+        "Multi-threaded Server",
+        "System Resource Monitor",
+        "Version Control System (Git Clone)",
+        "Text Editor with Advanced Features",
       ],
       practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
+        "Codeforces (C Language)",
+        "TopCoder Algorithm Competitions",
+        "AtCoder Programming Contest",
+        "Google Code Jam",
+        "ACM ICPC Problems",
+        "Project Euler (Mathematical Problems)",
+        "LeetCode Hard Problems",
+        "HackerEarth Challenges",
+      ],
+      interviewQuestions: [
+        "Explain pointer arithmetic and memory layout",
+        "Difference between malloc() and calloc()",
+        "How does function pointer work?",
+        "Stack vs Heap memory management",
+        "Explain volatile keyword",
+        "Memory leaks and how to prevent them",
+        "Process vs Thread differences",
+        "Explain deadlock and how to avoid it",
+        "Big O notation and algorithm complexity",
+        "Implement various sorting algorithms",
+      ],
+      githubProjects: [
+        "redis/redis - In-memory data structure store",
+        "git/git - Distributed version control system",
+        "curl/curl - Command line tool for transferring data",
+        "nginx/nginx - HTTP and reverse proxy server",
+        "sqlite/sqlite - Self-contained SQL database engine",
+        "vim/vim - Text editor",
+        "linux/linux - Linux kernel source code",
+        "qemu/qemu - Machine emulator and virtualizer",
       ],
     },
   },
   {
     id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
+    title: "Competitive Programming with C (Optional)",
+    description:
+      "Master algorithmic problem solving and competitive coding using C",
+    icon: <Trophy className="w-6 h-6" />,
     gradient: "from-orange-500 to-red-500",
     content: {
       whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
+        "Time and Space Complexity Analysis",
+        "Advanced Data Structures for CP",
+        "Segment Trees and Fenwick Trees",
+        "Graph Algorithms (DFS, BFS, Dijkstra, Floyd-Warshall)",
+        "Dynamic Programming Patterns",
+        "Greedy Algorithm Techniques",
+        "String Algorithms (KMP, Z-Algorithm, Manacher's)",
+        "Number Theory and Modular Arithmetic",
+        "Combinatorics and Probability",
+        "Binary Search and Ternary Search",
+        "Backtracking Algorithms",
+        "Divide and Conquer Strategies",
+        "Game Theory Basics",
+        "Fast I/O Techniques in C",
+        "Bit Manipulation Advanced Techniques",
       ],
       toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
+        "Fast C Templates for CP",
+        "Custom Input/Output Libraries",
+        "Stress Testing Scripts",
+        "Time Complexity Analyzers",
+        "Competitive Programming IDEs",
+        "Local Judge Systems",
+        "Performance Profilers",
+        "Algorithm Visualizers",
       ],
       bestCourses: {
         english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
+          "Competitive Programming Essentials",
+          "Algorithms for Competitive Programming",
+          "Data Structures for Competitive Coding",
+          "Advanced Graph Algorithms",
+          "Dynamic Programming Mastery",
+          "Mathematical Algorithms for CP",
         ],
         hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
+          "Competitive Programming Hindi - Luv (YouTube)",
+          "CP Course Hindi - Priyansh Agarwal",
+          "Algorithms Hindi - Aditya Verma",
+          "CP Tutorial Hindi - CodeChef",
+          "Advanced DSA Hindi - Striver",
+          "Contest Math Hindi - Unacademy",
         ],
       },
       documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
+        "Competitive Programming Handbook",
+        "CP-Algorithms Documentation",
+        "Codeforces Educational Materials",
+        "USACO Training Guide",
+        "TopCoder Algorithm Tutorials",
+        "AtCoder Library Documentation",
       ],
-      projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
-      ],
-      practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
-      ],
-    },
-  },
-  {
-    id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
-    gradient: "from-indigo-500 to-purple-600",
-    content: {
-      whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
-      ],
-      toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
-        "Google Colab",
-        "Plotly",
-      ],
-      bestCourses: {
-        english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
-        ],
-        hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
-        ],
-      },
-      documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
-      ],
-      projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
-      ],
-      practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
-      ],
-    },
-  },
-  {
-    id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
-    gradient: "from-cyan-500 to-blue-600",
-    content: {
-      whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
-      ],
-      toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
-      ],
-      bestCourses: {
-        english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
-        ],
-        hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
-        ],
-      },
-      documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
-      ],
-      projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
-      ],
-      practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
-      ],
-    },
-  },
-  {
-    id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
-    content: {
-      whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
-      ],
-      toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
-      ],
-      bestCourses: {
-        english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
-        ],
-        hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
-        ],
-      },
-      documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
-      ],
-      projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
-      ],
-      practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
+      platforms: [
+        "Codeforces",
+        "AtCoder",
+        "CodeChef",
         "TopCoder",
-      ],
-    },
-  },
-  {
-    id: 8,
-    title: "Portfolio + Resume + Interview",
-    description:
-      "Build your professional profile and prepare for job interviews",
-    icon: <Wrench className="w-6 h-6" />,
-    gradient: "from-emerald-500 to-green-600",
-    content: {
-      whatToLearn: [
-        "GitHub Profile Optimization",
-        "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
-      ],
-      toolsToUse: [
-        "GitHub",
-        "LinkedIn",
-        "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
+        "SPOJ (Sphere Online Judge)",
+        "UVa Online Judge",
         "HackerRank",
-        "Interview Platforms",
+        "HackerEarth",
+        "Google Code Jam",
+        "Meta Hacker Cup",
+        "USACO",
+        "IOI (International Olympiad in Informatics)",
       ],
-      bestCourses: {
-        english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
-        ],
-        hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
-        ],
-      },
-      documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
+      practiceTips: [
+        "Start with easy problems and gradually increase difficulty",
+        "Focus on implementation speed and accuracy",
+        "Learn common algorithmic patterns and templates",
+        "Practice time management during contests",
+        "Analyze and learn from editorial solutions",
+        "Participate in regular contests to build stamina",
+        "Maintain a problem-solving journal",
+        "Study solutions of top competitive programmers",
+        "Focus on weak areas through targeted practice",
+        "Join competitive programming communities",
       ],
-      projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
-      ],
-      practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
+      challenges: [
+        "Solve 100+ problems on each major platform",
+        "Achieve Expert level on Codeforces",
+        "Participate in weekly contests consistently",
+        "Solve problems from past ACM ICPC regionals",
+        "Complete USACO training program",
+        "Solve advanced graph and DP problems",
+        "Master string algorithms and number theory",
+        "Participate in Google Code Jam rounds",
+        "Contribute to competitive programming community",
+        "Mentor junior competitive programmers",
       ],
     },
   },
 ];
-  const PythonRoadmapComponent = () => {
+
+const CRoadmapComponent = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
@@ -519,15 +426,16 @@ const pythonRoadmap = [
     setDownloading(true);
 
     try {
-      // Create a temporary div to render the Python roadmap content for downloading
+      // Create a temporary div to render the C++ roadmap content for downloading
       const downloadDiv = document.createElement("div");
       downloadDiv.className = "roadmap-download-content";
 
-      // IMPROVED STYLES for better PDF output and readability
+      // Improved styles for better PDF output and readability
       downloadDiv.style.padding = "40px";
       downloadDiv.style.color = "#2c3e50";
       downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+      downloadDiv.style.fontFamily =
+        "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
       downloadDiv.style.fontSize = "14px";
       downloadDiv.style.lineHeight = "1.6";
       downloadDiv.style.maxWidth = "800px";
@@ -540,33 +448,34 @@ const pythonRoadmap = [
       title.style.fontSize = "32px";
       title.style.fontWeight = "700";
       title.style.color = "#2c3e50";
-      title.style.borderBottom = "3px solid #3776ab"; // Python blue color
+      title.style.borderBottom = "3px solid #00599C"; // C++ blue color
       title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
+      title.textContent = "C Learning Roadmap";
       downloadDiv.appendChild(title);
 
-      // Add Python logo/icon (optional text representation)
+      // Add C++ logo/icon (text representation)
       const subtitle = document.createElement("p");
       subtitle.style.textAlign = "center";
       subtitle.style.fontSize = "16px";
       subtitle.style.color = "#7f8c8d";
       subtitle.style.marginBottom = "40px";
       subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
+      subtitle.textContent =
+        "⚡ Complete Guide to Master C Programming - From Beginner to Expert";
       downloadDiv.appendChild(subtitle);
 
       // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
+      cRoadmap.forEach((section) => {
         const sectionDiv = document.createElement("div");
         sectionDiv.style.marginBottom = "40px";
-        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
+        sectionDiv.style.pageBreakInside = "avoid";
 
         // Section header with better design
         const header = document.createElement("h2");
         header.style.backgroundColor = "#ecf0f1";
         header.style.padding = "15px 20px";
         header.style.borderRadius = "8px";
-        header.style.borderLeft = "5px solid #3776ab"; // Python blue
+        header.style.borderLeft = "5px solid #00599C"; // C++ blue
         header.style.fontSize = "20px";
         header.style.fontWeight = "600";
         header.style.color = "#2c3e50";
@@ -574,7 +483,7 @@ const pythonRoadmap = [
         header.textContent = `${section.id}. ${section.title}`;
         sectionDiv.appendChild(header);
 
-        // Section description with better typography
+        // Section description
         const desc = document.createElement("p");
         desc.style.marginBottom = "25px";
         desc.style.fontStyle = "italic";
@@ -585,7 +494,7 @@ const pythonRoadmap = [
         desc.textContent = section.description;
         sectionDiv.appendChild(desc);
 
-        // What to Learn with improved styling
+        // What to Learn
         const whatToLearn = document.createElement("div");
         whatToLearn.style.marginBottom = "25px";
 
@@ -614,7 +523,7 @@ const pythonRoadmap = [
         whatToLearn.appendChild(whatToLearnList);
         sectionDiv.appendChild(whatToLearn);
 
-        // Best Courses with better organization
+        // Best Courses
         const bestCourses = document.createElement("div");
         bestCourses.style.marginBottom = "25px";
 
@@ -677,7 +586,7 @@ const pythonRoadmap = [
         bestCourses.appendChild(hindiList);
         sectionDiv.appendChild(bestCourses);
 
-        // Tools to Use with better styling
+        // Tools to Use
         const tools = document.createElement("div");
         tools.style.marginBottom = "25px";
 
@@ -706,7 +615,7 @@ const pythonRoadmap = [
         tools.appendChild(toolsList);
         sectionDiv.appendChild(tools);
 
-        // Documentation with better styling
+        // Documentation
         const docs = document.createElement("div");
         docs.style.marginBottom = "25px";
 
@@ -735,7 +644,7 @@ const pythonRoadmap = [
         docs.appendChild(docsList);
         sectionDiv.appendChild(docs);
 
-        // Project Ideas with better styling
+        // Project Ideas
         const projects = document.createElement("div");
         projects.style.marginBottom = "25px";
 
@@ -764,7 +673,7 @@ const pythonRoadmap = [
         projects.appendChild(projectsList);
         sectionDiv.appendChild(projects);
 
-        // Practice Platforms with better styling
+        // Practice Platforms
         const practice = document.createElement("div");
         practice.style.marginBottom = "25px";
 
@@ -821,7 +730,7 @@ const pythonRoadmap = [
         width: downloadDiv.scrollWidth,
         height: downloadDiv.scrollHeight,
         scrollX: 0,
-        scrollY: 0
+        scrollY: 0,
       });
 
       // Remove the temporary div
@@ -833,7 +742,7 @@ const pythonRoadmap = [
         unit: "mm",
         format: "a4",
         compress: true, // Compress for smaller file size
-        precision: 2
+        precision: 2,
       });
 
       // Calculate dimensions for better fitting
@@ -871,18 +780,17 @@ const pythonRoadmap = [
       }
 
       // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
+      pdf.save("C_Learning_Roadmap.pdf");
 
       // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
       // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
+      console.log("C roadmap PDF generated successfully!");
 
       // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
+      alert("C Learning Roadmap PDF downloaded successfully!");
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
-
     } catch (error) {
       console.error("Error generating Python roadmap PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
@@ -903,9 +811,7 @@ const pythonRoadmap = [
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
-        </h1>
+        <h1 className="text-xl md:text-2xl font-bold">C Learning Roadmap</h1>
         <div className="flex items-center space-x-3">
           {/* Download Button */}
           <button
@@ -1001,21 +907,21 @@ const pythonRoadmap = [
           } shadow-md transition-colors duration-300`}
         >
           <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+            Welcome to the C Learning Roadmap
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
+            This comprehensive roadmap will guide you through your C language
             learning journey, from basic syntax to advanced concepts. Each
             section contains curated resources in both English and Hindi, along
             with practical projects and hands-on exercises. Click on any section
             to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+            project ideas that will help you master C programming.
           </p>
         </div>
 
         {/* Roadmap Sections */}
         <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+          {cRoadmap.map((section) => (
             <div
               key={section.id}
               className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
@@ -1255,7 +1161,7 @@ const pythonRoadmap = [
           <p
             className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
-            🚀 Start your Python journey today! Remember, consistency is key to
+            🚀 Start your C journey today! Remember, consistency is key to
             mastering programming.
           </p>
         </div>
@@ -1278,5 +1184,5 @@ const pythonRoadmap = [
       `}</style>
     </div>
   );
-}
-export default PythonRoadmapComponent
+};
+export default CRoadmapComponent;

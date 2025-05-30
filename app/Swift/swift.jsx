@@ -2,508 +2,516 @@
 import { useState } from "react";
 import {
   Book,
-  Wrench,
-  Lightbulb,
-  FileText,
-  ExternalLink,
   Code,
+  Settings,
+  Smartphone,
+  Database,
+  Globe,
+  Zap,
+  Target,
   ChevronDown,
   ChevronUp,
-  Target,
-  Globe,
-  Database,
-  Bot,
-  CircuitBoard,
+  Star,
+  Coffee,
+  Package,
+  Shield,
+  Layers,
+  Terminal,
+  Cpu,
+  Network,
+  Bug,
+  Rocket,
+  Lock
 } from "lucide-react";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
 
-// Python Roadmap Data Structure
-const pythonRoadmap = [
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+
+// Swift Roadmap Data Structure
+const swiftRoadmap = [
   {
     id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
-    icon: <Code className="w-6 h-6" />,
-    gradient: "from-blue-500 to-cyan-500",
+    title: "Swift Fundamentals & Setup",
+    description: "Get started with Swift programming language basics and development environment",
+    icon: <Settings className="w-6 h-6" />,
+    gradient: "from-orange-500 to-red-500",
     content: {
       whatToLearn: [
-        "Python Syntax & Indentation",
-        "Variables & Data Types",
-        "Input/Output Operations",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
+        "Installing Xcode & Swift",
+        "Variables & Constants (var, let)",
+        "Data Types (Int, String, Bool, Double)",
+        "Basic Operators & Expressions",
+        "String Interpolation",
         "Comments & Documentation",
+        "Swift Playgrounds Basics",
+        "Hello World & Basic Programs",
       ],
       toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
+        "Xcode IDE",
+        "Swift Playgrounds (iPad/Mac)",
+        "Swift REPL",
+        "VS Code with Swift Extension",
+        "Swift Package Manager",
+        "Swift Compiler (swiftc)",
       ],
       bestCourses: {
         english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
+          "Swift Programming Tutorial - Apple Developer",
+          "Learn Swift - Codecademy",
+          "Swift Crash Course - freeCodeCamp YouTube",
+          "100 Days of Swift - Paul Hudson",
         ],
         hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
+          "Swift Programming Hindi - CodeWithHarry",
+          "iOS Development Swift Hindi - WsCube Tech",
+          "Swift Tutorial Hindi - Thapa Technical",
+          "Swift Basics Hindi - Technical Suneja",
         ],
       },
       documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
+        "The Swift Programming Language Book",
+        "Swift.org Documentation",
+        "Apple Developer Swift Guide",
+        "Swift API Guidelines",
       ],
       projectIdeas: [
         "Simple Calculator",
-        "Number Guessing Game",
         "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
+        "BMI Calculator",
+        "Basic Quiz App",
+        "Number Guessing Game",
       ],
       practicePlatforms: [
-        "HackerRank Python",
-        "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
+        "Swift Playgrounds App",
+        "HackerRank Swift",
+        "LeetCode Swift Problems",
+        "Codewars Swift",
       ],
     },
   },
   {
     id: 2,
-    title: "Data Structures & OOP",
-    description:
-      "Master Python's built-in data structures and object-oriented programming",
-    icon: <Database className="w-6 h-6" />,
-    gradient: "from-purple-500 to-pink-500",
+    title: "Control Flow & Collections",
+    description: "Master control structures, loops, and Swift's powerful collection types",
+    icon: <Code className="w-6 h-6" />,
+    gradient: "from-blue-500 to-indigo-500",
     content: {
       whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
-        "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
+        "If-Else Statements & Switch Cases",
+        "For-In Loops & While Loops",
+        "Arrays & Dictionaries",
+        "Sets & Tuples",
+        "Optional Binding (if let, guard let)",
+        "Range Operators",
+        "Control Transfer Statements",
+        "Collection Iteration Methods",
       ],
       toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
-        "UML Diagram Tools",
-        "Class Diagram Generators",
-        "Python Debugger (pdb)",
+        "Xcode Debugger",
+        "Swift Playgrounds",
+        "LLDB Debugger",
+        "Xcode Performance Tools",
+        "Swift Package Manager",
+        "Git Version Control",
       ],
       bestCourses: {
         english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
+          "Swift Collections - Ray Wenderlich",
+          "Control Flow in Swift - Stanford CS193p",
+          "Swift Fundamentals - Pluralsight",
+          "iOS Development with Swift - Udemy",
         ],
         hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
+          "Swift Control Flow Hindi - CodeWithHarry",
+          "Arrays & Collections Hindi - WsCube Tech",
+          "Swift Programming Hindi - Indian Coders",
+          "iOS Development Hindi - Thapa Technical",
         ],
       },
       documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
+        "Control Flow - Swift Language Guide",
+        "Collection Types - Swift Documentation",
+        "Basic Operators - Swift Guide",
+        "Strings and Characters Guide",
       ],
       projectIdeas: [
-        "Student Management System",
-        "Library Management System",
-        "Bank Account Simulation",
-        "Inventory Management",
-        "Simple Game using Classes",
+        "Student Grade Calculator",
+        "To-Do List App (Console)",
+        "Shopping Cart System",
+        "Simple Banking System",
+        "Contact Book Manager",
       ],
       practicePlatforms: [
-        "LeetCode (Easy Problems)",
-        "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
+        "Swift Algorithm Club",
+        "Exercism Swift Track",
+        "Codewars Collections",
+        "LeetCode Array Problems",
       ],
     },
   },
   {
     id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
-    gradient: "from-green-500 to-teal-500",
+    title: "Object-Oriented Programming",
+    description: "Learn OOP concepts, classes, structs, and protocols in Swift",
+    icon: <Package className="w-6 h-6" />,
+    gradient: "from-green-500 to-emerald-500",
     content: {
       whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
+        "Classes vs Structs",
+        "Properties & Methods",
+        "Initializers & Deinitializers",
+        "Inheritance & Polymorphism",
+        "Protocols & Extensions",
+        "Enumerations & Associated Values",
+        "Access Control (private, public, internal)",
+        "Type Casting & Any/AnyObject",
       ],
       toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
+        "Xcode Class Navigator",
+        "Swift Refactoring Tools",
+        "Protocol-Oriented Programming",
+        "Swift Lint",
+        "Xcode Documentation",
+        "UML Design Tools",
       ],
       bestCourses: {
         english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
+          "Swift OOP - Ray Wenderlich",
+          "Protocol-Oriented Programming - WWDC",
+          "Swift Classes & Structs - Udemy",
+          "Object-Oriented Swift - Pluralsight",
         ],
         hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
+          "Swift OOP Hindi - CodeWithHarry",
+          "Classes & Objects Hindi - WsCube Tech",
+          "Swift Programming Hindi - Indian Programming",
+          "OOP Concepts Hindi - Technical Suneja",
         ],
       },
       documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
+        "Classes and Structures - Swift Guide",
+        "Protocols - Swift Documentation",
+        "Extensions - Swift Language Guide",
+        "Enumerations - Swift Reference",
       ],
       projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
+        "Library Management System",
+        "Employee Management App",
+        "Vehicle Rental System",
+        "Banking Application (OOP)",
+        "Game Character System",
       ],
       practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
+        "Swift Design Patterns",
+        "OOP Challenges - Exercism",
+        "Protocol Practice Problems",
+        "Class Design Exercises",
       ],
     },
   },
   {
     id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
-    gradient: "from-orange-500 to-red-500",
+    title: "Advanced Swift & Error Handling",
+    description: "Master advanced Swift features, error handling, and memory management",
+    icon: <Bug className="w-6 h-6" />,
+    gradient: "from-purple-500 to-violet-500",
     content: {
       whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
+        "Error Handling (do-try-catch)",
+        "Optional Chaining & Nil Coalescing",
+        "Closures & Higher-Order Functions",
+        "Generics & Associated Types",
+        "Memory Management (ARC)",
+        "Strong/Weak References",
+        "Async/Await & Concurrency",
+        "Result Type & Error Protocols",
       ],
       toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
+        "Xcode Instruments",
+        "Memory Graph Debugger",
+        "Swift Performance Tools",
+        "Allocation Instrument",
+        "Time Profiler",
+        "Leaks Instrument",
       ],
       bestCourses: {
         english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
+          "Advanced Swift - Ray Wenderlich",
+          "Swift Concurrency - WWDC Sessions",
+          "Memory Management - Paul Hudson",
+          "Error Handling Best Practices - iOS Academy",
         ],
         hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
+          "Advanced Swift Hindi - CodeWithHarry",
+          "Error Handling Hindi - WsCube Tech",
+          "Memory Management Hindi - Indian Coders",
+          "Swift Closures Hindi - Technical Suneja",
         ],
       },
       documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
+        "Error Handling - Swift Guide",
+        "Automatic Reference Counting",
+        "Concurrency - Swift Documentation",
+        "Generics - Swift Language Guide",
       ],
       projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
+        "Network Request Handler",
+        "File Manager with Error Handling",
+        "Async Image Downloader",
+        "Generic Data Structure Library",
+        "Memory-Efficient Cache System",
       ],
       practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
+        "Swift Algorithm Challenges",
+        "Concurrency Practice Problems",
+        "Memory Management Exercises",
+        "Error Handling Scenarios",
       ],
     },
   },
   {
     id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
-    gradient: "from-indigo-500 to-purple-600",
+    title: "SwiftUI Fundamentals",
+    description: "Learn modern iOS UI development with SwiftUI framework",
+    icon: <Smartphone className="w-6 h-6" />,
+    gradient: "from-teal-500 to-cyan-500",
     content: {
       whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
+        "SwiftUI Views & Modifiers",
+        "State Management (@State, @Binding)",
+        "Navigation & Presentation",
+        "Lists & Forms",
+        "Animations & Transitions",
+        "Custom Views & ViewModels",
+        "Environment Objects",
+        "Combine Framework Basics",
       ],
       toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
-        "Google Colab",
-        "Plotly",
+        "Xcode SwiftUI Canvas",
+        "SwiftUI Previews",
+        "Interface Builder",
+        "SF Symbols App",
+        "SwiftUI Inspector",
+        "Simulator",
       ],
       bestCourses: {
         english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
+          "SwiftUI Masterclass - Angela Yu",
+          "100 Days of SwiftUI - Paul Hudson",
+          "SwiftUI Fundamentals - Ray Wenderlich",
+          "iOS 17 SwiftUI - Udemy",
         ],
         hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
+          "SwiftUI Hindi - CodeWithHarry",
+          "iOS Development Hindi - WsCube Tech",
+          "SwiftUI Tutorial Hindi - Indian Programming",
+          "Mobile App Development Hindi - Thapa Technical",
         ],
       },
       documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
+        "SwiftUI Documentation - Apple",
+        "Human Interface Guidelines",
+        "SwiftUI Tutorials - Apple Developer",
+        "Combine Framework Guide",
       ],
       projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
+        "Weather App with SwiftUI",
+        "Notes App with Core Data",
+        "Expense Tracker",
+        "Recipe Book App",
+        "Fitness Tracker UI",
       ],
       practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
+        "SwiftUI Lab Exercises",
+        "iOS Development Challenges",
+        "UI/UX Implementation Practice",
+        "SwiftUI Animation Challenges",
       ],
     },
   },
   {
     id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
-    gradient: "from-cyan-500 to-blue-600",
+    title: "iOS App Development",
+    description: "Build complete iOS applications with networking, data persistence, and deployment",
+    icon: <Globe className="w-6 h-6" />,
+    gradient: "from-yellow-500 to-orange-500",
     content: {
       whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
+        "REST API Integration",
+        "JSON Parsing & Codable",
+        "Core Data & Data Persistence",
+        "User Notifications",
+        "App Store Guidelines",
+        "Testing (Unit & UI Tests)",
+        "App Architecture (MVVM, MVC)",
+        "App Store Deployment",
       ],
       toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
+        "URLSession & Networking",
+        "Core Data Framework",
+        "Firebase SDK",
+        "TestFlight",
+        "Xcode Testing Framework",
+        "App Store Connect",
       ],
       bestCourses: {
         english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
+          "Complete iOS App Development Bootcamp",
+          "iOS Architecture Patterns - Ray Wenderlich",
+          "App Store Deployment Guide",
+          "iOS Testing Best Practices",
         ],
         hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
+          "Complete iOS Development Hindi - CodeWithHarry",
+          "App Store Publishing Hindi - WsCube Tech",
+          "iOS Networking Hindi - Indian Coders",
+          "Core Data Hindi - Technical Suneja",
         ],
       },
       documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
+        "App Store Review Guidelines",
+        "Core Data Programming Guide",
+        "URL Loading System",
+        "Testing Documentation - Apple",
       ],
       projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
+        "Social Media Feed App",
+        "E-commerce Shopping App",
+        "Chat Application with Firebase",
+        "News Reader App",
+        "Personal Finance Tracker",
       ],
       practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
+        "iOS App Development Challenges",
+        "App Store Optimization",
+        "Real-world Project Building",
+        "Code Review Practices",
       ],
     },
   },
   {
     id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
+    title: "Advanced iOS Development",
+    description: "Master advanced iOS concepts, performance optimization, and specialized frameworks",
+    icon: <Rocket className="w-6 h-6" />,
+    gradient: "from-indigo-500 to-purple-500",
     content: {
       whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
+        "Advanced SwiftUI (Custom Layouts)",
+        "Core Animation & Metal",
+        "ARKit & Machine Learning",
+        "Push Notifications & Background Tasks",
+        "Widget Development",
+        "App Extensions",
+        "Performance Optimization",
+        "Security & Keychain Services",
       ],
       toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
+        "Instruments Profiler",
+        "ARKit Framework",
+        "Core ML Tools",
+        "WidgetKit",
+        "Keychain Services",
+        "Background App Refresh",
       ],
       bestCourses: {
         english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
+          "Advanced iOS Development - Ray Wenderlich",
+          "ARKit & Machine Learning - Udemy",
+          "iOS Performance Optimization",
+          "Widget Development Course",
         ],
         hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
+          "Advanced iOS Hindi - CodeWithHarry",
+          "ARKit Development Hindi - WsCube Tech",
+          "iOS Performance Hindi - Indian Programming",
+          "Widget Development Hindi - Technical Suneja",
         ],
       },
       documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
+        "ARKit Documentation",
+        "Core ML Documentation",
+        "WidgetKit Programming Guide",
+        "Performance Optimization Guide",
       ],
       projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
+        "AR Furniture Placement App",
+        "Health & Fitness Tracker",
+        "Photo Editing App with ML",
+        "Custom Widget Collection",
+        "Secure Banking App",
       ],
       practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
-        "TopCoder",
+        "Advanced iOS Challenges",
+        "AR Development Practice",
+        "Performance Optimization Tasks",
+        "Security Implementation Exercises",
       ],
     },
   },
   {
     id: 8,
-    title: "Portfolio + Resume + Interview",
-    description:
-      "Build your professional profile and prepare for job interviews",
-    icon: <Wrench className="w-6 h-6" />,
-    gradient: "from-emerald-500 to-green-600",
+    title: "Career & Professional Development",
+    description: "Prepare for iOS developer roles and build your professional portfolio",
+    icon: <Target className="w-6 h-6" />,
+    gradient: "from-emerald-500 to-teal-500",
     content: {
       whatToLearn: [
-        "GitHub Profile Optimization",
-        "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
+        "iOS Interview Preparation",
+        "System Design for Mobile Apps",
+        "Code Review Best Practices",
+        "Technical Documentation",
+        "App Store Optimization (ASO)",
+        "Continuous Integration/Deployment",
+        "Open Source Contributions",
+        "Professional Networking",
       ],
       toolsToUse: [
-        "GitHub",
-        "LinkedIn",
-        "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
-        "HackerRank",
-        "Interview Platforms",
+        "GitHub Actions",
+        "Fastlane Automation",
+        "App Analytics Tools",
+        "TestFlight Beta Testing",
+        "App Store Connect API",
+        "CI/CD Pipelines",
       ],
       bestCourses: {
         english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
+          "iOS Interview Preparation Guide",
+          "Mobile System Design Course",
+          "App Store Marketing Strategies",
+          "iOS Developer Career Path",
         ],
         hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
+          "iOS Job Interview Hindi - CodeWithHarry",
+          "App Store Marketing Hindi - WsCube Tech",
+          "iOS Career Guide Hindi - Indian Programming",
+          "Portfolio Building Hindi - Technical Suneja",
         ],
       },
       documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
+        "iOS Interview Questions Guide",
+        "App Store Marketing Guidelines",
+        "Developer Career Resources",
+        "Open Source Contribution Guide",
       ],
       projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
+        "Complete Portfolio App",
+        "Open Source iOS Library",
+        "Technical Blog Platform",
+        "Case Study Documentation",
+        "Developer Portfolio Website",
       ],
       practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
+        "LeetCode iOS Problems",
+        "System Design Practice",
+        "Code Review Platforms",
+        "Professional Networking Sites",
       ],
     },
   },
 ];
-  const PythonRoadmapComponent = () => {
+
+const SwiftRoadmapComponent = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
@@ -527,7 +535,8 @@ const pythonRoadmap = [
       downloadDiv.style.padding = "40px";
       downloadDiv.style.color = "#2c3e50";
       downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+      downloadDiv.style.fontFamily =
+        "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
       downloadDiv.style.fontSize = "14px";
       downloadDiv.style.lineHeight = "1.6";
       downloadDiv.style.maxWidth = "800px";
@@ -542,7 +551,7 @@ const pythonRoadmap = [
       title.style.color = "#2c3e50";
       title.style.borderBottom = "3px solid #3776ab"; // Python blue color
       title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
+      title.textContent = "Swift Learning Roadmap";
       downloadDiv.appendChild(title);
 
       // Add Python logo/icon (optional text representation)
@@ -552,11 +561,11 @@ const pythonRoadmap = [
       subtitle.style.color = "#7f8c8d";
       subtitle.style.marginBottom = "40px";
       subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
+      subtitle.textContent = "🐍 Complete Guide to Master Swift Programming";
       downloadDiv.appendChild(subtitle);
 
       // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
+      swiftRoadmap.forEach((section) => {
         const sectionDiv = document.createElement("div");
         sectionDiv.style.marginBottom = "40px";
         sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
@@ -804,7 +813,7 @@ const pythonRoadmap = [
       footer.style.textAlign = "center";
       footer.style.fontSize = "12px";
       footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Python Learning Roadmap`;
+      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Swift Learning Roadmap`;
       downloadDiv.appendChild(footer);
 
       // Temporarily add the div to the document to render it
@@ -821,7 +830,7 @@ const pythonRoadmap = [
         width: downloadDiv.scrollWidth,
         height: downloadDiv.scrollHeight,
         scrollX: 0,
-        scrollY: 0
+        scrollY: 0,
       });
 
       // Remove the temporary div
@@ -833,7 +842,7 @@ const pythonRoadmap = [
         unit: "mm",
         format: "a4",
         compress: true, // Compress for smaller file size
-        precision: 2
+        precision: 2,
       });
 
       // Calculate dimensions for better fitting
@@ -871,20 +880,19 @@ const pythonRoadmap = [
       }
 
       // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
+      pdf.save("Swift_Learning_Roadmap.pdf");
 
       // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
       // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
+      console.log("Swift roadmap PDF generated successfully!");
 
       // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
+      alert("Swift Learning Roadmap PDF downloaded successfully!");
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
-
     } catch (error) {
-      console.error("Error generating Python roadmap PDF:", error);
+      console.error("Error generating Rust roadmap PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
     } finally {
       setDownloading(false);
@@ -903,8 +911,9 @@ const pythonRoadmap = [
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
+        <h1 className="text-xl md:text-2xl font-bold flex items-center">
+          <span className="mr-2">🦀</span>
+          Swift Learning Roadmap
         </h1>
         <div className="flex items-center space-x-3">
           {/* Download Button */}
@@ -914,7 +923,7 @@ const pythonRoadmap = [
             className={`px-4 py-2 rounded-md text-white ${
               downloading
                 ? "bg-gray-500 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
+                : "bg-orange-600 hover:bg-orange-700"
             } transition-colors flex items-center`}
           >
             {downloading ? (
@@ -1000,22 +1009,24 @@ const pythonRoadmap = [
             darkMode ? "bg-gray-800" : "bg-white"
           } shadow-md transition-colors duration-300`}
         >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+          <h2 className="text-xl md:text-2xl font-semibold mb-3 flex items-center">
+            <span className="mr-2">🦀</span>
+            Welcome to the Swift Learning Roadmap
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
-            learning journey, from basic syntax to advanced concepts. Each
-            section contains curated resources in both English and Hindi, along
-            with practical projects and hands-on exercises. Click on any section
-            to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+            This comprehensive roadmap will guide you through your Swift
+            programming learning journey, from basic syntax to advanced
+            concepts. Each section contains curated resources in both English
+            and Hindi, along with practical projects and hands-on exercises.
+            Click on any section to expand it and explore detailed learning
+            materials, tools, and project ideas that will help you master Swift
+            programming.
           </p>
         </div>
 
         {/* Roadmap Sections */}
         <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+          {swiftRoadmap.map((section) => (
             <div
               key={section.id}
               className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
@@ -1255,7 +1266,7 @@ const pythonRoadmap = [
           <p
             className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
-            🚀 Start your Python journey today! Remember, consistency is key to
+            🚀 Start your Swift journey today! Remember, consistency is key to
             mastering programming.
           </p>
         </div>
@@ -1278,5 +1289,5 @@ const pythonRoadmap = [
       `}</style>
     </div>
   );
-}
-export default PythonRoadmapComponent
+  };
+  export default SwiftRoadmapComponent;

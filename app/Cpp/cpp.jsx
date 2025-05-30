@@ -2,508 +2,528 @@
 import { useState } from "react";
 import {
   Book,
-  Wrench,
-  Lightbulb,
-  FileText,
-  ExternalLink,
   Code,
+  Database,
+  Target,
+  Trophy,
+  FileText,
   ChevronDown,
   ChevronUp,
-  Target,
-  Globe,
-  Database,
-  Bot,
-  CircuitBoard,
+  Download,
+  Moon,
+  Sun,
+  Cpu,
+  Layers,
+  Zap,
+  Brain,
+  Award,
+  Briefcase,
 } from "lucide-react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 
-// Python Roadmap Data Structure
-const pythonRoadmap = [
+// C++ Roadmap Data Structure
+const cppRoadmap = [
   {
     id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
+    title: "Introduction to C++ Programming",
+    description: "Foundation of C++ programming language and basic concepts",
     icon: <Code className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500",
     content: {
       whatToLearn: [
-        "Python Syntax & Indentation",
+        "C++ Syntax & Basic Structure",
         "Variables & Data Types",
-        "Input/Output Operations",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
-        "Comments & Documentation",
+        "Input/Output Operations (cin, cout)",
+        "Operators (Arithmetic, Logical, Bitwise)",
+        "Control Flow (if/else, switch, loops)",
+        "Functions & Function Overloading",
+        "Arrays & Strings",
+        "Pointers & References",
+        "Dynamic Memory Allocation",
       ],
       toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
+        "Visual Studio Code",
+        "Code::Blocks",
+        "Dev-C++",
+        "CLion (JetBrains)",
+        "GCC Compiler",
+        "MinGW (Windows)",
+        "Online IDEs (Replit, OnlineGDB)",
+        "Visual Studio Community",
       ],
       bestCourses: {
         english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
+          "C++ Programming Course - freeCodeCamp",
+          "C++ Tutorial for Complete Beginners - Udemy",
+          "Learn C++ Programming - Codecademy",
+          "C++ Fundamentals - Pluralsight",
+          "Beginning C++ Programming - Coursera",
         ],
         hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
+          "C++ Complete Course - CodeWithHarry",
+          "C++ Programming in Hindi - Apna College",
+          "C++ Tutorial Hindi - Jenny's Lectures",
+          "Complete C++ Course Hindi - Geeky Shows",
+          "C++ Programming Hindi - Tech Gun",
         ],
       },
       documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
+        "cppreference.com",
+        "C++ Reference - cplusplus.com",
+        "Microsoft C++ Documentation",
+        "GNU GCC Documentation",
+        "ISO C++ Standard Documentation",
       ],
       projectIdeas: [
         "Simple Calculator",
         "Number Guessing Game",
         "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
+        "Basic Banking System",
+        "Student Grade Calculator",
+        "Simple Text Editor",
+        "Tic-Tac-Toe Game",
       ],
       practicePlatforms: [
-        "HackerRank Python",
+        "HackerRank C++",
         "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
+        "LeetCode (Easy Problems)",
+        "GeeksforGeeks Practice",
+        "HackerEarth",
       ],
     },
   },
   {
     id: 2,
-    title: "Data Structures & OOP",
-    description:
-      "Master Python's built-in data structures and object-oriented programming",
-    icon: <Database className="w-6 h-6" />,
+    title: "Object-Oriented Programming in C++",
+    description: "Master OOP concepts and advanced C++ programming paradigms",
+    icon: <Layers className="w-6 h-6" />,
     gradient: "from-purple-500 to-pink-500",
     content: {
       whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
         "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
+        "Constructors & Destructors",
+        "Encapsulation & Data Hiding",
+        "Inheritance (Single, Multiple, Multilevel)",
+        "Polymorphism (Runtime & Compile-time)",
+        "Function Overloading & Overriding",
+        "Virtual Functions & Abstract Classes",
+        "Friend Functions & Classes",
+        "Operator Overloading",
+        "Static Members & Functions",
       ],
       toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
         "UML Diagram Tools",
         "Class Diagram Generators",
-        "Python Debugger (pdb)",
+        "Visual Studio",
+        "Qt Creator",
+        "Eclipse CDT",
+        "Debuggers (GDB, Visual Studio Debugger)",
       ],
       bestCourses: {
         english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
+          "Object Oriented Programming in C++",
+          "Advanced C++ Programming - Udemy",
+          "C++ OOP Concepts - edX",
+          "Intermediate C++ - Coursera",
+          "C++ Classes and Objects - Pluralsight",
         ],
         hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
+          "C++ OOP Complete Course - CodeWithHarry",
+          "Object Oriented Programming Hindi - Apna College",
+          "C++ Classes Hindi - Jenny's Lectures",
+          "OOP Concepts Hindi - Geeky Shows",
+          "Advanced C++ Hindi - Tech With Tim",
         ],
       },
       documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
+        "C++ Classes - cppreference",
+        "OOP in C++ - GeeksforGeeks",
+        "C++ Inheritance Guide",
+        "Polymorphism in C++ - Tutorial",
+        "Virtual Functions Documentation",
       ],
       projectIdeas: [
-        "Student Management System",
         "Library Management System",
-        "Bank Account Simulation",
+        "Employee Management System",
+        "Bank Account Management",
+        "Vehicle Rental System",
+        "Hospital Management System",
         "Inventory Management",
-        "Simple Game using Classes",
+        "Simple Game Engine",
       ],
       practicePlatforms: [
-        "LeetCode (Easy Problems)",
-        "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
+        "LeetCode OOP Problems",
+        "HackerRank Object Oriented Programming",
+        "CodeChef C++ Practice",
+        "InterviewBit C++",
+        "GeeksforGeeks OOP Problems",
       ],
     },
   },
   {
     id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
+    title: "STL - Standard Template Library",
+    description: "Master C++ STL containers, iterators, and algorithms",
+    icon: <Database className="w-6 h-6" />,
     gradient: "from-green-500 to-teal-500",
     content: {
       whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
+        "STL Containers (vector, list, deque, set, map)",
+        "Iterators (forward, backward, random access)",
+        "STL Algorithms (sort, search, find, transform)",
+        "Function Objects & Functors",
+        "STL Utility Classes (pair, tuple)",
+        "Associative Containers (set, multiset, map, multimap)",
+        "Unordered Containers (unordered_set, unordered_map)",
+        "STL Strings & String Operations",
+        "STL Numeric Algorithms",
       ],
       toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
+        "STL Reference Documentation",
+        "STL Visualizers",
+        "Performance Profilers",
+        "Memory Analyzers",
+        "Benchmark Tools",
+        "STL Debug Mode",
       ],
       bestCourses: {
         english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
+          "C++ STL Complete Guide",
+          "Mastering C++ Standard Library",
+          "STL Algorithms and Data Structures",
+          "Advanced STL Programming",
+          "C++ STL Tutorial - GeeksforGeeks",
         ],
         hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
+          "C++ STL Complete Course Hindi - CodeWithHarry",
+          "STL in C++ Hindi - Apna College",
+          "C++ Standard Library Hindi - Luv",
+          "STL Tutorial Hindi - Aditya Verma",
+          "C++ STL Hindi - TakeUforward",
         ],
       },
       documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
+        "STL Reference - cppreference.com",
+        "C++ STL - cplusplus.com",
+        "STL Containers Guide",
+        "STL Algorithms Reference",
+        "Iterator Documentation",
       ],
       projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
+        "Custom STL Container Implementation",
+        "Data Structure Visualizer",
+        "Algorithm Performance Analyzer",
+        "Text Processing Tool using STL",
+        "Graph Algorithms using STL",
+        "Database Query Engine",
+        "File Processing System",
       ],
       practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
+        "Codeforces STL Problems",
+        "AtCoder Beginner Contest",
+        "LeetCode Medium Problems",
+        "SPOJ Classical Problems",
+        "CodeChef STL Practice",
       ],
     },
   },
   {
     id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
+    title: "Data Structures & Algorithms using C++",
+    description: "Comprehensive DSA concepts with C++ implementation",
+    icon: <Brain className="w-6 h-6" />,
     gradient: "from-orange-500 to-red-500",
     content: {
       whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
+        "Time & Space Complexity (Big O Notation)",
+        "Arrays & Dynamic Arrays",
+        "Linked Lists (Singly, Doubly, Circular)",
+        "Stacks & Queues",
+        "Trees (Binary, BST, AVL, Heap)",
+        "Graphs (BFS, DFS, Shortest Path)",
+        "Sorting Algorithms (Quick, Merge, Heap Sort)",
+        "Searching Algorithms (Binary Search, Pattern Matching)",
+        "Dynamic Programming",
+        "Greedy Algorithms",
+        "Backtracking",
+        "Divide & Conquer",
       ],
       toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
+        "Visualization Tools (VisuAlgo)",
+        "Complexity Analyzers",
+        "Profiling Tools",
+        "Algorithm Visualizers",
+        "Performance Benchmarks",
+        "Memory Profilers",
       ],
       bestCourses: {
         english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
+          "Data Structures and Algorithms - Coursera",
+          "Algorithms Specialization - Stanford",
+          "Data Structures & Algorithms in C++",
+          "Master the Coding Interview - Udemy",
+          "Introduction to Algorithms - MIT",
         ],
         hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
+          "DSA Complete Course - CodeWithHarry",
+          "Data Structures Hindi - Apna College",
+          "Algorithms Hindi - Aditya Verma",
+          "DSA in C++ Hindi - Love Babbar",
+          "Complete DSA Hindi - TakeUforward (Striver)",
         ],
       },
       documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
+        "Algorithm Design Manual",
+        "Introduction to Algorithms (CLRS)",
+        "Data Structures - GeeksforGeeks",
+        "Algorithm Visualization",
+        "Competitive Programming Handbook",
       ],
       projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
+        "Data Structure Visualization Tool",
+        "Algorithm Performance Comparator",
+        "Graph Algorithm Simulator",
+        "Sorting Algorithm Visualizer",
+        "Path Finding Visualizer",
+        "Expression Evaluator",
+        "Memory Management Simulator",
       ],
       practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
+        "LeetCode",
+        "Codeforces",
+        "CodeChef",
+        "AtCoder",
+        "SPOJ",
+        "HackerRank",
+        "InterviewBit",
+        "GeeksforGeeks Practice",
       ],
     },
   },
   {
     id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
+    title: "Advanced C++ Concepts",
+    description: "Modern C++ features and advanced programming techniques",
+    icon: <Zap className="w-6 h-6" />,
     gradient: "from-indigo-500 to-purple-600",
     content: {
       whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
+        "Templates & Generic Programming",
+        "Lambda Expressions & Closures",
+        "Smart Pointers (unique_ptr, shared_ptr, weak_ptr)",
+        "Move Semantics & Perfect Forwarding",
+        "RAII (Resource Acquisition Is Initialization)",
+        "Exception Handling & RAII",
+        "File I/O & Stream Operations",
+        "Multithreading & Concurrency",
+        "Regular Expressions",
+        "C++11/14/17/20 Features",
+        "Memory Management",
+        "Design Patterns in C++",
       ],
       toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
-        "Google Colab",
-        "Plotly",
+        "Modern C++ Compilers (GCC 9+, Clang)",
+        "Static Analysis Tools (Clang-Tidy)",
+        "Memory Sanitizers (AddressSanitizer)",
+        "Thread Sanitizer",
+        "Valgrind",
+        "Google Test Framework",
+        "Boost Libraries",
+        "CMake Build System",
       ],
       bestCourses: {
         english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
+          "Modern C++ Programming - Udemy",
+          "Advanced C++ Programming Techniques",
+          "C++ Concurrency in Action",
+          "Effective Modern C++ - Scott Meyers",
+          "C++ Templates Complete Guide",
         ],
         hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
+          "Advanced C++ Hindi - CodeWithHarry",
+          "Modern C++ Features Hindi - Apna College",
+          "C++ Templates Hindi - Jenny's Lectures",
+          "Multithreading C++ Hindi - Tech With Tim",
+          "Advanced Concepts Hindi - Geeky Shows",
         ],
       },
       documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
+        "Modern C++ Guidelines",
+        "C++ Core Guidelines",
+        "Boost Documentation",
+        "C++20 Features Guide",
+        "Concurrency Documentation",
       ],
       projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
+        "Multi-threaded Web Server",
+        "Custom Memory Allocator",
+        "Template-based Math Library",
+        "Concurrent Data Structures",
+        "File Compression Tool",
+        "Network Programming Library",
+        "Game Engine Components",
       ],
       practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
+        "Codeforces (Div 1/2)",
+        "TopCoder",
+        "AtCoder Regular Contest",
+        "Google Code Jam",
+        "Meta Hacker Cup",
       ],
     },
   },
   {
     id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
+    title: "Competitive Programming",
+    description: "Master algorithmic problem solving and competitive coding",
+    icon: <Trophy className="w-6 h-6" />,
     gradient: "from-cyan-500 to-blue-600",
     content: {
       whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
+        "Problem Solving Strategies",
+        "Advanced Data Structures (Segment Trees, Fenwick Trees)",
+        "Graph Algorithms (Dijkstra, Floyd-Warshall, MST)",
+        "String Algorithms (KMP, Z-Algorithm, Suffix Arrays)",
+        "Number Theory & Modular Arithmetic",
+        "Combinatorics & Probability",
+        "Game Theory",
+        "Computational Geometry",
+        "Network Flow Algorithms",
+        "Advanced Dynamic Programming",
       ],
       toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
+        "Competitive Programming IDEs",
+        "Code Templates",
+        "Fast I/O Libraries",
+        "Stress Testing Tools",
+        "Time Complexity Analyzers",
+        "Contest Environment Setup",
       ],
       bestCourses: {
         english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
+          "Competitive Programming Essentials",
+          "Algorithms for Competitive Programming",
+          "Advanced Data Structures for CP",
+          "Mathematical Algorithms",
+          "Graph Theory for Competitive Programming",
         ],
         hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
+          "Competitive Programming Hindi - Luv",
+          "CP Course Hindi - Priyansh Agarwal",
+          "Advanced Algorithms Hindi - Kartik Arora",
+          "CP Tutorial Hindi - Codechef",
+          "Contest Math Hindi - Unacademy",
         ],
       },
       documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
+        "Competitive Programming Handbook",
+        "USACO Guide",
+        "CP-Algorithms",
+        "Codeforces Edu Section",
+        "AtCoder Library Documentation",
       ],
       projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
+        "Contest Problem Setter Tool",
+        "Algorithm Visualizer for CP",
+        "Competitive Programming Judge",
+        "Problem Difficulty Predictor",
+        "Contest Performance Analyzer",
+        "Code Template Generator",
+        "Problem Recommender System",
       ],
       practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
+        "Codeforces",
+        "AtCoder",
+        "CodeChef",
+        "TopCoder",
+        "SPOJ",
+        "USACO",
+        "Google Code Jam",
+        "Meta Hacker Cup",
+        "IOI Problems",
       ],
     },
   },
   {
     id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
-    content: {
-      whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
-      ],
-      toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
-      ],
-      bestCourses: {
-        english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
-        ],
-        hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
-        ],
-      },
-      documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
-      ],
-      projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
-      ],
-      practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
-        "TopCoder",
-      ],
-    },
-  },
-  {
-    id: 8,
-    title: "Portfolio + Resume + Interview",
+    title: "Final Projects & Portfolio",
     description:
-      "Build your professional profile and prepare for job interviews",
-    icon: <Wrench className="w-6 h-6" />,
+      "Build real-world projects and create a professional portfolio",
+    icon: <Briefcase className="w-6 h-6" />,
     gradient: "from-emerald-500 to-green-600",
     content: {
       whatToLearn: [
-        "GitHub Profile Optimization",
-        "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
+        "Project Planning & Architecture",
+        "Version Control with Git",
+        "Code Documentation & Comments",
+        "Testing & Test-Driven Development",
+        "Build Systems (CMake, Make)",
+        "Continuous Integration/Deployment",
+        "Open Source Contributions",
+        "Technical Writing",
+        "Code Review Practices",
+        "Software Engineering Principles",
       ],
       toolsToUse: [
-        "GitHub",
-        "LinkedIn",
-        "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
-        "HackerRank",
-        "Interview Platforms",
+        "Git & GitHub",
+        "CMake",
+        "Google Test/Catch2",
+        "Doxygen (Documentation)",
+        "Valgrind (Memory Debugging)",
+        "GDB (GNU Debugger)",
+        "Docker",
+        "Jenkins/GitHub Actions",
+        "Code Coverage Tools",
       ],
       bestCourses: {
         english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
+          "Software Engineering Fundamentals",
+          "Git & GitHub Masterclass",
+          "C++ Project Development",
+          "Open Source Development",
+          "Technical Interview Preparation",
         ],
         hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
+          "Git GitHub Tutorial Hindi - CodeWithHarry",
+          "Software Development Hindi - Apna College",
+          "Project Building Hindi - TechWorld with Nana",
+          "Open Source Hindi - Kunal Kushwaha",
+          "Interview Prep Hindi - Love Babbar",
         ],
       },
       documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
+        "Git Documentation",
+        "CMake Tutorial",
+        "Google Test Guide",
+        "GitHub Actions Documentation",
+        "C++ Project Structure Guide",
       ],
       projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
+        "Custom Database Engine",
+        "2D/3D Game Engine",
+        "HTTP Web Server",
+        "Cryptocurrency Implementation",
+        "Operating System Kernel",
+        "Compiler/Interpreter",
+        "Distributed System Simulator",
+        "Machine Learning Library",
+        "Network Protocol Implementation",
+        "Real-time Chat Application",
       ],
       practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
+        "GitHub",
+        "GitLab",
+        "Open Source Projects",
+        "Hacktoberfest",
+        "Google Summer of Code",
+        "Microsoft Student Partner",
       ],
     },
   },
 ];
-  const PythonRoadmapComponent = () => {
+
+const CppRoadmapComponent = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
@@ -515,19 +535,21 @@ const pythonRoadmap = [
   const toggleSection = (sectionId) => {
     setOpenSection(openSection === sectionId ? null : sectionId);
   };
+
   const handleDownload = async () => {
     setDownloading(true);
 
     try {
-      // Create a temporary div to render the Python roadmap content for downloading
+      // Create a temporary div to render the C++ roadmap content for downloading
       const downloadDiv = document.createElement("div");
       downloadDiv.className = "roadmap-download-content";
 
-      // IMPROVED STYLES for better PDF output and readability
+      // Improved styles for better PDF output and readability
       downloadDiv.style.padding = "40px";
       downloadDiv.style.color = "#2c3e50";
       downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+      downloadDiv.style.fontFamily =
+        "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
       downloadDiv.style.fontSize = "14px";
       downloadDiv.style.lineHeight = "1.6";
       downloadDiv.style.maxWidth = "800px";
@@ -540,33 +562,34 @@ const pythonRoadmap = [
       title.style.fontSize = "32px";
       title.style.fontWeight = "700";
       title.style.color = "#2c3e50";
-      title.style.borderBottom = "3px solid #3776ab"; // Python blue color
+      title.style.borderBottom = "3px solid #00599C"; // C++ blue color
       title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
+      title.textContent = "C++ Learning Roadmap";
       downloadDiv.appendChild(title);
 
-      // Add Python logo/icon (optional text representation)
+      // Add C++ logo/icon (text representation)
       const subtitle = document.createElement("p");
       subtitle.style.textAlign = "center";
       subtitle.style.fontSize = "16px";
       subtitle.style.color = "#7f8c8d";
       subtitle.style.marginBottom = "40px";
       subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
+      subtitle.textContent =
+        "⚡ Complete Guide to Master C++ Programming - From Beginner to Expert";
       downloadDiv.appendChild(subtitle);
 
       // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
+      cppRoadmap.forEach((section) => {
         const sectionDiv = document.createElement("div");
         sectionDiv.style.marginBottom = "40px";
-        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
+        sectionDiv.style.pageBreakInside = "avoid";
 
         // Section header with better design
         const header = document.createElement("h2");
         header.style.backgroundColor = "#ecf0f1";
         header.style.padding = "15px 20px";
         header.style.borderRadius = "8px";
-        header.style.borderLeft = "5px solid #3776ab"; // Python blue
+        header.style.borderLeft = "5px solid #00599C"; // C++ blue
         header.style.fontSize = "20px";
         header.style.fontWeight = "600";
         header.style.color = "#2c3e50";
@@ -574,7 +597,7 @@ const pythonRoadmap = [
         header.textContent = `${section.id}. ${section.title}`;
         sectionDiv.appendChild(header);
 
-        // Section description with better typography
+        // Section description
         const desc = document.createElement("p");
         desc.style.marginBottom = "25px";
         desc.style.fontStyle = "italic";
@@ -585,7 +608,7 @@ const pythonRoadmap = [
         desc.textContent = section.description;
         sectionDiv.appendChild(desc);
 
-        // What to Learn with improved styling
+        // What to Learn
         const whatToLearn = document.createElement("div");
         whatToLearn.style.marginBottom = "25px";
 
@@ -614,7 +637,7 @@ const pythonRoadmap = [
         whatToLearn.appendChild(whatToLearnList);
         sectionDiv.appendChild(whatToLearn);
 
-        // Best Courses with better organization
+        // Best Courses
         const bestCourses = document.createElement("div");
         bestCourses.style.marginBottom = "25px";
 
@@ -677,7 +700,7 @@ const pythonRoadmap = [
         bestCourses.appendChild(hindiList);
         sectionDiv.appendChild(bestCourses);
 
-        // Tools to Use with better styling
+        // Tools to Use
         const tools = document.createElement("div");
         tools.style.marginBottom = "25px";
 
@@ -706,7 +729,7 @@ const pythonRoadmap = [
         tools.appendChild(toolsList);
         sectionDiv.appendChild(tools);
 
-        // Documentation with better styling
+        // Documentation
         const docs = document.createElement("div");
         docs.style.marginBottom = "25px";
 
@@ -735,7 +758,7 @@ const pythonRoadmap = [
         docs.appendChild(docsList);
         sectionDiv.appendChild(docs);
 
-        // Project Ideas with better styling
+        // Project Ideas
         const projects = document.createElement("div");
         projects.style.marginBottom = "25px";
 
@@ -764,7 +787,7 @@ const pythonRoadmap = [
         projects.appendChild(projectsList);
         sectionDiv.appendChild(projects);
 
-        // Practice Platforms with better styling
+        // Practice Platforms
         const practice = document.createElement("div");
         practice.style.marginBottom = "25px";
 
@@ -821,7 +844,7 @@ const pythonRoadmap = [
         width: downloadDiv.scrollWidth,
         height: downloadDiv.scrollHeight,
         scrollX: 0,
-        scrollY: 0
+        scrollY: 0,
       });
 
       // Remove the temporary div
@@ -833,7 +856,7 @@ const pythonRoadmap = [
         unit: "mm",
         format: "a4",
         compress: true, // Compress for smaller file size
-        precision: 2
+        precision: 2,
       });
 
       // Calculate dimensions for better fitting
@@ -871,18 +894,17 @@ const pythonRoadmap = [
       }
 
       // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
+      pdf.save("Cpp_Learning_Roadmap.pdf");
 
       // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
       // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
+      console.log("C++ roadmap PDF generated successfully!");
 
       // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
+      alert("C++ Learning Roadmap PDF downloaded successfully!");
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
-
     } catch (error) {
       console.error("Error generating Python roadmap PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
@@ -903,9 +925,7 @@ const pythonRoadmap = [
           darkMode ? "bg-gray-800" : "bg-white"
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
-        </h1>
+        <h1 className="text-xl md:text-2xl font-bold">C++ Learning Roadmap</h1>
         <div className="flex items-center space-x-3">
           {/* Download Button */}
           <button
@@ -1001,21 +1021,21 @@ const pythonRoadmap = [
           } shadow-md transition-colors duration-300`}
         >
           <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+            Welcome to the C++ Learning Roadmap
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
+            This comprehensive roadmap will guide you through your C++
             learning journey, from basic syntax to advanced concepts. Each
             section contains curated resources in both English and Hindi, along
             with practical projects and hands-on exercises. Click on any section
             to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+            project ideas that will help you master C++ programming.
           </p>
         </div>
 
         {/* Roadmap Sections */}
         <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+          {cppRoadmap.map((section) => (
             <div
               key={section.id}
               className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
@@ -1255,7 +1275,7 @@ const pythonRoadmap = [
           <p
             className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
-            🚀 Start your Python journey today! Remember, consistency is key to
+            🚀 Start your C++ journey today! Remember, consistency is key to
             mastering programming.
           </p>
         </div>
@@ -1278,5 +1298,5 @@ const pythonRoadmap = [
       `}</style>
     </div>
   );
-}
-export default PythonRoadmapComponent
+};
+export default CppRoadmapComponent;

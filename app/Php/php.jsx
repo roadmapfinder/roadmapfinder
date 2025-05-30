@@ -1,509 +1,513 @@
 "use client";
 import { useState } from "react";
 import {
-  Book,
-  Wrench,
-  Lightbulb,
-  FileText,
-  ExternalLink,
   Code,
-  ChevronDown,
-  ChevronUp,
-  Target,
-  Globe,
   Database,
-  Bot,
-  CircuitBoard,
+  Globe,
+  Shield,
+  Wrench,
+  FileText,
+  Target,
+  Lightbulb,
+  Server,
+  BookOpen,
+  Layers,
+  Zap,
 } from "lucide-react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 
-// Python Roadmap Data Structure
-const pythonRoadmap = [
+// PHP Roadmap Data Structure
+const phpRoadmap = [
   {
     id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
+    title: "PHP Basics",
+    description: "Foundation of PHP programming language",
     icon: <Code className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500",
     content: {
       whatToLearn: [
-        "Python Syntax & Indentation",
+        "PHP Syntax & Tags (<?php ?>)",
         "Variables & Data Types",
-        "Input/Output Operations",
+        "Echo & Print Statements",
         "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
-        "Comments & Documentation",
+        "Control Structures (if/else, switch, loops)",
+        "Functions & Parameters",
+        "Arrays (Indexed & Associative)",
+        "Superglobals ($_GET, $_POST, $_SESSION)",
       ],
       toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
+        "XAMPP / WAMP / MAMP",
+        "VS Code with PHP Extensions",
+        "PHPStorm",
+        "PHP 8.x",
+        "Apache/Nginx Web Server",
+        "Browser Developer Tools",
       ],
       bestCourses: {
         english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
+          "PHP for Beginners - Codecourse",
+          "Complete PHP Course - Udemy",
+          "PHP Tutorial - W3Schools",
+          "Learn PHP - freeCodeCamp",
         ],
         hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
+          "PHP Tutorial in Hindi - CodeWithHarry",
+          "Complete PHP Course Hindi - Yahoo Baba",
+          "PHP Basics Hindi - Geeky Shows",
+          "PHP Programming Hindi - WsCube Tech",
         ],
       },
       documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
+        "Official PHP Documentation",
+        "PHP.net Manual",
+        "PHP The Right Way",
+        "GeeksforGeeks PHP",
       ],
       projectIdeas: [
         "Simple Calculator",
-        "Number Guessing Game",
-        "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
+        "Contact Form with Validation",
+        "Basic Login System",
+        "Todo List Application",
+        "Simple Blog with File Storage",
       ],
       practicePlatforms: [
-        "HackerRank Python",
-        "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
+        "HackerRank PHP",
+        "Codewars PHP",
+        "PHP Exercises - W3Resource",
+        "LeetCode (Easy Problems)",
       ],
     },
   },
   {
     id: 2,
-    title: "Data Structures & OOP",
-    description:
-      "Master Python's built-in data structures and object-oriented programming",
-    icon: <Database className="w-6 h-6" />,
+    title: "Intermediate PHP",
+    description: "Advanced PHP concepts and form handling",
+    icon: <Layers className="w-6 h-6" />,
     gradient: "from-purple-500 to-pink-500",
     content: {
       whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
-        "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
+        "Form Handling & Validation",
+        "File Upload & Management",
+        "Sessions & Cookies",
+        "Include & Require",
+        "Regular Expressions (preg_match)",
+        "Date & Time Functions",
+        "String Functions & Manipulation",
+        "Error Handling & Debugging",
       ],
       toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
-        "UML Diagram Tools",
-        "Class Diagram Generators",
-        "Python Debugger (pdb)",
+        "PHP Built-in Functions",
+        "Postman for Testing",
+        "Browser Network Tab",
+        "PHP Error Logs",
+        "Xdebug",
+        "File System Functions",
       ],
       bestCourses: {
         english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
+          "PHP Intermediate Course - Laracasts",
+          "Advanced PHP - Udemy",
+          "PHP Forms and Validation",
+          "PHP File Handling Tutorial",
         ],
         hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
+          "PHP Advanced Concepts Hindi - CodeWithHarry",
+          "PHP Form Handling Hindi - Yahoo Baba",
+          "PHP Sessions & Cookies Hindi - Geeky Shows",
+          "PHP File Upload Hindi - WsCube Tech",
         ],
       },
       documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
+        "PHP Form Handling - Official Docs",
+        "PHP File Functions",
+        "PHP Session Management",
+        "PHP Error Handling Guide",
       ],
       projectIdeas: [
-        "Student Management System",
-        "Library Management System",
-        "Bank Account Simulation",
-        "Inventory Management",
-        "Simple Game using Classes",
+        "User Registration System",
+        "File Upload Gallery",
+        "Shopping Cart with Sessions",
+        "Contact Management System",
+        "Simple CMS with File Storage",
       ],
       practicePlatforms: [
-        "LeetCode (Easy Problems)",
-        "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
+        "PHP Practice Problems",
+        "Codingbat PHP Exercises",
+        "HackerEarth PHP",
+        "Sphere Online Judge",
       ],
     },
   },
   {
     id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
+    title: "Database Integration",
+    description: "Connect PHP with MySQL and perform CRUD operations",
+    icon: <Database className="w-6 h-6" />,
     gradient: "from-green-500 to-teal-500",
     content: {
       whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
+        "MySQL Database Basics",
+        "SQL Queries (SELECT, INSERT, UPDATE, DELETE)",
+        "PHP MySQL Connection (MySQLi & PDO)",
+        "Prepared Statements",
+        "CRUD Operations",
+        "Database Security (SQL Injection Prevention)",
+        "Database Normalization",
+        "Joins & Relationships",
       ],
       toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
+        "MySQL/MariaDB",
+        "phpMyAdmin",
+        "MySQL Workbench",
+        "HeidiSQL",
+        "PDO (PHP Data Objects)",
+        "MySQLi Extension",
+        "XAMPP MySQL",
       ],
       bestCourses: {
         english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
+          "PHP MySQL Tutorial - W3Schools",
+          "Database Design Course",
+          "PHP PDO Tutorial",
+          "MySQL for Developers",
         ],
         hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
+          "PHP MySQL Tutorial Hindi - CodeWithHarry",
+          "Database Connection PHP Hindi - Yahoo Baba",
+          "PHP PDO Hindi - Geeky Shows",
+          "MySQL PHP Integration Hindi - WsCube Tech",
         ],
       },
       documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
+        "PHP MySQL Documentation",
+        "PDO Documentation",
+        "MySQL Reference Manual",
+        "SQL Tutorial - W3Schools",
       ],
       projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
+        "Student Management System",
+        "Inventory Management",
+        "Blog with Database",
+        "E-commerce Product Catalog",
+        "User Authentication System",
       ],
       practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
+        "SQLBolt",
+        "W3Schools SQL Tryit",
+        "MySQL Tutorial",
+        "Database Design Challenges",
       ],
     },
   },
   {
     id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
+    title: "Object-Oriented PHP",
+    description: "Master OOP concepts in PHP for better code organization",
+    icon: <Zap className="w-6 h-6" />,
     gradient: "from-orange-500 to-red-500",
     content: {
       whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
+        "Classes & Objects",
+        "Properties & Methods",
+        "Constructor & Destructor",
+        "Inheritance & Polymorphism",
+        "Encapsulation & Abstraction",
+        "Static Methods & Properties",
+        "Interfaces & Traits",
+        "Namespaces & Autoloading",
       ],
       toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
+        "PHP 8.x OOP Features",
+        "Composer (Autoloading)",
+        "UML Diagram Tools",
+        "PHPUnit (Testing)",
+        "PSR Standards",
+        "IDE with OOP Support",
       ],
       bestCourses: {
         english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
+          "PHP OOP Tutorial - Laracasts",
+          "Object Oriented PHP Course",
+          "PHP Design Patterns",
+          "Advanced PHP OOP Concepts",
         ],
         hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
+          "PHP OOP Complete Course Hindi - CodeWithHarry",
+          "PHP Classes Objects Hindi - Yahoo Baba",
+          "PHP OOP Concepts Hindi - Geeky Shows",
+          "Advanced PHP OOP Hindi - WsCube Tech",
         ],
       },
       documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
-      ],
+        "PHP OOP - Official Documentation",
+        "PHP Classes and Objects",
+        "PHP Namespaces Guide",
+        "PSR Standards Documentation",
+      ],  
       projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
+        "Library Management System (OOP)",
+        "Banking System Simulation",
+        "E-commerce Cart (OOP Design)",
+        "User Management with Roles",
+        "MVC Framework Implementation",
       ],
       practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
+        "PHP OOP Exercises",
+        "Design Pattern Practice",
+        "Code Review Platforms",
+        "OOP Challenge Problems",
       ],
     },
   },
   {
     id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
+    title: "REST APIs & Security",
+    description: "Build secure APIs and implement security best practices",
+    icon: <Shield className="w-6 h-6" />,
     gradient: "from-indigo-500 to-purple-600",
     content: {
       whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
+        "REST API Principles",
+        "JSON Data Handling",
+        "HTTP Methods (GET, POST, PUT, DELETE)",
+        "API Authentication (JWT, OAuth)",
+        "Input Validation & Sanitization",
+        "Password Hashing (bcrypt)",
+        "CORS & CSRF Protection",
+        "Rate Limiting & Throttling",
       ],
       toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
-        "Google Colab",
-        "Plotly",
+        "Postman/Insomnia",
+        "JWT Libraries",
+        "PHP Filter Functions",
+        "OpenSSL",
+        "Apache/Nginx Security",
+        "SSL/TLS Certificates",
+        "API Documentation Tools",
       ],
       bestCourses: {
         english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
+          "RESTful API with PHP",
+          "PHP Security Best Practices",
+          "JWT Authentication PHP",
+          "API Development Course",
         ],
         hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
+          "REST API PHP Hindi - CodeWithHarry",
+          "PHP Security Hindi - Technical Suneja",
+          "API Development Hindi - WsCube Tech",
+          "PHP Authentication Hindi - Yahoo Baba",
         ],
       },
       documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
+        "PHP Security Guide",
+        "REST API Best Practices",
+        "JWT Documentation",
+        "OWASP PHP Security",
       ],
       projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
+        "Task Management API",
+        "User Authentication API",
+        "E-commerce API Backend",
+        "Social Media API",
+        "File Upload API with Security",
       ],
       practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
+        "API Testing Challenges",
+        "Security CTF Challenges",
+        "OWASP WebGoat",
+        "HackerOne (Learning)",
       ],
     },
   },
   {
     id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
+    title: "PHP Frameworks",
+    description: "Master Laravel and other popular PHP frameworks",
+    icon: <Server className="w-6 h-6" />,
     gradient: "from-cyan-500 to-blue-600",
     content: {
       whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
+        "Laravel Framework Basics",
+        "MVC Architecture",
+        "Routing & Controllers",
+        "Blade Templating Engine",
+        "Eloquent ORM",
+        "Middleware & Authentication",
+        "Artisan Commands",
+        "CodeIgniter Basics (Alternative)",
       ],
       toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
+        "Laravel Framework",
+        "Composer",
+        "Artisan CLI",
+        "Laravel Mix/Vite",
+        "Eloquent ORM",
+        "Laravel Tinker",
+        "Homestead/Valet",
       ],
       bestCourses: {
         english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
+          "Laravel from Scratch - Laracasts",
+          "Complete Laravel Course",
+          "Laravel API Development",
+          "Laravel E-commerce Course",
         ],
         hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
+          "Laravel Tutorial Hindi - CodeWithHarry",
+          "Laravel Complete Course Hindi - Yahoo Baba",
+          "Laravel Framework Hindi - Geeky Shows",
+          "Laravel Project Hindi - WsCube Tech",
         ],
       },
       documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
+        "Laravel Official Documentation",
+        "Laravel Best Practices",
+        "Eloquent ORM Guide",
+        "Laravel API Resources",
       ],
       projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
+        "Blog Application (Laravel)",
+        "E-commerce Platform",
+        "Task Management System",
+        "Social Media Platform",
+        "Real-time Chat Application",
       ],
       practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
+        "Laravel Daily Challenges",
+        "Laracasts Exercises",
+        "Laravel News",
+        "Framework Comparison Projects",
       ],
     },
   },
   {
     id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
+    title: "Testing & Deployment",
+    description: "Test your code and deploy applications to production",
     icon: <Target className="w-6 h-6" />,
     gradient: "from-rose-500 to-pink-600",
     content: {
       whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
+        "Unit Testing with PHPUnit",
+        "Integration Testing",
+        "Test-Driven Development (TDD)",
+        "Code Coverage Analysis",
+        "Deployment Strategies",
+        "Server Configuration",
+        "Version Control with Git",
+        "CI/CD Pipelines",
       ],
       toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
+        "PHPUnit",
+        "Git & GitHub",
+        "Docker",
+        "Apache/Nginx",
+        "Linux Server Management",
+        "GitHub Actions/Jenkins",
+        "Composer Scripts",
+        "Deployment Tools",
       ],
       bestCourses: {
         english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
+          "PHP Testing with PHPUnit",
+          "Laravel Testing Course",
+          "PHP Deployment Guide",
+          "DevOps for PHP Developers",
         ],
         hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
+          "PHP Testing Hindi - Technical Suneja",
+          "Git GitHub Hindi - CodeWithHarry",
+          "Server Deployment Hindi - WsCube Tech",
+          "PHP DevOps Hindi - Geeky Shows",
         ],
       },
       documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
+        "PHPUnit Documentation",
+        "Git Documentation",
+        "Docker PHP Guide",
+        "Server Deployment Best Practices",
       ],
       projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
+        "Automated Testing Suite",
+        "CI/CD Pipeline Setup",
+        "Docker PHP Application",
+        "Multi-environment Deployment",
+        "Performance Testing Framework",
       ],
       practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
-        "TopCoder",
+        "GitHub (Open Source)",
+        "Docker Hub",
+        "Testing Challenges",
+        "DevOps Practice Labs",
       ],
     },
   },
   {
     id: 8,
-    title: "Portfolio + Resume + Interview",
-    description:
-      "Build your professional profile and prepare for job interviews",
+    title: "Portfolio & Career",
+    description: "Build your professional profile and prepare for opportunities",
     icon: <Wrench className="w-6 h-6" />,
     gradient: "from-emerald-500 to-green-600",
     content: {
       whatToLearn: [
-        "GitHub Profile Optimization",
+        "GitHub Portfolio Optimization",
         "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
+        "PHP Developer Portfolio Website",
+        "Open Source Contributions",
+        "Technical Interview Preparation",
+        "System Design for PHP",
+        "Freelancing & Client Work",
+        "Continuous Learning Path",
       ],
       toolsToUse: [
         "GitHub",
         "LinkedIn",
-        "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
-        "HackerRank",
+        "Portfolio Frameworks",
         "Interview Platforms",
+        "Freelance Platforms",
+        "Technical Blogs",
+        "Community Forums",
       ],
       bestCourses: {
         english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
+          "PHP Developer Career Guide",
+          "Technical Interview Prep",
+          "Freelancing for Developers",
+          "Open Source Contribution Guide",
         ],
         hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
+          "PHP Developer Career Hindi - CodeWithHarry",
+          "Freelancing Guide Hindi - WsCube Tech",
+          "Interview Preparation Hindi - Technical Suneja",
+          "Portfolio Building Hindi - Yahoo Baba",
         ],
       },
       documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
+        "GitHub Profile Guide",
+        "PHP Career Roadmap",
+        "Developer Community Guidelines",
+        "Freelance Developer Guide",
       ],
       projectIdeas: [
         "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
+        "Open Source PHP Package",
+        "Technical Blog with Tutorials",
+        "Full-stack Web Application",
+        "PHP Framework Contribution",
       ],
       practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
+        "GitHub (Contributions)",
+        "Stack Overflow",
+        "Dev.to Community",
+        "PHP Community Forums",
       ],
     },
   },
 ];
-  const PythonRoadmapComponent = () => {
+
+const PHPRoadmapComponent = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
@@ -515,6 +519,7 @@ const pythonRoadmap = [
   const toggleSection = (sectionId) => {
     setOpenSection(openSection === sectionId ? null : sectionId);
   };
+
   const handleDownload = async () => {
     setDownloading(true);
 
@@ -542,7 +547,7 @@ const pythonRoadmap = [
       title.style.color = "#2c3e50";
       title.style.borderBottom = "3px solid #3776ab"; // Python blue color
       title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
+      title.textContent = "Php Learning Roadmap";
       downloadDiv.appendChild(title);
 
       // Add Python logo/icon (optional text representation)
@@ -552,11 +557,11 @@ const pythonRoadmap = [
       subtitle.style.color = "#7f8c8d";
       subtitle.style.marginBottom = "40px";
       subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
+      subtitle.textContent = "🐍 Complete Guide to Master Php Programming";
       downloadDiv.appendChild(subtitle);
 
       // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
+      phpRoadmap.forEach((section) => {
         const sectionDiv = document.createElement("div");
         sectionDiv.style.marginBottom = "40px";
         sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
@@ -804,7 +809,7 @@ const pythonRoadmap = [
       footer.style.textAlign = "center";
       footer.style.fontSize = "12px";
       footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Python Learning Roadmap`;
+      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Php Learning Roadmap`;
       downloadDiv.appendChild(footer);
 
       // Temporarily add the div to the document to render it
@@ -871,20 +876,20 @@ const pythonRoadmap = [
       }
 
       // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
+      pdf.save("Php_Learning_Roadmap.pdf");
 
       // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
       // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
+      console.log("Php roadmap PDF generated successfully!");
 
       // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
+      alert("Php Learning Roadmap PDF downloaded successfully!");
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
 
     } catch (error) {
-      console.error("Error generating Python roadmap PDF:", error);
+      console.error("Error generating Php roadmap PDF:", error);
       alert("There was an error generating the PDF. Please try again.");
     } finally {
       setDownloading(false);
@@ -904,7 +909,7 @@ const pythonRoadmap = [
         } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
       >
         <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
+         Php Learning Roadmap
         </h1>
         <div className="flex items-center space-x-3">
           {/* Download Button */}
@@ -1001,21 +1006,21 @@ const pythonRoadmap = [
           } shadow-md transition-colors duration-300`}
         >
           <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+            Welcome to the Php Learning Roadmap
           </h2>
           <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
+            This comprehensive roadmap will guide you through your Php
             learning journey, from basic syntax to advanced concepts. Each
             section contains curated resources in both English and Hindi, along
             with practical projects and hands-on exercises. Click on any section
             to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+            project ideas that will help you master Php programming.
           </p>
         </div>
 
         {/* Roadmap Sections */}
         <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+          {phpRoadmap.map((section) => (
             <div
               key={section.id}
               className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
@@ -1278,5 +1283,5 @@ const pythonRoadmap = [
       `}</style>
     </div>
   );
-}
-export default PythonRoadmapComponent
+  }
+  export default PHPRoadmapComponent
