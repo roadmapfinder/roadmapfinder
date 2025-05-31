@@ -6,6 +6,7 @@ import {
   Menu,
   Home,
   BookOpen,
+  Newspaper,
   Brain,
   User,
   X,
@@ -126,6 +127,12 @@ export default function HomePage() {
       protected: true,
     },
     {
+      name: "Blogs",
+      icon: <Newspaper size={24} className="mr-3" />,
+      href: "/Blogs",
+      protected: true,
+    },
+    {
       name: "Profile",
       icon: <User size={24} className="mr-3" />,
       href: "/Profile",
@@ -133,7 +140,7 @@ export default function HomePage() {
     },
     {
       name: "Logout",
-      icon: <Logout size={24} className="mr-3" />,
+      icon: <Logout size={24} className="mr-3 mb-10" />,
       href: "/Logout",
       protected: true,
     },
