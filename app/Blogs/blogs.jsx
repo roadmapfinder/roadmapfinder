@@ -22,178 +22,148 @@ import {
 const sampleBlogs = [
   {
     id: "1",
-    title: "Perplexity AI: The Future of Learning with AI-Driven Search",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
-    content:
-      "Perplexity AI is revolutionizing how we research and learn by combining the power of large language models with real-time web search capabilities. Unlike traditional search engines that return lists of links, Perplexity provides direct, well-sourced answers with citations, making it an invaluable tool for students, researchers, and professionals. The platform excels at synthesizing information from multiple sources, fact-checking claims in real-time, and providing contextual explanations that help users understand complex topics quickly. Whether you're conducting academic research, exploring new concepts, or need quick factual verification, Perplexity AI transforms the research process from hours of browsing to minutes of focused learning.",
-    toolUrl: "https://www.perplexity.ai",
+    title: "Private AI: Run Advanced AI Models Offline on Android",
+    thumbnailUrl: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=400&h=200&fit=crop",
+    content: "Private AI transforms your Android device into a powerful, secure AI companion by running advanced language models directly on your phone without requiring internet connectivity. This groundbreaking approach ensures complete data privacy while providing offline functionality that's perfect for users concerned about data security. The app supports multiple AI models and can handle complex conversations, writing tasks, and problem-solving entirely offline. For beginners and intermediate users, this tool represents a significant shift toward personal AI ownership, eliminating concerns about data being sent to external servers. The offline capability makes it particularly valuable for users with limited internet access or those working in secure environments where data privacy is paramount.",
+    toolUrl: "https://play.google.com/store/apps/details?id=us.valkon.privateai",
     category: "AI",
-    tags: ["AI", "Research", "Search", "Learning"],
+    tags: ["AI", "Privacy", "Offline", "Android", "Security"],
     createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-    rating: 4.8,
-    popularity: 92,
+    rating: 4.6,
+    popularity: 88
   },
   {
     id: "2",
-    title: "Gemini AI: Explore Google's Multimodal Answer to AI Learning",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=400&h=200&fit=crop",
-    content:
-      "Gemini by Google represents a significant leap forward in AI assistance, offering multimodal capabilities that can process text, images, code, and audio inputs seamlessly. This versatility makes it particularly valuable for learners who need help across different domains - from explaining complex mathematical concepts with visual diagrams to debugging code and generating creative content. Gemini's integration with Google's ecosystem provides access to real-time information and can assist with everything from research projects to coding challenges. Its ability to understand context across different media formats makes it an excellent companion for students, developers, and creative professionals who work with diverse types of content.",
-    toolUrl: "https://gemini.google.com",
+    title: "OpenAI Operator: Your AI Browser Assistant for Task Automation",
+    thumbnailUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
+    content: "OpenAI Operator revolutionizes web automation by serving as an AI agent that can perform tasks directly in web browsers on your behalf. Using its own browser interface, Operator can look at webpages, interact with them by typing, clicking, and scrolling, effectively automating repetitive online tasks. Currently available to Pro users in the US, this tool excels at booking travel accommodations, making restaurant reservations, online shopping, and filling out forms. For beginners, Operator eliminates the need to learn complex automation scripts - simply describe what you want done in natural language. The tool is designed with safety in mind, asking users to take over for tasks requiring payment details, login credentials, or CAPTCHA solving. This represents a major step toward autonomous web browsing and task completion.",
+    toolUrl: "https://openai.com/index/introducing-operator/",
     category: "AI",
-    tags: ["AI", "Multimodal", "Google", "Learning"],
+    tags: ["AI", "Automation", "Browser", "Task Management", "OpenAI"],
     createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
     rating: 4.7,
-    popularity: 89,
+    popularity: 92
   },
   {
     id: "3",
-    title: "Learn AI Hands-on with Hugging Face Spaces",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=200&fit=crop",
-    content:
-      "Hugging Face Spaces democratizes access to cutting-edge AI models by providing a platform where anyone can interact with, test, and deploy machine learning models without complex setup. This community-driven platform hosts thousands of AI applications covering everything from image generation and text analysis to speech recognition and computer vision. For learners and developers, Spaces offers an unparalleled opportunity to understand how different AI models work in practice, experiment with various parameters, and even deploy their own models. The platform's collaborative nature encourages learning through exploration, making advanced AI technologies accessible to users regardless of their technical background.",
-    toolUrl: "https://huggingface.co/spaces",
+    title: "Runway ML: Beginner-Friendly AI Video and Image Editing",
+    thumbnailUrl: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400&h=200&fit=crop",
+    content: "Runway ML democratizes AI-powered content creation by providing intuitive tools for video and image editing that require no technical expertise. This platform combines cutting-edge machine learning with user-friendly interfaces, enabling creators to generate videos from text prompts, remove backgrounds with precision, and apply complex visual effects with simple clicks. The platform's strength lies in its accessibility - complex AI operations that once required programming knowledge are now available through drag-and-drop interfaces. For beginners entering the world of AI-assisted creativity, Runway ML offers extensive tutorials and templates that make professional-quality content creation achievable. The tool supports various formats and integrates seamlessly with popular creative workflows, making it an ideal stepping stone for those looking to incorporate AI into their creative projects without overwhelming technical complexity.",
+    toolUrl: "https://runwayml.com",
     category: "AI",
-    tags: ["AI", "Machine Learning", "Open Source", "Community"],
+    tags: ["AI", "Video Editing", "Image Generation", "Creative Tools", "Beginner-Friendly"],
     createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-    rating: 4.6,
-    popularity: 85,
+    rating: 4.5,
+    popularity: 89
   },
-
-  // Development Category
   {
     id: "4",
-    title: "Practice Web Dev Online with W3Schools Spaces",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop",
-    content:
-      "W3Schools Spaces transforms the learning experience for aspiring web developers by providing an intuitive, browser-based coding environment that requires no software installation. This platform offers hands-on practice with HTML, CSS, JavaScript, Python, and other programming languages through interactive tutorials and real-time code execution. The seamless integration of learning materials with practical coding exercises makes it ideal for beginners who want to see immediate results from their code. With features like syntax highlighting, error detection, and instant preview capabilities, W3Schools Spaces bridges the gap between theoretical knowledge and practical application, enabling learners to build confidence through experimentation and immediate feedback.",
-    toolUrl: "https://www.w3schools.com/spaces/",
+    title: "Firebase Studio: Cloud IDE with Gemini AI Assistant",
+    thumbnailUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop",
+    content: "Firebase Studio represents the next evolution in cloud-based development environments by integrating Google's Gemini AI directly into the development workflow. This powerful IDE combines the reliability of Firebase's backend services with intelligent AI assistance that can help write code, debug issues, and suggest optimizations in real-time. The platform excels at full-stack development, offering seamless integration with Google Cloud services while providing AI-powered code completion, error detection, and architectural recommendations. For new learners, Firebase Studio eliminates the complexity of setting up development environments while providing intelligent guidance throughout the coding process. The AI assistant can explain complex concepts, suggest best practices, and even help with project planning, making it an invaluable learning companion for developers at any skill level.",
+    toolUrl: "https://firebase.google.com/products/studio",
     category: "Development",
-    tags: ["Web Development", "Learning", "HTML", "CSS", "JavaScript"],
+    tags: ["IDE", "Cloud Development", "AI Assistant", "Firebase", "Full-Stack"],
     createdAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
-    rating: 4.5,
-    popularity: 88,
+    rating: 4.8,
+    popularity: 91
   },
   {
     id: "5",
-    title: "Start Building in Minutes with Replit Cloud IDE",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=200&fit=crop",
-    content:
-      "Replit revolutionizes software development by providing a comprehensive cloud-based IDE that supports over 50 programming languages and frameworks. This powerful platform eliminates the traditional barriers to coding by offering instant setup, collaborative features, and integrated hosting capabilities. Whether you're a beginner learning your first programming language or an experienced developer working on complex projects, Replit's environment adapts to your needs with features like real-time collaboration, version control, and one-click deployment. The platform's ability to handle everything from simple scripts to full-stack applications makes it an invaluable tool for education, prototyping, and production development.",
-    toolUrl: "https://replit.com",
+    title: "koderAI: Multi-Agent AI Coding Assistant",
+    thumbnailUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=200&fit=crop",
+    content: "koderAI transforms software development through its innovative multi-agent approach, where specialized AI agents collaborate to handle different aspects of coding projects. Unlike single AI assistants, koderAI deploys multiple specialized agents that can work simultaneously on architecture design, code implementation, testing, and documentation. This collaborative AI approach mimics how development teams work, with each agent bringing expertise in specific domains like frontend development, backend systems, or database design. For beginners and intermediate developers, this tool provides an unprecedented learning experience by showing how different aspects of software development interconnect. The platform's ability to break down complex projects into manageable tasks, assign them to appropriate AI agents, and coordinate their work provides valuable insights into professional development practices while significantly accelerating the learning curve.",
+    toolUrl: "https://koder.ai",
     category: "Development",
-    tags: ["IDE", "Cloud Development", "Collaboration", "Multi-language"],
+    tags: ["AI Coding", "Multi-Agent", "Collaboration", "Learning", "Development"],
     createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-    rating: 4.7,
-    popularity: 90,
+    rating: 4.6,
+    popularity: 87
   },
   {
     id: "6",
-    title: "Level Up Your Frontend Skills with Real Projects",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=200&fit=crop",
-    content:
-      "Frontend Mentor addresses the critical gap between learning web development concepts and applying them to real-world projects. The platform provides professionally designed challenges that mirror actual client requirements, complete with design specifications, assets, and user stories. This approach helps developers build a portfolio of realistic projects while learning to work with design constraints, responsive layouts, and modern web technologies. Each challenge includes a community aspect where developers can share solutions, receive feedback, and learn from different approaches to the same problem. For developers looking to transition from tutorial-following to independent problem-solving, Frontend Mentor provides the perfect stepping stone to professional development work.",
-    toolUrl: "https://www.frontendmentor.io",
+    title: "Lumen AI: Natural Language Data Analytics Tool",
+    thumbnailUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
+    content: "Lumen AI revolutionizes data analytics by allowing users to interact with complex datasets using natural language queries instead of requiring SQL or programming knowledge. This powerful tool can interpret questions like 'Show me sales trends for the last quarter' and automatically generate appropriate visualizations, statistical analyses, and insights. The platform supports various data sources including spreadsheets, databases, and cloud storage, making it accessible to users across different technical backgrounds. For beginners in data analysis, Lumen AI serves as both a powerful analytical tool and an educational platform, showing how different types of questions translate into analytical approaches. The tool's ability to explain its reasoning and suggest follow-up questions helps users develop analytical thinking skills while providing immediate value through actionable insights from their data.",
+    toolUrl: "https://lumen.ai",
     category: "Development",
-    tags: ["Frontend", "HTML", "CSS", "JavaScript", "Projects"],
+    tags: ["Data Analytics", "Natural Language", "Business Intelligence", "Visualization", "AI"],
     createdAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000),
-    rating: 4.8,
-    popularity: 87,
+    rating: 4.7,
+    popularity: 85
   },
-
-  // Design Category
   {
     id: "7",
-    title: "Design Faster with Free Figma Resources",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1541462608143-67571c6738dd?w=400&h=200&fit=crop",
-    content:
-      "Figma Community has become the world's largest repository of free design resources, fundamentally changing how designers approach their work. With thousands of UI kits, design systems, icons, and templates contributed by the global design community, it enables both beginners and professionals to accelerate their design process significantly. The platform's collaborative nature means that high-quality resources are constantly being added and refined by expert designers. Whether you're creating mobile apps, web interfaces, or brand identities, Figma Community provides professionally crafted starting points that can be customized to fit any project. This democratization of design resources has made professional-quality design accessible to anyone with creative ambition.",
-    toolUrl: "https://www.figma.com/community",
-    category: "Design",
-    tags: ["Design", "UI/UX", "Templates", "Community"],
+    title: "Foxit Smart Redact Server: AI-Powered Document Security",
+    thumbnailUrl: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=400&h=200&fit=crop",
+    content: "Foxit Smart Redact Server addresses critical document security and compliance needs through AI-powered automatic redaction of sensitive information. This enterprise-grade solution can intelligently identify and redact personal identifiable information (PII), financial data, legal content, and other sensitive information across large document repositories. The AI engine continuously learns and adapts to recognize new patterns and data types, ensuring comprehensive protection against data breaches and compliance violations. For organizations dealing with legal documents, financial records, or customer data, this tool simplifies the complex process of document sanitization that traditionally required manual review. The automated approach not only reduces human error but also scales to handle thousands of documents efficiently, making compliance with regulations like GDPR, HIPAA, and SOX more manageable for businesses of all sizes.",
+    toolUrl: "https://www.foxit.com/smart-redact-server/",
+    category: "Deployment",
+    tags: ["Document Security", "AI Redaction", "Compliance", "Enterprise", "Privacy"],
     createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
-    rating: 4.9,
-    popularity: 94,
+    rating: 4.5,
+    popularity: 78
   },
   {
     id: "8",
-    title: "Penpot: The Open-Source UI Tool You Should Try",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=200&fit=crop",
-    content:
-      "Penpot represents a paradigm shift in design tooling by offering a completely open-source alternative to proprietary design software. Built with web standards and focusing on collaboration between designers and developers, Penpot eliminates vendor lock-in while providing powerful design capabilities. The platform's commitment to open standards means designs remain accessible and portable, while its web-based architecture ensures universal accessibility without software installation requirements. For teams concerned about long-term accessibility of their design files, data ownership, or integration with custom workflows, Penpot offers a compelling solution that doesn't compromise on functionality or user experience.",
-    toolUrl: "https://penpot.app",
-    category: "Design",
-    tags: ["Design", "Open Source", "UI/UX", "Collaboration"],
+    title: "Model Context Protocol (MCP): Open Standard for LLM Integrations",
+    thumbnailUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=200&fit=crop",
+    content: "Model Context Protocol (MCP) establishes a universal standard for connecting Large Language Models (LLMs) with external data sources, tools, and services, eliminating the need for custom integrations for each AI platform. This open protocol enables seamless interoperability between different AI models and enterprise systems, databases, APIs, and business applications. MCP simplifies the deployment of AI solutions by providing standardized methods for context sharing, tool calling, and data access across different AI platforms. For developers and organizations, this means reduced development time, improved reliability, and easier maintenance of AI integrations. The protocol's open nature ensures vendor independence and promotes innovation in the AI ecosystem by allowing different tools and services to work together seamlessly, regardless of the underlying AI model or platform being used.",
+    toolUrl: "https://modelcontextprotocol.io",
+    category: "Deployment",
+    tags: ["Protocol", "LLM Integration", "Open Standard", "Interoperability", "AI Infrastructure"],
     createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
     rating: 4.4,
-    popularity: 78,
+    popularity: 82
   },
   {
     id: "9",
-    title: "Add Delightful Animations with LottieFiles",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop",
-    content:
-      "LottieFiles transforms static designs into engaging, interactive experiences through lightweight, scalable animations that work seamlessly across all platforms. The platform's extensive library of free animations, combined with powerful editing tools, enables designers and developers to add professional motion graphics to their projects without the complexity traditionally associated with animation. Lottie animations are vector-based, ensuring they remain crisp at any size while maintaining tiny file sizes that don't impact performance. Whether enhancing user interfaces with micro-interactions, creating engaging loading screens, or adding personality to brand communications, LottieFiles provides the tools and resources to elevate any digital experience through thoughtful animation.",
-    toolUrl: "https://lottiefiles.com",
-    category: "Design",
-    tags: ["Animation", "UI/UX", "Motion Graphics", "Performance"],
+    title: "Lecca.io: No-Code AI Agent Deployment Platform",
+    thumbnailUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=200&fit=crop",
+    content: "Lecca.io democratizes AI agent deployment by providing a comprehensive no-code platform that enables anyone to create, deploy, and manage AI-powered automation workflows without programming knowledge. The platform offers drag-and-drop interfaces for building complex AI agents that can handle customer service, data processing, content creation, and business process automation. Users can connect various AI models, APIs, and services through visual workflows, making sophisticated automation accessible to business users, entrepreneurs, and small teams. The platform's strength lies in its extensive library of pre-built templates and integrations with popular business tools, allowing rapid deployment of functional AI agents. For organizations looking to implement AI automation without significant technical investment, Lecca.io provides a pathway to leverage advanced AI capabilities while maintaining full control over deployment and customization.",
+    toolUrl: "https://lecca.io",
+    category: "Deployment",
+    tags: ["No-Code", "AI Agents", "Automation", "Workflow", "Business Process"],
     createdAt: new Date(Date.now() - 9 * 24 * 60 * 60 * 1000),
     rating: 4.6,
-    popularity: 82,
+    popularity: 86
   },
-
-  // Deployment Category
   {
     id: "10",
-    title: "One-Click Deployments with Vercel",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=400&h=200&fit=crop",
-    content:
-      "Vercel has redefined web deployment by making it as simple as connecting a Git repository and clicking deploy. This platform specializes in frontend frameworks like Next.js, React, and Vue.js, providing optimized hosting with features like automatic HTTPS, global CDN distribution, and serverless functions. The platform's zero-configuration approach means developers can focus on building rather than configuring infrastructure, while advanced features like preview deployments for every pull request enable seamless collaboration and testing. Vercel's emphasis on performance optimization, including automatic image optimization and edge caching, ensures that deployed applications deliver exceptional user experiences globally.",
-    toolUrl: "https://vercel.com",
-    category: "Deployment",
-    tags: ["Deployment", "Frontend", "CDN", "Serverless"],
+    title: "PixelYatra by Appy Pie: India's First Hindi AI Design Tool",
+    thumbnailUrl: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?w=400&h=200&fit=crop",
+    content: "PixelYatra by Appy Pie breaks language barriers in design technology by offering India's first comprehensive AI-powered design tool that operates in Hindi and other regional languages. This groundbreaking platform enables users to create professional graphics, logos, social media content, and marketing materials using natural language prompts in their native language. The tool understands cultural context and local design preferences, making it particularly valuable for Indian businesses, educators, and content creators who want to leverage AI design capabilities without language constraints. Beyond language support, PixelYatra offers extensive templates tailored to Indian festivals, cultural events, and business contexts. For the vast Hindi-speaking population, this tool represents a significant democratization of design technology, enabling creative expression and professional design work without the need to navigate English-only interfaces or translate creative concepts.",
+    toolUrl: "https://www.appypie.com/design/pixelyatra",
+    category: "Design",
+    tags: ["AI Design", "Hindi", "Regional Language", "Cultural Context", "Accessibility"],
     createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
-    rating: 4.8,
-    popularity: 91,
+    rating: 4.7,
+    popularity: 89
   },
   {
     id: "11",
-    title: "Full Stack Deployments Simplified with Render",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=200&fit=crop",
-    content:
-      "Render bridges the complexity gap in full-stack application deployment by providing a unified platform that handles everything from static sites to complex multi-service applications. Unlike traditional hosting providers that require extensive configuration, Render automatically detects your application type and configures appropriate build and deployment settings. The platform supports a wide range of technologies including Node.js, Python, Ruby, Go, and Docker containers, while providing managed databases, cron jobs, and background workers. This comprehensive approach eliminates the need to juggle multiple services and providers, making it particularly valuable for developers who want to focus on building features rather than managing infrastructure.",
-    toolUrl: "https://render.com",
-    category: "Deployment",
-    tags: ["Full Stack", "Hosting", "Databases", "Multi-service"],
+    title: "Canva Magic Studio: AI-Driven Design Enhancement Suite",
+    thumbnailUrl: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=200&fit=crop",
+    content: "Canva Magic Studio elevates the popular design platform with a comprehensive suite of AI-powered tools that transform how creators approach design challenges. This enhanced platform includes Magic Write for AI-generated copy, Magic Eraser for seamless object removal, Magic Edit for intelligent image manipulation, and Magic Expand for extending image boundaries naturally. The studio's strength lies in its integration of multiple AI capabilities within a familiar interface, allowing users to access advanced features without learning new tools. For creative professionals and beginners alike, Magic Studio streamlines the design process by automating time-consuming tasks like background removal, text generation, and image enhancement. The platform's ability to understand design context and suggest improvements makes it an invaluable learning tool, helping users understand design principles while creating professional-quality content efficiently.",
+    toolUrl: "https://www.canva.com/magic-studio/",
+    category: "Design",
+    tags: ["AI Design", "Creative Suite", "Image Editing", "Content Creation", "Automation"],
     createdAt: new Date(Date.now() - 11 * 24 * 60 * 60 * 1000),
-    rating: 4.5,
-    popularity: 84,
+    rating: 4.8,
+    popularity: 94
   },
   {
     id: "12",
-    title: "Start Automating Your Projects with GitHub Actions",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=400&h=200&fit=crop",
-    content:
-      "GitHub Actions transforms software development workflows by automating repetitive tasks directly within the GitHub ecosystem. This powerful CI/CD platform enables developers to create custom workflows that automatically build, test, and deploy code based on repository events like pushes, pull requests, or releases. The platform's extensive marketplace of pre-built actions, combined with the ability to create custom workflows using simple YAML configuration, makes advanced DevOps practices accessible to developers of all skill levels. From running automated tests and code quality checks to deploying applications across multiple environments, GitHub Actions streamlines the entire software development lifecycle while maintaining the security and reliability required for production systems.",
-    toolUrl: "https://github.com/features/actions",
-    category: "Deployment",
-    tags: ["CI/CD", "Automation", "DevOps", "GitHub"],
+    title: "Adobe Firefly: Enterprise-Grade AI Creative Assistant",
+    thumbnailUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop",
+    content: "Adobe Firefly represents the integration of generative AI into professional creative workflows, offering enterprise-grade AI tools for image generation, text effects, and creative asset creation. Built with commercial safety in mind, Firefly is trained on Adobe Stock images and public domain content, ensuring generated assets are safe for commercial use. The platform excels in creating high-quality images from text descriptions, generating variations of existing designs, and producing text effects that seamlessly integrate with other Adobe Creative Suite applications. For creative professionals, Firefly accelerates ideation and concept development while maintaining the quality standards expected in professional environments. The tool's integration with Photoshop, Illustrator, and other Adobe applications creates a seamless workflow that enhances rather than replaces traditional creative skills, making it an ideal tool for both learning and professional application.",
+    toolUrl: "https://firefly.adobe.com",
+    category: "Design",
+    tags: ["AI Art", "Creative Suite", "Commercial Safe", "Professional", "Integration"],
     createdAt: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000),
-    rating: 4.7,
-    popularity: 88,
-  },
+    rating: 4.6,
+    popularity: 88
+  }
 ];
 // Navigation categories with icons and colors
 const categories = [
@@ -471,7 +441,7 @@ const TechToolsBlog = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <input
                 type="text"
-                placeholder="Search blogs..."
+                placeholder="Search blogss..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50"
