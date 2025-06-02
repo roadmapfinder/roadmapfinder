@@ -23,7 +23,7 @@ const sampleBlogs = [
   {
     id: "1",
     title: "Private AI: Run Advanced AI Models Offline on Android",
-    thumbnailUrl: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://store-images.s-microsoft.com/image/apps.54382.34dec951-684f-406f-92fe-e92d2d2bf81a.97d7b93c-a934-43cc-9723-c2a7aa7fe448.abfa2ec4-b5d1-463a-94e3-66efe33ddef4",
     content: "Private AI transforms your Android device into a powerful, secure AI companion by running advanced language models directly on your phone without requiring internet connectivity. This groundbreaking approach ensures complete data privacy while providing offline functionality that's perfect for users concerned about data security. The app supports multiple AI models and can handle complex conversations, writing tasks, and problem-solving entirely offline. For beginners and intermediate users, this tool represents a significant shift toward personal AI ownership, eliminating concerns about data being sent to external servers. The offline capability makes it particularly valuable for users with limited internet access or those working in secure environments where data privacy is paramount.",
     toolUrl: "https://play.google.com/store/apps/details?id=us.valkon.privateai",
     category: "AI",
@@ -35,7 +35,7 @@ const sampleBlogs = [
   {
     id: "2",
     title: "OpenAI Operator: Your AI Browser Assistant for Task Automation",
-    thumbnailUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb29c0a1-551e-4ddf-be7c-dedda406f584_2000x981.png",
     content: "OpenAI Operator revolutionizes web automation by serving as an AI agent that can perform tasks directly in web browsers on your behalf. Using its own browser interface, Operator can look at webpages, interact with them by typing, clicking, and scrolling, effectively automating repetitive online tasks. Currently available to Pro users in the US, this tool excels at booking travel accommodations, making restaurant reservations, online shopping, and filling out forms. For beginners, Operator eliminates the need to learn complex automation scripts - simply describe what you want done in natural language. The tool is designed with safety in mind, asking users to take over for tasks requiring payment details, login credentials, or CAPTCHA solving. This represents a major step toward autonomous web browsing and task completion.",
     toolUrl: "https://openai.com/index/introducing-operator/",
     category: "AI",
@@ -47,7 +47,7 @@ const sampleBlogs = [
   {
     id: "3",
     title: "Runway ML: Beginner-Friendly AI Video and Image Editing",
-    thumbnailUrl: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://keys-shop.in/wp-content/uploads/2025/04/Runway-scaled-1.jpg",
     content: "Runway ML democratizes AI-powered content creation by providing intuitive tools for video and image editing that require no technical expertise. This platform combines cutting-edge machine learning with user-friendly interfaces, enabling creators to generate videos from text prompts, remove backgrounds with precision, and apply complex visual effects with simple clicks. The platform's strength lies in its accessibility - complex AI operations that once required programming knowledge are now available through drag-and-drop interfaces. For beginners entering the world of AI-assisted creativity, Runway ML offers extensive tutorials and templates that make professional-quality content creation achievable. The tool supports various formats and integrates seamlessly with popular creative workflows, making it an ideal stepping stone for those looking to incorporate AI into their creative projects without overwhelming technical complexity.",
     toolUrl: "https://runwayml.com",
     category: "AI",
@@ -59,7 +59,7 @@ const sampleBlogs = [
   {
     id: "4",
     title: "Firebase Studio: Cloud IDE with Gemini AI Assistant",
-    thumbnailUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://rstr.in/google/firebase-studio/jeRsLd9j3NZ",
     content: "Firebase Studio represents the next evolution in cloud-based development environments by integrating Google's Gemini AI directly into the development workflow. This powerful IDE combines the reliability of Firebase's backend services with intelligent AI assistance that can help write code, debug issues, and suggest optimizations in real-time. The platform excels at full-stack development, offering seamless integration with Google Cloud services while providing AI-powered code completion, error detection, and architectural recommendations. For new learners, Firebase Studio eliminates the complexity of setting up development environments while providing intelligent guidance throughout the coding process. The AI assistant can explain complex concepts, suggest best practices, and even help with project planning, making it an invaluable learning companion for developers at any skill level.",
     toolUrl: "https://firebase.google.com/products/studio",
     category: "Development",
@@ -71,7 +71,7 @@ const sampleBlogs = [
   {
     id: "5",
     title: "koderAI: Multi-Agent AI Coding Assistant",
-    thumbnailUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2025/01/Screenshot-from-2025-01-06-08-20-13.png",
     content: "koderAI transforms software development through its innovative multi-agent approach, where specialized AI agents collaborate to handle different aspects of coding projects. Unlike single AI assistants, koderAI deploys multiple specialized agents that can work simultaneously on architecture design, code implementation, testing, and documentation. This collaborative AI approach mimics how development teams work, with each agent bringing expertise in specific domains like frontend development, backend systems, or database design. For beginners and intermediate developers, this tool provides an unprecedented learning experience by showing how different aspects of software development interconnect. The platform's ability to break down complex projects into manageable tasks, assign them to appropriate AI agents, and coordinate their work provides valuable insights into professional development practices while significantly accelerating the learning curve.",
     toolUrl: "https://koder.ai",
     category: "Development",
@@ -83,7 +83,7 @@ const sampleBlogs = [
   {
     id: "6",
     title: "Lumen AI: Natural Language Data Analytics Tool",
-    thumbnailUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://www.eucloid.com/public/frontend/img/video-poster.jpg",
     content: "Lumen AI revolutionizes data analytics by allowing users to interact with complex datasets using natural language queries instead of requiring SQL or programming knowledge. This powerful tool can interpret questions like 'Show me sales trends for the last quarter' and automatically generate appropriate visualizations, statistical analyses, and insights. The platform supports various data sources including spreadsheets, databases, and cloud storage, making it accessible to users across different technical backgrounds. For beginners in data analysis, Lumen AI serves as both a powerful analytical tool and an educational platform, showing how different types of questions translate into analytical approaches. The tool's ability to explain its reasoning and suggest follow-up questions helps users develop analytical thinking skills while providing immediate value through actionable insights from their data.",
     toolUrl: "https://lumen.ai",
     category: "Development",
@@ -95,7 +95,7 @@ const sampleBlogs = [
   {
     id: "7",
     title: "Foxit Smart Redact Server: AI-Powered Document Security",
-    thumbnailUrl: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://www.foxit.com/assets/images/SmartRedactServer/aboutSmartRedact-1.webp",
     content: "Foxit Smart Redact Server addresses critical document security and compliance needs through AI-powered automatic redaction of sensitive information. This enterprise-grade solution can intelligently identify and redact personal identifiable information (PII), financial data, legal content, and other sensitive information across large document repositories. The AI engine continuously learns and adapts to recognize new patterns and data types, ensuring comprehensive protection against data breaches and compliance violations. For organizations dealing with legal documents, financial records, or customer data, this tool simplifies the complex process of document sanitization that traditionally required manual review. The automated approach not only reduces human error but also scales to handle thousands of documents efficiently, making compliance with regulations like GDPR, HIPAA, and SOX more manageable for businesses of all sizes.",
     toolUrl: "https://www.foxit.com/smart-redact-server/",
     category: "Deployment",
@@ -107,7 +107,7 @@ const sampleBlogs = [
   {
     id: "8",
     title: "Model Context Protocol (MCP): Open Standard for LLM Integrations",
-    thumbnailUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQnPT3ZxWw8UsfiGS2ldbu0wSdC0psWuS2BQ&s",
     content: "Model Context Protocol (MCP) establishes a universal standard for connecting Large Language Models (LLMs) with external data sources, tools, and services, eliminating the need for custom integrations for each AI platform. This open protocol enables seamless interoperability between different AI models and enterprise systems, databases, APIs, and business applications. MCP simplifies the deployment of AI solutions by providing standardized methods for context sharing, tool calling, and data access across different AI platforms. For developers and organizations, this means reduced development time, improved reliability, and easier maintenance of AI integrations. The protocol's open nature ensures vendor independence and promotes innovation in the AI ecosystem by allowing different tools and services to work together seamlessly, regardless of the underlying AI model or platform being used.",
     toolUrl: "https://modelcontextprotocol.io",
     category: "Deployment",
@@ -119,7 +119,7 @@ const sampleBlogs = [
   {
     id: "9",
     title: "Lecca.io: No-Code AI Agent Deployment Platform",
-    thumbnailUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-rHa4PxIvmFG0Nc_s3GEp0gnM0Bo_Wduwew&s",
     content: "Lecca.io democratizes AI agent deployment by providing a comprehensive no-code platform that enables anyone to create, deploy, and manage AI-powered automation workflows without programming knowledge. The platform offers drag-and-drop interfaces for building complex AI agents that can handle customer service, data processing, content creation, and business process automation. Users can connect various AI models, APIs, and services through visual workflows, making sophisticated automation accessible to business users, entrepreneurs, and small teams. The platform's strength lies in its extensive library of pre-built templates and integrations with popular business tools, allowing rapid deployment of functional AI agents. For organizations looking to implement AI automation without significant technical investment, Lecca.io provides a pathway to leverage advanced AI capabilities while maintaining full control over deployment and customization.",
     toolUrl: "https://lecca.io",
     category: "Deployment",
@@ -130,8 +130,8 @@ const sampleBlogs = [
   },
   {
     id: "10",
-    title: "PixelYatra by Appy Pie: India's First Hindi AI Design Tool",
-    thumbnailUrl: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?w=400&h=200&fit=crop",
+    title: "Pixelyatra AI by appie",
+    thumbnailUrl: "https://media.assettype.com/analyticsinsight%2F2025-05-28%2Ffy9a2otf%2FAppy-Pie-Unveils-PixelYatra-Bharat%E2%80%99s-First-Hindi-Trained-AI-Model-for-Cards-Banners-Regional-Design.jpg",
     content: "PixelYatra by Appy Pie breaks language barriers in design technology by offering India's first comprehensive AI-powered design tool that operates in Hindi and other regional languages. This groundbreaking platform enables users to create professional graphics, logos, social media content, and marketing materials using natural language prompts in their native language. The tool understands cultural context and local design preferences, making it particularly valuable for Indian businesses, educators, and content creators who want to leverage AI design capabilities without language constraints. Beyond language support, PixelYatra offers extensive templates tailored to Indian festivals, cultural events, and business contexts. For the vast Hindi-speaking population, this tool represents a significant democratization of design technology, enabling creative expression and professional design work without the need to navigate English-only interfaces or translate creative concepts.",
     toolUrl: "https://www.appypie.com/design/pixelyatra",
     category: "Design",
@@ -143,7 +143,7 @@ const sampleBlogs = [
   {
     id: "11",
     title: "Canva Magic Studio: AI-Driven Design Enhancement Suite",
-    thumbnailUrl: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQlynRoukYlShH59Py93RtnzqaWEFtm3CmJQ&s",
     content: "Canva Magic Studio elevates the popular design platform with a comprehensive suite of AI-powered tools that transform how creators approach design challenges. This enhanced platform includes Magic Write for AI-generated copy, Magic Eraser for seamless object removal, Magic Edit for intelligent image manipulation, and Magic Expand for extending image boundaries naturally. The studio's strength lies in its integration of multiple AI capabilities within a familiar interface, allowing users to access advanced features without learning new tools. For creative professionals and beginners alike, Magic Studio streamlines the design process by automating time-consuming tasks like background removal, text generation, and image enhancement. The platform's ability to understand design context and suggest improvements makes it an invaluable learning tool, helping users understand design principles while creating professional-quality content efficiently.",
     toolUrl: "https://www.canva.com/magic-studio/",
     category: "Design",
@@ -155,7 +155,7 @@ const sampleBlogs = [
   {
     id: "12",
     title: "Adobe Firefly: Enterprise-Grade AI Creative Assistant",
-    thumbnailUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop",
+    thumbnailUrl: "https://i.pcmag.com/imagery/reviews/05KIpVrQbG7ipQ8K7yS32OE-1..v1739981059.png",
     content: "Adobe Firefly represents the integration of generative AI into professional creative workflows, offering enterprise-grade AI tools for image generation, text effects, and creative asset creation. Built with commercial safety in mind, Firefly is trained on Adobe Stock images and public domain content, ensuring generated assets are safe for commercial use. The platform excels in creating high-quality images from text descriptions, generating variations of existing designs, and producing text effects that seamlessly integrate with other Adobe Creative Suite applications. For creative professionals, Firefly accelerates ideation and concept development while maintaining the quality standards expected in professional environments. The tool's integration with Photoshop, Illustrator, and other Adobe applications creates a seamless workflow that enhances rather than replaces traditional creative skills, making it an ideal tool for both learning and professional application.",
     toolUrl: "https://firefly.adobe.com",
     category: "Design",

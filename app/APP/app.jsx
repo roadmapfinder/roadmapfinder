@@ -533,7 +533,7 @@ export default function APP() {
       title.style.color = "#2c3e50";
       title.style.borderBottom = "3px solid #3498db";
       title.style.paddingBottom = "15px";
-      title.textContent = "Web Development Roadmap";
+      title.textContent = "App Development Roadmap";
       downloadDiv.appendChild(title);
 
       // Add roadmap content with improved styling
@@ -811,21 +811,25 @@ export default function APP() {
         heightLeft -= pageHeight;
       }
 
-      // Save the PDF
-      pdf.save("Web_Developer_Roadmap.pdf");
+      setTimeout(() => {
+        pdf.save("App_Developer_Roadmap.pdf");
 
-      // Store the downloaded roadmap data to localStorage
-      const timestamp = Date.now();
-      const roadmapKey = `roadmap-${timestamp}`;
-      const roadmapDataToSave = {
-        id: timestamp,
-        title: "Web Developer Roadmap",
-        date: new Date().toLocaleDateString(),
-        category: "Web Development",
-        pdfPath: URL.createObjectURL(pdf.output('blob')),
-        content: roadmapData
-      };
-      localStorage.setItem(roadmapKey, JSON.stringify(roadmapDataToSave));
+        // Store the downloaded roadmap data to localStorage
+        const timestamp = Date.now();
+        const roadmapKey = `roadmap-${timestamp}`;
+        const roadmapDataToSave = {
+          id: timestamp,
+          title: "App Developer Roadmap",
+          date: new Date().toLocaleDateString(),
+          category: "App Development",
+          pdfPath: URL.createObjectURL(pdf.output('blob')),
+          content: roadmapData
+        };
+        localStorage.setItem(roadmapKey, JSON.stringify(roadmapDataToSave));
+
+        // Navigate to Downloads page if router is available
+        // router.push('/Downloads'); // Uncomment if using Next.js router
+      }, 10); // 1000ms = 1 second delay
 
       // Navigate to Downloads page if router is available
       // router.push('/Downloads'); // Uncomment if using Next.js router
