@@ -71,6 +71,12 @@ import cyberh from "../CoursesImage/cyberh.jpg";
 import capcut from "../CoursesImage/capcut.jpg";
 import premire from "../CoursesImage/premire.jpg";
 import davanci from "../CoursesImage/davanci.jpg";
+import reactjs from "../CoursesImage/reactjs.jpg";
+import next from "../CoursesImage/next.jpg";
+import express from "../CoursesImage/express.jpg";
+import springboot from "../CoursesImage/springboot.jpg"
+import laravel from "../CoursesImage/laravel.jpg"
+import django from "../CoursesImage/django.jpg"
 
 export default function CoursePlatform() {
   const [activeTab, setActiveTab] = useState("All");
@@ -200,6 +206,7 @@ export default function CoursePlatform() {
     "Operating System",
     "CyberSecurity",
     "Video Editing",
+    "Frameworks & Libraries",
   ];
 
   // Sample courses data with direct YouTube links and language information
@@ -812,7 +819,7 @@ export default function CoursePlatform() {
 
     // CyberSecurity
     {
-      id: 51,
+      id: 52,
       category: "CyberSecurity",
       title: "Complete CyberSecurity course",
       level: "Beginner to Intermediate",
@@ -824,7 +831,7 @@ export default function CoursePlatform() {
       language: "English",
     },
     {
-      id: 51,
+      id: 53,
       category: "CyberSecurity",
       title: "Complete CyberSecurity course",
       level: "Beginner to Intermediate",
@@ -837,7 +844,7 @@ export default function CoursePlatform() {
 
     // Video Editing
     {
-      id: 51,
+      id: 54,
       category: "Video Editing",
       title: "Complete Premimium pro course",
       level: "Beginner to Intermediate",
@@ -848,7 +855,7 @@ export default function CoursePlatform() {
       language: "Hindi",
     },
     {
-      id: 51,
+      id: 55,
       category: "Video Editing",
       title: "Complete Capcut course",
       level: "Beginner to Intermediate",
@@ -859,7 +866,7 @@ export default function CoursePlatform() {
       language: "Hindi",
     },
     {
-      id: 51,
+      id: 56,
       category: "Video Editing",
       title: "Complete Davanci course",
       level: "Beginner to Intermediate",
@@ -869,6 +876,73 @@ export default function CoursePlatform() {
       badge: "DEMANDED",
       language: "English",
     },
+    {
+      id: 57,
+      category: "Frameworks & Libraries",
+      title: "React js  Library for Frontend",
+      level: "Beginner to advance",
+      rating: 4.9,
+      image: reactjs,
+      videoId: "https://youtu.be/vz1RlUyrc3w?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
+      badge: "DEMANDED",
+      language: "Hindi",
+    },
+    {
+      id: 58,
+      category: "Frameworks & Libraries",
+      title: "Next js 15 Course",
+      level: "Beginner to Advance",
+      rating: 4.9,
+      image: next,
+      videoId: "https://youtu.be/k7o9R6eaSes",
+      badge: "DEMANDED",
+      language: "English",
+    },
+    {
+      id: 59,
+      category: "Frameworks & Libraries",
+      title: "Express js learn what matters",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: express,
+      videoId: "https://youtu.be/pKJ4GGyDgJo",
+      badge: "NEW",
+      language: "Hindi",
+    },
+    {
+      id: 60,
+      category: "Frameworks & Libraries",
+      title: "Spring boot complete course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: springboot,
+      videoId: "https://youtu.be/1993zSY5UBI?list=PLA3GkZPtsafacdBLdd3p1DyRd5FGfr3Ue",
+      badge: "NEW",
+      language: "Hindi",
+    },
+    {
+      id: 61,
+      category: "Frameworks & Libraries",
+      title: "Django",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: django,
+      videoId: "https://youtu.be/j6szNSzw4BU?list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy",
+      badge: "NEW",
+      language: "Hindi",
+    },
+    {
+      id: 61,
+      category: "Frameworks & Libraries",
+      title: "Laravel complete php backend course",
+      level: "Beginner to Intermediate",
+      rating: 4.9,
+      image: php,
+      videoId: "https://youtu.be/bixnv3xHccs",
+      badge: "TRENDING",
+      language: "Hindi",
+    },
+
     
   ];
 
