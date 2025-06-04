@@ -1,0 +1,348 @@
+[
+  {
+    "id": 1,
+    "title": "Learn Programming Fundamentals",
+    "description": "Master Python and programming basics",
+    "content": {
+      "whatToLearn": [
+        "Python Syntax",
+        "Data Structures",
+        "Functions & OOP",
+        "File Handling",
+        "Error Handling",
+        "Basic Algorithms"
+      ],
+      "bestCourses": {
+        "english": [
+          "Python for Everybody (Coursera)",
+          "CS50's Introduction to Programming (Harvard/edX)",
+          "Complete Python Bootcamp (Udemy)",
+          "Python Data Structures (Michigan University)"
+        ],
+        "hindi": [
+          "Python Tutorial for Beginners (CodeWithHarry)",
+          "Complete Python Course in Hindi (ApnaCollege)",
+          "Python for AI/ML in Hindi (GreatLearning)",
+          "Python Programming Hindi (FreeCodeCamp)"
+        ]
+      },
+      "toolsToUse": [
+        "VS Code",
+        "Jupyter Notebooks",
+        "Google Colab",
+        "PyCharm",
+        "Git & GitHub"
+      ],
+      "docsAndWebsites": [
+        "Python.org Documentation",
+        "Real Python",
+        "W3Schools Python",
+        "GeeksforGeeks Python",
+        "Stack Overflow"
+      ],
+      "projectIdeas": [
+        "Text-based adventure game",
+        "Data parser & analyzer",
+        "Web scraper",
+        "File organization tool"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Mathematics for Machine Learning",
+    "description": "Build the mathematical foundation required for ML",
+    "content": {
+      "whatToLearn": [
+        "Linear Algebra",
+        "Calculus (Derivatives & Integrals)",
+        "Statistics & Probability",
+        "Optimization Theory",
+        "Information Theory",
+        "Discrete Mathematics"
+      ],
+      "bestCourses": {
+        "english": [
+          "Mathematics for Machine Learning (Imperial College/Coursera)",
+          "Essence of Linear Algebra (3Blue1Brown)",
+          "Statistics and Probability (Khan Academy)",
+          "Computational Linear Algebra (fast.ai)"
+        ],
+        "hindi": [
+          "Statistics & Probability in Hindi (Khan Academy)",
+          "Linear Algebra for ML in Hindi (StudyIQ)",
+          "Calculus for ML in Hindi (Unacademy)",
+          "Complete Math for Data Science (Hindi) (LearnOHub)"
+        ]
+      },
+      "toolsToUse": [
+        "NumPy",
+        "SciPy",
+        "Python Math Libraries",
+        "MATLAB/Octave",
+        "GeoGebra"
+      ],
+      "docsAndWebsites": [
+        "Seeing Theory (Statistics)",
+        "Paul's Online Math Notes",
+        "Immersive Math (Linear Algebra)",
+        "StatQuest with Josh Starmer",
+        "Better Explained"
+      ],
+      "projectIdeas": [
+        "Linear regression from scratch",
+        "Statistical data analysis project",
+        "Custom matrix operations library",
+        "Data visualization dashboard"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Data Analysis & Visualization",
+    "description": "Learn to process, clean, analyze and visualize data",
+    "content": {
+      "whatToLearn": [
+        "Data Cleaning & Preprocessing",
+        "Exploratory Data Analysis",
+        "Statistical Analysis",
+        "Data Visualization Techniques",
+        "Feature Engineering",
+        "SQL & Database Basics"
+      ],
+      "bestCourses": {
+        "english": [
+          "Data Analysis with Python (FreeCodeCamp)",
+          "Data Visualization with Matplotlib & Seaborn (Kaggle)",
+          "SQL for Data Science (UC Davis/Coursera)",
+          "Feature Engineering for Machine Learning (Udemy)"
+        ],
+        "hindi": [
+          "Data Analysis in Hindi (MySirG.com)",
+          "Data Visualization Course Hindi (DigitalSikho)",
+          "SQL Complete Course in Hindi (TechGyan)",
+          "Pandas for Data Analysis Hindi (PyWizards)"
+        ]
+      },
+      "toolsToUse": [
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Plotly",
+        "SQL Databases"
+      ],
+      "docsAndWebsites": [
+        "Pandas Documentation",
+        "Matplotlib Gallery",
+        "Seaborn Example Gallery",
+        "Kaggle Notebooks",
+        "Towards Data Science"
+      ],
+      "projectIdeas": [
+        "Exploratory analysis of public datasets",
+        "Interactive dashboard with Plotly",
+        "COVID-19 data analysis project",
+        "Financial data visualization"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Machine Learning Fundamentals",
+    "description": "Master the core machine learning algorithms and concepts",
+    "content": {
+      "whatToLearn": [
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Model Evaluation",
+        "Cross-Validation",
+        "Bias-Variance Tradeoff",
+        "Ensemble Methods"
+      ],
+      "bestCourses": {
+        "english": [
+          "Machine Learning (Andrew Ng/Coursera)",
+          "Machine Learning Crash Course (Google)",
+          "Introduction to ML (MIT OpenCourseWare)",
+          "Practical Machine Learning (fast.ai)"
+        ],
+        "hindi": [
+          "Machine Learning in Hindi (Analytics Vidhya)",
+          "Complete ML Course Hindi (GreatLearning)",
+          "ML Algorithms in Hindi (MLwithHarsh)",
+          "ML for Beginners Hindi (AIBot)"
+        ]
+      },
+      "toolsToUse": [
+        "Scikit-Learn",
+        "XGBoost",
+        "LightGBM",
+        "Weights & Biases",
+        "MLflow"
+      ],
+      "docsAndWebsites": [
+        "Scikit-Learn Documentation",
+        "ML Mastery Blog",
+        "Kaggle Competitions",
+        "Papers with Code",
+        "Machine Learning Glossary (Google)"
+      ],
+      "projectIdeas": [
+        "Customer churn prediction",
+        "Housing price prediction",
+        "Image classification",
+        "Recommender system"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Deep Learning & Neural Networks",
+    "description": "Understand and implement neural network architectures",
+    "content": {
+      "whatToLearn": [
+        "Neural Network Basics",
+        "CNNs (Convolutional Neural Networks)",
+        "RNNs & LSTMs",
+        "Transformers",
+        "Transfer Learning",
+        "Generative Models"
+      ],
+      "bestCourses": {
+        "english": [
+          "Deep Learning Specialization (Andrew Ng/Coursera)",
+          "Practical Deep Learning for Coders (fast.ai)",
+          "Deep Learning (NYU/Yann LeCun)",
+          "MIT 6.S191: Introduction to Deep Learning"
+        ],
+        "hindi": [
+          "Deep Learning in Hindi (InterviewBit)",
+          "Neural Networks Complete Course Hindi (TechLearner)",
+          "CNN & RNN in Hindi (DataTrained)",
+          "Deep Learning Fundamentals Hindi (AILearning)"
+        ]
+      },
+      "toolsToUse": [
+        "TensorFlow",
+        "PyTorch",
+        "Keras",
+        "NVIDIA CUDA",
+        "Google Colab/Kaggle (free GPUs)"
+      ],
+      "docsAndWebsites": [
+        "TensorFlow Documentation",
+        "PyTorch Tutorials",
+        "Keras Documentation",
+        "Distill.pub",
+        "ArXiv Papers"
+      ],
+      "projectIdeas": [
+        "Image classification with CNNs",
+        "Sentiment analysis with RNNs",
+        "Text generation with transformers",
+        "Style transfer application"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "MLOps & Deployment",
+    "description": "Learn to deploy and maintain ML systems in production",
+    "content": {
+      "whatToLearn": [
+        "Model Deployment",
+        "CI/CD for ML",
+        "Monitoring & Maintenance",
+        "Scalability",
+        "Containerization",
+        "API Development"
+      ],
+      "bestCourses": {
+        "english": [
+          "MLOps Fundamentals (Google Cloud)",
+          "Full Stack Deep Learning",
+          "Deployment of Machine Learning Models (Udemy)",
+          "MLOps Engineering on AWS (AWS Training)"
+        ],
+        "hindi": [
+          "MLOps Basic to Advanced Hindi (CloudLearn)",
+          "ML Model Deployment in Hindi (CloudxLab)",
+          "Docker & Kubernetes for ML Hindi (TechDeploy)",
+          "Flask API Development Hindi (CodeKaro)"
+        ]
+      },
+      "toolsToUse": [
+        "Docker",
+        "Kubernetes",
+        "Flask/FastAPI",
+        "AWS/Azure/GCP",
+        "MLflow",
+        "Kubeflow"
+      ],
+      "docsAndWebsites": [
+        "MLOps Community",
+        "Made With ML",
+        "Neptune.ai Blog",
+        "Kubernetes Documentation",
+        "Docker Documentation"
+      ],
+      "projectIdeas": [
+        "End-to-end ML system with API",
+        "Dockerized ML application",
+        "Automated ML pipeline",
+        "ML system with monitoring"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Specialized AI Fields",
+    "description": "Explore specialized domains within AI/ML",
+    "content": {
+      "whatToLearn": [
+        "Natural Language Processing",
+        "Computer Vision",
+        "Reinforcement Learning",
+        "Generative AI",
+        "Time Series Analysis",
+        "Recommender Systems"
+      ],
+      "bestCourses": {
+        "english": [
+          "Natural Language Processing (Stanford CS224N)",
+          "CS231n: Convolutional Neural Networks for Visual Recognition",
+          "Deep Reinforcement Learning (UC Berkeley)",
+          "Generative Adversarial Networks (Coursera)"
+        ],
+        "hindi": [
+          "NLP in Hindi (AIBrainBox)",
+          "Computer Vision Hindi Course (AIGurukul)",
+          "Reinforcement Learning Hindi (MLCodes)",
+          "Recommender Systems in Hindi (DataLearn)"
+        ]
+      },
+      "toolsToUse": [
+        "Hugging Face Transformers",
+        "OpenCV",
+        "OpenAI Gym",
+        "Stable Diffusion",
+        "Prophet/ARIMA",
+        "LangChain"
+      ],
+      "docsAndWebsites": [
+        "Hugging Face Documentation",
+        "Paperspace Blog",
+        "Stable Diffusion Documentation",
+        "OpenAI Documentation",
+        "OpenCV Tutorials"
+      ],
+      "projectIdeas": [
+        "Text summarization system",
+        "Object detection application",
+        "Reinforcement learning game bot",
+        "Generative art project"
+      ]
+    }
+  }
+]
