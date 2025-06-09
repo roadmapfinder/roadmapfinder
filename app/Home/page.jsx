@@ -21,6 +21,7 @@ import {
   Zap,
   Users,
 } from "lucide-react";
+import Resource from "./resourceSection"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "../lib/auth";
@@ -146,19 +147,7 @@ export default function HomePage() {
     },
   ];
 
-  // Sample featured roadmaps
-  const featuredRoadmaps = [
-    { title: "Web Development", users: "15.3k", level: "Beginner" },
-    { title: "Dsa", users: "12.8k", level: "Intermediate" },
-    { title: "UX/UI Design", users: "9.5k", level: "All levels" },
-  ];
-
-  // Sample popular courses
-  const popularCourses = [
-    { title: "Mern Stack", duration: "4h 30m", rating: 4.8 },
-    { title: "UI/UX Designing", duration: "6h 15m", rating: 4.9 },
-    { title: "Java with Dsa", duration: "8h", rating: 4.7 },
-  ];
+ 
 
   if (loading) {
     return (
@@ -455,7 +444,7 @@ export default function HomePage() {
 
           {/* Mobile Hero Section */}
           <section className="md:hidden mb-6">
-            <div className="relative h-48 w-full rounded-xl overflow-hidden mb-4">
+            <div className="relative h-50 w-full rounded-xl overflow-hidden mb-4">
               <Image
                 src={roadmap}
                 alt="Roadmap illustration"
@@ -534,211 +523,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Content Tabs - Desktop only */}
-          {user && (
-            <div className="hidden md:block mb-8">
-              <div className="flex border-b">
-                <button
-                  className={`py-4 px-6 font-medium text-lg ${
-                    activeTab === "popular"
-                      ? "text-blue-600 border-b-2 border-blue-600"
-                      : "text-gray-500"
-                  }`}
-                  onClick={() => setActiveTab("popular")}
-                >
-                  Popular Roadmaps
-                </button>
-                <button
-                  className={`py-4 px-6 font-medium text-lg ${
-                    activeTab === "courses"
-                      ? "text-blue-600 border-b-2 border-blue-600"
-                      : "text-gray-500"
-                  }`}
-                  onClick={() => setActiveTab("courses")}
-                >
-                  Featured Courses
-                </button>
-                <button
-                  className={`py-4 px-6 font-medium text-lg ${
-                    activeTab === "progress"
-                      ? "text-blue-600 border-b-2 border-blue-600"
-                      : "text-gray-500"
-                  }`}
-                  onClick={() => setActiveTab("progress")}
-                >
-                  Your Progress
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Mobile Featured Roadmaps Section */}
-          <section className="md:hidden mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Popular Roadmaps
-            </h3>
-            <div className="space-y-4">
-              {featuredRoadmaps.map((roadmap, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <ChevronRight size={20} className="text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900">
-                        {roadmap.title}
-                      </h4>
-                      <p className="text-sm text-gray-500">
-                        {roadmap.users} users
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
-                      {roadmap.level}
-                    </span>
-                    <button
-                      onClick={() => handleProtectedAction("/Roadmap")}
-                      className="text-blue-600 text-sm font-medium flex items-center gap-1"
-                    >
-                      View <ArrowRight size={14} />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Mobile Popular Courses Section */}
-          <section className="md:hidden mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Featured Courses
-            </h3>
-            <div className="space-y-4">
-              {popularCourses.map((course, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <BookOpen size={20} className="text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900">
-                        {course.title}
-                      </h4>
-                      <p className="text-sm text-gray-500">{course.duration}</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="bg-yellow-50 text-yellow-700 px-2 py-1 rounded-full text-xs flex items-center">
-                      ★ {course.rating}
-                    </span>
-                    <button
-                      onClick={() => handleProtectedAction("/Courses")}
-                      className="text-blue-600 text-sm font-medium flex items-center gap-1"
-                    >
-                      Start <ArrowRight size={14} />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Desktop Featured Content Section */}
-          {user && (
-            <section className="hidden md:block mb-12">
-              {activeTab === "popular" && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {featuredRoadmaps.map((roadmap, index) => (
-                    <div
-                      key={index}
-                      className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-                    >
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <ChevronRight size={24} className="text-blue-600" />
-                        </div>
-                        <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
-                          {roadmap.level}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {roadmap.title}
-                      </h3>
-                      <p className="text-gray-500 mb-4">
-                        {roadmap.users} users following
-                      </p>
-                      <Link href="/Roadmap">
-                        <button className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
-                          View Roadmap <ArrowRight size={16} />
-                        </button>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {activeTab === "courses" && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {popularCourses.map((course, index) => (
-                    <div
-                      key={index}
-                      className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-                    >
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <BookOpen size={24} className="text-blue-600" />
-                        </div>
-                        <span className="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-sm flex items-center">
-                          ★ {course.rating}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {course.title}
-                      </h3>
-                      <p className="text-gray-500 mb-4">
-                        Duration: {course.duration}
-                      </p>
-                      <Link href="/Course">
-                        <button className="text-blue-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
-                          Start Learning <ArrowRight size={16} />
-                        </button>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {activeTab === "progress" && (
-                <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <User size={32} className="text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Track Your Progress
-                  </h3>
-                  <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                    Start a roadmap or course to track your learning journey and
-                    see your progress here
-                  </p>
-                  <div className="flex justify-center gap-4">
-                    <Link href="/Roadmap">
-                      <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                        Find a Roadmap
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </section>
-          )}
-
+        <Resource />
           {/* How it works Section */}
           <section className="mt-12 mb-12">
             <h3 className="text-gray-900 text-2xl font-bold text-center mb-8">

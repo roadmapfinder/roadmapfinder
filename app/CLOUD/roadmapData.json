@@ -1,0 +1,345 @@
+[
+  {
+    "id": 1,
+    "title": "Computer Science Fundamentals",
+    "description": "Build a solid foundation with core computing concepts",
+    "content": {
+      "whatToLearn": [
+        "Operating Systems Concepts",
+        "Data Structures & Algorithms",
+        "Networking Fundamentals",
+        "Linux Administration",
+        "Basic Programming Skills",
+        "Computer Architecture"
+      ],
+      "bestCourses": {
+        "english": [
+          "Computer Science Fundamentals (MIT OpenCourseWare)",
+          "CS50: Introduction to Computer Science (Harvard)",
+          "Introduction to Linux (Linux Foundation)",
+          "Networking for Web Developers (Udacity)"
+        ],
+        "hindi": [
+          "Computer Science Fundamentals Hindi (Great Learning)",
+          "Operating Systems Hindi (Sanchit Jain)",
+          "Data Structures & Algorithms Hindi (CodeWithHarry)",
+          "Networking Hindi Tutorial (Geeky Shows)"
+        ]
+      },
+      "toolsToUse": [
+        "Linux Terminal",
+        "Git & GitHub",
+        "VS Code/Vim",
+        "Python/JavaScript",
+        "Packet Tracer"
+      ],
+      "docsAndWebsites": [
+        "Linux Documentation",
+        "Stack Overflow",
+        "GeeksforGeeks",
+        "Networking Tutorials (Cisco)",
+        "O'Reilly Books"
+      ],
+      "projectIdeas": [
+        "Build a small network with virtual machines",
+        "Create shell scripts for system automation",
+        "Simple file system implementation",
+        "Network traffic analyzer"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Cloud Service Providers",
+    "description": "Learn major cloud platforms and their core services",
+    "content": {
+      "whatToLearn": [
+        "AWS Core Services",
+        "Microsoft Azure Basics",
+        "Google Cloud Platform",
+        "Cloud Service Models (IaaS, PaaS, SaaS)",
+        "Cloud Deployment Models",
+        "Cost Management"
+      ],
+      "bestCourses": {
+        "english": [
+          "AWS Certified Cloud Practitioner (AWS Training)",
+          "Microsoft Azure Fundamentals (Microsoft Learn)",
+          "Google Cloud Digital Leader Training (Google)",
+          "Cloud Computing Concepts (Coursera)"
+        ],
+        "hindi": [
+          "AWS Complete Course Hindi (TechWorld)",
+          "Azure Tutorial Hindi (CodeWithHarry)",
+          "Cloud Computing Fundamentals Hindi (Great Learning)",
+          "Google Cloud Platform Hindi (Technical Suneja)"
+        ]
+      },
+      "toolsToUse": [
+        "AWS Management Console",
+        "Azure Portal",
+        "Google Cloud Console",
+        "Cloud Shell",
+        "Billing Calculators"
+      ],
+      "docsAndWebsites": [
+        "AWS Documentation",
+        "Microsoft Azure Documentation",
+        "Google Cloud Documentation",
+        "Cloud Comparison Tool",
+        "Cloud Credential Council"
+      ],
+      "projectIdeas": [
+        "Deploy a static website on cloud storage",
+        "Set up virtual machines with auto-scaling",
+        "Configure cloud monitoring and alerts",
+        "Create a multi-region deployment"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Infrastructure as Code (IaC)",
+    "description": "Master automation and provisioning of cloud resources",
+    "content": {
+      "whatToLearn": [
+        "Configuration Management",
+        "Infrastructure Provisioning",
+        "Terraform",
+        "AWS CloudFormation",
+        "Azure Resource Manager",
+        "Google Cloud Deployment Manager"
+      ],
+      "bestCourses": {
+        "english": [
+          "Terraform: Getting Started (HashiCorp)",
+          "AWS CloudFormation Deep Dive (A Cloud Guru)",
+          "Infrastructure as Code (Pluralsight)",
+          "Ansible for DevOps (Jeff Geerling)"
+        ],
+        "hindi": [
+          "Terraform Complete Hindi (TechWorld)",
+          "CloudFormation Masterclass Hindi (Cloud Tutorials)",
+          "Infrastructure as Code Hindi (AWS India)",
+          "Ansible Hindi Tutorial (Great Learning)"
+        ]
+      },
+      "toolsToUse": [
+        "Terraform",
+        "AWS CloudFormation",
+        "Ansible",
+        "Pulumi",
+        "Chef/Puppet"
+      ],
+      "docsAndWebsites": [
+        "Terraform Documentation",
+        "AWS CloudFormation Guide",
+        "Ansible Documentation",
+        "IaC Best Practices (ThoughtWorks)",
+        "Infrastructure as Code (Martin Fowler)"
+      ],
+      "projectIdeas": [
+        "Multi-tier application with Terraform",
+        "CI/CD pipeline with CloudFormation",
+        "Configuration management with Ansible",
+        "Disaster recovery automation"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Containerization & Orchestration",
+    "description": "Learn to package, deploy, and manage containerized applications",
+    "content": {
+      "whatToLearn": [
+        "Docker Fundamentals",
+        "Kubernetes Architecture",
+        "Container Networking",
+        "Microservices Design",
+        "Service Meshes",
+        "Container Security"
+      ],
+      "bestCourses": {
+        "english": [
+          "Docker & Kubernetes: The Complete Guide (Udemy)",
+          "Certified Kubernetes Administrator (Linux Foundation)",
+          "Microservices Architecture (Pluralsight)",
+          "Service Mesh with Istio (Red Hat)"
+        ],
+        "hindi": [
+          "Docker Complete Course Hindi (CodeWithHarry)",
+          "Kubernetes Hindi Tutorials (TechWorld)",
+          "Microservices Architecture Hindi (Technical Suneja)",
+          "Container Security Hindi (Cloud Tutorials)"
+        ]
+      },
+      "toolsToUse": [
+        "Docker",
+        "Kubernetes",
+        "Helm",
+        "Istio",
+        "Amazon EKS/Azure AKS/GKE"
+      ],
+      "docsAndWebsites": [
+        "Docker Documentation",
+        "Kubernetes Documentation",
+        "Istio Docs",
+        "Container Journal",
+        "Microservices.io"
+      ],
+      "projectIdeas": [
+        "Containerized microservices application",
+        "Kubernetes cluster with high availability",
+        "Service mesh implementation",
+        "CI/CD pipeline for containerized apps"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "DevOps & CI/CD",
+    "description": "Implement continuous integration and delivery pipelines",
+    "content": {
+      "whatToLearn": [
+        "CI/CD Concepts",
+        "Pipeline Design",
+        "Code Quality & Testing",
+        "Artifact Management",
+        "Release Strategies",
+        "Monitoring & Feedback Loops"
+      ],
+      "bestCourses": {
+        "english": [
+          "DevOps Engineer Learning Path (LinkedIn Learning)",
+          "CI/CD with Jenkins (CloudBees)",
+          "GitHub Actions for CI/CD (GitHub)",
+          "GitLab CI: Pipelines, CI/CD (Udemy)"
+        ],
+        "hindi": [
+          "DevOps Masterclass Hindi (Tech Gun)",
+          "Jenkins Complete Course Hindi (Cloud Tutorials)",
+          "CI/CD Pipeline Hindi (CodeWithHarry)",
+          "GitHub Actions Hindi Tutorial (Technical Suneja)"
+        ]
+      },
+      "toolsToUse": [
+        "Jenkins",
+        "GitHub Actions",
+        "GitLab CI",
+        "CircleCI",
+        "Artifactory/Nexus"
+      ],
+      "docsAndWebsites": [
+        "Jenkins Documentation",
+        "GitHub Actions Documentation",
+        "GitLab CI Documentation",
+        "DevOps Roadmap",
+        "The DevOps Handbook"
+      ],
+      "projectIdeas": [
+        "Multi-stage CI/CD pipeline",
+        "Blue-green deployment implementation",
+        "Canary release strategy",
+        "Automated testing framework"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Cloud Security & Compliance",
+    "description": "Implement security best practices and compliance frameworks",
+    "content": {
+      "whatToLearn": [
+        "Identity & Access Management",
+        "Network Security",
+        "Data Protection",
+        "Compliance Frameworks",
+        "Security Automation",
+        "Threat Detection & Response"
+      ],
+      "bestCourses": {
+        "english": [
+          "AWS Security Specialty (AWS Training)",
+          "Azure Security Engineer (Microsoft Learn)",
+          "Cloud Security Alliance Training",
+          "CCSP: Certified Cloud Security Professional"
+        ],
+        "hindi": [
+          "Cloud Security Hindi (Great Learning)",
+          "AWS Security Hindi (TechWorld)",
+          "Data Protection Hindi (Technical Suneja)",
+          "Compliance Frameworks Hindi (Cloud Tutorials)"
+        ]
+      },
+      "toolsToUse": [
+        "AWS Security Hub/Azure Security Center",
+        "Cloud HSM",
+        "HashiCorp Vault",
+        "SIEM Tools",
+        "Security Scanning Tools"
+      ],
+      "docsAndWebsites": [
+        "Cloud Security Alliance",
+        "NIST Cloud Computing Standards",
+        "OWASP Cloud Security",
+        "Center for Internet Security",
+        "Compliance Frameworks Guide"
+      ],
+      "projectIdeas": [
+        "Zero-trust security implementation",
+        "Automated compliance scanning",
+        "Secret management system",
+        "Security incident response plan"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Cloud Architecture & Design",
+    "description": "Design scalable, resilient, and cost-effective cloud solutions",
+    "content": {
+      "whatToLearn": [
+        "Well-Architected Framework",
+        "High Availability Design",
+        "Disaster Recovery Planning",
+        "Scalability Patterns",
+        "Cost Optimization",
+        "Performance Efficiency"
+      ],
+      "bestCourses": {
+        "english": [
+          "AWS Solutions Architect (A Cloud Guru)",
+          "Azure Solutions Architect (Pluralsight)",
+          "Google Professional Cloud Architect (Google)",
+          "Cloud Architecture Masterclass (Udemy)"
+        ],
+        "hindi": [
+          "Cloud Architecture Hindi (TechWorld)",
+          "AWS Solutions Architect Hindi (Cloud Tutorials)",
+          "High Availability Design Hindi (Technical Suneja)",
+          "Cost Optimization Hindi (Great Learning)"
+        ]
+      },
+      "toolsToUse": [
+        "AWS Well-Architected Tool",
+        "Azure Advisor",
+        "Architecture Diagramming Tools",
+        "Cost Management Tools",
+        "Resilience Testing Tools"
+      ],
+      "docsAndWebsites": [
+        "AWS Well-Architected Framework",
+        "Azure Architecture Center",
+        "Google Cloud Architecture Framework",
+        "Cloud Design Patterns",
+        "Architecture Decision Records"
+      ],
+      "projectIdeas": [
+        "Multi-region disaster recovery solution",
+        "Highly available microservices architecture",
+        "Serverless event-driven architecture",
+        "Cost-optimized cloud migration plan"
+      ]
+    }
+  }
+]

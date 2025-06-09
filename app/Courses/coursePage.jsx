@@ -10,11 +10,13 @@ import {
   BookmarkCheck,
   Globe,
 } from "lucide-react";
-
 import Link from "next/link";
-
-// thumbnail for cards
 import Image from "next/image";
+
+// Import your course data
+import { courses } from "./coursesData.json"; // Adjust path as needed
+
+// Import all your images
 import sigma from "../CoursesImage/sigma.png";
 import babbar from "../CoursesImage/babbar.png";
 import backend from "../CoursesImage/backend.jpg";
@@ -74,26 +76,35 @@ import davanci from "../CoursesImage/davanci.jpg";
 import reactjs from "../CoursesImage/reactjs.jpg";
 import next from "../CoursesImage/next.jpg";
 import express from "../CoursesImage/express.jpg";
-import springboot from "../CoursesImage/springboot.jpg"
-import laravel from "../CoursesImage/laravel.jpg"
-import django from "../CoursesImage/django.jpg"
+import springboot from "../CoursesImage/springboot.jpg";
+import laravel from "../CoursesImage/laravel.jpg";
+import django from "../CoursesImage/django.jpg";
 
-export default function CoursePlatform() {
+// Image mapping object
+const imageMap = {
+  sigma, babbar, backend, apna, native, kotlin, native2, flutter,
+  figma, ui, design, uiux, graphic, graphics, logo, canva,
+  js, python, java, cpp, c, php, blockchain, web3, block,
+  dsajava, cppdsa, dsapy, dsajs, dbms, mongo, sql,
+  dataa, dataaw, datas, sys, syse, syss, ai, ml, deep,
+  git, githube, githubh, os, osa, osf, osb,
+  networking, networkingk, networkingf, cybere, cyberh,
+  capcut, premire, davanci, reactjs, next, express,
+  springboot, laravel, django
+};
+
+export default function CoursePage() {
   const [activeTab, setActiveTab] = useState("All");
   const [windowWidth, setWindowWidth] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [bookmarks, setBookmarks] = useState([]);
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
   const scrollContainerRefs = useRef({});
 
-  // Load bookmarks from localStorage on component mount
+  // Load bookmarks from memory (since localStorage is not available)
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedBookmarks = localStorage.getItem("courseBookmarks");
-      if (savedBookmarks) {
-        setBookmarks(JSON.parse(savedBookmarks));
-      }
-    }
+    setBookmarks([]);
   }, []);
 
   // Handle window resize for responsiveness
@@ -102,7 +113,6 @@ export default function CoursePlatform() {
       setWindowWidth(window.innerWidth);
     };
 
-    // Set initial width
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
       window.addEventListener("resize", handleResize);
@@ -117,41 +127,31 @@ export default function CoursePlatform() {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    setSearchQuery(""); // Clear search when changing tabs
+    setSearchQuery("");
     setShowBookmarksOnly(tab === "Bookmarks");
   };
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
-    setActiveTab("All"); // Reset to All tab when searching
+    setActiveTab("All");
     setShowBookmarksOnly(false);
   };
 
-  // Optimize scroll functions using useCallback
-  const scrollLeft = useCallback(
-    (category) => {
-      if (scrollContainerRefs.current[category]) {
-        const container = scrollContainerRefs.current[category];
-        const scrollAmount = windowWidth >= 768 ? -400 : -280;
-        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
-    },
-    [windowWidth],
-  );
+  const scrollLeft = useCallback((category) => {
+    if (scrollContainerRefs.current[category]) {
+      const container = scrollContainerRefs.current[category];
+      const scrollAmount = windowWidth >= 768 ? -400 : -280;
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }, [windowWidth]);
 
-  const scrollRight = useCallback(
-    (category) => {
-      if (scrollContainerRefs.current[category]) {
-        const container = scrollContainerRefs.current[category];
-        const scrollAmount = windowWidth >= 768 ? 400 : 280;
-        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
-    },
-    [windowWidth],
-  );
-
-  // Function to handle bookmark toggling
-  const [showNotification, setShowNotification] = useState(false);
+  const scrollRight = useCallback((category) => {
+    if (scrollContainerRefs.current[category]) {
+      const container = scrollContainerRefs.current[category];
+      const scrollAmount = windowWidth >= 768 ? 400 : 280;
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }, [windowWidth]);
 
   const toggleBookmark = useCallback((courseId) => {
     setBookmarks((prevBookmarks) => {
@@ -160,812 +160,35 @@ export default function CoursePlatform() {
         newBookmarks = prevBookmarks.filter((id) => id !== courseId);
       } else {
         newBookmarks = [...prevBookmarks, courseId];
-        // Show notification only when adding bookmark
         setShowNotification(true);
-        setTimeout(() => setShowNotification(false), 3000); // Hide after 3 seconds
+        setTimeout(() => setShowNotification(false), 3000);
       }
-
-      // Save bookmark IDs to localStorage
-      if (typeof window !== "undefined") {
-        localStorage.setItem("courseBookmarks", JSON.stringify(newBookmarks));
-        
-        // Save all courses data to localStorage
-        localStorage.setItem("allCourses", JSON.stringify(courses));
-      }
-
       return newBookmarks;
     });
   }, []);
 
-  // Function to handle direct YouTube redirection
   const redirectToYoutube = useCallback((videoLink) => {
-    // Extract YouTube video ID if it's a full URL
     if (videoLink.includes("youtube.com") || videoLink.includes("youtu.be")) {
       window.open(videoLink, "_blank");
     } else {
-      // If it's already just the ID
       window.open(`https://www.youtube.com/watch?v=${videoLink}`, "_blank");
     }
   }, []);
 
-  // Course categories
-  const categories = [
-    "Web Development",
-    "App Development",
-    "UI/UX Design",
-    "Graphic Design",
-    "Programming",
-    "Git & Github",
-    "DataStructure & Algorithms",
-    "DataBases",
-    "Blockchain",
-    "Data Analysis & Science",
-    "Video Editing",
-    "AI & ML",
-    "Networking",
-    "Operating System",
-    "CyberSecurity",
-    "Video Editing",
-    "Frameworks & Libraries",
-  ];
-
-  // Sample courses data with direct YouTube links and language information
-
-  // Sample courses data with direct YouTube links and language indicators
-  const courses = [
-    // Web Development
-    {
-      id: 1,
-      category: "Web Development",
-      title: "Complete Web Development Bootcamp",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: sigma,
-      videoId:
-        "https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-    {
-      id: 2,
-      category: "Web Development",
-      title: "Complete Mern Stack Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: babbar,
-      videoId:
-        "https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 3,
-      category: "Web Development",
-      title: "Complete Backend Course",
-      level: "Beginner to advance",
-      rating: 4.7,
-      image: backend,
-      videoId:
-        "https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 4,
-      category: "Web Development",
-      title: "Html Css JS Git $ Github",
-      level: "Beginner to advance",
-      rating: 4.7,
-      image: apna,
-      videoId:
-        "https://youtu.be/HcOc7P5BMi4?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i",
-      badge: "HOT",
-      language: "Hindi",
-    },
-
-    // App Development
-    {
-      id: 5,
-      category: "App Development",
-      title: "React Native Mobile Apps",
-      level: "Beginner to Intermediate",
-      rating: 4.7,
-      image: native,
-      videoId:
-        "https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c",
-      badge: "TRENDING",
-      language: "English",
-    },
-    {
-      id: 6,
-      category: "App Development",
-      title: "React Native Complete Course in Hindi",
-      level: "Beginner to Intermediate",
-      rating: 4.6,
-      image: native2,
-      videoId: "https://youtu.be/KBWWxJdsFlY",
-      language: "Hindi",
-    },
-    {
-      id: 7,
-      category: "App Development",
-      title: "Kotlin App Development",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: kotlin,
-      videoId: "https://youtu.be/BxM2DayeOBE",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 8,
-      category: "App Development",
-      title: "Flutter App Development",
-      level: "Beginner to intermediate",
-      rating: 4.8,
-      image: flutter,
-      videoId: "https://youtu.be/CzRQ9mnmh44",
-      badge: "NEW",
-      language: "Hindi",
-    },
-
-    // UI/UX Design
-    {
-      id: 9,
-      category: "UI/UX Design",
-      title: "UI/UX Design Fundamentals",
-      level: "Beginner to Advanced",
-      rating: 4.9,
-      image: figma,
-      videoId:
-        "https://youtu.be/bI6q16ffdgQ?list=PLlHtucAD9KT19ckHqXpPSStZOyDSq9AW-",
-      badge: "POPULAR",
-      language: "English",
-    },
-    {
-      id: 10,
-      category: "UI/UX Design",
-      title: "UI/UX Designing Course",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: ui,
-      videoId:
-        "https://youtu.be/O5IXf8qB9U4?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 11,
-      category: "UI/UX Design",
-      title: "Web Designing Course",
-      level: "Beginner to Intermediate",
-      rating: 4.7,
-      image: design,
-      videoId: "https://youtu.be/j6Ule7GXaRs",
-      badge: "HOT",
-      language: "English",
-    },
-    {
-      id: 12,
-      category: "UI/UX Design",
-      title: "Web Designing Essential UI Course",
-      level: "Beginner to Intermediate",
-      rating: 4.7,
-      image: uiux,
-      videoId: "https://youtu.be/kbZejnPXyLM",
-      badge: "HOT",
-      language: "English",
-    },
-
-    // Graphic Design
-    {
-      id: 13,
-      category: "Graphic Design",
-      title: "Graphic Designing Complete Course",
-      level: "Beginner to Advance",
-      rating: 4.6,
-      image: graphic,
-      videoId: "https://youtu.be/90Zaa8dH4SU",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 14,
-      category: "Graphic Design",
-      title: "Graphic Designing Essential Course",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: graphics,
-      videoId: "https://youtu.be/e_dv7GBHka8",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 15,
-      category: "Graphic Design",
-      title: "Logo Designing Complete Course",
-      level: "Beginner to Advanced",
-      rating: 4.9,
-      image: logo,
-      videoId:
-        "https://youtu.be/l9_BM1opTj8?list=PL-c9Rq56P4KmK4sVH49C4rjYh5VH6uK4o",
-      language: "English",
-    },
-    {
-      id: 16,
-      category: "Graphic Design",
-      title: "Canva Complete Course",
-      level: "Beginner to Advanced",
-      rating: 4.9,
-      image: canva,
-      videoId: "https://youtu.be/rXLvN1FEkOE",
-      language: "Hindi",
-    },
-
-    // Programming
-    {
-      id: 17,
-      category: "Programming",
-      title: "Python Programming Crash Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: python,
-      videoId: "https://youtu.be/ERCMXc8x7mc",
-      badge: "BESTSELLER",
-      language: "Hindi",
-    },
-    {
-      id: 18,
-      category: "Programming",
-      title: "Java Complete Crash Course",
-      level: "Beginner to Advance",
-      rating: 4.7,
-      image: java,
-      videoId:
-        "https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr",
-      badge: "HOT",
-      language: "Hindi",
-    },
-    {
-      id: 19,
-      category: "Programming",
-      title: "Php Complete Course",
-      level: "Beginner to Advance",
-      rating: 4.8,
-      image: php,
-      videoId: "https://youtu.be/z8gIVootnUQ",
-      badge: "BESTSELLER",
-      language: "Hindi",
-    },
-    {
-      id: 20,
-      category: "Programming",
-      title: "C Complete Course",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: c,
-      videoId: "https://youtu.be/aZb0iu4uGwA",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 21,
-      category: "Programming",
-      title: "C++ Complete Course",
-      level: "Beginner to Advance",
-      rating: 4.8,
-      image: cpp,
-      videoId:
-        "https://youtu.be/WQoB2z67hvY?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-    {
-      id: 22,
-      category: "Programming",
-      title: "Javascript Complete Course",
-      level: "Beginner to Advance",
-      rating: 4.8,
-      image: js,
-      videoId:
-        "https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
-      badge: "HOT",
-      language: "Hindi",
-    },
-
-    // Blockchain
-    {
-      id: 23,
-      category: "Blockchain",
-      title: "Blockchain Complete Course",
-      level: "Beginner to Advanced",
-      rating: 4.7,
-      image: blockchain,
-      videoId: "https://youtu.be/gyMwXuJrbJQ",
-      badge: "POPULAR",
-      language: "English",
-    },
-    {
-      id: 24,
-      category: "Blockchain",
-      title: "Web3 Complete Course",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: web3,
-      videoId: "https://youtu.be/ERAxd8gl1Eg",
-      badge: "NEW",
-      language: "English",
-    },
-    {
-      id: 25,
-      category: "Blockchain",
-      title: "BlockChain Crash Course",
-      level: "Beginner",
-      rating: 4.9,
-      image: block,
-      videoId: "https://youtu.be/6aF6p2VUORE",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-
-    // Dsa
-    {
-      id: 26,
-      category: "DataStructure & Algorithms",
-      title: "DSA in java",
-      level: "Beginner to Advanced",
-      rating: 4.7,
-      image: dsajava,
-      videoId:
-        "https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 27,
-      category: "DataStructure & Algorithms",
-      title: "DSA in C++",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: cppdsa,
-      videoId:
-        "https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 28,
-      category: "DataStructure & Algorithms",
-      title: "DSA in python",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: dsapy,
-      videoId: "https://youtu.be/f9Aje_cN_CY",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 29,
-      category: "DataStructure & Algorithms",
-      title: "DSA in Javascript",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: dsajs,
-      videoId:
-        "https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr",
-      badge: "NEW",
-      language: "Hindi",
-    },
-
-    // Database
-    {
-      id: 30,
-      category: "Database",
-      title: "DBMS Complete Course",
-      level: "Beginner to Advanced",
-      rating: 4.7,
-      image: dbms,
-      videoId: "https://youtu.be/dl00fOOYLOM",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 31,
-      category: "Database",
-      title: "SQL Complete Course",
-      level: "Beginner to Intermediate",
-      rating: 4.8,
-      image: sql,
-      videoId: "https://youtu.be/hlGoQC332VM",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 32,
-      category: "Database",
-      title: "MongoDB Crash Course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: mongo,
-      videoId: "https://youtu.be/rU9ZODw5yvU",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-
-    // Data Analysis & Science
-    {
-      id: 33,
-      category: "Data Analysis & Science",
-      title: "Data Analyst Complete course ",
-      level: "Beginner",
-      rating: 4.9,
-      image: dataa,
-      videoId: "https://youtu.be/wQQR60KtnFY",
-      badge: "POPULAR",
-      language: "English",
-    },
-    {
-      id: 34,
-      category: "Data Analysis & Science",
-      title: "Data Analysis Crash Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: dataaw,
-      videoId:
-        "https://youtu.be/VaSjiJMrq24?list=PLjVLYmrlmjGdRs1sGqRrTE-EMraLclJga",
-      badge: "HOT",
-      language: "Hindi",
-    },
-    {
-      id: 35,
-      category: "Data Analysis & Science",
-      title: "Data Science Complete Course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: datas,
-      videoId: "https://youtu.be/gDZ6czwuQ18",
-      badge: "DEMANDED",
-      language: "Hindi",
-    },
-
-    // System Design
-    {
-      id: 36,
-      category: "System Design",
-      title: "System Design Complete Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: syss,
-      videoId:
-        "https://youtu.be/SqcXvc3ZmRU?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 37,
-      category: "System Design",
-      title: "System Design Crash Course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: syse,
-      videoId:
-        "https://youtu.be/43-X22tdxiI?list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 38,
-      category: "System Design",
-      title: "System Design Fundamental Course",
-      level: "Beginner",
-      rating: 4.9,
-      image: sys,
-      videoId: "https://youtu.be/m8Icp_Cid5o",
-      badge: "POPULAR",
-      language: "English",
-    },
-
-    // AI & ML
-    {
-      id: 39,
-      category: "AI & ML",
-      title: "Deep Learning Complete Course",
-      level: "Beginner to advance",
-      rating: 4.9,
-      image: deep,
-      videoId: "https://youtu.be/rU9ZODw5yvU",
-      badge: "DEMANDED",
-      language: "Hindi",
-    },
-    {
-      id: 40,
-      category: "AI & ML",
-      title: "Machine Learning Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: ml,
-      videoId: "https://youtu.be/LvC68w9JS4Y",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 41,
-      category: "AI & ML",
-      title: "Artificial Intelligence Complete Course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: ai,
-      videoId: "https://youtu.be/5NgNicANyqM",
-      badge: "POPULAR",
-      language: "English",
-    },
-
-    // Git & Github
-    {
-      id: 42,
-      category: "Git & Github",
-      title: "Git & Github Complete course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: git,
-      videoId: "https://youtu.be/q8EevlEpQ2A",
-      badge: "POPULAR",
-      language: "Hindi",
-    },
-    {
-      id: 43,
-      category: "Git & Github",
-      title: "Git & Github Crash Course",
-      level: "Beginner to Intermediate ",
-      rating: 4.9,
-      image: githubh,
-      videoId: "https://youtu.be/RDxQEzXN8AU",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 44,
-      category: "Git & Github",
-      title: "Git & Github Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: githube,
-      videoId: "https://youtu.be/S7XpTAnSDL4",
-      badge: "TRENDING",
-      language: "English",
-    },
-    
-    // Operating System
-    {
-      id: 45,
-      category: "Operating System",
-      title: "Operating System Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: osf,
-      videoId: "https://youtu.be/yK1uBHPdp30",
-      badge: "TRENDING",
-      language: "English",
-    },
-    {
-      id: 46,
-      category: "Operating System",
-      title: "Operating System Complete Course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: os,
-      videoId: "https://youtu.be/A4G0hOI6XyQ",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-    {
-      id: 47,
-      category: "Operating System",
-      title: "Operating Sytem Crash Course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: osb,
-      videoId: "https://youtu.be/3obEP8eLsCw",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-    {
-      id: 48,
-      category: "Operating System",
-      title: "Operating System in one shot",
-      level: "Beginner",
-      rating: 4.9,
-      image: osa,
-      videoId: "https://youtu.be/8XBtAjKwCm4",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-
-    // Networking
-    {
-      id: 49,
-      category: "Networking",
-      title: "Networking Complete course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: networkingk,
-      videoId: "https://youtu.be/IPvYjXCsTg8",
-      badge: "TRENDING",
-      language: "English",
-    },
-    {
-      id: 50,
-      category: "Networking",
-      title: "networkingf",
-      level: "Beginner to Advanced",
-      rating: 4.9,
-      image: networkingf,
-      videoId: "https://youtu.be/qiQR5rTSshw",
-      badge: "TRENDING",
-      language: "English",
-    },
-
-    {
-      id: 51,
-      category: "Networking",
-      title: "Complete Networkng course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: networking,
-      videoId: "https://youtu.be/qiQR5rTSshw",
-      badge: "TRENDING",
-      language: "English",
-    },
-
-    // CyberSecurity
-    {
-      id: 52,
-      category: "CyberSecurity",
-      title: "Complete CyberSecurity course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: cybere,
-      videoId:
-        "https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL",
-      badge: "TRENDING",
-      language: "English",
-    },
-    {
-      id: 53,
-      category: "CyberSecurity",
-      title: "Complete CyberSecurity course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: cyberh,
-      videoId: "https://youtu.be/v3iUx2SNspY",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-
-    // Video Editing
-    {
-      id: 54,
-      category: "Video Editing",
-      title: "Complete Premimium pro course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: premire,
-      videoId: "https://youtu.be/CVH6TKL12Wg",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-    {
-      id: 55,
-      category: "Video Editing",
-      title: "Complete Capcut course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: capcut,
-      videoId: "https://youtu.be/fL-0G-2b3Sg",
-      badge: "HOT",
-      language: "Hindi",
-    },
-    {
-      id: 56,
-      category: "Video Editing",
-      title: "Complete Davanci course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: davanci,
-      videoId: "https://youtu.be/qDHnCFMZ9HA",
-      badge: "DEMANDED",
-      language: "English",
-    },
-    {
-      id: 57,
-      category: "Frameworks & Libraries",
-      title: "React js  Library for Frontend",
-      level: "Beginner to advance",
-      rating: 4.9,
-      image: reactjs,
-      videoId: "https://youtu.be/vz1RlUyrc3w?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
-      badge: "DEMANDED",
-      language: "Hindi",
-    },
-    {
-      id: 58,
-      category: "Frameworks & Libraries",
-      title: "Next js 15 Course",
-      level: "Beginner to Advance",
-      rating: 4.9,
-      image: next,
-      videoId: "https://youtu.be/k7o9R6eaSes",
-      badge: "DEMANDED",
-      language: "English",
-    },
-    {
-      id: 59,
-      category: "Frameworks & Libraries",
-      title: "Express js learn what matters",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: express,
-      videoId: "https://youtu.be/pKJ4GGyDgJo",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 60,
-      category: "Frameworks & Libraries",
-      title: "Spring boot complete course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: springboot,
-      videoId: "https://youtu.be/1993zSY5UBI?list=PLA3GkZPtsafacdBLdd3p1DyRd5FGfr3Ue",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 61,
-      category: "Frameworks & Libraries",
-      title: "Django",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: django,
-      videoId: "https://youtu.be/j6szNSzw4BU?list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy",
-      badge: "NEW",
-      language: "Hindi",
-    },
-    {
-      id: 61,
-      category: "Frameworks & Libraries",
-      title: "Laravel complete php backend course",
-      level: "Beginner to Intermediate",
-      rating: 4.9,
-      image: php,
-      videoId: "https://youtu.be/bixnv3xHccs",
-      badge: "TRENDING",
-      language: "Hindi",
-    },
-
-    
-  ];
-
-  // Optimized filtering using useMemo
   const filteredCourses = useMemo(() => {
     return courses.filter((course) => {
-      // Search filter
       const matchesSearch =
         searchQuery === "" ||
         course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         course.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
         course.language.toLowerCase().includes(searchQuery.toLowerCase());
 
-      // Tab filter
       const matchesTab =
         activeTab === "All" ||
         (activeTab === "Popular" &&
-          ["BESTSELLER", "POPULAR", "HOT", "TRENDING"].includes(
-            course.badge,
-          )) ||
+          ["BESTSELLER", "POPULAR", "HOT", "TRENDING"].includes(course.badge)) ||
         (activeTab === "New" && course.badge === "NEW");
 
-      // Bookmarks filter
       const matchesBookmarks =
         !showBookmarksOnly || bookmarks.includes(course.id);
 
@@ -973,7 +196,6 @@ export default function CoursePlatform() {
     });
   }, [searchQuery, activeTab, showBookmarksOnly, bookmarks]);
 
-  // Get unique categories that have courses after filtering
   const filteredCategories = useMemo(() => {
     return [...new Set(filteredCourses.map((course) => course.category))];
   }, [filteredCourses]);
@@ -992,23 +214,19 @@ export default function CoursePlatform() {
           </div>
         </div>
       )}
+
       {/* Header Section */}
       <div className="px-4 pt-4 pb-2">
         <Link href="/">
           <div className="flex items-center text-blue-500 hover:text-blue-600 mb-1 mt-1">
-            <svg
-              className="w-5 h-5 mr-1"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
+            <svg className="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7"></path>
             </svg>
             <span className="text-sm font-medium">Home</span>
           </div>
         </Link>
       </div>
+
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-6 px-4 text-center mb-6">
         <h1 className="text-2xl md:text-3xl font-bold text-white">
           Internet Best Courses
@@ -1031,7 +249,7 @@ export default function CoursePlatform() {
         </div>
       </div>
 
-      {/* Tabs - Added Bookmarks tab */}
+      {/* Tabs */}
       <div className="flex justify-center px-4 space-x-4 mb-6 overflow-x-auto scrollbar-hide py-1">
         {["All", "Popular", "New", "Bookmarks"].map((tab) => (
           <button
@@ -1078,12 +296,10 @@ export default function CoursePlatform() {
 
       {/* Course Categories */}
       {filteredCategories.map((category) => {
-        // Filter courses by category (after search and tab filtering)
         const categoryCourses = filteredCourses.filter(
           (course) => course.category === category,
         );
 
-        // Skip rendering if no courses in this category
         if (categoryCourses.length === 0) return null;
 
         return (
@@ -1094,10 +310,7 @@ export default function CoursePlatform() {
                 <h2 className="text-lg md:text-xl font-bold text-gray-800">
                   {category}
                 </h2>
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                >
+                <a href="#" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
                   View All
                 </a>
               </div>
@@ -1121,115 +334,101 @@ export default function CoursePlatform() {
                   className="flex overflow-x-auto scrollbar-hide py-2 space-x-4 snap-x"
                   style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
-                  {categoryCourses && categoryCourses.length > 0 ? (
-                    categoryCourses.map((course, index) => (
+                  {categoryCourses.map((course, index) => (
+                    <div
+                      key={`${course.id}-${index}`}
+                      className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
+                    >
                       <div
-                        key={`${course.id}-${index}`}
-                        className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
+                        className="relative w-full h-36 cursor-pointer"
+                        onClick={() => redirectToYoutube(course.videoId)}
                       >
-                        <div
-                          className="relative w-full h-36 cursor-pointer"
-                          onClick={() => redirectToYoutube(course.videoId)}
+                        <Image
+                          src={imageMap[course.image] || "/placeholder.jpg"}
+                          alt={course.title}
+                          fill={true}
+                          sizes="(max-width: 768px) 100vw, 300px"
+                          className="object-cover"
+                          priority={course.id <= 6}
+                        />
+
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
+                          <ExternalLink size={46} className="text-white" />
+                        </div>
+
+                        {/* Badge */}
+                        {course.badge && (
+                          <div className="absolute top-2 right-2">
+                            <span
+                              className={`text-xs font-bold px-2 py-1 rounded ${
+                                course.badge === "HOT"
+                                  ? "bg-red-500 text-white"
+                                  : course.badge === "NEW"
+                                    ? "bg-green-500 text-white"
+                                    : course.badge === "BESTSELLER"
+                                      ? "bg-yellow-500 text-black"
+                                      : course.badge === "TRENDING"
+                                        ? "bg-purple-500 text-white"
+                                        : course.badge === "POPULAR"
+                                          ? "bg-blue-500 text-white"
+                                          : "bg-gray-700 text-white"
+                              }`}
+                            >
+                              {course.badge}
+                            </span>
+                          </div>
+                        )}
+
+                        {/* Language badge */}
+                        <div className="absolute bottom-2 left-2">
+                          <span className="bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center">
+                            <Globe size={12} className="mr-1" />
+                            {course.language}
+                          </span>
+                        </div>
+
+                        {/* Bookmark button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleBookmark(course.id);
+                          }}
+                          className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
                         >
-                          <Image
-                            src={course.image}
-                            alt={course.title}
-                            fill={true}
-                            sizes="(max-width: 768px) 100vw, 300px"
-                            className="object-cover"
-                            priority={course.id <= 6} // Prioritize loading of first visible courses
-                          />
-
-                          {/* Play button overlay */}
-                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
-                            <ExternalLink size={46} className="text-white" />
-                          </div>
-
-                          {/* Badge (optional) */}
-                          {course.badge && (
-                            <div className="absolute top-2 right-2">
-                              <span
-                                className={`text-xs font-bold px-2 py-1 rounded ${
-                                  course.badge === "HOT"
-                                    ? "bg-red-500 text-white"
-                                    : course.badge === "NEW"
-                                      ? "bg-green-500 text-white"
-                                      : course.badge === "BESTSELLER"
-                                        ? "bg-yellow-500 text-black"
-                                        : course.badge === "TRENDING"
-                                          ? "bg-purple-500 text-white"
-                                          : course.badge === "POPULAR"
-                                            ? "bg-blue-500 text-white"
-                                            : "bg-gray-700 text-white"
-                                }`}
-                              >
-                                {course.badge}
-                              </span>
-                            </div>
+                          {bookmarks.includes(course.id) ? (
+                            <BookmarkCheck size={16} className="text-blue-600" />
+                          ) : (
+                            <Bookmark size={16} className="text-gray-700" />
                           )}
-
-                          {/* Language badge */}
-                          <div className="absolute bottom-2 left-2">
-                            <span className="bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center">
-                              <Globe size={12} className="mr-1" />
-                              {course.language}
-                            </span>
-                          </div>
-
-                          {/* Bookmark button */}
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation(); // Prevent triggering redirectToYoutube
-                              toggleBookmark(course.id);
-                            }}
-                            className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
-                          >
-                            {bookmarks.includes(course.id) ? (
-                              <BookmarkCheck
-                                size={16}
-                                className="text-blue-600"
-                              />
-                            ) : (
-                              <Bookmark size={16} className="text-gray-700" />
-                            )}
-                          </button>
-                        </div>
-
-                        <div className="p-3">
-                          <h3 className="font-medium text-sm line-clamp-2 h-10 mb-2">
-                            {course.title}
-                          </h3>
-
-                          <div className="flex justify-between items-center mb-3">
-                            <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
-                              {course.level}
-                            </span>
-                            <div className="flex items-center">
-                              <Star
-                                size={14}
-                                className="text-yellow-400 fill-yellow-400 mr-1"
-                              />
-                              <span className="text-xs font-medium">
-                                {course.rating}
-                              </span>
-                            </div>
-                          </div>
-
-                          <button
-                            onClick={() => redirectToYoutube(course.videoId)}
-                            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
-                          >
-                            <span>Watch on YouTube</span>
-                            <ExternalLink size={14} className="ml-1" />
-                          </button>
-                        </div>
+                        </button>
                       </div>
-                    ))
-                  ) : (
-                    <div className="w-full text-center py-4 text-gray-500">
-                      No courses available in this category
+
+                      <div className="p-3">
+                        <h3 className="font-medium text-sm line-clamp-2 h-10 mb-2">
+                          {course.title}
+                        </h3>
+
+                        <div className="flex justify-between items-center mb-3">
+                          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                            {course.level}
+                          </span>
+                          <div className="flex items-center">
+                            <Star size={14} className="text-yellow-400 fill-yellow-400 mr-1" />
+                            <span className="text-xs font-medium">{course.rating}</span>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => redirectToYoutube(course.videoId)}
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
+                        >
+                          <span>Watch on YouTube</span>
+                          <ExternalLink size={14} className="ml-1" />
+                        </button>
+                      </div>
                     </div>
-                  )}
+                  ))}
                 </div>
 
                 {categoryCourses.length > 3 && (
