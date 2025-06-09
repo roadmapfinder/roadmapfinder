@@ -6,7 +6,6 @@ import {
   Menu,
   Home,
   BookOpen,
-  Newspaper,
   Brain,
   User,
   X,
@@ -16,12 +15,9 @@ import {
   Settings,
   LogOut,
   ChevronLeft,
-  FileText,
   CheckCircle,
-  Zap,
-  Users,
+   Play, Map, Wrench, FileText, Users, Newspaper, Star, Sparkles, Zap, Globe
 } from "lucide-react";
-import Resource from "./resourceSection"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "../lib/auth";
@@ -523,56 +519,8 @@ export default function HomePage() {
             </div>
           </section>
 
-        <Resource />
-          {/* How it works Section */}
-          <section className="mt-12 mb-12">
-            <h3 className="text-gray-900 text-2xl font-bold text-center mb-8">
-              How RoadmapFinder Works
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-blue-600 font-bold text-xl">1</span>
-                </div>
-                <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
-                  Choose a Roadmap
-                </h4>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Select from our curated collection of career paths and
-                  development roadmaps designed by industry experts
-                </p>
-              </div>
-
-              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center relative">
-                <div className="hidden md:block absolute top-16 -left-4 w-8 border-t-2 border-dashed border-blue-200"></div>
-                <div className="hidden md:block absolute top-16 -right-4 w-8 border-t-2 border-dashed border-blue-200"></div>
-
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-blue-600 font-bold text-xl">2</span>
-                </div>
-                <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
-                  Follow the Best Course
-                </h4>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Follow best curated course step by step and keep practice to
-                  master.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-blue-600 font-bold text-xl">3</span>
-                </div>
-                <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
-                  Get Tools & Docs
-                </h4>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Get best Tech tools or Docs that enhanced your Skills.
-                </p>
-              </div>
-            </div>
-          </section>
+            
+          
         </div>
       </main>
     </div>
