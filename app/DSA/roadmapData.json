@@ -1,0 +1,355 @@
+[
+  {
+    "id": 1,
+    "title": "Programming Fundamentals",
+    "description": "Master the programming language of your choice",
+    "content": {
+      "whatToLearn": [
+        "Syntax and semantics",
+        "Variables, data types, and operators",
+        "Control structures (if/else, loops)",
+        "Functions and methods",
+        "Error handling",
+        "Basic I/O operations"
+      ],
+      "resources": [
+        "C++: 'A Tour of C++' by Bjarne Stroustrup",
+        "Java: 'Effective Java' by Joshua Bloch",
+        "Python: 'Python Crash Course' by Eric Matthes",
+        "JavaScript: 'Eloquent JavaScript' by Marijn Haverbeke",
+        "freeCodeCamp Programming Fundamentals course"
+      ],
+      "toolsToUse": [
+        "Visual Studio Code",
+        "JetBrains IDEs (PyCharm, IntelliJ)",
+        "Replit (online editor)",
+        "GitHub (version control)",
+        "Jupyter Notebooks (for Python)"
+      ],
+      "practiceIdeas": [
+        "Implement simple math operations",
+        "Create a command-line calculator",
+        "Build a simple text-based game",
+        "Create a to-do list application"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Basic Data Structures",
+    "description": "Learn the core building blocks of efficient programs",
+    "content": {
+      "whatToLearn": [
+        "Arrays and dynamic arrays",
+        "Linked Lists (singly, doubly)",
+        "Stacks and Queues",
+        "Hash Tables",
+        "Trees (Binary, BST)",
+        "Heaps (Min/Max)"
+      ],
+      "resources": [
+        "Introduction to Algorithms by CLRS",
+        "Data Structures and Algorithms Made Easy by Narasimha Karumanchi",
+        "CS50's Introduction to Computer Science (Harvard)",
+        "Visualgo.net - Data Structure Visualizations",
+        "GeeksforGeeks Data Structures articles"
+      ],
+      "toolsToUse": [
+        "Programming language of choice",
+        "VisuAlgo (visualization tool)",
+        "Data Structure Visualizations (USFCA)",
+        "Algorithm Visualizer",
+        "CodePen/CodeSandbox for testing"
+      ],
+      "practiceIdeas": [
+        "Implement each data structure from scratch",
+        "Create a stack-based calculator",
+        "Build a queue simulation",
+        "Design a custom hash table"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Basic Algorithms",
+    "description": "Master fundamental algorithms and problem-solving approaches",
+    "content": {
+      "whatToLearn": [
+        "Searching algorithms (Linear, Binary)",
+        "Sorting algorithms (Bubble, Selection, Insertion, Merge, Quick)",
+        "Recursion basics",
+        "Time and space complexity (Big O notation)",
+        "Problem-solving strategies",
+        "Basic algorithm design techniques"
+      ],
+      "resources": [
+        "Grokking Algorithms by Aditya Bhargava",
+        "Algorithms Illuminated (Part 1) by Tim Roughgarden",
+        "MIT 6.006 Introduction to Algorithms",
+        "Coursera: Algorithms Specialization (Stanford)",
+        "Khan Academy: Algorithms"
+      ],
+      "toolsToUse": [
+        "LeetCode (Easy problems)",
+        "HackerRank Algorithms track",
+        "CLRS solution manual",
+        "Algorithm Visualizer tools",
+        "Time complexity calculator"
+      ],
+      "practiceIdeas": [
+        "Implement all sorting algorithms",
+        "Create a binary search function",
+        "Solve simple recursion problems",
+        "Analyze algorithm complexities"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Advanced Data Structures",
+    "description": "Expand your toolkit with more complex data structures",
+    "content": {
+      "whatToLearn": [
+        "Balanced Trees (AVL, Red-Black)",
+        "B-Trees and B+ Trees",
+        "Graphs (representation, traversal)",
+        "Trie",
+        "Segment Trees",
+        "Disjoint Set Union (DSU)"
+      ],
+      "resources": [
+        "Advanced Data Structures by Peter Brass",
+        "Competitive Programmer's Handbook by Antti Laaksonen",
+        "William Fiset's Data Structures YouTube Series",
+        "CP-Algorithms.com",
+        "Topcoder tutorials"
+      ],
+      "toolsToUse": [
+        "Graph visualization tools",
+        "LeetCode Medium problems",
+        "Codeforces Div2 problems",
+        "Custom test case generators",
+        "Benchmarking tools"
+      ],
+      "practiceIdeas": [
+        "Implement an AVL tree with rotations",
+        "Create a trie for autocomplete",
+        "Build a graph with traversal algorithms",
+        "Design a segment tree implementation"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Advanced Algorithms",
+    "description": "Study complex algorithm paradigms for challenging problems",
+    "content": {
+      "whatToLearn": [
+        "Divide and Conquer",
+        "Greedy Algorithms",
+        "Dynamic Programming",
+        "Graph Algorithms (DFS, BFS, Dijkstra, Floyd-Warshall)",
+        "String Algorithms (KMP, Z, Rabin-Karp)",
+        "Computational Geometry basics"
+      ],
+      "resources": [
+        "Algorithms Illuminated (Parts 2-4) by Tim Roughgarden",
+        "Algorithm Design Manual by Steven Skiena",
+        "Dynamic Programming for Coding Interviews",
+        "Erik Demaine's lectures (MIT)",
+        "Tushar Roy's Algorithm videos"
+      ],
+      "toolsToUse": [
+        "LeetCode Medium/Hard problems",
+        "Codeforces Div1 problems",
+        "AtCoder contests",
+        "Algorithm visualization platforms",
+        "OEIS (for sequence problems)"
+      ],
+      "practiceIdeas": [
+        "Solve classic DP problems (knapsack, LCS)",
+        "Implement Dijkstra's algorithm",
+        "Create string matching algorithms",
+        "Solve geometry problems (convex hull)"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Problem Solving Patterns",
+    "description": "Learn common patterns to tackle algorithmic challenges",
+    "content": {
+      "whatToLearn": [
+        "Sliding Window technique",
+        "Two Pointers approach",
+        "Fast and Slow pointers",
+        "Merge Intervals",
+        "Cyclic Sort",
+        "Topological Sort",
+        "Binary Search variations",
+        "Backtracking"
+      ],
+      "resources": [
+        "Grokking the Coding Interview",
+        "Element of Programming Interviews",
+        "Coding Interview Patterns on Educative.io",
+        "NeetCode pattern videos",
+        "InterviewCamp.io"
+      ],
+      "toolsToUse": [
+        "Pattern classification tools",
+        "Problem tags on LeetCode/Codeforces",
+        "Spaced repetition software",
+        "Personal problem database",
+        "Interview preparation websites"
+      ],
+      "practiceIdeas": [
+        "Identify patterns in new problems",
+        "Solve 5 problems of each pattern",
+        "Create a cheat sheet of patterns",
+        "Practice pattern switching"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "System Design Basics",
+    "description": "Learn to design scalable systems using DSA principles",
+    "content": {
+      "whatToLearn": [
+        "Component design",
+        "API design principles",
+        "Database schema design",
+        "Caching strategies",
+        "Load balancing basics",
+        "Consistent hashing"
+      ],
+      "resources": [
+        "System Design Interview by Alex Xu",
+        "Designing Data-Intensive Applications",
+        "System Design Primer (GitHub)",
+        "Grokking the System Design Interview",
+        "ByteByteGo System Design videos"
+      ],
+      "toolsToUse": [
+        "Draw.io for diagrams",
+        "Excalidraw",
+        "Database design tools",
+        "API documentation tools",
+        "GitHub repositories with examples"
+      ],
+      "practiceIdeas": [
+        "Design a URL shortener",
+        "Create a simple key-value store",
+        "Design a task scheduler",
+        "Build a simple rate limiter"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Competitive Programming",
+    "description": "Sharpen your skills with timed coding competitions",
+    "content": {
+      "whatToLearn": [
+        "Contest strategies",
+        "Fast implementation techniques",
+        "Common CP algorithms and data structures",
+        "Mathematical foundations",
+        "Advanced optimization techniques",
+        "Problem classification"
+      ],
+      "resources": [
+        "Competitive Programming 4 by Steven Halim",
+        "USACO Guide",
+        "Algorithms Live! (YouTube)",
+        "Errichto's YouTube channel",
+        "Codeforces educational articles"
+      ],
+      "toolsToUse": [
+        "Codeforces",
+        "AtCoder",
+        "CodeChef",
+        "ICPC archives",
+        "Competitive programming template",
+        "Custom judge systems"
+      ],
+      "practiceIdeas": [
+        "Participate in weekly contests",
+        "Virtual contest practice",
+        "Solve past ICPC problems",
+        "Create a personal code library"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Interview Preparation",
+    "description": "Get ready for technical interviews and assessments",
+    "content": {
+      "whatToLearn": [
+        "Communication during problem-solving",
+        "Test case formulation",
+        "Edge case handling",
+        "Solution optimization",
+        "Mock interview strategies",
+        "Behavioral question preparation"
+      ],
+      "resources": [
+        "Cracking the Coding Interview",
+        "Tech Interview Handbook",
+        "Leetcode Premium",
+        "Pramp (mock interviews)",
+        "AlgoExpert.io"
+      ],
+      "toolsToUse": [
+        "LeetCode",
+        "HackerRank Interview Preparation Kit",
+        "InterviewBit",
+        "Pramp",
+        "Interview preparation calendars"
+      ],
+      "practiceIdeas": [
+        "Solve company-specific questions",
+        "Weekly mock interviews",
+        "Practice talking while coding",
+        "Time-boxed problem solving"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Continuous Learning",
+    "description": "Stay updated with new algorithms and techniques",
+    "content": {
+      "whatToLearn": [
+        "Research papers on algorithms",
+        "New data structures",
+        "Language-specific optimizations",
+        "Industry applications of DSA",
+        "Performance engineering",
+        "Domain-specific algorithms"
+      ],
+      "resources": [
+        "ArXiv CS papers",
+        "CLRS 4th edition updates",
+        "Algorithm conference proceedings",
+        "Journal of Algorithms",
+        "Specialized books in ML/AI algorithms"
+      ],
+      "toolsToUse": [
+        "GitHub trending repositories",
+        "Research paper databases",
+        "Tech blogs (Medium, Dev.to)",
+        "DSA newsletters",
+        "Algorithm visualization tools"
+      ],
+      "practiceIdeas": [
+        "Implement algorithms from research papers",
+        "Contribute to open-source DSA libraries",
+        "Create visualizations for complex algorithms",
+        "Write blog posts explaining algorithms"
+      ]
+    }
+  }
+]

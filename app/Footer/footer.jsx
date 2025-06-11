@@ -107,7 +107,7 @@ const Footer = () => {
         {/* Bottom Section with Copyright and Terms */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-600 text-sm">
-            © 2024 RoadmapFinder. All rights reserved.
+            © 2025 RoadmapFinder. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <Link

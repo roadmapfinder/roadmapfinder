@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "title": "Go Fundamentals & Setup",
+    "description": "Get started with Go programming language basics and development environment",
+    "icon": "Settings",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Installing Go & Setting up GOPATH/GOROOT",
+        "Go Workspace & Modules (go.mod)",
+        "Variables, Constants & Data Types",
+        "Functions & Multiple Return Values",
+        "Control Structures (if, for, switch)",
+        "Arrays, Slices & Maps",
+        "Pointers & Memory Management",
+        "Packages & Imports"
+      ],
+      "toolsToUse": [
+        "Go Compiler & Runtime",
+        "VS Code with Go Extension",
+        "GoLand IDE by JetBrains",
+        "Go Modules (go mod)",
+        "gofmt (Code Formatting)",
+        "go vet (Code Analysis)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Learn Go Programming - FreeCodeCamp",
+          "Go: The Complete Developer's Guide - Udemy",
+          "Go Programming Language - Coursera",
+          "Go Crash Course - Traversy Media"
+        ],
+        "hindi": [
+          "Go Programming Hindi - CodeWithHarry",
+          "Golang Tutorial Hindi - Thapa Technical",
+          "Go Complete Course Hindi - Apna College",
+          "Go Basics Hindi - Tech With Tim Hindi"
+        ]
+      },
+      "documentation": [
+        "Official Go Documentation",
+        "A Tour of Go (Interactive Tutorial)",
+        "Go by Example",
+        "Effective Go (Best Practices)"
+      ],
+      "projectIdeas": [
+        "Hello World & Basic CLI",
+        "Simple Calculator",
+        "Temperature Converter",
+        "File Reading/Writing Tool",
+        "Basic HTTP Client"
+      ],
+      "practicePlatforms": [
+        "Go by Example",
+        "Exercism Go Track",
+        "Codewars Go",
+        "HackerRank Go"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Intermediate Go Concepts",
+    "description": "Master advanced Go features and object-oriented programming concepts",
+    "icon": "Package",
+    "gradient": "from-cyan-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Structs & Methods",
+        "Interfaces & Polymorphism",
+        "Embedding & Composition",
+        "Error Handling Patterns",
+        "Goroutines & Concurrency",
+        "Channels & Communication",
+        "Select Statement",
+        "Mutex & Sync Package"
+      ],
+      "toolsToUse": [
+        "go test (Testing Framework)",
+        "go benchmark (Performance Testing)",
+        "Delve (Go Debugger)",
+        "pprof (Profiling Tool)",
+        "go race (Race Condition Detector)",
+        "golint (Linting Tool)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Mastering Go Programming - Udemy",
+          "Go Concurrency Patterns - YouTube",
+          "Advanced Go Programming - Pluralsight",
+          "Go Interface Design - Jon Calhoun"
+        ],
+        "hindi": [
+          "Advanced Go Hindi - Hitesh Choudhary",
+          "Go Concurrency Hindi - CodeWithHarry",
+          "Interface & Struct Hindi - Indian Programming",
+          "Go OOP Concepts Hindi - Coding Blocks"
+        ]
+      },
+      "documentation": [
+        "Go Memory Model",
+        "Concurrency Patterns in Go",
+        "Interface Documentation",
+        "Testing Package Guide"
+      ],
+      "projectIdeas": [
+        "Concurrent File Processor",
+        "Worker Pool Implementation",
+        "Chat System with Goroutines",
+        "Data Pipeline with Channels",
+        "REST API Client Library"
+      ],
+      "practicePlatforms": [
+        "Go Concurrency Exercises",
+        "Interface Implementation Practice",
+        "Goroutines Challenges - Exercism",
+        "Concurrent Programming Katas"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Advanced Go Features",
+    "description": "Explore advanced Go concepts including reflection, generics, and performance optimization",
+    "icon": "Rocket",
+    "gradient": "from-teal-500 to-green-500",
+    "content": {
+      "whatToLearn": [
+        "Generics (Go 1.18+)",
+        "Reflection & Runtime Type Info",
+        "Context Package & Cancellation",
+        "Custom Error Types",
+        "Memory Management & GC",
+        "Unsafe Package (Advanced)",
+        "Build Tags & Conditional Compilation",
+        "CGO & C Integration"
+      ],
+      "toolsToUse": [
+        "go mod tidy (Dependency Management)",
+        "go work (Workspace Mode)",
+        "staticcheck (Advanced Linting)",
+        "golangci-lint (Meta Linter)",
+        "go tool trace (Execution Tracer)",
+        "benchstat (Benchmark Analysis)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go Generics Deep Dive - YouTube",
+          "Advanced Go Techniques - Udemy",
+          "Go Performance Optimization - Pluralsight",
+          "Reflection in Go - Jon Gjengset Style"
+        ],
+        "hindi": [
+          "Go Generics Hindi - Hitesh Choudhary",
+          "Advanced Go Features Hindi - CodeWithHarry",
+          "Performance Tuning Hindi - Indian Coders",
+          "Go Reflection Hindi - Tech Gun"
+        ]
+      },
+      "documentation": [
+        "Go Generics Documentation",
+        "Reflect Package Guide",
+        "Context Package Documentation",
+        "Memory Management Guide"
+      ],
+      "projectIdeas": [
+        "Generic Data Structures Library",
+        "Custom ORM with Reflection",
+        "Performance Monitoring Tool",
+        "Plugin System with CGO",
+        "Advanced CLI Framework"
+      ],
+      "practicePlatforms": [
+        "Advanced Go Challenges",
+        "Generic Programming Practice",
+        "Performance Optimization Tasks",
+        "Reflection Programming Exercises"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Backend Development with Go",
+    "description": "Build robust backend applications, APIs, and web services using Go",
+    "icon": "Server",
+    "gradient": "from-green-500 to-emerald-500",
+    "content": {
+      "whatToLearn": [
+        "HTTP Server & Routing",
+        "Gin or Echo Web Framework",
+        "RESTful API Design",
+        "JSON Handling & Validation",
+        "Middleware & Authentication",
+        "Database Integration (SQL/NoSQL)",
+        "GORM or SQLx for ORM",
+        "WebSocket Implementation"
+      ],
+      "toolsToUse": [
+        "Gin Web Framework",
+        "Echo Framework",
+        "Gorilla Mux (Router)",
+        "GORM (ORM)",
+        "SQLx (SQL Extension)",
+        "JWT-Go (Authentication)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go Web Development - Jon Calhoun",
+          "Building APIs with Go - Udemy",
+          "Gin Framework Complete Guide",
+          "Go Backend Masterclass - YouTube"
+        ],
+        "hindi": [
+          "Go Web Development Hindi - Hitesh Choudhary",
+          "API Development Go Hindi - CodeWithHarry",
+          "Gin Framework Hindi - Thapa Technical",
+          "Backend Go Hindi - Indian Programming"
+        ]
+      },
+      "documentation": [
+        "Net/HTTP Package Documentation",
+        "Gin Framework Documentation",
+        "GORM Documentation",
+        "Database/SQL Package Guide"
+      ],
+      "projectIdeas": [
+        "RESTful Blog API",
+        "E-commerce Backend",
+        "User Authentication System",
+        "Real-time Chat Backend",
+        "File Upload Service"
+      ],
+      "practicePlatforms": [
+        "API Development Challenges",
+        "Backend Architecture Practice",
+        "Database Integration Exercises",
+        "Web Service Building Tasks"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Database & Data Management",
+    "description": "Master database operations, ORMs, and data persistence in Go applications",
+    "icon": "Database",
+    "gradient": "from-emerald-500 to-indigo-500",
+    "content": {
+      "whatToLearn": [
+        "SQL Database Connections",
+        "PostgreSQL, MySQL Integration",
+        "GORM Advanced Features",
+        "Database Migrations",
+        "MongoDB with Go",
+        "Redis Caching",
+        "Connection Pooling",
+        "Database Testing Strategies"
+      ],
+      "toolsToUse": [
+        "GORM (Go ORM)",
+        "SQLx (SQL Extensions)",
+        "migrate (Database Migrations)",
+        "go-redis (Redis Client)",
+        "mongo-go-driver (MongoDB)",
+        "pgx (PostgreSQL Driver)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go Database Programming - Udemy",
+          "GORM Complete Tutorial",
+          "Database Design with Go - Pluralsight",
+          "Go + PostgreSQL Masterclass"
+        ],
+        "hindi": [
+          "Database Go Programming Hindi - Hitesh Choudhary",
+          "GORM Tutorial Hindi - CodeWithHarry",
+          "MongoDB Go Hindi - Indian Programming",
+          "SQL Integration Hindi - Coding Blocks"
+        ]
+      },
+      "documentation": [
+        "GORM Official Documentation",
+        "Database/SQL Package",
+        "PostgreSQL Go Driver Docs",
+        "MongoDB Go Driver Guide"
+      ],
+      "projectIdeas": [
+        "User Management System",
+        "Inventory Management API",
+        "Social Media Backend",
+        "E-learning Platform Backend",
+        "Analytics Dashboard API"
+      ],
+      "practicePlatforms": [
+        "Database Design Challenges",
+        "ORM Implementation Practice",
+        "SQL Query Optimization",
+        "Data Modeling Exercises"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Microservices & Architecture",
+    "description": "Design and implement microservices architecture using Go",
+    "icon": "Network",
+    "gradient": "from-indigo-500 to-purple-500",
+    "content": {
+      "whatToLearn": [
+        "Microservices Design Patterns",
+        "gRPC & Protocol Buffers",
+        "Service Discovery",
+        "API Gateway Implementation",
+        "Circuit Breaker Pattern",
+        "Event-Driven Architecture",
+        "Message Queues (RabbitMQ, Kafka)",
+        "Distributed Tracing"
+      ],
+      "toolsToUse": [
+        "gRPC-Go",
+        "Protocol Buffers (protobuf)",
+        "Consul (Service Discovery)",
+        "NATS (Message Streaming)",
+        "Jaeger (Distributed Tracing)",
+        "Prometheus (Monitoring)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Microservices with Go - Udemy",
+          "gRPC Complete Guide - YouTube",
+          "Go Microservices - Pluralsight",
+          "Distributed Systems in Go"
+        ],
+        "hindi": [
+          "Microservices Go Hindi - Hitesh Choudhary",
+          "gRPC Tutorial Hindi - CodeWithHarry",
+          "Distributed Systems Hindi - Indian Programming",
+          "Architecture Design Hindi - Tech Gun"
+        ]
+      },
+      "documentation": [
+        "gRPC Go Documentation",
+        "Protocol Buffers Guide",
+        "Microservices Patterns",
+        "Distributed Systems Documentation"
+      ],
+      "projectIdeas": [
+        "E-commerce Microservices",
+        "Payment Processing System",
+        "Order Management Service",
+        "Notification Service",
+        "API Gateway Implementation"
+      ],
+      "practicePlatforms": [
+        "Microservices Design Challenges",
+        "gRPC Implementation Practice",
+        "Distributed System Exercises",
+        "Architecture Design Tasks"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "DevOps & Cloud Integration",
+    "description": "Deploy and manage Go applications in cloud environments with modern DevOps practices",
+    "icon": "Cloud",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Docker Containerization",
+        "Kubernetes Deployment",
+        "CI/CD Pipelines",
+        "AWS/GCP/Azure Integration",
+        "Infrastructure as Code",
+        "Monitoring & Logging",
+        "Load Balancing & Scaling",
+        "Security Best Practices"
+      ],
+      "toolsToUse": [
+        "Docker & Docker Compose",
+        "Kubernetes & Helm",
+        "GitHub Actions / GitLab CI",
+        "Terraform (IaC)",
+        "Prometheus & Grafana",
+        "ELK Stack (Logging)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go + Docker + Kubernetes - Udemy",
+          "Cloud Native Go Applications",
+          "DevOps with Go - Pluralsight",
+          "Go Deployment Strategies"
+        ],
+        "hindi": [
+          "DevOps Go Hindi - Hitesh Choudhary",
+          "Docker Kubernetes Hindi - CodeWithHarry",
+          "Cloud Deployment Hindi - Indian Programming",
+          "CI/CD Go Hindi - Coding Blocks"
+        ]
+      },
+      "documentation": [
+        "Docker Go Best Practices",
+        "Kubernetes Go Applications",
+        "Cloud Provider Go SDKs",
+        "Monitoring Go Applications"
+      ],
+      "projectIdeas": [
+        "Containerized Web Application",
+        "Kubernetes Native App",
+        "CI/CD Pipeline Setup",
+        "Monitoring Dashboard",
+        "Auto-scaling Service"
+      ],
+      "practicePlatforms": [
+        "Docker Implementation Challenges",
+        "Kubernetes Deployment Practice",
+        "CI/CD Pipeline Exercises",
+        "Cloud Architecture Tasks"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Testing & Quality Assurance",
+    "description": "Implement comprehensive testing strategies and maintain code quality in Go",
+    "icon": "Bug",
+    "gradient": "from-pink-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with testing package",
+        "Table-Driven Tests",
+        "Mocking & Test Doubles",
+        "Integration Testing",
+        "Benchmark Testing",
+        "Test Coverage Analysis",
+        "End-to-End Testing",
+        "Performance Testing"
+      ],
+      "toolsToUse": [
+        "Go testing package",
+        "Testify (Testing Toolkit)",
+        "GoMock (Mocking Framework)",
+        "Go Convey (BDD Testing)",
+        "Ginkgo & Gomega (BDD)",
+        "httptest (HTTP Testing)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go Testing Complete Guide - Udemy",
+          "Test-Driven Development in Go",
+          "Go Testing Best Practices - YouTube",
+          "Advanced Go Testing Techniques"
+        ],
+        "hindi": [
+          "Go Testing Hindi - Hitesh Choudhary",
+          "Unit Testing Go Hindi - CodeWithHarry",
+          "TDD Go Hindi - Indian Programming",
+          "Quality Assurance Hindi - Tech Gun"
+        ]
+      },
+      "documentation": [
+        "Testing Package Documentation",
+        "Go Testing Best Practices",
+        "Benchmark Testing Guide",
+        "Test Coverage Documentation"
+      ],
+      "projectIdeas": [
+        "Comprehensive Test Suite",
+        "Mock Service Implementation",
+        "Performance Benchmark Suite",
+        "API Testing Framework",
+        "Test Automation Pipeline"
+      ],
+      "practicePlatforms": [
+        "Testing Implementation Challenges",
+        "TDD Practice Exercises",
+        "Mock Framework Usage",
+        "Test Coverage Optimization"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Performance & Optimization",
+    "description": "Master Go performance optimization, profiling, and memory management",
+    "icon": "Zap",
+    "gradient": "from-red-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "CPU & Memory Profiling",
+        "Goroutine Leak Detection",
+        "Memory Allocation Optimization",
+        "Garbage Collection Tuning",
+        "Benchmark-Driven Development",
+        "Caching Strategies",
+        "Database Query Optimization",
+        "Network Performance Tuning"
+      ],
+      "toolsToUse": [
+        "pprof (Profiling Tool)",
+        "go tool trace",
+        "benchstat (Benchmark Analysis)",
+        "go-torch (Flame Graphs)",
+        "vegeta (Load Testing)",
+        "Apache Bench (Performance Testing)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go Performance Optimization - Udemy",
+          "Profiling Go Applications",
+          "High-Performance Go - Pluralsight",
+          "Go Memory Management Deep Dive"
+        ],
+        "hindi": [
+          "Go Performance Hindi - Hitesh Choudhary",
+          "Optimization Techniques Hindi - CodeWithHarry",
+          "Memory Management Hindi - Indian Programming",
+          "Profiling Go Hindi - Coding Blocks"
+        ]
+      },
+      "documentation": [
+        "Go Performance Tuning Guide",
+        "pprof Documentation",
+        "Memory Management Guide",
+        "Benchmark Testing Documentation"
+      ],
+      "projectIdeas": [
+        "High-Performance API",
+        "Memory-Efficient Data Processor",
+        "Optimized Web Server",
+        "Performance Monitoring Tool",
+        "Load Testing Framework"
+      ],
+      "practicePlatforms": [
+        "Performance Optimization Challenges",
+        "Profiling Practice Exercises",
+        "Memory Leak Detection Tasks",
+        "Benchmark Writing Practice"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Career & Advanced Projects",
+    "description": "Build production-ready projects and prepare for Go developer career opportunities",
+    "icon": "Target",
+    "gradient": "from-orange-500 to-yellow-500",
+    "content": {
+      "whatToLearn": [
+        "System Design with Go",
+        "Open Source Contributions",
+        "Code Review Best Practices",
+        "Technical Leadership",
+        "Go Community Engagement",
+        "Interview Preparation",
+        "Portfolio Development",
+        "Continuous Learning Strategies"
+      ],
+      "toolsToUse": [
+        "GitHub (Version Control)",
+        "Go Modules Publishing",
+        "Documentation Tools",
+        "Code Quality Tools",
+        "Project Management Tools",
+        "Community Platforms"
+      ],
+      "bestCourses": {
+        "english": [
+          "Go Interview Preparation - LeetCode",
+          "System Design for Go Developers",
+          "Go Career Bootcamp",
+          "Advanced Go Projects Course"
+        ],
+        "hindi": [
+          "Go Job Interview Hindi - CodeWithHarry",
+          "System Design Hindi - Indian Programming",
+          "Career Guide Hindi - Hitesh Choudhary",
+          "Portfolio Building Hindi - Coding Blocks"
+        ]
+      },
+      "documentation": [
+        "Go Career Guide",
+        "System Design Resources",
+        "Open Source Contribution Guide",
+        "Go Community Guidelines"
+      ],
+      "projectIdeas": [
+        "Complete Social Media Platform",
+        "E-commerce Marketplace",
+        "Real-time Collaboration Tool",
+        "Distributed File Storage System",
+        "Container Orchestration Tool"
+      ],
+      "practicePlatforms": [
+        "LeetCode Go Problems",
+        "System Design Interview Practice",
+        "Open Source Project Contributions",
+        "Technical Blog Writing"
+      ]
+    }
+  }
+]
