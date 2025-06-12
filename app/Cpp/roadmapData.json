@@ -43,7 +43,7 @@
             "C++ Programming Hindi - Tech Gun"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "cppreference.com",
           "C++ Reference - cplusplus.com",
           "Microsoft C++ Documentation",
@@ -111,7 +111,7 @@
             "Advanced C++ Hindi - Tech With Tim"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "C++ Classes - cppreference",
           "OOP in C++ - GeeksforGeeks",
           "C++ Inheritance Guide",
@@ -178,7 +178,7 @@
             "C++ STL Hindi - TakeUforward"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "STL Reference - cppreference.com",
           "C++ STL - cplusplus.com",
           "STL Containers Guide",
@@ -248,7 +248,7 @@
             "Complete DSA Hindi - TakeUforward (Striver)"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "Algorithm Design Manual",
           "Introduction to Algorithms (CLRS)",
           "Data Structures - GeeksforGeeks",
@@ -323,7 +323,7 @@
             "Advanced Concepts Hindi - Geeky Shows"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "Modern C++ Guidelines",
           "C++ Core Guidelines",
           "Boost Documentation",
@@ -391,7 +391,7 @@
             "Contest Math Hindi - Unacademy"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "Competitive Programming Handbook",
           "USACO Guide",
           "CP-Algorithms",
@@ -466,7 +466,7 @@
             "Interview Prep Hindi - Love Babbar"
           ]
         },
-        "documentation": [
+        "docsAndWebsites": [
           "Git Documentation",
           "CMake Tutorial",
           "Google Test Guide",

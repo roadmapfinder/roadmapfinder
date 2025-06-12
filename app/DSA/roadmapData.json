@@ -3,6 +3,7 @@
     "id": 1,
     "title": "Programming Fundamentals",
     "description": "Master the programming language of your choice",
+    "icon": "Code",
     "content": {
       "whatToLearn": [
         "Syntax and semantics",
@@ -12,25 +13,47 @@
         "Error handling",
         "Basic I/O operations"
       ],
-      "resources": [
-        "C++: 'A Tour of C++' by Bjarne Stroustrup",
-        "Java: 'Effective Java' by Joshua Bloch",
-        "Python: 'Python Crash Course' by Eric Matthes",
-        "JavaScript: 'Eloquent JavaScript' by Marijn Haverbeke",
-        "freeCodeCamp Programming Fundamentals course"
-      ],
+      "bestCourses": {
+        "english": [
+          "CS50's Introduction to Computer Science (Harvard/edX)",
+          "Programming for Everybody (Python) - University of Michigan/Coursera",
+          "Java Programming: Solving Problems with Software (Duke University/Coursera)",
+          "The Complete JavaScript Course (Jonas Schmedtmann/Udemy)",
+          "C++ For C Programmers (UC Santa Cruz/Coursera)"
+        ],
+        "hindi": [
+          "Complete Python Course in Hindi (CodeWithHarry)",
+          "Java Tutorial for Beginners in Hindi (Apna College)",
+          "C++ Programming in Hindi (Jenny's Lectures)",
+          "JavaScript Complete Course Hindi (Thapa Technical)",
+          "Programming Fundamentals Hindi (Gate Smashers)"
+        ]
+      },
       "toolsToUse": [
         "Visual Studio Code",
         "JetBrains IDEs (PyCharm, IntelliJ)",
         "Replit (online editor)",
         "GitHub (version control)",
-        "Jupyter Notebooks (for Python)"
+        "Jupyter Notebooks (for Python)",
+        "CodeBlocks/Dev-C++ (for C++)"
       ],
-      "practiceIdeas": [
+      "docsAndWebsites": [
+        "Python.org Official Documentation",
+        "MDN Web Docs (JavaScript)",
+        "Oracle Java Documentation",
+        "cppreference.com (C++)",
+        "freeCodeCamp.org",
+        "W3Schools Programming Tutorials",
+        "GeeksforGeeks Programming Section",
+        "Programiz Learn Programming"
+      ],
+      "projectIdeas": [
         "Implement simple math operations",
         "Create a command-line calculator",
         "Build a simple text-based game",
-        "Create a to-do list application"
+        "Create a to-do list application",
+        "Build a basic file organizer",
+        "Create a simple encryption/decryption tool"
       ]
     }
   },
@@ -38,6 +61,7 @@
     "id": 2,
     "title": "Basic Data Structures",
     "description": "Learn the core building blocks of efficient programs",
+    "icon": "Database",
     "content": {
       "whatToLearn": [
         "Arrays and dynamic arrays",
@@ -47,25 +71,47 @@
         "Trees (Binary, BST)",
         "Heaps (Min/Max)"
       ],
-      "resources": [
-        "Introduction to Algorithms by CLRS",
-        "Data Structures and Algorithms Made Easy by Narasimha Karumanchi",
-        "CS50's Introduction to Computer Science (Harvard)",
-        "Visualgo.net - Data Structure Visualizations",
-        "GeeksforGeeks Data Structures articles"
-      ],
+      "bestCourses": {
+        "english": [
+          "Data Structures and Algorithms Specialization (UC San Diego/Coursera)",
+          "Algorithms, Part I (Princeton University/Coursera)",
+          "Data Structures Fundamentals (University of California San Diego/edX)",
+          "Complete Data Structures Course (Abdul Bari/Udemy)",
+          "CS61B: Data Structures (UC Berkeley - free on YouTube)"
+        ],
+        "hindi": [
+          "Data Structures Complete Course Hindi (Jenny's Lectures)",
+          "DSA Course in Hindi (CodeWithHarry)",
+          "Data Structures Tutorial Hindi (Gate Smashers)",
+          "Complete DSA in Hindi (Apna College)",
+          "Data Structures Hindi (5 Minutes Engineering)"
+        ]
+      },
       "toolsToUse": [
         "Programming language of choice",
         "VisuAlgo (visualization tool)",
         "Data Structure Visualizations (USFCA)",
         "Algorithm Visualizer",
-        "CodePen/CodeSandbox for testing"
+        "CodePen/CodeSandbox for testing",
+        "LeetCode Playground"
       ],
-      "practiceIdeas": [
+      "docsAndWebsites": [
+        "VisuAlgo.net - Interactive Data Structure Visualizations",
+        "GeeksforGeeks Data Structures",
+        "Programiz Data Structures Guide",
+        "Data Structure Visualizations (University of San Francisco)",
+        "Brilliant.org Computer Science",
+        "Khan Academy Computer Programming",
+        "CS Visualized (dev.to series)",
+        "Big-O Cheat Sheet"
+      ],
+      "projectIdeas": [
         "Implement each data structure from scratch",
         "Create a stack-based calculator",
-        "Build a queue simulation",
-        "Design a custom hash table"
+        "Build a queue simulation system",
+        "Design a custom hash table with collision handling",
+        "Create a binary search tree with GUI",
+        "Build a heap-based priority queue system"
       ]
     }
   },
@@ -73,6 +119,7 @@
     "id": 3,
     "title": "Basic Algorithms",
     "description": "Master fundamental algorithms and problem-solving approaches",
+    "icon": "Zap",
     "content": {
       "whatToLearn": [
         "Searching algorithms (Linear, Binary)",
@@ -82,25 +129,47 @@
         "Problem-solving strategies",
         "Basic algorithm design techniques"
       ],
-      "resources": [
-        "Grokking Algorithms by Aditya Bhargava",
-        "Algorithms Illuminated (Part 1) by Tim Roughgarden",
-        "MIT 6.006 Introduction to Algorithms",
-        "Coursera: Algorithms Specialization (Stanford)",
-        "Khan Academy: Algorithms"
-      ],
+      "bestCourses": {
+        "english": [
+          "Algorithms Specialization (Stanford University/Coursera)",
+          "MIT 6.006 Introduction to Algorithms (MIT OpenCourseWare)",
+          "Algorithms, Part II (Princeton University/Coursera)",
+          "Grokking Algorithms Course (Educative.io)",
+          "Tim Roughgarden's Algorithm Illuminated Course"
+        ],
+        "hindi": [
+          "Complete Algorithms Course Hindi (Gate Smashers)",
+          "Sorting Algorithms in Hindi (Jenny's Lectures)",
+          "Recursion Complete Tutorial Hindi (Aditya Verma)",
+          "Algorithm Analysis Hindi (5 Minutes Engineering)",
+          "DSA Algorithms Hindi (CodeWithHarry)"
+        ]
+      },
       "toolsToUse": [
         "LeetCode (Easy problems)",
         "HackerRank Algorithms track",
-        "CLRS solution manual",
         "Algorithm Visualizer tools",
-        "Time complexity calculator"
+        "Time complexity calculator",
+        "Sorting Algorithms Visualizer",
+        "Recursion Tree Visualizer"
       ],
-      "practiceIdeas": [
-        "Implement all sorting algorithms",
-        "Create a binary search function",
-        "Solve simple recursion problems",
-        "Analyze algorithm complexities"
+      "docsAndWebsites": [
+        "Algorithm Visualizer (algorithm-visualizer.org)",
+        "Sorting Algorithms Animations",
+        "Big-O Complexity Chart",
+        "GeeksforGeeks Algorithms",
+        "Khan Academy Algorithms",
+        "Programiz Algorithm Tutorials",
+        "Brilliant.org Algorithm Courses",
+        "TopCoder Algorithm Tutorials"
+      ],
+      "projectIdeas": [
+        "Implement all sorting algorithms with visualization",
+        "Create a binary search function library",
+        "Solve recursive problems (Tower of Hanoi, Fibonacci)",
+        "Build an algorithm complexity analyzer",
+        "Create a sorting algorithm comparison tool",
+        "Implement pathfinding algorithms (maze solver)"
       ]
     }
   },
@@ -108,34 +177,57 @@
     "id": 4,
     "title": "Advanced Data Structures",
     "description": "Expand your toolkit with more complex data structures",
+    "icon": "Network",
     "content": {
       "whatToLearn": [
         "Balanced Trees (AVL, Red-Black)",
         "B-Trees and B+ Trees",
         "Graphs (representation, traversal)",
-        "Trie",
+        "Trie (Prefix Tree)",
         "Segment Trees",
         "Disjoint Set Union (DSU)"
       ],
-      "resources": [
-        "Advanced Data Structures by Peter Brass",
-        "Competitive Programmer's Handbook by Antti Laaksonen",
-        "William Fiset's Data Structures YouTube Series",
-        "CP-Algorithms.com",
-        "Topcoder tutorials"
-      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Data Structures (MIT OpenCourseWare)",
+          "Graph Theory and Applications (University of California San Diego/Coursera)",
+          "Advanced Algorithms and Complexity (University of California San Diego/Coursera)",
+          "William Fiset's Data Structures Course (freeCodeCamp YouTube)",
+          "Competitive Programming Course (Codeforces EDU)"
+        ],
+        "hindi": [
+          "Advanced Data Structures Hindi (Gate Smashers)",
+          "Graph Theory Complete Course Hindi (Jenny's Lectures)",
+          "Trees Advanced Concepts Hindi (Aditya Verma)",
+          "Segment Tree Tutorial Hindi (CodeNCode)",
+          "Advanced DSA Hindi (Love Babbar)"
+        ]
+      },
       "toolsToUse": [
-        "Graph visualization tools",
+        "Graph visualization tools (Graphviz)",
         "LeetCode Medium problems",
         "Codeforces Div2 problems",
         "Custom test case generators",
-        "Benchmarking tools"
+        "Benchmarking tools",
+        "Tree/Graph drawing tools"
       ],
-      "practiceIdeas": [
-        "Implement an AVL tree with rotations",
-        "Create a trie for autocomplete",
-        "Build a graph with traversal algorithms",
-        "Design a segment tree implementation"
+      "docsAndWebsites": [
+        "CP-Algorithms.com",
+        "Graph Online (graph visualization)",
+        "GeeksforGeeks Advanced Data Structures",
+        "Topcoder Data Science Tutorials",
+        "Competitive Programmer's Handbook (free PDF)",
+        "USACO Guide",
+        "E-Maxx Algorithms (English translation)",
+        "Codeforces Educational Articles"
+      ],
+      "projectIdeas": [
+        "Implement an AVL tree with rotations and visualization",
+        "Create a trie for autocomplete functionality",
+        "Build a graph with DFS/BFS traversal algorithms",
+        "Design a segment tree for range queries",
+        "Create a Union-Find data structure",
+        "Build a B-tree database index simulation"
       ]
     }
   },
@@ -143,6 +235,7 @@
     "id": 5,
     "title": "Advanced Algorithms",
     "description": "Study complex algorithm paradigms for challenging problems",
+    "icon": "Brain",
     "content": {
       "whatToLearn": [
         "Divide and Conquer",
@@ -152,25 +245,47 @@
         "String Algorithms (KMP, Z, Rabin-Karp)",
         "Computational Geometry basics"
       ],
-      "resources": [
-        "Algorithms Illuminated (Parts 2-4) by Tim Roughgarden",
-        "Algorithm Design Manual by Steven Skiena",
-        "Dynamic Programming for Coding Interviews",
-        "Erik Demaine's lectures (MIT)",
-        "Tushar Roy's Algorithm videos"
-      ],
+      "bestCourses": {
+        "english": [
+          "Dynamic Programming Course (Aditya Verma/YouTube)",
+          "Graph Algorithms (University of California San Diego/Coursera)",
+          "String Processing and Pattern Matching Algorithms (University of California San Diego/Coursera)",
+          "Computational Geometry (Tsinghua University/edX)",
+          "Erik Demaine's Advanced Algorithms (MIT OpenCourseWare)"
+        ],
+        "hindi": [
+          "Dynamic Programming Complete Course Hindi (Aditya Verma)",
+          "Graph Algorithms Hindi (Jenny's Lectures)",
+          "Greedy Algorithms Hindi (Gate Smashers)",
+          "String Algorithms Hindi (CodeNCode)",
+          "Advanced Algorithms Hindi (Love Babbar)"
+        ]
+      },
       "toolsToUse": [
         "LeetCode Medium/Hard problems",
         "Codeforces Div1 problems",
         "AtCoder contests",
         "Algorithm visualization platforms",
-        "OEIS (for sequence problems)"
+        "OEIS (for sequence problems)",
+        "Graph theory software"
       ],
-      "practiceIdeas": [
-        "Solve classic DP problems (knapsack, LCS)",
-        "Implement Dijkstra's algorithm",
-        "Create string matching algorithms",
-        "Solve geometry problems (convex hull)"
+      "docsAndWebsites": [
+        "DP Tutorial and Problems List",
+        "Graph Algorithms Visualizations",
+        "String Algorithm Animations",
+        "Competitive Programming 4 (book website)",
+        "Codeforces Problem Tags",
+        "A2OJ Ladders",
+        "CSES Problem Set",
+        "Project Euler"
+      ],
+      "projectIdeas": [
+        "Solve classic DP problems (0/1 Knapsack, LCS, LIS)",
+        "Implement Dijkstra's and A* pathfinding algorithms",
+        "Create string matching algorithms library",
+        "Solve computational geometry problems (Convex Hull)",
+        "Build a graph algorithms visualizer",
+        "Create a DP problem pattern classifier"
       ]
     }
   },
@@ -178,6 +293,7 @@
     "id": 6,
     "title": "Problem Solving Patterns",
     "description": "Learn common patterns to tackle algorithmic challenges",
+    "icon": "Target",
     "content": {
       "whatToLearn": [
         "Sliding Window technique",
@@ -189,25 +305,47 @@
         "Binary Search variations",
         "Backtracking"
       ],
-      "resources": [
-        "Grokking the Coding Interview",
-        "Element of Programming Interviews",
-        "Coding Interview Patterns on Educative.io",
-        "NeetCode pattern videos",
-        "InterviewCamp.io"
-      ],
+      "bestCourses": {
+        "english": [
+          "Grokking the Coding Interview (Educative.io)",
+          "Elements of Programming Interviews Course",
+          "LeetCode Patterns Course (AlgoMap)",
+          "Coding Interview Bootcamp (Colt Steele/Udemy)",
+          "Tech Interview Pro Course"
+        ],
+        "hindi": [
+          "Coding Interview Patterns Hindi (Pepcoding)",
+          "Problem Solving Patterns Hindi (CodeWithMosh Hindi)",
+          "DSA Interview Preparation Hindi (Love Babbar)",
+          "Coding Interview Guide Hindi (Gate Smashers)",
+          "Algorithm Patterns Hindi (TakeUForward)"
+        ]
+      },
       "toolsToUse": [
         "Pattern classification tools",
         "Problem tags on LeetCode/Codeforces",
-        "Spaced repetition software",
+        "Spaced repetition software (Anki)",
         "Personal problem database",
-        "Interview preparation websites"
+        "Interview preparation websites",
+        "Code template generators"
       ],
-      "practiceIdeas": [
-        "Identify patterns in new problems",
-        "Solve 5 problems of each pattern",
-        "Create a cheat sheet of patterns",
-        "Practice pattern switching"
+      "docsAndWebsites": [
+        "LeetCode Patterns (Sean Prashad)",
+        "14 Patterns to Ace Any Coding Interview",
+        "NeetCode.io (curated problem lists)",
+        "Blind 75 LeetCode Questions",
+        "AlgoMap.io",
+        "InterviewBit Problem Lists",
+        "Coding Interview University (GitHub)",
+        "Tech Interview Handbook"
+      ],
+      "projectIdeas": [
+        "Create a pattern recognition tool for problems",
+        "Solve 5 problems of each pattern category",
+        "Build a personal coding interview cheat sheet",
+        "Create a pattern-based problem generator",
+        "Develop a coding interview simulator",
+        "Build a progress tracking system for patterns"
       ]
     }
   },
@@ -215,6 +353,7 @@
     "id": 7,
     "title": "System Design Basics",
     "description": "Learn to design scalable systems using DSA principles",
+    "icon": "Settings",
     "content": {
       "whatToLearn": [
         "Component design",
@@ -224,25 +363,47 @@
         "Load balancing basics",
         "Consistent hashing"
       ],
-      "resources": [
-        "System Design Interview by Alex Xu",
-        "Designing Data-Intensive Applications",
-        "System Design Primer (GitHub)",
-        "Grokking the System Design Interview",
-        "ByteByteGo System Design videos"
-      ],
+      "bestCourses": {
+        "english": [
+          "System Design Interview Course (Exponent)",
+          "Grokking the System Design Interview (Educative.io)",
+          "System Design Fundamentals (Hussein Nasser/Udemy)",
+          "Distributed Systems Course (MIT 6.824)",
+          "System Design Primer Course (Gaurav Sen/YouTube)"
+        ],
+        "hindi": [
+          "System Design Course Hindi (Sudcode)",
+          "System Design for Beginners Hindi (Concept && Coding)",
+          "Scalable System Design Hindi (TechDummies)",
+          "System Design Interview Hindi (Pepcoding)",
+          "Database Design Hindi (Gate Lectures by Ravindrababu)"
+        ]
+      },
       "toolsToUse": [
-        "Draw.io for diagrams",
+        "Draw.io for system diagrams",
         "Excalidraw",
-        "Database design tools",
-        "API documentation tools",
-        "GitHub repositories with examples"
+        "Lucidchart",
+        "Database design tools (dbdiagram.io)",
+        "API documentation tools (Swagger)",
+        "Load testing tools (Apache JMeter)"
       ],
-      "practiceIdeas": [
-        "Design a URL shortener",
-        "Create a simple key-value store",
-        "Design a task scheduler",
-        "Build a simple rate limiter"
+      "docsAndWebsites": [
+        "System Design Primer (GitHub)",
+        "High Scalability",
+        "AWS Architecture Center",
+        "Google Cloud Architecture Center",
+        "System Design Interview Questions",
+        "ByteByteGo",
+        "Engineering Blogs (Uber, Netflix, Airbnb)",
+        "Distributed Systems Reading List"
+      ],
+      "projectIdeas": [
+        "Design and implement a URL shortener (like bit.ly)",
+        "Create a simple distributed key-value store",
+        "Design a task scheduler with priority queues",
+        "Build a rate limiter using sliding window",
+        "Create a simple chat application architecture",
+        "Design a file storage system like Dropbox"
       ]
     }
   },
@@ -250,35 +411,59 @@
     "id": 8,
     "title": "Competitive Programming",
     "description": "Sharpen your skills with timed coding competitions",
+    "icon": "Trophy",
     "content": {
       "whatToLearn": [
-        "Contest strategies",
+        "Contest strategies and time management",
         "Fast implementation techniques",
         "Common CP algorithms and data structures",
-        "Mathematical foundations",
+        "Mathematical foundations (Number theory, Combinatorics)",
         "Advanced optimization techniques",
-        "Problem classification"
+        "Problem classification and pattern recognition"
       ],
-      "resources": [
-        "Competitive Programming 4 by Steven Halim",
-        "USACO Guide",
-        "Algorithms Live! (YouTube)",
-        "Errichto's YouTube channel",
-        "Codeforces educational articles"
-      ],
+      "bestCourses": {
+        "english": [
+          "Competitive Programming Course (CodeChef)",
+          "USACO Guide Training",
+          "Algorithms Live! (YouTube series)",
+          "Codeforces Educational Rounds",
+          "AtCoder Educational DP Contest"
+        ],
+        "hindi": [
+          "Competitive Programming Hindi (CodeNCode)",
+          "CP Course in Hindi (Luv)",
+          "Competitive Programming Hindi (Pepcoding)",
+          "CP Algorithms Hindi (TakeUForward)",
+          "Math for CP Hindi (Priyansh Agarwal)"
+        ]
+      },
       "toolsToUse": [
         "Codeforces",
         "AtCoder",
         "CodeChef",
-        "ICPC archives",
-        "Competitive programming template",
-        "Custom judge systems"
+        "TopCoder",
+        "ICPC Live Archive",
+        "Competitive programming templates",
+        "Custom judge systems (PC^2)",
+        "Contest calendars"
       ],
-      "practiceIdeas": [
-        "Participate in weekly contests",
-        "Virtual contest practice",
-        "Solve past ICPC problems",
-        "Create a personal code library"
+      "docsAndWebsites": [
+        "Codeforces Catalog",
+        "AtCoder Library Documentation",
+        "USACO Guide",
+        "Competitive Programmer's Handbook (PDF)",
+        "CP-Algorithms.com",
+        "OEIS (Online Encyclopedia of Integer Sequences)",
+        "Mathematical Contest Problems",
+        "Project Euler"
+      ],
+      "projectIdeas": [
+        "Participate in weekly contests (Codeforces, AtCoder)",
+        "Solve virtual contests from past ICPC regionals",
+        "Create and maintain a personal code library",
+        "Contribute to competitive programming communities",
+        "Mentor beginners in competitive programming",
+        "Create problem setters' tools and utilities"
       ]
     }
   },
@@ -286,34 +471,59 @@
     "id": 9,
     "title": "Interview Preparation",
     "description": "Get ready for technical interviews and assessments",
+    "icon": "Users",
     "content": {
       "whatToLearn": [
         "Communication during problem-solving",
-        "Test case formulation",
-        "Edge case handling",
-        "Solution optimization",
+        "Test case formulation and edge cases",
+        "Solution optimization techniques",
         "Mock interview strategies",
-        "Behavioral question preparation"
+        "Behavioral question preparation",
+        "Company-specific interview formats"
       ],
-      "resources": [
-        "Cracking the Coding Interview",
-        "Tech Interview Handbook",
-        "Leetcode Premium",
-        "Pramp (mock interviews)",
-        "AlgoExpert.io"
-      ],
+      "bestCourses": {
+        "english": [
+          "Cracking the Coding Interview Course",
+          "Tech Interview Pro",
+          "Pramp Interview Practice",
+          "AlgoExpert.io Complete Course",
+          "Interview Cake Course"
+        ],
+        "hindi": [
+          "Coding Interview Preparation Hindi (Love Babbar)",
+          "Tech Interview Guide Hindi (Pepcoding)",
+          "Interview Questions Hindi (Gate Smashers)",
+          "Placement Preparation Hindi (Apna College)",
+          "Technical Interview Hindi (CodeWithHarry)"
+        ]
+      },
       "toolsToUse": [
-        "LeetCode",
+        "LeetCode Premium",
         "HackerRank Interview Preparation Kit",
         "InterviewBit",
-        "Pramp",
-        "Interview preparation calendars"
+        "Pramp (peer mock interviews)",
+        "Interviewing.io",
+        "CoderPad/CodePen for live coding",
+        "Whiteboard apps",
+        "Screen recording tools"
       ],
-      "practiceIdeas": [
-        "Solve company-specific questions",
-        "Weekly mock interviews",
-        "Practice talking while coding",
-        "Time-boxed problem solving"
+      "docsAndWebsites": [
+        "Tech Interview Handbook",
+        "Cracking the Coding Interview (official site)",
+        "Glassdoor Interview Experiences",
+        "LeetCode Discuss",
+        "GeeksforGeeks Interview Corner",
+        "CareerCup",
+        "InterviewBit Academy",
+        "Blind (professional network)"
+      ],
+      "projectIdeas": [
+        "Solve company-specific question banks",
+        "Conduct weekly mock interviews with peers",
+        "Practice explaining solutions while coding",
+        "Create a personal interview preparation tracker",
+        "Build a portfolio of solved problems with explanations",
+        "Participate in interview preparation study groups"
       ]
     }
   },
@@ -321,34 +531,59 @@
     "id": 10,
     "title": "Continuous Learning",
     "description": "Stay updated with new algorithms and techniques",
+    "icon": "BookOpen",
     "content": {
       "whatToLearn": [
-        "Research papers on algorithms",
-        "New data structures",
+        "Latest research papers on algorithms",
+        "Emerging data structures and techniques",
         "Language-specific optimizations",
         "Industry applications of DSA",
         "Performance engineering",
-        "Domain-specific algorithms"
+        "Domain-specific algorithms (ML, Blockchain, etc.)"
       ],
-      "resources": [
-        "ArXiv CS papers",
-        "CLRS 4th edition updates",
-        "Algorithm conference proceedings",
-        "Journal of Algorithms",
-        "Specialized books in ML/AI algorithms"
-      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Topics in Algorithms (Various Universities)",
+          "Machine Learning Algorithms Course",
+          "Blockchain and Cryptocurrency Technologies",
+          "Quantum Computing Algorithms",
+          "Bioinformatics Algorithms Specialization"
+        ],
+        "hindi": [
+          "Latest Tech Trends Hindi (Technical Suneja)",
+          "Algorithm Research Hindi (IIT Lectures)",
+          "Advanced Computing Hindi (NPTEL Courses)",
+          "Emerging Technologies Hindi (Gate Lectures)",
+          "Research Methodology Hindi (University Courses)"
+        ]
+      },
       "toolsToUse": [
         "GitHub trending repositories",
-        "Research paper databases",
-        "Tech blogs (Medium, Dev.to)",
-        "DSA newsletters",
-        "Algorithm visualization tools"
+        "Research paper databases (ArXiv, IEEE)",
+        "Algorithm visualization tools",
+        "Performance profiling tools",
+        "Jupyter Notebooks for experimentation",
+        "Code review platforms"
       ],
-      "practiceIdeas": [
-        "Implement algorithms from research papers",
+      "docsAndWebsites": [
+        "ArXiv Computer Science papers",
+        "Google Scholar",
+        "ACM Digital Library",
+        "IEEE Xplore",
+        "Papers With Code",
+        "Algorithm Conferences (STOC, FOCS, SODA)",
+        "Reddit r/algorithms",
+        "Stack Overflow Algorithm discussions",
+        "Medium Algorithm Publications",
+        "Dev.to Algorithm Articles"
+      ],
+      "projectIdeas": [
+        "Implement algorithms from recent research papers",
         "Contribute to open-source DSA libraries",
-        "Create visualizations for complex algorithms",
-        "Write blog posts explaining algorithms"
+        "Create educational content (blogs, videos, tutorials)",
+        "Build algorithm visualizations for complex concepts",
+        "Participate in algorithm research competitions",
+        "Mentor others in the DSA learning community"
       ]
     }
   }

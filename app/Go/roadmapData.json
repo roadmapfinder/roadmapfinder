@@ -38,7 +38,7 @@
           "Go Basics Hindi - Tech With Tim Hindi"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Official Go Documentation",
         "A Tour of Go (Interactive Tutorial)",
         "Go by Example",
@@ -98,7 +98,7 @@
           "Go OOP Concepts Hindi - Coding Blocks"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Go Memory Model",
         "Concurrency Patterns in Go",
         "Interface Documentation",
@@ -158,7 +158,7 @@
           "Go Reflection Hindi - Tech Gun"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Go Generics Documentation",
         "Reflect Package Guide",
         "Context Package Documentation",
@@ -218,7 +218,7 @@
           "Backend Go Hindi - Indian Programming"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Net/HTTP Package Documentation",
         "Gin Framework Documentation",
         "GORM Documentation",
@@ -278,7 +278,7 @@
           "SQL Integration Hindi - Coding Blocks"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "GORM Official Documentation",
         "Database/SQL Package",
         "PostgreSQL Go Driver Docs",
@@ -338,7 +338,7 @@
           "Architecture Design Hindi - Tech Gun"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "gRPC Go Documentation",
         "Protocol Buffers Guide",
         "Microservices Patterns",
@@ -398,7 +398,7 @@
           "CI/CD Go Hindi - Coding Blocks"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Docker Go Best Practices",
         "Kubernetes Go Applications",
         "Cloud Provider Go SDKs",
@@ -458,7 +458,7 @@
           "Quality Assurance Hindi - Tech Gun"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Testing Package Documentation",
         "Go Testing Best Practices",
         "Benchmark Testing Guide",
@@ -518,7 +518,7 @@
           "Profiling Go Hindi - Coding Blocks"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Go Performance Tuning Guide",
         "pprof Documentation",
         "Memory Management Guide",
@@ -578,7 +578,7 @@
           "Portfolio Building Hindi - Coding Blocks"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Go Career Guide",
         "System Design Resources",
         "Open Source Contribution Guide",

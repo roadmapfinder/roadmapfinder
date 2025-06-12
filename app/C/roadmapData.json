@@ -42,7 +42,7 @@
           "C Language Basics Hindi - Geeky Shows"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "C Programming Language - Kernighan & Ritchie (K&R Book)",
         "Programiz C Programming Tutorial",
         "GeeksforGeeks C Programming",
@@ -109,7 +109,7 @@
           "C Advanced Concepts Hindi - Geeky Shows"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "C: The Complete Reference - Herbert Schildt",
         "Pointers in C - Yashwant Kanetkar",
         "Advanced C Programming Tutorials",
@@ -176,7 +176,7 @@
           "C Data Structures Hindi - Saurabh Shukla"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Introduction to Algorithms - CLRS",
         "Data Structures and Algorithms in C - Weiss",
         "Algorithm Design Manual - Skiena",
@@ -244,7 +244,7 @@
           "Network Programming Hindi - Gate Smashers"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Advanced Programming in UNIX Environment - Stevens",
         "Linux System Programming - Love",
         "TCP/IP Illustrated - Stevens",
@@ -311,7 +311,7 @@
           "Clean Code Practices Hindi - Technical Suneja"
         ]
       },
-      "documentation": [
+      "docsAndWebsites": [
         "Clean Code - Robert C. Martin",
         "The Pragmatic Programmer",
         "Code Complete - Steve McConnell",
