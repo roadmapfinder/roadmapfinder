@@ -1,0 +1,522 @@
+[
+  {
+    "id": 1,
+    "title": "Design Fundamentals",
+    "description": "Master the fundamental concepts of graphic design",
+    "icon": "Palette",
+    "content": {
+      "whatToLearn": [
+        "What is Graphic Design?",
+        "Visual Communication Principles",
+        "Color Theory & Psychology",
+        "Typography Fundamentals",
+        "Layout & Composition",
+        "Design Thinking Process"
+      ],
+      "bestCourses": {
+        "english": [
+          "Graphic Design Specialization (CalArts/Coursera)",
+          "Introduction to Graphic Design (University of Colorado/Coursera)",
+          "Graphic Design Bootcamp (Udemy)",
+          "The Complete Graphic Design Theory for Beginners Course (Udemy)"
+        ],
+        "hindi": [
+          "Complete Graphic Design Course in Hindi (Great Learning)",
+          "Graphic Design Tutorial in Hindi (CodeWithHarry)",
+          "Design Basics Hindi Course (Unacademy)",
+          "Typography & Color Theory Hindi (DesignShala)"
+        ]
+      },
+      "toolsToUse": [
+        "Adobe Color Wheel",
+        "Google Fonts",
+        "Coolors.co",
+        "FontPair",
+        "Unsplash",
+        "Pinterest"
+      ],
+      "docsAndWebsites": [
+        "Smashing Magazine Design Articles",
+        "Adobe Color Documentation",
+        "Google Fonts Knowledge",
+        "Typography.com Resources",
+        "Interaction Design Foundation",
+        "Creative Bloq Design Tips"
+      ],
+      "projectIdeas": [
+        "Recreate classic design layouts",
+        "Create comprehensive mood boards",
+        "Design business card series",
+        "Practice typography pairing exercises"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Design Tools Mastery",
+    "description": "Master essential graphic design software and tools",
+    "icon": "Wrench",
+    "content": {
+      "whatToLearn": [
+        "Interface Navigation & Shortcuts",
+        "Selection & Transformation Tools",
+        "Layer Management",
+        "Typography Tools & Settings",
+        "Color Management & Effects",
+        "Export Formats & Optimization"
+      ],
+      "bestCourses": {
+        "english": [
+          "Adobe Photoshop CC – Essentials Training Course (Udemy)",
+          "Adobe Illustrator CC – Essentials Training Course (Udemy)",
+          "Figma UI UX Design Essentials (Udemy)",
+          "Complete Canva Course for Graphic Design (Skillshare)"
+        ],
+        "hindi": [
+          "Adobe Photoshop Complete Course Hindi (WsCube Tech)",
+          "Adobe Illustrator Tutorial Hindi (Thapa Technical)",
+          "Figma Complete Tutorial Hindi (CodeWithHarry)",
+          "Canva Pro Course Hindi (Digital Marketing Institute)"
+        ]
+      },
+      "toolsToUse": [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Figma",
+        "Canva Pro",
+        "Affinity Designer",
+        "Adobe InDesign"
+      ],
+      "docsAndWebsites": [
+        "Adobe Creative Suite Documentation",
+        "Figma Help Center & Community",
+        "Canva Design School",
+        "Affinity Designer Tutorials",
+        "Creative Live Design Resources",
+        "Lynda.com Design Courses"
+      ],
+      "projectIdeas": [
+        "Logo recreation in multiple tools",
+        "Photo manipulation series",
+        "Vector illustration portfolio",
+        "Social media template library"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Brand Identity Design",
+    "description": "Learn to create cohesive brand identities and visual systems",
+    "icon": "Target",
+    "content": {
+      "whatToLearn": [
+        "Brand Strategy & Research",
+        "Logo Design Principles",
+        "Brand Guidelines Creation",
+        "Color Palette Development",
+        "Typography Systems",
+        "Brand Asset Management"
+      ],
+      "bestCourses": {
+        "english": [
+          "Logo Design Masterclass (Udemy)",
+          "Brand Identity Design (Domestika)",
+          "The Brand Identity Process (Skillshare)",
+          "Strategic Brand Design (LinkedIn Learning)"
+        ],
+        "hindi": [
+          "Logo Design Complete Course Hindi (DesignEpic)",
+          "Brand Identity Hindi Tutorial (CreativeShala)",
+          "Complete Branding Course Hindi (GraphicsMentor)",
+          "Logo Design Psychology Hindi (BrandingGuru)"
+        ]
+      },
+      "toolsToUse": [
+        "Adobe Illustrator",
+        "Adobe InDesign",
+        "Figma",
+        "Brand Kit Tools",
+        "Logo Maker Software",
+        "Mockup Generators"
+      ],
+      "docsAndWebsites": [
+        "Brand Identity Guidelines Examples",
+        "LogoLounge Database",
+        "Brand New (UnderConsideration)",
+        "Logo Design Love Blog",
+        "Identity Designed Showcase",
+        "Branding Strategy Insider"
+      ],
+      "projectIdeas": [
+        "Complete brand identity for fictional company",
+        "Logo design challenge series",
+        "Brand guideline document creation",
+        "Rebranding project for existing company"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Design Principles",
+    "description": "Master user interface and user experience design fundamentals",
+    "icon": "Smartphone",
+    "content": {
+      "whatToLearn": [
+        "User-Centered Design Process",
+        "Wireframing & Prototyping",
+        "Design Systems & Components",
+        "Responsive Design Principles",
+        "Accessibility Standards",
+        "Usability Testing Methods"
+      ],
+      "bestCourses": {
+        "english": [
+          "Google UX Design Professional Certificate (Coursera)",
+          "UI/UX Design Specialization (CalArts/Coursera)",
+          "Complete Web & Mobile Designer (Udemy)",
+          "Design Rules: Principles + Practices for Great UI Design (Udemy)"
+        ],
+        "hindi": [
+          "UI/UX Design Complete Course Hindi (WsCube Tech)",
+          "Mobile App Design Hindi Tutorial (TechGyan)",
+          "Web Design Course Hindi (CodeWithHarry)",
+          "UX Research Methods Hindi (DesignBoat)"
+        ]
+      },
+      "toolsToUse": [
+        "Figma",
+        "Adobe XD",
+        "Sketch",
+        "InVision",
+        "Framer",
+        "Principle"
+      ],
+      "docsAndWebsites": [
+        "Material Design Guidelines",
+        "Apple Human Interface Guidelines",
+        "Figma Design System Resources",
+        "Nielsen Norman Group Articles",
+        "UX Planet Medium Publication",
+        "Laws of UX Website"
+      ],
+      "projectIdeas": [
+        "Mobile app interface design",
+        "Responsive website design",
+        "Design system creation",
+        "User journey mapping exercise"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Digital Marketing Design",
+    "description": "Create compelling designs for digital marketing campaigns",
+    "icon": "Megaphone",
+    "content": {
+      "whatToLearn": [
+        "Social Media Design Standards",
+        "Email Template Design",
+        "Web Banner & Ad Design",
+        "Infographic Creation",
+        "Video Thumbnail Design",
+        "Marketing Funnel Visuals"
+      ],
+      "bestCourses": {
+        "english": [
+          "Social Media Design with Canva (Skillshare)",
+          "Digital Marketing Design Course (Udemy)",
+          "Email Design Best Practices (LinkedIn Learning)",
+          "Instagram Stories & Posts Design (Domestika)"
+        ],
+        "hindi": [
+          "Social Media Design Hindi Course (Digital Vidya)",
+          "Email Marketing Design Hindi (WsCube Tech)",
+          "Facebook Ads Design Hindi Tutorial (DigitalDeepak)",
+          "Instagram Marketing Design Hindi (SocialBeat)"
+        ]
+      },
+      "toolsToUse": [
+        "Canva Pro",
+        "Adobe Photoshop",
+        "Figma",
+        "Crello/VistaCreate",
+        "Adobe Spark",
+        "Unfold (Stories)"
+      ],
+      "docsAndWebsites": [
+        "Facebook Business Creative Hub",
+        "Instagram Creator Resources",
+        "LinkedIn Marketing Solutions",
+        "Google Ads Creative Guidelines",
+        "Mailchimp Design Resources",
+        "HubSpot Marketing Design Blog"
+      ],
+      "projectIdeas": [
+        "Social media campaign series",
+        "Email newsletter template set",
+        "Digital advertising campaign",
+        "Infographic data visualization"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Print Design & Production",
+    "description": "Learn print design principles and production requirements",
+    "icon": "Printer",
+    "content": {
+      "whatToLearn": [
+        "Print Design Fundamentals",
+        "Color Management (CMYK vs RGB)",
+        "Typography for Print",
+        "Paper Types & Finishing",
+        "Bleeding & Trim Marks",
+        "Print Production Process"
+      ],
+      "bestCourses": {
+        "english": [
+          "Print Design Fundamentals (LinkedIn Learning)",
+          "Adobe InDesign CC – Essentials Training (Udemy)",
+          "Print Production for Graphic Designers (Skillshare)",
+          "Preparing Artwork for Print (Creative Live)"
+        ],
+        "hindi": [
+          "Print Design Course Hindi (GraphicsGuru)",
+          "Adobe InDesign Hindi Tutorial (TechGyan)",
+          "Printing Process Hindi Guide (PrintingKnowledge)",
+          "Color Management Hindi Course (DesignShala)"
+        ]
+      },
+      "toolsToUse": [
+        "Adobe InDesign",
+        "Adobe Illustrator",
+        "Adobe Acrobat Pro",
+        "QuarkXPress",
+        "Scribus (Free)",
+        "PitStop (Preflight)"
+      ],
+      "docsAndWebsites": [
+        "Adobe InDesign User Guide",
+        "Print Industry Association Resources",
+        "Printing United Alliance",
+        "Color Management Resources",
+        "Paper Specifications Database",
+        "Print Design Best Practices"
+      ],
+      "projectIdeas": [
+        "Magazine layout design",
+        "Book cover and interior design",
+        "Brochure and flyer series",
+        "Packaging design project"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Portfolio Development",
+    "description": "Build and showcase a professional design portfolio",
+    "icon": "FolderOpen",
+    "content": {
+      "whatToLearn": [
+        "Portfolio Curation Strategy",
+        "Case Study Development",
+        "Project Presentation Skills",
+        "Personal Branding",
+        "Online Portfolio Platforms",
+        "Client Testimonial Collection"
+      ],
+      "bestCourses": {
+        "english": [
+          "Building a Graphic Design Portfolio (Skillshare)",
+          "Portfolio Design for Creatives (Domestika)",
+          "Personal Branding for Designers (LinkedIn Learning)",
+          "Presentation Skills for Designers (Creative Live)"
+        ],
+        "hindi": [
+          "Portfolio Building Hindi Course (DesignEpic)",
+          "Freelance Designer Portfolio Hindi (CreativeShala)",
+          "Personal Branding Hindi Tutorial (DigitalDeepak)",
+          "Behance Portfolio Hindi Guide (GraphicsMentor)"
+        ]
+      },
+      "toolsToUse": [
+        "Behance",
+        "Dribbble",
+        "Adobe Portfolio",
+        "Webflow",
+        "Squarespace",
+        "WordPress"
+      ],
+      "docsAndWebsites": [
+        "Behance Portfolio Tips",
+        "Dribbble Design Resources",
+        "Awwwards Portfolio Showcase",
+        "Adobe Portfolio Documentation",
+        "Creative Review Portfolio Advice",
+        "Design Portfolio Examples"
+      ],
+      "projectIdeas": [
+        "Complete case study documentation",
+        "Personal brand identity creation",
+        "Portfolio website development",
+        "Social media portfolio presence"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Advanced Design Techniques",
+    "description": "Master advanced design skills and emerging technologies",
+    "icon": "Zap",
+    "content": {
+      "whatToLearn": [
+        "3D Design & Modeling",
+        "Motion Graphics & Animation",
+        "AR/VR Design Principles",
+        "Advanced Photo Manipulation",
+        "Packaging Design 3D",
+        "Interactive Design Elements"
+      ],
+      "bestCourses": {
+        "english": [
+          "Motion Graphics with After Effects (School of Motion)",
+          "3D Design for Beginners (Domestika)",
+          "Advanced Photoshop Techniques (KelbyOne)",
+          "Blender for Graphic Designers (Udemy)"
+        ],
+        "hindi": [
+          "After Effects Hindi Course (TechGyan)",
+          "3D Design Hindi Tutorial (CreativeShala)",
+          "Advanced Photoshop Hindi (WsCube Tech)",
+          "Motion Graphics Hindi Course (AnimationMentor)"
+        ]
+      },
+      "toolsToUse": [
+        "Adobe After Effects",
+        "Cinema 4D",
+        "Blender",
+        "Adobe Dimension",
+        "Principle",
+        "Rive"
+      ],
+      "docsAndWebsites": [
+        "School of Motion Resources",
+        "Adobe After Effects Documentation",
+        "Blender Documentation",
+        "Motion Design Resources",
+        "3D Design Inspiration Galleries",
+        "AR/VR Design Guidelines"
+      ],
+      "projectIdeas": [
+        "Animated logo sequence",
+        "3D product visualization",
+        "Motion graphics explainer video",
+        "Interactive web design elements"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Business & Client Management",
+    "description": "Learn business skills for freelancing and client relationships",
+    "icon": "Briefcase",
+    "content": {
+      "whatToLearn": [
+        "Client Communication Skills",
+        "Project Management",
+        "Pricing & Contracts",
+        "Time Management",
+        "Feedback & Revision Process",
+        "Business Development"
+      ],
+      "bestCourses": {
+        "english": [
+          "Freelancing Essentials (LinkedIn Learning)",
+          "The Business of Design (Skillshare)",
+          "Client Relations for Creatives (Creative Live)",
+          "Pricing Design Work (Domestika)"
+        ],
+        "hindi": [
+          "Freelancing Complete Course Hindi (WsCube Tech)",
+          "Client Management Hindi Tutorial (DigitalDeepak)",
+          "Design Business Hindi Course (BusinessGuru)",
+          "Pricing Strategy Hindi Guide (FreelanceIndia)"
+        ]
+      },
+      "toolsToUse": [
+        "Trello/Asana",
+        "Slack/Teams",
+        "InvoiceNinja",
+        "FreshBooks",
+        "Calendly",
+        "DocuSign"
+      ],
+      "docsAndWebsites": [
+        "Freelancers Union Resources",
+        "Creative Live Business Blog",
+        "Design Business Association",
+        "Pricing Design Work Guidelines",
+        "Client Contract Templates",
+        "Project Management Best Practices"
+      ],
+      "projectIdeas": [
+        "Complete client onboarding system",
+        "Project management workflow setup",
+        "Pricing calculator development",
+        "Client feedback collection system"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Industry Trends & Continuous Learning",
+    "description": "Stay updated with design trends and continuous skill development",
+    "icon": "TrendingUp",
+    "content": {
+      "whatToLearn": [
+        "Current Design Trends",
+        "Emerging Technologies",
+        "Industry Best Practices",
+        "Design Community Engagement",
+        "Skill Gap Analysis",
+        "Professional Development Planning"
+      ],
+      "bestCourses": {
+        "english": [
+          "Design Trends Analysis (Skillshare)",
+          "Future of Graphic Design (LinkedIn Learning)",
+          "Design Leadership (IDEO U)",
+          "Creative Problem Solving (Stanford d.school)"
+        ],
+        "hindi": [
+          "Design Trends Hindi Course (DesignEpic)",
+          "Future Design Skills Hindi (TechGyan)",
+          "Creative Thinking Hindi Tutorial (CreativeShala)",
+          "Design Innovation Hindi Course (InnovationHub)"
+        ]
+      },
+      "toolsToUse": [
+        "Feedly (RSS Reader)",
+        "Pocket (Save Articles)",
+        "Notion (Organization)",
+        "Twitter (Design Community)",
+        "Medium (Design Articles)",
+        "YouTube (Design Channels)"
+      ],
+      "docsAndWebsites": [
+        "Design Museum Collection",
+        "Awwwards Design Trends",
+        "Creative Bloq Trend Reports",
+        "99designs Design Blog",
+        "Designmodo Resources",
+        "Adobe Create Magazine"
+      ],
+      "projectIdeas": [
+        "Trend analysis presentation",
+        "Design style evolution study",
+        "Personal learning roadmap creation",
+        "Industry networking strategy"
+      ]
+    }
+  }
+]

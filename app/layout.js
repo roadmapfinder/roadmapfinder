@@ -24,7 +24,7 @@ export const metadata = {
   description:
     "Get industry-ready with RoadmapFinder: Step-by-step technology skill roadmaps, best YouTube courses, developer tools, official docs, and trending tech blogs. Learn faster, smarter, and job-oriented.",
   keywords:
-    "technology skill roadmap, learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses, developer tools, official documentation, tech tools blog, latest tech updates, RoadmapFinder learning path",
+    "technology skill roadmap, roadmapfinder, learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses, developer tools, official documentation, tech tools blog, latest tech updates, RoadmapFinder learning path",
   applicationName: "RoadmapFinder",
   authors: [{ name: "RoadmapFinder Team", url: "https://roadmapfinder.tech" }],
   creator: "RoadmapFinder Team",
