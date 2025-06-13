@@ -1,0 +1,302 @@
+"use client";
+import Image from "next/image";
+import { ChevronRight, BookOpen, ArrowRight, Sun, Moon } from "lucide-react";
+import { useState, useEffect } from "react";
+import roadmap from "../Images/roadmap.png";
+
+const HeroSection = ({ user, handleProtectedAction, username }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+
+    // Trigger entrance animation
+    setIsVisible(true);
+  }, []);
+
+  useEffect(() => {
+    // Apply theme to document
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  return (
+    <div className={`transition-all duration-300 ${isDarkMode ? 'dark' : ''}`}>
+
+
+      <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+        {/* Mobile Hero Section */}
+        <section className={`md:hidden mb-6 transform transition-all duration-700 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <div className="relative h-50 w-full rounded-xl overflow-hidden mb-4 group">
+            <Image
+              src={roadmap}
+              alt="Roadmap illustration"
+              layout="fill"
+              objectFit="cover"
+              className="brightness-90 group-hover:scale-105 transition-transform duration-500"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-4">
+              <h2 className="text-2xl font-bold text-white leading-tight animate-slideInUp">
+                Find your perfect path to success
+              </h2>
+            </div>
+            {/* Floating particles effect */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full animate-float delay-100"></div>
+              <div className="absolute top-12 right-8 w-1 h-1 bg-purple-400 rounded-full animate-float delay-300"></div>
+              <div className="absolute top-8 right-12 w-1.5 h-1.5 bg-pink-400 rounded-full animate-float delay-500"></div>
+            </div>
+          </div>
+
+          <div className="animate-slideInUp delay-200">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-1 transition-colors duration-300">
+              {user ? `Welcome, ${username}` : "Start your journey today"}
+            </p>
+            <p className="text-medium text-[#6B7280] dark:text-gray-300 mb-4 transition-colors duration-300">
+              Expert roadmaps, smart resources and AI-powered guidance to build
+              your success journey
+            </p>
+          </div>
+        </section>
+
+        {/* Mobile Action Buttons */}
+        <section className={`flex gap-3 mb-8 md:hidden transform transition-all duration-700 delay-300 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <button
+            onClick={() => handleProtectedAction("/Roadmap")}
+            className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-lg"
+          >
+            <ChevronRight size={18} className="animate-bounce" />
+            Roadmap
+          </button>
+          <button
+            onClick={() => handleProtectedAction("/Courses")}
+            className="flex-1 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-lg"
+          >
+            <BookOpen size={18} className="animate-pulse" />
+            Courses
+          </button>
+        </section>
+
+        {/* Desktop Hero Section */}
+        <section className={`hidden md:flex bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-2xl overflow-hidden mb-12 transform transition-all duration-700 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+        } hover:shadow-2xl dark:hover:shadow-3xl`}>
+          <div className="md:w-1/2 p-10 flex flex-col justify-center relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full blur-xl animate-float"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-pink-100 to-yellow-100 dark:from-pink-900/20 dark:to-yellow-900/20 rounded-full blur-xl animate-float delay-1000"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-4 animate-slideInLeft transition-colors duration-300">
+                Find your perfect path and turn your 
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient"> dream into success</span>.
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 animate-slideInLeft delay-200 transition-colors duration-300">
+                Expert roadmaps, smart resources, and AI-powered guidance -
+                build your own success journey
+              </p>
+              <div className="flex gap-4 animate-slideInLeft delay-400">
+                <button
+                  onClick={() => handleProtectedAction("/Roadmap")}
+                  className="flex-none bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-6 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-lg"
+                >
+                  Explore Roadmaps
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+                <button
+                  onClick={() => handleProtectedAction("/Courses")}
+                  className="flex-none bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 text-center py-3 px-6 rounded-xl text-lg font-bold border border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  Browse Courses
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:w-1/2 relative flex items-center justify-center p-6 group">
+            {/* Animated background circles */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-80 h-80 bg-gradient-to-r from-blue-200/30 to-purple-200/30 dark:from-blue-800/20 dark:to-purple-800/20 rounded-full animate-spin-slow"></div>
+              <div className="absolute w-60 h-60 bg-gradient-to-r from-pink-200/30 to-yellow-200/30 dark:from-pink-800/20 dark:to-yellow-800/20 rounded-full animate-spin-reverse"></div>
+            </div>
+
+            <div className="relative z-10 animate-slideInRight">
+              <Image
+                src={roadmap}
+                alt="Roadmap illustration"
+                width={500}
+                height={400}
+                className="object-contain rounded-xl group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Floating elements */}
+            <div className="absolute top-8 right-8 w-4 h-4 bg-blue-500 rounded-full animate-float opacity-60"></div>
+            <div className="absolute bottom-12 left-8 w-3 h-3 bg-purple-500 rounded-full animate-float delay-500 opacity-60"></div>
+            <div className="absolute top-20 left-12 w-2 h-2 bg-pink-500 rounded-full animate-float delay-1000 opacity-60"></div>
+          </div>
+        </section>
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes spin-reverse {
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
+        }
+
+        @keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        .animate-fadeInDown {
+          animation: fadeInDown 0.6s ease-out;
+        }
+
+        .animate-slideInUp {
+          animation: slideInUp 0.6s ease-out;
+        }
+
+        .animate-slideInLeft {
+          animation: slideInLeft 0.6s ease-out;
+        }
+
+        .animate-slideInRight {
+          animation: slideInRight 0.6s ease-out;
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+
+        .animate-spin-reverse {
+          animation: spin-reverse 15s linear infinite;
+        }
+
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+
+        .delay-100 {
+          animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+          animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+
+        .delay-1000 {
+          animation-delay: 1s;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default HeroSection;

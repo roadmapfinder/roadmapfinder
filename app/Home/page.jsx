@@ -16,15 +16,28 @@ import {
   LogOut,
   ChevronLeft,
   CheckCircle,
-   Play, Map, Wrench, FileText, Users, Newspaper, Star, Sparkles, Zap, Globe
+  Play,
+  Map,
+  Wrench,
+  FileText,
+  Users,
+  Newspaper,
+  Star,
+  Sparkles,
+  Zap,
+  Globe
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "../lib/auth";
 import { auth } from "../lib/firebase";
-import roadmap from "../Images/roadmap.png";
 import Link from "next/link";
 import Logout from "../Logout/logout";
+
+// Import the new components
+import HeroSection from "./HeroSection";
+import Features from "./Features";
+import ChooseUs from "./ChooseUs";
 
 export default function HomePage() {
   const [user, setUser] = useState(null);
@@ -142,8 +155,6 @@ export default function HomePage() {
       protected: true,
     },
   ];
-
- 
 
   if (loading) {
     return (
@@ -438,139 +449,20 @@ export default function HomePage() {
             </div>
           </header>
 
-          {/* Mobile Hero Section */}
-          <section className="md:hidden mb-6">
-            <div className="relative h-50 w-full rounded-xl overflow-hidden mb-4">
-              <Image
-                src={roadmap}
-                alt="Roadmap illustration"
-                layout="fill"
-                objectFit="cover"
-                className="brightness-90"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                <h2 className="text-2xl font-bold text-white leading-tight">
-                  Find your perfect path to success
-                </h2>
-              </div>
-            </div>
-            <p className="text-gray-500 text-sm mb-1">
-              {user ? `Welcome, ${username}` : "Start your journey today"}
-            </p>
-            <p className="text-medium text-[#6B7280] mb-4">
-              Expert roadmaps, smart resources and AI-powered guidance to build
-              your success journey
-            </p>
-          </section>
-
-          {/* Mobile Action Buttons */}
-          <section className="flex gap-3 mb-8 md:hidden">
-            <button
-              onClick={() => handleProtectedAction("/Roadmap")}
-              className="flex-1 bg-blue-600 text-white text-center py-3 px-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-            >
-              <ChevronRight size={18} />
-              Roadmap
-            </button>
-            <button
-              onClick={() => handleProtectedAction("/Courses")}
-              className="flex-1 bg-white text-blue-600 text-center py-3 px-3 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-colors flex items-center justify-center gap-2"
-            >
-              <BookOpen size={18} />
-              Courses
-            </button>
-          </section>
-
-          {/* Desktop Hero Section */}
-          <section className="hidden md:flex bg-white rounded-2xl shadow-md overflow-hidden mb-12">
-            <div className="md:w-1/2 p-10 flex flex-col justify-center">
-              <h2 className="text-4xl font-bold text-gray-900 leading-tight mb-4">
-                Find your perfect path and turn your dream into success.
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Expert roadmaps, smart resources, and AI-powered guidance -
-                build your own success journey
-              </p>
-              <div className="flex gap-4">
-                <button
-                  onClick={() => handleProtectedAction("/Roadmap")}
-                  className="flex-none bg-blue-600 text-white text-center py-3 px-6 rounded-xl text-lg font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  Explore Roadmaps
-                  <ArrowRight size={18} />
-                </button>
-                <button
-                  onClick={() => handleProtectedAction("/Courses")}
-                  className="flex-none bg-white text-blue-600 text-center py-3 px-6 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  Browse Courses
-                </button>
-              </div>
-            </div>
-            <div className="md:w-1/2 relative flex items-center justify-center p-6">
-              <Image
-                src={roadmap}
-                alt="Roadmap illustration"
-                width={500}
-                height={400}
-                className="object-contain rounded-xl"
-              />
-            </div>
-          </section>
-
-            {/* How it works Section */}
-            <section className="mt-12 mb-12">
-              <h3 className="text-gray-900 text-2xl font-bold text-center mb-8">
-                How RoadmapFinder Works
-              </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-blue-600 font-bold text-xl">1</span>
-                  </div>
-                  <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
-                    Choose a Roadmap
-                  </h4>
-                  <p className="text-gray-600 text-sm md:text-base">
-                    Select from our curated collection of career paths and
-                    development roadmaps designed by industry experts
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center relative">
-                  <div className="hidden md:block absolute top-16 -left-4 w-8 border-t-2 border-dashed border-blue-200"></div>
-                  <div className="hidden md:block absolute top-16 -right-4 w-8 border-t-2 border-dashed border-blue-200"></div>
-
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-blue-600 font-bold text-xl">2</span>
-                  </div>
-                  <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
-                    Follow the Best Course
-                  </h4>
-                  <p className="text-gray-600 text-sm md:text-base">
-                    Follow best curated course step by step and keep practice to
-                    master.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-blue-600 font-bold text-xl">3</span>
-                  </div>
-                  <h4 className="text-gray-900 font-bold text-lg md:text-xl mb-3">
-                    Get Tools & Docs
-                  </h4>
-                  <p className="text-gray-600 text-sm md:text-base">
-                    Get best Tech tools or Docs that enhanced your Skills.
-                  </p>
-                </div>
-              </div>
-            </section>
-          
+          {/* Hero Section Component */}
+          <HeroSection 
+            user={user}
+            handleProtectedAction={handleProtectedAction}
+            username={username}
+          />
         </div>
+
+        {/* Features Section Component */}
+        <Features handleProtectedAction={handleProtectedAction} />
+
+        {/* Choose Us Section Component */}
+        <ChooseUs />
       </main>
     </div>
-  );
+    )
 }
