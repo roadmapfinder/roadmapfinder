@@ -25,7 +25,8 @@ import {
   Star,
   Sparkles,
   Zap,
-  Globe
+  Globe, 
+
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -124,6 +125,13 @@ export default function HomePage() {
       href: "/Courses",
       protected: true,
     },
+    {
+      name: "Career Guidance",
+      icon: <Brain size={24} className="mr-3" />,
+      href: "/CareerGuidance",
+      protected: true,
+    },
+    
     {
       name: "Docs",
       icon: <FileText size={24} className="mr-3" />,

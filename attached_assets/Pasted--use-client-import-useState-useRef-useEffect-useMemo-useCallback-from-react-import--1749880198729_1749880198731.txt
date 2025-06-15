@@ -1,0 +1,764 @@
+"use client";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Star,
+  Search,
+  ExternalLink,
+  Bookmark,
+  BookmarkCheck,
+  Globe,
+  Play,
+  Filter,
+  TrendingUp,
+  Award,
+  Users,
+  Clock,
+  Sparkles,
+  X,
+  Menu,
+  Home,
+  Grid,
+  Heart,
+  Share2,
+  Eye,
+  Zap,
+  ArrowRight,
+  Flame,
+  Crown,
+  Lightning
+} from "lucide-react";
+
+// Import your course data
+import { courses } from "./coursesData.json";
+
+// Import all your images
+import sigma from "../CoursesImage/sigma.png";
+import babbar from "../CoursesImage/babbar.png";
+import backend from "../CoursesImage/backend.jpg";
+import apna from "../CoursesImage/apna.jpg";
+import native from "../CoursesImage/native.jpg";
+import kotlin from "../CoursesImage/kotlin.jpg";
+import native2 from "../CoursesImage/native2.jpg";
+import flutter from "../CoursesImage/flutter.jpg";
+import figma from "../CoursesImage/figma.jpg";
+import ui from "../CoursesImage/ui.jpg";
+import design from "../CoursesImage/design.jpg";
+import uiux from "../CoursesImage/uiux.jpg";
+import graphic from "../CoursesImage/graphic.jpg";
+import graphics from "../CoursesImage/graphics.jpg";
+import logo from "../CoursesImage/logo.jpg";
+import canva from "../CoursesImage/canva.jpg";
+import js from "../CoursesImage/js.jpg";
+import python from "../CoursesImage/python.jpg";
+import java from "../CoursesImage/java.jpg";
+import cpp from "../CoursesImage/cpp.jpg";
+import c from "../CoursesImage/c.jpg";
+import php from "../CoursesImage/php.jpg";
+import blockchain from "../CoursesImage/blockchain.jpg";
+import web3 from "../CoursesImage/web3.jpg";
+import block from "../CoursesImage/block.jpg";
+import dsajava from "../CoursesImage/dsajava.jpg";
+import cppdsa from "../CoursesImage/cppdsa.jpg";
+import dsapy from "../CoursesImage/dsapy.jpg";
+import dsajs from "../CoursesImage/dsajs.jpg";
+import dbms from "../CoursesImage/dbms.jpg";
+import mongo from "../CoursesImage/mongo.jpg";
+import sql from "../CoursesImage/sql.jpg";
+import dataa from "../CoursesImage/dataa.jpg";
+import dataaw from "../CoursesImage/dataaw.jpg";
+import datas from "../CoursesImage/datas.jpg";
+import sys from "../CoursesImage/sys.jpg";
+import syse from "../CoursesImage/syse.jpg";
+import syss from "../CoursesImage/syss.jpg";
+import ai from "../CoursesImage/ai.jpg";
+import ml from "../CoursesImage/ml.jpg";
+import deep from "../CoursesImage/deep.jpg";
+import git from "../CoursesImage/git.jpg";
+import githube from "../CoursesImage/Githube.jpg";
+import githubh from "../CoursesImage/githubh.jpg";
+import os from "../CoursesImage/os.jpg";
+import osa from "../CoursesImage/osa.jpg";
+import osf from "../CoursesImage/osf.jpg";
+import osb from "../CoursesImage/osb.jpg";
+import networking from "../CoursesImage/networking.jpg";
+import networkingk from "../CoursesImage/networkingk.jpg";
+import networkingf from "../CoursesImage/networkingf.jpg";
+import cybere from "../CoursesImage/cybere.jpg";
+import cyberh from "../CoursesImage/cyberh.jpg";
+import capcut from "../CoursesImage/capcut.jpg";
+import premire from "../CoursesImage/premire.jpg";
+import davanci from "../CoursesImage/davanci.jpg";
+import reactjs from "../CoursesImage/reactjs.jpg";
+import next from "../CoursesImage/next.jpg";
+import express from "../CoursesImage/express.jpg";
+import springboot from "../CoursesImage/springboot.jpg";
+import laravel from "../CoursesImage/laravel.jpg";
+import django from "../CoursesImage/django.jpg";
+
+// Image mapping object
+const imageMap = {
+  sigma, babbar, backend, apna, native, kotlin, native2, flutter,
+  figma, ui, design, uiux, graphic, graphics, logo, canva,
+  js, python, java, cpp, c, php, blockchain, web3, block,
+  dsajava, cppdsa, dsapy, dsajs, dbms, mongo, sql,
+  dataa, dataaw, datas, sys, syse, syss, ai, ml, deep,
+  git, githube, githubh, os, osa, osf, osb,
+  networking, networkingk, networkingf, cybere, cyberh,
+  capcut, premire, davanci, reactjs, next, express,
+  springboot, laravel, django
+};
+
+export default function CoursePage() {
+  const [activeTab, setActiveTab] = useState("All");
+  const [windowWidth, setWindowWidth] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [bookmarks, setBookmarks] = useState([]);
+  const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [showFilters, setShowFilters] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState("All");
+  const [selectedLanguage, setSelectedLanguage] = useState("All");
+  const scrollContainerRefs = useRef({});
+
+  // Load bookmarks from memory
+  useEffect(() => {
+    setBookmarks([]);
+  }, []);
+
+  // Handle window resize for responsiveness
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
+  }, []);
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    setSearchQuery("");
+    setShowBookmarksOnly(tab === "Bookmarks");
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setActiveTab("All");
+    setShowBookmarksOnly(false);
+  };
+
+  const scrollLeft = useCallback((category) => {
+    if (scrollContainerRefs.current[category]) {
+      const container = scrollContainerRefs.current[category];
+      const scrollAmount = windowWidth >= 768 ? -400 : -280;
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }, [windowWidth]);
+
+  const scrollRight = useCallback((category) => {
+    if (scrollContainerRefs.current[category]) {
+      const container = scrollContainerRefs.current[category];
+      const scrollAmount = windowWidth >= 768 ? 400 : 280;
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }, [windowWidth]);
+
+  const toggleBookmark = useCallback((courseId) => {
+    setBookmarks((prevBookmarks) => {
+      let newBookmarks;
+      if (prevBookmarks.includes(courseId)) {
+        newBookmarks = prevBookmarks.filter((id) => id !== courseId);
+      } else {
+        newBookmarks = [...prevBookmarks, courseId];
+        setShowNotification(true);
+        setTimeout(() => setShowNotification(false), 3000);
+      }
+      return newBookmarks;
+    });
+  }, []);
+
+  const redirectToYoutube = useCallback((videoLink) => {
+    if (videoLink.includes("youtube.com") || videoLink.includes("youtu.be")) {
+      window.open(videoLink, "_blank");
+    } else {
+      window.open(`https://www.youtube.com/watch?v=${videoLink}`, "_blank");
+    }
+  }, []);
+
+  const filteredCourses = useMemo(() => {
+    return courses.filter((course) => {
+      const matchesSearch =
+        searchQuery === "" ||
+        course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        course.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        course.language.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const matchesTab =
+        activeTab === "All" ||
+        (activeTab === "Popular" &&
+          ["BESTSELLER", "POPULAR", "HOT", "TRENDING"].includes(course.badge)) ||
+        (activeTab === "New" && course.badge === "NEW");
+
+      const matchesBookmarks =
+        !showBookmarksOnly || bookmarks.includes(course.id);
+
+      const matchesLevel = 
+        selectedLevel === "All" || course.level === selectedLevel;
+      
+      const matchesLanguage = 
+        selectedLanguage === "All" || course.language === selectedLanguage;
+
+      return matchesSearch && matchesTab && matchesBookmarks && matchesLevel && matchesLanguage;
+    });
+  }, [searchQuery, activeTab, showBookmarksOnly, bookmarks, selectedLevel, selectedLanguage]);
+
+  const filteredCategories = useMemo(() => {
+    return [...new Set(filteredCourses.map((course) => course.category))];
+  }, [filteredCourses]);
+
+  const getBadgeIcon = (badge) => {
+    switch (badge) {
+      case "HOT": return <Flame size={12} />;
+      case "NEW": return <Sparkles size={12} />;
+      case "BESTSELLER": return <Crown size={12} />;
+      case "TRENDING": return <TrendingUp size={12} />;
+      case "POPULAR": return <Lightning size={12} />;
+      default: return <Award size={12} />;
+    }
+  };
+
+  const getBadgeColor = (badge) => {
+    switch (badge) {
+      case "HOT": return "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg shadow-red-500/25";
+      case "NEW": return "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/25";
+      case "BESTSELLER": return "bg-gradient-to-r from-yellow-400 to-orange-400 text-black shadow-lg shadow-yellow-500/25";
+      case "TRENDING": return "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25";
+      case "POPULAR": return "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/25";
+      default: return "bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-lg shadow-gray-500/25";
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 font-['Inter'] relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-pink-400/20 to-yellow-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
+      {/* Enhanced Notification */}
+      {showNotification && (
+        <div className="fixed top-4 right-4 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl z-50 border border-white/20 animate-in slide-in-from-right-5 duration-300">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl">
+              <BookmarkCheck className="text-white w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-gray-800 font-semibold">Course Bookmarked!</p>
+              <p className="text-gray-600 text-sm">Added to your collection</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modern Header */}
+      <div className="relative z-10">
+        {/* Navigation */}
+        <div className="px-4 pt-6 pb-4">
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
+            <button className="flex items-center text-gray-600 hover:text-blue-600 transition-colors group">
+              <div className="p-2 rounded-xl bg-white/80 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <Home size={20} />
+              </div>
+              <span className="ml-3 font-medium">Home</span>
+            </button>
+            
+            <div className="flex items-center space-x-3">
+              <button 
+                onClick={() => setShowFilters(!showFilters)}
+                className="p-3 rounded-xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                <Filter size={20} className="text-gray-600" />
+              </button>
+              <button className="p-3 rounded-xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Menu size={20} className="text-gray-600" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero Section */}
+        <div className="relative px-4 py-12 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-full border border-blue-200/20 mb-6">
+              <Sparkles size={16} className="text-blue-600 mr-2" />
+              <span className="text-sm font-medium text-gray-700">Discover Premium Courses</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-4 leading-tight">
+              Master New Skills with
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                World-Class Courses
+              </span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Unlock your potential with our curated collection of premium courses from industry experts
+            </p>
+
+            {/* Enhanced Search Bar */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <div className={`relative transition-all duration-300 ${isSearchFocused ? 'scale-105' : ''}`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-lg opacity-20"></div>
+                <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 p-2">
+                  <div className="flex items-center">
+                    <div className="p-3 text-gray-400">
+                      <Search size={20} />
+                    </div>
+                    <input
+                      type="text"
+                      className="flex-1 bg-transparent border-none outline-none text-gray-700 placeholder-gray-400 text-lg"
+                      placeholder="What would you like to learn today?"
+                      value={searchQuery}
+                      onChange={handleSearchChange}
+                      onFocus={() => setIsSearchFocused(true)}
+                      onBlur={() => setIsSearchFocused(false)}
+                    />
+                    <button className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                      <ArrowRight size={20} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="flex justify-center items-center space-x-8 text-sm text-gray-600">
+              <div className="flex items-center">
+                <Users size={16} className="mr-2 text-blue-500" />
+                <span>1M+ Students</span>
+              </div>
+              <div className="flex items-center">
+                <Award size={16} className="mr-2 text-purple-500" />
+                <span>500+ Courses</span>
+              </div>
+              <div className="flex items-center">
+                <Star size={16} className="mr-2 text-yellow-500 fill-yellow-500" />
+                <span>4.9 Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Enhanced Filter Panel */}
+      {showFilters && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 animate-in fade-in duration-300">
+          <div className="absolute right-0 top-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl border-l border-white/20 animate-in slide-in-from-right duration-300">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-gray-800">Filters</h3>
+                <button 
+                  onClick={() => setShowFilters(false)}
+                  className="p-2 hover:bg-gray-100 rounded-xl transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Level</label>
+                  <div className="space-y-2">
+                    {["All", "Beginner", "Intermediate", "Advanced"].map((level) => (
+                      <button
+                        key={level}
+                        onClick={() => setSelectedLevel(level)}
+                        className={`w-full text-left p-3 rounded-xl transition-all duration-200 ${
+                          selectedLevel === level
+                            ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg"
+                            : "bg-gray-50 hover:bg-gray-100 text-gray-700"
+                        }`}
+                      >
+                        {level}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Language</label>
+                  <div className="space-y-2">
+                    {["All", "English", "Hindi", "Spanish"].map((language) => (
+                      <button
+                        key={language}
+                        onClick={() => setSelectedLanguage(language)}
+                        className={`w-full text-left p-3 rounded-xl transition-all duration-200 ${
+                          selectedLanguage === language
+                            ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg"
+                            : "bg-gray-50 hover:bg-gray-100 text-gray-700"
+                        }`}
+                      >
+                        {language}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Enhanced Tabs */}
+      <div className="px-4 mb-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center">
+            <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-2 shadow-xl border border-white/20">
+              <div className="flex space-x-2">
+                {["All", "Popular", "New", "Bookmarks"].map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => handleTabClick(tab)}
+                    className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 whitespace-nowrap ${
+                      activeTab === tab
+                        ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105"
+                        : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
+                    }`}
+                  >
+                    {tab === "Bookmarks" ? (
+                      <div className="flex items-center">
+                        <Heart size={16} className="mr-2" />
+                        <span>Saved</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        {tab === "Popular" && <TrendingUp size={16} className="mr-2" />}
+                        {tab === "New" && <Sparkles size={16} className="mr-2" />}
+                        {tab === "All" && <Grid size={16} className="mr-2" />}
+                        <span>{tab}</span>
+                      </div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* No results message */}
+      {filteredCategories.length === 0 && (
+        <div className="text-center py-20">
+          <div className="max-w-md mx-auto">
+            <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Search size={32} className="text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              {showBookmarksOnly ? "No saved courses yet" : "No courses found"}
+            </h3>
+            <p className="text-gray-600 mb-8">
+              {showBookmarksOnly
+                ? "Start bookmarking courses to see them here!"
+                : `We couldn't find any courses matching "${searchQuery}"`}
+            </p>
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setShowBookmarksOnly(false);
+                setActiveTab("All");
+                setSelectedLevel("All");
+                setSelectedLanguage("All");
+              }}
+              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl font-medium hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              {showBookmarksOnly ? "Explore All Courses" : "Clear Filters"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Enhanced Course Categories */}
+      {filteredCategories.map((category) => {
+        const categoryCourses = filteredCourses.filter(
+          (course) => course.category === category,
+        );
+
+        if (categoryCourses.length === 0) return null;
+
+        return (
+          <div key={category} className="mb-16 px-4 md:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              {/* Enhanced Category Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center">
+                  <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mr-4"></div>
+                  <div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-1">
+                      {category}
+                    </h2>
+                    <p className="text-gray-600">{categoryCourses.length} courses available</p>
+                  </div>
+                </div>
+                <button className="flex items-center text-blue-600 hover:text-blue-800 font-medium group">
+                  <span className="mr-2">View All</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+
+              {/* Enhanced Horizontal Scrollable Cards */}
+              <div className="relative">
+                {categoryCourses.length > 3 && (
+                  <button
+                    onClick={() => scrollLeft(category)}
+                    className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/90 backdrop-blur-xl rounded-full shadow-xl border border-white/20 text-gray-700 hover:bg-white hover:scale-110 transition-all duration-300"
+                    aria-label="Scroll left"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                )}
+
+                <div
+                  ref={(el) => (scrollContainerRefs.current[category] = el)}
+                  className="flex overflow-x-auto scrollbar-hide py-4 space-x-6 snap-x"
+                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                  {categoryCourses.map((course, index) => (
+                    <div
+                      key={`${course.id}-${index}`}
+                      className="flex-shrink-0 w-80 sm:w-96 group snap-start"
+                      onMouseEnter={() => setHoveredCard(course.id)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                    >
+                      <div className="bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2">
+                        <div
+                          className="relative w-full h-48 cursor-pointer overflow-hidden"
+                          onClick={() => redirectToYoutube(course.videoId)}
+                        >
+                          <img
+                            src={imageMap[course.image] || "/placeholder.jpg"}
+                            alt={course.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
+                          />
+
+                          {/* Enhanced Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="p-4 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                                <Play size={32} className="text-white" />
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Enhanced Badge */}
+                          {course.badge && (
+                            <div className="absolute top-4 right-4">
+                              <div className={`flex items-center px-3 py-1.5 rounded-full text-xs font-bold ${getBadgeColor(course.badge)} transform transition-transform duration-300 hover:scale-110`}>
+                                {getBadgeIcon(course.badge)}
+                                <span className="ml-1">{course.badge}</span>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Enhanced Language Badge */}
+                          <div className="absolute bottom-4 left-4">
+                            <div className="flex items-center px-3 py-1.5 bg-black/50 backdrop-blur-sm text-white text-xs rounded-full border border-white/20">
+                              <Globe size={12} className="mr-1" />
+                              {course.language}
+                            </div>
+                          </div>
+
+                          {/* Enhanced Bookmark Button */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleBookmark(course.id);
+                            }}
+                            className="absolute top-4 left-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 group"
+                          >
+                            {bookmarks.includes(course.id) ? (
+                              <Heart size={16} className="text-red-500 fill-red-500" />
+                            ) : (
+                              <Heart size={16} className="text-gray-600 group-hover:text-red-500 transition-colors" />
+                            )}
+                          </button>
+                        </div>
+
+                        <div className="p-6">
+                          <h3 className="font-bold text-lg text-gray-800 mb-3 line-clamp-2 leading-tight">
+                            {course.title}
+                          </h3>
+
+                          <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center space-x-1">
+                              <Star size={16} className="text-yellow-400 fill-yellow-400" />
+                              <span className="text-sm font-semibold text-gray-800">{course.rating}</span>
+                            </div>
+                          </div>
+
+                          {/* Course Stats */}
+                          <div className="flex items-center justify-between mb-6 text-sm text-gray-600">
+                            <div className="flex items-center">
+                              <Clock size={14} className="mr-1 text-blue-500" />
+                              <span>Self-paced</span>
+                            </div>
+                            <div className="flex items-center">
+                              <Eye size={14} className="mr-1 text-purple-500" />
+                              <span>Free</span>
+                            </div>
+                          </div>
+
+                          {/* Action Buttons */}
+                          <div className="flex space-x-3">
+                            <button
+                              onClick={() => redirectToYoutube(course.videoId)}
+                              className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 flex items-center justify-center group hover:shadow-lg hover:scale-105"
+                            >
+                              <Play size={16} className="mr-2 group-hover:scale-110 transition-transform" />
+                              <span>Start Learning</span>
+                            </button>
+                            
+                            <button className="p-3 bg-gray-50 hover:bg-gray-100 text-gray-600 rounded-xl transition-all duration-300 hover:scale-105">
+                              <Share2 size={16} />
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Hover Effect Indicator */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {categoryCourses.length > 3 && (
+                  <button
+                    onClick={() => scrollRight(category)}
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white/90 backdrop-blur-xl rounded-full shadow-xl border border-white/20 text-gray-700 hover:bg-white hover:scale-110 transition-all duration-300"
+                    aria-label="Scroll right"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Enhanced Footer Section */}
+      <div className="mt-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl p-12 text-center border border-white/20">
+            <div className="max-w-3xl mx-auto">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Zap size={32} className="text-white" />
+              </div>
+              
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                Ready to Start Your Learning Journey?
+              </h3>
+              
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                Join millions of learners worldwide and unlock your potential with our premium courses.
+                Start learning today and transform your career.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center">
+                  <Sparkles size={20} className="mr-2" />
+                  Explore All Courses
+                </button>
+                
+                <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-700 rounded-2xl font-semibold hover:bg-white hover:shadow-lg transition-all duration-300 hover:scale-105 border border-white/20">
+                  Learn More
+                </button>
+              </div>
+              
+              <div className="mt-8 flex justify-center items-center space-x-8 text-sm text-gray-500">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                  <span>1M+ Active Learners</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+                  <span>500+ Expert Instructors</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
+                  <span>50+ Categories</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Spacing */}
+      <div className="h-12"></div>
+
+      {/* Floating Action Button */}
+      <button className="fixed bottom-6 right-6 p-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-30 group">
+        <div className="relative">
+          <Sparkles size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+        </div>
+      </button>
+
+      {/* Custom Scrollbar Styles */}
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+          50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        }
+        
+        .animate-glow {
+          animation: glow 2s ease-in-out infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
+                              <div className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 text-sm font-medium rounded-full border border-blue-100">
+                                {course.level}
+                              </div>
+                            </div>
+                            <div className="flex items-
