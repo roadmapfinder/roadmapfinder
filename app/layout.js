@@ -26,8 +26,8 @@ export const metadata = {
   keywords:
     "technology skill roadmap, roadmapfinder, learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses, developer tools, official documentation, tech tools blog, latest tech updates, RoadmapFinder learning path",
   applicationName: "RoadmapFinder",
-  authors: [{ name: "RoadmapFinder Team", url: "https://roadmapfinder.tech" }],
-  creator: "RoadmapFinder Team",
+  authors: [{ name: "RoadmapFinder", url: "https://roadmapfinder.tech" }],
+  creator: "Anonymous",
   publisher: "RoadmapFinder",
   robots: "index, follow",
   openGraph: {

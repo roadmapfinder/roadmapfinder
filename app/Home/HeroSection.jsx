@@ -54,7 +54,6 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   src={roadmap}
                   alt="Roadmap illustration"
                   layout="fill"
-                  objectFit="cover"
                   className="brightness-90 group-hover:scale-105 transition-transform duration-500"
                   priority
                 />

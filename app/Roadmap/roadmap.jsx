@@ -39,14 +39,14 @@ export default function TechRoadmap() {
       id: "ai",
       title: "AI & ML",
       icon: <Brain className="w-5 h-5 text-white" />,
-      link: "/AIML",
+      link: "/Aiml",
       bgColor: "from-blue-500 to-indigo-600",
     },
     {
       id: "web",
       title: "Web Development",
       icon: <Globe className="w-5 h-5 text-white" />,
-      link: "/WEB",
+      link: "/Web",
       bgColor: "from-blue-600 to-blue-400",
     },
     {
@@ -151,7 +151,7 @@ export default function TechRoadmap() {
       id: "cloud",
       title: "Cloud Computing",
       icon: <Cloud className="w-5 h-5 text-white" />,
-      link: "/CLOUD",
+      link: "/Cloud",
       bgColor: "from-blue-400 to-cyan-300",
     },
     {
