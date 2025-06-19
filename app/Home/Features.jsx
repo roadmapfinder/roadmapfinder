@@ -6,175 +6,186 @@ import {
   Newspaper, 
   ArrowRight, 
   Sparkles, 
-  Zap, 
-  Globe,
   BookOpen,
   Map
 } from "lucide-react";
 
-import Link from "next/link"
+import { useState } from "react";
+import { useRouter } from "next/navigation"; // For Next.js 13+ App Router
+// import { useNavigate } from "react-router-dom"; // For React Router
 
 const Features = ({ handleProtectedAction }) => {
+  const [navigating, setNavigating] = useState("");
+  const router = useRouter(); // For Next.js
+  // const navigate = useNavigate(); // For React Router
+
+  const handleNavigation = (href) => {
+    setNavigating(href);
+    console.log(`Navigating to: ${href}`);
+
+    // For Next.js App Router
+    router.push(href);
+
+    // For React Router (uncomment this and comment the line above)
+    // navigate(href);
+
+    // Reset loading state after a short delay
+    setTimeout(() => setNavigating(""), 500);
+  };
+
   const features = [
     {
       id: 1,
       title: "Developer Tools",
       description: "Access premium development tools, code generators, and productivity enhancers designed for modern developers.",
-      icon: <Wrench size={32} className="text-purple-500" />,
-      href: "/tools",
-      gradient: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-50",
-      hoverColor: "hover:bg-purple-100",
-      stats: "50+ Tools",
-      badge: "Popular",
-      features: ["Code Generators", "API Testing", "Performance Tools", "Design Assets"]
+      icon: <Wrench size={24} className="text-blue-600" />,
+      href: "/TOOLS", // Fixed: lowercase for consistency
+      stats: "100+ Tools",
+      badge: "Popular"
     },
     {
       id: 2,
       title: "Smart Documentation",
       description: "Comprehensive guides, API references, and technical documentation to accelerate your learning curve.",
-      icon: <FileText size={32} className="text-emerald-500" />,
-      href: "/docs",
-      gradient: "from-emerald-500 to-teal-500",
-      bgColor: "bg-emerald-50",
-      hoverColor: "hover:bg-emerald-100",
-      stats: "1000+ Docs",
-      badge: "Updated",
-      features: ["API References", "Quick Guides", "Code Examples", "Best Practices"]
+      icon: <FileText size={24} className="text-green-600" />,
+      href: "/Docs", // Fixed: lowercase for consistency
+      stats: "50+ Docs",
+      badge: "Updated"
     },
     {
       id: 3,
       title: "Tech Insights & Blogs",
       description: "Stay updated with the latest tech trends, tutorials, and industry insights from experts worldwide.",
-      icon: <Newspaper size={32} className="text-orange-500" />,
-      href: "/blogs",
-      gradient: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-50",
-      hoverColor: "hover:bg-orange-100",
-      stats: "500+ Articles",
-      badge: "Fresh",
-      features: ["Tech News", "Tutorials", "Industry Trends", "Expert Opinions"]
+      icon: <Newspaper size={24} className="text-orange-600" />,
+      href: "/Blogs", // Fixed: lowercase for consistency
+      stats: "20+ Articles",
+      badge: "Fresh"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <Sparkles size={16} />
-            Premium Features
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Everything you need to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">accelerate</span> your career
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Unlock powerful tools, comprehensive documentation, and expert insights to supercharge your development journey
-          </p>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Main Content Area - Adjusted for sidebar */}
+      <div className="ml-0 lg:ml-1 transition-all duration-300">
+        <section className="py-5 lg:py-12">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={feature.id}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              {/* Badge */}
-              <div className="absolute top-4 right-4 z-10">
-                <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${feature.gradient} text-white`}>
-                  {feature.badge}
-                </span>
+            {/* Header Section */}
+            <div className="text-center mb-8 lg:mb-12">
+              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Sparkles size={16} />
+                Features
               </div>
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                Everything you need to accelerate your development
+              </h2>
+              <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+                Powerful tools, comprehensive documentation, and expert insights to boost your productivity
+              </p>
+            </div>
 
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <div className={`w-full h-full bg-gradient-to-br ${feature.gradient}`}></div>
-              </div>
-
-              {/* Card Content */}
-              <div className="relative p-8 h-full flex flex-col">
-                {/* Icon Container */}
-                <div className={`w-16 h-16 rounded-2xl ${feature.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  {feature.icon}
-                </div>
-
-                {/* Content */}
-                <div className="flex-grow">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {feature.title}
-                    </h3>
-                    <span className="text-sm font-medium text-gray-500">
-                      {feature.stats}
+            {/* Features Grid - Responsive for sidebar layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mb-8 lg:mb-12">
+              {features.map((feature) => (
+                <div
+                  key={feature.id}
+                  className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-blue-200 transition-all duration-200 cursor-pointer group"
+                  onClick={() => handleNavigation(feature.href)}
+                >
+                  {/* Badge */}
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center group-hover:bg-blue-50 transition-colors duration-200">
+                      {feature.icon}
+                    </div>
+                    <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
+                      {feature.badge}
                     </span>
                   </div>
 
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {feature.description}
-                  </p>
-
-                  {/* Feature List */}
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {feature.features.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${feature.gradient}`}></div>
-                        <span className="text-sm text-gray-600">{item}</span>
-                      </div>
-                    ))}
+                  {/* Content */}
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="text-lg lg:text-xl font-semibold text-gray-900 group-hover:text-blue-900 transition-colors duration-200">
+                        {feature.title}
+                      </h3>
+                      <span className="text-sm text-gray-500">
+                        {feature.stats}
+                      </span>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                </div>
 
-                {/* CTA Button with Link */}
-                <Link href={feature.href} className="w-full">
+                  {/* CTA Button */}
                   <button
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${feature.bgColor} ${feature.hoverColor} text-gray-700 group-hover:shadow-md`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNavigation(feature.href);
+                    }}
+                    disabled={navigating === feature.href}
+                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-md font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Explore Now
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    {navigating === feature.href ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Loading...
+                      </>
+                    ) : (
+                      <>
+                        Explore Now
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+                      </>
+                    )}
                   </button>
-                </Link>
-              </div>
-
-              {/* Hover Effect Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        {/* Bottom CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="text-left">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Ready to level up your skills?
+            {/* Bottom CTA Section */}
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 lg:p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                  Ready to get started?
                 </h3>
                 <p className="text-gray-600">
-                  Join thousands of developers who are already using our platform to advance their careers
+                  Join thousands of developers using our platform to advance their careers
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/roadmap">
-                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2">
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={() => handleNavigation('/Roadmap')}
+                  disabled={navigating === '/roadmap'}
+                  className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {navigating === '/Roadmap' ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  ) : (
                     <Map size={18} />
-                    Start Learning
-                  </button>
-                </Link>
-                <Link href="/courses">
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center gap-2">
+                  )}
+                  Start Learning
+                </button>
+                <button 
+                  onClick={() => handleNavigation('/Courses')}
+                  disabled={navigating === '/courses'}
+                  className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {navigating === '/Courses' ? (
+                    <div className="w-4 h-4 border-2 border-gray-700 border-t-transparent rounded-full animate-spin"></div>
+                  ) : (
                     <BookOpen size={18} />
-                    Browse Courses
-                  </button>
-                </Link>
+                  )}
+                  Browse Courses
+                </button>
               </div>
             </div>
+
           </div>
-        </div>
+        </section>
       </div>
-    </section>
+
+    </div>
   );
 };
 

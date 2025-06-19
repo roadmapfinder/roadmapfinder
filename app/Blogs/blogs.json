@@ -178,5 +178,43 @@
     "createdAt": "2025-06-02T00:00:00.000Z",
     "rating": 4.6,
     "popularity": 89
+  },
+  {
+    "id": "16",
+    "title": "Jira: Agile Project Management for Engineering Teams",
+    "thumbnailUrl": "https://www.automation-consultants.com/wp-content/uploads/2019/06/jira-bpm-2.png",
+    "content": "Jira is the go-to tool for agile software development, offering powerful features for sprint planning, issue tracking, and team collaboration. Designed for engineers and product managers, Jira provides customizable workflows, backlogs, and real-time reports like burndown charts and velocity tracking. Its tight integration with tools like Confluence, Bitbucket, and GitHub makes it a central hub for DevOps and CI/CD workflows. Teams can assign priorities, track bugs, and automate repetitive processes—all while staying aligned with agile methodologies. Jira’s scalability also makes it a great fit for both startups and enterprise-level organizations.",
+    "toolUrl": "https://www.atlassian.com/software/jira",
+    "category": "Project Management",
+    "tags": ["Agile", "Engineering", "DevOps", "Sprints", "Issue Tracking"],
+    "createdAt": "2025-06-19T00:00:00.000Z",
+    "rating": 4.5,
+    "popularity": 89
+  },
+  {
+    "id": "17",
+    "title": "Notion: The Ultimate All-in-One Workspace for Teams & Creators",
+    "thumbnailUrl": "https://www.insightplatforms.com/wp-content/uploads/2023/10/Notion-Logo-Square-Insight-Platforms.png",
+    "content": "Notion brings together notes, tasks, wikis, and databases into one beautifully designed workspace. Whether you're organizing a product roadmap, drafting content, or managing a team project, Notion's block-based editor and customizable templates make it incredibly flexible. Its collaboration tools are especially helpful for startups, students, and remote teams. Users can embed code, databases, calendars, and even AI-powered writing features—all within the same page. With seamless integration into tools like Slack, GitHub, and Figma, Notion is ideal for anyone seeking clarity, structure, and creativity in one platform.",
+    "toolUrl": "https://www.notion.so/",
+    "category": "Productivity",
+    "tags": ["Notes", "Documentation", "Productivity", "Collaboration", "All-in-One"],
+    "createdAt": "2025-06-19T00:00:00.000Z",
+    "rating": 4.8,
+    "popularity": 95
+  },
+  {
+    "id": "18",
+    "title": "OpenRouter API: Access Multiple AI Models with One Unified Endpoint",
+    "thumbnailUrl": "https://openrouter.ai/dynamic-og?title=OpenRouter%20API%20Reference&description=Comprehensive%20guide%20to%20OpenRouter%27s%20API.",
+    "content": "OpenRouter API simplifies access to a wide range of advanced language models—including OpenAI, Claude, Mistral, and more—through a single unified endpoint. Developers can easily switch between providers or run fallback chains without rewriting code. The API supports streaming, function calling, system instructions, and token-level control, making it highly flexible for both research and production use cases. With transparent pricing, developer-focused docs, and growing model support, OpenRouter is a top choice for those building chatbots, AI tools, or automation workflows. Whether you're a solo hacker or scaling an AI product, OpenRouter gives you full control and flexibility.",
+    "toolUrl": "https://openrouter.ai/docs",
+    "category": "AI",
+    "tags": ["AI", "API", "LLM", "Open Source", "Developer Tools"],
+    "createdAt": "2025-06-19T00:00:00.000Z",
+    "rating": 4.7,
+    "popularity": 92
   }
+
+
 ]
