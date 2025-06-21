@@ -73,12 +73,14 @@ import cyberh from "../CoursesImage/cyberh.jpg";
 import capcut from "../CoursesImage/capcut.jpg";
 import premire from "../CoursesImage/premire.jpg";
 import davanci from "../CoursesImage/davanci.jpg";
+import video from "../CoursesImage/video.jpg"
 import reactjs from "../CoursesImage/reactjs.jpg";
 import next from "../CoursesImage/next.jpg";
 import express from "../CoursesImage/express.jpg";
 import springboot from "../CoursesImage/springboot.jpg";
 import laravel from "../CoursesImage/laravel.jpg";
 import django from "../CoursesImage/django.jpg";
+
 
 // Image mapping object
 const imageMap = {
@@ -89,7 +91,7 @@ const imageMap = {
   dataa, dataaw, datas, sys, syse, syss, ai, ml, deep,
   git, githube, githubh, os, osa, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
-  capcut, premire, davanci, reactjs, next, express,
+  capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django
 };
 

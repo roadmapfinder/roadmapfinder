@@ -634,6 +634,17 @@
     },
     {
       "id": 57,
+      "category": "Video Editing",
+      "title": "Complete Video Editing course",
+      "level": "Beginner to Intermediate",
+      "rating": 4.9,
+      "image": "video",
+      "videoId": "https://youtube.com/watch?v=gbZ6hCNlq7g",
+      "badge": "NEW",
+      "language": "English"
+    },
+    {
+      "id": 58,
       "category": "Frameworks & Libraries",
       "title": "React js  Library for Frontend",
       "level": "Beginner to advance",
@@ -644,7 +655,7 @@
       "language": "Hindi"
     },
     {
-      "id": 58,
+      "id": 59,
       "category": "Frameworks & Libraries",
       "title": "Next js 15 Course",
       "level": "Beginner to Advance",
@@ -655,7 +666,7 @@
       "language": "English"
     },
     {
-      "id": 59,
+      "id": 60,
       "category": "Frameworks & Libraries",
       "title": "Express js learn what matters",
       "level": "Beginner to Intermediate",
@@ -666,7 +677,7 @@
       "language": "Hindi"
     },
     {
-      "id": 60,
+      "id": 61,
       "category": "Frameworks & Libraries",
       "title": "Spring boot complete course",
       "level": "Beginner to Intermediate",
@@ -677,7 +688,7 @@
       "language": "Hindi"
     },
     {
-      "id": 61,
+      "id": 62,
       "category": "Frameworks & Libraries",
       "title": "Django",
       "level": "Beginner to Intermediate",
@@ -688,7 +699,7 @@
       "language": "Hindi"
     },
     {
-      "id": 62,
+      "id": 63,
       "category": "Frameworks & Libraries",
       "title": "Laravel complete php backend course",
       "level": "Beginner to Intermediate",

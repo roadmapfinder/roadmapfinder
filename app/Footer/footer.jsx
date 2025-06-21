@@ -50,13 +50,13 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-gray-800">Quick Links</h3>
             <nav className="flex flex-col space-y-4">
               <Link
-                href="/roadmaps"
+                href="/Roadmap"
                 className="text-gray-700 hover:text-blue-500 transition-colors"
               >
                 Roadmaps
               </Link>
               <Link
-                href="/courses"
+                href="/Courses"
                 className="text-gray-700 hover:text-blue-500 transition-colors"
               >
                 Courses
@@ -111,13 +111,13 @@ const Footer = () => {
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <Link
-              href="/privacy"
+              href="#"
               className="text-gray-600 hover:text-blue-500 text-sm transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms"
+              href="#"
               className="text-gray-600 hover:text-blue-500 text-sm transition-colors"
             >
               Terms

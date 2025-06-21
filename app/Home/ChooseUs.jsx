@@ -44,7 +44,7 @@ const ChooseUs = () => {
       number: "95%",
       label: "Success Rate",
       icon: <CheckCircle size={32} className="text-emerald-500" />,
-      description: "Students land their dream jobs"
+      description: "Students land their dream jobs with our help"
     },
     {
       number: "24/7",
