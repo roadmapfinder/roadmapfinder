@@ -46,7 +46,7 @@ const Features = ({ handleProtectedAction }) => {
     {
       id: 2,
       title: "Smart Documentation",
-      description: "Comprehensive guides, API references, and technical documentation to accelerate your learning curve.",
+      description: "Comprehensive guides, API references, and technical documentation",
       icon: <FileText size={24} className="text-green-600" />,
       href: "/Docs", // Fixed: lowercase for consistency
       stats: "50+ Docs",

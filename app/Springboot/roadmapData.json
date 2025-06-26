@@ -1,0 +1,559 @@
+[
+  {
+    "id": 1,
+    "title": "Spring Boot Fundamentals",
+    "description": "Master the core concepts of Spring Boot framework",
+    "icon": "BookOpen",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "What is Spring Boot?",
+        "Spring Boot vs Spring Framework",
+        "Auto Configuration & Starter Dependencies",
+        "Application Properties & YAML",
+        "Spring Boot Annotations (@SpringBootApplication, @Component, @Service)",
+        "IoC Container & Dependency Injection",
+        "Spring Boot Project Structure",
+        "Running Spring Boot Applications"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Boot Tutorial for Beginners (Java Brains)",
+          "Spring Boot Microservices and Spring Cloud (Udemy)",
+          "Learn Spring Boot in 100 Steps (in28Minutes)",
+          "Spring Boot Complete Course (Programming with Mosh)"
+        ],
+        "hindi": [
+          "Spring Boot Tutorial Hindi (CodeWithHarry)",
+          "Complete Spring Boot Course Hindi (WsCube Tech)",
+          "Spring Boot Basics Hindi (Thapa Technical)",
+          "Java Spring Boot Hindi Tutorial (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "IntelliJ IDEA / Eclipse",
+        "Spring Tool Suite (STS)",
+        "Maven / Gradle",
+        "Postman",
+        "Git & GitHub",
+        "Java 11/17/21"
+      ],
+      "docsAndWebsites": [
+        "Spring Boot Official Documentation",
+        "Spring.io Guides",
+        "Baeldung Spring Boot Tutorials",
+        "Spring Boot Reference Guide",
+        "Spring Boot Starters List",
+        "Spring Boot Auto Configuration Classes"
+      ],
+      "projectIdeas": [
+        "Hello World REST API",
+        "Simple Calculator API",
+        "Student Registration System",
+        "Basic CRUD Operations with H2 Database"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Web Development with Spring Boot",
+    "description": "Build web applications and REST APIs using Spring Boot",
+    "icon": "Code",
+    "level": "Beginner-Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Spring MVC Architecture",
+        "RESTful Web Services",
+        "HTTP Methods (GET, POST, PUT, DELETE)",
+        "Request Mapping & Path Variables",
+        "Request Body & Response Entity",
+        "Exception Handling (@ControllerAdvice)",
+        "Validation (@Valid, @NotNull, @Size)",
+        "Content Negotiation (JSON/XML)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Building REST APIs with Spring Boot (Udemy)",
+          "Spring Boot REST API Development (Pluralsight)",
+          "Master Spring Boot REST API (Tech Primers)",
+          "Spring Boot Web Development (LinkedIn Learning)"
+        ],
+        "hindi": [
+          "REST API with Spring Boot Hindi (CodeWithHarry)",
+          "Spring Boot Web Services Hindi (WsCube Tech)",
+          "Complete REST API Course Hindi (Thapa Technical)",
+          "Spring Boot MVC Hindi Tutorial (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "Spring Web Starter",
+        "Postman / Insomnia",
+        "Swagger UI",
+        "Jackson (JSON Processing)",
+        "Hibernate Validator",
+        "Spring Boot DevTools"
+      ],
+      "docsAndWebsites": [
+        "Spring Web MVC Documentation",
+        "REST API Design Best Practices",
+        "HTTP Status Codes Reference",
+        "JSON API Specification",
+        "OpenAPI 3.0 Specification",
+        "Spring Boot Validation Guide"
+      ],
+      "projectIdeas": [
+        "ToDo List REST API",
+        "Book Library Management API",
+        "Employee Management System",
+        "Blog Post CRUD API"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Database Integration & JPA",
+    "description": "Master database operations with Spring Data JPA",
+    "icon": "Database",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Spring Data JPA Fundamentals",
+        "Entity Relationships (@OneToMany, @ManyToOne, @ManyToMany)",
+        "Repository Pattern & Custom Queries",
+        "JPQL & Native SQL Queries",
+        "Pagination & Sorting",
+        "Database Transactions (@Transactional)",
+        "Database Migration (Flyway/Liquibase)",
+        "Connection Pooling & Performance"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Data JPA Tutorial (Java Brains)",
+          "Master Spring Data JPA (Udemy)",
+          "Database Design with Spring Boot (Pluralsight)",
+          "Advanced Spring Data JPA (Baeldung)"
+        ],
+        "hindi": [
+          "Spring Data JPA Hindi Tutorial (CodeWithHarry)",
+          "Database Integration Hindi Course (WsCube Tech)",
+          "JPA Hibernate Spring Boot Hindi (Thapa Technical)",
+          "Complete Database Course Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "Spring Data JPA",
+        "Hibernate ORM",
+        "MySQL / PostgreSQL",
+        "H2 Database (Testing)",
+        "phpMyAdmin / pgAdmin",
+        "Flyway / Liquibase"
+      ],
+      "docsAndWebsites": [
+        "Spring Data JPA Reference",
+        "Hibernate Documentation",
+        "JPA 2.2 Specification",
+        "Database Design Principles",
+        "SQL Performance Tuning Guide",
+        "Spring Boot Database Configuration"
+      ],
+      "projectIdeas": [
+        "E-commerce Product Catalog",
+        "Hospital Management System",
+        "Inventory Management API",
+        "Social Media Backend"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Security & Authentication",
+    "description": "Implement security features and authentication mechanisms",
+    "icon": "Shield",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Spring Security Fundamentals",
+        "Authentication vs Authorization",
+        "JWT Token Implementation",
+        "OAuth2 & Social Login",
+        "Role-based Access Control (RBAC)",
+        "Method Level Security",
+        "CORS Configuration",
+        "Security Best Practices"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Security Complete Course (Dan Vega)",
+          "JWT Authentication with Spring Boot (Udemy)",
+          "OAuth2 Implementation Guide (Pluralsight)",
+          "Spring Security in Action (Manning Publications)"
+        ],
+        "hindi": [
+          "Spring Security Hindi Tutorial (CodeWithHarry)",
+          "JWT Implementation Hindi Course (WsCube Tech)",
+          "Authentication Security Hindi (Thapa Technical)",
+          "Complete Security Course Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "Spring Security",
+        "JWT Library (jjwt)",
+        "BCrypt Password Encoder",
+        "OAuth2 Client",
+        "Postman (Authentication Testing)",
+        "JWT.io (Token Debugging)"
+      ],
+      "docsAndWebsites": [
+        "Spring Security Reference",
+        "JWT RFC 7519 Standard",
+        "OAuth2 RFC 6749",
+        "OWASP Security Guidelines",
+        "Spring Security Architecture",
+        "Authentication Best Practices"
+      ],
+      "projectIdeas": [
+        "Secure Banking API",
+        "User Management System with Roles",
+        "E-learning Platform with JWT",
+        "Multi-tenant Application Security"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Testing & Quality Assurance",
+    "description": "Master testing strategies for Spring Boot applications",
+    "icon": "Target",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with JUnit 5",
+        "Integration Testing (@SpringBootTest)",
+        "MockMvc for Web Layer Testing",
+        "Mocking with Mockito",
+        "Test Slices (@WebMvcTest, @DataJpaTest)",
+        "Testcontainers for Database Testing",
+        "Test Coverage with JaCoCo",
+        "Behavior Driven Development (BDD)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Testing Spring Boot Applications (Udemy)",
+          "JUnit 5 Complete Guide (Pluralsight)",
+          "Spring Boot Testing Best Practices (Baeldung)",
+          "Test Driven Development with Spring Boot (LinkedIn Learning)"
+        ],
+        "hindi": [
+          "JUnit Testing Hindi Tutorial (CodeWithHarry)",
+          "Spring Boot Testing Hindi Course (WsCube Tech)",
+          "Unit Testing Complete Hindi (Thapa Technical)",
+          "Testing Best Practices Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "JUnit 5",
+        "Mockito",
+        "AssertJ",
+        "Testcontainers",
+        "WireMock",
+        "JaCoCo"
+      ],
+      "docsAndWebsites": [
+        "Spring Boot Testing Documentation",
+        "JUnit 5 User Guide",
+        "Mockito Documentation",
+        "Testcontainers Documentation",
+        "Testing Best Practices Guide",
+        "Martin Fowler Testing Articles"
+      ],
+      "projectIdeas": [
+        "Comprehensive Test Suite for E-commerce API",
+        "Testing Strategy for Banking Application",
+        "Integration Testing with External APIs",
+        "Performance Testing Framework"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Microservices Architecture",
+    "description": "Build and manage microservices with Spring Boot",
+    "icon": "Cloud",
+    "level": "Expert",
+    "content": {
+      "whatToLearn": [
+        "Microservices Design Patterns",
+        "Service Discovery (Eureka)",
+        "API Gateway (Spring Cloud Gateway)",
+        "Load Balancing & Circuit Breaker",
+        "Distributed Configuration (Config Server)",
+        "Message Queues (RabbitMQ, Apache Kafka)",
+        "Distributed Tracing",
+        "Containerization with Docker"
+      ],
+      "bestCourses": {
+        "english": [
+          "Microservices with Spring Boot and Spring Cloud (Udemy)",
+          "Building Microservices (Sam Newman)",
+          "Spring Cloud Netflix Complete Course (in28Minutes)",
+          "Microservices Architecture Patterns (Pluralsight)"
+        ],
+        "hindi": [
+          "Microservices Hindi Complete Course (CodeWithHarry)",
+          "Spring Cloud Hindi Tutorial (WsCube Tech)",
+          "Distributed Systems Hindi (Thapa Technical)",
+          "Microservices Design Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "Spring Cloud",
+        "Netflix Eureka",
+        "Spring Cloud Gateway",
+        "Apache Kafka",
+        "Docker & Docker Compose",
+        "Kubernetes (Basic)",
+        "Zipkin (Tracing)",
+        "Prometheus & Grafana"
+      ],
+      "docsAndWebsites": [
+        "Spring Cloud Documentation",
+        "Microservices.io Patterns",
+        "12-Factor App Methodology",
+        "Docker Documentation",
+        "Kubernetes Documentation",
+        "Microservices Best Practices"
+      ],
+      "projectIdeas": [
+        "E-commerce Microservices Platform",
+        "Hotel Booking System with Microservices",
+        "Banking Microservices Architecture",
+        "Real-time Chat Application with Event Sourcing"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "DevOps & Deployment",
+    "description": "Master deployment and DevOps practices for Spring Boot",
+    "icon": "Zap",
+    "level": "Expert",
+    "content": {
+      "whatToLearn": [
+        "Application Packaging (JAR vs WAR)",
+        "Profile-based Configuration",
+        "Docker Containerization",
+        "CI/CD Pipeline Setup",
+        "Cloud Deployment (AWS, Azure, GCP)",
+        "Monitoring & Logging",
+        "Performance Tuning",
+        "Health Checks & Actuator"
+      ],
+      "bestCourses": {
+        "english": [
+          "DevOps for Spring Boot Applications (Udemy)",
+          "Docker for Java Developers (Pluralsight)",
+          "AWS Deployment with Spring Boot (A Cloud Guru)",
+          "Kubernetes for Java Developers (LinkedIn Learning)"
+        ],
+        "hindi": [
+          "DevOps Complete Course Hindi (CodeWithHarry)",
+          "Docker Kubernetes Hindi Tutorial (WsCube Tech)",
+          "Cloud Deployment Hindi Course (Thapa Technical)",
+          "CI/CD Pipeline Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "Docker & Docker Compose",
+        "Jenkins / GitHub Actions",
+        "AWS EC2, RDS, S3",
+        "Kubernetes",
+        "Nginx (Reverse Proxy)",
+        "ELK Stack (Logging)",
+        "New Relic / DataDog"
+      ],
+      "docsAndWebsites": [
+        "Spring Boot Actuator Documentation",
+        "Docker Best Practices",
+        "AWS Well-Architected Framework",
+        "Kubernetes Documentation",
+        "CI/CD Best Practices",
+        "Application Performance Monitoring"
+      ],
+      "projectIdeas": [
+        "Complete CI/CD Pipeline for Microservices",
+        "Multi-environment Deployment Strategy",
+        "Auto-scaling Application on Cloud",
+        "Monitoring Dashboard for Production Apps"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Advanced Spring Boot Features",
+    "description": "Explore advanced features and enterprise patterns",
+    "icon": "Award",
+    "level": "Expert",
+    "content": {
+      "whatToLearn": [
+        "Custom Auto Configuration",
+        "Spring Boot Starters Development",
+        "Aspect-Oriented Programming (AOP)",
+        "Caching Strategies (Redis, Hazelcast)",
+        "Async Processing & Scheduling",
+        "WebSocket Implementation",
+        "GraphQL Integration",
+        "Reactive Programming (WebFlux)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Spring Boot Features (Udemy)",
+          "Reactive Programming with Spring WebFlux (Pluralsight)",
+          "Spring Boot Performance Optimization (Baeldung)",
+          "Enterprise Integration Patterns (Manning)"
+        ],
+        "hindi": [
+          "Advanced Spring Boot Hindi (CodeWithHarry)",
+          "Reactive Programming Hindi Course (WsCube Tech)",
+          "Performance Tuning Hindi (Thapa Technical)",
+          "Enterprise Patterns Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "Spring WebFlux",
+        "Redis Cache",
+        "Apache Kafka",
+        "GraphQL Java",
+        "Spring AOP",
+        "Hazelcast",
+        "WebSocket",
+        "Project Reactor"
+      ],
+      "docsAndWebsites": [
+        "Spring WebFlux Documentation",
+        "Project Reactor Reference",
+        "GraphQL Java Documentation",
+        "Redis Documentation",
+        "Enterprise Integration Patterns",
+        "Reactive Streams Specification"
+      ],
+      "projectIdeas": [
+        "Real-time Trading Platform",
+        "Reactive Streaming Data Pipeline",
+        "Custom Spring Boot Starter Library",
+        "High-performance Gaming Backend"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Interview Preparation & Career",
+    "description": "Prepare for Spring Boot interviews and career advancement",
+    "icon": "TrendingUp",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "Common Spring Boot Interview Questions",
+        "System Design with Spring Boot",
+        "Code Review Best Practices",
+        "Technical Communication Skills",
+        "Open Source Contributions",
+        "Building Technical Portfolio",
+        "Industry Certifications",
+        "Continuous Learning Strategies"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Boot Interview Preparation (Udemy)",
+          "System Design Interview Course (Educative)",
+          "Java Developer Interview Guide (Pluralsight)",
+          "Technical Leadership Skills (LinkedIn Learning)"
+        ],
+        "hindi": [
+          "Spring Boot Interview Questions Hindi (CodeWithHarry)",
+          "System Design Hindi Course (WsCube Tech)",
+          "Technical Interview Hindi Prep (Thapa Technical)",
+          "Career Guidance Hindi (Learn Code With Durgesh)"
+        ]
+      },
+      "toolsToUse": [
+        "GitHub (Portfolio)",
+        "LinkedIn (Networking)",
+        "LeetCode (Problem Solving)",
+        "HackerRank (Coding Practice)",
+        "Stack Overflow (Community)",
+        "Medium (Technical Writing)"
+      ],
+      "docsAndWebsites": [
+        "Spring Certification Program",
+        "Java Developer Roadmap",
+        "System Design Primer",
+        "Clean Code Principles",
+        "Technical Interview Handbook",
+        "Software Engineering Best Practices"
+      ],
+      "projectIdeas": [
+        "Complete Portfolio Website with Spring Boot",
+        "Open Source Contribution to Spring Projects",
+        "Technical Blog Series on Spring Boot",
+        "Mentoring Junior Developers Project"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Bonus Resources & Community",
+    "description": "Additional resources for continuous learning and community engagement",
+    "icon": "Github",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "Following Spring Boot Updates",
+        "Community Engagement",
+        "Conference Participation",
+        "Technical Writing",
+        "Code Review Participation",
+        "Mentoring Others",
+        "Building Side Projects",
+        "Industry Networking"
+      ],
+      "bestCourses": {
+        "english": [
+          "Building in Public Course (Indie Hackers)",
+          "Technical Writing for Developers (freeCodeCamp)",
+          "Open Source Contribution Guide (GitHub)",
+          "Developer Community Building (Dev.to)"
+        ],
+        "hindi": [
+          "Community Building Hindi Course (TechGyan)",
+          "Technical Writing Hindi Guide (DigitalDeepak)",
+          "Open Source Contribution Hindi (CodeWithHarry)",
+          "Networking Skills Hindi (CareerGuru)"
+        ]
+      },
+      "toolsToUse": [
+        "GitHub",
+        "Stack Overflow",
+        "Twitter (Tech Community)",
+        "LinkedIn",
+        "Discord Communities",
+        "Reddit (r/SpringBoot)",
+        "YouTube (Tech Channels)",
+        "Podcasts"
+      ],
+      "docsAndWebsites": [
+        "Spring Boot GitHub Repository",
+        "Spring Community Forum",
+        "Baeldung Spring Tutorials",
+        "DZone Spring Articles",
+        "InfoQ Spring Content",
+        "Spring Developer YouTube Channel"
+      ],
+      "projectIdeas": [
+        "Contribute to Spring Boot Documentation",
+        "Create Spring Boot Tutorial Series",
+        "Build Developer Tools for Spring Boot",
+        "Start a Spring Boot Study Group"
+      ]
+    }
+  }
+]

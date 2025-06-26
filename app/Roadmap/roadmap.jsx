@@ -25,7 +25,8 @@ import {
   GitBranch,
   Cpu,
   Triangle,
-  Binary
+  Binary,
+  Leaf
 } from "lucide-react";
 
 export default function TechRoadmap() {
@@ -125,6 +126,13 @@ export default function TechRoadmap() {
       icon: <Binary className="w-5 h-5 text-white" />,
       link: "/Kotlin",
       bgColor: "from-purple-500 to-pink-600",
+    },
+    {
+      id: "springboot",
+      title: "Springboot",
+      icon: <Leaf className="w-5 h-5 text-white" />,
+      link: "/Springboot",
+      bgColor: "from-green-500 to-green-600",
     },
     {
       id: "data",
