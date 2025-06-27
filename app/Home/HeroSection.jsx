@@ -135,7 +135,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
             {/* First row - 2 buttons */}
             <div className="flex gap-3">
               <button
-                onClick={() => handleProtectedAction("/Roadmap")}
+                onClick={() => handleProtectedAction("/RoadmapPage")}
                 className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-xl text-base font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-lg active:scale-95"
               >
                 <ChevronRight size={16} className="animate-bounce" />
@@ -162,7 +162,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           {/* Tablet Layout (sm to lg) */}
           <div className="hidden sm:flex lg:hidden gap-3">
             <button
-              onClick={() => handleProtectedAction("/Roadmap")}
+              onClick={() => handleProtectedAction("/RoadmapPage")}
               className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-lg active:scale-95"
             >
               <ChevronRight size={18} className="animate-bounce" />
@@ -187,7 +187,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           {/* Desktop Layout (lg and above) */}
           <div className="hidden lg:flex gap-6 justify-center">
             <button
-              onClick={() => handleProtectedAction("/Roadmap")}
+              onClick={() => handleProtectedAction("/RoadmapPage")}
               className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl active:scale-95 min-w-[180px]"
             >
               Explore Roadmaps

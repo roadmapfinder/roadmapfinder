@@ -155,11 +155,11 @@ const Features = ({ handleProtectedAction }) => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 
-                  onClick={() => handleNavigation('/Roadmap')}
+                  onClick={() => handleNavigation('/RoadmapPage')}
                   disabled={navigating === '/roadmap'}
                   className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {navigating === '/Roadmap' ? (
+                  {navigating === '/RoadmapPage' ? (
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                   ) : (
                     <Map size={18} />

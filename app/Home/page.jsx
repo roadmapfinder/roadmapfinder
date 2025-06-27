@@ -116,7 +116,7 @@ export default function HomePage() {
     {
       name: "Roadmap",
       icon: <ChevronRight size={24} className="mr-3" />,
-      href: "/Roadmap",
+      href: "/RoadmapPage",
       protected: true,
     },
     {
