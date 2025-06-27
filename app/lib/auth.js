@@ -15,14 +15,6 @@ import {
 export const loginWithEmail = async (email, password) => {
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
-    
-    // Set authentication cookies
-    if (result.user) {
-      const token = await result.user.getIdToken();
-      document.cookie = `authToken=${token}; path=/; max-age=86400; secure; samesite=strict`;
-      document.cookie = `userEmail=${result.user.email}; path=/; max-age=86400; secure; samesite=strict`;
-    }
-    
     return result;
   } catch (error) {
     console.error("Login error:", error);
@@ -42,13 +34,6 @@ export const signupWithEmail = async (email, password, displayName = null) => {
       });
     }
 
-    // Set authentication cookies
-    if (result.user) {
-      const token = await result.user.getIdToken();
-      document.cookie = `authToken=${token}; path=/; max-age=86400; secure; samesite=strict`;
-      document.cookie = `userEmail=${result.user.email}; path=/; max-age=86400; secure; samesite=strict`;
-    }
-
     return result;
   } catch (error) {
     console.error("Signup error:", error);
@@ -65,14 +50,6 @@ export const loginWithGoogle = async () => {
     });
 
     const result = await signInWithPopup(auth, provider);
-    
-    // Set authentication cookies
-    if (result.user) {
-      const token = await result.user.getIdToken();
-      document.cookie = `authToken=${token}; path=/; max-age=86400; secure; samesite=strict`;
-      document.cookie = `userEmail=${result.user.email}; path=/; max-age=86400; secure; samesite=strict`;
-    }
-    
     return result;
   } catch (error) {
     console.error("Google login error:", error);
@@ -118,10 +95,6 @@ export const handleGoogleRedirectResult = async () => {
 export const logout = async () => {
   try {
     await signOut(auth);
-    
-    // Clear authentication cookies
-    document.cookie = 'authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    document.cookie = 'userEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
   } catch (error) {
     console.error("Logout error:", error);
     throw error;
@@ -141,37 +114,6 @@ export const getCurrentUser = () => {
 // Check if user is authenticated
 export const isAuthenticated = () => {
   return !!auth.currentUser;
-};
-
-// Handle redirect after login
-export const handlePostLoginRedirect = () => {
-  if (typeof window !== 'undefined') {
-    const urlParams = new URLSearchParams(window.location.search);
-    const redirectPath = urlParams.get('redirect');
-    
-    if (redirectPath) {
-      window.location.href = redirectPath;
-    } else {
-      window.location.href = '/';
-    }
-  }
-};
-
-// Set authentication cookies (utility function)
-export const setAuthCookies = async (user) => {
-  if (user && typeof document !== 'undefined') {
-    const token = await user.getIdToken();
-    document.cookie = `authToken=${token}; path=/; max-age=86400; secure; samesite=strict`;
-    document.cookie = `userEmail=${user.email}; path=/; max-age=86400; secure; samesite=strict`;
-  }
-};
-
-// Clear authentication cookies (utility function)
-export const clearAuthCookies = () => {
-  if (typeof document !== 'undefined') {
-    document.cookie = 'authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    document.cookie = 'userEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-  }
 };
 
 // Export onAuthStateChanged for direct use

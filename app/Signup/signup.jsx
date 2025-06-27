@@ -124,20 +124,14 @@ export default function Signup() {
     }
 
     try {
-            await signupWithEmail(email, password, name);
-            alert("Account created successfully!");
+      console.log("Attempting to create user...");
+      const result = await signupWithEmail(email.trim(), password, name);
+      console.log("User created successfully:", result.user);
 
-            // Handle redirect after signup
-            const urlParams = new URLSearchParams(window.location.search);
-            const redirectPath = urlParams.get('redirect');
+      // Don't manually redirect here - let the auth state listener handle it
 
-            if (redirectPath) {
-                window.location.href = redirectPath;
-            } else {
-                window.location.href = '/';
-            }
-        } catch (error) {
-      console.error("Signup error:", error);
+    } catch (err) {
+      console.error("Signup error:", err);
 
       // Handle specific Firebase errors
       if (err.code === 'auth/email-already-in-use') {
@@ -159,19 +153,13 @@ export default function Signup() {
     setIsLoading(true);
 
     try {
-            await loginWithGoogle();
-            alert("Google signup successful!");
+      console.log("Attempting Google sign-in...");
+      const result = await loginWithGoogle();
+      console.log("Google sign-in successful:", result.user);
 
-            // Handle redirect after signup
-            const urlParams = new URLSearchParams(window.location.search);
-            const redirectPath = urlParams.get('redirect');
+      // Don't manually redirect here - let the auth state listener handle it
 
-            if (redirectPath) {
-                window.location.href = redirectPath;
-            } else {
-                window.location.href = '/';
-            }
-        } catch (error) {
+    } catch (err) {
       console.error("Google sign-in error:", err);
 
       // Handle specific errors
