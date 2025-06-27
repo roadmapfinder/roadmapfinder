@@ -1,0 +1,506 @@
+[
+  {
+    "id": 1,
+    "title": "Prerequisites (Before React)",
+    "description": "Essential foundation skills needed before diving into React development",
+    "icon": "BookOpen",
+    "gradient": "from-gray-500 to-slate-600",
+    "content": {
+      "whatToLearn": [
+        "HTML5 & Semantic Elements",
+        "CSS3 (Flexbox, Grid Layout)",
+        "JavaScript ES6+ Features",
+        "Arrow Functions & Destructuring",
+        "Array Methods (map, filter, reduce)",
+        "DOM Manipulation",
+        "Async/Await & Promises",
+        "Git & GitHub Basics",
+        "Package Managers (npm/yarn)",
+        "Module Import/Export"
+      ],
+      "toolsToUse": [
+        "Visual Studio Code",
+        "Git & GitHub",
+        "Chrome DevTools",
+        "Node.js & npm",
+        "Live Server Extension",
+        "Prettier & ESLint",
+        "Browser Developer Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "JavaScript Fundamentals - freeCodeCamp",
+          "Modern JavaScript Course - Udemy",
+          "HTML & CSS Crash Course - Traversy Media",
+          "Git & GitHub Tutorial - Net Ninja",
+          "ES6+ JavaScript Features"
+        ],
+        "hindi": [
+          "JavaScript Complete Course - CodeWithHarry",
+          "HTML CSS Tutorial Hindi - Apna College",
+          "Git GitHub Hindi - WsCube Tech",
+          "Modern JavaScript Hindi - Thapa Technical",
+          "Web Development Hindi - Code Step By Step"
+        ]
+      },
+      "docsAndWebsites": [
+        "MDN Web Docs",
+        "JavaScript.info",
+        "W3Schools",
+        "CSS-Tricks",
+        "Git Documentation"
+      ],
+      "projectIdeas": [
+        "Personal Portfolio Website",
+        "Landing Page with Animations",
+        "Interactive Calculator",
+        "Image Gallery with Lightbox",
+        "Form Validation Project",
+        "Weather Dashboard (API Integration)",
+        "To-Do List with Local Storage"
+      ],
+      "practicePlatforms": [
+        "Codepen",
+        "JSFiddle",
+        "Frontend Mentor",
+        "FreeCodeCamp",
+        "JavaScript30 Challenge"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "React Fundamentals (Beginner Level)",
+    "description": "Core React concepts and building your first React applications",
+    "icon": "Play",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "What is React & Virtual DOM",
+        "JSX Syntax & Rules",
+        "Functional Components",
+        "Props & PropTypes",
+        "State Management (useState)",
+        "Event Handling in React",
+        "Conditional Rendering",
+        "Lists & Keys",
+        "useEffect Hook",
+        "Component Lifecycle Basics",
+        "React Project Structure",
+        "Create React App vs Vite"
+      ],
+      "toolsToUse": [
+        "Visual Studio Code",
+        "React Developer Tools Extension",
+        "Node.js & npm",
+        "Vite",
+        "Create React App",
+        "Chrome DevTools",
+        "React Snippets Extension",
+        "ES7+ React Snippets"
+      ],
+      "bestCourses": {
+        "english": [
+          "React Course for Beginners - freeCodeCamp",
+          "React Tutorial - Net Ninja",
+          "React Crash Course - Traversy Media",
+          "Complete React Guide - Maximilian",
+          "React Fundamentals - Scrimba"
+        ],
+        "hindi": [
+          "React Full Course - CodeWithHarry",
+          "React Tutorial Hindi - Apna College",
+          "Complete React Hindi - Thapa Technical",
+          "React JS Hindi - WsCube Tech",
+          "React Beginner Hindi - Code Step By Step"
+        ]
+      },
+      "docsAndWebsites": [
+        "React Official Documentation",
+        "React Cheatsheet",
+        "React Patterns",
+        "React DevTools Guide",
+        "JSX Documentation"
+      ],
+      "projectIdeas": [
+        "Digital Clock App",
+        "Counter Application",
+        "Todo List with CRUD",
+        "Weather App with API",
+        "Recipe Finder App",
+        "Color Palette Generator",
+        "Simple Quiz Application"
+      ],
+      "practicePlatforms": [
+        "CodeSandbox",
+        "Stackblitz",
+        "React Playground",
+        "Codepen React",
+        "Replit"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "React Intermediate Level",
+    "description": "Advanced React concepts and building more complex applications",
+    "icon": "Layers",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Form Handling & Validation",
+        "useRef, useMemo, useCallback Hooks",
+        "Lifting State Up Pattern",
+        "Component Communication",
+        "React Router v6 (Routing)",
+        "Context API for State Management",
+        "Higher-Order Components (HOCs)",
+        "Render Props Pattern",
+        "Props Drilling Solutions",
+        "Error Boundaries",
+        "React Fragments",
+        "Portal Components"
+      ],
+      "toolsToUse": [
+        "React Router",
+        "Formik / React Hook Form",
+        "Axios for API calls",
+        "React Context DevTools",
+        "Prettier & ESLint Setup",
+        "React Error Boundary",
+        "React Helmet (SEO)"
+      ],
+      "bestCourses": {
+        "english": [
+          "React Router Tutorial - Net Ninja",
+          "React Context API - Dave Gray",
+          "Advanced React Patterns - Kent C. Dodds",
+          "React Forms Tutorial - Codevolution",
+          "React Intermediate - Scrimba"
+        ],
+        "hindi": [
+          "React Router Hindi - WsCube Tech",
+          "Context API Hindi - Thapa Technical",
+          "React Advanced Hindi - CodeWithHarry",
+          "Form Handling Hindi - Apna College",
+          "React Patterns Hindi - Technical Suneja"
+        ]
+      },
+      "docsAndWebsites": [
+        "React Router Documentation",
+        "Context API Guide",
+        "React Hook Form Docs",
+        "React Patterns Guide",
+        "Advanced React Concepts"
+      ],
+      "projectIdeas": [
+        "Multi-page Blog Application",
+        "Movie Search & Details App",
+        "E-commerce Product Catalog",
+        "Expense Tracker with Charts",
+        "Social Media Dashboard",
+        "Recipe Management System",
+        "Job Board Application"
+      ],
+      "practicePlatforms": [
+        "Frontend Mentor",
+        "DevChallenges.io",
+        "React Challenges",
+        "Coding Interview Prep",
+        "Build Real Projects"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "React Advanced Level",
+    "description": "Performance optimization, testing, and advanced React patterns",
+    "icon": "Zap",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "Custom Hooks Development",
+        "React Performance Optimization",
+        "React.memo & useMemo Usage",
+        "Code Splitting with React.lazy",
+        "Suspense for Data Fetching",
+        "Error Boundaries Implementation",
+        "React Portals",
+        "Controlled vs Uncontrolled Components",
+        "Unit Testing with Jest & RTL",
+        "Integration Testing",
+        "React DevTools Profiler",
+        "Memory Leak Prevention"
+      ],
+      "toolsToUse": [
+        "Jest Testing Framework",
+        "React Testing Library",
+        "React DevTools Profiler",
+        "Bundle Analyzers",
+        "Performance Monitoring Tools",
+        "Lighthouse Audits",
+        "React Strict Mode"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced React & Hooks - freeCodeCamp",
+          "React Testing Complete Guide",
+          "React Performance Optimization",
+          "Custom Hooks Masterclass",
+          "Testing React Applications - Kent C. Dodds"
+        ],
+        "hindi": [
+          "Advanced React Concepts - Thapa Technical",
+          "React Testing Hindi - WsCube Tech",
+          "Custom Hooks Hindi - CodeWithHarry",
+          "React Performance Hindi - Technical Suneja",
+          "React Advanced Patterns Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "React Testing Library Docs",
+        "Jest Documentation",
+        "React Performance Guide",
+        "Custom Hooks Guide",
+        "React Profiler API"
+      ],
+      "projectIdeas": [
+        "Advanced Blogging Platform",
+        "Real-time Collaborative Editor",
+        "E-commerce with Cart & Checkout",
+        "Social Media Clone",
+        "Project Management Tool",
+        "Video Streaming Interface",
+        "Advanced Dashboard with Analytics"
+      ],
+      "practicePlatforms": [
+        "Advanced React Challenges",
+        "Open Source Contributions",
+        "Code Review Practice",
+        "Technical Interviews",
+        "Real-world Projects"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "React + Ecosystem (Professional Level)",
+    "description": "Full-stack development with React ecosystem and modern tooling",
+    "icon": "Globe",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "TypeScript with React",
+        "State Management (Redux Toolkit)",
+        "Alternative State Solutions (Zustand, Jotai)",
+        "Next.js Framework (SSR/SSG)",
+        "Server Components",
+        "API Routes & Integration",
+        "GraphQL with Apollo Client",
+        "Real-time Data (Socket.io)",
+        "Authentication & Authorization",
+        "Database Integration",
+        "Deployment Strategies",
+        "Performance Monitoring"
+      ],
+      "toolsToUse": [
+        "TypeScript",
+        "Redux Toolkit & RTK Query",
+        "Next.js Framework",
+        "Zustand/Recoil State Management",
+        "Apollo Client (GraphQL)",
+        "Firebase/Supabase",
+        "Vercel/Netlify Deployment",
+        "Docker & Containerization",
+        "CI/CD Pipelines"
+      ],
+      "bestCourses": {
+        "english": [
+          "TypeScript with React - Maximilian",
+          "Redux Toolkit Complete Guide",
+          "Next.js for Beginners - Codevolution",
+          "Full Stack React Development",
+          "GraphQL with React - Net Ninja"
+        ],
+        "hindi": [
+          "TypeScript React Hindi - WsCube Tech",
+          "Redux Toolkit Hindi - Thapa Technical",
+          "Next.js Complete Hindi - CodeWithHarry",
+          "Full Stack Development Hindi",
+          "React Ecosystem Hindi - Technical Suneja"
+        ]
+      },
+      "docsAndWebsites": [
+        "TypeScript React Docs",
+        "Redux Toolkit Documentation",
+        "Next.js Official Docs",
+        "Apollo Client Docs",
+        "Firebase Documentation"
+      ],
+      "projectIdeas": [
+        "Full-stack Blog with CMS",
+        "E-commerce Platform",
+        "Real-time Chat Application",
+        "Project Management SaaS",
+        "Social Media Platform",
+        "Learning Management System",
+        "Multi-tenant Dashboard"
+      ],
+      "practicePlatforms": [
+        "GitHub Projects",
+        "Open Source Contributions",
+        "Freelance Projects",
+        "Startup Projects",
+        "Technical Interviews"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "React Native & Mobile Development",
+    "description": "Extend React skills to mobile app development",
+    "icon": "Smartphone",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "React Native Fundamentals",
+        "Mobile UI Components",
+        "Navigation (React Navigation)",
+        "Device APIs & Native Modules",
+        "State Management in Mobile",
+        "Offline Data Storage",
+        "Push Notifications",
+        "Camera & Media Integration",
+        "App Store Deployment",
+        "Performance Optimization",
+        "Testing Mobile Apps",
+        "Cross-platform Development"
+      ],
+      "toolsToUse": [
+        "React Native CLI",
+        "Expo CLI & Expo Go",
+        "Android Studio",
+        "Xcode (iOS)",
+        "React Navigation",
+        "AsyncStorage",
+        "Firebase SDK",
+        "Flipper Debugger"
+      ],
+      "bestCourses": {
+        "english": [
+          "React Native Complete Course",
+          "React Native Navigation",
+          "Mobile App Development with React Native",
+          "React Native & Firebase",
+          "Cross-platform Development"
+        ],
+        "hindi": [
+          "React Native Hindi - CodeWithHarry",
+          "Mobile App Development Hindi",
+          "React Native Complete Hindi",
+          "App Development Hindi - WsCube Tech",
+          "React Native Projects Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "React Native Documentation",
+        "Expo Documentation",
+        "React Navigation Docs",
+        "Firebase React Native",
+        "App Store Guidelines"
+      ],
+      "projectIdeas": [
+        "Todo Mobile App",
+        "Weather Mobile App",
+        "Chat Application",
+        "E-commerce Mobile App",
+        "Fitness Tracker",
+        "Social Media App",
+        "News Reader App"
+      ],
+      "practicePlatforms": [
+        "Expo Snack",
+        "React Native Playground",
+        "Mobile App Challenges",
+        "App Store Publishing",
+        "Beta Testing Platforms"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Final Projects & Portfolio",
+    "description": "Build professional projects and create an impressive portfolio",
+    "icon": "Briefcase",
+    "gradient": "from-emerald-500 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "Project Planning & Architecture",
+        "Full-stack Development Workflow",
+        "Code Quality & Best Practices",
+        "Version Control Strategies",
+        "CI/CD Implementation",
+        "Performance Monitoring",
+        "SEO Optimization",
+        "Accessibility (a11y)",
+        "Technical Documentation",
+        "Open Source Contributions",
+        "Portfolio Development",
+        "Interview Preparation"
+      ],
+      "toolsToUse": [
+        "Git & GitHub Advanced",
+        "Docker & Containerization",
+        "Vercel/Netlify/AWS Deployment",
+        "Monitoring Tools (Sentry)",
+        "Analytics (Google Analytics)",
+        "Performance Tools (Lighthouse)",
+        "Documentation Tools",
+        "Portfolio Builders"
+      ],
+      "bestCourses": {
+        "english": [
+          "Full Stack Development Masterclass",
+          "React Portfolio Projects",
+          "Deployment & DevOps for React",
+          "Technical Interview Preparation",
+          "Open Source Contribution Guide"
+        ],
+        "hindi": [
+          "Full Stack Projects Hindi - CodeWithHarry",
+          "Portfolio Building Hindi - Apna College",
+          "Deployment Hindi - WsCube Tech",
+          "Interview Prep Hindi - Love Babbar",
+          "Project Building Hindi - Thapa Technical"
+        ]
+      },
+      "docsAndWebsites": [
+        "Full Stack Development Guide",
+        "Portfolio Best Practices",
+        "Deployment Documentation",
+        "Open Source Guide",
+        "Technical Interview Resources"
+      ],
+      "projectIdeas": [
+        "MERN Stack Blog Platform",
+        "AI Image Generator App",
+        "Kanban Task Manager",
+        "Video Streaming Platform",
+        "Multi-vendor E-commerce",
+        "Real-time Collaboration Tool",
+        "Learning Management System",
+        "Cryptocurrency Dashboard",
+        "Social Media Analytics Tool",
+        "Portfolio Builder SaaS"
+      ],
+      "practicePlatforms": [
+        "GitHub",
+        "GitLab",
+        "Bitbucket",
+        "Open Source Projects",
+        "Freelance Platforms",
+        "Technical Interview Platforms"
+      ]
+    }
+  }
+]
