@@ -1,0 +1,705 @@
+[
+  {
+    "id": 1,
+    "title": "Fundamentals of the Web (Beginner)",
+    "description": "Essential foundation concepts for web development and browser understanding",
+    "icon": "Globe",
+    "gradient": "from-blue-500 to-indigo-600",
+    "content": {
+      "whatToLearn": [
+        "How the Web Works (Browser, Server, DNS, HTTPS)",
+        "What is HTML, CSS, JavaScript?",
+        "Basic DevTools (Inspect, Console, Network tab)",
+        "Client-Server Architecture",
+        "HTTP/HTTPS Protocols",
+        "Domain Names and Hosting",
+        "Web Standards and Browser Compatibility",
+        "Semantic Web Basics",
+        "Web Accessibility Fundamentals",
+        "Performance Basics"
+      ],
+      "toolsToUse": [
+        "Google Chrome / Firefox",
+        "VS Code",
+        "Git + GitHub",
+        "Live Server Extension",
+        "Browser DevTools",
+        "Lighthouse",
+        "Web.dev Measure Tool"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Web Development for Beginners",
+          "MDN Web Docs – Getting Started",
+          "Web.dev – Learn Web Development",
+          "Codecademy – Web Development Path",
+          "The Odin Project – Foundations"
+        ],
+        "hindi": [
+          "CodeWithHarry – Web Development Course",
+          "Apna College – Web Development",
+          "Thapa Technical – Web Fundamentals",
+          "WsCube Tech – Web Development Basics",
+          "Codewithharry – Complete Web Development"
+        ]
+      },
+      "docsAndWebsites": [
+        "MDN Web Docs",
+        "Web.dev by Google",
+        "W3Schools",
+        "Can I Use",
+        "HTML5 Specification"
+      ],
+      "projectIdeas": [
+        "Personal Portfolio (Static)",
+        "Resume in HTML/CSS",
+        "Simple Landing Page",
+        "Basic Business Website",
+        "Simple Blog Template"
+      ],
+      "practicePlatforms": [
+        "Codecademy",
+        "freeCodeCamp",
+        "W3Schools Tryit Editor",
+        "CodePen",
+        "JSFiddle"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "HTML & CSS Mastery",
+    "description": "Master HTML semantics and CSS styling techniques including responsive design",
+    "icon": "Layout",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "Semantic HTML Elements",
+        "Forms, Tables, Inputs, Buttons",
+        "CSS Box Model, Flexbox, Grid",
+        "Media Queries (Responsive Design)",
+        "CSS Variables and Custom Properties",
+        "CSS Animations and Transitions",
+        "CSS Positioning and Z-index",
+        "Typography and Font Loading",
+        "CSS Specificity and Cascade",
+        "Mobile-First Design Approach"
+      ],
+      "toolsToUse": [
+        "VS Code with Extensions",
+        "CSS Flexbox Froggy",
+        "CSS Grid Garden",
+        "Chrome DevTools",
+        "Figma for Design Reference",
+        "CSS Validator",
+        "Responsive Design Checker"
+      ],
+      "bestCourses": {
+        "english": [
+          "Kevin Powell – CSS Mastery",
+          "freeCodeCamp – Responsive Web Design",
+          "CSS-Tricks Guides",
+          "Traversy Media – CSS Crash Course",
+          "The Net Ninja – CSS Tutorial"
+        ],
+        "hindi": [
+          "Thapa Technical – HTML/CSS Course",
+          "CodeWithHarry – CSS Tutorial",
+          "Apna College – CSS Complete Course",
+          "WsCube Tech – CSS Mastery",
+          "Love Babbar – CSS Fundamentals"
+        ]
+      },
+      "docsAndWebsites": [
+        "MDN CSS Reference",
+        "CSS-Tricks",
+        "A Complete Guide to Flexbox",
+        "A Complete Guide to Grid",
+        "Can I Use CSS"
+      ],
+      "projectIdeas": [
+        "Responsive Blog Page",
+        "CSS-only Product Card",
+        "Personal Portfolio v2",
+        "Restaurant Website",
+        "Magazine Layout",
+        "CSS Art Projects",
+        "Responsive Navigation Menu"
+      ],
+      "practicePlatforms": [
+        "CSS Battle",
+        "Frontend Mentor",
+        "Flexbox Froggy",
+        "CSS Grid Garden",
+        "Codewars CSS Challenges"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "JavaScript (Core + DOM)",
+    "description": "Master JavaScript fundamentals and DOM manipulation for interactive web applications",
+    "icon": "Code",
+    "gradient": "from-yellow-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "Variables, Data Types, Loops, Functions",
+        "Arrays, Objects, DOM Manipulation",
+        "Events, Event Listeners, Event Delegation",
+        "Timers, Promises, Async/Await",
+        "Local Storage, Session Storage, JSON",
+        "ES6+ Features (Arrow Functions, Destructuring)",
+        "Error Handling and Debugging",
+        "Regular Expressions",
+        "Modules and Import/Export",
+        "Browser APIs and Web APIs"
+      ],
+      "toolsToUse": [
+        "Browser Console",
+        "VS Code Debugger",
+        "Chrome DevTools",
+        "Node.js for Practice",
+        "ESLint",
+        "Prettier",
+        "Live Server"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – JavaScript Algorithms",
+          "JavaScript30 by Wes Bos",
+          "The Modern JavaScript Tutorial",
+          "Traversy Media – JavaScript Crash Course",
+          "Programming with Mosh – JavaScript"
+        ],
+        "hindi": [
+          "Apna College – JavaScript Series",
+          "CodeWithHarry – JavaScript Tutorial",
+          "Thapa Technical – JavaScript Course",
+          "Hitesh Choudhary – JavaScript Series",
+          "Love Babbar – JavaScript Fundamentals"
+        ]
+      },
+      "docsAndWebsites": [
+        "JavaScript.info",
+        "MDN JavaScript Guide",
+        "W3Schools JavaScript",
+        "You Don't Know JS",
+        "JavaScript30"
+      ],
+      "projectIdeas": [
+        "Calculator",
+        "Quiz App",
+        "Todo List with Local Storage",
+        "Weather App",
+        "Image Slider",
+        "Form Validator",
+        "Memory Card Game",
+        "Expense Tracker"
+      ],
+      "practicePlatforms": [
+        "LeetCode",
+        "Codewars",
+        "HackerRank",
+        "JavaScript30 Challenges",
+        "Eloquent JavaScript Exercises"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Git, GitHub & Deployment",
+    "description": "Master version control and deployment strategies for web applications",
+    "icon": "GitBranch",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Git Basics (init, clone, push, pull)",
+        "Branching and Merging Strategies",
+        "GitHub Workflow and Pull Requests",
+        "Hosting with GitHub Pages, Netlify, Vercel",
+        "Domain Configuration and DNS",
+        "Environment Variables",
+        "Continuous Integration Basics",
+        "Version Control Best Practices",
+        "Collaborative Development",
+        "Open Source Contribution"
+      ],
+      "toolsToUse": [
+        "Git CLI",
+        "GitHub Desktop",
+        "VS Code Git Integration",
+        "Netlify",
+        "Vercel",
+        "GitHub Pages",
+        "GitHub Actions",
+        "GitKraken"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Git and GitHub",
+          "Traversy Media – Git Crash Course",
+          "The Net Ninja – Git Tutorial",
+          "Atlassian Git Tutorials",
+          "Git Handbook by GitHub"
+        ],
+        "hindi": [
+          "CodeWithHarry – Git & GitHub Hindi",
+          "Apna College – Git Tutorial",
+          "Thapa Technical – Git & GitHub",
+          "WsCube Tech – Version Control",
+          "Hitesh Choudhary – Git Mastery"
+        ]
+      },
+      "docsAndWebsites": [
+        "Git Documentation",
+        "GitHub Guides",
+        "Atlassian Git Tutorials",
+        "Git Cheat Sheet",
+        "Pro Git Book"
+      ],
+      "projectIdeas": [
+        "Host Your Portfolio",
+        "Blog Template with GitHub Pages",
+        "Collaborative Project",
+        "Open Source Contribution",
+        "Multi-environment Deployment",
+        "Personal Website with Custom Domain"
+      ],
+      "practicePlatforms": [
+        "GitHub",
+        "GitLab",
+        "Netlify",
+        "Vercel",
+        "GitHub Pages",
+        "Surge.sh"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Modern CSS Frameworks & Preprocessors",
+    "description": "Learn utility-first CSS frameworks and preprocessing tools for efficient styling",
+    "icon": "Palette",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Tailwind CSS Utility Classes",
+        "SCSS/SASS Basics and Features",
+        "Utility-First Design Philosophy",
+        "Component-Based Styling",
+        "CSS Framework Customization",
+        "Build Tools Integration",
+        "Responsive Design with Utilities",
+        "CSS Variables and Theming",
+        "Performance Optimization",
+        "Design System Implementation"
+      ],
+      "toolsToUse": [
+        "Tailwind CSS",
+        "Sass/SCSS",
+        "Tailwind Play",
+        "VS Code Tailwind Extension",
+        "PostCSS",
+        "PurgeCSS",
+        "Tailwind UI",
+        "Headless UI"
+      ],
+      "bestCourses": {
+        "english": [
+          "Tailwind CSS Official Documentation",
+          "The Net Ninja – Tailwind CSS",
+          "Traversy Media – Tailwind Crash Course",
+          "Tailwind Labs YouTube Channel",
+          "Web Dev Simplified – Tailwind"
+        ],
+        "hindi": [
+          "WsCube Tech – Tailwind CSS Hindi",
+          "CodeWithHarry – Tailwind Tutorial",
+          "Thapa Technical – CSS Framework",
+          "Apna College – Modern CSS",
+          "Hitesh Choudhary – Tailwind Mastery"
+        ]
+      },
+      "docsAndWebsites": [
+        "Tailwind CSS Documentation",
+        "Sass Documentation",
+        "Tailwind UI Components",
+        "Headless UI Documentation",
+        "CSS Framework Comparison"
+      ],
+      "projectIdeas": [
+        "Tailwind Portfolio",
+        "Responsive Card Layout",
+        "Dashboard UI",
+        "E-commerce Product Page",
+        "Blog Theme with Tailwind",
+        "Admin Panel Interface",
+        "Landing Page Template"
+      ],
+      "practicePlatforms": [
+        "Tailwind Play",
+        "CodePen",
+        "Tailwind UI Kit",
+        "Frontend Mentor",
+        "Dev Challenges"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "JavaScript Framework – React.js",
+    "description": "Master React.js for building dynamic and interactive user interfaces",
+    "icon": "Atom",
+    "gradient": "from-cyan-500 to-blue-500",
+    "content": {
+      "whatToLearn": [
+        "React Fundamentals (JSX, Components, Props, State)",
+        "useState, useEffect, and Common Hooks",
+        "Conditional Rendering and Lists",
+        "Event Handling and Forms",
+        "Fetch API & Axios for Data",
+        "useRef, useContext, useMemo, useCallback",
+        "Component Lifecycle and Side Effects",
+        "Error Boundaries",
+        "Performance Optimization",
+        "React Developer Tools"
+      ],
+      "toolsToUse": [
+        "Create React App",
+        "Vite",
+        "React Developer Tools",
+        "VS Code React Extensions",
+        "Axios",
+        "React Hook Form",
+        "Styled Components",
+        "React Icons"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – React Course",
+          "The Net Ninja – React Tutorial",
+          "Traversy Media – React Crash Course",
+          "React Official Tutorial",
+          "Web Dev Simplified – React"
+        ],
+        "hindi": [
+          "CodeWithHarry – React in Hindi",
+          "Thapa Technical – React Series",
+          "Apna College – React Tutorial",
+          "Hitesh Choudhary – React Course",
+          "Love Babbar – React Fundamentals"
+        ]
+      },
+      "docsAndWebsites": [
+        "React.dev Official Documentation",
+        "React Patterns",
+        "Overreacted (Dan Abramov's Blog)",
+        "React Training",
+        "React Examples"
+      ],
+      "projectIdeas": [
+        "Weather App",
+        "Blog App with CRUD",
+        "Movie Search App",
+        "Recipe Finder",
+        "Todo App with Categories",
+        "Shopping Cart",
+        "GitHub User Search",
+        "News Aggregator"
+      ],
+      "practicePlatforms": [
+        "CodeSandbox",
+        "StackBlitz",
+        "React Challenges",
+        "Frontend Mentor React Projects",
+        "LeetCode React Questions"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "State Management & Routing",
+    "description": "Implement advanced state management and routing for complex React applications",
+    "icon": "Route",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "React Router (Navigation, Nested Routes)",
+        "Redux Toolkit for State Management",
+        "Context API and useReducer",
+        "Zustand for Simple State",
+        "Authentication Flow (Login/Logout)",
+        "Route Protection and Guards",
+        "URL Parameters and Query Strings",
+        "State Persistence",
+        "Global vs Local State",
+        "State Management Patterns"
+      ],
+      "toolsToUse": [
+        "React Router",
+        "Redux Toolkit",
+        "Redux DevTools",
+        "Zustand",
+        "React Query/TanStack Query",
+        "SWR",
+        "Formik",
+        "React Hook Form"
+      ],
+      "bestCourses": {
+        "english": [
+          "Redux Toolkit – Official Tutorial",
+          "Web Dev Simplified – Redux Toolkit",
+          "The Net Ninja – React Router",
+          "freeCodeCamp – React with Redux",
+          "React Router Official Tutorial"
+        ],
+        "hindi": [
+          "Thapa Technical – React Router + Redux",
+          "CodeWithHarry – State Management",
+          "Hitesh Choudhary – React Advanced",
+          "Love Babbar – React State Management",
+          "WsCube Tech – React Router Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "React Router Documentation",
+        "Redux Toolkit Documentation",
+        "Zustand Documentation",
+        "React Query Documentation",
+        "Context API Guide"
+      ],
+      "projectIdeas": [
+        "Auth System (Login/Register)",
+        "E-commerce with Cart",
+        "Social Media Clone",
+        "Task Management App",
+        "Multi-page Blog Platform",
+        "Dashboard with Multiple Views",
+        "Chat Application"
+      ],
+      "practicePlatforms": [
+        "Advanced React Challenges",
+        "Redux DevTools Practice",
+        "State Management Exercises",
+        "Authentication Practice",
+        "React Router Challenges"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Testing, Performance & Best Practices",
+    "description": "Implement testing strategies, optimize performance, and follow React best practices",
+    "icon": "TestTube",
+    "gradient": "from-green-600 to-emerald-500",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with Jest",
+        "Component Testing with React Testing Library",
+        "Integration Testing",
+        "Test-Driven Development (TDD)",
+        "Performance Optimization Techniques",
+        "Lazy Loading and Code Splitting",
+        "React.memo and useMemo",
+        "Bundle Analysis and Optimization",
+        "Accessibility Testing",
+        "Error Handling and Logging"
+      ],
+      "toolsToUse": [
+        "Jest",
+        "React Testing Library",
+        "React DevTools Profiler",
+        "Lighthouse",
+        "Bundle Analyzer",
+        "ESLint",
+        "Prettier",
+        "Husky for Git Hooks"
+      ],
+      "bestCourses": {
+        "english": [
+          "React Testing Library – Official Docs",
+          "Web Dev Simplified – React Testing",
+          "freeCodeCamp – React Performance",
+          "Kent C. Dodds – Testing JavaScript",
+          "React Performance Course"
+        ],
+        "hindi": [
+          "Testing in React – Hindi Tutorial",
+          "React Performance Hindi",
+          "CodeWithHarry – React Testing",
+          "Best Practices Hindi Guide",
+          "React Optimization Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Jest Documentation",
+        "React Testing Library Docs",
+        "React Performance Guide",
+        "Web.dev React Performance",
+        "React Best Practices"
+      ],
+      "projectIdeas": [
+        "Fully Tested React App",
+        "Performance Optimized Dashboard",
+        "Accessible React Components",
+        "Error Boundary Implementation",
+        "Code-split Application",
+        "PWA with React",
+        "Optimized Image Gallery"
+      ],
+      "practicePlatforms": [
+        "Testing Playground",
+        "React Testing Examples",
+        "Performance Testing Tools",
+        "Accessibility Testing",
+        "Code Quality Tools"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Deployment & DevOps Basics",
+    "description": "Deploy React applications and implement CI/CD pipelines for production environments",
+    "icon": "Rocket",
+    "gradient": "from-blue-600 to-indigo-700",
+    "content": {
+      "whatToLearn": [
+        "Production Build Optimization",
+        "Hosting on Netlify, Vercel, Firebase",
+        "Environment Variables Management",
+        "CI/CD Pipeline Setup",
+        "Performance Monitoring",
+        "Error Tracking and Logging",
+        "SEO Optimization for SPAs",
+        "Analytics Integration",
+        "Security Best Practices",
+        "Domain and SSL Configuration"
+      ],
+      "toolsToUse": [
+        "Netlify",
+        "Vercel",
+        "Firebase Hosting",
+        "GitHub Actions",
+        "Lighthouse CI",
+        "Sentry for Error Tracking",
+        "Google Analytics",
+        "Cloudflare"
+      ],
+      "bestCourses": {
+        "english": [
+          "Deployment Guide – freeCodeCamp",
+          "Netlify Deployment Tutorial",
+          "Vercel Deployment Guide",
+          "CI/CD for Frontend – GitHub Actions",
+          "React Production Deployment"
+        ],
+        "hindi": [
+          "React Deployment Hindi",
+          "Netlify Hosting Hindi Tutorial",
+          "Production Deployment Guide",
+          "DevOps for Frontend Hindi",
+          "CI/CD Pipeline Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Netlify Documentation",
+        "Vercel Documentation",
+        "Firebase Hosting Guide",
+        "GitHub Actions Documentation",
+        "React Deployment Guide"
+      ],
+      "projectIdeas": [
+        "Deploy Full Stack App",
+        "CI/CD Pipeline Implementation",
+        "Performance Monitoring Setup",
+        "Multi-environment Deployment",
+        "Error Tracking Integration",
+        "SEO-optimized React App",
+        "Analytics Dashboard"
+      ],
+      "practicePlatforms": [
+        "Netlify",
+        "Vercel",
+        "Firebase",
+        "GitHub Pages",
+        "Railway",
+        "Render"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Build Real Projects (Industry Ready)",
+    "description": "Create comprehensive, production-ready applications demonstrating full-stack capabilities",
+    "icon": "Briefcase",
+    "gradient": "from-rose-500 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Full-stack Application Architecture",
+        "API Integration and Error Handling",
+        "User Experience and Interface Design",
+        "Code Organization and Structure",
+        "Documentation and Code Comments",
+        "Performance Optimization",
+        "Security Implementation",
+        "Testing Strategy",
+        "Deployment and Monitoring",
+        "Interview Preparation"
+      ],
+      "toolsToUse": [
+        "React + TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "Firebase/Supabase",
+        "Framer Motion",
+        "React Hook Form",
+        "Chart.js/Recharts",
+        "React Router"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Full Stack Development",
+          "The Net Ninja – Full Stack Projects",
+          "Traversy Media – MERN Stack",
+          "Real-world React Projects",
+          "Industry-level Development"
+        ],
+        "hindi": [
+          "CodeWithHarry – Full Stack Project",
+          "Hitesh Choudhary – Industry Projects",
+          "Complete Project Series Hindi",
+          "Real-world Applications Hindi",
+          "Interview Preparation Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Project Documentation Standards",
+        "Full Stack Best Practices",
+        "Industry Project Examples",
+        "Portfolio Project Guidelines",
+        "Open Source Project Contribution"
+      ],
+      "projectIdeas": [
+        "Portfolio Website with Blog (React + Tailwind)",
+        "E-commerce Website (React + Firebase)",
+        "Dashboard Admin Panel",
+        "Job Portal with Authentication",
+        "Weather or News Aggregator",
+        "Social Media Dashboard",
+        "Task Management with Real-time Updates",
+        "Learning Management System",
+        "Cryptocurrency Portfolio Tracker",
+        "Real-time Chat Application"
+      ],
+      "practicePlatforms": [
+        "Frontend Mentor",
+        "DevChallenges.io",
+        "LeetCode Frontend Questions",
+        "CSS Battle",
+        "Hackathons",
+        "Open Source Contributions",
+        "Technical Interview Platforms"
+      ]
+    }
+  }
+]

@@ -74,6 +74,13 @@ export default function TechRoadmap() {
       bgColor: "from-blue-500 to-cyan-400",
     },
     {
+      id: "frontend",
+      title: "Frontend",
+      icon: <Layers className="w-5 h-5 text-white" />,
+      link: "/Roadmaps/Frontend",
+      bgColor: "from-blue-500 to-cyan-400",
+    },
+    {
       id: "backend",
       title: "Backend Development",
       icon: <Server className="w-5 h-5 text-white" />,

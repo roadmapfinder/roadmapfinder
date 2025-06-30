@@ -80,6 +80,7 @@ import express from "../CoursesImage/express.jpg";
 import springboot from "../CoursesImage/springboot.jpg";
 import laravel from "../CoursesImage/laravel.jpg";
 import django from "../CoursesImage/django.jpg";
+import backendh from "../CoursesImage/backendh.jpg";
 
 
 // Image mapping object
@@ -92,7 +93,7 @@ const imageMap = {
   git, githube, githubh, os, osa, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
-  springboot, laravel, django
+  springboot, laravel, django, backendh
 };
 
 export default function CoursePage() {
