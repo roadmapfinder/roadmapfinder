@@ -50,7 +50,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-gray-800">Quick Links</h3>
             <nav className="flex flex-col space-y-4">
               <Link
-                href="/Roadmap"
+                href="/RoadmapPage"
                 className="text-gray-700 hover:text-blue-500 transition-colors"
               >
                 Roadmaps

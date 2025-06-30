@@ -26,7 +26,9 @@ import {
   Cpu,
   Triangle,
   Binary,
-  Leaf
+  Leaf,
+  Layers,
+  Box
 } from "lucide-react";
 
 export default function TechRoadmap() {
@@ -49,6 +51,34 @@ export default function TechRoadmap() {
       icon: <Globe className="w-5 h-5 text-white" />,
       link: "/Roadmaps/Web",
       bgColor: "from-blue-600 to-blue-400",
+    },
+    {
+      id: "react",
+      title: "React",
+      icon: <Globe className="w-5 h-5 text-white" />,
+      link: "/Roadmaps/React",
+      bgColor: "from-blue-600 to-blue-400",
+    },
+    {
+      id: "nextjs",
+      title: "Next.js",
+      icon: <Triangle className="w-5 h-5 text-white" />,
+      link: "/Roadmaps/Next",
+      bgColor: "from-gray-800 to-black",
+    },
+    {
+      id: "reactnative",
+      title: "React Native",
+      icon: <Smartphone className="w-5 h-5 text-white" />,
+      link: "/Roadmaps/Reactnative",
+      bgColor: "from-blue-500 to-cyan-400",
+    },
+    {
+      id: "backend",
+      title: "Backend Development",
+      icon: <Server className="w-5 h-5 text-white" />,
+      link: "/Roadmaps/Backend",
+      bgColor: "from-green-600 to-emerald-700",
     },
     {
       id: "javascript",
@@ -244,8 +274,8 @@ export default function TechRoadmap() {
     Math.ceil(filteredCategories.length / 2)
   );
 
-  // Popular search tags (updated to include more programming languages)
-  const popularTags = ["AI", "Web", "JavaScript", "Python", "Java", "Rust", "Go", "Swift"];
+  // Popular search tags (updated to include new roadmaps)
+  const popularTags = ["AI", "Web", "JavaScript", "Python", "Java", "React", "Next.js", "Backend"];
 
   return (
     <div className="max-w-md mx-auto px-4 pt-6 pb-12 font-sans md:max-w-4xl bg-gray-50 min-h-screen">

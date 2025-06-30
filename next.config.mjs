@@ -1,14 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   allowedDevOrigins: [
-    'b93eff29-05ec-426e-b52c-47636369b5cb-00-1zn89n5c3ww20.sisko.replit.dev',
+    'https://4a73efa9-9bf8-434e-9946-78ed04c03dbf-00-1miaz9j7zjmlj.pike.replit.dev',
   ],
   reactStrictMode: true,
   images: {
-    domains: [
-      'lh3.googleusercontent.com',  // Google user profile photos
-      'firebasestorage.googleapis.com',  // If you're using Firebase Storage
-      // Add any other domains you need
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+      },
     ],
   },
 };

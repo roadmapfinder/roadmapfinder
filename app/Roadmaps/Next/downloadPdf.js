@@ -36,7 +36,7 @@ const createDownloadContent = (roadmapData, darkMode) => {
   title.style.color = "#2c3e50";
   title.style.borderBottom = "3px solid #3498db";
   title.style.paddingBottom = "15px";
-  title.textContent = "React Roadmap";
+  title.textContent = "Next js Roadmap";
   downloadDiv.appendChild(title);
 
   // Add roadmap content with improved styling
@@ -331,7 +331,7 @@ export const handleDownloadPDF = async (roadmapData, setDownloading) => {
     }
 
     // Save the PDF
-    pdf.save("React_Roadmap.pdf");
+    pdf.save("Nextjs_Roadmap.pdf");
 
   } catch (error) {
     console.error("Error generating PDF:", error);

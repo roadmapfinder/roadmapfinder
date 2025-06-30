@@ -159,7 +159,7 @@ export default function NotificationPage() {
 
     const routeMap = {
       course: '/Courses',
-      roadmap: '/Roadmap',
+      roadmap: '/RoadmapPage',
       tool: '/TOOLS',
       doc: '/Docs'
     };
