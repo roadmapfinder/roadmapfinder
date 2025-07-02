@@ -1,13 +1,13 @@
 "use client"
 import { useState } from 'react';
-import { downloadRoadmapPDF, downloadQuickSummaryPDF } from './pdfGenerator';
+import { downloadRoadmapPDF, downloadQuickSummaryPDF } from './pdfGenerator'; // Adjust path as needed
 
 export default function ResponseDisplay({ response = "Sample response content...", responseRef }) {
   const [copied, setCopied] = useState(false);
-  const [activeTab, setActiveTab] = useState('roadmap');
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadError, setDownloadError] = useState('');
   const [downloadSuccess, setDownloadSuccess] = useState('');
+  const [expandedSections, setExpandedSections] = useState({});
 
   const handleCopy = async () => {
     try {
@@ -41,53 +41,56 @@ export default function ResponseDisplay({ response = "Sample response content...
 
     try {
       const sections = parseResponse(response);
-      const currentDate = new Date().toISOString().split('T')[0];
-      const fileName = type === 'full' 
-        ? `Career_Roadmap_${currentDate}.pdf`
-        : `Career_Roadmap_Summary_${currentDate}.pdf`;
 
-      if (type === 'full') {
-        await downloadRoadmapPDF(sections, fileName);
-        setDownloadSuccess('Full roadmap PDF downloaded successfully! 🎉');
+      if (type === 'summary') {
+        await downloadQuickSummaryPDF(sections, 'Career_Roadmap_Summary.pdf');
+        setDownloadSuccess('Summary PDF downloaded successfully!');
       } else {
-        await downloadQuickSummaryPDF(sections, fileName);
-        setDownloadSuccess('Summary PDF downloaded successfully! ⚡');
+        await downloadRoadmapPDF(sections, 'Career_Roadmap_Complete.pdf');
+        setDownloadSuccess('Complete roadmap PDF downloaded successfully!');
       }
 
       setTimeout(() => setDownloadSuccess(''), 3000);
     } catch (error) {
       console.error('PDF download error:', error);
-      setDownloadError('Failed to download PDF. Please try again.');
-      setTimeout(() => setDownloadError(''), 3000);
+      setDownloadError('Failed to generate PDF. Please try again.');
+      setTimeout(() => setDownloadError(''), 5000);
     } finally {
       setIsDownloading(false);
     }
+  };
+
+  const toggleSection = (sectionId) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }));
   };
 
   // Enhanced parsing with better section detection
   const parseResponse = (text) => {
     if (!text || typeof text !== 'string') {
       return {
-        skillGap: '',
-        roadmap: '',
-        techStack: '',
-        resources: '',
-        projects: '',
-        insights: '',
-        progression: '',
-        networking: ''
+        context: 'This is your assumed context and profile analysis...',
+        skillGap: 'Skill gap analysis will appear here...',
+        roadmap: 'Your 0-12 month strategic plan...',
+        techStack: 'Recommended technology stack for 2025...',
+        resources: 'Curated learning resources and materials...',
+        projects: 'Real projects to build for your portfolio...',
+        career: 'Career progression path and salary insights...',
+        mentorship: 'Bonus mentorship tips and guidance...'
       };
     }
 
     const sections = {
+      context: '',
       skillGap: '',
       roadmap: '',
       techStack: '',
       resources: '',
       projects: '',
-      insights: '',
-      progression: '',
-      networking: ''
+      career: '',
+      mentorship: ''
     };
 
     const lines = text.split('\n');
@@ -96,14 +99,14 @@ export default function ResponseDisplay({ response = "Sample response content...
 
     // Enhanced section detection patterns
     const sectionPatterns = {
-      skillGap: /(?:skill.*gap|gap.*analysis|skills.*needed|competency.*gap)/i,
-      roadmap: /(?:learning.*roadmap|roadmap|learning.*path|study.*plan)/i,
-      techStack: /(?:technology.*stack|tech.*stack|technologies|tools)/i,
-      resources: /(?:resources|learning.*resources|study.*materials|references)/i,
-      projects: /(?:projects|recommended.*projects|practice.*projects|portfolio)/i,
-      insights: /(?:industry.*insights|market.*trends|industry.*analysis)/i,
-      progression: /(?:career.*progression|next.*steps|advancement|growth)/i,
-      networking: /(?:networking|professional.*network|connections)/i
+      context: /(?:assumed.*context|current.*profile|profile.*analysis)/i,
+      skillGap: /(?:skill.*gap|gap.*analysis|positioning.*analysis)/i,
+      roadmap: /(?:strategic.*plan|month.*plan|roadmap|timeline)/i,
+      techStack: /(?:tech.*stack|technology.*stack|tools.*frameworks)/i,
+      resources: /(?:learning.*resources|curated.*resources|resources)/i,
+      projects: /(?:real.*projects|portfolio.*projects|proof.*work)/i,
+      career: /(?:career.*track|salary|progression|hiring)/i,
+      mentorship: /(?:bonus.*mentorship|mentorship|tips|guidance)/i
     };
 
     lines.forEach(line => {
@@ -139,22 +142,86 @@ export default function ResponseDisplay({ response = "Sample response content...
 
   const sections = parseResponse(response);
 
-  const tabData = [
-    { id: 'roadmap', label: 'Learning Path', icon: '🗺️', content: sections.roadmap },
-    { id: 'skills', label: 'Skills Gap', icon: '🎯', content: sections.skillGap },
-    { id: 'tech', label: 'Tech Stack', icon: '💻', content: sections.techStack },
-    { id: 'resources', label: 'Resources', icon: '📚', content: sections.resources },
-    { id: 'projects', label: 'Projects', icon: '🛠️', content: sections.projects },
-    { id: 'career', label: 'Career Path', icon: '📈', content: sections.progression }
+  const roadmapSteps = [
+    {
+      id: 'context',
+      number: '0',
+      title: 'Assumed Context',
+      icon: '🧩',
+      description: 'Current profile analysis and inferred goals',
+      content: sections.context,
+      color: 'from-blue-500 to-blue-600'
+    },
+    {
+      id: 'skillGap',
+      number: '1',
+      title: 'Skill Gap Analysis',
+      icon: '🔍',
+      description: 'Skills assessment and market positioning',
+      content: sections.skillGap,
+      color: 'from-purple-500 to-purple-600'
+    },
+    {
+      id: 'roadmap',
+      number: '2',
+      title: 'Strategic 0-12 Month Plan',
+      icon: '📅',
+      description: 'Timeline and milestones for your journey',
+      content: sections.roadmap,
+      color: 'from-green-500 to-green-600'
+    },
+    {
+      id: 'techStack',
+      number: '3',
+      title: 'Tech Stack 2025',
+      icon: '🧰',
+      description: 'Modern tools and frameworks to master',
+      content: sections.techStack,
+      color: 'from-orange-500 to-orange-600'
+    },
+    {
+      id: 'resources',
+      number: '4',
+      title: 'Curated Resources',
+      icon: '📚',
+      description: 'Best learning materials and courses',
+      content: sections.resources,
+      color: 'from-indigo-500 to-indigo-600'
+    },
+    {
+      id: 'projects',
+      number: '5',
+      title: 'Portfolio Projects',
+      icon: '💼',
+      description: 'Real projects to showcase your skills',
+      content: sections.projects,
+      color: 'from-teal-500 to-teal-600'
+    },
+    {
+      id: 'career',
+      number: '6',
+      title: 'Career Track & Salary',
+      icon: '🚀',
+      description: 'Job market insights and earning potential',
+      content: sections.career,
+      color: 'from-pink-500 to-pink-600'
+    },
+    {
+      id: 'mentorship',
+      number: '7',
+      title: 'Bonus Mentorship',
+      icon: '🧠',
+      description: 'Expert tips and common pitfalls',
+      content: sections.mentorship,
+      color: 'from-red-500 to-red-600'
+    }
   ];
 
   const formatContent = (content) => {
     if (!content || typeof content !== 'string') {
       return (
-        <div className="text-center py-12">
-          <div className="text-6xl mb-4">📋</div>
-          <p className="text-gray-500 italic text-lg mb-2">Content will appear here</p>
-          <p className="text-gray-400 text-sm">Based on AI response structure</p>
+        <div className="py-4 text-gray-500 italic">
+          Content will be generated based on your career goals and current skills.
         </div>
       );
     }
@@ -165,187 +232,188 @@ export default function ResponseDisplay({ response = "Sample response content...
       const trimmed = line.trim();
       if (!trimmed) return null;
 
-      // Enhanced bullet points with better visual hierarchy
+      // Bullet points - clean and minimal
       if (trimmed.match(/^[-•*→▪]\s/)) {
         return (
-          <div key={index} className="group flex items-start space-x-3 mb-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-400 hover:from-blue-100 hover:to-indigo-100 transition-all duration-300">
-            <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mt-0.5">
-              <span className="text-white text-xs font-bold">•</span>
-            </div>
-            <p className="text-gray-700 leading-relaxed text-sm sm:text-base group-hover:text-gray-800 transition-colors">
+          <div key={index} className="flex items-start space-x-3 mb-3">
+            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-3 flex-shrink-0"></div>
+            <p className="text-gray-700 leading-relaxed">
               {trimmed.replace(/^[-•*→▪]\s*/, '')}
             </p>
           </div>
         );
       }
 
-      // Enhanced sub-headers with better styling
+      // Sub-headers - clean typography
       if (trimmed.endsWith(':') || trimmed.match(/^\*\*.*\*\*$/)) {
         return (
-          <div key={index} className="mt-8 mb-4">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm font-bold">▶</span>
-              </div>
-              <h4 className="text-lg sm:text-xl font-bold text-gray-800 flex-1">
-                {trimmed.replace(/\*\*/g, '').replace(/:$/, '')}
-              </h4>
-            </div>
-            <div className="w-full h-0.5 bg-gradient-to-r from-purple-500 to-transparent"></div>
+          <div key={index} className="mt-6 mb-3">
+            <h4 className="text-lg font-semibold text-gray-800">
+              {trimmed.replace(/\*\*/g, '').replace(/:$/, '')}
+            </h4>
           </div>
         );
       }
 
-      // Enhanced timeline milestones with better visual design
+      // Timeline milestones - subtle highlighting
       if (trimmed.match(/\d+\s*(month|Month|weeks?|days?)/i)) {
-        const timeMatch = trimmed.match(/(\d+)\s*(month|Month|weeks?|days?)/i);
-        const timeValue = timeMatch ? timeMatch[1] : '?';
-        const timeUnit = timeMatch ? timeMatch[2].toLowerCase() : 'time';
-
         return (
-          <div key={index} className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 p-5 rounded-2xl border border-green-200 mb-6 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="flex items-center space-x-4 mb-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">
-                    {timeValue}{timeUnit.charAt(0).toUpperCase()}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-green-700 font-semibold text-sm">Milestone</span>
-                  <span className="text-green-600 text-xs">Timeline Goal</span>
-                </div>
-              </div>
-            </div>
-            <p className="text-gray-700 text-sm sm:text-base leading-relaxed pl-4 border-l-2 border-green-300">
+          <div key={index} className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4 rounded-r-lg">
+            <p className="text-gray-700 leading-relaxed font-medium">
               {trimmed}
             </p>
           </div>
         );
       }
 
-      // Enhanced regular paragraphs with better readability
+      // Regular paragraphs - clean and readable
       return (
-        <div key={index} className="mb-4 p-3 bg-gray-50/50 rounded-lg border-l-2 border-gray-200 hover:border-blue-300 transition-colors">
-          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-            {trimmed}
-          </p>
-        </div>
+        <p key={index} className="text-gray-700 leading-relaxed mb-4">
+          {trimmed}
+        </p>
       );
     }).filter(Boolean);
   };
 
-  const activeTabContent = tabData.find(tab => tab.id === activeTab);
-
   return (
-    <div ref={responseRef} className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-      {/* Header with Action Buttons */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-6">
+    <div ref={responseRef} className="w-full max-w-4xl mx-auto bg-white">
+      {/* Header - Minimal and clean */}
+      <div className="border-b border-gray-200 pb-6 mb-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-2">Your Career Roadmap</h2>
-            <p className="text-indigo-100">Personalized guidance for your professional journey</p>
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">Your Career Roadmap</h1>
+            <p className="text-gray-600">Personalized guidance for your professional journey</p>
           </div>
 
           <div className="flex flex-wrap gap-2">
+            {/* PDF Download Buttons */}
+            <div className="relative">
+              <button
+                onClick={() => handleDownloadPDF('full')}
+                disabled={isDownloading}
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-400 rounded-lg transition-colors text-sm font-medium"
+              >
+                <span className="text-base">📄</span>
+                <span>{isDownloading ? 'Generating...' : 'Download PDF'}</span>
+              </button>
+            </div>
+
+            <div className="relative">
+              <button
+                onClick={() => handleDownloadPDF('summary')}
+                disabled={isDownloading}
+                className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white hover:bg-green-700 disabled:bg-green-400 rounded-lg transition-colors text-sm font-medium"
+              >
+                <span className="text-base">📋</span>
+                <span>{isDownloading ? 'Generating...' : 'Summary PDF'}</span>
+              </button>
+            </div>
+
+            {/* Existing buttons */}
             <button
               onClick={handleCopy}
-              className="flex items-center space-x-2 px-4 py-2 bg-white/20 backdrop-blur text-white rounded-lg hover:bg-white/30 transition-all duration-200 text-sm font-medium"
+              className="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-sm"
             >
-              <span>{copied ? '✓' : '📋'}</span>
+              <span className="text-base">{copied ? '✓' : '📋'}</span>
               <span>{copied ? 'Copied!' : 'Copy'}</span>
             </button>
 
             <button
               onClick={handleShare}
-              className="flex items-center space-x-2 px-4 py-2 bg-white/20 backdrop-blur text-white rounded-lg hover:bg-white/30 transition-all duration-200 text-sm font-medium"
+              className="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-sm"
             >
-              <span>🔗</span>
+              <span className="text-base">🔗</span>
               <span>Share</span>
-            </button>
-
-            <button
-              onClick={() => handleDownloadPDF('summary')}
-              disabled={isDownloading}
-              className="flex items-center space-x-2 px-4 py-2 bg-white/20 backdrop-blur text-white rounded-lg hover:bg-white/30 transition-all duration-200 text-sm font-medium disabled:opacity-50"
-            >
-              <span>⚡</span>
-              <span>{isDownloading ? 'Loading...' : 'Quick PDF'}</span>
-            </button>
-
-            <button
-              onClick={() => handleDownloadPDF('full')}
-              disabled={isDownloading}
-              className="flex items-center space-x-2 px-4 py-2 bg-white/20 backdrop-blur text-white rounded-lg hover:bg-white/30 transition-all duration-200 text-sm font-medium disabled:opacity-50"
-            >
-              <span>📄</span>
-              <span>{isDownloading ? 'Loading...' : 'Full PDF'}</span>
             </button>
           </div>
         </div>
 
         {/* Status Messages */}
         {downloadSuccess && (
-          <div className="mt-4 p-3 bg-green-100 text-green-800 rounded-lg text-sm">
-            {downloadSuccess}
+          <div className="mt-4 p-3 bg-green-50 text-green-800 rounded-lg text-sm border border-green-200 flex items-center space-x-2">
+            <span className="text-green-600">✓</span>
+            <span>{downloadSuccess}</span>
           </div>
         )}
 
         {downloadError && (
-          <div className="mt-4 p-3 bg-red-100 text-red-800 rounded-lg text-sm">
-            {downloadError}
+          <div className="mt-4 p-3 bg-red-50 text-red-800 rounded-lg text-sm border border-red-200 flex items-center space-x-2">
+            <span className="text-red-600">⚠</span>
+            <span>{downloadError}</span>
           </div>
         )}
       </div>
 
-      {/* Tab Navigation */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="flex overflow-x-auto scrollbar-hide">
-          {tabData.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center space-x-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all duration-200 ${
-                activeTab === tab.id
-                  ? 'border-indigo-500 text-indigo-600 bg-white'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              }`}
-            >
-              <span className="text-lg">{tab.icon}</span>
-              <span>{tab.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
+      {/* Roadmap Steps - Clean step-by-step layout */}
+      <div className="space-y-6">
+        {roadmapSteps.map((step, index) => (
+          <div key={step.id} className="relative">
+            {/* Connecting line */}
+            {index < roadmapSteps.length - 1 && (
+              <div className="absolute left-6 top-16 w-0.5 h-6 bg-gray-200"></div>
+            )}
 
-      {/* Tab Content */}
-      <div className="p-6">
-        {activeTabContent ? (
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3 mb-6">
-              <span className="text-3xl">{activeTabContent.icon}</span>
-              <h3 className="text-2xl font-bold text-gray-800">{activeTabContent.label}</h3>
-            </div>
+            <div className="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow">
+              {/* Step Header */}
+              <div 
+                className="flex items-center justify-between p-6 cursor-pointer"
+                onClick={() => toggleSection(step.id)}
+              >
+                <div className="flex items-center space-x-4">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${step.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-white font-bold text-sm">{step.number}</span>
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-1">
+                      {step.title}
+                    </h2>
+                    <p className="text-gray-600 text-sm">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
 
-            <div className="space-y-4">
-              {formatContent(activeTabContent.content)}
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">{step.icon}</span>
+                  <button className="text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg 
+                      className={`w-5 h-5 transform transition-transform ${expandedSections[step.id] ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Step Content */}
+              {expandedSections[step.id] && (
+                <div className="px-6 pb-6 border-t border-gray-100">
+                  <div className="pt-6">
+                    {formatContent(step.content)}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-        ) : (
-          <div className="text-center py-12">
-            <div className="text-6xl mb-4">🔍</div>
-            <p className="text-gray-500 italic text-lg">No content found for this section</p>
-          </div>
-        )}
+        ))}
       </div>
 
-      {/* Footer */}
-      <div className="bg-gray-50 p-4 border-t border-gray-200">
+      {/* Footer - Minimal */}
+      <div className="mt-12 pt-6 border-t border-gray-200">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>Generated roadmap based on your career goals and current skills</p>
           <div className="flex items-center space-x-4">
-            <span>📊 Analysis Complete</span>
-            <span>🎯 Personalized for You</span>
+            <span className="flex items-center space-x-1">
+              <span>📊</span>
+              <span>Analysis Complete</span>
+            </span>
+            <span className="flex items-center space-x-1">
+              <span>🎯</span>
+              <span>Personalized</span>
+            </span>
           </div>
         </div>
       </div>
