@@ -2,6 +2,8 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import ResponseDisplay from './ResponseDisplay';
+import { useRouter } from 'next/navigation'; // Importing useRouter
+
 
 export default function Chatbox() {
   const [prompt, setPrompt] = useState('');
@@ -12,6 +14,7 @@ export default function Chatbox() {
   const [showUsageWarning, setShowUsageWarning] = useState(false);
   const textareaRef = useRef(null);
   const responseRef = useRef(null);
+  const router = useRouter(); // Initializing useRouter
 
   const MAX_USAGE = 3;
 
@@ -84,7 +87,12 @@ export default function Chatbox() {
       }
 
       if (data.result) {
-        setResponse(data.result);
+        // Encode the response data and redirect to results page
+        const encodedResponse = encodeURIComponent(data.result);
+        const encodedPrompt = encodeURIComponent(prompt);
+
+        router.push(`/CareerGuidance/results?data=${encodedResponse}&prompt=${encodedPrompt}`);
+
         setUsageCount(prev => prev + 1);
         setPrompt(''); // Clear input after successful response
 
@@ -299,12 +307,23 @@ export default function Chatbox() {
           </div>
         )}
 
-        {/* Response Display */}
-        {response && (
-          <ResponseDisplay 
-            response={response} 
-            responseRef={responseRef}
-          />
+        {/* Loading State */}
+        {loading && (
+          <div className="mt-6 sm:mt-8 w-full">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8">
+              <div className="flex flex-col items-center justify-center space-y-4">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                <div className="text-center">
+                  <p className="text-lg font-medium text-slate-800 mb-2">
+                    Analyzing your career path...
+                  </p>
+                  <p className="text-sm text-slate-600">
+                    Our AI is crafting a personalized roadmap just for you
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* Footer */}
@@ -336,6 +355,31 @@ export default function Chatbox() {
             </div>
           </div>
         </div>
+
+          {/* Example Prompts */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-slate-700 mb-3">Try these examples:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "I want to become a full-stack developer with React and Node.js",
+                "Help me transition from marketing to data science",
+                "I'm a beginner, guide me to become an AI/ML engineer",
+                "I know Python basics, what's next for backend development?"
+              ].map((example, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setPrompt(example);
+                    autoResize();
+                  }}
+                  className="text-left p-3 bg-slate-50 hover:bg-slate-100 rounded-xl sm:rounded-2xl border border-slate-200 transition-colors text-sm text-slate-700 hover:text-slate-900"
+                  disabled={loading}
+                >
+                  "{example}"
+                </button>
+              ))}
+            </div>
+          </div>
       </div>
     </div>
   );
