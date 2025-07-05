@@ -97,24 +97,24 @@ function ResultsContent() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <ResponseDisplay response={roadmapData.response} />
         
-        {/* Action Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Action Buttons - Mobile-first responsive */}
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
           <Link 
             href="/CareerGuidance"
-            className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-3.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm sm:text-base min-h-[48px] touch-manipulation"
           >
-            <MessageSquare className="w-4 h-4 mr-2" />
-            Generate Another Roadmap
+            <MessageSquare className="w-4 h-4 mr-2 flex-shrink-0" />
+            <span>Generate Another Roadmap</span>
           </Link>
           
           <Link 
             href="/RoadmapPage"
-            className="inline-flex items-center justify-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+            className="inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-3.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium text-sm sm:text-base min-h-[48px] touch-manipulation"
           >
-            Explore All Roadmaps
+            <span>Explore All Roadmaps</span>
           </Link>
         </div>
       </div>

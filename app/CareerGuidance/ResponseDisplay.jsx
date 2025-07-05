@@ -220,7 +220,7 @@ export default function ResponseDisplay({ response = "Sample response content...
   const formatContent = (content) => {
     if (!content || typeof content !== 'string') {
       return (
-        <div className="py-4 text-gray-500 italic">
+        <div className="py-4 sm:py-6 text-gray-500 italic text-sm sm:text-base text-center">
           Content will be generated based on your career goals and current skills.
         </div>
       );
@@ -232,43 +232,87 @@ export default function ResponseDisplay({ response = "Sample response content...
       const trimmed = line.trim();
       if (!trimmed) return null;
 
-      // Bullet points - clean and minimal
+      // Bullet points - mobile-friendly spacing
       if (trimmed.match(/^[-•*→▪]\s/)) {
         return (
-          <div key={index} className="flex items-start space-x-3 mb-3">
-            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-3 flex-shrink-0"></div>
-            <p className="text-gray-700 leading-relaxed">
+          <div key={index} className="flex items-start space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 sm:mt-3 flex-shrink-0"></div>
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">
               {trimmed.replace(/^[-•*→▪]\s*/, '')}
             </p>
           </div>
         );
       }
 
-      // Sub-headers - clean typography
+      // Sub-headers - responsive typography
       if (trimmed.endsWith(':') || trimmed.match(/^\*\*.*\*\*$/)) {
         return (
-          <div key={index} className="mt-6 mb-3">
-            <h4 className="text-lg font-semibold text-gray-800">
+          <div key={index} className="mt-4 sm:mt-6 mb-2 sm:mb-3">
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 break-words">
               {trimmed.replace(/\*\*/g, '').replace(/:$/, '')}
             </h4>
           </div>
         );
       }
 
-      // Timeline milestones - subtle highlighting
+      // Timeline milestones - mobile-optimized highlighting
       if (trimmed.match(/\d+\s*(month|Month|weeks?|days?)/i)) {
         return (
-          <div key={index} className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4 rounded-r-lg">
-            <p className="text-gray-700 leading-relaxed font-medium">
+          <div key={index} className="bg-blue-50 border-l-4 border-blue-400 p-3 sm:p-4 mb-3 sm:mb-4 rounded-r-lg">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium break-words">
               {trimmed}
             </p>
           </div>
         );
       }
 
-      // Regular paragraphs - clean and readable
+      // Tables - mobile-friendly formatting
+      if (trimmed.includes('|') && trimmed.split('|').length > 2) {
+        const cells = trimmed.split('|').map(cell => cell.trim()).filter(Boolean);
+        return (
+          <div key={index} className="overflow-x-auto mb-4 sm:mb-6">
+            <div className="min-w-full bg-gray-50 rounded-lg p-3 sm:p-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm">
+                {cells.map((cell, cellIndex) => (
+                  <div key={cellIndex} className="bg-white p-2 sm:p-3 rounded border break-words">
+                    <span className="font-medium text-gray-700">{cell}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      // Links - touch-friendly
+      if (trimmed.includes('http')) {
+        return (
+          <div key={index} className="mb-3 sm:mb-4">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-all">
+              {trimmed.split(' ').map((word, wordIndex) => {
+                if (word.startsWith('http')) {
+                  return (
+                    <a
+                      key={wordIndex}
+                      href={word}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline break-all inline-block min-h-[44px] sm:min-h-auto py-1 sm:py-0"
+                    >
+                      {word}
+                    </a>
+                  );
+                }
+                return word + ' ';
+              })}
+            </p>
+          </div>
+        );
+      }
+
+      // Regular paragraphs - responsive and readable
       return (
-        <p key={index} className="text-gray-700 leading-relaxed mb-4">
+        <p key={index} className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4 break-words">
           {trimmed}
         </p>
       );
@@ -276,108 +320,110 @@ export default function ResponseDisplay({ response = "Sample response content...
   };
 
   return (
-    <div ref={responseRef} className="w-full max-w-4xl mx-auto bg-white">
-      {/* Header - Minimal and clean */}
-      <div className="border-b border-gray-200 pb-6 mb-8">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Your Career Roadmap</h1>
-            <p className="text-gray-600">Personalized guidance for your professional journey</p>
+    <div ref={responseRef} className="w-full max-w-7xl mx-auto bg-white px-4 sm:px-6 lg:px-8">
+      {/* Header - Enhanced responsive design */}
+      <div className="border-b border-gray-200 pb-4 sm:pb-6 mb-6 sm:mb-8">
+        <div className="flex flex-col gap-4 sm:gap-6">
+          <div className="text-center sm:text-left">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+              Your Career Roadmap
+            </h1>
+            <p className="text-sm sm:text-base text-gray-600">
+              Personalized guidance for your professional journey
+            </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          {/* Action Buttons - Mobile-first responsive grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 lg:flex lg:flex-wrap lg:justify-center xl:justify-start">
             {/* PDF Download Buttons */}
-            <div className="relative">
-              <button
-                onClick={() => handleDownloadPDF('full')}
-                disabled={isDownloading}
-                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-400 rounded-lg transition-colors text-sm font-medium"
-              >
-                <span className="text-base">📄</span>
-                <span>{isDownloading ? 'Generating...' : 'Download PDF'}</span>
-              </button>
-            </div>
+            <button
+              onClick={() => handleDownloadPDF('full')}
+              disabled={isDownloading}
+              className="flex items-center justify-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-2 sm:py-2.5 bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-400 rounded-lg transition-colors text-xs sm:text-sm font-medium min-h-[44px] touch-manipulation"
+            >
+              <span className="text-sm sm:text-base">📄</span>
+              <span className="hidden sm:inline">{isDownloading ? 'Generating...' : 'Download PDF'}</span>
+              <span className="sm:hidden">PDF</span>
+            </button>
 
-            <div className="relative">
-              <button
-                onClick={() => handleDownloadPDF('summary')}
-                disabled={isDownloading}
-                className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white hover:bg-green-700 disabled:bg-green-400 rounded-lg transition-colors text-sm font-medium"
-              >
-                <span className="text-base">📋</span>
-                <span>{isDownloading ? 'Generating...' : 'Summary PDF'}</span>
-              </button>
-            </div>
+            <button
+              onClick={() => handleDownloadPDF('summary')}
+              disabled={isDownloading}
+              className="flex items-center justify-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-2 sm:py-2.5 bg-green-600 text-white hover:bg-green-700 disabled:bg-green-400 rounded-lg transition-colors text-xs sm:text-sm font-medium min-h-[44px] touch-manipulation"
+            >
+              <span className="text-sm sm:text-base">📋</span>
+              <span className="hidden sm:inline">{isDownloading ? 'Generating...' : 'Summary PDF'}</span>
+              <span className="sm:hidden">Summary</span>
+            </button>
 
-            {/* Existing buttons */}
             <button
               onClick={handleCopy}
-              className="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-sm"
+              className="flex items-center justify-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 sm:py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-xs sm:text-sm min-h-[44px] touch-manipulation"
             >
-              <span className="text-base">{copied ? '✓' : '📋'}</span>
+              <span className="text-sm sm:text-base">{copied ? '✓' : '📋'}</span>
               <span>{copied ? 'Copied!' : 'Copy'}</span>
             </button>
 
             <button
               onClick={handleShare}
-              className="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-sm"
+              className="flex items-center justify-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 sm:py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-xs sm:text-sm min-h-[44px] touch-manipulation"
             >
-              <span className="text-base">🔗</span>
+              <span className="text-sm sm:text-base">🔗</span>
               <span>Share</span>
             </button>
           </div>
         </div>
 
-        {/* Status Messages */}
+        {/* Status Messages - Mobile optimized */}
         {downloadSuccess && (
-          <div className="mt-4 p-3 bg-green-50 text-green-800 rounded-lg text-sm border border-green-200 flex items-center space-x-2">
-            <span className="text-green-600">✓</span>
-            <span>{downloadSuccess}</span>
+          <div className="mt-4 p-3 bg-green-50 text-green-800 rounded-lg text-xs sm:text-sm border border-green-200 flex items-center space-x-2">
+            <span className="text-green-600 flex-shrink-0">✓</span>
+            <span className="break-words">{downloadSuccess}</span>
           </div>
         )}
 
         {downloadError && (
-          <div className="mt-4 p-3 bg-red-50 text-red-800 rounded-lg text-sm border border-red-200 flex items-center space-x-2">
-            <span className="text-red-600">⚠</span>
-            <span>{downloadError}</span>
+          <div className="mt-4 p-3 bg-red-50 text-red-800 rounded-lg text-xs sm:text-sm border border-red-200 flex items-center space-x-2">
+            <span className="text-red-600 flex-shrink-0">⚠</span>
+            <span className="break-words">{downloadError}</span>
           </div>
         )}
       </div>
 
-      {/* Roadmap Steps - Clean step-by-step layout */}
-      <div className="space-y-6">
+      {/* Roadmap Steps - Enhanced responsive layout */}
+      <div className="space-y-4 sm:space-y-6">
         {roadmapSteps.map((step, index) => (
           <div key={step.id} className="relative">
-            {/* Connecting line */}
+            {/* Connecting line - Hidden on mobile for cleaner look */}
             {index < roadmapSteps.length - 1 && (
-              <div className="absolute left-6 top-16 w-0.5 h-6 bg-gray-200"></div>
+              <div className="hidden sm:block absolute left-6 lg:left-8 top-16 lg:top-20 w-0.5 h-6 lg:h-8 bg-gray-200"></div>
             )}
 
-            <div className="bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow">
-              {/* Step Header */}
+            <div className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl hover:shadow-lg transition-all duration-200 overflow-hidden">
+              {/* Step Header - Mobile-first responsive */}
               <div 
-                className="flex items-center justify-between p-6 cursor-pointer"
+                className="flex items-start sm:items-center justify-between p-4 sm:p-6 lg:p-8 cursor-pointer hover:bg-gray-50/50 transition-colors touch-manipulation"
                 onClick={() => toggleSection(step.id)}
               >
-                <div className="flex items-center space-x-4">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${step.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                    <span className="text-white font-bold text-sm">{step.number}</span>
+                <div className="flex items-start sm:items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-r ${step.color} rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-white font-bold text-sm sm:text-base lg:text-lg">{step.number}</span>
                   </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900 mb-1">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-semibold text-gray-900 mb-1 sm:mb-2 leading-tight">
                       {step.title}
                     </h2>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 line-clamp-2 sm:line-clamp-none">
                       {step.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl">{step.icon}</span>
-                  <button className="text-gray-400 hover:text-gray-600 transition-colors">
+                <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2">
+                  <span className="text-lg sm:text-xl lg:text-2xl">{step.icon}</span>
+                  <button className="text-gray-400 hover:text-gray-600 transition-colors p-1 touch-manipulation">
                     <svg 
-                      className={`w-5 h-5 transform transition-transform ${expandedSections[step.id] ? 'rotate-180' : ''}`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 transform transition-transform ${expandedSections[step.id] ? 'rotate-180' : ''}`}
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -388,11 +434,13 @@ export default function ResponseDisplay({ response = "Sample response content...
                 </div>
               </div>
 
-              {/* Step Content */}
+              {/* Step Content - Enhanced responsive content */}
               {expandedSections[step.id] && (
-                <div className="px-6 pb-6 border-t border-gray-100">
-                  <div className="pt-6">
-                    {formatContent(step.content)}
+                <div className="border-t border-gray-100">
+                  <div className="p-4 sm:p-6 lg:p-8">
+                    <div className="prose prose-sm sm:prose lg:prose-lg max-w-none">
+                      {formatContent(step.content)}
+                    </div>
                   </div>
                 </div>
               )}
@@ -401,11 +449,13 @@ export default function ResponseDisplay({ response = "Sample response content...
         ))}
       </div>
 
-      {/* Footer - Minimal */}
-      <div className="mt-12 pt-6 border-t border-gray-200">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>Generated roadmap based on your career goals and current skills</p>
-          <div className="flex items-center space-x-4">
+      {/* Footer - Enhanced responsive footer */}
+      <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-gray-500">
+          <p className="text-center sm:text-left">
+            Generated roadmap based on your career goals and current skills
+          </p>
+          <div className="flex items-center space-x-4 sm:space-x-6">
             <span className="flex items-center space-x-1">
               <span>📊</span>
               <span>Analysis Complete</span>
