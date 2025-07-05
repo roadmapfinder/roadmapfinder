@@ -322,8 +322,8 @@ export default function Chatbox() {
                 <span>Smart Analysis</span>
               </div>
               <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <span className="text-xl sm:text-2xl">🎯</span>
-                <span>Personalized Plans</span>
+                <span className="text-xl sm:text-2xl">🗺️</span>
+                <span>Visual Roadmaps</span>
               </div>
               <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2">
                 <span className="text-xl sm:text-2xl">📚</span>

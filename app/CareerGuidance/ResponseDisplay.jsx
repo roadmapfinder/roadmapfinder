@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { downloadRoadmapPDF, downloadQuickSummaryPDF } from './pdfGenerator'; // Adjust path as needed
 
 export default function ResponseDisplay({ response = "Sample response content...", responseRef }) {
@@ -8,6 +8,7 @@ export default function ResponseDisplay({ response = "Sample response content...
   const [downloadError, setDownloadError] = useState('');
   const [downloadSuccess, setDownloadSuccess] = useState('');
   const [expandedSections, setExpandedSections] = useState({});
+  const [roadmapData, setRoadmapData] = useState(null); // Added roadmapData state
 
   const handleCopy = async () => {
     try {
@@ -142,6 +143,14 @@ export default function ResponseDisplay({ response = "Sample response content...
 
   const sections = parseResponse(response);
 
+  // Parse response into graph data when response changes
+  useEffect(() => {
+    if (response) {
+      const graphData = parseResponseToRoadmap(response);
+      setRoadmapData(graphData);
+    }
+  }, [response]);
+
   const roadmapSteps = [
     {
       id: 'context',
@@ -274,6 +283,31 @@ export default function ResponseDisplay({ response = "Sample response content...
       );
     }).filter(Boolean);
   };
+
+   // Dummy function for parseResponseToRoadmap, replace with your actual implementation
+   const parseResponseToRoadmap = (response) => {
+    // This is where you would parse your AI response
+    // and transform it into a graph data structure suitable
+    // for a graph visualization library like Cytoscape.js,
+    // Vis.js, or similar.
+    // For now, let's return some dummy data:
+
+    return {
+        nodes: [
+            { id: 'start', label: 'Start' },
+            { id: 'context', label: 'Context' },
+            { id: 'skillGap', label: 'Skill Gap' },
+            { id: 'roadmap', label: 'Roadmap' },
+            { id: 'end', label: 'End' }
+        ],
+        edges: [
+            { source: 'start', target: 'context' },
+            { source: 'context', target: 'skillGap' },
+            { source: 'skillGap', target: 'roadmap' },
+            { source: 'roadmap', target: 'end' }
+        ]
+    };
+};
 
   return (
     <div ref={responseRef} className="w-full max-w-4xl mx-auto bg-white">
