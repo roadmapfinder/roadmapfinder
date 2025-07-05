@@ -200,19 +200,19 @@ export default function Chatbox() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
         {/* Usage Warning */}
         {showUsageWarning && (
-          <div className="mb-6 sm:mb-8 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm">
-            <div className="flex items-start space-x-3 sm:space-x-4">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-amber-400 to-orange-400 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 sm:p-5 shadow-sm">
+            <div className="flex items-start space-x-3">
+              <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-amber-800">Usage Limit Notice</h3>
-                <p className="mt-1 sm:mt-2 text-sm sm:text-base text-amber-700 leading-relaxed">
+                <h3 className="text-base font-semibold text-amber-800 mb-1">Usage Limit Notice</h3>
+                <p className="text-sm text-amber-700 leading-relaxed">
                   {usageCount >= MAX_USAGE ? 
                     'You have reached the maximum usage limit. Click Reset to continue exploring your career path.' :
                     `You have ${MAX_USAGE - usageCount} query remaining. Make it count!`
@@ -224,14 +224,32 @@ export default function Chatbox() {
         )}
 
         {/* Main Chat Interface */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/30 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">Career AI Assistant</h2>
+                <p className="text-blue-100 text-sm">Get personalized career guidance tailored to your goals</p>
+              </div>
+            </div>
+          </div>
+
           {/* Input Section */}
-          <div className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-white/50 to-slate-50/50">
-            <div className="mb-4 sm:mb-6">
-              <label className="block text-base sm:text-lg font-bold text-slate-800 mb-2">
-                🎯 What's your career aspiration?
-              </label>
-              <p className="text-sm sm:text-base text-slate-600">Share your current skills, experience, and where you want to go</p>
+          <div className="p-6 sm:p-8">
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                What's your career goal?
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Share your current skills, experience level, and where you want to go. 
+                The more specific you are, the better guidance you'll receive.
+              </p>
             </div>
 
             <div className="relative">
@@ -243,65 +261,59 @@ export default function Chatbox() {
                   autoResize();
                 }}
                 onKeyPress={handleKeyPress}
-                placeholder="✨ Example: I'm a junior developer with 2 years of JavaScript and React experience. I want to become a senior full-stack developer specializing in modern web technologies and leading development teams..."
-                className="w-full p-4 sm:p-6 border-2 border-slate-200/50 rounded-xl sm:rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-400 transition-all duration-200 resize-none min-h-[120px] sm:min-h-[140px] bg-white/70 backdrop-blur-sm placeholder-slate-400 text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed shadow-sm"
+                placeholder="Example: I'm a junior developer with 2 years of JavaScript and React experience. I want to become a senior full-stack developer specializing in modern web technologies and leading development teams..."
+                className="w-full p-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-none min-h-[120px] bg-gray-50 placeholder-gray-500 text-gray-700 text-base leading-relaxed"
                 style={{ height: 'auto' }}
                 disabled={usageCount >= MAX_USAGE}
               />
 
-              <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 flex flex-col sm:flex-row items-end sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
-                <div className="hidden sm:block bg-white/80 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-slate-500 border border-slate-200/50">
+              <div className="absolute bottom-3 right-3 flex items-center space-x-2">
+                <div className="hidden sm:block bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-gray-500 border border-gray-200">
                   Ctrl+Enter to send
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-full px-2 sm:px-3 py-1 text-xs font-medium text-slate-500 border border-slate-200/50">
+                <div className="bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs font-medium text-gray-500 border border-gray-200">
                   {prompt.length}/2000
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Action Button */}
-          <div className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-slate-50/50 to-white/50 border-t border-slate-200/30">
-            <button
-              onClick={handleSend}
-              disabled={loading || !prompt.trim() || usageCount >= MAX_USAGE}
-              className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl sm:rounded-2xl hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 font-bold text-base sm:text-lg lg:text-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 disabled:transform-none relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000"></div>
-
-              {loading ? (
-                <span className="flex items-center justify-center relative z-10">
-                  <svg className="animate-spin -ml-1 mr-3 sm:mr-4 h-5 w-5 sm:h-6 sm:w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  <span className="hidden sm:inline">Crafting your personalized roadmap...</span>
-                  <span className="sm:hidden">Creating roadmap...</span>
-                </span>
-              ) : usageCount >= MAX_USAGE ? (
-                <span className="relative z-10">🚫 Usage Limit Reached</span>
-              ) : (
-                <span className="relative z-10">
-                  <span className="hidden sm:inline">🚀 Generate My Career Roadmap</span>
-                  <span className="sm:hidden">🚀 Generate Roadmap</span>
-                </span>
-              )}
-            </button>
+            {/* Action Button */}
+            <div className="mt-6">
+              <button
+                onClick={handleSend}
+                disabled={loading || !prompt.trim() || usageCount >= MAX_USAGE}
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-semibold text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Analyzing your path...
+                  </span>
+                ) : usageCount >= MAX_USAGE ? (
+                  <span>🚫 Usage Limit Reached</span>
+                ) : (
+                  <span>🚀 Generate My Career Roadmap</span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Error Display */}
         {error && (
-          <div className="mt-6 sm:mt-8 bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg">
-            <div className="flex items-start space-x-3 sm:space-x-4">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-red-400 to-pink-400 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+          <div className="mt-6 bg-red-50 border border-red-200 rounded-xl p-4 sm:p-5 shadow-sm">
+            <div className="flex items-start space-x-3">
+              <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-red-800">Oops! Something went wrong</h3>
-                <p className="mt-1 sm:mt-2 text-sm sm:text-base text-red-700 leading-relaxed">{error}</p>
+                <h3 className="text-base font-semibold text-red-800 mb-1">Something went wrong</h3>
+                <p className="text-sm text-red-700 leading-relaxed">{error}</p>
               </div>
             </div>
           </div>
@@ -309,15 +321,15 @@ export default function Chatbox() {
 
         {/* Loading State */}
         {loading && (
-          <div className="mt-6 sm:mt-8 w-full">
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8">
+          <div className="mt-6 w-full">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
               <div className="flex flex-col items-center justify-center space-y-4">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
                 <div className="text-center">
-                  <p className="text-lg font-medium text-slate-800 mb-2">
+                  <p className="text-lg font-medium text-gray-800 mb-2">
                     Analyzing your career path...
                   </p>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-gray-600">
                     Our AI is crafting a personalized roadmap just for you
                   </p>
                 </div>
@@ -326,60 +338,72 @@ export default function Chatbox() {
           </div>
         )}
 
-        {/* Footer */}
-        <div className="mt-12 sm:mt-16 text-center">
-          <div className="bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-white/30 shadow-lg">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3 sm:mb-4">
-              🌟 Unlock Your Career Potential
+        {/* Example Prompts */}
+        {!loading && !error && (
+          <div className="mt-8">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                Need inspiration? Try these examples:
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "I want to become a full-stack developer with React and Node.js",
+                  "Help me transition from marketing to data science",
+                  "I'm a beginner, guide me to become an AI/ML engineer",
+                  "I know Python basics, what's next for backend development?"
+                ].map((example, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setPrompt(example);
+                      autoResize();
+                    }}
+                    className="text-left p-3 bg-gray-50 hover:bg-blue-50 rounded-lg border border-gray-200 hover:border-blue-200 transition-all duration-200 text-sm text-gray-700 hover:text-blue-700"
+                    disabled={loading || usageCount >= MAX_USAGE}
+                  >
+                    <span className="font-medium">💡 </span>
+                    {example}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Features Section */}
+        <div className="mt-8 text-center">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              🌟 What makes our career guidance special?
             </h3>
-            <p className="text-slate-600 text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
-              Get AI-powered insights tailored to your unique skills and aspirations
-            </p>
-            <div className="grid grid-cols-2 sm:flex sm:items-center sm:justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-500">
-              <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <span className="text-xl sm:text-2xl">🧠</span>
-                <span>Smart Analysis</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <span className="text-lg">🧠</span>
+                </div>
+                <span className="font-medium text-gray-700">AI-Powered Analysis</span>
               </div>
-              <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <span className="text-xl sm:text-2xl">🎯</span>
-                <span>Personalized Plans</span>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <span className="text-lg">🎯</span>
+                </div>
+                <span className="font-medium text-gray-700">Personalized Plans</span>
               </div>
-              <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <span className="text-xl sm:text-2xl">📚</span>
-                <span>Learning Resources</span>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <span className="text-lg">📚</span>
+                </div>
+                <span className="font-medium text-gray-700">Learning Resources</span>
               </div>
-              <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <span className="text-xl sm:text-2xl">🚀</span>
-                <span>Career Growth</span>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <span className="text-lg">🚀</span>
+                </div>
+                <span className="font-medium text-gray-700">Career Growth</span>
               </div>
             </div>
           </div>
         </div>
-
-          {/* Example Prompts */}
-          <div className="mt-6">
-            <p className="text-sm font-medium text-slate-700 mb-3">Try these examples:</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                "I want to become a full-stack developer with React and Node.js",
-                "Help me transition from marketing to data science",
-                "I'm a beginner, guide me to become an AI/ML engineer",
-                "I know Python basics, what's next for backend development?"
-              ].map((example, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setPrompt(example);
-                    autoResize();
-                  }}
-                  className="text-left p-3 bg-slate-50 hover:bg-slate-100 rounded-xl sm:rounded-2xl border border-slate-200 transition-colors text-sm text-slate-700 hover:text-slate-900"
-                  disabled={loading}
-                >
-                  "{example}"
-                </button>
-              ))}
-            </div>
-          </div>
       </div>
     </div>
   );
