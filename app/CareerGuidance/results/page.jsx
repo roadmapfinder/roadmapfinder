@@ -78,13 +78,7 @@ function ResultsContent() {
                 <span className="font-medium">Back to Chat</span>
               </Link>
               <div className="h-6 w-px bg-gray-300"></div>
-              <Link 
-                href="/"
-                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                <Home className="w-4 h-4 mr-1" />
-                <span>Home</span>
-              </Link>
+           
             </div>
             
             <div className="flex items-center space-x-3">
