@@ -24,6 +24,7 @@ import {
   Layers,
   Box,
   
+  
 } from "lucide-react";
 
 // Roadmaps data configuration
@@ -74,6 +75,15 @@ export const roadmapsData = [
     description: "Cross-platform mobile app development"
   },
   {
+    id: "flutter",
+    title: "Flutter",
+    icon: <Smartphone className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Flutter",
+    bgColor: "from-blue-500 to-blue-700",
+    category: "featured",
+    description: "Cross-platform mobile app development"
+  },
+  {
     id: "frontend",
     title: "Frontend",
     icon: <Layers className="w-5 h-5 text-white" />,
@@ -88,6 +98,15 @@ export const roadmapsData = [
     icon: <Server className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Backend",
     bgColor: "from-green-600 to-emerald-700",
+    category: "featured",
+    description: "Server-side development and APIs"
+  },
+  {
+    id: "nodejs",
+    title: "Node js",
+    icon: <Server className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Nodejs",
+    bgColor: "from-green-400 to-emerald-500",
     category: "featured",
     description: "Server-side development and APIs"
   },

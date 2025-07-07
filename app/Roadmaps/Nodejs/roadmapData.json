@@ -1,0 +1,568 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with JavaScript & Node.js Basics",
+    "description": "Master JavaScript fundamentals and get comfortable with Node.js environment",
+    "icon": "BookOpen",
+    "gradient": "from-yellow-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "JavaScript ES6+: let, const, arrow functions, template literals",
+        "Data Types, Loops, Functions, Arrays, Objects",
+        "npm, Node.js REPL, package.json, CommonJS modules",
+        "File system, path, and basic terminal commands",
+        "Event-driven programming basics",
+        "Module system (require/module.exports)",
+        "NPM package management",
+        "Basic Node.js global objects (process, __dirname, __filename)",
+        "Understanding Node.js runtime vs browser environment",
+        "Basic debugging techniques"
+      ],
+      "toolsToUse": [
+        "Node.js LTS",
+        "VS Code",
+        "npm / yarn",
+        "Postman",
+        "Git & GitHub",
+        "Terminal/Command Prompt",
+        "Node.js REPL"
+      ],
+      "bestCourses": {
+        "english": [
+          "Node.js Crash Course – Traversy Media",
+          "JavaScript Complete Course – freeCodeCamp",
+          "Node.js Fundamentals – Net Ninja",
+          "Programming with Mosh – Node.js for Beginners",
+          "Academind – Node.js Complete Guide"
+        ],
+        "hindi": [
+          "JavaScript + Node.js Full Course – WsCube Tech",
+          "CodeWithHarry – Node.js Tutorial",
+          "Thapa Technical – JavaScript Basics",
+          "Apna College – Node.js Fundamentals",
+          "Love Babbar – JavaScript Complete Course"
+        ]
+      },
+      "docsAndWebsites": [
+        "Node.js Official Documentation",
+        "MDN JavaScript Guide",
+        "JavaScript.info",
+        "NPM Documentation",
+        "Node.js Guides"
+      ],
+      "projectIdeas": [
+        "Basic CLI tool",
+        "JSON file reader/writer",
+        "File logger utility",
+        "Simple calculator CLI",
+        "Text file processor",
+        "Basic HTTP request maker",
+        "Directory listing tool"
+      ],
+      "practicePlatforms": [
+        "Node.js REPL",
+        "CodeSandbox",
+        "Repl.it",
+        "Visual Studio Code",
+        "Terminal practice"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Core Node.js Modules & Concepts",
+    "description": "Deep dive into Node.js built-in modules and asynchronous programming",
+    "icon": "Cpu",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Core modules: http, fs, events, path, os, url, querystring",
+        "Event Loop, Callbacks, Promises, async/await",
+        "Streams and Buffers",
+        "Error handling and debugging",
+        "Process and child processes",
+        "Timers and scheduling",
+        "Crypto module basics",
+        "Util module and debugging",
+        "Clustering and worker threads",
+        "Performance monitoring basics"
+      ],
+      "toolsToUse": [
+        "Nodemon",
+        "VSCode Debugger",
+        "Node.js built-in modules",
+        "util, process, assert modules",
+        "Chrome DevTools for Node",
+        "Node.js profiler",
+        "Performance monitoring tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Core Modules Guide – Fireship",
+          "Node.js Deep Dive – Academind",
+          "Asynchronous JavaScript – freeCodeCamp",
+          "Node.js Streams – Net Ninja",
+          "Advanced Node.js – Programming with Mosh"
+        ],
+        "hindi": [
+          "Node.js Explained in Depth – CodeWithHarry",
+          "Core Modules Hindi – WsCube Tech",
+          "Async Programming – Thapa Technical",
+          "Node.js Advanced – Love Babbar",
+          "Complete Node.js – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "Node.js API Documentation",
+        "Node.js Guides",
+        "MDN Async JavaScript",
+        "Node.js Best Practices",
+        "Event Loop Explained"
+      ],
+      "projectIdeas": [
+        "Custom web server using http module",
+        "File system explorer CLI",
+        "Event-driven chat system",
+        "Simple static file server",
+        "Log file analyzer",
+        "Basic web crawler",
+        "Stream-based file processor"
+      ],
+      "practicePlatforms": [
+        "Node.js Documentation Examples",
+        "GitHub Node.js Samples",
+        "CodeSandbox Node Templates",
+        "Local development environment",
+        "Terminal-based projects"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Express.js & REST APIs",
+    "description": "Build robust web applications and RESTful APIs using Express.js framework",
+    "icon": "Server",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Express.js fundamentals and setup",
+        "Routing and HTTP methods (GET, POST, PUT, DELETE)",
+        "Middleware functions and middleware stack",
+        "Request and response objects",
+        "Error handling middleware",
+        "REST API design principles",
+        "CRUD operations implementation",
+        "Body parsing and validation",
+        "CORS configuration",
+        "Security best practices (helmet, rate limiting)"
+      ],
+      "toolsToUse": [
+        "Express.js",
+        "Morgan (HTTP request logger)",
+        "Helmet (security headers)",
+        "Express-validator",
+        "CORS middleware",
+        "Body-parser",
+        "Postman/Insomnia",
+        "Express-rate-limit"
+      ],
+      "bestCourses": {
+        "english": [
+          "Express.js Crash Course – Academind",
+          "REST API with Express – Traversy Media",
+          "Express.js Complete Guide – Net Ninja",
+          "Building APIs with Express – freeCodeCamp",
+          "Express.js Fundamentals – Programming with Mosh"
+        ],
+        "hindi": [
+          "Express.js Full Course – WsCube Tech",
+          "REST API Hindi – CodeWithHarry",
+          "Express.js Tutorial – Thapa Technical",
+          "Backend Development – Love Babbar",
+          "API Development Hindi – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "Express.js Official Documentation",
+        "REST API Design Guide",
+        "HTTP Status Code Reference",
+        "Express.js Best Practices",
+        "API Design Guidelines"
+      ],
+      "projectIdeas": [
+        "Notes API with full CRUD operations",
+        "Blog backend with RESTful routes",
+        "Contact manager REST API",
+        "Task management API",
+        "User profile management system",
+        "Product catalog API",
+        "Simple e-commerce backend"
+      ],
+      "practicePlatforms": [
+        "Postman API Testing",
+        "Thunder Client",
+        "Insomnia REST Client",
+        "API testing challenges",
+        "Express.js playground"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Databases (MongoDB & SQL)",
+    "description": "Master database integration with Node.js using both NoSQL and SQL databases",
+    "icon": "Database",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "MongoDB fundamentals and document structure",
+        "Mongoose ODM for MongoDB",
+        "SQL basics: MySQL or PostgreSQL",
+        "Database connection and configuration",
+        "Schema design and data modeling",
+        "CRUD operations with databases",
+        "Data validation and constraints",
+        "Indexing and query optimization",
+        "Database relationships and joins",
+        "Transaction handling"
+      ],
+      "toolsToUse": [
+        "MongoDB Atlas",
+        "MongoDB Compass",
+        "Mongoose",
+        "PostgreSQL/MySQL",
+        "Sequelize ORM",
+        "PgAdmin/phpMyAdmin",
+        "Database GUI tools",
+        "Prisma ORM"
+      ],
+      "bestCourses": {
+        "english": [
+          "MongoDB Tutorial – Traversy Media",
+          "Database Design – freeCodeCamp",
+          "Mongoose Complete Guide – Net Ninja",
+          "SQL and NoSQL – Academind",
+          "Database Integration – Programming with Mosh"
+        ],
+        "hindi": [
+          "MongoDB + Node.js – WsCube Tech",
+          "Database Hindi Tutorial – CodeWithHarry",
+          "MongoDB Complete Course – Thapa Technical",
+          "SQL with Node.js – Love Babbar",
+          "Database Design Hindi – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "MongoDB Documentation",
+        "Mongoose Documentation",
+        "PostgreSQL Documentation",
+        "Sequelize Documentation",
+        "Database Design Best Practices"
+      ],
+      "projectIdeas": [
+        "Blog API with MongoDB",
+        "Task manager with PostgreSQL",
+        "User management system with database",
+        "E-commerce product catalog",
+        "Social media backend with relationships",
+        "Library management system",
+        "Inventory management API"
+      ],
+      "practicePlatforms": [
+        "MongoDB Atlas",
+        "Database design challenges",
+        "SQL practice platforms",
+        "MongoDB University",
+        "Database modeling exercises"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Authentication & Security",
+    "description": "Implement secure authentication systems and learn security best practices",
+    "icon": "Shield",
+    "gradient": "from-red-500 to-rose-500",
+    "content": {
+      "whatToLearn": [
+        "JSON Web Tokens (JWT) implementation",
+        "Password hashing with bcrypt",
+        "Session-based authentication",
+        "Cookie handling and security",
+        "OAuth integration (Google, GitHub)",
+        "Role-based access control (RBAC)",
+        "Input validation and sanitization",
+        "Rate limiting and DDoS protection",
+        "CORS configuration",
+        "Security headers and best practices"
+      ],
+      "toolsToUse": [
+        "jsonwebtoken",
+        "bcryptjs",
+        "Passport.js",
+        "express-validator",
+        "cookie-parser",
+        "express-rate-limit",
+        "helmet",
+        "OAuth libraries",
+        "dotenv for environment variables"
+      ],
+      "bestCourses": {
+        "english": [
+          "JWT Auth – Web Dev Simplified",
+          "Node.js Security – Traversy Media",
+          "Authentication Complete Guide – Net Ninja",
+          "Security Best Practices – Academind",
+          "OAuth Implementation – freeCodeCamp"
+        ],
+        "hindi": [
+          "Authentication in Node.js – WsCube Tech",
+          "JWT Hindi Tutorial – CodeWithHarry",
+          "Security Implementation – Thapa Technical",
+          "Auth Systems Hindi – Love Babbar",
+          "Complete Authentication – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "JWT.io Documentation",
+        "Passport.js Documentation",
+        "bcrypt Documentation",
+        "OWASP Security Guidelines",
+        "OAuth 2.0 Specification"
+      ],
+      "projectIdeas": [
+        "User registration/login API",
+        "JWT-based authentication system",
+        "OAuth social login implementation",
+        "Role-based admin panel backend",
+        "Password reset flow",
+        "Multi-factor authentication",
+        "Secure API with rate limiting"
+      ],
+      "practicePlatforms": [
+        "Auth0 learning platform",
+        "Firebase Auth practice",
+        "Security testing tools",
+        "JWT debugging tools",
+        "OAuth playground"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Advanced Backend Concepts",
+    "description": "Master advanced Node.js concepts including real-time features and architecture patterns",
+    "icon": "Zap",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "MVC Architecture pattern",
+        "File uploads with Multer and cloud storage",
+        "Email integration with Nodemailer",
+        "Real-time WebSockets with Socket.io",
+        "Caching strategies with Redis",
+        "Background jobs and queues",
+        "Pagination, filtering, and sorting",
+        "API versioning strategies",
+        "Microservices architecture basics",
+        "Event-driven architecture patterns"
+      ],
+      "toolsToUse": [
+        "multer for file uploads",
+        "socket.io for real-time features",
+        "nodemailer for email",
+        "Redis for caching",
+        "Bull.js for job queues",
+        "Cloudinary/AWS S3 for file storage",
+        "Winston for logging",
+        "node-cache for in-memory caching"
+      ],
+      "bestCourses": {
+        "english": [
+          "Node Advanced – freeCodeCamp",
+          "Real-time Applications – Traversy Media",
+          "Microservices with Node – Academind",
+          "Advanced Node Patterns – Net Ninja",
+          "Socket.io Complete Guide – Programming with Mosh"
+        ],
+        "hindi": [
+          "Real-time Projects – WsCube Tech",
+          "Advanced Node.js – CodeWithHarry",
+          "Socket.io Hindi – Thapa Technical",
+          "Advanced Backend – Love Babbar",
+          "Complete Real-time Apps – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "Socket.io Documentation",
+        "Nodemailer Documentation",
+        "Redis Documentation",
+        "Multer Documentation",
+        "Bull Queue Documentation"
+      ],
+      "projectIdeas": [
+        "Real-time chat application",
+        "File-sharing backend with upload",
+        "Email-based notification system",
+        "Live collaboration tool backend",
+        "Real-time dashboard API",
+        "Image processing and upload service",
+        "Background job processing system"
+      ],
+      "practicePlatforms": [
+        "Socket.io playground",
+        "Redis lab exercises",
+        "Real-time project challenges",
+        "File upload practice",
+        "Email service integration"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Testing, DevOps & Deployment",
+    "description": "Learn testing methodologies, containerization, and deployment strategies",
+    "icon": "TestTube",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "Unit testing with Jest and Mocha",
+        "Integration testing strategies",
+        "API testing with Supertest",
+        "Test-driven development (TDD)",
+        "Docker containerization",
+        "CI/CD pipeline setup",
+        "Environment configuration",
+        "Deployment to cloud platforms",
+        "Performance monitoring",
+        "Load balancing basics"
+      ],
+      "toolsToUse": [
+        "Jest for testing",
+        "Mocha & Chai",
+        "Supertest for API testing",
+        "Docker & Docker Compose",
+        "GitHub Actions",
+        "Railway/Vercel/Render",
+        "PM2 process manager",
+        "New Relic/DataDog monitoring"
+      ],
+      "bestCourses": {
+        "english": [
+          "Node Testing & CI – Fireship",
+          "Docker for Developers – Traversy Media",
+          "CI/CD with GitHub Actions – freeCodeCamp",
+          "Node.js Testing – Net Ninja",
+          "DevOps Basics – Academind"
+        ],
+        "hindi": [
+          "Node.js Deployment – WsCube Tech",
+          "Docker Hindi Tutorial – CodeWithHarry",
+          "Testing Hindi Course – Thapa Technical",
+          "DevOps for Backend – Love Babbar",
+          "Complete Deployment – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "Jest Documentation",
+        "Docker Documentation",
+        "GitHub Actions Documentation",
+        "Railway Documentation",
+        "Vercel Documentation"
+      ],
+      "projectIdeas": [
+        "Fully tested API with Jest",
+        "Dockerized Node.js application",
+        "CI/CD pipeline for API",
+        "Performance monitoring setup",
+        "Load testing implementation",
+        "Multi-environment deployment",
+        "Automated testing suite"
+      ],
+      "practicePlatforms": [
+        "Docker Hub",
+        "GitHub Actions",
+        "Railway",
+        "Vercel",
+        "Render",
+        "Testing playgrounds",
+        "DevOps practice labs"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Full-stack Integration & Professional Practice",
+    "description": "Integrate backend with frontend, build complete applications, and prepare for professional development",
+    "icon": "Briefcase",
+    "gradient": "from-teal-500 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "Frontend-backend integration patterns",
+        "API design for frontend consumption",
+        "State management with APIs",
+        "Error handling in full-stack applications",
+        "Real-time features integration",
+        "Mobile app backend development",
+        "Scalability considerations",
+        "Code review best practices",
+        "API documentation and standards",
+        "Interview preparation topics"
+      ],
+      "toolsToUse": [
+        "React/Vue/Angular for frontend",
+        "React Native/Flutter for mobile",
+        "Swagger/OpenAPI for documentation",
+        "Git workflows and branching",
+        "Code review tools",
+        "Performance monitoring tools",
+        "Analytics integration",
+        "API versioning tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Full Stack Development – freeCodeCamp",
+          "MERN Stack – Traversy Media",
+          "Complete Web Development – Academind",
+          "Full Stack Projects – Net Ninja",
+          "Professional Development – Programming with Mosh"
+        ],
+        "hindi": [
+          "Full Stack Development – CodeWithHarry",
+          "MERN Stack Project – WsCube Tech",
+          "Complete Backend – Thapa Technical",
+          "Full Stack Interview Prep – Love Babbar",
+          "Industry Projects – Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "Full Stack Documentation",
+        "API Design Best Practices",
+        "System Design Primer",
+        "Backend Interview Questions",
+        "Open Source Contribution Guide"
+      ],
+      "projectIdeas": [
+        "MERN Stack blog platform",
+        "E-commerce backend with admin panel",
+        "Social media API with real-time features",
+        "Task management with team collaboration",
+        "Learning management system backend",
+        "Multi-tenant SaaS backend",
+        "Real-time collaborative editor backend",
+        "Video streaming platform API",
+        "IoT data collection system",
+        "Cryptocurrency portfolio tracker API"
+      ],
+      "practicePlatforms": [
+        "GitHub for open source",
+        "HackerRank Node.js challenges",
+        "LeetCode system design",
+        "Backend development challenges",
+        "Technical interview platforms",
+        "Hackathons and coding competitions",
+        "Professional networking platforms"
+      ]
+    }
+  }
+]

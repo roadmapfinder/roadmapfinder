@@ -1,0 +1,569 @@
+[
+  {
+    "id": 1,
+    "title": "Understand Prerequisites: JavaScript & Node.js",
+    "description": "Master JavaScript ES6+ and Node.js fundamentals before diving into Express.js",
+    "icon": "BookOpen",
+    "gradient": "from-blue-500 to-cyan-600",
+    "content": {
+      "whatToLearn": [
+        "JavaScript ES6+ (let/const, arrow functions, promises, async/await)",
+        "Node.js fundamentals (modules, event loop, global objects)",
+        "npm/yarn, package.json, CommonJS vs ES Modules",
+        "Terminal commands and CLI basics",
+        "Understanding asynchronous programming",
+        "Error handling in Node.js",
+        "File system operations",
+        "HTTP module basics",
+        "Environment variables",
+        "JavaScript debugging techniques"
+      ],
+      "toolsToUse": [
+        "Node.js LTS",
+        "VS Code",
+        "Postman",
+        "Git",
+        "npm/yarn",
+        "Node.js REPL",
+        "Chrome DevTools",
+        "Terminal/Command Prompt"
+      ],
+      "bestCourses": {
+        "english": [
+          "Traversy Media – Node.js Crash Course",
+          "The Net Ninja – JavaScript ES6 Tutorial",
+          "freeCodeCamp – Node.js Full Course",
+          "Academind – Node.js Complete Guide",
+          "JavaScript.info – Modern JavaScript Tutorial"
+        ],
+        "hindi": [
+          "CodeWithHarry – JavaScript + Node.js Playlist",
+          "WsCube Tech – Node.js Complete Course",
+          "Thapa Technical – JavaScript ES6 Tutorial",
+          "Learn More – Node.js Basics",
+          "Technical Suneja – JavaScript Advanced"
+        ]
+      },
+      "docsAndWebsites": [
+        "Node.js Official Documentation",
+        "JavaScript.info",
+        "MDN Web Docs - JavaScript",
+        "npm Documentation",
+        "Node.js Best Practices Guide"
+      ],
+      "projectIdeas": [
+        "CLI tool with Node.js",
+        "Simple web server using http module",
+        "JSON reader CLI application",
+        "File system operations tool",
+        "Basic HTTP request client",
+        "Environment configuration manager",
+        "Simple logging utility"
+      ],
+      "practicePlatforms": [
+        "Node.js Practice Exercises",
+        "JavaScript Challenges",
+        "HackerRank Node.js Problems",
+        "Codewars JavaScript Kata",
+        "Node.js Code Academy"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Getting Started with Express.js",
+    "description": "Learn Express.js fundamentals including routing, middleware, and basic server setup",
+    "icon": "Server",
+    "gradient": "from-green-500 to-teal-600",
+    "content": {
+      "whatToLearn": [
+        "Installing Express.js & understanding the structure",
+        "Basic routing (GET, POST, PUT, DELETE)",
+        "Middleware and next() function",
+        "Request & Response objects",
+        "Serving static files",
+        "Express application structure",
+        "Route parameters and query strings",
+        "HTTP status codes",
+        "Basic error handling",
+        "Express generator tool"
+      ],
+      "toolsToUse": [
+        "Express.js",
+        "Nodemon",
+        "dotenv",
+        "CORS",
+        "express-generator",
+        "body-parser",
+        "morgan (logging)",
+        "path module"
+      ],
+      "bestCourses": {
+        "english": [
+          "Academind – Express.js Crash Course",
+          "The Net Ninja – Express.js Tutorial",
+          "freeCodeCamp – Express.js Full Course",
+          "Traversy Media – Express.js Fundamentals",
+          "Web Dev Simplified – Express.js Basics"
+        ],
+        "hindi": [
+          "WsCube Tech – Express.js Full Playlist",
+          "CodeWithHarry – Express.js Tutorial",
+          "Thapa Technical – Express.js Course",
+          "Learn More – Express.js Basics",
+          "Technical Suneja – Express.js Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Express.js Official Documentation",
+        "Express.js Routing Guide",
+        "Express.js Middleware Guide",
+        "Express.js API Reference",
+        "Express.js Best Practices"
+      ],
+      "projectIdeas": [
+        "Simple quote server",
+        "RESTful notes API",
+        "Static site file server",
+        "Basic blog server",
+        "Simple contact form handler",
+        "Weather API proxy server",
+        "Basic authentication server"
+      ],
+      "practicePlatforms": [
+        "Express.js Examples Repository",
+        "Express.js Code Challenges",
+        "Backend Practice Projects",
+        "Express.js Workshop Exercises",
+        "Node.js Express Tutorials"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "REST API with Express.js",
+    "description": "Build complete RESTful APIs with proper HTTP methods, routing, and data handling",
+    "icon": "Code",
+    "gradient": "from-purple-500 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Building CRUD APIs",
+        "URL parameters and Query parameters",
+        "Handling JSON data with body-parser",
+        "Modularizing routes & controllers",
+        "Using Postman to test endpoints",
+        "HTTP status codes and responses",
+        "API versioning strategies",
+        "Request validation",
+        "Error handling in APIs",
+        "API documentation with Swagger"
+      ],
+      "toolsToUse": [
+        "body-parser",
+        "express.Router",
+        "Postman",
+        "Nodemon",
+        "express-validator",
+        "Swagger/OpenAPI",
+        "Insomnia",
+        "Thunder Client"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Express REST APIs Course",
+          "Traversy Media – REST API Tutorial",
+          "Academind – Building REST APIs",
+          "The Net Ninja – REST API with Express",
+          "Web Dev Simplified – REST API Guide"
+        ],
+        "hindi": [
+          "WsCube Tech – Node.js REST API Series",
+          "CodeWithHarry – REST API Tutorial",
+          "Thapa Technical – Express API Course",
+          "Learn More – REST API Hindi",
+          "Technical Suneja – API Development"
+        ]
+      },
+      "docsAndWebsites": [
+        "RESTful API Design Guide",
+        "HTTP Status Code Reference",
+        "Express.js Routing Documentation",
+        "API Design Best Practices",
+        "Swagger Documentation"
+      ],
+      "projectIdeas": [
+        "Blog REST API",
+        "To-Do List backend",
+        "Product Inventory CRUD API",
+        "User management system",
+        "Book library API",
+        "Recipe sharing API",
+        "Task management API"
+      ],
+      "practicePlatforms": [
+        "REST API Practice Challenges",
+        "Postman API Testing",
+        "Backend Mentor Projects",
+        "API Design Challenges",
+        "Express.js API Examples"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Connecting to Databases",
+    "description": "Integrate databases with Express.js using MongoDB, PostgreSQL, or MySQL",
+    "icon": "Database",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "MongoDB with Mongoose ODM",
+        "PostgreSQL/MySQL with Sequelize ORM",
+        "Connecting databases with Express",
+        "Environment variables for DB secrets",
+        "Basic schema design and relationships",
+        "Database migrations and seeds",
+        "Connection pooling",
+        "Database indexing basics",
+        "Backup and restore strategies",
+        "Database performance optimization"
+      ],
+      "toolsToUse": [
+        "MongoDB Atlas",
+        "Mongoose",
+        "Sequelize",
+        "MongoDB Compass",
+        "PgAdmin",
+        "MySQL Workbench",
+        "dotenv",
+        "database-js"
+      ],
+      "bestCourses": {
+        "english": [
+          "Traversy Media – MongoDB for Beginners",
+          "freeCodeCamp – MongoDB Tutorial",
+          "Academind – MongoDB & Mongoose",
+          "The Net Ninja – MongoDB & Node.js",
+          "Web Dev Simplified – Database Integration"
+        ],
+        "hindi": [
+          "WsCube Tech – MongoDB with Node.js",
+          "CodeWithHarry – Database Integration",
+          "Thapa Technical – MongoDB Tutorial",
+          "Learn More – Database Connection",
+          "Technical Suneja – MongoDB Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Mongoose Documentation",
+        "Sequelize Documentation",
+        "MongoDB Official Docs",
+        "PostgreSQL Documentation",
+        "Database Design Principles"
+      ],
+      "projectIdeas": [
+        "Blog platform with MongoDB",
+        "Task manager with PostgreSQL",
+        "Notes app with DB integration",
+        "E-commerce backend with MySQL",
+        "Social media API with MongoDB",
+        "Inventory management system",
+        "User profile management API"
+      ],
+      "practicePlatforms": [
+        "MongoDB University",
+        "Database Design Challenges",
+        "Mongoose Practice Exercises",
+        "Sequelize Tutorials",
+        "Database Integration Projects"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Authentication & Security",
+    "description": "Implement secure authentication, authorization, and security best practices",
+    "icon": "Shield",
+    "gradient": "from-cyan-500 to-blue-600",
+    "content": {
+      "whatToLearn": [
+        "JWT authentication implementation",
+        "Hashing passwords with bcrypt",
+        "Role-based access control (RBAC)",
+        "Helmet for security headers",
+        "Rate limiting and DDoS protection",
+        "Input validation and sanitization",
+        "CORS configuration",
+        "Session management",
+        "OAuth integration",
+        "Security vulnerability prevention"
+      ],
+      "toolsToUse": [
+        "jsonwebtoken",
+        "bcryptjs",
+        "express-validator",
+        "helmet",
+        "express-rate-limit",
+        "cors",
+        "express-session",
+        "passport.js"
+      ],
+      "bestCourses": {
+        "english": [
+          "Web Dev Simplified – JWT Auth",
+          "Traversy Media – Node.js Authentication",
+          "freeCodeCamp – Authentication Course",
+          "Academind – Security in Node.js",
+          "The Net Ninja – JWT Authentication"
+        ],
+        "hindi": [
+          "WsCube Tech – JWT Auth in Node",
+          "CodeWithHarry – Authentication Tutorial",
+          "Thapa Technical – Security in Node.js",
+          "Learn More – JWT Implementation",
+          "Technical Suneja – Auth Systems"
+        ]
+      },
+      "docsAndWebsites": [
+        "JWT.io Documentation",
+        "bcrypt Documentation",
+        "OWASP Security Guidelines",
+        "Express Security Best Practices",
+        "Authentication Best Practices"
+      ],
+      "projectIdeas": [
+        "Login/Signup system with JWT",
+        "Role-based admin dashboard",
+        "Secure API with token protection",
+        "OAuth social login integration",
+        "Password reset functionality",
+        "Multi-factor authentication system",
+        "Session-based authentication"
+      ],
+      "practicePlatforms": [
+        "Authentication Challenges",
+        "Security Practice Labs",
+        "JWT Implementation Exercises",
+        "OWASP WebGoat",
+        "Security Testing Platforms"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Advanced Express Concepts",
+    "description": "Master advanced Express.js features including middleware, file handling, and integrations",
+    "icon": "Settings",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Middleware chaining and custom middleware",
+        "Global error handling strategies",
+        "Express Router + Controller Pattern",
+        "File uploads with Multer",
+        "Email notifications with Nodemailer",
+        "Caching strategies with Redis",
+        "WebSocket integration",
+        "Background job processing",
+        "Logging and monitoring",
+        "Performance optimization techniques"
+      ],
+      "toolsToUse": [
+        "Multer",
+        "Nodemailer",
+        "node-cache",
+        "Redis",
+        "slugify",
+        "socket.io",
+        "bull (job queue)",
+        "winston (logging)",
+        "compression"
+      ],
+      "bestCourses": {
+        "english": [
+          "Fireship – Express & Advanced Patterns",
+          "Academind – Advanced Node.js",
+          "The Net Ninja – Advanced Express",
+          "freeCodeCamp – Advanced Backend",
+          "Web Dev Simplified – Express Advanced"
+        ],
+        "hindi": [
+          "WsCube Tech – Advanced Node Series",
+          "CodeWithHarry – Advanced Express",
+          "Thapa Technical – Node.js Advanced",
+          "Learn More – Express Advanced Topics",
+          "Technical Suneja – Advanced Backend"
+        ]
+      },
+      "docsAndWebsites": [
+        "Multer Documentation",
+        "Nodemailer Documentation",
+        "Redis Documentation",
+        "Express Advanced Features",
+        "Node.js Performance Guide"
+      ],
+      "projectIdeas": [
+        "File-sharing app with upload",
+        "Image upload gallery API",
+        "Email-based newsletter system",
+        "Real-time chat application",
+        "Job queue processing system",
+        "Cached API with Redis",
+        "Advanced logging system"
+      ],
+      "practicePlatforms": [
+        "Advanced Express Examples",
+        "Middleware Development Challenges",
+        "File Upload Practice Projects",
+        "Real-time Application Tutorials",
+        "Performance Optimization Labs"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Testing, CI/CD & Deployment",
+    "description": "Implement testing strategies, continuous integration, and deploy applications to production",
+    "icon": "Rocket",
+    "gradient": "from-emerald-500 to-teal-600",
+    "content": {
+      "whatToLearn": [
+        "Unit & Integration testing with Jest/Mocha",
+        "API testing with Supertest",
+        "Docker basics for containerization",
+        "GitHub Actions for CI/CD",
+        "Deploying with Vercel, Render, Railway",
+        "Environment configuration management",
+        "Database migration in production",
+        "Load testing and performance monitoring",
+        "Error tracking and logging",
+        "Scaling strategies"
+      ],
+      "toolsToUse": [
+        "Jest",
+        "Supertest",
+        "Mocha",
+        "Chai",
+        "Docker",
+        "GitHub Actions",
+        "Vercel",
+        "Railway",
+        "Render",
+        "PM2"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Express CI/CD Pipeline",
+          "Traversy Media – Docker & Node.js",
+          "Academind – Testing Node.js Applications",
+          "The Net Ninja – Deployment Strategies",
+          "Web Dev Simplified – Testing Guide"
+        ],
+        "hindi": [
+          "WsCube Tech – Node Testing & Deployment",
+          "CodeWithHarry – Testing Tutorial",
+          "Thapa Technical – Deployment Guide",
+          "Learn More – CI/CD Pipeline",
+          "Technical Suneja – Testing & Deploy"
+        ]
+      },
+      "docsAndWebsites": [
+        "Jest Documentation",
+        "Docker Node.js Guide",
+        "GitHub Actions Documentation",
+        "Deployment Best Practices",
+        "Testing Best Practices"
+      ],
+      "projectIdeas": [
+        "Tested Express API with full coverage",
+        "Dockerized app with MongoDB",
+        "Deployed API with CI pipeline",
+        "Load tested scalable application",
+        "Monitored production application",
+        "Multi-environment deployment setup",
+        "Automated testing pipeline"
+      ],
+      "practicePlatforms": [
+        "Testing Practice Exercises",
+        "Docker Tutorials",
+        "CI/CD Pipeline Examples",
+        "Deployment Challenges",
+        "Performance Testing Labs"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Career Preparation & Advanced Topics",
+    "description": "Master advanced concepts, microservices, and prepare for Express.js developer roles",
+    "icon": "Award",
+    "gradient": "from-yellow-500 to-orange-600",
+    "content": {
+      "whatToLearn": [
+        "Microservices architecture with Express",
+        "GraphQL integration with Express",
+        "API Gateway patterns",
+        "Message queues and event-driven architecture",
+        "Advanced security patterns",
+        "Performance monitoring and optimization",
+        "Database sharding and replication",
+        "Serverless Express applications",
+        "Interview preparation topics",
+        "Open source contribution strategies"
+      ],
+      "toolsToUse": [
+        "Apollo Server",
+        "Express Gateway",
+        "RabbitMQ",
+        "Apache Kafka",
+        "New Relic",
+        "DataDog",
+        "Serverless Framework",
+        "AWS Lambda",
+        "Kubernetes"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Microservices Course",
+          "Academind – GraphQL with Express",
+          "The Net Ninja – Advanced Backend",
+          "Web Dev Simplified – Interview Prep",
+          "Traversy Media – Serverless Express"
+        ],
+        "hindi": [
+          "WsCube Tech – Advanced Backend Topics",
+          "CodeWithHarry – Microservices Tutorial",
+          "Thapa Technical – GraphQL Course",
+          "Learn More – Interview Preparation",
+          "Technical Suneja – Advanced Express"
+        ]
+      },
+      "docsAndWebsites": [
+        "Microservices Pattern Documentation",
+        "GraphQL Documentation",
+        "Express.js Advanced Guide",
+        "Backend Interview Questions",
+        "System Design Principles"
+      ],
+      "projectIdeas": [
+        "Complete microservices application",
+        "GraphQL API with Express",
+        "Event-driven architecture system",
+        "Serverless Express application",
+        "High-performance API system",
+        "Real-time monitoring dashboard",
+        "Open source Express plugin",
+        "Portfolio showcasing all skills"
+      ],
+      "practicePlatforms": [
+        "Backend Interview Practice",
+        "System Design Challenges",
+        "Open Source Express Projects",
+        "Advanced Backend Patterns",
+        "Express.js Job Boards",
+        "Technical Interview Prep",
+        "Express.js Community Forums"
+      ]
+    }
+  }
+]
