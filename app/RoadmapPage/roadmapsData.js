@@ -22,7 +22,8 @@ import {
   Binary,
   Leaf,
   Layers,
-  Box
+  Box,
+  
 } from "lucide-react";
 
 // Roadmaps data configuration
@@ -96,6 +97,15 @@ export const roadmapsData = [
     icon: <Code className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Javascript",
     bgColor: "from-yellow-400 to-yellow-600",
+    category: "featured",
+    description: "Modern JavaScript programming"
+  },
+  {
+    id: "typescript",
+    title: "TypeScript",
+    icon: <Box className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Typescript",
+    bgColor: "from-blue-400 to-blue-600",
     category: "featured",
     description: "Modern JavaScript programming"
   },

@@ -30,14 +30,9 @@ const Footer = () => {
               >
                 <Linkedin size={20} className="text-gray-700" />
               </Link>
+         
               <Link
-                href="#"
-                className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
-              >
-                <Youtube size={20} className="text-gray-700" />
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/roadmapfinder/"
                 className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 transition-colors"
               >
                 <Instagram size={20} className="text-gray-700" />
@@ -68,7 +63,7 @@ const Footer = () => {
               Docs
               </Link>
               <Link
-                href="/Tools"
+                href="/TOOLS"
                 className="text-gray-700 hover:text-blue-500 transition-colors"
               >
           Tools
@@ -95,7 +90,9 @@ const Footer = () => {
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-colors">
+                <Link href="/TOOLS">
                 Subscribe
+                  </Link>
               </button>
             </div>
             <p className="text-sm text-gray-500">

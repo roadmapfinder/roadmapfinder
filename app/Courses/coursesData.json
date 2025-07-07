@@ -719,6 +719,17 @@
       "videoId": "https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k",
       "badge": "TRENDING",
       "language": "Hindi"
+    },
+    {
+      "id": 65,
+      "category": "Programming",
+      "title": "Typescript complete course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "ts",
+      "videoId": "https://youtu.be/lVzb6pmel_E?si=_Qo8Pq0tmERvK2C0",
+      "badge": "NEW",
+      "language": "Hindi"
     }
   ]
 }
