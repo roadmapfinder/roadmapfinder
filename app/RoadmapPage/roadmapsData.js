@@ -111,6 +111,15 @@ export const roadmapsData = [
     description: "Server-side development and APIs"
   },
   {
+    id: "express js",
+    title: "Express js",
+    icon: <Box className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Expressjs",
+    bgColor: "from-green-400 to-emerald-500",
+    category: "featured",
+    description: "Server-side development and APIs"
+  },
+  {
     id: "javascript",
     title: "JavaScript",
     icon: <Code className="w-5 h-5 text-white" />,
