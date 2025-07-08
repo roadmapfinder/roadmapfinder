@@ -343,6 +343,15 @@ export const roadmapsData = [
     bgColor: "from-red-600 to-red-800",
     category: "trending",
     description: "Cybersecurity and information security"
+  },
+  {
+    id: "Internet of Things",
+    title: "IOT",
+    icon: <Cpu className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/IOT",
+    bgColor: "from-red-600 to-red-800",
+    category: "trending",
+    description: "IOT development and applications"
   }
 ];
 

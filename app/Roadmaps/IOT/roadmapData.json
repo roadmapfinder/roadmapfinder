@@ -1,0 +1,493 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding IoT Fundamentals",
+    "description": "Essential foundation of Internet of Things, electronics basics, and microcontroller introduction",
+    "icon": "Cpu",
+    "gradient": "from-gray-500 to-slate-600",
+    "content": {
+      "whatToLearn": [
+        "What is IoT? Use cases & real-world applications",
+        "IoT ecosystem: Devices, sensors, microcontrollers, connectivity, cloud, apps",
+        "Basic electronics: Voltage, current, resistance, breadboard",
+        "Microcontroller vs Microprocessor",
+        "Circuit design basics",
+        "Power supply fundamentals",
+        "Digital vs Analog signals",
+        "Sensor types and applications",
+        "Communication protocols overview",
+        "IoT security basics"
+      ],
+      "toolsToUse": [
+        "Breadboard",
+        "Arduino Uno / ESP32",
+        "Multimeter",
+        "Jumper wires, resistors, LEDs",
+        "Power supply modules",
+        "Basic sensor kit",
+        "Circuit simulation software"
+      ],
+      "bestCourses": {
+        "english": [
+          "FreeCodeCamp – IoT Full Course",
+          "Coursera – Introduction to IoT",
+          "Udemy – Complete IoT Course",
+          "EdX – IoT Fundamentals",
+          "YouTube – IoT Basics for Beginners"
+        ],
+        "hindi": [
+          "Great Learning – IoT Crash Course",
+          "Pantech E-Learning – IoT Basics Hindi",
+          "CodeWithHarry – Electronics Basics",
+          "Techiesms – IoT Introduction Hindi",
+          "Learn with Pantech – IoT Hindi Course"
+        ]
+      },
+      "docsAndWebsites": [
+        "IoT for Beginners by Microsoft",
+        "Circuit Basics",
+        "Electronics Tutorial",
+        "IoT Architecture Documentation",
+        "Microcontroller Basics Guide"
+      ],
+      "projectIdeas": [
+        "LED blinking using Arduino",
+        "Simple temperature reader",
+        "Motion detection system with buzzer",
+        "Basic light sensor project",
+        "Simple door alarm system",
+        "Temperature monitoring with LCD",
+        "Basic home automation switch"
+      ],
+      "practicePlatforms": [
+        "TinkerCAD Circuits",
+        "Wokwi Arduino Simulator",
+        "Circuit.io",
+        "Falstad Circuit Simulator",
+        "Arduino Web Editor"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Microcontrollers & Sensors",
+    "description": "Deep dive into Arduino and ESP32 programming with various sensors integration",
+    "icon": "Zap",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Arduino programming with C++",
+        "ESP32 programming (WiFi & Bluetooth)",
+        "Using digital and analog sensors",
+        "Serial communication & debugging",
+        "PWM, ADC, and timer functions",
+        "Interrupt handling",
+        "I2C and SPI communication",
+        "Sensor calibration techniques",
+        "Power management for microcontrollers",
+        "Troubleshooting embedded systems"
+      ],
+      "toolsToUse": [
+        "Arduino IDE",
+        "DHT11, PIR, IR, Ultrasonic, Gas sensors",
+        "ESP32 Dev Board",
+        "FTDI Programmer",
+        "Logic analyzer",
+        "Oscilloscope",
+        "Sensor kit with various modules"
+      ],
+      "bestCourses": {
+        "english": [
+          "Programming Electronics Academy – Arduino for Beginners",
+          "Udemy – Arduino Programming Course",
+          "Coursera – ESP32 Programming",
+          "YouTube – Arduino Projects",
+          "EdX – Embedded Systems Course"
+        ],
+        "hindi": [
+          "Pantech E-Learning – Arduino Projects Hindi",
+          "Techiesms – ESP32 Projects Hindi",
+          "Learn with Pantech – Arduino Hindi",
+          "Electronics with Pantech – Sensor Projects",
+          "CodeWithHarry – Arduino Programming Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Arduino Documentation",
+        "ESP32 Documentation",
+        "Sensor interfacing guides",
+        "Microcontroller programming tutorials",
+        "ESP32 community forum"
+      ],
+      "projectIdeas": [
+        "Smart temperature display with LCD",
+        "Home automation using ESP32",
+        "RFID-based attendance system",
+        "Ultrasonic distance measuring device",
+        "Gas leakage detection system",
+        "Smart irrigation controller",
+        "Bluetooth-controlled robot"
+      ],
+      "practicePlatforms": [
+        "Arduino Project Hub",
+        "ESP32 Examples",
+        "Hackster.io",
+        "TinkerCAD",
+        "Wokwi ESP32 Simulator"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Connectivity: WiFi, MQTT & Cloud",
+    "description": "IoT communication protocols, cloud integration, and data management",
+    "icon": "Wifi",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "IoT protocols: HTTP, MQTT, CoAP",
+        "WiFi vs Bluetooth vs LoRa vs Zigbee",
+        "Data push to cloud (ThingSpeak, Blynk, Firebase)",
+        "MQTT with Node-RED",
+        "RESTful APIs for IoT",
+        "WebSocket communication",
+        "Cloud databases for IoT",
+        "Data visualization techniques",
+        "IoT security protocols",
+        "Network troubleshooting"
+      ],
+      "toolsToUse": [
+        "MQTT Broker (Mosquitto, HiveMQ)",
+        "Blynk / ThingSpeak / Firebase",
+        "Node-RED",
+        "ESP8266 / ESP32",
+        "Postman for API testing",
+        "MQTT.fx client",
+        "Cloud platforms (AWS IoT, Google Cloud IoT)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Learn Embedded – MQTT, Firebase IoT",
+          "Udemy – IoT with Cloud Integration",
+          "Coursera – Cloud IoT Core",
+          "YouTube – MQTT Tutorials",
+          "EdX – IoT Cloud Platforms"
+        ],
+        "hindi": [
+          "Techiesms – IoT + MQTT Projects",
+          "Learn with Pantech – Cloud IoT Hindi",
+          "CodeWithHarry – Firebase IoT Hindi",
+          "Electronics with Pantech – MQTT Hindi",
+          "Great Learning – Cloud IoT Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "MQTT.org Documentation",
+        "Firebase IoT Guide",
+        "ThingSpeak Documentation",
+        "Blynk Documentation",
+        "Node-RED Documentation"
+      ],
+      "projectIdeas": [
+        "Smart weather station with cloud sync",
+        "WiFi-connected door lock system",
+        "MQTT-based smart plant monitor",
+        "IoT-based energy monitoring system",
+        "Remote environmental monitoring",
+        "Smart parking system",
+        "IoT-based inventory management"
+      ],
+      "practicePlatforms": [
+        "ThingSpeak",
+        "Blynk IoT Platform",
+        "Firebase Console",
+        "Node-RED",
+        "MQTT Broker testing"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Programming & Embedded Logic",
+    "description": "Advanced embedded programming concepts and real-time systems",
+    "icon": "Code",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "C/C++ basics for embedded systems",
+        "Interrupts, timers, PWM, ADC",
+        "Power management, memory optimization",
+        "Real-Time Operating Systems (RTOS) basics",
+        "Multi-tasking in embedded systems",
+        "Memory management techniques",
+        "Embedded system debugging",
+        "Hardware abstraction layers",
+        "Embedded security principles",
+        "Code optimization for microcontrollers"
+      ],
+      "toolsToUse": [
+        "PlatformIO",
+        "Arduino IDE / ESP-IDF",
+        "VS Code",
+        "Proteus (simulation)",
+        "Keil uVision",
+        "STM32CubeIDE",
+        "JTAG debugger"
+      ],
+      "bestCourses": {
+        "english": [
+          "Shawn Hymel – Embedded Programming",
+          "Udemy – Embedded C Programming",
+          "Coursera – Embedded Systems",
+          "EdX – Real-Time Systems",
+          "YouTube – Advanced Arduino Programming"
+        ],
+        "hindi": [
+          "ALL ABOUT EMBEDDED – Embedded C, RTOS Series",
+          "Learn with Pantech – Embedded Programming Hindi",
+          "CodeWithHarry – C Programming for Embedded",
+          "Techiesms – Advanced Arduino Hindi",
+          "Electronics with Pantech – RTOS Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "PlatformIO Documentation",
+        "FreeRTOS Documentation",
+        "ESP-IDF Programming Guide",
+        "Embedded C Programming Guide",
+        "RTOS concepts and tutorials"
+      ],
+      "projectIdeas": [
+        "Water level controller",
+        "Heartbeat monitor",
+        "Real-time clock with battery backup",
+        "Multi-sensor data logger",
+        "Smart home automation system",
+        "Vehicle tracking system",
+        "Industrial monitoring system"
+      ],
+      "practicePlatforms": [
+        "PlatformIO",
+        "Embedded Online Judge",
+        "Coding challenges for embedded",
+        "STM32 community",
+        "ESP32 development forum"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "IoT with Web & Mobile Apps",
+    "description": "Building user interfaces and mobile applications for IoT control",
+    "icon": "Smartphone",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "HTTP APIs and JSON",
+        "Building simple dashboards (HTML, JS, Bootstrap)",
+        "Using Blynk / MIT App Inventor / Flutter for mobile control",
+        "REST APIs with ESP32",
+        "WebSocket for real-time communication",
+        "Mobile app development for IoT",
+        "User interface design for IoT",
+        "Database integration",
+        "Authentication and authorization",
+        "Progressive Web Apps for IoT"
+      ],
+      "toolsToUse": [
+        "MIT App Inventor",
+        "Blynk IoT Platform",
+        "Firebase",
+        "HTTP clients (Postman)",
+        "Flutter / React Native",
+        "Bootstrap / Tailwind CSS",
+        "Node.js / Express"
+      ],
+      "bestCourses": {
+        "english": [
+          "CodeWithChris – Firebase + IoT",
+          "Udemy – IoT Mobile App Development",
+          "Coursera – Web Development for IoT",
+          "YouTube – Flutter IoT Apps",
+          "EdX – Mobile IoT Applications"
+        ],
+        "hindi": [
+          "Ekeeda – IoT with Firebase & Blynk",
+          "CodeWithHarry – Flutter IoT Hindi",
+          "Learn with Pantech – Mobile IoT Hindi",
+          "Techiesms – Blynk Projects Hindi",
+          "Great Learning – IoT App Development Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "MIT App Inventor Documentation",
+        "Blynk Documentation",
+        "Firebase IoT Guide",
+        "Flutter IoT tutorials",
+        "RESTful API design for IoT"
+      ],
+      "projectIdeas": [
+        "Smart home app to control fan/light",
+        "Remote vehicle tracker app",
+        "IoT door lock with mobile authentication",
+        "Plant monitoring mobile app",
+        "Smart energy monitoring dashboard",
+        "IoT-based security system app",
+        "Environmental monitoring web portal"
+      ],
+      "practicePlatforms": [
+        "MIT App Inventor",
+        "Blynk IoT",
+        "Firebase Console",
+        "Flutter playground",
+        "Codepen for web dashboards"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Advanced IoT & Edge Computing",
+    "description": "Cutting-edge IoT technologies, AI integration, and security implementation",
+    "icon": "Brain",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Edge AI concepts (TinyML, TensorFlow Lite)",
+        "OTA (Over-The-Air) updates",
+        "IoT Security (encryption, device authentication)",
+        "IoT with Raspberry Pi",
+        "Machine learning on edge devices",
+        "Industrial IoT (IIoT) concepts",
+        "Digital twins and IoT",
+        "Blockchain for IoT",
+        "5G and IoT integration",
+        "IoT system architecture design"
+      ],
+      "toolsToUse": [
+        "Raspberry Pi 4",
+        "TensorFlow Lite",
+        "Edge Impulse",
+        "Secure MQTT",
+        "Docker for IoT",
+        "Kubernetes for edge",
+        "AWS IoT Greengrass"
+      ],
+      "bestCourses": {
+        "english": [
+          "Edge Impulse YouTube – Edge AI Tutorials",
+          "Coursera – IoT Security",
+          "Udemy – Advanced IoT with Raspberry Pi",
+          "EdX – Industrial IoT",
+          "YouTube – TinyML Course"
+        ],
+        "hindi": [
+          "AI with Arduino (Pantech Hindi)",
+          "Learn with Pantech – Advanced IoT Hindi",
+          "CodeWithHarry – Raspberry Pi Hindi",
+          "Techiesms – IoT Security Hindi",
+          "Great Learning – Edge Computing Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "TinyML Book",
+        "Edge Impulse Documentation",
+        "TensorFlow Lite for Microcontrollers",
+        "IoT Security Best Practices",
+        "Raspberry Pi Foundation"
+      ],
+      "projectIdeas": [
+        "Voice-controlled assistant with ESP32",
+        "Face recognition door lock",
+        "Air pollution detection + alert system",
+        "Smart city monitoring system",
+        "Predictive maintenance IoT system",
+        "AI-powered agricultural monitoring",
+        "Industrial equipment monitoring",
+        "Smart waste management system",
+        "Energy optimization system",
+        "Healthcare monitoring IoT solution"
+      ],
+      "practicePlatforms": [
+        "Edge Impulse Studio",
+        "TensorFlow Lite Playground",
+        "Raspberry Pi Projects",
+        "Industrial IoT Simulators",
+        "IoT Security Testing Tools"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Practice & Interview Preparation",
+    "description": "Real-world project development, system design, and interview readiness",
+    "icon": "Briefcase",
+    "gradient": "from-red-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Microcontrollers vs microprocessors",
+        "Communication protocols comparison",
+        "Low-power IoT design",
+        "End-to-end IoT system design",
+        "Scalability in IoT systems",
+        "IoT project management",
+        "Cost optimization strategies",
+        "System integration challenges",
+        "Performance optimization",
+        "Troubleshooting complex IoT systems"
+      ],
+      "toolsToUse": [
+        "System design tools",
+        "Project management software",
+        "Version control (Git)",
+        "Documentation tools",
+        "Testing frameworks",
+        "Performance monitoring tools",
+        "Interview preparation platforms"
+      ],
+      "bestCourses": {
+        "english": [
+          "System Design for IoT",
+          "IoT Interview Preparation",
+          "Advanced IoT Project Management",
+          "IoT System Architecture",
+          "Embedded Systems Interview Guide"
+        ],
+        "hindi": [
+          "IoT Interview Prep Hindi - Great Learning",
+          "System Design Hindi - CodeWithHarry",
+          "Advanced IoT Projects Hindi - Pantech",
+          "IoT Career Guidance Hindi - Techiesms",
+          "Embedded Interview Hindi - Learn with Pantech"
+        ]
+      },
+      "docsAndWebsites": [
+        "IoT System Design Patterns",
+        "Embedded Systems Interview Questions",
+        "IoT Best Practices Guide",
+        "System Architecture Documentation",
+        "IoT Career Roadmap"
+      ],
+      "projectIdeas": [
+        "Smart city infrastructure system",
+        "Industrial IoT monitoring platform",
+        "Agricultural automation system",
+        "Healthcare monitoring network",
+        "Energy management system",
+        "Environmental monitoring network",
+        "Smart transportation system",
+        "Supply chain tracking system",
+        "Disaster management IoT solution",
+        "Smart building management system"
+      ],
+      "practicePlatforms": [
+        "Hackster.io",
+        "TinkerCAD Circuits",
+        "IoT Cloud Projects",
+        "GitHub",
+        "Technical interview platforms",
+        "System design practice",
+        "LeetCode (embedded systems)"
+      ]
+    }
+  }
+]
