@@ -82,7 +82,7 @@ import laravel from "../CoursesImage/laravel.jpg";
 import django from "../CoursesImage/django.jpg";
 import backendh from "../CoursesImage/backendh.jpg";
 import ts from "../CoursesImage/ts.jpg";
-import swift from "./CoursesImage/swift.jpg";
+import swift from "../CoursesImage/swift.jpg";
 
 
 // Image mapping object
