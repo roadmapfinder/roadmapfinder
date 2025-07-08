@@ -4,7 +4,7 @@ module.exports = {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"categories\":[\"Web Development\",\"App Development\",\"UI/UX Design\",\"Graphic Design\",\"Programming\",\"Git & Github\",\"DataStructure & Algorithms\",\"DataBases\",\"Blockchain\",\"Data Analysis & Science\",\"Video Editing\",\"AI & ML\",\"Networking\",\"Operating System\",\"CyberSecurity\",\"Video Editing\",\"Frameworks & Libraries\"],\"courses\":[{\"id\":1,\"category\":\"Web Development\",\"title\":\"Complete Web Development Bootcamp\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"sigma\",\"videoId\":\"https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":2,\"category\":\"Web Development\",\"title\":\"Complete Mern Stack Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"babbar\",\"videoId\":\"https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":3,\"category\":\"Web Development\",\"title\":\"Complete Backend Course\",\"level\":\"Beginner to advance\",\"rating\":4.7,\"image\":\"backend\",\"videoId\":\"https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":4,\"category\":\"Web Development\",\"title\":\"Html Css JS Git $ Github\",\"level\":\"Beginner to advance\",\"rating\":4.7,\"image\":\"apna\",\"videoId\":\"https://youtu.be/HcOc7P5BMi4?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":5,\"category\":\"App Development\",\"title\":\"React Native Mobile Apps\",\"level\":\"Beginner to Intermediate\",\"rating\":4.7,\"image\":\"native\",\"videoId\":\"https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":6,\"category\":\"App Development\",\"title\":\"React Native Complete Course in Hindi\",\"level\":\"Beginner to Intermediate\",\"rating\":4.6,\"image\":\"native2\",\"videoId\":\"https://youtu.be/KBWWxJdsFlY\",\"language\":\"Hindi\"},{\"id\":7,\"category\":\"App Development\",\"title\":\"Kotlin App Development\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"kotlin\",\"videoId\":\"https://youtu.be/BxM2DayeOBE\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":8,\"category\":\"App Development\",\"title\":\"Flutter App Development\",\"level\":\"Beginner to intermediate\",\"rating\":4.8,\"image\":\"flutter\",\"videoId\":\"https://youtu.be/CzRQ9mnmh44\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":9,\"category\":\"UI/UX Design\",\"title\":\"UI/UX Design Fundamentals\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"figma\",\"videoId\":\"https://youtu.be/bI6q16ffdgQ?list=PLlHtucAD9KT19ckHqXpPSStZOyDSq9AW-\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":10,\"category\":\"UI/UX Design\",\"title\":\"UI/UX Designing Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"ui\",\"videoId\":\"https://youtu.be/O5IXf8qB9U4?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":11,\"category\":\"UI/UX Design\",\"title\":\"Web Designing Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.7,\"image\":\"design\",\"videoId\":\"https://youtu.be/j6Ule7GXaRs\",\"badge\":\"HOT\",\"language\":\"English\"},{\"id\":12,\"category\":\"UI/UX Design\",\"title\":\"Web Designing Essential UI Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.7,\"image\":\"uiux\",\"videoId\":\"https://youtu.be/kbZejnPXyLM\",\"badge\":\"HOT\",\"language\":\"English\"},{\"id\":13,\"category\":\"Graphic Design\",\"title\":\"Graphic Designing Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.6,\"image\":\"graphic\",\"videoId\":\"https://youtu.be/90Zaa8dH4SU\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":14,\"category\":\"Graphic Design\",\"title\":\"Graphic Designing Essential Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"graphics\",\"videoId\":\"https://youtu.be/e_dv7GBHka8\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":15,\"category\":\"Graphic Design\",\"title\":\"Logo Designing Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"logo\",\"videoId\":\"https://youtu.be/l9_BM1opTj8?list=PL-c9Rq56P4KmK4sVH49C4rjYh5VH6uK4o\",\"language\":\"English\"},{\"id\":16,\"category\":\"Graphic Design\",\"title\":\"Canva Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"canva\",\"videoId\":\"https://youtu.be/rXLvN1FEkOE\",\"language\":\"Hindi\"},{\"id\":17,\"category\":\"Programming\",\"title\":\"Python Programming Crash Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"python\",\"videoId\":\"https://youtu.be/ERCMXc8x7mc\",\"badge\":\"BESTSELLER\",\"language\":\"Hindi\"},{\"id\":18,\"category\":\"Programming\",\"title\":\"Java Complete Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.7,\"image\":\"java\",\"videoId\":\"https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":19,\"category\":\"Programming\",\"title\":\"Php Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.8,\"image\":\"php\",\"videoId\":\"https://youtu.be/z8gIVootnUQ\",\"badge\":\"BESTSELLER\",\"language\":\"Hindi\"},{\"id\":20,\"category\":\"Programming\",\"title\":\"C Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"c\",\"videoId\":\"https://youtu.be/aZb0iu4uGwA\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":21,\"category\":\"Programming\",\"title\":\"C++ Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.8,\"image\":\"cpp\",\"videoId\":\"https://youtu.be/WQoB2z67hvY?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":22,\"category\":\"Programming\",\"title\":\"Javascript Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.8,\"image\":\"js\",\"videoId\":\"https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":23,\"category\":\"Blockchain\",\"title\":\"Blockchain Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.7,\"image\":\"blockchain\",\"videoId\":\"https://youtu.be/gyMwXuJrbJQ\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":24,\"category\":\"Blockchain\",\"title\":\"Web3 Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"web3\",\"videoId\":\"https://youtu.be/ERAxd8gl1Eg\",\"badge\":\"NEW\",\"language\":\"English\"},{\"id\":25,\"category\":\"Blockchain\",\"title\":\"BlockChain Crash Course\",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"block\",\"videoId\":\"https://youtu.be/6aF6p2VUORE\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":26,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in java\",\"level\":\"Beginner to Advanced\",\"rating\":4.7,\"image\":\"dsajava\",\"videoId\":\"https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":27,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in C++\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"cppdsa\",\"videoId\":\"https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":28,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in python\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"dsapy\",\"videoId\":\"https://youtu.be/f9Aje_cN_CY\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":29,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in Javascript\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"dsajs\",\"videoId\":\"https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":30,\"category\":\"Database\",\"title\":\"DBMS Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.7,\"image\":\"dbms\",\"videoId\":\"https://youtu.be/dl00fOOYLOM\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":31,\"category\":\"Database\",\"title\":\"SQL Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"sql\",\"videoId\":\"https://youtu.be/hlGoQC332VM\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":32,\"category\":\"Database\",\"title\":\"MongoDB Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"mongo\",\"videoId\":\"https://youtu.be/rU9ZODw5yvU\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":33,\"category\":\"Data Analysis & Science\",\"title\":\"Data Analyst Complete course \",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"dataa\",\"videoId\":\"https://youtu.be/wQQR60KtnFY\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":34,\"category\":\"Data Analysis & Science\",\"title\":\"Data Analysis Crash Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"dataaw\",\"videoId\":\"https://youtu.be/VaSjiJMrq24?list=PLjVLYmrlmjGdRs1sGqRrTE-EMraLclJga\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":35,\"category\":\"Data Analysis & Science\",\"title\":\"Data Science Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"datas\",\"videoId\":\"https://youtu.be/gDZ6czwuQ18\",\"badge\":\"DEMANDED\",\"language\":\"Hindi\"},{\"id\":36,\"category\":\"System Design\",\"title\":\"System Design Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"syss\",\"videoId\":\"https://youtu.be/SqcXvc3ZmRU?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":37,\"category\":\"System Design\",\"title\":\"System Design Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"syse\",\"videoId\":\"https://youtu.be/43-X22tdxiI?list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":38,\"category\":\"System Design\",\"title\":\"System Design Fundamental Course\",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"sys\",\"videoId\":\"https://youtu.be/m8Icp_Cid5o\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":39,\"category\":\"AI & ML\",\"title\":\"Deep Learning Complete Course\",\"level\":\"Beginner to advance\",\"rating\":4.9,\"image\":\"deep\",\"videoId\":\"https://youtu.be/G1P2IaBcXx8\",\"badge\":\"DEMANDED\",\"language\":\"Hindi\"},{\"id\":40,\"category\":\"AI & ML\",\"title\":\"Machine Learning Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"ml\",\"videoId\":\"https://youtu.be/LvC68w9JS4Y\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":41,\"category\":\"AI & ML\",\"title\":\"Artificial Intelligence Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"ai\",\"videoId\":\"https://youtu.be/5NgNicANyqM\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":42,\"category\":\"Git & Github\",\"title\":\"Git & Github Complete course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"git\",\"videoId\":\"https://youtu.be/q8EevlEpQ2A\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":43,\"category\":\"Git & Github\",\"title\":\"Git & Github Crash Course\",\"level\":\"Beginner to Intermediate \",\"rating\":4.9,\"image\":\"githubh\",\"videoId\":\"https://youtu.be/RDxQEzXN8AU\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":44,\"category\":\"Git & Github\",\"title\":\"Git & Github Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"githube\",\"videoId\":\"https://youtu.be/S7XpTAnSDL4\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":45,\"category\":\"Operating System\",\"title\":\"Operating System Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"osf\",\"videoId\":\"https://youtu.be/yK1uBHPdp30\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":46,\"category\":\"Operating System\",\"title\":\"Operating System Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"os\",\"videoId\":\"https://youtu.be/A4G0hOI6XyQ\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":47,\"category\":\"Operating System\",\"title\":\"Operating Sytem Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"osb\",\"videoId\":\"https://youtu.be/3obEP8eLsCw\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":48,\"category\":\"Operating System\",\"title\":\"Operating System in one shot\",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"osa\",\"videoId\":\"https://youtu.be/8XBtAjKwCm4\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":49,\"category\":\"Networking\",\"title\":\"Networking Complete course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"networkingk\",\"videoId\":\"https://youtu.be/IPvYjXCsTg8\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":50,\"category\":\"Networking\",\"title\":\"networkingf\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"networkingf\",\"videoId\":\"https://youtu.be/qiQR5rTSshw\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":51,\"category\":\"Networking\",\"title\":\"Complete Networkng course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"networking\",\"videoId\":\"https://youtu.be/qiQR5rTSshw\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":52,\"category\":\"CyberSecurity\",\"title\":\"Complete CyberSecurity course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"cybere\",\"videoId\":\"https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":53,\"category\":\"CyberSecurity\",\"title\":\"Complete CyberSecurity course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"cyberh\",\"videoId\":\"https://youtu.be/v3iUx2SNspY\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":54,\"category\":\"Video Editing\",\"title\":\"Complete Premimium pro course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"premire\",\"videoId\":\"https://youtu.be/CVH6TKL12Wg\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":55,\"category\":\"Video Editing\",\"title\":\"Complete Capcut course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"capcut\",\"videoId\":\"https://youtu.be/fL-0G-2b3Sg\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":56,\"category\":\"Video Editing\",\"title\":\"Complete Davanci course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"davanci\",\"videoId\":\"https://youtu.be/qDHnCFMZ9HA\",\"badge\":\"DEMANDED\",\"language\":\"English\"},{\"id\":57,\"category\":\"Video Editing\",\"title\":\"Complete Video Editing course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"video\",\"videoId\":\"https://youtube.com/watch?v=gbZ6hCNlq7g\",\"badge\":\"NEW\",\"language\":\"English\"},{\"id\":58,\"category\":\"Frameworks & Libraries\",\"title\":\"React js  Library for Frontend\",\"level\":\"Beginner to advance\",\"rating\":4.9,\"image\":\"reactjs\",\"videoId\":\"https://youtu.be/vz1RlUyrc3w?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\",\"badge\":\"DEMANDED\",\"language\":\"Hindi\"},{\"id\":59,\"category\":\"Frameworks & Libraries\",\"title\":\"Next js 15 Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"next\",\"videoId\":\"https://youtu.be/k7o9R6eaSes\",\"badge\":\"DEMANDED\",\"language\":\"English\"},{\"id\":60,\"category\":\"Frameworks & Libraries\",\"title\":\"Express js learn what matters\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"express\",\"videoId\":\"https://youtu.be/pKJ4GGyDgJo\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":61,\"category\":\"Frameworks & Libraries\",\"title\":\"Spring boot complete course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"springboot\",\"videoId\":\"https://youtu.be/1993zSY5UBI?list=PLA3GkZPtsafacdBLdd3p1DyRd5FGfr3Ue\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":62,\"category\":\"Frameworks & Libraries\",\"title\":\"Django\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"django\",\"videoId\":\"https://youtu.be/j6szNSzw4BU?list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":63,\"category\":\"Frameworks & Libraries\",\"title\":\"Laravel complete php backend course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"laravel\",\"videoId\":\"https://youtu.be/bixnv3xHccs\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":64,\"category\":\"Web Development\",\"title\":\"Complete backend course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"backendh\",\"videoId\":\"https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":65,\"category\":\"Programming\",\"title\":\"Typescript complete course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"ts\",\"videoId\":\"https://youtu.be/lVzb6pmel_E?si=_Qo8Pq0tmERvK2C0\",\"badge\":\"NEW\",\"language\":\"Hindi\"}]}"));}}),
+__turbopack_context__.v(JSON.parse("{\"categories\":[\"Web Development\",\"App Development\",\"UI/UX Design\",\"Graphic Design\",\"Programming\",\"Git & Github\",\"DataStructure & Algorithms\",\"DataBases\",\"Blockchain\",\"Data Analysis & Science\",\"Video Editing\",\"AI & ML\",\"Networking\",\"Operating System\",\"CyberSecurity\",\"Video Editing\",\"Frameworks & Libraries\"],\"courses\":[{\"id\":1,\"category\":\"Web Development\",\"title\":\"Complete Web Development Bootcamp\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"sigma\",\"videoId\":\"https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":2,\"category\":\"Web Development\",\"title\":\"Complete Mern Stack Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"babbar\",\"videoId\":\"https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":3,\"category\":\"Web Development\",\"title\":\"Complete Backend Course\",\"level\":\"Beginner to advance\",\"rating\":4.7,\"image\":\"backend\",\"videoId\":\"https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":4,\"category\":\"Web Development\",\"title\":\"Html Css JS Git $ Github\",\"level\":\"Beginner to advance\",\"rating\":4.7,\"image\":\"apna\",\"videoId\":\"https://youtu.be/HcOc7P5BMi4?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":5,\"category\":\"App Development\",\"title\":\"React Native Mobile Apps\",\"level\":\"Beginner to Intermediate\",\"rating\":4.7,\"image\":\"native\",\"videoId\":\"https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":6,\"category\":\"App Development\",\"title\":\"React Native Complete Course in Hindi\",\"level\":\"Beginner to Intermediate\",\"rating\":4.6,\"image\":\"native2\",\"videoId\":\"https://youtu.be/KBWWxJdsFlY\",\"language\":\"Hindi\"},{\"id\":7,\"category\":\"App Development\",\"title\":\"Kotlin App Development\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"kotlin\",\"videoId\":\"https://youtu.be/BxM2DayeOBE\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":8,\"category\":\"App Development\",\"title\":\"Flutter App Development\",\"level\":\"Beginner to intermediate\",\"rating\":4.8,\"image\":\"flutter\",\"videoId\":\"https://youtu.be/CzRQ9mnmh44\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":9,\"category\":\"UI/UX Design\",\"title\":\"UI/UX Design Fundamentals\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"figma\",\"videoId\":\"https://youtu.be/bI6q16ffdgQ?list=PLlHtucAD9KT19ckHqXpPSStZOyDSq9AW-\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":10,\"category\":\"UI/UX Design\",\"title\":\"UI/UX Designing Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"ui\",\"videoId\":\"https://youtu.be/O5IXf8qB9U4?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":11,\"category\":\"UI/UX Design\",\"title\":\"Web Designing Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.7,\"image\":\"design\",\"videoId\":\"https://youtu.be/j6Ule7GXaRs\",\"badge\":\"HOT\",\"language\":\"English\"},{\"id\":12,\"category\":\"UI/UX Design\",\"title\":\"Web Designing Essential UI Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.7,\"image\":\"uiux\",\"videoId\":\"https://youtu.be/kbZejnPXyLM\",\"badge\":\"HOT\",\"language\":\"English\"},{\"id\":13,\"category\":\"Graphic Design\",\"title\":\"Graphic Designing Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.6,\"image\":\"graphic\",\"videoId\":\"https://youtu.be/90Zaa8dH4SU\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":14,\"category\":\"Graphic Design\",\"title\":\"Graphic Designing Essential Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"graphics\",\"videoId\":\"https://youtu.be/e_dv7GBHka8\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":15,\"category\":\"Graphic Design\",\"title\":\"Logo Designing Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"logo\",\"videoId\":\"https://youtu.be/l9_BM1opTj8?list=PL-c9Rq56P4KmK4sVH49C4rjYh5VH6uK4o\",\"language\":\"English\"},{\"id\":16,\"category\":\"Graphic Design\",\"title\":\"Canva Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"canva\",\"videoId\":\"https://youtu.be/rXLvN1FEkOE\",\"language\":\"Hindi\"},{\"id\":17,\"category\":\"Programming\",\"title\":\"Python Programming Crash Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"python\",\"videoId\":\"https://youtu.be/ERCMXc8x7mc\",\"badge\":\"BESTSELLER\",\"language\":\"Hindi\"},{\"id\":18,\"category\":\"Programming\",\"title\":\"Java Complete Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.7,\"image\":\"java\",\"videoId\":\"https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":19,\"category\":\"Programming\",\"title\":\"Php Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.8,\"image\":\"php\",\"videoId\":\"https://youtu.be/z8gIVootnUQ\",\"badge\":\"BESTSELLER\",\"language\":\"Hindi\"},{\"id\":20,\"category\":\"Programming\",\"title\":\"C Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"c\",\"videoId\":\"https://youtu.be/aZb0iu4uGwA\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":21,\"category\":\"Programming\",\"title\":\"C++ Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.8,\"image\":\"cpp\",\"videoId\":\"https://youtu.be/WQoB2z67hvY?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":22,\"category\":\"Programming\",\"title\":\"Javascript Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.8,\"image\":\"js\",\"videoId\":\"https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":23,\"category\":\"Blockchain\",\"title\":\"Blockchain Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.7,\"image\":\"blockchain\",\"videoId\":\"https://youtu.be/gyMwXuJrbJQ\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":24,\"category\":\"Blockchain\",\"title\":\"Web3 Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"web3\",\"videoId\":\"https://youtu.be/ERAxd8gl1Eg\",\"badge\":\"NEW\",\"language\":\"English\"},{\"id\":25,\"category\":\"Blockchain\",\"title\":\"BlockChain Crash Course\",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"block\",\"videoId\":\"https://youtu.be/6aF6p2VUORE\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":26,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in java\",\"level\":\"Beginner to Advanced\",\"rating\":4.7,\"image\":\"dsajava\",\"videoId\":\"https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":27,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in C++\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"cppdsa\",\"videoId\":\"https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":28,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in python\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"dsapy\",\"videoId\":\"https://youtu.be/f9Aje_cN_CY\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":29,\"category\":\"DataStructure & Algorithms\",\"title\":\"DSA in Javascript\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"dsajs\",\"videoId\":\"https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":30,\"category\":\"Database\",\"title\":\"DBMS Complete Course\",\"level\":\"Beginner to Advanced\",\"rating\":4.7,\"image\":\"dbms\",\"videoId\":\"https://youtu.be/dl00fOOYLOM\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":31,\"category\":\"Database\",\"title\":\"SQL Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.8,\"image\":\"sql\",\"videoId\":\"https://youtu.be/hlGoQC332VM\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":32,\"category\":\"Database\",\"title\":\"MongoDB Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"mongo\",\"videoId\":\"https://youtu.be/rU9ZODw5yvU\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":33,\"category\":\"Data Analysis & Science\",\"title\":\"Data Analyst Complete course \",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"dataa\",\"videoId\":\"https://youtu.be/wQQR60KtnFY\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":34,\"category\":\"Data Analysis & Science\",\"title\":\"Data Analysis Crash Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"dataaw\",\"videoId\":\"https://youtu.be/VaSjiJMrq24?list=PLjVLYmrlmjGdRs1sGqRrTE-EMraLclJga\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":35,\"category\":\"Data Analysis & Science\",\"title\":\"Data Science Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"datas\",\"videoId\":\"https://youtu.be/gDZ6czwuQ18\",\"badge\":\"DEMANDED\",\"language\":\"Hindi\"},{\"id\":36,\"category\":\"System Design\",\"title\":\"System Design Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"syss\",\"videoId\":\"https://youtu.be/SqcXvc3ZmRU?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":37,\"category\":\"System Design\",\"title\":\"System Design Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"syse\",\"videoId\":\"https://youtu.be/43-X22tdxiI?list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":38,\"category\":\"System Design\",\"title\":\"System Design Fundamental Course\",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"sys\",\"videoId\":\"https://youtu.be/m8Icp_Cid5o\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":39,\"category\":\"AI & ML\",\"title\":\"Deep Learning Complete Course\",\"level\":\"Beginner to advance\",\"rating\":4.9,\"image\":\"deep\",\"videoId\":\"https://youtu.be/G1P2IaBcXx8\",\"badge\":\"DEMANDED\",\"language\":\"Hindi\"},{\"id\":40,\"category\":\"AI & ML\",\"title\":\"Machine Learning Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"ml\",\"videoId\":\"https://youtu.be/LvC68w9JS4Y\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":41,\"category\":\"AI & ML\",\"title\":\"Artificial Intelligence Complete Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"ai\",\"videoId\":\"https://youtu.be/5NgNicANyqM\",\"badge\":\"POPULAR\",\"language\":\"English\"},{\"id\":42,\"category\":\"Git & Github\",\"title\":\"Git & Github Complete course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"git\",\"videoId\":\"https://youtu.be/q8EevlEpQ2A\",\"badge\":\"POPULAR\",\"language\":\"Hindi\"},{\"id\":43,\"category\":\"Git & Github\",\"title\":\"Git & Github Crash Course\",\"level\":\"Beginner to Intermediate \",\"rating\":4.9,\"image\":\"githubh\",\"videoId\":\"https://youtu.be/RDxQEzXN8AU\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":44,\"category\":\"Git & Github\",\"title\":\"Git & Github Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"githube\",\"videoId\":\"https://youtu.be/S7XpTAnSDL4\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":45,\"category\":\"Operating System\",\"title\":\"Operating System Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"osf\",\"videoId\":\"https://youtu.be/yK1uBHPdp30\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":46,\"category\":\"Operating System\",\"title\":\"Operating System Complete Course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"os\",\"videoId\":\"https://youtu.be/A4G0hOI6XyQ\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":47,\"category\":\"Operating System\",\"title\":\"Operating Sytem Crash Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"osb\",\"videoId\":\"https://youtu.be/3obEP8eLsCw\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":48,\"category\":\"Operating System\",\"title\":\"Operating System in one shot\",\"level\":\"Beginner\",\"rating\":4.9,\"image\":\"osa\",\"videoId\":\"https://youtu.be/8XBtAjKwCm4\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":49,\"category\":\"Networking\",\"title\":\"Networking Complete course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"networkingk\",\"videoId\":\"https://youtu.be/IPvYjXCsTg8\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":50,\"category\":\"Networking\",\"title\":\"networkingf\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"networkingf\",\"videoId\":\"https://youtu.be/qiQR5rTSshw\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":51,\"category\":\"Networking\",\"title\":\"Complete Networkng course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"networking\",\"videoId\":\"https://youtu.be/qiQR5rTSshw\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":52,\"category\":\"CyberSecurity\",\"title\":\"Complete CyberSecurity course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"cybere\",\"videoId\":\"https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL\",\"badge\":\"TRENDING\",\"language\":\"English\"},{\"id\":53,\"category\":\"CyberSecurity\",\"title\":\"Complete CyberSecurity course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"cyberh\",\"videoId\":\"https://youtu.be/v3iUx2SNspY\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":54,\"category\":\"Video Editing\",\"title\":\"Complete Premimium pro course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"premire\",\"videoId\":\"https://youtu.be/CVH6TKL12Wg\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":55,\"category\":\"Video Editing\",\"title\":\"Complete Capcut course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"capcut\",\"videoId\":\"https://youtu.be/fL-0G-2b3Sg\",\"badge\":\"HOT\",\"language\":\"Hindi\"},{\"id\":56,\"category\":\"Video Editing\",\"title\":\"Complete Davanci course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"davanci\",\"videoId\":\"https://youtu.be/qDHnCFMZ9HA\",\"badge\":\"DEMANDED\",\"language\":\"English\"},{\"id\":57,\"category\":\"Video Editing\",\"title\":\"Complete Video Editing course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"video\",\"videoId\":\"https://youtube.com/watch?v=gbZ6hCNlq7g\",\"badge\":\"NEW\",\"language\":\"English\"},{\"id\":58,\"category\":\"Frameworks & Libraries\",\"title\":\"React js  Library for Frontend\",\"level\":\"Beginner to advance\",\"rating\":4.9,\"image\":\"reactjs\",\"videoId\":\"https://youtu.be/vz1RlUyrc3w?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\",\"badge\":\"DEMANDED\",\"language\":\"Hindi\"},{\"id\":59,\"category\":\"Frameworks & Libraries\",\"title\":\"Next js 15 Course\",\"level\":\"Beginner to Advance\",\"rating\":4.9,\"image\":\"next\",\"videoId\":\"https://youtu.be/k7o9R6eaSes\",\"badge\":\"DEMANDED\",\"language\":\"English\"},{\"id\":60,\"category\":\"Frameworks & Libraries\",\"title\":\"Express js learn what matters\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"express\",\"videoId\":\"https://youtu.be/pKJ4GGyDgJo\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":61,\"category\":\"Frameworks & Libraries\",\"title\":\"Spring boot complete course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"springboot\",\"videoId\":\"https://youtu.be/1993zSY5UBI?list=PLA3GkZPtsafacdBLdd3p1DyRd5FGfr3Ue\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":62,\"category\":\"Frameworks & Libraries\",\"title\":\"Django\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"django\",\"videoId\":\"https://youtu.be/j6szNSzw4BU?list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":63,\"category\":\"Frameworks & Libraries\",\"title\":\"Laravel complete php backend course\",\"level\":\"Beginner to Intermediate\",\"rating\":4.9,\"image\":\"laravel\",\"videoId\":\"https://youtu.be/bixnv3xHccs\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":64,\"category\":\"Web Development\",\"title\":\"Complete backend course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"backendh\",\"videoId\":\"https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k\",\"badge\":\"TRENDING\",\"language\":\"Hindi\"},{\"id\":65,\"category\":\"Programming\",\"title\":\"Typescript complete course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"ts\",\"videoId\":\"https://youtu.be/lVzb6pmel_E?si=_Qo8Pq0tmERvK2C0\",\"badge\":\"NEW\",\"language\":\"Hindi\"},{\"id\":66,\"category\":\"App Development\",\"title\":\"Swift complete course\",\"level\":\"Beginner to Advanced\",\"rating\":4.9,\"image\":\"swift\",\"videoId\":\"https://youtu.be/8Xg7E9shq0U?si=QeqYNnO-4ZsmsACC\",\"badge\":\"TRENDING\",\"language\":\"English\"}]}"));}}),
 "[project]/app/CoursesImage/sigma.png (static in ecmascript)": ((__turbopack_context__) => {
 
 var { g: global, __dirname } = __turbopack_context__;
@@ -1653,7 +1653,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$larav
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$django$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$django$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/CoursesImage/django.jpg.mjs { IMAGE => "[project]/app/CoursesImage/django.jpg (static in ecmascript)" } [app-ssr] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$backendh$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$backendh$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/CoursesImage/backendh.jpg.mjs { IMAGE => "[project]/app/CoursesImage/backendh.jpg (static in ecmascript)" } [app-ssr] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$ts$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$ts$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/CoursesImage/ts.jpg.mjs { IMAGE => "[project]/app/CoursesImage/ts.jpg (static in ecmascript)" } [app-ssr] (structured image object, ecmascript)');
+(()=>{
+    const e = new Error("Cannot find module './CourseImage/swift.jpg'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 "use client";
+;
 ;
 ;
 ;
@@ -1791,7 +1797,8 @@ const imageMap = {
     laravel: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$laravel$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$laravel$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
     django: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$django$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$django$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
     backendh: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$backendh$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$backendh$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-    ts: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$ts$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$ts$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"]
+    ts: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$CoursesImage$2f$ts$2e$jpg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$CoursesImage$2f$ts$2e$jpg__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+    swift
 };
 function CoursePage() {
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("All");
@@ -1911,7 +1918,7 @@ function CoursePage() {
                         className: "text-blue-600 w-5 h-5"
                     }, void 0, false, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 212,
+                        lineNumber: 213,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1921,7 +1928,7 @@ function CoursePage() {
                                 children: "Course Bookmarked!"
                             }, void 0, false, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 214,
+                                lineNumber: 215,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1930,19 +1937,19 @@ function CoursePage() {
                                 children: "View your bookmarks"
                             }, void 0, false, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 215,
+                                lineNumber: 216,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 213,
+                        lineNumber: 214,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Courses/coursePage.jsx",
-                lineNumber: 211,
+                lineNumber: 212,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1962,12 +1969,12 @@ function CoursePage() {
                                     d: "M19 12H5M12 19l-7-7 7-7"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                    lineNumber: 227,
+                                    lineNumber: 228,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 226,
+                                lineNumber: 227,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1975,23 +1982,23 @@ function CoursePage() {
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 229,
+                                lineNumber: 230,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 225,
+                        lineNumber: 226,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Courses/coursePage.jsx",
-                    lineNumber: 224,
+                    lineNumber: 225,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Courses/coursePage.jsx",
-                lineNumber: 223,
+                lineNumber: 224,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2001,12 +2008,12 @@ function CoursePage() {
                     children: "Internet Best Courses"
                 }, void 0, false, {
                     fileName: "[project]/app/Courses/coursePage.jsx",
-                    lineNumber: 235,
+                    lineNumber: 236,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Courses/coursePage.jsx",
-                lineNumber: 234,
+                lineNumber: 235,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2021,12 +2028,12 @@ function CoursePage() {
                                 className: "text-gray-400"
                             }, void 0, false, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 244,
+                                lineNumber: 245,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Courses/coursePage.jsx",
-                            lineNumber: 243,
+                            lineNumber: 244,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2037,18 +2044,18 @@ function CoursePage() {
                             onChange: handleSearchChange
                         }, void 0, false, {
                             fileName: "[project]/app/Courses/coursePage.jsx",
-                            lineNumber: 246,
+                            lineNumber: 247,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Courses/coursePage.jsx",
-                    lineNumber: 242,
+                    lineNumber: 243,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Courses/coursePage.jsx",
-                lineNumber: 241,
+                lineNumber: 242,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2069,30 +2076,30 @@ function CoursePage() {
                                     className: "mr-1"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                    lineNumber: 270,
+                                    lineNumber: 271,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "Bookmarks"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                    lineNumber: 271,
+                                    lineNumber: 272,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Courses/coursePage.jsx",
-                            lineNumber: 269,
+                            lineNumber: 270,
                             columnNumber: 15
                         }, this) : tab
                     }, tab, false, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 259,
+                        lineNumber: 260,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/Courses/coursePage.jsx",
-                lineNumber: 257,
+                lineNumber: 258,
                 columnNumber: 7
             }, this),
             filteredCategories.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2103,7 +2110,7 @@ function CoursePage() {
                         children: showBookmarksOnly ? "No bookmarked courses found. Start bookmarking courses to see them here!" : `No courses found for "${searchQuery}"`
                     }, void 0, false, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 283,
+                        lineNumber: 284,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2116,13 +2123,13 @@ function CoursePage() {
                         children: showBookmarksOnly ? "View All Courses" : "Clear Search"
                     }, void 0, false, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 288,
+                        lineNumber: 289,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Courses/coursePage.jsx",
-                lineNumber: 282,
+                lineNumber: 283,
                 columnNumber: 9
             }, this),
             filteredCategories.map((category)=>{
@@ -2141,7 +2148,7 @@ function CoursePage() {
                                         children: category
                                     }, void 0, false, {
                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                        lineNumber: 314,
+                                        lineNumber: 315,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2150,13 +2157,13 @@ function CoursePage() {
                                         children: "View All"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                        lineNumber: 317,
+                                        lineNumber: 318,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 313,
+                                lineNumber: 314,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2172,17 +2179,17 @@ function CoursePage() {
                                                 size: windowWidth < 640 ? 16 : 20
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                lineNumber: 331,
+                                                lineNumber: 332,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Courses/coursePage.jsx",
-                                            lineNumber: 326,
+                                            lineNumber: 327,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                        lineNumber: 325,
+                                        lineNumber: 326,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2208,7 +2215,7 @@ function CoursePage() {
                                                                 priority: course.id <= 6
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 350,
+                                                                lineNumber: 351,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2218,12 +2225,12 @@ function CoursePage() {
                                                                     className: "text-white"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                    lineNumber: 361,
+                                                                    lineNumber: 362,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 360,
+                                                                lineNumber: 361,
                                                                 columnNumber: 25
                                                             }, this),
                                                             course.badge && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2233,12 +2240,12 @@ function CoursePage() {
                                                                     children: course.badge
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                    lineNumber: 367,
+                                                                    lineNumber: 368,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 366,
+                                                                lineNumber: 367,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2251,19 +2258,19 @@ function CoursePage() {
                                                                             className: "mr-1"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                            lineNumber: 390,
+                                                                            lineNumber: 391,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         course.language
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                    lineNumber: 389,
+                                                                    lineNumber: 390,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 388,
+                                                                lineNumber: 389,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2277,25 +2284,25 @@ function CoursePage() {
                                                                     className: "text-blue-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                    lineNumber: 404,
+                                                                    lineNumber: 405,
                                                                     columnNumber: 29
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bookmark$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Bookmark$3e$__["Bookmark"], {
                                                                     size: 16,
                                                                     className: "text-gray-700"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                    lineNumber: 406,
+                                                                    lineNumber: 407,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 396,
+                                                                lineNumber: 397,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                        lineNumber: 346,
+                                                        lineNumber: 347,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2306,7 +2313,7 @@ function CoursePage() {
                                                                 children: course.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 412,
+                                                                lineNumber: 413,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2317,7 +2324,7 @@ function CoursePage() {
                                                                         children: course.level
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 417,
+                                                                        lineNumber: 418,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2328,7 +2335,7 @@ function CoursePage() {
                                                                                 className: "text-yellow-400 fill-yellow-400 mr-1"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                                lineNumber: 421,
+                                                                                lineNumber: 422,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2336,19 +2343,19 @@ function CoursePage() {
                                                                                 children: course.rating
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                                lineNumber: 422,
+                                                                                lineNumber: 423,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 420,
+                                                                        lineNumber: 421,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 416,
+                                                                lineNumber: 417,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2359,7 +2366,7 @@ function CoursePage() {
                                                                         children: "Watch on YouTube"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 430,
+                                                                        lineNumber: 431,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
@@ -2367,30 +2374,30 @@ function CoursePage() {
                                                                         className: "ml-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 431,
+                                                                        lineNumber: 432,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 426,
+                                                                lineNumber: 427,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                        lineNumber: 411,
+                                                        lineNumber: 412,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, `${course.id}-${index}`, true, {
                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                lineNumber: 342,
+                                                lineNumber: 343,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                        lineNumber: 336,
+                                        lineNumber: 337,
                                         columnNumber: 17
                                     }, this),
                                     categoryCourses.length > 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2403,41 +2410,41 @@ function CoursePage() {
                                                 size: windowWidth < 640 ? 16 : 20
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                lineNumber: 445,
+                                                lineNumber: 446,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Courses/coursePage.jsx",
-                                            lineNumber: 440,
+                                            lineNumber: 441,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                        lineNumber: 439,
+                                        lineNumber: 440,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                lineNumber: 323,
+                                lineNumber: 324,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Courses/coursePage.jsx",
-                        lineNumber: 311,
+                        lineNumber: 312,
                         columnNumber: 13
                     }, this)
                 }, category, false, {
                     fileName: "[project]/app/Courses/coursePage.jsx",
-                    lineNumber: 310,
+                    lineNumber: 311,
                     columnNumber: 11
                 }, this);
             })
         ]
     }, void 0, true, {
         fileName: "[project]/app/Courses/coursePage.jsx",
-        lineNumber: 208,
+        lineNumber: 209,
         columnNumber: 5
     }, this);
 }

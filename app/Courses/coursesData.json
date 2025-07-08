@@ -730,6 +730,17 @@
       "videoId": "https://youtu.be/lVzb6pmel_E?si=_Qo8Pq0tmERvK2C0",
       "badge": "NEW",
       "language": "Hindi"
+    },
+    {
+      "id": 66,
+      "category": "App Development",
+      "title": "Swift complete course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "swift",
+      "videoId": "https://youtu.be/8Xg7E9shq0U?si=QeqYNnO-4ZsmsACC",
+      "badge": "TRENDING",
+      "language": "English"
     }
   ]
 }
