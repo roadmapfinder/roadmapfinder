@@ -352,7 +352,16 @@ export const roadmapsData = [
     bgColor: "from-red-600 to-red-800",
     category: "trending",
     description: "IOT development and applications"
-  }
+  },
+  {
+    id: "game development",
+    title: "Game Development",
+    icon: <Box className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Game",
+    bgColor: "from-blue-600 to-blue-900",
+    category: "trending",
+    description: "Game Development and applications"
+  },
 ];
 
 // Popular search tags

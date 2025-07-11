@@ -1,0 +1,424 @@
+[
+  {
+    "id": 1,
+    "title": "Game Development Fundamentals",
+    "description": "Essential foundation concepts for game development and understanding game engines",
+    "icon": "BookOpen",
+    "gradient": "from-purple-500 to-indigo-600",
+    "content": {
+      "whatToLearn": [
+        "What is game development? Game types (2D, 3D, AR/VR)",
+        "Game loop, FPS, rendering basics",
+        "Game engines overview: Unity vs Unreal vs Godot",
+        "Introduction to design & mechanics",
+        "Game development lifecycle",
+        "Asset pipeline basics",
+        "Version control for games",
+        "Basic game math (vectors, coordinates)",
+        "Platform considerations (PC, mobile, console)",
+        "Industry roles and career paths"
+      ],
+      "toolsToUse": [
+        "Unity Hub",
+        "Visual Studio Code",
+        "Krita (for 2D assets)",
+        "Tiled Map Editor",
+        "Git & GitHub",
+        "Piskel (pixel art)",
+        "Audacity (audio editing)",
+        "OBS Studio (recording gameplay)"
+      ],
+      "bestCourses": {
+        "english": [
+          "FreeCodeCamp – Game Dev with Unity",
+          "Brackeys – Unity Basics",
+          "GameDev.tv – Complete Game Developer",
+          "Udemy – Game Development Fundamentals",
+          "Unity Learn – Beginner Scripting"
+        ],
+        "hindi": [
+          "WS Cube Tech – Game Development in Hindi",
+          "CodeWithHarry – Unity Basics Hindi",
+          "Geeky Shows – Game Development Course",
+          "Apna College – Game Dev Fundamentals",
+          "Technical Suneja – Unity Tutorial"
+        ]
+      },
+      "docsAndWebsites": [
+        "Unity Learn Documentation",
+        "Godot Engine Documentation",
+        "Game Development Patterns",
+        "Gamasutra Articles",
+        "Unity Manual"
+      ],
+      "projectIdeas": [
+        "Pong clone (2D)",
+        "Brick breaker game",
+        "Basic platformer",
+        "Simple puzzle game",
+        "Flappy Bird clone",
+        "Snake game remake",
+        "Memory matching game"
+      ],
+      "practicePlatforms": [
+        "Unity Learn",
+        "Godot Tutorials",
+        "itch.io (for inspiration)",
+        "GameDev.net Forums",
+        "Unity Community"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Programming for Games",
+    "description": "Master programming languages and core concepts for game development",
+    "icon": "Code",
+    "gradient": "from-blue-500 to-purple-500",
+    "content": {
+      "whatToLearn": [
+        "C# for Unity or GDScript for Godot",
+        "Input handling (keyboard, mouse, controller)",
+        "Sprites, physics, animation states",
+        "Collision detection, gravity, health, score systems",
+        "Object-oriented programming in games",
+        "Event systems and delegates",
+        "Coroutines and async programming",
+        "Data structures for games",
+        "Algorithm basics for game logic",
+        "Memory management in games"
+      ],
+      "toolsToUse": [
+        "Unity / Godot",
+        "C# (Unity) or GDScript (Godot)",
+        "Visual Studio / Rider IDE",
+        "Git + GitHub",
+        "Unity Debugger",
+        "Profiler tools",
+        "Code documentation tools",
+        "Unit testing frameworks"
+      ],
+      "bestCourses": {
+        "english": [
+          "Brackeys – Unity Scripting",
+          "GameDev.tv – Complete C# Unity Course",
+          "Unity Learn – Scripting Tutorials",
+          "Udemy – C# Programming for Games",
+          "Coursera – Game Programming"
+        ],
+        "hindi": [
+          "Great Learning – C# Game Development",
+          "CodeWithHarry – Unity Scripting Hindi",
+          "Apna College – Programming for Games",
+          "Technical Suneja – C# Unity Course",
+          "WsCube Tech – Game Programming"
+        ]
+      },
+      "docsAndWebsites": [
+        "C# Documentation",
+        "Unity Scripting Reference",
+        "Godot API Reference",
+        "Game Programming Patterns",
+        "Microsoft C# Guide"
+      ],
+      "projectIdeas": [
+        "Space shooter",
+        "Car racing game",
+        "Obstacle runner",
+        "Tower defense basics",
+        "Inventory system",
+        "Character controller",
+        "Combat system prototype"
+      ],
+      "practicePlatforms": [
+        "Unity Challenges",
+        "Codewars (C# problems)",
+        "HackerRank",
+        "LeetCode (for algorithms)",
+        "Unity Scripting Challenges"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Game Design & User Experience",
+    "description": "Learn game design principles, UI/UX design, and player engagement strategies",
+    "icon": "Palette",
+    "gradient": "from-pink-500 to-rose-500",
+    "content": {
+      "whatToLearn": [
+        "Game UI design (HUD, menus, overlays)",
+        "Level design theory",
+        "Camera systems (follow, pan, zoom)",
+        "Particle systems, sound design, transitions",
+        "Player psychology and engagement",
+        "Game balance and difficulty curves",
+        "Narrative design basics",
+        "Visual hierarchy in games",
+        "Accessibility in game design",
+        "Playtesting methodologies"
+      ],
+      "toolsToUse": [
+        "Figma / Adobe XD",
+        "Bfxr (for sound effects)",
+        "Canva (for UI layouts)",
+        "Unity UI Toolkit / Godot UI",
+        "Photoshop / GIMP",
+        "Audacity",
+        "Twine (for narrative)",
+        "Miro (for design planning)"
+      ],
+      "bestCourses": {
+        "english": [
+          "GameDev.tv – Game Design Course",
+          "Coursera – Game Design Specialization",
+          "Udemy – Game UI/UX Design",
+          "FutureLearn – Game Design",
+          "MIT OpenCourseWare – Game Design"
+        ],
+        "hindi": [
+          "Apna College – UI/UX in Game Dev",
+          "WsCube Tech – Game Design Hindi",
+          "Geeky Shows – Game UI Design",
+          "CodeWithHarry – Game Design Basics",
+          "Technical Suneja – UI Design"
+        ]
+      },
+      "docsAndWebsites": [
+        "Unity UI Documentation",
+        "Game Design Theory",
+        "UX for Games Articles",
+        "Gamasutra Design Articles",
+        "Level Design Compendium"
+      ],
+      "projectIdeas": [
+        "Custom HUD overlay for RPG",
+        "Level design in tile-based editor",
+        "Sound + visual feedback system",
+        "Menu navigation system",
+        "Dialogue system implementation",
+        "Settings and options menu",
+        "Interactive tutorial system"
+      ],
+      "practicePlatforms": [
+        "Figma Community",
+        "Unity UI Challenges",
+        "Game Design Forums",
+        "Playtesting Communities",
+        "Design Feedback Groups"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Advanced Game Systems",
+    "description": "Implement complex game systems including AI, networking, and optimization",
+    "icon": "Zap",
+    "gradient": "from-yellow-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "Game AI (pathfinding, state machines, behavior trees)",
+        "Multiplayer & networking basics",
+        "Saving/loading game state",
+        "Performance optimization",
+        "Procedural generation",
+        "Advanced physics systems",
+        "Shader programming basics",
+        "Audio systems and mixing",
+        "Localization and internationalization",
+        "Analytics and telemetry"
+      ],
+      "toolsToUse": [
+        "Photon (for Unity multiplayer)",
+        "NavMesh (Unity AI)",
+        "JSON/PlayerPrefs (for saving)",
+        "Unity Profiler / Debugger",
+        "Mirror Networking",
+        "Shader Graph",
+        "FMOD (advanced audio)",
+        "Google Analytics for Games"
+      ],
+      "bestCourses": {
+        "english": [
+          "Unity – Advanced Unity Programming",
+          "Udemy – Unity Multiplayer Course",
+          "GameDev.tv – Advanced Game Systems",
+          "Coursera – Game AI Programming",
+          "Unity Learn – Optimization"
+        ],
+        "hindi": [
+          "CodeWithHarry – Multiplayer Basics Unity",
+          "Geeky Shows – Advanced Unity Systems",
+          "WsCube Tech – Game AI Hindi",
+          "Technical Suneja – Advanced Programming",
+          "Apna College – Game Optimization"
+        ]
+      },
+      "docsAndWebsites": [
+        "Photon Engine Documentation",
+        "Unity AI Navigation Docs",
+        "Mirror Networking Docs",
+        "Unity Optimization Guide",
+        "AI Game Programming Wisdom"
+      ],
+      "projectIdeas": [
+        "Multiplayer tank shooter",
+        "AI enemy patrol & attack system",
+        "Saveable puzzle game",
+        "Procedural dungeon generator",
+        "Advanced inventory system",
+        "Real-time strategy basics",
+        "Performance optimized endless runner"
+      ],
+      "practicePlatforms": [
+        "Unity Multiplayer Samples",
+        "AI Programming Challenges",
+        "Networking Tutorials",
+        "Performance Optimization Guides",
+        "Advanced Unity Forums"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "3D Game Development & Graphics",
+    "description": "Master 3D game development, modeling, animation, and advanced graphics techniques",
+    "icon": "Cube",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Working with 3D models and assets",
+        "Rigidbody, collider, physics materials",
+        "Lighting, skybox, shadows",
+        "3D animation + rigging",
+        "Texture creation and UV mapping",
+        "Shader programming fundamentals",
+        "3D math and transformations",
+        "Level of Detail (LOD) systems",
+        "Occlusion culling and optimization",
+        "VR/AR development basics"
+      ],
+      "toolsToUse": [
+        "Blender (3D modeling)",
+        "Unity 3D / Unreal Engine",
+        "Mixamo (animations)",
+        "Unity Lighting Toolkit",
+        "Substance Designer/Painter",
+        "Maya / 3ds Max",
+        "Shader Graph",
+        "Unity XR Toolkit"
+      ],
+      "bestCourses": {
+        "english": [
+          "Blender Guru – Donut Tutorial",
+          "Unity Learn – 3D Game Development",
+          "Udemy – Complete Blender Course",
+          "GameDev.tv – 3D Unity Course",
+          "Coursera – 3D Graphics"
+        ],
+        "hindi": [
+          "Geeky Shows – Blender Basics for Games",
+          "CodeWithHarry – 3D Game Development",
+          "WsCube Tech – 3D Modeling Hindi",
+          "Technical Suneja – Unity 3D Course",
+          "Apna College – 3D Graphics"
+        ]
+      },
+      "docsAndWebsites": [
+        "Blender Manual",
+        "Unity 3D Documentation",
+        "Unreal Engine Documentation",
+        "3D Graphics Programming",
+        "Shader Programming Guide"
+      ],
+      "projectIdeas": [
+        "3D infinite runner",
+        "First-person maze shooter",
+        "Third-person adventure game",
+        "3D platformer with physics",
+        "Racing game with car physics",
+        "VR interaction demo",
+        "Architectural visualization"
+      ],
+      "practicePlatforms": [
+        "Blender Community",
+        "Unity 3D Challenges",
+        "Sketchfab (for models)",
+        "ArtStation (inspiration)",
+        "VR Development Communities"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Game Publishing & Portfolio",
+    "description": "Learn to publish games, build portfolio, and prepare for professional game development",
+    "icon": "Briefcase",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Game builds (Windows, Android, WebGL)",
+        "Playtesting, user feedback",
+        "Monetization (ads, in-app purchases)",
+        "Uploading to itch.io / Google Play / Steam",
+        "Marketing and promotion strategies",
+        "Legal considerations and licensing",
+        "Team collaboration and project management",
+        "Version control best practices",
+        "Documentation and maintenance",
+        "Industry networking and job preparation"
+      ],
+      "toolsToUse": [
+        "Unity Build Tools",
+        "itch.io",
+        "Google Play Console",
+        "Steam Partner",
+        "GitHub Pages",
+        "Unity Analytics",
+        "App Store Connect",
+        "Trello/Jira (project management)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Unity Learn – Publishing Course",
+          "Udemy – Game Marketing",
+          "GameDev.tv – Complete Publishing",
+          "Coursera – Game Business",
+          "Thomas Brush – Game Marketing 101"
+        ],
+        "hindi": [
+          "MySirG – Game Publishing Basics",
+          "CodeWithHarry – App Publishing Hindi",
+          "WsCube Tech – Game Marketing",
+          "Technical Suneja – Publishing Guide",
+          "Geeky Shows – Game Business"
+        ]
+      },
+      "docsAndWebsites": [
+        "itch.io Upload Guide",
+        "Unity Build & Publish Docs",
+        "Google Play Publishing",
+        "Steam Publishing Guidelines",
+        "Game Marketing Resources"
+      ],
+      "projectIdeas": [
+        "Publish your own puzzle game",
+        "Ad-supported game with leaderboard",
+        "Portfolio website with game demos",
+        "Mobile game with in-app purchases",
+        "Steam Early Access title",
+        "Game jam participation",
+        "Complete game development documentation"
+      ],
+      "practicePlatforms": [
+        "itch.io",
+        "Google Play Console",
+        "Steam Direct",
+        "Game Jolt",
+        "GitHub Portfolio",
+        "LinkedIn Game Dev",
+        "IndieDB"
+      ]
+    }
+  }
+]

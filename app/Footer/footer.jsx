@@ -4,8 +4,8 @@ import { Twitter, Linkedin, Youtube, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white rounded-3xl shadow-sm px-6 py-8 my-6 font-sora transition-all duration-200 lg:ml-64 lg:w-[calc(100%-16rem)]">
-      <div className="max-w-6xl mx-auto">
+    <footer className="w-full bg-white rounded-3xl shadow-sm px-6 py-8 my-6 font-sora transition-all duration-200 lg:ml-74 lg:w-[calc(100%-16rem)]">
+      <div className="max-w-6xl mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo and Tagline Section */}
           <div className="flex flex-col space-y-6">
@@ -78,27 +78,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Stay Connected Section */}
-          <div className="flex flex-col space-y-6">
-            <h3 className="text-xl font-semibold text-gray-800">
-              Stay Connected
-            </h3>
-            <div className="flex items-center space-x-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg transition-colors">
-                <Link href="/TOOLS">
-                Subscribe
-                  </Link>
-              </button>
-            </div>
-            <p className="text-sm text-gray-500">
-              Get updates on new roadmaps and learning resources
-            </p>
-          </div>
+     
         </div>
 
         {/* Bottom Section with Copyright and Terms */}
