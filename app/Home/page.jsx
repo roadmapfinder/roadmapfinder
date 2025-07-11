@@ -25,8 +25,13 @@ import {
   Star,
   Sparkles,
   Zap,
-  Globe, 
-
+  Globe,
+  Lock,
+  Rocket,
+  Award,
+  TrendingUp,
+  Shield,
+  Clock,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -48,6 +53,8 @@ export default function HomePage() {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState("popular");
   const [showSignupPopup, setShowSignupPopup] = useState(false);
+  const [popupTriggerContext, setPopupTriggerContext] = useState(null);
+  const [popupAnimation, setPopupAnimation] = useState("slide-in");
   const router = useRouter();
 
   // Firebase auth state listener
@@ -63,17 +70,6 @@ export default function HomePage() {
     return () => unsubscribe();
   }, []);
 
-  // Show signup popup after a delay if user is not logged in
-  useEffect(() => {
-    if (!loading && !user) {
-      const timer = setTimeout(() => {
-        setShowSignupPopup(true);
-      }, 3000); // Show popup after 3 seconds
-
-      return () => clearTimeout(timer);
-    }
-  }, [loading, user]);
-
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -84,19 +80,34 @@ export default function HomePage() {
     setSidebarCollapsed(!isSidebarCollapsed);
   };
 
-  // Handle signup redirect
+  // Enhanced signup click handler with smooth transition
   const handleSignupClick = () => {
-    setShowSignupPopup(false);
-    router.push('/Signup');
+    setPopupAnimation("slide-out");
+    setTimeout(() => {
+      setShowSignupPopup(false);
+      setPopupAnimation("slide-in");
+      router.push('/Signup');
+    }, 300);
   };
 
-  // Handle protected actions
-  const handleProtectedAction = (href) => {
+  // Enhanced protected action handler with contextual popup
+  const handleProtectedAction = (href, featureName) => {
     if (!user) {
+      setPopupTriggerContext(featureName);
       setShowSignupPopup(true);
       return;
     }
     router.push(href);
+  };
+
+  // Close popup with animation
+  const closePopup = () => {
+    setPopupAnimation("slide-out");
+    setTimeout(() => {
+      setShowSignupPopup(false);
+      setPopupAnimation("slide-in");
+      setPopupTriggerContext(null);
+    }, 300);
   };
 
   // Close mobile menu when screen gets larger
@@ -114,47 +125,53 @@ export default function HomePage() {
   const navItems = [
     { name: "Home", icon: <Home size={24} className="mr-3" />, href: "/" },
     {
-      name: "Roadmap",
-      icon: <ChevronRight size={24} className="mr-3" />,
+      name: "Roadmaps",
+      icon: <Map size={24} className="mr-3" />,
       href: "/RoadmapPage",
       protected: true,
+      feature: "Roadmaps"
     },
     {
       name: "Courses",
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
       protected: true,
+      feature: "Courses"
     },
     {
       name: "Career Guidance",
       icon: <Brain size={24} className="mr-3" />,
       href: "/CareerGuidance",
       protected: true,
+      feature: "Career Guidance"
     },
-    
     {
       name: "Docs",
       icon: <FileText size={24} className="mr-3" />,
       href: "/Docs",
       protected: true,
+      feature: "Documentation"
     },
     {
       name: "Tools",
       icon: <PenTool size={24} className="mr-3" />,
       href: "/TOOLS",
       protected: true,
+      feature: "Tools"
     },
     {
       name: "Blogs",
       icon: <Newspaper size={24} className="mr-3" />,
       href: "/Blogs",
       protected: true,
+      feature: "Blogs"
     },
     {
       name: "Profile",
       icon: <User size={24} className="mr-3" />,
       href: "/Profile",
       protected: true,
+      feature: "Profile"
     },
     {
       name: "Logout",
@@ -163,6 +180,88 @@ export default function HomePage() {
       protected: true,
     },
   ];
+
+  // Get contextual popup content based on the feature user tried to access
+  const getPopupContent = () => {
+    const baseContent = {
+      icon: <Rocket size={28} className="text-blue-600" />,
+      title: "Start Your Tech Journey With RoadmapFinder",
+   
+      benefits: [
+        { icon: <Map size={18} className="text-blue-500" />, text: "Personalized roadmaps for every skill level" },
+        { icon: <Award size={18} className="text-green-500" />, text: "Industry-ready Suggested Youtube Courses" },
+        { icon: <Users size={18} className="text-purple-500" />, text: "AI Career Guidance" },
+        { icon: <Clock size={18} className="text-orange-500" />, text: "Learn at your own pace" },
+        { icon: <Shield size={18} className="text-red-500" />, text: "Lifetime access to all content" }
+      ]
+    };
+
+    // Contextual content based on what feature user tried to access
+    const contextualContent = {
+      "Roadmaps": {
+        icon: <Map size={28} className="text-blue-600" />,
+        title: "Unlock Your Learning Path",
+        subtitle: "Get step-by-step roadmaps tailored to your goals",
+        benefits: [
+          { icon: <TrendingUp size={18} className="text-blue-500" />, text: "Structured learning paths for 20+ skills" },
+          { icon: <CheckCircle size={18} className="text-green-500" />, text: "Progress tracking and milestones" },
+          { icon: <Star size={18} className="text-yellow-500" />, text: "Expert-curated content" },
+          { icon: <Users size={18} className="text-purple-500" />, text: "Community support and mentorship" },
+          { icon: <Zap size={18} className="text-orange-500" />, text: "Fast-track your career growth" }
+        ]
+      },
+      "Courses": {
+        icon: <BookOpen size={28} className="text-blue-600" />,
+        title: "Access Premium Courses",
+        subtitle: "Learn from industry experts with hands-on projects",
+        benefits: [
+          { icon: <Play size={18} className="text-blue-500" />, text: "500+ video tutorials and workshops" },
+          { icon: <Award size={18} className="text-green-500" />, text: "Certificates upon completion" },
+          { icon: <Wrench size={18} className="text-purple-500" />, text: "Real-world projects and assignments" },
+          { icon: <Users size={18} className="text-orange-500" />, text: "Direct access to instructors" },
+          { icon: <Globe size={18} className="text-red-500" />, text: "Learn the latest technologies" }
+        ]
+      },
+      "Career Guidance": {
+        icon: <Brain size={28} className="text-blue-600" />,
+        title: "Accelerate Your Career",
+        subtitle: "Get personalized career advice from industry mentors",
+        benefits: [
+          { icon: <TrendingUp size={18} className="text-blue-500" />, text: "1-on-1 career coaching sessions" },
+          { icon: <FileText size={18} className="text-green-500" />, text: "Resume and portfolio reviews" },
+          { icon: <Users size={18} className="text-purple-500" />, text: "Interview preparation and mock tests" },
+          { icon: <Star size={18} className="text-yellow-500" />, text: "Job referrals and networking" },
+          { icon: <Rocket size={18} className="text-orange-500" />, text: "Salary negotiation guidance" }
+        ]
+      },
+      "Tools": {
+        icon: <PenTool size={28} className="text-blue-600" />,
+        title: "Access Developer Tools",
+        subtitle: "Boost your productivity with premium tools and resources",
+        benefits: [
+          { icon: <Wrench size={18} className="text-blue-500" />, text: "50+ productivity tools and utilities" },
+          { icon: <Zap size={18} className="text-green-500" />, text: "Code generators and templates" },
+          { icon: <Globe size={18} className="text-purple-500" />, text: "API testing and documentation tools" },
+          { icon: <Shield size={18} className="text-red-500" />, text: "Security and performance analyzers" },
+          { icon: <Star size={18} className="text-yellow-500" />, text: "Regular updates and new tools" }
+        ]
+      },
+      "Documentation": {
+        icon: <FileText size={28} className="text-blue-600" />,
+        title: "Comprehensive Documentation",
+        subtitle: "Access detailed guides and references for every technology",
+        benefits: [
+          { icon: <BookOpen size={18} className="text-blue-500" />, text: "Detailed API documentation" },
+          { icon: <CheckCircle size={18} className="text-green-500" />, text: "Step-by-step tutorials" },
+          { icon: <Star size={18} className="text-yellow-500" />, text: "Best practices and patterns" },
+          { icon: <Users size={18} className="text-purple-500" />, text: "Community-contributed examples" },
+          { icon: <Zap size={18} className="text-orange-500" />, text: "Regular updates and additions" }
+        ]
+      }
+    };
+
+    return contextualContent[popupTriggerContext] || baseContent;
+  };
 
   if (loading) {
     return (
@@ -175,68 +274,97 @@ export default function HomePage() {
     );
   }
 
+  const popupContent = getPopupContent();
+
   return (
     <div className="min-h-screen bg-gray-50 flex font-['Sora']">
-      {/* Signup Popup */}
+      {/* Enhanced Signup Popup - Notification Style */}
       {showSignupPopup && !user && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40 p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-8 relative animate-in fade-in duration-300">
-            <button
-              onClick={() => setShowSignupPopup(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              <X size={24} />
-            </button>
+        <div className="fixed inset-0 z-50 pointer-events-none">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm pointer-events-auto" onClick={closePopup}></div>
 
-            <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap size={32} className="text-blue-600" />
+          {/* Popup Container */}
+          <div className="flex items-start justify-center pt-4 px-4 h-full pointer-events-none">
+            <div className={`
+              bg-white rounded-2xl shadow-2xl max-w-md w-full pointer-events-auto
+              transform transition-all duration-300 ease-out
+              ${popupAnimation === 'slide-in' ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-full opacity-0 scale-95'}
+            `}>
+              {/* Header with close button */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+                <div className="flex items-center gap-3">
+                  {popupContent.icon}
+                  <div>
+                    <h3 className="font-bold text-gray-900">{popupContent.title}</h3>
+                    <p className="text-sm text-gray-600">{popupContent.subtitle}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={closePopup}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <X size={20} className="text-gray-400" />
+                </button>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Unlock Your Learning Journey
-              </h2>
-              <p className="text-gray-600">
-                Join thousands of learners and get access to premium features
-              </p>
-            </div>
 
-            <div className="space-y-4 mb-6">
-              <div className="flex items-center gap-3">
-                <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Step-by-step roadmaps</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Premium courses & tutorials</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Developer tools & resources</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Push notifications for new resources</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Users size={20} className="text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Join 50k+ learning community</span>
-              </div>
-            </div>
+              {/* Content */}
+              <div className="p-6">
+                {/* Trust indicators */}
+                <div className="flex items-center gap-4 mb-6 p-4 bg-blue-50 rounded-xl">
+                  <div className="flex items-center gap-2">
+                    <Users size={20} className="text-blue-600" />
+                    <span className="text-sm font-medium text-blue-900">1000+</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Star size={20} className="text-yellow-500" />
+                    <span className="text-sm font-medium text-gray-700">4.5/5 Rating</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <TrendingUp size={20} className="text-green-600" />
+                    <span className="text-sm font-medium text-green-700">95% Success</span>
+                  </div>
+                </div>
 
-            <div className="space-y-3">
-              <button
-                onClick={handleSignupClick}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-              >
-                Get Started Free
-                <ArrowRight size={18} />
-              </button>
-              <button
-                onClick={() => setShowSignupPopup(false)}
-                className="w-full text-gray-500 py-2 px-6 rounded-xl font-medium hover:text-gray-700 transition-colors"
-              >
-                Continue browsing
-              </button>
+                {/* Benefits */}
+                <div className="space-y-3 mb-6">
+                  {popupContent.benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                      {benefit.icon}
+                      <span className="text-gray-700 text-sm">{benefit.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+          
+
+                {/* Action buttons */}
+                <div className="space-y-3">
+                  <button
+                    onClick={handleSignupClick}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
+                  >
+                    <Rocket size={18} />
+                    Start Free 
+                    <ArrowRight size={18} />
+                  </button>
+
+                  <button
+                    onClick={closePopup}
+                    className="w-full text-gray-500 py-2 px-6 rounded-xl font-medium hover:text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    Maybe later
+                  </button>
+                </div>
+
+                {/* Trust badge */}
+                <div className="mt-4 text-center">
+                  <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+                    <Shield size={14} />
+                    <span>Completely Free • No Subscription Required</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -245,7 +373,7 @@ export default function HomePage() {
       {/* Desktop Sidebar */}
       <aside
         className={`bg-white shadow-lg fixed inset-y-0 left-0 z-20 transform transition-all duration-300 ease-in-out
-          ${isSidebarCollapsed ? "w-20" : "w-66"} 
+          ${isSidebarCollapsed ? "w-20" : "w-72"} 
           hidden md:block`}
       >
         <div className="flex flex-col h-full">
@@ -269,37 +397,38 @@ export default function HomePage() {
               )}
             </button>
           </div>
-          <hr className="text-blue-50 " />
+
           <div className="p-5 flex-grow">
-            <nav className="space-y-6">
+            <nav className="space-y-2">
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.protected && !user ? (
                     <button
-                      onClick={() => handleProtectedAction(item.href)}
+                      onClick={() => handleProtectedAction(item.href, item.feature)}
                       className={`flex items-center w-full ${
-                        item.href === "/Roadmap"
-                          ? "text-blue-600 font-semibold"
+                        item.href === "/"
+                          ? "text-blue-600 font-semibold bg-blue-50"
                           : "text-gray-600"
-                      } hover:text-blue-600 transition-colors py-2 px-3 rounded-lg ${
-                        item.href === "/Roadmap" ? "bg-blue-50" : ""
-                      } hover:bg-blue-50`}
+                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
                     >
-                      <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                      <div className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}>
                         {item.icon}
+                        {!user && item.protected && (
+                          <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
+                        )}
                       </div>
-                      {!isSidebarCollapsed && <span>{item.name}</span>}
+                      {!isSidebarCollapsed && (
+                        <span className="flex-1 text-left">{item.name}</span>
+                      )}
                     </button>
                   ) : (
                     <Link
                       href={item.href}
                       className={`flex items-center ${
-                        item.href === "/Roadmap"
-                          ? "text-blue-600 font-semibold"
+                        item.href === "/"
+                          ? "text-blue-600 font-semibold bg-blue-50"
                           : "text-gray-600"
-                      } hover:text-blue-600 transition-colors py-2 px-3 rounded-lg ${
-                        item.href === "/Roadmap" ? "bg-blue-50" : ""
-                      } hover:bg-blue-50`}
+                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
                     >
                       <div className={isSidebarCollapsed ? "mx-auto" : ""}>
                         {item.icon}
@@ -339,32 +468,37 @@ export default function HomePage() {
         </div>
 
         <div className="p-5">
-          <nav className="space-y-6">
+          <nav className="space-y-2">
             {navItems.map((item, index) => (
               <div key={index}>
                 {item.protected && !user ? (
                   <button
                     onClick={() => {
                       toggleMobileMenu();
-                      handleProtectedAction(item.href);
+                      handleProtectedAction(item.href, item.feature);
                     }}
                     className={`flex items-center w-full ${
-                      item.href === "/Roadmap"
+                      item.href === "/"
                         ? "text-blue-600 font-semibold"
                         : "text-gray-600"
-                    } hover:text-blue-600 transition-colors`}
+                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
                   >
-                    {item.icon}
-                    <span>{item.name}</span>
+                    <div className="relative">
+                      {item.icon}
+                      {!user && item.protected && (
+                        <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
+                      )}
+                    </div>
+                    <span className="flex-1 text-left">{item.name}</span>
                   </button>
                 ) : (
                   <Link
                     href={item.href}
                     className={`flex items-center ${
-                      item.href === "/Roadmap"
+                      item.href === "/"
                         ? "text-blue-600 font-semibold"
                         : "text-gray-600"
-                    } hover:text-blue-600 transition-colors`}
+                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
                     onClick={toggleMobileMenu}
                   >
                     {item.icon}
@@ -411,9 +545,9 @@ export default function HomePage() {
               ) : (
                 <button
                   onClick={handleSignupClick}
-                  className="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-medium"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all"
                 >
-                  Sign Up
+                  Get Started
                 </button>
               )}
               <button className="text-gray-800" onClick={toggleMobileMenu}>
@@ -449,9 +583,10 @@ export default function HomePage() {
               ) : (
                 <button
                   onClick={handleSignupClick}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
                 >
-                  Get Started Free
+                  <Rocket size={18} />
+                  Start Your Journey
                 </button>
               )}
             </div>
@@ -472,5 +607,5 @@ export default function HomePage() {
         <ChooseUs />
       </main>
     </div>
-    )
+  );
 }
