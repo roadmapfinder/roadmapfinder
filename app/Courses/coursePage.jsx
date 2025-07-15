@@ -83,6 +83,12 @@ import django from "../CoursesImage/django.jpg";
 import backendh from "../CoursesImage/backendh.jpg";
 import ts from "../CoursesImage/ts.jpg";
 import swift from "../CoursesImage/swift.jpg";
+import gen from "../CoursesImage/gen.jpg";
+import gene from "../CoursesImage/gene.jpg";
+import iot from "../CoursesImage/iote.jpg";
+import IOTh from "../CoursesImage/IOTh.jpg"
+import post from "../CoursesImage/post.jpg"
+
 
 
 // Image mapping object
@@ -95,7 +101,7 @@ const imageMap = {
   git, githube, githubh, os, osa, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
-  springboot, laravel, django, backendh,ts,swift
+  springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh
 };
 
 export default function CoursePage() {

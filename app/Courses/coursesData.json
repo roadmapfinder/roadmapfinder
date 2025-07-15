@@ -1,3 +1,4 @@
+
 {
   "categories": [
     "Web Development",
@@ -7,17 +8,20 @@
     "Programming",
     "Git & Github",
     "DataStructure & Algorithms",
-    "DataBases",
+    "Database",
     "Blockchain",
     "Data Analysis & Science",
+    "System Design",
     "Video Editing",
     "AI & ML",
     "Networking",
     "Operating System",
     "CyberSecurity",
-    "Video Editing",
-    "Frameworks & Libraries"
+    "Frameworks & Libraries",
+    "Generative AI"
+
   ],
+
   "courses": [
     {
       "id": 1,
@@ -371,7 +375,7 @@
     {
       "id": 33,
       "category": "Data Analysis & Science",
-      "title": "Data Analyst Complete course ",
+      "title": "Data Analyst Complete course",
       "level": "Beginner",
       "rating": 4.9,
       "image": "dataa",
@@ -482,7 +486,7 @@
       "id": 43,
       "category": "Git & Github",
       "title": "Git & Github Crash Course",
-      "level": "Beginner to Intermediate ",
+      "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "githubh",
       "videoId": "https://youtu.be/RDxQEzXN8AU",
@@ -525,7 +529,7 @@
     {
       "id": 47,
       "category": "Operating System",
-      "title": "Operating Sytem Crash Course",
+      "title": "Operating System Crash Course",
       "level": "Beginner to Advance",
       "rating": 4.9,
       "image": "osb",
@@ -558,7 +562,7 @@
     {
       "id": 50,
       "category": "Networking",
-      "title": "networkingf",
+      "title": "Computer Networking Fundamentals",
       "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "networkingf",
@@ -569,11 +573,11 @@
     {
       "id": 51,
       "category": "Networking",
-      "title": "Complete Networkng course",
+      "title": "Complete Networking course",
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "networking",
-      "videoId": "https://youtu.be/qiQR5rTSshw",
+      "videoId": "https://youtu.be/S7MNX_UD7vY?si=EeXKX7FayoZ5vtHk",
       "badge": "TRENDING",
       "language": "English"
     },
@@ -602,7 +606,7 @@
     {
       "id": 54,
       "category": "Video Editing",
-      "title": "Complete Premimium pro course",
+      "title": "Complete Premiere Pro course",
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "premire",
@@ -624,7 +628,7 @@
     {
       "id": 56,
       "category": "Video Editing",
-      "title": "Complete Davanci course",
+      "title": "Complete DaVinci course",
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "davanci",
@@ -646,7 +650,7 @@
     {
       "id": 58,
       "category": "Frameworks & Libraries",
-      "title": "React js  Library for Frontend",
+      "title": "React js Library for Frontend",
       "level": "Beginner to advance",
       "rating": 4.9,
       "image": "reactjs",
@@ -741,6 +745,42 @@
       "videoId": "https://youtu.be/8Xg7E9shq0U?si=QeqYNnO-4ZsmsACC",
       "badge": "TRENDING",
       "language": "English"
+    },
+
+    {
+      "id": 67,
+      "category": "Database",
+      "title": "Postgre Sql",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "post",
+      "videoId": "https://youtu.be/SpfIwlAYaKk?si=Ulk7INKdmn7b8c-1",
+      "badge": "TRENDING",
+      "language": "English"
+    },
+    {
+      "id": 68,
+      "category": "Generative AI",
+      "title": "Generative Ai course",
+      "level": "Beginner to Intermediate",
+      "rating": 4.9,
+      "image": "gen",
+      "videoId": "https://youtu.be/BP-w99ZINTc?si=dfKwFwmTtrXr8hUh",
+      "badge": "NEW",
+      "language": "Hindi"
+    },
+    {
+      "id": 69,
+      "category": "Generative AI",
+      "title": "Generative Ai Complete course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "gene",
+      "videoId": "https://youtu.be/mEsleV16qdo?si=AQer3tqYCRrWGtWW",
+      "badge": "POPULAR",
+      "language": "English"
     }
+    
+
   ]
 }
