@@ -1,14 +1,4 @@
 {
-  "/CareerGuidance/page": "app/CareerGuidance/page.js",
-  "/CareerGuidance/results/page": "app/CareerGuidance/results/page.js",
-  "/Courses/page": "app/Courses/page.js",
-  "/Docs/page": "app/Docs/page.js",
-  "/Login/page": "app/Login/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/CyberSecurity/page": "app/Roadmaps/CyberSecurity/page.js",
-  "/Roadmaps/Flutter/page": "app/Roadmaps/Flutter/page.js",
-  "/TOOLS/page": "app/TOOLS/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/career/route": "app/api/career/route.js",
+  "/Signup/page": "app/Signup/page.js",
   "/page": "app/page.js"
 }

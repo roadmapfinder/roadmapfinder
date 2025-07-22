@@ -39,6 +39,8 @@ import { onAuthStateChanged } from "../lib/auth";
 import { auth } from "../lib/firebase";
 import Link from "next/link";
 import Logout from "../Logout/logout";
+import CourseTrending from "./CourseTrending"
+import RoadmapTrending from "./RoadmapTrending"
 
 // Import the new components
 import HeroSection from "./HeroSection";
@@ -122,6 +124,19 @@ export default function HomePage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navItems = [
     { name: "Home", icon: <Home size={24} className="mr-3" />, href: "/" },
     {
@@ -186,7 +201,7 @@ export default function HomePage() {
     const baseContent = {
       icon: <Rocket size={28} className="text-blue-600" />,
       title: "Start Your Tech Journey With RoadmapFinder",
-   
+
       benefits: [
         { icon: <Map size={18} className="text-blue-500" />, text: "Personalized roadmaps for every skill level" },
         { icon: <Award size={18} className="text-green-500" />, text: "Industry-ready Suggested Youtube Courses" },
@@ -277,7 +292,7 @@ export default function HomePage() {
   const popupContent = getPopupContent();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex font-['Sora']">
+    <div className="min-h-screen bg-gray-50 font-['Sora']">
       {/* Enhanced Signup Popup - Notification Style */}
       {showSignupPopup && !user && (
         <div className="fixed inset-0 z-50 pointer-events-none">
@@ -336,8 +351,6 @@ export default function HomePage() {
                   ))}
                 </div>
 
-          
-
                 {/* Action buttons */}
                 <div className="space-y-3">
                   <button
@@ -370,56 +383,128 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Desktop Sidebar */}
-      <aside
-        className={`bg-white shadow-lg fixed inset-y-0 left-0 z-20 transform transition-all duration-300 ease-in-out
-          ${isSidebarCollapsed ? "w-20" : "w-72"} 
-          hidden md:block`}
-      >
-        <div className="flex flex-col h-full">
-          <div
-            className={`p-5 flex ${
-              isSidebarCollapsed ? "justify-center" : "justify-between"
-            } items-center border-b`}
-          >
-            {!isSidebarCollapsed && (
-              <h1 className="text-xl font-bold text-blue-600">RoadmapFinder</h1>
-            )}
-
-            <button
-              onClick={toggleSidebar}
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+      {/* Layout Container */}
+      <div className="flex">
+        {/* Desktop Sidebar - Hidden on mobile */}
+        <aside
+          className={`bg-white shadow-lg fixed inset-y-0 left-0 z-20 transform transition-all duration-300 ease-in-out
+            ${isSidebarCollapsed ? "w-20" : "w-72"} 
+            hidden md:block`}
+        >
+          <div className="flex flex-col h-full">
+            <div
+              className={`p-5 flex ${
+                isSidebarCollapsed ? "justify-center" : "justify-between"
+              } items-center border-b`}
             >
-              {isSidebarCollapsed ? (
-                <ChevronRight size={24} />
-              ) : (
-                <ChevronLeft size={24} />
+              {!isSidebarCollapsed && (
+                <h1 className="text-xl font-bold text-blue-600">RoadmapFinder</h1>
               )}
+
+              <button
+                onClick={toggleSidebar}
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                {isSidebarCollapsed ? (
+                  <ChevronRight size={24} />
+                ) : (
+                  <ChevronLeft size={24} />
+                )}
+              </button>
+            </div>
+
+            <div className="p-5 flex-grow overflow-y-auto">
+              <nav className="space-y-2">
+                {navItems.map((item, index) => (
+                  <div key={index}>
+                    {item.protected && !user ? (
+                      <button
+                        onClick={() => handleProtectedAction(item.href, item.feature)}
+                        className={`flex items-center w-full ${
+                          item.href === "/"
+                            ? "text-blue-600 font-semibold bg-blue-50"
+                            : "text-gray-600"
+                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
+                      >
+                        <div className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}>
+                          {item.icon}
+                          {!user && item.protected && (
+                            <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
+                          )}
+                        </div>
+                        {!isSidebarCollapsed && (
+                          <span className="flex-1 text-left">{item.name}</span>
+                        )}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`flex items-center ${
+                          item.href === "/"
+                            ? "text-blue-600 font-semibold bg-blue-50"
+                            : "text-gray-600"
+                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                      >
+                        <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                          {item.icon}
+                        </div>
+                        {!isSidebarCollapsed && <span>{item.name}</span>}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 bg-gray-800 md:hidden transition-opacity duration-300 ease-in-out z-30 ${
+            isMobileMenuOpen
+              ? "opacity-75 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }`}
+          onClick={toggleMobileMenu}
+        ></div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
+            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center p-5 border-b">
+            <h1 className="text-xl font-bold text-blue-600">RoadmapFinder</h1>
+            <button onClick={toggleMobileMenu} className="text-gray-600">
+              <X size={24} />
             </button>
           </div>
 
-          <div className="p-5 flex-grow">
+          <div className="p-5 overflow-y-auto h-full pb-20">
             <nav className="space-y-2">
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.protected && !user ? (
                     <button
-                      onClick={() => handleProtectedAction(item.href, item.feature)}
+                      onClick={() => {
+                        toggleMobileMenu();
+                        handleProtectedAction(item.href, item.feature);
+                      }}
                       className={`flex items-center w-full ${
                         item.href === "/"
                           ? "text-blue-600 font-semibold bg-blue-50"
                           : "text-gray-600"
                       } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
                     >
-                      <div className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}>
+                      <div className="relative">
                         {item.icon}
                         {!user && item.protected && (
                           <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
                         )}
                       </div>
-                      {!isSidebarCollapsed && (
-                        <span className="flex-1 text-left">{item.name}</span>
-                      )}
+                      <span className="flex-1 text-left">{item.name}</span>
                     </button>
                   ) : (
                     <Link
@@ -429,135 +514,64 @@ export default function HomePage() {
                           ? "text-blue-600 font-semibold bg-blue-50"
                           : "text-gray-600"
                       } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                      onClick={toggleMobileMenu}
                     >
-                      <div className={isSidebarCollapsed ? "mx-auto" : ""}>
-                        {item.icon}
-                      </div>
-                      {!isSidebarCollapsed && <span>{item.name}</span>}
+                      {item.icon}
+                      <span>{item.name}</span>
                     </Link>
                   )}
                 </div>
               ))}
             </nav>
+
+            {user && (
+              <div className="mt-8 pt-5 border-t">
+                <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
+                <Link
+                  href="/Logout"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
+                  onClick={toggleMobileMenu}
+                >
+                  <LogOut size={20} className="mr-3" />
+                  <span>Logout</span>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
-      </aside>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 bg-gray-800 md:hidden transition-opacity duration-300 ease-in-out z-30 ${
-          isMobileMenuOpen
-            ? "opacity-75 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-        onClick={toggleMobileMenu}
-      ></div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex justify-between items-center p-5 border-b">
-          <h1 className="text-xl font-bold text-blue-600">RoadmapFinder</h1>
-          <button onClick={toggleMobileMenu} className="text-gray-600">
-            <X size={24} />
-          </button>
-        </div>
-
-        <div className="p-5">
-          <nav className="space-y-2">
-            {navItems.map((item, index) => (
-              <div key={index}>
-                {item.protected && !user ? (
-                  <button
-                    onClick={() => {
-                      toggleMobileMenu();
-                      handleProtectedAction(item.href, item.feature);
-                    }}
-                    className={`flex items-center w-full ${
-                      item.href === "/"
-                        ? "text-blue-600 font-semibold"
-                        : "text-gray-600"
-                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
-                  >
-                    <div className="relative">
-                      {item.icon}
-                      {!user && item.protected && (
-                        <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
-                      )}
-                    </div>
-                    <span className="flex-1 text-left">{item.name}</span>
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={`flex items-center ${
-                      item.href === "/"
-                        ? "text-blue-600 font-semibold"
-                        : "text-gray-600"
-                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
-                    onClick={toggleMobileMenu}
-                  >
-                    {item.icon}
-                    <span>{item.name}</span>
-                  </Link>
-                )}
-              </div>
-            ))}
-          </nav>
-
-          {user && (
-            <div className="mt-8 pt-5 border-t">
-              <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
-              <Link
-                href="/Logout"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
-                onClick={toggleMobileMenu}
-              >
-                <LogOut size={20} className="mr-3" />
-                <span>Logout</span>
-              </Link>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <main
-        className={`flex-1 transition-all duration-300 ${
-          isSidebarCollapsed ? "md:ml-20" : "md:ml-72"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          {/* Mobile Header */}
-          <header className="flex justify-between items-center mb-6 md:hidden">
-            <h1 className="text-2xl font-bold text-blue-600">RoadmapFinder</h1>
-            <div className="flex gap-4 items-center">
+        {/* Main Content Container - Responsive margins */}
+        <main
+          className={`flex-1 min-h-screen w-full transition-all duration-300 
+            ${isSidebarCollapsed ? "md:ml-20" : "md:ml-72"}
+            ml-0`}
+        >
+          {/* Mobile Header - Only visible on mobile */}
+          <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
+            <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
+            <div className="flex gap-3 items-center">
               {user ? (
-                <button className="text-gray-800">
+                <button className="text-gray-800 p-2">
                   <Link href="/Notification">
-                    <Bell size={24} />
+                    <Bell size={20} />
                   </Link>
                 </button>
               ) : (
                 <button
                   onClick={handleSignupClick}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all"
                 >
                   Get Started
                 </button>
               )}
-              <button className="text-gray-800" onClick={toggleMobileMenu}>
-                <Menu size={28} />
+              <button className="text-gray-800 p-2" onClick={toggleMobileMenu}>
+                <Menu size={24} />
               </button>
             </div>
           </header>
 
-          {/* Desktop Header */}
-          <header className="hidden md:flex justify-between items-center mb-8">
+          {/* Desktop Header - Only visible on desktop */}
+          <header className="hidden md:flex justify-between items-center p-8 bg-gray-50">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
               <p className="text-gray-500">
@@ -592,20 +606,29 @@ export default function HomePage() {
             </div>
           </header>
 
-          {/* Hero Section Component */}
-          <HeroSection 
-            user={user}
-            handleProtectedAction={handleProtectedAction}
-            username={username}
-          />
-        </div>
+          {/* Main Content Area */}
+          <div className="w-full">
+            {/* Hero Section Container */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
+              <HeroSection 
+                user={user}
+                handleProtectedAction={handleProtectedAction}
+                username={username}
+              />
+            </div>
 
-        {/* Features Section Component */}
-        <Features handleProtectedAction={handleProtectedAction} />
+            {/* Additional Content Sections */}
+            <div className="w-full">
+              {/* Uncomment if needed */}
+              {/* <RoadmapTrending />
+              <CourseTrending handleProtectedAction={handleProtectedAction}/> */}
 
-        {/* Choose Us Section Component */}
-        <ChooseUs />
-      </main>
+              <Features handleProtectedAction={handleProtectedAction} />
+              <ChooseUs />
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
