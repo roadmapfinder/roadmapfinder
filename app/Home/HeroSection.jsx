@@ -12,6 +12,10 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
     setIsVisible(true);
   }, []);
 
+  // Validation for props to prevent runtime errors
+  const isUserAuthenticated = user && username;
+  const safeUsername = username?.trim() || 'User';
+
   return (
     <div className="px-3 xs:px-4 sm:px-6 lg:px-8">
 
@@ -20,11 +24,28 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}>
 
-        {/* Hero Content Container */}
-        <div className="bg-white rounded-xl xs:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+        {/* Hero Content Container - Dynamic height for mobile with welcome message */}
+        <div className={`bg-white rounded-xl xs:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 ${
+          isUserAuthenticated ? 'min-h-[420px] xs:min-h-[450px] sm:min-h-[400px]' : 'min-h-[380px] xs:min-h-[400px] sm:min-h-[360px]'
+        }`}>
 
           {/* Mobile Layout (lg and below) - Fully Responsive */}
           <div className="block lg:hidden">
+            {/* Welcome Message - Now at the top for mobile */}
+            {isUserAuthenticated && (
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100 px-4 xs:px-6 py-3 xs:py-4">
+                <div className="flex items-center gap-2 text-blue-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm xs:text-base font-medium">
+                    Welcome back, <span className="font-semibold">{safeUsername}</span>!
+                  </span>
+                </div>
+                <p className="text-xs xs:text-sm text-blue-600 mt-1">
+                  Ready to continue your learning journey?
+                </p>
+              </div>
+            )}
+
             {/* Mobile Content */}
             <div className="p-4 xs:p-6 sm:p-8 text-center">
               {/* Trust Badge - Responsive */}
@@ -59,10 +80,14 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   <span className="whitespace-nowrap">Expert Verified</span>
                 </div>
               </div>
+
+              {/* Mobile Action Buttons - Fixed missing implementation */}
               <div className="block xs:hidden space-y-2.5">
                 <button
-                  onClick={() => handleProtectedAction("/RoadmapPage")}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-lg text-sm font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95"
+                  onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
+                  disabled={!handleProtectedAction}
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-lg text-sm font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label="Start your career roadmap journey"
                 >
                   <ChevronRight size={16} />
                   <span>Start Roadmap</span>
@@ -70,34 +95,30 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
 
                 <div className="grid grid-cols-2 gap-2.5">
                   <button
-                    onClick={() => handleProtectedAction("/Courses")}
-                    className="bg-white text-blue-600 text-center py-2.5 px-3 rounded-lg text-xs font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95"
+                    onClick={() => handleProtectedAction && handleProtectedAction("/Courses")}
+                    disabled={!handleProtectedAction}
+                    className="bg-white text-blue-600 text-center py-2.5 px-3 rounded-lg text-xs font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Browse available courses"
                   >
                     <BookOpen size={14} />
                     <span>Courses</span>
                   </button>
                   <button
-                    onClick={() => handleProtectedAction("/CareerGuidance")}
-                    className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95"
+                    onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
+                    disabled={!handleProtectedAction}
+                    className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-2.5 px-3 rounded-lg text-xs font-semibold transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Get AI-powered career guidance"
                   >
                     <Brain size={14} />
                     <span>AI Guide</span>
                   </button>
                 </div>
               </div>
-
-              {/* Welcome Message - Responsive */}
-              {user && (
-                <div className="bg-blue-50 text-blue-700 px-3 xs:px-4 py-2 rounded-lg text-xs xs:text-sm mb-4 xs:mb-6 border border-blue-200 mx-2 xs:mx-0">
-                  <span className="hidden xs:inline">Welcome back, {username}! Ready to continue your journey?</span>
-                  <span className="xs:hidden">Welcome back, {username}!</span>
-                </div>
-              )}
             </div>
           </div>
 
           {/* Desktop Layout (lg and above) - Enhanced */}
-          <div className="hidden lg:flex">
+          <div className="hidden lg:flex min-h-[500px]">
             <div className="lg:w-1/2 p-8 xl:p-12 flex flex-col justify-center relative overflow-hidden">
               {/* Background decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-xl opacity-60"></div>
@@ -117,10 +138,14 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   Expert roadmaps, smart resources, and AI-powered guidance - build your own success journey
                 </p>
 
-                {/* Welcome Message for Desktop */}
-                {user && (
-                  <div className="bg-blue-50 text-blue-700 px-4 py-3 rounded-lg text-sm mb-6 border border-blue-200">
-                    Welcome back, {username}! Ready to continue your journey?
+                {/* Welcome Message for Desktop - Improved styling */}
+                {isUserAuthenticated && (
+                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-4 py-3 rounded-lg text-sm mb-6 border border-blue-200 shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="font-medium">Welcome back, <span className="font-semibold">{safeUsername}</span>!</span>
+                    </div>
+                    <p className="text-blue-600 text-xs mt-1">Ready to continue your journey?</p>
                   </div>
                 )}
 
@@ -151,10 +176,13 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
               <div className="relative z-10">
                 <Image
                   src={roadmap}
-                  alt="Roadmap illustration"
+                  alt="Interactive career roadmap illustration showing learning paths"
                   width={500}
                   height={400}
                   className="object-contain rounded-xl group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl max-w-full h-auto"
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli2hG5epgqiRDAzuBdtnX9ddDzgBD1X/xAAbEQACAwADAQAAAAAAAAAAAAABAgADBCURE//aAAwDAQACEQMRAD8A6pf6MlmPo6/mCeZCcIa8bOhHDhZBHHPyJJsJqkMYOm6fOGVF9IQwSevuJNVVqUOcM3xNqj2MNNpDWcGJWgfSqxDc5DmnPqw2/wA="
                 />
               </div>
             </div>
@@ -167,14 +195,13 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}>
 
-        {/* Extra Small Mobile Layout (320px - 374px) */}
-     
-
         {/* Small Mobile Layout (375px - 639px) */}
         <div className="hidden xs:block sm:hidden space-y-3">
           <button
-            onClick={() => handleProtectedAction("/RoadmapPage")}
-            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-6 rounded-xl text-base font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95"
+            onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
+            disabled={!handleProtectedAction}
+            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-6 rounded-xl text-base font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Start your roadmap journey"
           >
             <ChevronRight size={18} />
             Start Your Roadmap Journey
@@ -182,15 +209,19 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
 
           <div className="grid grid-cols-2 gap-3">
             <button
-              onClick={() => handleProtectedAction("/Courses")}
-              className="bg-white text-blue-600 text-center py-3 px-4 rounded-xl text-sm font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
+              onClick={() => handleProtectedAction && handleProtectedAction("/Courses")}
+              disabled={!handleProtectedAction}
+              className="bg-white text-blue-600 text-center py-3 px-4 rounded-xl text-sm font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Browse available courses"
             >
               <BookOpen size={16} />
               Courses
             </button>
             <button
-              onClick={() => handleProtectedAction("/CareerGuidance")}
-              className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
+              onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
+              disabled={!handleProtectedAction}
+              className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Get AI-powered career guidance"
             >
               <Brain size={16} />
               AI Guidance
@@ -201,22 +232,28 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
         {/* Tablet Layout (640px - 1023px) */}
         <div className="hidden sm:flex lg:hidden gap-3">
           <button
-            onClick={() => handleProtectedAction("/RoadmapPage")}
-            className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95"
+            onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
+            disabled={!handleProtectedAction}
+            className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Explore career roadmaps"
           >
             <ChevronRight size={18} />
             Roadmap
           </button>
           <button
-            onClick={() => handleProtectedAction("/Courses")}
-            className="flex-1 bg-white text-blue-600 text-center py-3 px-5 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
+            onClick={() => handleProtectedAction && handleProtectedAction("/Courses")}
+            disabled={!handleProtectedAction}
+            className="flex-1 bg-white text-blue-600 text-center py-3 px-5 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Browse available courses"
           >
             <BookOpen size={18} />
             Courses
           </button>
           <button
-            onClick={() => handleProtectedAction("/CareerGuidance")}
-            className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
+            onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
+            disabled={!handleProtectedAction}
+            className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Get AI-powered career guidance"
           >
             <Brain size={18} />
             Career Guidance
@@ -226,21 +263,27 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
         {/* Desktop Layout (1024px and above) */}
         <div className="hidden lg:flex gap-6 justify-center">
           <button
-            onClick={() => handleProtectedAction("/RoadmapPage")}
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px]"
+            onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
+            disabled={!handleProtectedAction}
+            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px] group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            aria-label="Explore career roadmaps"
           >
             Explore Roadmaps
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
           </button>
           <button
-            onClick={() => handleProtectedAction("/Courses")}
-            className="bg-white text-blue-600 text-center py-4 px-8 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[180px]"
+            onClick={() => handleProtectedAction && handleProtectedAction("/Courses")}
+            disabled={!handleProtectedAction}
+            className="bg-white text-blue-600 text-center py-4 px-8 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            aria-label="Browse available courses"
           >
             Browse Courses
           </button>
           <button
-            onClick={() => handleProtectedAction("/CareerGuidance")}
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px]"
+            onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
+            disabled={!handleProtectedAction}
+            className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            aria-label="Get AI-powered career guidance"
           >
             <Brain size={20} />
             Career Guidance
@@ -306,6 +349,21 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
         /* Active state for better mobile feedback */
         .active\\:scale-95:active {
           transform: scale(0.95);
+        }
+
+        /* Focus styles for accessibility */
+        button:focus-visible {
+          outline: 2px solid #3b82f6;
+          outline-offset: 2px;
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
         }
       `}</style>
     </div>

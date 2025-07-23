@@ -162,6 +162,7 @@
     --color-indigo-800: oklch(39.8% .195 277.366);
     --color-indigo-900: oklch(35.9% .144 278.697);
     --color-violet-500: oklch(60.6% .25 292.717);
+    --color-violet-600: oklch(54.1% .281 293.009);
     --color-purple-50: oklch(97.7% .014 308.299);
     --color-purple-100: oklch(94.6% .033 307.174);
     --color-purple-200: oklch(90.2% .063 306.703);
@@ -1242,6 +1243,18 @@
 
   .min-h-\[120px\] {
     min-height: 120px;
+  }
+
+  .min-h-\[380px\] {
+    min-height: 380px;
+  }
+
+  .min-h-\[420px\] {
+    min-height: 420px;
+  }
+
+  .min-h-\[500px\] {
+    min-height: 500px;
   }
 
   .min-h-screen {
@@ -3698,6 +3711,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .to-violet-600 {
+    --tw-gradient-to: var(--color-violet-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .to-white {
     --tw-gradient-to: var(--color-white);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -5539,6 +5557,15 @@
     opacity: .5;
   }
 
+  @media (hover: hover) {
+    .disabled\:hover\:scale-100:disabled:hover {
+      --tw-scale-x: 100%;
+      --tw-scale-y: 100%;
+      --tw-scale-z: 100%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .motion-reduce\:animate-\[spin_1\.5s_linear_infinite\] {
       animation: 1.5s linear infinite spin;
@@ -5821,6 +5848,18 @@
   @media (width >= 40rem) {
     .sm\:h-96 {
       height: calc(var(--spacing) * 96);
+    }
+  }
+
+  @media (width >= 40rem) {
+    .sm\:min-h-\[360px\] {
+      min-height: 360px;
+    }
+  }
+
+  @media (width >= 40rem) {
+    .sm\:min-h-\[400px\] {
+      min-height: 400px;
     }
   }
 

@@ -15,6 +15,7 @@ import {
   Code,
   FileCode,
   Terminal,
+  Code2,
   Zap,
   GitBranch,
   Cpu,
@@ -46,6 +47,15 @@ export const roadmapsData = [
     bgColor: "from-blue-600 to-blue-400",
     category: "featured",
     description: "Full-stack web development fundamentals"
+  },
+  {
+    id: "django",
+    title: "Django",
+    icon: <Code2 className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Django",
+    bgColor: "from-green-600 to-green-400",
+    category: "featured",
+    description: "Backend development with python"
   },
   {
     id: "react",
