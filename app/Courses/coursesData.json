@@ -252,6 +252,28 @@
       "language": "Hindi"
     },
     {
+      "id": 70,
+      "category": "Programming",
+      "title": "Rust Complete Bootcamp",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "rust",
+      "videoId": "https://youtu.be/qP7LzZqGh30?si=G-lyoW-I3Fv4kQID",
+      "badge": "TRENDING",
+      "language": "English"
+    },
+    {
+      "id": 71,
+      "category": "Programming",
+      "title": "GO lang Complete Course",
+      "level": "Beginner to Advance",
+      "rating": 4.8,
+      "image": "go",
+      "videoId": "https://youtu.be/yZgwW6Yuc_E?si=uOQEB7frP8sFDFF2",
+      "badge": "NEW",
+      "language": "Hindi"
+    },
+    {
       "id": 22,
       "category": "Programming",
       "title": "Javascript Complete Course",

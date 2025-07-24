@@ -1,192 +1,183 @@
 "use client";
+import React, { useState, useEffect, useRef } from 'react';
+import { Youtube, Map, FileText, TrendingUp, Users } from 'lucide-react';
 
-import { 
-  Wrench, 
-  FileText, 
-  Newspaper, 
-  ArrowRight, 
-  Sparkles, 
-  BookOpen,
-  Map
-} from "lucide-react";
+const AnimatedStatsComponent = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const componentRef = useRef(null);
 
-import { useState } from "react";
-import { useRouter } from "next/navigation"; // For Next.js 13+ App Router
-// import { useNavigate } from "react-router-dom"; // For React Router
+  // Animation state for each counter
+  const [counters, setCounters] = useState({
+    courses: 0,
+    roadmaps: 0,
+    blogs: 0
+  });
 
-const Features = ({ handleProtectedAction }) => {
-  const [navigating, setNavigating] = useState("");
-  const router = useRouter(); // For Next.js
-  // const navigate = useNavigate(); // For React Router
-
-  const handleNavigation = (href) => {
-    setNavigating(href);
-    console.log(`Navigating to: ${href}`);
-
-    // For Next.js App Router
-    router.push(href);
-
-    // For React Router (uncomment this and comment the line above)
-    // navigate(href);
-
-    // Reset loading state after a short delay
-    setTimeout(() => setNavigating(""), 500);
+  // Target values
+  const targets = {
+    courses: 100,
+    roadmaps: 50,
+    blogs: 30
   };
 
-  const features = [
-    {
-      id: 1,
-      title: "Developer Tools",
-      description: "Access premium development tools, code generators, and productivity enhancers designed for modern developers.",
-      icon: <Wrench size={24} className="text-blue-600" />,
-      href: "/TOOLS", // Fixed: lowercase for consistency
-      stats: "100+ Tools",
-      badge: "Popular"
-    },
-    {
-      id: 2,
-      title: "Smart Documentation",
-      description: "Comprehensive guides, API references, and technical documentation",
-      icon: <FileText size={24} className="text-green-600" />,
-      href: "/Docs", // Fixed: lowercase for consistency
-      stats: "50+ Docs",
-      badge: "Updated"
-    },
-    {
-      id: 3,
-      title: "Tech Insights & Blogs",
-      description: "Stay updated with the latest tech trends, tutorials, and industry insights from experts worldwide.",
-      icon: <Newspaper size={24} className="text-orange-600" />,
-      href: "/Blogs", // Fixed: lowercase for consistency
-      stats: "20+ Articles",
-      badge: "Fresh"
+  // Intersection Observer to trigger animation when component comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          startCountingAnimation();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
     }
-  ];
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Main Content Area - Adjusted for sidebar */}
-      <div className="ml-0 lg:ml-1 transition-all duration-300">
-        <section className="py-5 lg:py-12">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    return () => observer.disconnect();
+  }, [isVisible]);
 
-            {/* Header Section */}
-            <div className="text-center mb-8 lg:mb-12">
-              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                <Sparkles size={16} />
-                Features
-              </div>
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-                Everything you need to accelerate your development
-              </h2>
-              <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Powerful tools, comprehensive documentation, and expert insights to boost your productivity
-              </p>
-            </div>
+  // Animated counting function
+  const startCountingAnimation = () => {
+    const duration = 2500; // 2.5 seconds
+    const steps = 60; // 60 steps for smooth animation
+    const interval = duration / steps;
 
-            {/* Features Grid - Responsive for sidebar layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mb-8 lg:mb-12">
-              {features.map((feature) => (
-                <div
-                  key={feature.id}
-                  className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-blue-200 transition-all duration-200 cursor-pointer group"
-                  onClick={() => handleNavigation(feature.href)}
-                >
-                  {/* Badge */}
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center group-hover:bg-blue-50 transition-colors duration-200">
-                      {feature.icon}
-                    </div>
-                    <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-                      {feature.badge}
-                    </span>
-                  </div>
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const progress = step / steps;
 
-                  {/* Content */}
-                  <div className="mb-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-lg lg:text-xl font-semibold text-gray-900 group-hover:text-blue-900 transition-colors duration-200">
-                        {feature.title}
-                      </h3>
-                      <span className="text-sm text-gray-500">
-                        {feature.stats}
-                      </span>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+      // Easing function for more natural animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
 
-                  {/* CTA Button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleNavigation(feature.href);
-                    }}
-                    disabled={navigating === feature.href}
-                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-md font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {navigating === feature.href ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Loading...
-                      </>
-                    ) : (
-                      <>
-                        Explore Now
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
-                      </>
-                    )}
-                  </button>
-                </div>
-              ))}
-            </div>
+      setCounters({
+        courses: Math.floor(targets.courses * easeOutQuart),
+        roadmaps: Math.floor(targets.roadmaps * easeOutQuart),
+        blogs: Math.floor(targets.blogs * easeOutQuart)
+      });
 
-            {/* Bottom CTA Section */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 lg:p-8">
-              <div className="text-center mb-6">
-                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                  Ready to get started?
-                </h3>
-                <p className="text-gray-600">
-                  Join thousands of developers using our platform to advance their careers
-                </p>
-              </div>
+      if (step >= steps) {
+        clearInterval(timer);
+        // Ensure final values are exact
+        setCounters({
+          courses: targets.courses,
+          roadmaps: targets.roadmaps,
+          blogs: targets.blogs
+        });
+      }
+    }, interval);
+  };
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
-                  onClick={() => handleNavigation('/RoadmapPage')}
-                  disabled={navigating === '/roadmap'}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {navigating === '/RoadmapPage' ? (
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  ) : (
-                    <Map size={18} />
-                  )}
-                  Start Learning
-                </button>
-                <button 
-                  onClick={() => handleNavigation('/Courses')}
-                  disabled={navigating === '/courses'}
-                  className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {navigating === '/Courses' ? (
-                    <div className="w-4 h-4 border-2 border-gray-700 border-t-transparent rounded-full animate-spin"></div>
-                  ) : (
-                    <BookOpen size={18} />
-                  )}
-                  Browse Courses
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </section>
+  const StatCard = ({ icon: Icon, count, target, title, subtitle, iconColor }) => (
+    <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+      {/* Icon */}
+      <div className={`inline-flex items-center justify-center w-12 h-12 ${iconColor} rounded-lg mb-6`}>
+        <Icon size={24} className="text-white" />
       </div>
 
+      {/* Counter */}
+      <div className="mb-4">
+        <div className="flex items-baseline gap-1 mb-3">
+          <span className="text-4xl font-bold text-gray-900 tabular-nums">
+            {count}
+          </span>
+          <span className="text-xl font-semibold text-gray-500">+</span>
+        </div>
+
+        {/* Clean progress indicator */}
+        <div className="w-full bg-gray-100 rounded-full h-1.5">
+          <div 
+            className={`h-full ${iconColor} rounded-full transition-all duration-1000 ease-out`}
+            style={{ width: `${(count / target) * 100}%` }}
+          ></div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+        {title}
+      </h3>
+      <p className="text-sm text-gray-600 leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+  );
+
+  return (
+    <div ref={componentRef} className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <TrendingUp size={16} />
+          Platform Statistics
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Empowering Your Learning Journey
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Join thousands of learners accessing premium content and expert-curated resources
+        </p>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StatCard
+            icon={Youtube}
+            count={counters.courses}
+            target={targets.courses}
+            title="Industry Courses"
+            subtitle="Expert-led courses from top professionals with YouTube certification and hands-on projects"
+            iconColor="bg-red-500"
+          />
+
+          <StatCard
+            icon={Map}
+            count={counters.roadmaps}
+            target={targets.roadmaps}
+            title="Skill Roadmaps"
+            subtitle="Comprehensive learning paths designed by industry experts for high-demand careers"
+            iconColor="bg-blue-500"
+          />
+
+          <StatCard
+            icon={FileText}
+            count={counters.blogs}
+            target={targets.blogs}
+            title="Tech Tool Blogs"
+            subtitle="Latest insights on cutting-edge tools and technologies shaping the future"
+            iconColor="bg-green-500"
+          />
+        </div>
+      </div>
+
+      {/* Bottom CTA Section */}
+      <div className="text-center mt-16">
+        <div className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-full text-sm font-medium shadow-sm">
+          <Users size={16} />
+          <span>Join 10,000+ learners worldwide</span>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .tabular-nums {
+          font-variant-numeric: tabular-nums;
+          font-feature-settings: "tnum";
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+          .transition-all,
+          .transition-shadow {
+            transition: none !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
 
-export default Features;
+export default AnimatedStatsComponent;

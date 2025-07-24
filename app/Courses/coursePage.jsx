@@ -88,6 +88,8 @@ import gene from "../CoursesImage/gene.jpg";
 import iot from "../CoursesImage/iote.jpg";
 import IOTh from "../CoursesImage/IOTh.jpg"
 import post from "../CoursesImage/post.jpg"
+import rust from "../CoursesImage/rust.jpg"
+import go from "../CoursesImage/go.jpg"
 
 
 
@@ -101,7 +103,7 @@ const imageMap = {
   git, githube, githubh, os, osa, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
-  springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh
+  springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go
 };
 
 export default function CoursePage() {
@@ -240,7 +242,7 @@ export default function CoursePage() {
 
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-6 px-4 text-center mb-6">
         <h1 className="text-2xl md:text-3xl font-bold text-white">
-          Internet Best Courses
+          Youtube Best Courses
         </h1>
       </div>
 

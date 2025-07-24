@@ -24,12 +24,10 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}>
 
-        {/* Hero Content Container - Dynamic height for mobile with welcome message */}
-        <div className={`bg-white rounded-xl xs:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 ${
-          isUserAuthenticated ? 'min-h-[420px] xs:min-h-[450px] sm:min-h-[400px]' : 'min-h-[380px] xs:min-h-[400px] sm:min-h-[360px]'
-        }`}>
+        {/* Hero Content Container - Dynamic height that adapts to content */}
+        <div className="bg-white rounded-xl xs:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
 
-          {/* Mobile Layout (lg and below) - Fully Responsive */}
+          {/* Mobile Layout (lg and below) - Fully Responsive with Dynamic Height */}
           <div className="block lg:hidden">
             {/* Welcome Message - Now at the top for mobile */}
             {isUserAuthenticated && (
@@ -46,38 +44,44 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
               </div>
             )}
 
-            {/* Mobile Content */}
-            <div className="p-4 xs:p-6 sm:p-8 text-center">
+            {/* Mobile Content - Dynamic padding and spacing */}
+            <div className="p-4 xs:p-6 sm:p-8 text-center flex flex-col justify-center">
               {/* Trust Badge - Responsive */}
-              <div className="inline-flex items-center gap-1.5 xs:gap-2 bg-green-50 text-green-700 px-2.5 xs:px-3 py-1 rounded-full text-xs font-medium mb-3 xs:mb-4 border border-green-200">
+              <div className="inline-flex items-center gap-1.5 xs:gap-2 bg-green-50 text-green-700 px-2.5 xs:px-3 py-1 rounded-full text-xs font-medium mb-3 xs:mb-4 border border-green-200 self-center">
                 <CheckCircle size={10} className="xs:w-3 xs:h-3" />
                 <span className="text-xs xs:text-xs">100% Free Platform</span>
               </div>
 
-              {/* Main Headline - Fully Responsive Typography */}
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-2 xs:mb-3">
-                Find Your Perfect
-                <span className="block text-blue-600 mt-0.5 xs:mt-1">Career Roadmap</span>
-              </h1>
+              {/* Main Headline - Fully Responsive Typography with Dynamic Spacing */}
+              <div className="mb-4 xs:mb-6">
+                <h1 className="text-2xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                  Find Your Perfect
+                  <span className="block text-blue-600 mt-1 xs:mt-2">Career Roadmap</span>
+                </h1>
+              </div>
 
-              {/* Value Proposition - Responsive Text */}
-              <p className="text-gray-600 text-sm xs:text-base sm:text-lg mb-4 xs:mb-6 leading-relaxed max-w-xs xs:max-w-sm sm:max-w-md mx-auto px-2 xs:px-0">
-                Get expert-curated learning paths, courses, and AI-powered career guidance - completely free
-              </p>
+              {/* Value Proposition - Responsive Text with Dynamic Spacing */}
+              <div className="mb-4 xs:mb-6">
+                <p className="text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed max-w-xs xs:max-w-sm sm:max-w-md mx-auto px-2 xs:px-0">
+                  Get expert-curated learning paths, courses, and AI-powered career guidance - completely free
+                </p>
+              </div>
 
-              {/* Trust Indicators - Mobile Optimized */}
-              <div className="flex items-center justify-center gap-3 xs:gap-4 sm:gap-6 mb-6 xs:mb-8 text-xs xs:text-sm text-gray-500 flex-wrap">
-                <div className="flex items-center gap-1 xs:gap-1.5">
-                  <Users size={14} className="xs:w-4 xs:h-4 text-blue-500 flex-shrink-0" />
-                  <span className="whitespace-nowrap">10K+ Users</span>
-                </div>
-                <div className="flex items-center gap-1 xs:gap-1.5">
-                  <Star size={14} className="xs:w-4 xs:h-4 text-yellow-500 fill-current flex-shrink-0" />
-                  <span className="whitespace-nowrap">4.8 Rating</span>
-                </div>
-                <div className="flex items-center gap-1 xs:gap-1.5">
-                  <Award size={14} className="xs:w-4 xs:h-4 text-purple-500 flex-shrink-0" />
-                  <span className="whitespace-nowrap">Expert Verified</span>
+              {/* Trust Indicators - Mobile Optimized with Dynamic Spacing */}
+              <div className="mb-6 xs:mb-8">
+                <div className="flex items-center justify-center gap-3 xs:gap-4 sm:gap-6 text-xs xs:text-sm text-gray-500 flex-wrap">
+                  <div className="flex items-center gap-1 xs:gap-1.5">
+                    <Users size={14} className="xs:w-4 xs:h-4 text-blue-500 flex-shrink-0" />
+                    <span className="whitespace-nowrap">10K+ Users</span>
+                  </div>
+                  <div className="flex items-center gap-1 xs:gap-1.5">
+                    <Star size={14} className="xs:w-4 xs:h-4 text-yellow-500 fill-current flex-shrink-0" />
+                    <span className="whitespace-nowrap">4.8 Rating</span>
+                  </div>
+                  <div className="flex items-center gap-1 xs:gap-1.5">
+                    <Award size={14} className="xs:w-4 xs:h-4 text-purple-500 flex-shrink-0" />
+                    <span className="whitespace-nowrap">Expert Verified</span>
+                  </div>
                 </div>
               </div>
 
@@ -117,7 +121,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
             </div>
           </div>
 
-          {/* Desktop Layout (lg and above) - Enhanced */}
+          {/* Desktop Layout (lg and above) - Enhanced with fixed min-height */}
           <div className="hidden lg:flex min-h-[500px]">
             <div className="lg:w-1/2 p-8 xl:p-12 flex flex-col justify-center relative overflow-hidden">
               {/* Background decorative elements */}
@@ -130,13 +134,15 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   100% Free Platform
                 </div>
 
-                <h2 className="text-3xl xl:text-4xl font-bold text-gray-900 leading-tight mb-6 transition-colors duration-300">
-                  Find your perfect path and turn your 
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> dream into success</span>.
+                <h2 className="text-3xl xl:text-4xl font-bold text-gray-900 mb-3 mt-3 leading-relaxed transition-colors duration-300">
+                  Start Your Tech Journey with 
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Clarity, Not Confusion</span>
                 </h2>
-                <p className="text-lg xl:text-xl text-gray-600 mb-8 transition-colors duration-300 leading-relaxed">
-                  Expert roadmaps, smart resources, and AI-powered guidance - build your own success journey
+
+                <p className="text-medium xl:text-medium text-gray-600 mb-8 transition-colors duration-300 ">
+                  Get beginner-friendly roadmaps, curated Hindi & English tutorials, and AI guidance — everything you need to learn tech the right way, from Day 1.
                 </p>
+
 
                 {/* Welcome Message for Desktop - Improved styling */}
                 {isUserAuthenticated && (
@@ -308,7 +314,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
 
         /* Custom responsive breakpoints for better mobile experience */
         @media (max-width: 374px) {
-          .text-xl { font-size: 1.25rem; line-height: 1.2; }
+          .text-xl { font-size: 1.75rem; line-height: 1.2; }
           .text-base { font-size: 0.875rem; }
           .text-sm { font-size: 0.8125rem; }
           .text-xs { font-size: 0.75rem; }
