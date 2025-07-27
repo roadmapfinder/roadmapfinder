@@ -122,7 +122,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           </div>
 
           {/* Desktop Layout (lg and above) - Enhanced with fixed min-height */}
-          <div className="hidden lg:flex min-h-[500px]">
+          <div className="hidden lg:flex min-h-[400px]">
             <div className="lg:w-1/2 p-8 xl:p-12 flex flex-col justify-center relative overflow-hidden">
               {/* Background decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-xl opacity-60"></div>
@@ -134,13 +134,13 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   100% Free Platform
                 </div>
 
-                <h2 className="text-3xl xl:text-4xl font-bold text-gray-900 mb-3 mt-3 leading-relaxed transition-colors duration-300">
+                <h2 className="text-2xl xl:text-4xl font-bold text-gray-900 mb-7 mt-3  transition-colors duration-300">
                   Start Your Tech Journey with 
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Clarity, Not Confusion</span>
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Clarity</span>
                 </h2>
 
                 <p className="text-medium xl:text-medium text-gray-600 mb-8 transition-colors duration-300 ">
-                  Get beginner-friendly roadmaps, curated Hindi & English tutorials, and AI guidance — everything you need to learn tech the right way, from Day 1.
+                  Get beginner-friendly roadmaps, curated Hindi & English tutorials, and AI guidance 
                 </p>
 
 
@@ -184,8 +184,8 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   src={roadmap}
                   alt="Interactive career roadmap illustration showing learning paths"
                   width={500}
-                  height={400}
-                  className="object-contain rounded-xl group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl max-w-full h-auto"
+                  height={600}
+                  className="object-contain rounded-xl group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl max-w-full"
                   priority={true}
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli2hG5epgqiRDAzuBdtnX9ddDzgBD1X/xAAbEQACAwADAQAAAAAAAAAAAAABAgADBCURE//aAAwDAQACEQMRAD8A6pf6MlmPo6/mCeZCcIa8bOhHDhZBHHPyJJsJqkMYOm6fOGVF9IQwSevuJNVVqUOcM3xNqj2MNNpDWcGJWgfSqxDc5DmnPqw2/wA="

@@ -620,8 +620,12 @@ export default function HomePage() {
             {/* Additional Content Sections */}
             <div className="w-full">
               {/* Uncomment if needed */}
-              {/* <RoadmapTrending />
-              <CourseTrending handleProtectedAction={handleProtectedAction}/> */}
+              <RoadmapTrending
+                 user={user}
+                 handleProtectedAction={handleProtectedAction}
+                />
+              
+
 
               <Features handleProtectedAction={handleProtectedAction} />
               <ChooseUs />

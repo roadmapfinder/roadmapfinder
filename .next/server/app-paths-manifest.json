@@ -1,8 +1,5 @@
 {
-  "/Courses/page": "app/Courses/page.js",
-  "/Home/page": "app/Home/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Flutter/page": "app/Roadmaps/Flutter/page.js",
+  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
   "/Signup/page": "app/Signup/page.js",
   "/page": "app/page.js"
 }

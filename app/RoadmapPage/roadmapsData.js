@@ -53,7 +53,7 @@ export const roadmapsData = [
     title: "Django",
     icon: <Code2 className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Django",
-    bgColor: "from-green-600 to-green-400",
+    bgColor: "from-green-800 to-green-900",
     category: "featured",
     description: "Backend development with python"
   },
