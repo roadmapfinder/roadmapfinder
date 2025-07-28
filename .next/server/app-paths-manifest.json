@@ -1,5 +1,10 @@
 {
-  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
-  "/Signup/page": "app/Signup/page.js",
+  "/Home/page": "app/Home/page.js",
+  "/Login/page": "app/Login/page.js",
+  "/Logout/page": "app/Logout/page.js",
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/Software/page": "app/Roadmaps/Software/page.js",
+  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

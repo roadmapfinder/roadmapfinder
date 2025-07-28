@@ -24,6 +24,7 @@ import {
   Leaf,
   Layers,
   Box,
+  Square
   
   
 } from "lucide-react";
@@ -80,6 +81,15 @@ export const roadmapsData = [
     title: "React Native",
     icon: <Smartphone className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Reactnative",
+    bgColor: "from-blue-500 to-cyan-400",
+    category: "featured",
+    description: "Cross-platform mobile app development"
+  },
+  {
+    id: "softwareengineer",
+    title: "Software Engineer",
+    icon: <Square className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Software",
     bgColor: "from-blue-500 to-cyan-400",
     category: "featured",
     description: "Cross-platform mobile app development"

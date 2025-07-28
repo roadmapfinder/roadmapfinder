@@ -1,0 +1,580 @@
+[
+  {
+    "id": 1,
+    "title": "Foundations: Computer Science & Programming",
+    "description": "Essential foundation concepts for computer science and programming fundamentals",
+    "icon": "BookOpen",
+    "gradient": "from-blue-500 to-indigo-600",
+    "content": {
+      "whatToLearn": [
+        "Programming basics: Variables, loops, functions",
+        "Data structures: arrays, linked lists, stacks, queues, trees, graphs",
+        "Algorithms: sorting, searching, recursion, Big-O notation",
+        "Object-Oriented Programming concepts",
+        "Functional programming concepts",
+        "Memory management and optimization",
+        "Code organization and best practices",
+        "Problem-solving methodologies",
+        "Code debugging and testing basics",
+        "Development environment setup"
+      ],
+      "toolsToUse": [
+        "VS Code",
+        "Git + GitHub",
+        "JavaScript/Python/Java",
+        "Terminal/Command Line",
+        "Debugger Tools",
+        "Code Linters",
+        "Package Managers (npm/pip/maven)"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp - JavaScript/Python courses",
+          "Coding Temple bootcamps",
+          "CS50 Introduction to Computer Science",
+          "Coursera - Programming Fundamentals",
+          "Udemy - Complete Programming Courses"
+        ],
+        "hindi": [
+          "Apna College Python playlists",
+          "Apna College JavaScript playlists",
+          "CodeWithHarry - Programming Basics",
+          "Thapa Technical - Programming Fundamentals",
+          "Love Babbar - DSA Course"
+        ]
+      },
+      "docsAndWebsites": [
+        "MDN Web Docs",
+        "Python Documentation",
+        "Java Documentation",
+        "GeeksforGeeks",
+        "W3Schools"
+      ],
+      "projectIdeas": [
+        "CLI To-Do manager",
+        "Sorting visualizer (console)",
+        "Data-structure widgets using basic UI",
+        "Simple calculator",
+        "Basic file organizer",
+        "Number guessing game",
+        "Basic text parser"
+      ],
+      "practicePlatforms": [
+        "HackerRank",
+        "LeetCode (Easy)",
+        "Codewars",
+        "freeCodeCamp",
+        "Codecademy"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Data Structures & Algorithms Mastery",
+    "description": "Master advanced data structures, algorithms, and complexity analysis for technical interviews",
+    "icon": "Zap",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Complexity analysis and Big-O notation",
+        "Advanced data structures (heaps, tries, segment trees)",
+        "Graph algorithms and traversal techniques",
+        "Tree algorithms and balanced trees",
+        "Dynamic programming patterns",
+        "Greedy algorithms and optimization",
+        "String algorithms and pattern matching",
+        "Sorting and searching algorithms",
+        "Mathematical algorithms",
+        "Bit manipulation techniques"
+      ],
+      "toolsToUse": [
+        "LeetCode",
+        "HackerRank",
+        "Local editor + console",
+        "Algorithm visualizers",
+        "Competitive programming platforms",
+        "IDE with debugging support",
+        "Time complexity analyzers"
+      ],
+      "bestCourses": {
+        "english": [
+          "Algorithm courses on freeCodeCamp",
+          "Coding Temple algorithm bootcamps",
+          "Coursera - Algorithms Specialization",
+          "MIT OpenCourseWare - Algorithms",
+          "Udemy - Master the Coding Interview"
+        ],
+        "hindi": [
+          "Love Babbar - DSA Complete Course",
+          "Apna College - DSA Placement Course",
+          "CodeWithHarry - DSA Tutorial",
+          "Striver DSA Sheet",
+          "Pepcoding DSA Course"
+        ]
+      },
+      "docsAndWebsites": [
+        "GeeksforGeeks DSA",
+        "LeetCode Explore",
+        "HackerRank Interview Kit",
+        "Algorithm Visualizer",
+        "Big-O Cheat Sheet"
+      ],
+      "projectIdeas": [
+        "Solve daily algorithm challenges",
+        "Build a mini search engine (rare words + sorting)",
+        "Algorithm visualization tool",
+        "Competitive programming solutions",
+        "Data structure implementation library",
+        "Performance comparison tool",
+        "Interview preparation tracker"
+      ],
+      "practicePlatforms": [
+        "LeetCode",
+        "HackerRank",
+        "CodeChef",
+        "Codeforces",
+        "InterviewBit",
+        "Pramp",
+        "AlgoExpert"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Core Software Engineering Tools",
+    "description": "Master essential development tools including version control, CI/CD, and containerization",
+    "icon": "Settings",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Version control: Git branching, rebasing, pull-requests",
+        "CI/CD: GitHub Actions basics, automated testing pipelines",
+        "Code review processes and best practices",
+        "Issue tracking and project management",
+        "Container basics and Docker fundamentals",
+        "Package management and dependency handling",
+        "Build tools and automation",
+        "Code quality tools and linting",
+        "Documentation and README best practices",
+        "Team collaboration workflows"
+      ],
+      "toolsToUse": [
+        "GitHub",
+        "GitHub Actions",
+        "Docker (basics)",
+        "Jenkins",
+        "GitLab CI/CD",
+        "ESLint/Prettier",
+        "Webpack/Vite",
+        "npm/yarn/pnpm"
+      ],
+      "bestCourses": {
+        "english": [
+          "GitHub official tutorials",
+          "Basic CI/CD workshops",
+          "Docker for Developers",
+          "Git and GitHub Masterclass",
+          "DevOps Fundamentals"
+        ],
+        "hindi": [
+          "CodeWithHarry - Git and GitHub",
+          "Thapa Technical - DevOps Basics",
+          "Hitesh Choudhary - Git Tutorial",
+          "WsCube Tech - CI/CD Hindi",
+          "Love Babbar - Development Tools"
+        ]
+      },
+      "docsAndWebsites": [
+        "Git Documentation",
+        "GitHub Docs",
+        "Docker Documentation",
+        "GitHub Actions Marketplace",
+        "CI/CD Best Practices"
+      ],
+      "projectIdeas": [
+        "Build a template repo with CI build and test",
+        "Dockerize small application",
+        "Multi-environment deployment setup",
+        "Automated testing pipeline",
+        "Code quality automation",
+        "Release management system",
+        "Development workflow optimization"
+      ],
+      "practicePlatforms": [
+        "GitHub",
+        "GitLab",
+        "Docker Hub",
+        "CircleCI",
+        "Travis CI",
+        "Azure DevOps",
+        "Bitbucket Pipelines"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Web Development + Back-end / APIs",
+    "description": "Build robust web applications with RESTful and GraphQL APIs, focusing on security and best practices",
+    "icon": "Globe",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "HTTP protocol and REST API design principles",
+        "Security fundamentals and best practices",
+        "Authentication systems (JWT/OAuth)",
+        "Database design and integration",
+        "API documentation and testing",
+        "Error handling and logging",
+        "Performance optimization",
+        "GraphQL API development",
+        "Rate limiting and API governance",
+        "Microservices architecture basics"
+      ],
+      "toolsToUse": [
+        "Express.js",
+        "Django",
+        "Spring Boot",
+        "Postman/Insomnia",
+        "MongoDB/PostgreSQL",
+        "Redis",
+        "JWT libraries",
+        "API testing tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "TraversyMedia - API development",
+          "freeCodeCamp tutorials",
+          "Node.js Complete Guide",
+          "Django for APIs",
+          "Spring Boot Masterclass"
+        ],
+        "hindi": [
+          "Express.js/Node.js series by WsCube Tech",
+          "Django series by WsCube Tech",
+          "Hitesh Choudhary - Backend Development",
+          "Thapa Technical - API Development",
+          "CodeWithHarry - Web Development"
+        ]
+      },
+      "docsAndWebsites": [
+        "Express.js Documentation",
+        "Django Documentation",
+        "Spring Boot Documentation",
+        "REST API Design Guide",
+        "OAuth 2.0 Specification"
+      ],
+      "projectIdeas": [
+        "RESTful Blog API",
+        "User-auth system with JWT",
+        "Rate-limited API endpoints",
+        "E-commerce backend",
+        "Social media API",
+        "Real-time chat application",
+        "Content management system"
+      ],
+      "practicePlatforms": [
+        "Postman",
+        "Thunder Client",
+        "Swagger/OpenAPI",
+        "RapidAPI",
+        "API testing challenges",
+        "Backend development challenges",
+        "GraphQL playground"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "System Design & Architecture",
+    "description": "Learn scalable system architecture, design patterns, and distributed systems fundamentals",
+    "icon": "Network",
+    "gradient": "from-cyan-500 to-blue-500",
+    "content": {
+      "whatToLearn": [
+        "Monolithic vs microservices architecture",
+        "Load balancing and traffic distribution",
+        "Caching strategies and implementation",
+        "Database sharding and replication",
+        "Design patterns and architectural principles",
+        "Distributed systems basics",
+        "Message queues and event-driven architecture",
+        "Scalability and performance considerations",
+        "System reliability and fault tolerance",
+        "API gateway and service mesh concepts"
+      ],
+      "toolsToUse": [
+        "Draw.io",
+        "Lucidchart",
+        "Redis",
+        "Memcached",
+        "Apache Kafka",
+        "RabbitMQ",
+        "Load balancers",
+        "System design tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Free system design crash courses (YouTube)",
+          "InterViewKickstart system design",
+          "Grokking the System Design Interview",
+          "System Design Primer",
+          "Distributed Systems Course"
+        ],
+        "hindi": [
+          "Tutorials by Thapa Technical",
+          "Code with Harry - System Design",
+          "Love Babbar - System Design",
+          "Hitesh Choudhary - Architecture",
+          "System Design Hindi Tutorials"
+        ]
+      },
+      "docsAndWebsites": [
+        "System Design Primer GitHub",
+        "High Scalability Blog",
+        "AWS Architecture Center",
+        "Google Cloud Architecture",
+        "System Design Interview Questions"
+      ],
+      "projectIdeas": [
+        "Design user-service microservice",
+        "Chat app prototype with queue-based architecture",
+        "Scalable URL shortener",
+        "Distributed cache implementation",
+        "Event-driven e-commerce system",
+        "Social media feed system",
+        "Real-time analytics platform"
+      ],
+      "practicePlatforms": [
+        "System design mock interviews",
+        "LeetCode system design",
+        "Pramp system design",
+        "InterviewBit system design",
+        "System design case studies",
+        "Architecture review platforms",
+        "Design pattern implementations"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Cloud, DevOps & AI Tools",
+    "description": "Master cloud services, DevOps practices, and integrate AI tools for enhanced productivity",
+    "icon": "Cloud",
+    "gradient": "from-violet-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Cloud services: AWS/Azure/GCP basics",
+        "Serverless functions and architecture",
+        "Container orchestration with Kubernetes",
+        "Infrastructure as Code (Terraform)",
+        "CI/CD pipeline automation",
+        "Monitoring and observability",
+        "AI coding assistants integration",
+        "GitHub Copilot and ChatGPT usage",
+        "Cloud security best practices",
+        "Cost optimization strategies"
+      ],
+      "toolsToUse": [
+        "AWS/Azure free tier",
+        "Docker",
+        "Kubernetes",
+        "GitHub Actions",
+        "Terraform basics",
+        "AI coding assistants",
+        "GitHub Copilot",
+        "Cloud monitoring tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Vercel deployment tutorials",
+          "AWS tutorials and certification prep",
+          "GitHub Actions comprehensive courses",
+          "Kubernetes for Developers",
+          "AI-assisted development courses"
+        ],
+        "hindi": [
+          "AWS Hindi tutorials",
+          "DevOps Hindi courses",
+          "Cloud computing Hindi",
+          "Tutorials on using Copilot/GitHub AI",
+          "Docker and Kubernetes Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "AWS Documentation",
+        "Azure Documentation",
+        "Google Cloud Documentation",
+        "Kubernetes Documentation",
+        "GitHub Copilot Documentation"
+      ],
+      "projectIdeas": [
+        "CRUD app deployment on AWS Lambda",
+        "Dockerized microservice setup",
+        "Kubernetes cluster deployment",
+        "CI/CD pipeline with cloud deployment",
+        "Serverless API with monitoring",
+        "AI-assisted code generation project",
+        "Multi-cloud application deployment"
+      ],
+      "practicePlatforms": [
+        "AWS Free Tier",
+        "Google Cloud Free Tier",
+        "Azure Free Account",
+        "GitHub Actions",
+        "Docker Hub",
+        "Kubernetes Playground",
+        "AI coding challenges"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Testing, Monitoring & Production Stability",
+    "description": "Implement comprehensive testing strategies, monitoring systems, and security practices for production applications",
+    "icon": "Shield",
+    "gradient": "from-emerald-500 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "Unit tests and test-driven development",
+        "Integration tests and end-to-end testing",
+        "Testing strategies and best practices",
+        "Application monitoring and observability",
+        "Logging and error tracking",
+        "Performance monitoring and optimization",
+        "Security best practices and implementation",
+        "Threat modeling and risk assessment",
+        "Incident response and recovery",
+        "Production deployment strategies"
+      ],
+      "toolsToUse": [
+        "Jest/Mocha",
+        "Selenium/Playwright",
+        "Cypress",
+        "Prometheus/Grafana",
+        "New Relic/DataDog",
+        "Sentry",
+        "Cloud monitoring tools",
+        "Security scanning tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "FreeCodeCamp testing tracks",
+          "Fireship testing series",
+          "Testing JavaScript Applications",
+          "Monitoring and Observability Course",
+          "Security Testing Fundamentals"
+        ],
+        "hindi": [
+          "Testing Hindi tutorials",
+          "Monitoring Hindi courses",
+          "Security best practices Hindi",
+          "Production deployment Hindi",
+          "DevOps security Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "Jest Documentation",
+        "Cypress Documentation",
+        "Prometheus Documentation",
+        "OWASP Security Guidelines",
+        "Testing Best Practices"
+      ],
+      "projectIdeas": [
+        "Create comprehensive test suite for API endpoints",
+        "Set up logging and alerts system",
+        "Performance monitoring dashboard",
+        "Security audit and penetration testing",
+        "Automated testing pipeline",
+        "Error tracking and reporting system",
+        "Production health monitoring"
+      ],
+      "practicePlatforms": [
+        "Testing frameworks",
+        "Security testing platforms",
+        "Performance testing tools",
+        "Monitoring dashboards",
+        "Error tracking services",
+        "Security vulnerability scanners",
+        "Load testing platforms"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Real-world Projects & Internship Prep",
+    "description": "Build production-grade applications, contribute to open source, and prepare for technical interviews",
+    "icon": "Briefcase",
+    "gradient": "from-rose-500 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Production-grade application development",
+        "Code review and collaboration skills",
+        "Open-source contribution practices",
+        "Technical interview preparation",
+        "System design interview skills",
+        "Behavioral interview preparation",
+        "Portfolio development and presentation",
+        "Industry best practices and standards",
+        "Professional networking strategies",
+        "Career development and growth planning"
+      ],
+      "toolsToUse": [
+        "GitHub for portfolio and collaboration",
+        "Portfolio website builders",
+        "LinkedIn for networking",
+        "Interview preparation platforms",
+        "Code review tools",
+        "Project management tools",
+        "Communication and presentation tools",
+        "Professional development platforms"
+      ],
+      "bestCourses": {
+        "english": [
+          "Portfolio building bootcamps",
+          "Interview prep bootcamps",
+          "Open source contribution guides",
+          "Professional development courses",
+          "Career transition programs"
+        ],
+        "hindi": [
+          "Interview preparation Hindi",
+          "Portfolio building Hindi",
+          "Career guidance Hindi",
+          "Industry readiness courses",
+          "Professional development Hindi"
+        ]
+      },
+      "docsAndWebsites": [
+        "GitHub Portfolio Guide",
+        "Open Source Contribution Guide",
+        "Technical Interview Handbook",
+        "System Design Interview Guide",
+        "Career Development Resources"
+      ],
+      "projectIdeas": [
+        "E-commerce platform backend + admin portal",
+        "Team-based full-stack SaaS application",
+        "Social media platform with real-time features",
+        "Learning management system",
+        "Cryptocurrency portfolio tracker",
+        "Video streaming platform",
+        "IoT data collection and analytics system",
+        "Multi-tenant application architecture",
+        "Real-time collaborative tools",
+        "AI-powered application with ML integration"
+      ],
+      "practicePlatforms": [
+        "GitHub open source projects",
+        "Hackathons and coding competitions",
+        "LeetCode for technical interviews",
+        "HackerRank for skill assessment",
+        "Codewars for problem solving",
+        "Open source communities",
+        "Professional networking events",
+        "Technical meetups and conferences",
+        "Online coding bootcamps",
+        "Interview preparation platforms"
+      ]
+    }
+  }
+]
