@@ -1,10 +1,9 @@
 {
-  "/Home/page": "app/Home/page.js",
-  "/Login/page": "app/Login/page.js",
-  "/Logout/page": "app/Logout/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Software/page": "app/Roadmaps/Software/page.js",
-  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/Roadmaps/Sql/page": "app/Roadmaps/Sql/page.js",
+  "/Roadmaps/Swift/page": "app/Roadmaps/Swift/page.js",
+  "/Roadmaps/System/page": "app/Roadmaps/System/page.js",
+  "/Roadmaps/UIUX/page": "app/Roadmaps/UIUX/page.js",
+  "/Roadmaps/Video/page": "app/Roadmaps/Video/page.js",
   "/page": "app/page.js"
 }

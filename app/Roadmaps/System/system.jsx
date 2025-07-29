@@ -1,445 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
-import { useRouter } from "next/navigation";
-import { 
-  Sun, 
-  Moon, 
-  Download, 
-  ChevronDown, 
-  BookOpen, 
-  Code, 
-  Database, 
-  Server, 
-  GitMerge, 
-  Layers, 
-  PenTool, 
-  BookMarked, 
-  Loader 
-} from "lucide-react";
-
-// System Design Roadmap data structure
-const roadmapData = [
-  {
-    id: 1,
-    title: "Introduction",
-    description: "Understand the basics of system design and its importance",
-    icon: <BookOpen className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "What is System Design?",
-        "Importance in interviews & real-world systems",
-        "High-level vs Low-level Design",
-        "Career Pathways in System Architecture",
-        "Technical vs Business Requirements"
-      ],
-      bestCourses: {
-        english: [
-          "Introduction to System Design (ByteByteGo)",
-          "System Design Fundamentals (Educative.io)",
-          "Software Architecture & System Design (Udemy)",
-          "Introduction to Software Architecture (Coursera)"
-        ],
-        hindi: [
-          "System Design Basics (Knowledge Gate)",
-          "System Design Introduction in Hindi (Code with Arjun)",
-          "Software System Design Hindi (Tech Primers)",
-          "Introduction to System Design in Hindi (Apna College)"
-        ]
-      },
-      toolsToUse: [
-        "Documentation Tools",
-        "UML Diagramming",
-        "Whiteboarding Software",
-        "Architecture Decision Records (ADRs)",
-        "Requirement Tracking"
-      ],
-      docsAndWebsites: [
-        "System Design Primer (GitHub)",
-        "Martin Fowler's Blog",
-        "High Scalability Blog",
-        "AWS Architecture Center",
-        "Microsoft Azure Architecture Center"
-      ],
-      projectIdeas: [
-        "Personal blog architecture design",
-        "E-commerce site system overview",
-        "Ride-sharing app high-level design",
-        "Document management system architecture"
-      ]
-    }
-  },
-  {
-    id: 2,
-    title: "Prerequisites",
-    description: "Master the fundamental concepts needed for system design",
-    icon: <Code className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "Computer Networking Basics",
-        "Operating Systems Fundamentals",
-        "OOP Concepts and Design Principles",
-        "DBMS (SQL & NoSQL)",
-        "Basic Linux/Unix Commands",
-        "Git Version Control"
-      ],
-      bestCourses: {
-        english: [
-          "Computer Networks (Stanford CS144)",
-          "Operating Systems (Berkeley CS162)",
-          "Database Management Systems (CMU)",
-          "Object-Oriented Design (University of Alberta)"
-        ],
-        hindi: [
-          "Computer Networks in Hindi (Gate Smashers)",
-          "Operating System Hindi Course (Jenny's Lectures)",
-          "DBMS Complete Course in Hindi (Knowledge Gate)",
-          "OOP Concepts in Hindi (CodeWithHarry)"
-        ]
-      },
-      toolsToUse: [
-        "Wireshark",
-        "Postman/Insomnia",
-        "MongoDB Compass",
-        "MySQL Workbench",
-        "Docker Basics",
-        "Virtual Box/VMware"
-      ],
-      docsAndWebsites: [
-        "GeeksforGeeks",
-        "W3Schools",
-        "Mozilla Developer Network",
-        "Tutorialspoint",
-        "Javatpoint"
-      ],
-      projectIdeas: [
-        "Build a network packet analyzer",
-        "Create a small database with proper indexing",
-        "Implement basic threading and process management",
-        "Design a small OOP project with SOLID principles"
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: "Core Concepts",
-    description: "Learn essential system design principles and patterns",
-    icon: <Database className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "Scalability (Vertical & Horizontal)",
-        "Load Balancing Strategies",
-        "Caching Mechanisms",
-        "Database Sharding",
-        "CAP Theorem",
-        "Consistency Patterns (Eventual, Strong)",
-        "API Design (REST & GraphQL)"
-      ],
-      bestCourses: {
-        english: [
-          "Distributed Systems (MIT 6.824)",
-          "Web Application & Software Architecture 101 (Educative)",
-          "Scalability & System Design (InterviewBit)",
-          "Advanced Distributed Systems (Coursera)"
-        ],
-        hindi: [
-          "System Design Core Concepts Hindi (Coding Blocks)",
-          "Scalability in Hindi (Scaler Topics)",
-          "CAP Theorem & Database Design Hindi (Technical Suneja)",
-          "API Design in Hindi (Tutorial Point Hindi)"
-        ]
-      },
-      toolsToUse: [
-        "Redis",
-        "HAProxy/Nginx",
-        "Apache Kafka",
-        "Memcached",
-        "Cassandra",
-        "MongoDB Atlas"
-      ],
-      docsAndWebsites: [
-        "Designing Data-Intensive Applications (Book)",
-        "System Design Interview (Alex Xu)",
-        "High Scalability",
-        "InfoQ",
-        "Architecture Notes by AnkitSharma"
-      ],
-      projectIdeas: [
-        "Implement a caching system",
-        "Design a sharded database implementation",
-        "Build a REST API with proper design",
-        "Create a load-balanced web application"
-      ]
-    }
-  },
-  {
-    id: 4,
-    title: "Components",
-    description: "Understand key building blocks of modern distributed systems",
-    icon: <Server className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "Client-Server Model",
-        "Content Delivery Networks (CDN)",
-        "Message Queues",
-        "Rate Limiting Strategies",
-        "Database Indexing",
-        "Proxy Servers",
-        "Microservices vs Monolith"
-      ],
-      bestCourses: {
-        english: [
-          "Microservices Architecture (Udemy)",
-          "Message Brokers Deep Dive (Pluralsight)",
-          "CDN & Edge Computing (A Cloud Guru)",
-          "Database Performance Tuning (Oracle University)"
-        ],
-        hindi: [
-          "Microservices vs Monolith Hindi (Tech Primers)",
-          "Message Queue in Hindi (CodeWithHarry)",
-          "Database Indexing Hindi (MySirG)",
-          "Proxy Servers & Load Balancers Hindi (Learning Simplified)"
-        ]
-      },
-      toolsToUse: [
-        "RabbitMQ/Kafka",
-        "Nginx/HAProxy",
-        "Cloudflare/Akamai",
-        "Kong API Gateway",
-        "Elasticsearch",
-        "Docker & Kubernetes"
-      ],
-      docsAndWebsites: [
-        "Microservices.io",
-        "Nginx Blog",
-        "AWS Architecture Blog",
-        "MongoDB Performance Blog",
-        "Kubernetes Documentation"
-      ],
-      projectIdeas: [
-        "Build a microservice with proper communication",
-        "Implement a message queue system",
-        "Create a proxy server with caching",
-        "Design a rate-limited API gateway"
-      ]
-    }
-  },
-  {
-    id: 5,
-    title: "Design Patterns",
-    description: "Learn reusable solutions to common system design problems",
-    icon: <GitMerge className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "Singleton Pattern",
-        "Pub-Sub Pattern",
-        "Circuit Breaker Pattern",
-        "API Gateway Pattern",
-        "Saga Pattern",
-        "Bulkhead Pattern",
-        "CQRS Pattern"
-      ],
-      bestCourses: {
-        english: [
-          "Cloud Design Patterns (Microsoft Learn)",
-          "Design Patterns in Modern Systems (Udemy)",
-          "Microservice Patterns (LinkedIn Learning)",
-          "Enterprise Integration Patterns (Pluralsight)"
-        ],
-        hindi: [
-          "Design Patterns in Hindi (Thapa Technical)",
-          "Microservice Patterns Hindi (Code Improve)",
-          "Cloud Design Patterns Hindi (Tech Guide)",
-          "System Architecture Patterns Hindi (SimpleCoding)"
-        ]
-      },
-      toolsToUse: [
-        "Netflix Hystrix",
-        "Resilience4j",
-        "Apache Camel",
-        "Spring Cloud Gateway",
-        "Axon Framework",
-        "MassTransit"
-      ],
-      docsAndWebsites: [
-        "Refactoring.guru",
-        "Microsoft Cloud Design Patterns",
-        "Martin Fowler's Blog",
-        "Microservices.io Patterns",
-        "Enterprise Integration Patterns"
-      ],
-      projectIdeas: [
-        "Implement a circuit breaker for API calls",
-        "Create a pub-sub system with proper patterns",
-        "Design a saga pattern for distributed transactions",
-        "Build an API gateway with proper routing"
-      ]
-    }
-  },
-  {
-    id: 6,
-    title: "Case Studies",
-    description: "Analyze real-world system design examples",
-    icon: <Layers className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "Design Twitter",
-        "Design YouTube",
-        "Design WhatsApp",
-        "Design Instagram",
-        "Design URL Shortener",
-        "Design Distributed File Storage",
-        "Design Payment Processing System"
-      ],
-      bestCourses: {
-        english: [
-          "Grokking the System Design Interview (Educative)",
-          "ByteByteGo System Design Cases",
-          "System Design Interview - Alex Xu (Book)",
-          "High Scalability Case Studies"
-        ],
-        hindi: [
-          "System Design Case Studies Hindi (Coding Blocks)",
-          "Popular System Design Questions Hindi (Love Babbar)",
-          "Twitter, WhatsApp System Design Hindi (Apna College)",
-          "Real World Systems Hindi (Code Improve)"
-        ]
-      },
-      toolsToUse: [
-        "Draw.io",
-        "Whimsical",
-        "Excalidraw",
-        "Lucidchart",
-        "Miro",
-        "Figma (for system diagrams)"
-      ],
-      docsAndWebsites: [
-        "High Scalability Blog",
-        "System Design Primer",
-        "Engineering Blogs of Tech Companies",
-        "Distributed Systems Blog",
-        "Instagram Engineering Blog"
-      ],
-      projectIdeas: [
-        "Build a URL shortener service",
-        "Create a simple Twitter clone",
-        "Design a file sharing system",
-        "Implement a notification service"
-      ]
-    }
-  },
-  {
-    id: 7,
-    title: "Tools and Resources",
-    description: "Essential tools and learning resources for system design",
-    icon: <PenTool className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "System Diagramming Tools",
-        "Performance Testing Tools",
-        "API Testing & Documentation",
-        "Cloud Service Providers",
-        "Container Orchestration",
-        "Monitoring & Observability"
-      ],
-      bestCourses: {
-        english: [
-          "Mastering System Design Tools (Udemy)",
-          "AWS Solutions Architect (A Cloud Guru)",
-          "Kubernetes Complete Course (KodeKloud)",
-          "Terraform & Infrastructure as Code"
-        ],
-        hindi: [
-          "System Design Tools Hindi (CodeWithHarry)",
-          "AWS in Hindi (Technical Guruji)",
-          "Docker & Kubernetes Hindi (Apna College)",
-          "Performance Testing Hindi (Testing Shashtra)"
-        ]
-      },
-      toolsToUse: [
-        "AWS/GCP/Azure",
-        "Docker & Kubernetes",
-        "Terraform/Pulumi",
-        "Prometheus & Grafana",
-        "JMeter/Locust",
-        "ELK Stack"
-      ],
-      docsAndWebsites: [
-        "AWS Documentation",
-        "Kubernetes Documentation",
-        "Terraform Registry",
-        "Docker Hub",
-        "Prometheus Documentation"
-      ],
-      projectIdeas: [
-        "Set up Kubernetes cluster with monitoring",
-        "Create cloud infrastructure with Terraform",
-        "Implement logging with ELK stack",
-        "Build a CI/CD pipeline for microservices"
-      ]
-    }
-  },
-  {
-    id: 8,
-    title: "Practice",
-    description: "Strengthen your skills with regular practice and assessments",
-    icon: <BookMarked className="w-5 h-5" />,
-    content: {
-      whatToLearn: [
-        "Interview Patterns",
-        "Communication Skills",
-        "Time Management during Interviews",
-        "Trade-off Analysis",
-        "Requirement Clarification Techniques",
-        "Performance Analysis"
-      ],
-      bestCourses: {
-        english: [
-          "System Design Mock Interviews (Pramp)",
-          "Educative.io System Design Practice",
-          "AlgoExpert System Design Questions",
-          "LeetCode System Design Problems"
-        ],
-        hindi: [
-          "System Design Interview Preparation Hindi (Bharat Hirwani)",
-          "Mock Interview Hindi (Apna College)",
-          "System Design Practice Hindi (Coding Minutes)",
-          "Interview Questions Hindi (Love Babbar)"
-        ]
-      },
-      toolsToUse: [
-        "Pramp",
-        "Interviewing.io",
-        "LeetCode",
-        "HackerRank",
-        "System Design Templates",
-        "Communication Tools"
-      ],
-      docsAndWebsites: [
-        "LeetCode Discuss System Design Section",
-        "Glassdoor Interview Questions",
-        "Grokking System Design Interview",
-        "Reddit r/cscareerquestions",
-        "System Design Interview YouTube Channels"
-      ],
-      projectIdeas: [
-        "Create video explanations of system designs",
-        "Build a portfolio of case studies",
-        "Contribute to open source distributed systems",
-        "Teach system design concepts to others"
-      ]
-    }
-  }
-];
+import roadmapData from './roadmapData.json';
+import { handleDownloadPDF } from './downloadPdf.js';
 
 export default function Home() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const [activeSection, setActiveSection] = useState(1);
-  const router = useRouter();
 
   // Toggle section open/close
   const toggleSection = (id) => {
@@ -451,414 +19,100 @@ export default function Home() {
     setDarkMode(!darkMode);
   };
 
-  // Handle smooth scrolling to sections
-  const scrollToSection = (id) => {
-    const element = document.getElementById(`section-${id}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(id);
-    }
-  };
-
-  // Track scroll to update active section
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = roadmapData.map(section => {
-        const element = document.getElementById(`section-${section.id}`);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return {
-            id: section.id,
-            top: rect.top,
-          };
-        }
-        return null;
-      }).filter(Boolean);
-
-      // Find the section closest to the top of the viewport
-      const active = sections.reduce((closest, section) => {
-        if (section.top > -100 && section.top < 200) return section;
-        if (closest && Math.abs(closest.top) > Math.abs(section.top)) return section;
-        return closest;
-      }, null);
-
-      if (active && active.id !== activeSection) {
-        setActiveSection(active.id);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]);
+  // Handle PDF download
   const handleDownload = async () => {
-    setDownloading(true);
-
-    try {
-      // Create a temporary div to render the roadmap content for downloading
-      const downloadDiv = document.createElement("div");
-      downloadDiv.className = "roadmap-download-content";
-
-      // IMPROVED STYLES for better PDF output and readability
-      downloadDiv.style.padding = "40px";
-      downloadDiv.style.color = "#2c3e50";
-      downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-      downloadDiv.style.fontSize = "14px";
-      downloadDiv.style.lineHeight = "1.6";
-      downloadDiv.style.maxWidth = "800px";
-      downloadDiv.style.margin = "0 auto";
-
-      // Add title with better styling
-      const title = document.createElement("h1");
-      title.style.textAlign = "center";
-      title.style.marginBottom = "30px";
-      title.style.fontSize = "32px";
-      title.style.fontWeight = "700";
-      title.style.color = "#2c3e50";
-      title.style.borderBottom = "3px solid #3498db";
-      title.style.paddingBottom = "15px";
-      title.textContent = "System Design Roadmap";
-      downloadDiv.appendChild(title);
-
-      // Add roadmap content with improved styling
-      roadmapData.forEach((section) => {
-        const sectionDiv = document.createElement("div");
-        sectionDiv.style.marginBottom = "40px";
-        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
-
-        // Section header with better design
-        const header = document.createElement("h2");
-        header.style.backgroundColor = "#ecf0f1";
-        header.style.padding = "15px 20px";
-        header.style.borderRadius = "8px";
-        header.style.borderLeft = "5px solid #3498db";
-        header.style.fontSize = "20px";
-        header.style.fontWeight = "600";
-        header.style.color = "#2c3e50";
-        header.style.marginBottom = "20px";
-        header.textContent = `${section.id}. ${section.title}`;
-        sectionDiv.appendChild(header);
-
-        // Section description with better typography
-        const desc = document.createElement("p");
-        desc.style.marginBottom = "25px";
-        desc.style.fontStyle = "italic";
-        desc.style.fontSize = "15px";
-        desc.style.color = "#7f8c8d";
-        desc.style.lineHeight = "1.7";
-        desc.style.padding = "0 10px";
-        desc.textContent = section.description;
-        sectionDiv.appendChild(desc);
-
-        // What to Learn with improved styling
-        const whatToLearn = document.createElement("div");
-        whatToLearn.style.marginBottom = "25px";
-
-        const whatToLearnTitle = document.createElement("h3");
-        whatToLearnTitle.style.fontSize = "18px";
-        whatToLearnTitle.style.fontWeight = "600";
-        whatToLearnTitle.style.color = "#27ae60";
-        whatToLearnTitle.style.marginBottom = "12px";
-        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
-        whatToLearnTitle.style.paddingBottom = "5px";
-        whatToLearnTitle.textContent = "✅ What to Learn";
-        whatToLearn.appendChild(whatToLearnTitle);
-
-        const whatToLearnList = document.createElement("ul");
-        whatToLearnList.style.paddingLeft = "25px";
-        whatToLearnList.style.margin = "15px 0";
-        section.content.whatToLearn.forEach((item) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = item;
-          whatToLearnList.appendChild(li);
-        });
-        whatToLearn.appendChild(whatToLearnList);
-        sectionDiv.appendChild(whatToLearn);
-
-        // Best Courses with better organization
-        const bestCourses = document.createElement("div");
-        bestCourses.style.marginBottom = "25px";
-
-        const bestCoursesTitle = document.createElement("h3");
-        bestCoursesTitle.style.fontSize = "18px";
-        bestCoursesTitle.style.fontWeight = "600";
-        bestCoursesTitle.style.color = "#3498db";
-        bestCoursesTitle.style.marginBottom = "12px";
-        bestCoursesTitle.style.borderBottom = "2px solid #3498db";
-        bestCoursesTitle.style.paddingBottom = "5px";
-        bestCoursesTitle.textContent = "📚 Best Courses";
-        bestCourses.appendChild(bestCoursesTitle);
-
-        // English courses
-        const englishTitle = document.createElement("h4");
-        englishTitle.style.fontSize = "16px";
-        englishTitle.style.fontWeight = "500";
-        englishTitle.style.color = "#2c3e50";
-        englishTitle.style.marginTop = "15px";
-        englishTitle.style.marginBottom = "10px";
-        englishTitle.textContent = "In English:";
-        bestCourses.appendChild(englishTitle);
-
-        const englishList = document.createElement("ul");
-        englishList.style.paddingLeft = "25px";
-        englishList.style.margin = "10px 0";
-        section.content.bestCourses.english.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          englishList.appendChild(li);
-        });
-        bestCourses.appendChild(englishList);
-
-        // Hindi courses
-        const hindiTitle = document.createElement("h4");
-        hindiTitle.style.fontSize = "16px";
-        hindiTitle.style.fontWeight = "500";
-        hindiTitle.style.color = "#2c3e50";
-        hindiTitle.style.marginTop = "15px";
-        hindiTitle.style.marginBottom = "10px";
-        hindiTitle.textContent = "In Hindi:";
-        bestCourses.appendChild(hindiTitle);
-
-        const hindiList = document.createElement("ul");
-        hindiList.style.paddingLeft = "25px";
-        hindiList.style.margin = "10px 0";
-        section.content.bestCourses.hindi.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          hindiList.appendChild(li);
-        });
-        bestCourses.appendChild(hindiList);
-        sectionDiv.appendChild(bestCourses);
-
-        // Tools to Use with better styling
-        const tools = document.createElement("div");
-        tools.style.marginBottom = "25px";
-
-        const toolsTitle = document.createElement("h3");
-        toolsTitle.style.fontSize = "18px";
-        toolsTitle.style.fontWeight = "600";
-        toolsTitle.style.color = "#f39c12";
-        toolsTitle.style.marginBottom = "12px";
-        toolsTitle.style.borderBottom = "2px solid #f39c12";
-        toolsTitle.style.paddingBottom = "5px";
-        toolsTitle.textContent = "🧰 Tools to Use";
-        tools.appendChild(toolsTitle);
-
-        const toolsList = document.createElement("ul");
-        toolsList.style.paddingLeft = "25px";
-        toolsList.style.margin = "15px 0";
-        section.content.toolsToUse.forEach((tool) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = tool;
-          toolsList.appendChild(li);
-        });
-        tools.appendChild(toolsList);
-        sectionDiv.appendChild(tools);
-
-        // Docs & Websites with better styling
-        const docs = document.createElement("div");
-        docs.style.marginBottom = "25px";
-
-        const docsTitle = document.createElement("h3");
-        docsTitle.style.fontSize = "18px";
-        docsTitle.style.fontWeight = "600";
-        docsTitle.style.color = "#e74c3c";
-        docsTitle.style.marginBottom = "12px";
-        docsTitle.style.borderBottom = "2px solid #e74c3c";
-        docsTitle.style.paddingBottom = "5px";
-        docsTitle.textContent = "📘 Docs & Websites";
-        docs.appendChild(docsTitle);
-
-        const docsList = document.createElement("ul");
-        docsList.style.paddingLeft = "25px";
-        docsList.style.margin = "15px 0";
-        section.content.docsAndWebsites.forEach((doc) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = doc;
-          docsList.appendChild(li);
-        });
-        docs.appendChild(docsList);
-        sectionDiv.appendChild(docs);
-
-        // Project Ideas with better styling
-        const projects = document.createElement("div");
-        projects.style.marginBottom = "25px";
-
-        const projectsTitle = document.createElement("h3");
-        projectsTitle.style.fontSize = "18px";
-        projectsTitle.style.fontWeight = "600";
-        projectsTitle.style.color = "#9b59b6";
-        projectsTitle.style.marginBottom = "12px";
-        projectsTitle.style.borderBottom = "2px solid #9b59b6";
-        projectsTitle.style.paddingBottom = "5px";
-        projectsTitle.textContent = "💡 Project Ideas";
-        projects.appendChild(projectsTitle);
-
-        const projectsList = document.createElement("ul");
-        projectsList.style.paddingLeft = "25px";
-        projectsList.style.margin = "15px 0";
-        section.content.projectIdeas.forEach((project) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = project;
-          projectsList.appendChild(li);
-        });
-        projects.appendChild(projectsList);
-        sectionDiv.appendChild(projects);
-
-        downloadDiv.appendChild(sectionDiv);
-      });
-
-      // Temporarily add the div to the document to render it
-      document.body.appendChild(downloadDiv);
-
-      // IMPROVED html2canvas settings for better quality
-      const canvas = await html2canvas(downloadDiv, {
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        logging: false,
-        letterRendering: true, // Better text rendering
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        width: downloadDiv.scrollWidth,
-        height: downloadDiv.scrollHeight,
-        scrollX: 0,
-        scrollY: 0
-      });
-
-      // Remove the temporary div
-      document.body.removeChild(downloadDiv);
-
-      // Create PDF with better settings
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-        compress: true, // Compress for smaller file size
-        precision: 2
-      });
-
-      // Calculate dimensions for better fitting
-      const imgWidth = 210; // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      const pageHeight = 297; // A4 height in mm
-
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      // Add first page
-      pdf.addImage(
-        canvas.toDataURL("image/jpeg", 0.95), // Use JPEG with high quality
-        "JPEG",
-        0,
-        0,
-        imgWidth,
-        imgHeight,
-      );
-      heightLeft -= pageHeight;
-
-      // Add additional pages if needed
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(
-          canvas.toDataURL("image/jpeg", 0.95),
-          "JPEG",
-          0,
-          position,
-          imgWidth,
-          imgHeight,
-        );
-        heightLeft -= pageHeight;
-      }
-
-      // Save the PDF
-      pdf.save("System_Design_Roadmap.pdf");
-
-      // Store the downloaded roadmap data to localStorage
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
-
-      // Navigate to Downloads page
-      router.push('/Downloads');
-
-      // Store the downloaded roadmap data to local storage if needed
-      localStorage.setItem('downloadedRoadmap', JSON.stringify(roadmapData));
-
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-      alert("There was an error generating the PDF. Please try again.");
-    } finally {
-      setDownloading(false);
-    }
+    await handleDownloadPDF(roadmapData, setDownloading);
   };
+
   return (
     <div
-      className={`min-h-screen ${
-        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-      } transition-colors duration-300`}
+      className={`min-h-screen font-sora ${
+        darkMode ? "dark bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
+      }`}
     >
       <Head>
-        <title>System Design Roadmap</title>
+        <title>Springboot Developer Roadmap</title>
         <meta
           name="description"
-          content="Complete roadmap for mastering System Design concepts and practices"
+          content="Complete roadmap for becoming an AI/ML Engineer"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" 
+          rel="stylesheet" 
+        />
       </Head>
 
       {/* Sticky Navigation Bar */}
       <nav
-        className={`sticky top-0 z-10 ${
-          darkMode ? "bg-gray-800" : "bg-white"
-        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+        className={`sticky top-0 z-50 backdrop-blur-lg ${
+          darkMode ? "bg-gray-900/90 border-gray-700/50" : "bg-white/90 border-gray-200/50"
+        } border-b shadow-xl px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 transition-all duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-          System Design Roadmap
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+    System Design
+          </span>
+          <span className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}>
+            Roadmap
+          </span>
         </h1>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
           {/* Download Button */}
           <button
             onClick={handleDownload}
             disabled={downloading}
-            className={`px-4 py-2 rounded-md text-white ${
+            className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-xl font-medium text-xs sm:text-sm tracking-wide text-white shadow-lg transform transition-all duration-200 ${
               downloading 
-                ? "bg-gray-500 cursor-not-allowed" 
-                : "bg-blue-600 hover:bg-blue-700"
-            } transition-colors flex items-center`}
-            aria-label="Download Roadmap"
+                ? "bg-gray-500 cursor-not-allowed scale-95" 
+                : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:scale-105 active:scale-95"
+            } flex items-center`}
           >
             {downloading ? (
               <>
-                <Loader className="w-4 h-4 mr-2 animate-spin" />
-                Processing...
+                <svg 
+                  className="animate-spin -ml-1 mr-2 sm:mr-3 h-3 w-3 sm:h-4 sm:w-4 text-white" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24"
+                >
+                  <circle 
+                    className="opacity-25" 
+                    cx="12" 
+                    cy="12" 
+                    r="10" 
+                    stroke="currentColor" 
+                    strokeWidth="4"
+                  ></circle>
+                  <path 
+                    className="opacity-75" 
+                    fill="currentColor" 
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                <span className="font-medium hidden sm:inline">Generating PDF...</span>
+                <span className="font-medium sm:hidden">PDF...</span>
               </>
             ) : (
               <>
-                <Download className="w-4 h-4 mr-2" />
-                Download
+                <svg 
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-2 sm:mr-3" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                  />
+                </svg>
+                <span className="font-medium hidden sm:inline">Download PDF</span>
+                <span className="font-medium sm:hidden">PDF</span>
               </>
             )}
           </button>
@@ -866,245 +120,228 @@ export default function Home() {
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
-            className={`p-2 rounded-full ${
-              darkMode
-                ? "bg-gray-700 text-yellow-300"
-                : "bg-gray-200 text-gray-700"
+            className={`p-2 sm:p-2.5 md:p-3 rounded-xl shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95 ${
+              darkMode 
+                ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-300 hover:to-orange-400" 
+                : "bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-600 hover:to-gray-700"
             }`}
-            aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            {darkMode ? (
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path 
+                  fillRule="evenodd" 
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" 
+                  clipRule="evenodd" 
+                />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            )}
           </button>
         </div>
       </nav>
 
-      <div className="container mx-auto px-4 py-8 max-w-6xl flex flex-col md:flex-row gap-6">
-        {/* Sidebar Navigation (visible on md and above) */}
-        <aside className="hidden md:block w-64 sticky self-start top-24 h-full">
-          <div className={`p-4 rounded-lg ${darkMode ? "bg-gray-800" : "bg-white"} shadow-md`}>
-            <h2 className="text-lg font-semibold mb-4 border-b pb-2">Roadmap Sections</h2>
-            <ul className="space-y-2">
-              {roadmapData.map((section) => (
-                <li key={section.id}>
-                  <button
-                    onClick={() => scrollToSection(section.id)}
-                    className={`w-full text-left px-3 py-2 rounded-md flex items-center transition-colors ${
-                      activeSection === section.id
-                        ? darkMode
-                          ? "bg-blue-900 text-white"
-                          : "bg-blue-100 text-blue-800"
-                        : darkMode
-                        ? "hover:bg-gray-700"
-                        : "hover:bg-gray-100"
-                    }`}
-                  >
-                    <span className="mr-2">{section.icon}</span>
-                    <span className="text-sm">{section.title}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+      {/* Main Content */}
+      <main className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12 max-w-7xl">
+        {/* Hero Section */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Complete System Design
+            </span>
+            <br />
+            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
+              Roadmap
+            </span>
+          </h2>
+          <p className={`text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}>
+            A comprehensive guide to becoming an expert in System design with step-by-step learning path, 
+            courses, tools, and project ideas.
+          </p>
+          <div className="mt-6 sm:mt-8 flex justify-center">
+            <div className={`h-1 w-16 sm:w-20 md:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`}></div>
           </div>
-        </aside>
+        </div>
 
-        <main className="flex-1">
-          {/* Introduction */}
-          <div
-            className={`mb-8 p-6 rounded-lg ${
-              darkMode ? "bg-gray-800" : "bg-white"
-            } shadow-md transition-colors duration-300`}
-          >
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
-              Welcome to the System Design Roadmap
-            </h2>
-            <p className="text-sm md:text-base leading-relaxed">
-              This roadmap will guide you through the essential concepts, tools, and
-              resources needed to master System Design. Each section contains curated resources
-            
-            </p>
-        
-          </div>
-
-          {/* Roadmap Sections */}
-          <div className="space-y-6">
-            {roadmapData.map((section) => (
-              <div
-                id={`section-${section.id}`}
-                key={section.id}
-                className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 scroll-mt-24 ${
-                  darkMode
-                    ? "bg-gray-800 hover:bg-gray-750"
-                    : "bg-white hover:bg-gray-50"
-                }`}
+        {/* Roadmap Sections */}
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
+          {roadmapData.map((section) => (
+            <div
+              key={section.id}
+              className={`${
+                darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"
+              } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
+                openSection === section.id ? 'ring-2 ring-blue-500/20' : ''
+              }`}
+            >
+              {/* Section Header */}
+              <button
+                onClick={() => toggleSection(section.id)}
+                className={`w-full p-4 sm:p-6 md:p-8 text-left flex justify-between items-center ${
+                  darkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-50/50"
+                } transition-all duration-200 group`}
               >
-                {/* Section Header */}
-                <button
-                  onClick={() => toggleSection(section.id)}
-                  className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
-                  aria-expanded={openSection === section.id}
-                >
-                  <div className="flex items-center">
-                    <span
-                      className={`flex items-center justify-center w-10 h-10 rounded-full mr-3 ${
-                        darkMode ? "bg-blue-600" : "bg-blue-500"
-                      } text-white font-medium transition-all`}
-                    >
-                      {section.icon}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center mb-2 sm:mb-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 flex-shrink-0">
+                      {section.id}
                     </span>
-                    <div className="text-left">
-                      <h3 className="font-semibold text-lg">{section.title}</h3>
-                      <p
-                        className={`text-sm ${
-                          darkMode ? "text-gray-300" : "text-gray-600"
-                        }`}
-                      >
-                        {section.description}
-                      </p>
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight group-hover:text-blue-600 transition-colors truncate">
+                      {section.title}
+                    </h3>
+                  </div>
+                  <p className={`text-sm sm:text-base md:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} ml-9 sm:ml-11 md:ml-12 pr-4`}>
+                    {section.description}
+                  </p>
+                </div>
+                <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
+                  {openSection === section.id ? (
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                </div>
+              </button>
+
+              {/* Section Content */}
+              {openSection === section.id && (
+                <div className={`px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t`}>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-6 md:mt-8">
+                    {/* What to Learn */}
+                    <div className={`p-4 sm:p-5 md:p-6 rounded-xl ${darkMode ? "bg-green-900/20 border-green-500/20" : "bg-green-50/80 border-green-200/50"} border order-1`}>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">✅</span>
+                        What to Learn
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content.whatToLearn.map((item, index) => (
+                          <li key={index} className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}>
+                            <span className="text-green-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">•</span>
+                            <span className="font-medium">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Tools to Use */}
+                    <div className={`p-4 sm:p-5 md:p-6 rounded-xl ${darkMode ? "bg-orange-900/20 border-orange-500/20" : "bg-orange-50/80 border-orange-200/50"} border order-2`}>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🧰</span>
+                        Tools to Use
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content.toolsToUse.map((tool, index) => (
+                          <li key={index} className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}>
+                            <span className="text-orange-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">•</span>
+                            <span className="font-medium">{tool}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Best Courses */}
+                    <div className={`p-4 sm:p-5 md:p-6 rounded-xl ${darkMode ? "bg-blue-900/20 border-blue-500/20" : "bg-blue-50/80 border-blue-200/50"} border order-3 lg:order-3`}>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">📚</span>
+                        Best Courses
+                      </h4>
+                      <div className="space-y-4 sm:space-y-5">
+                        <div>
+                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">In English:</h5>
+                          <ul className="space-y-1.5 sm:space-y-2">
+                            {section.content.bestCourses.english.map((course, index) => (
+                              <li key={index} className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}>
+                                <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">•</span>
+                                <span className="font-medium">{course}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">In Hindi:</h5>
+                          <ul className="space-y-1.5 sm:space-y-2">
+                            {section.content.bestCourses.hindi.map((course, index) => (
+                              <li key={index} className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}>
+                                <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">•</span>
+                                <span className="font-medium">{course}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Docs & Websites */}
+                    <div className={`p-4 sm:p-5 md:p-6 rounded-xl ${darkMode ? "bg-red-900/20 border-red-500/20" : "bg-red-50/80 border-red-200/50"} border order-4`}>
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">📘</span>
+                        Docs & Websites
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content.docsAndWebsites.map((doc, index) => (
+                          <li key={index} className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}>
+                            <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">•</span>
+                            <span className="font-medium">{doc}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                  <ChevronDown
-                    className={`w-5 h-5 transform transition-transform duration-300 ${
-                      openSection === section.id ? "rotate-180" : "rotate-0"
-                    }`}
-                  />
-                </button>
 
-                              {/* Section Content */}
-                              {openSection === section.id && (
-                                <div
-                                  className={`px-6 pb-6 pt-2 border-t ${
-                                    darkMode ? "border-gray-700" : "border-gray-200"
-                                  } animate-fadeIn`}
-                                >
-                                  {/* What to Learn */}
-                                  <div className="mb-6">
-                                    <h4 className="flex items-center text-lg font-medium mb-3">
-                                      <span className="mr-2">✅</span>What to Learn
-                                    </h4>
-                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                      {section.content.whatToLearn.map((item, index) => (
-                                        <li
-                                          key={index}
-                                          className={`flex items-center ${
-                                            darkMode ? "text-gray-300" : "text-gray-700"
-                                          }`}
-                                        >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                                          {item}
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-
-                                  {/* Best Courses */}
-                                  <div className="mb-6">
-                                    <h4 className="flex items-center text-lg font-medium mb-3">
-                                      <span className="mr-2">📚</span>Best Courses
-                                    </h4>
-
-                                    <div className="space-y-4">
-                                      {/* English Courses */}
-                                      <div>
-                                        <h5
-                                          className={`font-medium mb-2 ${
-                                            darkMode ? "text-gray-200" : "text-gray-800"
-                                          }`}
-                                        >
-                                          In English:
-                                        </h5>
-                                        <ul className="space-y-1">
-                                          {section.content.bestCourses.english.map(
-                                            (course, index) => (
-                                              <li
-                                                key={index}
-                                                className={`flex items-start ${
-                                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                                }`}
-                                              >
-                                                <span className="min-w-4 text-blue-500 mr-2">
-                                                  •
-                                                </span>
-                                                {course}
-                                              </li>
-                                            )
-                                          )}
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  {/* Tools to Use */}
-                                  <div className="mb-6">
-                                    <h4 className="flex items-center text-lg font-medium mb-3">
-                                      <span className="mr-2">🧰</span>Tools to Use
-                                    </h4>
-                                    <div className="flex flex-wrap gap-2">
-                                      {section.content.toolsToUse.map((tool, index) => (
-                                        <span
-                                          key={index}
-                                          className={`px-3 py-1 rounded-full text-sm ${
-                                            darkMode
-                                              ? "bg-gray-700 text-gray-200"
-                                              : "bg-gray-200 text-gray-800"
-                                          }`}
-                                        >
-                                          {tool}
-                                        </span>
-                                      ))}
-                                    </div>
-                                  </div>
-
-                                  {/* Docs & Websites */}
-                                  <div className="mb-6">
-                                    <h4 className="flex items-center text-lg font-medium mb-3">
-                                      <span className="mr-2">📘</span>Docs & Websites
-                                    </h4>
-                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                      {section.content.docsAndWebsites.map(
-                                        (resource, index) => (
-                                          <li
-                                            key={index}
-                                            className={`flex items-center ${
-                                              darkMode ? "text-gray-300" : "text-gray-700"
-                                            }`}
-                                          >
-                                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                                            {resource}
-                                          </li>
-                                        )
-                                      )}
-                                    </ul>
-                                  </div>
-
-                                  {/* Project Ideas */}
-                                  <div>
-                                    <h4 className="flex items-center text-lg font-medium mb-3">
-                                      <span className="mr-2">💡</span>Project Ideas
-                                    </h4>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                      {section.content.projectIdeas.map((project, index) => (
-                                        <div
-                                          key={index}
-                                          className={`p-3 rounded-md ${
-                                            darkMode
-                                              ? "bg-gray-700 text-gray-200"
-                                              : "bg-gray-100 text-gray-800"
-                                          }`}
-                                        >
-                                          {project}
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          ))}
+                  {/* Project Ideas */}
+                  <div className="mt-6 sm:mt-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-600 flex items-center">
+                      <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">💡</span>
+                      Project Ideas
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                      {section.content.projectIdeas.map((project, index) => (
+                        <div key={index} className={`p-4 sm:p-5 md:p-6 rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}>
+                          <div className="flex items-start">
+                            <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">💡</span>
+                            <span className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}>
+                              {project}
+                            </span>
+                          </div>
                         </div>
-                      </main>
-
+                      ))}
                     </div>
-      </div>
-                  );
-      }
-      
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-12 sm:mt-16 md:mt-20 text-center">
+          <div className={`p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Ready to Start Your Journey?
+            </h3>
+            <p className={`text-base sm:text-lg md:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}>
+              Remember: Consistency is key. Start with the fundamentals and build your way up!
+            </p>
+            <button
+              onClick={handleDownload}
+              disabled={downloading}
+              className={`px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
+                downloading 
+                  ? "bg-gray-500 cursor-not-allowed scale-95" 
+                  : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
+              }`}
+            >
+              {downloading ? "Generating PDF..." : "Download Complete Roadmap"}
+            </button>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}

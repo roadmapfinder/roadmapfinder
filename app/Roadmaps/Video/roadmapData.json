@@ -1,0 +1,646 @@
+[
+  {
+    "id": 1,
+    "title": "Understand the Basics of Video Editing",
+    "description": "Learn fundamental concepts and terminology",
+    "icon": "Play",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "What is video editing?",
+        "Types of editing (montage, cinematic, vlog, documentary, etc.)",
+        "Basic video formats, frame rates, aspect ratios",
+        "Understanding video resolution and quality",
+        "Video compression fundamentals",
+        "Basic editing principles and techniques"
+      ],
+      "bestResources": {
+        "english": [
+          "Justin Odisho YouTube Channel",
+          "Video Editing 101 (LinkedIn Learning)",
+          "Introduction to Video Editing (Khan Academy)",
+          "Film Editing: Crash Course Film Production"
+        ],
+        "hindi": [
+          "Tech Raj - Video Editing Basics",
+          "GFX Mentor - Video Editing Introduction",
+          "Techno Ruhez - Video Editing Concepts",
+          "Techno Vedant - Basic Tutorial Series"
+        ]
+      },
+      "toolsToUse": [
+        "VLC Media Player",
+        "HandBrake (for conversion)",
+        "Basic editing software trials",
+        "Media Info (for file details)"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "NoFilmSchool Basics",
+          "url": "https://nofilmschool.com",
+          "description": "Comprehensive film and video production resources"
+        },
+        {
+          "name": "Frame.io Guides",
+          "url": "https://frame.io/blog",
+          "description": "Video collaboration and editing guides"
+        },
+        {
+          "name": "Videomaker Magazine",
+          "url": "https://videomaker.com",
+          "description": "Video production techniques and tutorials"
+        },
+        {
+          "name": "Digital Rebellion Blog",
+          "url": "https://digitalrebellion.com/blog",
+          "description": "Professional video editing tools and workflows"
+        },
+        {
+          "name": "Creative COW Forums",
+          "url": "https://creativecow.net",
+          "description": "Professional video editing community and forums"
+        }
+      ],
+      "projectIdeas": [
+        "Create a 30-second intro for yourself",
+        "Edit a simple photo montage with music",
+        "Record and edit a simple vlog",
+        "Re-edit an existing YouTube video"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Choose and Learn Editing Software",
+    "description": "Master the tools of the trade from beginner to professional",
+    "icon": "Settings",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "Software interface navigation",
+        "Basic cuts and transitions",
+        "Timeline management",
+        "Import/export settings",
+        "Organizing media files",
+        "Keyboard shortcuts"
+      ],
+      "bestResources": {
+        "english": [
+          "Premiere Pro Masterclass (Udemy)",
+          "DaVinci Resolve Official Training",
+          "Final Cut Pro X Essential Training (LinkedIn Learning)",
+          "Filmora Complete Tutorial (YouTube)"
+        ],
+        "hindi": [
+          "Filmora Hindi Course by Techno Vedant",
+          "Premiere Pro Hindi by GFX Mentor",
+          "DaVinci Resolve Hindi Tutorial by Tech Raj",
+          "CapCut Master Class Hindi by Technical Sagar"
+        ]
+      },
+      "toolsToUse": [
+        "Beginner: Filmora, CapCut, VN Editor",
+        "Intermediate: Adobe Premiere Pro, Final Cut Pro",
+        "Advanced: DaVinci Resolve, Adobe After Effects",
+        "Mobile: InShot, KineMaster"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Adobe Help Center",
+          "url": "https://helpx.adobe.com/premiere-pro",
+          "description": "Official Adobe Premiere Pro documentation and tutorials"
+        },
+        {
+          "name": "Blackmagic Design Support",
+          "url": "https://blackmagicdesign.com/support",
+          "description": "DaVinci Resolve official documentation and support"
+        },
+        {
+          "name": "Apple Final Cut Pro Resources",
+          "url": "https://apple.com/final-cut-pro/resources",
+          "description": "Official Final Cut Pro learning resources and guides"
+        },
+        {
+          "name": "Filmora Learning Center",
+          "url": "https://filmora.wondershare.com/guide",
+          "description": "Complete Filmora tutorials and user guides"
+        },
+        {
+          "name": "CapCut Tutorials",
+          "url": "https://capcut.com/help",
+          "description": "Official CapCut help center and tutorials"
+        }
+      ],
+      "projectIdeas": [
+        "Create a 1-minute travel highlight reel",
+        "Edit a product showcase video",
+        "Create a simple interview edit",
+        "Build a music video edit"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Learn Color Grading & Effects",
+    "description": "Enhance visual quality and add professional polish",
+    "icon": "Palette",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Understanding color theory",
+        "LUTs and color presets",
+        "Color wheels and scopes",
+        "Grading workflows",
+        "Visual effects fundamentals",
+        "Creating your own style"
+      ],
+      "bestResources": {
+        "english": [
+          "Color Grading Central Tutorials",
+          "DaVinci Resolve Grading (Casey Faris)",
+          "Premiere Pro Color Workshop (Jordy Vandeput)",
+          "Lowepost Color Grading Tutorials"
+        ],
+        "hindi": [
+          "Color Grading Masterclass Hindi by Tech Raj",
+          "DaVinci Resolve Color Hindi Tutorial",
+          "Premiere Pro Color Grading Hindi by GFX Mentor",
+          "Film Look Color Grading Hindi by Technical Guruji"
+        ]
+      },
+      "toolsToUse": [
+        "DaVinci Resolve Color Page",
+        "Premiere Pro Lumetri Color",
+        "FilmConvert",
+        "Color Finale (for FCPX)",
+        "Free LUT packs"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Color Grading Central",
+          "url": "https://colorgradingcentral.com",
+          "description": "Professional color grading tutorials and resources"
+        },
+        {
+          "name": "Mixing Light",
+          "url": "https://mixinglight.com",
+          "description": "Advanced color correction and grading techniques"
+        },
+        {
+          "name": "Skillshare Color Courses",
+          "url": "https://skillshare.com/browse/color-grading",
+          "description": "Creative color grading courses and workshops"
+        },
+        {
+          "name": "Lowepost Blog",
+          "url": "https://lowepost.com/blog",
+          "description": "Color grading insights and industry techniques"
+        },
+        {
+          "name": "Learn Color Grading",
+          "url": "https://learncolorgrading.com",
+          "description": "Comprehensive color grading education platform"
+        }
+      ],
+      "projectIdeas": [
+        "Create before/after color grade comparisons",
+        "Recreate a movie look",
+        "Develop your own LUT",
+        "Fix problematic footage"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Sound Design and Audio Editing",
+    "description": "Master the crucial audio component of video production",
+    "icon": "Volume2",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Audio synchronization",
+        "Noise removal techniques",
+        "EQ and compression basics",
+        "Background scoring",
+        "Audio ducking and mixing",
+        "Voice enhancement"
+      ],
+      "bestResources": {
+        "english": [
+          "Curtis Judd Audio for Video",
+          "Adobe Audition Essential Training",
+          "Sound Design Masterclass (Udemy)",
+          "Music for Film (Berklee Online)"
+        ],
+        "hindi": [
+          "Audio Editing in Premiere Pro (Hindi) by GFX Mentor",
+          "Sound Design Hindi Tutorial by Tech Raj",
+          "Audacity Basics Hindi by Technical Sagar",
+          "Music Mixing Hindi by Techno Vedant"
+        ]
+      },
+      "toolsToUse": [
+        "Audacity (free)",
+        "Adobe Audition",
+        "FL Studio (optional)",
+        "Fairlight (in DaVinci Resolve)",
+        "iZotope RX (for repair)"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Audacity Manual",
+          "url": "https://manual.audacityteam.org",
+          "description": "Complete Audacity user manual and tutorials"
+        },
+        {
+          "name": "Adobe Audition Tutorials",
+          "url": "https://helpx.adobe.com/audition",
+          "description": "Official Adobe Audition learning resources"
+        },
+        {
+          "name": "Sound Design Tutorials",
+          "url": "https://sounddesign.org",
+          "description": "Professional sound design techniques and theory"
+        },
+        {
+          "name": "Audio Mixing Basics",
+          "url": "https://audiomixingbasics.com",
+          "description": "Fundamental audio mixing concepts and practices"
+        },
+        {
+          "name": "Epidemic Sound Blog",
+          "url": "https://epidemicsound.com/blog",
+          "description": "Music licensing and audio production insights"
+        }
+      ],
+      "projectIdeas": [
+        "Clean up interview audio",
+        "Create a soundscape for footage",
+        "Record and mix a voiceover",
+        "Sync and mix dialogue scenes"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Practice with Stock Assets",
+    "description": "Hone your skills using freely available resources",
+    "icon": "Image",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Finding quality stock footage",
+        "Working with stock music",
+        "Using sound effects libraries",
+        "Creating projects from stock elements",
+        "Combining stock with original footage",
+        "Legal aspects of stock usage"
+      ],
+      "bestResources": {
+        "english": [
+          "Stock Video Editing Challenge (YouTube)",
+          "Create a Demo Reel from Stock (Udemy)",
+          "Envato Tutorials for Stock Usage",
+          "Motion Array Training Videos"
+        ],
+        "hindi": [
+          "Stock Footage Se Video Editing by Tech Raj",
+          "Free Stock Assets Guide Hindi by GFX Mentor",
+          "Stock Music Selection Hindi by Technical Sagar",
+          "Copyright Guide for Stock Hindi by Techno Vedant"
+        ]
+      },
+      "toolsToUse": [
+        "Pexels Videos",
+        "Pixabay",
+        "Mixkit",
+        "Videvo",
+        "Free Music Archive",
+        "Freesound.org"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Storyblocks Blog",
+          "url": "https://storyblocks.com/blog",
+          "description": "Stock media usage tips and creative inspiration"
+        },
+        {
+          "name": "Envato Elements Tutorials",
+          "url": "https://elements.envato.com/learn",
+          "description": "Creative tutorials using Envato stock assets"
+        },
+        {
+          "name": "Artlist.io Resources",
+          "url": "https://artlist.io/blog",
+          "description": "Music licensing and creative video resources"
+        },
+        {
+          "name": "Epidemic Sound Blog",
+          "url": "https://epidemicsound.com/blog",
+          "description": "Music production and licensing insights"
+        },
+        {
+          "name": "Motion Array Tips",
+          "url": "https://motionarray.com/learn",
+          "description": "Video production tutorials and stock asset guides"
+        }
+      ],
+      "projectIdeas": [
+        "Create a travel promo from stock footage",
+        "Edit a product commercial using stock",
+        "Make a movie trailer with stock footage",
+        "Build a complete brand video from stock"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Follow Industry Resources & Blogs",
+    "description": "Stay updated with trends and techniques",
+    "icon": "Rss",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "Current editing trends",
+        "Industry standards and workflows",
+        "New software features and updates",
+        "Professional editors' techniques",
+        "Business aspects of video editing",
+        "Industry news and developments"
+      ],
+      "bestResources": {
+        "english": [
+          "NoFilmSchool Blog",
+          "RocketStock Blog",
+          "Adobe Premiere Blog",
+          "Frame.io Insider",
+          "PremiumBeat Blog"
+        ],
+        "hindi": [
+          "Filmi Gyan Hindi Blog",
+          "Video Editing Updates by Tech Raj",
+          "Film Industry News Hindi by GFX Mentor",
+          "Techno Vedant News Updates"
+        ]
+      },
+      "toolsToUse": [
+        "Feedly (for RSS)",
+        "Twitter Lists (following editors)",
+        "YouTube Subscriptions",
+        "LinkedIn Groups",
+        "Reddit Communities"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "NoFilmSchool",
+          "url": "https://nofilmschool.com",
+          "description": "Film and video production news, tutorials, and industry insights"
+        },
+        {
+          "name": "RocketStock",
+          "url": "https://rocketstock.com/blog",
+          "description": "Creative video production tutorials and resources"
+        },
+        {
+          "name": "Adobe Blog",
+          "url": "https://blog.adobe.com/en/topics/creative",
+          "description": "Latest updates and tutorials for Adobe Creative Suite"
+        },
+        {
+          "name": "Motion Array Blog",
+          "url": "https://motionarray.com/learn",
+          "description": "Video production tips, tutorials, and industry trends"
+        },
+        {
+          "name": "Creative COW Forums",
+          "url": "https://creativecow.net",
+          "description": "Professional video editing community and discussion forums"
+        }
+      ],
+      "projectIdeas": [
+        "Recreate trending editing styles",
+        "Try new techniques from tutorials",
+        "Join editing challenges",
+        "Review new plugins or software"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Practice & Portfolio Building",
+    "description": "Build your showcase and gain real experience",
+    "icon": "Briefcase",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Creating a cohesive style",
+        "Building a demo reel",
+        "Client communication",
+        "Project management",
+        "Time estimation",
+        "Receiving and implementing feedback"
+      ],
+      "bestResources": {
+        "english": [
+          "How to Build a Video Editing Portfolio (LinkedIn Learning)",
+          "Freelance Video Editing Guide (Udemy)",
+          "Client Management for Video Editors (Skillshare)",
+          "Portfolio Review Sessions (YouTube)"
+        ],
+        "hindi": [
+          "Video Editing Portfolio Guide Hindi by Tech Raj",
+          "Freelancing Guide Hindi by GFX Mentor",
+          "Client Communication Hindi by Technical Sagar",
+          "Demo Reel Creation Hindi by Techno Vedant"
+        ]
+      },
+      "toolsToUse": [
+        "Behance",
+        "YouTube Channel",
+        "Instagram Reels",
+        "Vimeo",
+        "Personal Website",
+        "Dribbble (for motion graphics)"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Behance Editing Portfolios",
+          "url": "https://behance.net/galleries/film",
+          "description": "Professional video editing portfolio showcase platform"
+        },
+        {
+          "name": "Vimeo Staff Picks",
+          "url": "https://vimeo.com/channels/staffpicks",
+          "description": "Curated high-quality video content for inspiration"
+        },
+        {
+          "name": "Top Editing Reels",
+          "url": "https://reelcrafter.com",
+          "description": "Demo reel examples and portfolio building tips"
+        },
+        {
+          "name": "Successful Freelancer Profiles",
+          "url": "https://upwork.com/cat/video-editing",
+          "description": "Examples of successful video editing freelancer profiles"
+        },
+        {
+          "name": "Video Editor CV Templates",
+          "url": "https://cvtemplatemaster.com/video-editor",
+          "description": "Professional resume templates for video editors"
+        }
+      ],
+      "projectIdeas": [
+        "Edit 1 video/day for 30 days",
+        "Recreate transitions from famous movies",
+        "Create a 60-second demo reel",
+        "Volunteer for non-profit video projects"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Advanced Techniques & Specialization",
+    "description": "Deepen your skills and find your niche",
+    "icon": "Zap",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Motion graphics integration",
+        "VFX compositing basics",
+        "Advanced color grading",
+        "Cinematic techniques",
+        "Specialized genres (wedding, corporate, etc.)",
+        "Multicamera editing"
+      ],
+      "bestResources": {
+        "english": [
+          "Motion Design School",
+          "School of Motion",
+          "After Effects Apprentice",
+          "Advanced Editing Techniques (Masterclass)",
+          "Mt. Mograph on YouTube"
+        ],
+        "hindi": [
+          "Advanced Video Editing Hindi by Tech Raj",
+          "After Effects Hindi Tutorial by GFX Mentor",
+          "Motion Graphics Hindi by Technical Sagar",
+          "VFX Compositing Hindi by Techno Vedant"
+        ]
+      },
+      "toolsToUse": [
+        "After Effects",
+        "Blender",
+        "Fusion (in DaVinci Resolve)",
+        "Canva Pro",
+        "Mocha Pro",
+        "Particular/Trapcode Suite"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Video Copilot",
+          "url": "https://videocopilot.net",
+          "description": "Advanced After Effects tutorials and VFX techniques"
+        },
+        {
+          "name": "Red Giant Tutorials",
+          "url": "https://redgiant.com/tutorials",
+          "description": "Professional motion graphics and VFX plugin tutorials"
+        },
+        {
+          "name": "Greyscalegorilla",
+          "url": "https://greyscalegorilla.com",
+          "description": "3D motion graphics and Cinema 4D tutorials"
+        },
+        {
+          "name": "Motionographer",
+          "url": "https://motionographer.com",
+          "description": "Motion graphics industry news and inspiration"
+        },
+        {
+          "name": "School of Motion Blog",
+          "url": "https://schoolofmotion.com/blog",
+          "description": "Professional motion design education and resources"
+        }
+      ],
+      "projectIdeas": [
+        "Logo animation for a brand",
+        "Lyric video with motion graphics",
+        "VFX short film",
+        "Motion graphics explainer video"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Certifications & Continuing Education",
+    "description": "Formal recognition and ongoing learning",
+    "icon": "Award",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "Industry-recognized certifications",
+        "Advanced courses and workshops",
+        "Networking with professionals",
+        "Masterclasses and conferences",
+        "Film theory and critique",
+        "Ethical practices in editing"
+      ],
+      "bestResources": {
+        "english": [
+          "Adobe Certified Professional: Video Design",
+          "DaVinci Resolve Certification",
+          "Final Cut Pro X Certification",
+          "Avid Media Composer Certification",
+          "MasterClass - Film Editing"
+        ],
+        "hindi": [
+          "Adobe Certification Guide Hindi by Tech Raj",
+          "DaVinci Certification Hindi Guide by GFX Mentor",
+          "Film Theory Hindi Classes by Technical Sagar",
+          "Professional Growth Hindi by Techno Vedant"
+        ]
+      },
+      "toolsToUse": [
+        "LinkedIn Learning",
+        "Skillshare",
+        "MasterClass",
+        "EditMentor",
+        "Coursera",
+        "Udemy"
+      ],
+      "docsAndWebsites": [
+        {
+          "name": "Adobe Certification Center",
+          "url": "https://edex.adobe.com/adobe-certified-professional",
+          "description": "Official Adobe professional certification programs"
+        },
+        {
+          "name": "Blackmagic Design Training",
+          "url": "https://blackmagicdesign.com/products/davinciresolve/training",
+          "description": "Official DaVinci Resolve certification and training"
+        },
+        {
+          "name": "Apple Pro Training",
+          "url": "https://training.apple.com/us/en/recognition",
+          "description": "Apple certified pro training for Final Cut Pro"
+        },
+        {
+          "name": "Film Editing Pro",
+          "url": "https://filmeditingpro.com",
+          "description": "Professional film editing techniques and theory"
+        },
+        {
+          "name": "Inside The Edit",
+          "url": "https://insidetheedit.com",
+          "description": "Professional editing insights and career guidance"
+        }
+      ],
+      "projectIdeas": [
+        "Study and analyze editing in award-winning films",
+        "Participate in editing competitions",
+        "Create tutorials for beginners",
+        "Collaborate with other certified editors"
+      ]
+    }
+  }
+]

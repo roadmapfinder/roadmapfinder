@@ -301,15 +301,15 @@ export const roadmapsData = [
     category: "trending",
     description: "Cloud platforms and services"
   },
-  {
-    id: "video",
-    title: "Video Editing",
-    icon: <Video className="w-5 h-5 text-white" />,
-    link: "/Roadmaps/Video",
-    bgColor: "from-red-500 to-pink-500",
-    category: "trending",
-    description: "Video editing and production"
-  },
+  // {
+  //   id: "video",
+  //   title: "Video Editing",
+  //   icon: <Video className="w-5 h-5 text-white" />,
+  //   link: "/Roadmaps/Video",
+  //   bgColor: "from-red-500 to-pink-500",
+  //   category: "trending",
+  //   description: "Video editing and production"
+  // },
   {
     id: "graphic",
     title: "Graphic Design",

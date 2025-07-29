@@ -1,0 +1,468 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction",
+    "description": "Understand the basics of system design and its importance",
+    "icon": "BookOpen",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "What is System Design?",
+        "Importance in interviews & real-world systems",
+        "High-level vs Low-level Design",
+        "Career Pathways in System Architecture",
+        "Technical vs Business Requirements"
+      ],
+      "bestCourses": {
+        "english": [
+          "Introduction to System Design (ByteByteGo)",
+          "System Design Fundamentals (Educative.io)",
+          "Software Architecture & System Design (Udemy)",
+          "Introduction to Software Architecture (Coursera)"
+        ],
+        "hindi": [
+          "System Design Basics (Knowledge Gate)",
+          "System Design Introduction in Hindi (Code with Arjun)",
+          "Software System Design Hindi (Tech Primers)",
+          "Introduction to System Design in Hindi (Apna College)"
+        ]
+      },
+      "toolsToUse": [
+        "Documentation Tools",
+        "UML Diagramming",
+        "Whiteboarding Software",
+        "Architecture Decision Records (ADRs)",
+        "Requirement Tracking"
+      ],
+      "docsAndWebsites": [
+        "System Design Primer (GitHub)",
+        "Martin Fowler's Blog",
+        "High Scalability Blog",
+        "AWS Architecture Center",
+        "Microsoft Azure Architecture Center"
+      ],
+      "projectIdeas": [
+        "Personal blog architecture design",
+        "E-commerce site system overview",
+        "Ride-sharing app high-level design",
+        "Document management system architecture"
+      ],
+      "practicePlatforms": [
+        "System Design Primer GitHub",
+        "High Scalability Case Studies",
+        "Architecture Decision Records Practice",
+        "Technical Documentation Writing"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Prerequisites",
+    "description": "Master the fundamental concepts needed for system design",
+    "icon": "Code",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "Computer Networking Basics",
+        "Operating Systems Fundamentals",
+        "OOP Concepts and Design Principles",
+        "DBMS (SQL & NoSQL)",
+        "Basic Linux/Unix Commands",
+        "Git Version Control"
+      ],
+      "bestCourses": {
+        "english": [
+          "Computer Networks (Stanford CS144)",
+          "Operating Systems (Berkeley CS162)",
+          "Database Management Systems (CMU)",
+          "Object-Oriented Design (University of Alberta)"
+        ],
+        "hindi": [
+          "Computer Networks in Hindi (Gate Smashers)",
+          "Operating System Hindi Course (Jenny's Lectures)",
+          "DBMS Complete Course in Hindi (Knowledge Gate)",
+          "OOP Concepts in Hindi (CodeWithHarry)"
+        ]
+      },
+      "toolsToUse": [
+        "Wireshark",
+        "Postman/Insomnia",
+        "MongoDB Compass",
+        "MySQL Workbench",
+        "Docker Basics",
+        "Virtual Box/VMware"
+      ],
+      "docsAndWebsites": [
+        "GeeksforGeeks",
+        "W3Schools",
+        "Mozilla Developer Network",
+        "Tutorialspoint",
+        "Javatpoint"
+      ],
+      "projectIdeas": [
+        "Build a network packet analyzer",
+        "Create a small database with proper indexing",
+        "Implement basic threading and process management",
+        "Design a small OOP project with SOLID principles"
+      ],
+      "practicePlatforms": [
+        "GeeksforGeeks Practice",
+        "LeetCode Database Problems",
+        "HackerRank SQL Challenges",
+        "Linux Command Line Practice"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Core Concepts",
+    "description": "Learn essential system design principles and patterns",
+    "icon": "Database",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Scalability (Vertical & Horizontal)",
+        "Load Balancing Strategies",
+        "Caching Mechanisms",
+        "Database Sharding",
+        "CAP Theorem",
+        "Consistency Patterns (Eventual, Strong)",
+        "API Design (REST & GraphQL)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Distributed Systems (MIT 6.824)",
+          "Web Application & Software Architecture 101 (Educative)",
+          "Scalability & System Design (InterviewBit)",
+          "Advanced Distributed Systems (Coursera)"
+        ],
+        "hindi": [
+          "System Design Core Concepts Hindi (Coding Blocks)",
+          "Scalability in Hindi (Scaler Topics)",
+          "CAP Theorem & Database Design Hindi (Technical Suneja)",
+          "API Design in Hindi (Tutorial Point Hindi)"
+        ]
+      },
+      "toolsToUse": [
+        "Redis",
+        "HAProxy/Nginx",
+        "Apache Kafka",
+        "Memcached",
+        "Cassandra",
+        "MongoDB Atlas"
+      ],
+      "docsAndWebsites": [
+        "Designing Data-Intensive Applications (Book)",
+        "System Design Interview (Alex Xu)",
+        "High Scalability",
+        "InfoQ",
+        "Architecture Notes by AnkitSharma"
+      ],
+      "projectIdeas": [
+        "Implement a caching system",
+        "Design a sharded database implementation",
+        "Build a REST API with proper design",
+        "Create a load-balanced web application"
+      ],
+      "practicePlatforms": [
+        "System Design Interview Practice",
+        "Distributed Systems Challenges",
+        "API Design Exercises",
+        "Scalability Problem Solving"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Components",
+    "description": "Understand key building blocks of modern distributed systems",
+    "icon": "Server",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Client-Server Model",
+        "Content Delivery Networks (CDN)",
+        "Message Queues",
+        "Rate Limiting Strategies",
+        "Database Indexing",
+        "Proxy Servers",
+        "Microservices vs Monolith"
+      ],
+      "bestCourses": {
+        "english": [
+          "Microservices Architecture (Udemy)",
+          "Message Brokers Deep Dive (Pluralsight)",
+          "CDN & Edge Computing (A Cloud Guru)",
+          "Database Performance Tuning (Oracle University)"
+        ],
+        "hindi": [
+          "Microservices vs Monolith Hindi (Tech Primers)",
+          "Message Queue in Hindi (CodeWithHarry)",
+          "Database Indexing Hindi (MySirG)",
+          "Proxy Servers & Load Balancers Hindi (Learning Simplified)"
+        ]
+      },
+      "toolsToUse": [
+        "RabbitMQ/Kafka",
+        "Nginx/HAProxy",
+        "Cloudflare/Akamai",
+        "Kong API Gateway",
+        "Elasticsearch",
+        "Docker & Kubernetes"
+      ],
+      "docsAndWebsites": [
+        "Microservices.io",
+        "Nginx Blog",
+        "AWS Architecture Blog",
+        "MongoDB Performance Blog",
+        "Kubernetes Documentation"
+      ],
+      "projectIdeas": [
+        "Build a microservice with proper communication",
+        "Implement a message queue system",
+        "Create a proxy server with caching",
+        "Design a rate-limited API gateway"
+      ],
+      "practicePlatforms": [
+        "Microservices Design Challenges",
+        "Message Queue Implementation Practice",
+        "CDN Configuration Exercises",
+        "Database Performance Optimization"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Design Patterns",
+    "description": "Learn reusable solutions to common system design problems",
+    "icon": "GitMerge",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Singleton Pattern",
+        "Pub-Sub Pattern",
+        "Circuit Breaker Pattern",
+        "API Gateway Pattern",
+        "Saga Pattern",
+        "Bulkhead Pattern",
+        "CQRS Pattern"
+      ],
+      "bestCourses": {
+        "english": [
+          "Cloud Design Patterns (Microsoft Learn)",
+          "Design Patterns in Modern Systems (Udemy)",
+          "Microservice Patterns (LinkedIn Learning)",
+          "Enterprise Integration Patterns (Pluralsight)"
+        ],
+        "hindi": [
+          "Design Patterns in Hindi (Thapa Technical)",
+          "Microservice Patterns Hindi (Code Improve)",
+          "Cloud Design Patterns Hindi (Tech Guide)",
+          "System Architecture Patterns Hindi (SimpleCoding)"
+        ]
+      },
+      "toolsToUse": [
+        "Netflix Hystrix",
+        "Resilience4j",
+        "Apache Camel",
+        "Spring Cloud Gateway",
+        "Axon Framework",
+        "MassTransit"
+      ],
+      "docsAndWebsites": [
+        "Refactoring.guru",
+        "Microsoft Cloud Design Patterns",
+        "Martin Fowler's Blog",
+        "Microservices.io Patterns",
+        "Enterprise Integration Patterns"
+      ],
+      "projectIdeas": [
+        "Implement a circuit breaker for API calls",
+        "Create a pub-sub system with proper patterns",
+        "Design a saga pattern for distributed transactions",
+        "Build an API gateway with proper routing"
+      ],
+      "practicePlatforms": [
+        "Design Pattern Implementation Challenges",
+        "Microservice Pattern Practice",
+        "Circuit Breaker Simulation",
+        "Saga Pattern Implementation"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Case Studies",
+    "description": "Analyze real-world system design examples",
+    "icon": "Layers",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Design Twitter",
+        "Design YouTube",
+        "Design WhatsApp",
+        "Design Instagram",
+        "Design URL Shortener",
+        "Design Distributed File Storage",
+        "Design Payment Processing System"
+      ],
+      "bestCourses": {
+        "english": [
+          "Grokking the System Design Interview (Educative)",
+          "ByteByteGo System Design Cases",
+          "System Design Interview - Alex Xu (Book)",
+          "High Scalability Case Studies"
+        ],
+        "hindi": [
+          "System Design Case Studies Hindi (Coding Blocks)",
+          "Popular System Design Questions Hindi (Love Babbar)",
+          "Twitter, WhatsApp System Design Hindi (Apna College)",
+          "Real World Systems Hindi (Code Improve)"
+        ]
+      },
+      "toolsToUse": [
+        "Draw.io",
+        "Whimsical",
+        "Excalidraw",
+        "Lucidchart",
+        "Miro",
+        "Figma (for system diagrams)"
+      ],
+      "docsAndWebsites": [
+        "High Scalability Blog",
+        "System Design Primer",
+        "Engineering Blogs of Tech Companies",
+        "Distributed Systems Blog",
+        "Instagram Engineering Blog"
+      ],
+      "projectIdeas": [
+        "Build a URL shortener service",
+        "Create a simple Twitter clone",
+        "Design a file sharing system",
+        "Implement a notification service"
+      ],
+      "practicePlatforms": [
+        "System Design Interview Questions",
+        "Case Study Analysis Practice",
+        "Real-world System Replication",
+        "Architecture Documentation Practice"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Tools and Resources",
+    "description": "Essential tools and learning resources for system design",
+    "icon": "PenTool",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "System Diagramming Tools",
+        "Performance Testing Tools",
+        "API Testing & Documentation",
+        "Cloud Service Providers",
+        "Container Orchestration",
+        "Monitoring & Observability"
+      ],
+      "bestCourses": {
+        "english": [
+          "Mastering System Design Tools (Udemy)",
+          "AWS Solutions Architect (A Cloud Guru)",
+          "Kubernetes Complete Course (KodeKloud)",
+          "Terraform & Infrastructure as Code"
+        ],
+        "hindi": [
+          "System Design Tools Hindi (CodeWithHarry)",
+          "AWS in Hindi (Technical Guruji)",
+          "Docker & Kubernetes Hindi (Apna College)",
+          "Performance Testing Hindi (Testing Shashtra)"
+        ]
+      },
+      "toolsToUse": [
+        "AWS/GCP/Azure",
+        "Docker & Kubernetes",
+        "Terraform/Pulumi",
+        "Prometheus & Grafana",
+        "JMeter/Locust",
+        "ELK Stack"
+      ],
+      "docsAndWebsites": [
+        "AWS Documentation",
+        "Kubernetes Documentation",
+        "Terraform Registry",
+        "Docker Hub",
+        "Prometheus Documentation"
+      ],
+      "projectIdeas": [
+        "Set up Kubernetes cluster with monitoring",
+        "Create cloud infrastructure with Terraform",
+        "Implement logging with ELK stack",
+        "Build a CI/CD pipeline for microservices"
+      ],
+      "practicePlatforms": [
+        "AWS Hands-on Labs",
+        "Kubernetes Practice Challenges",
+        "Infrastructure as Code Exercises",
+        "Monitoring Setup Practice"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Practice",
+    "description": "Strengthen your skills with regular practice and assessments",
+    "icon": "BookMarked",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "Interview Patterns",
+        "Communication Skills",
+        "Time Management during Interviews",
+        "Trade-off Analysis",
+        "Requirement Clarification Techniques",
+        "Performance Analysis"
+      ],
+      "bestCourses": {
+        "english": [
+          "System Design Mock Interviews (Pramp)",
+          "Educative.io System Design Practice",
+          "AlgoExpert System Design Questions",
+          "LeetCode System Design Problems"
+        ],
+        "hindi": [
+          "System Design Interview Preparation Hindi (Bharat Hirwani)",
+          "Mock Interview Hindi (Apna College)",
+          "System Design Practice Hindi (Coding Minutes)",
+          "Interview Questions Hindi (Love Babbar)"
+        ]
+      },
+      "toolsToUse": [
+        "Pramp",
+        "Interviewing.io",
+        "LeetCode",
+        "HackerRank",
+        "System Design Templates",
+        "Communication Tools"
+      ],
+      "docsAndWebsites": [
+        "LeetCode Discuss System Design Section",
+        "Glassdoor Interview Questions",
+        "Grokking System Design Interview",
+        "Reddit r/cscareerquestions",
+        "System Design Interview YouTube Channels"
+      ],
+      "projectIdeas": [
+        "Create video explanations of system designs",
+        "Build a portfolio of case studies",
+        "Contribute to open source distributed systems",
+        "Teach system design concepts to others"
+      ],
+      "practicePlatforms": [
+        "Mock Interview Platforms",
+        "System Design Question Banks",
+        "Peer Review Sessions",
+        "Technical Presentation Practice"
+      ]
+    }
+  }
+]

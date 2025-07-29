@@ -1,0 +1,495 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to SQL (Beginner Level)",
+    "description": "Foundation of SQL and database concepts for beginners",
+    "icon": "Database",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "What is a Database?",
+        "What is SQL? History and Importance",
+        "Types of Databases: Relational (MySQL, PostgreSQL), NoSQL",
+        "Basic SQL Commands: SELECT, INSERT, UPDATE, DELETE",
+        "SQL Data Types (VARCHAR, INT, DATE, etc.)",
+        "Primary Keys and Foreign Keys",
+        "Basic Database Design Principles",
+        "SQL Syntax and Structure",
+        "Creating and Managing Tables"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp SQL Tutorial (YouTube)",
+          "Kudvenkat SQL Server Tutorial (YouTube)",
+          "SQL Tutorial - Full Database Course for Beginners",
+          "Khan Academy - Intro to SQL",
+          "Codecademy SQL Course"
+        ],
+        "hindi": [
+          "CodeWithHarry SQL Full Course (YouTube)",
+          "WsCube Tech SQL Hindi (YouTube)",
+          "Apna College SQL Complete Course",
+          "TechGun SQL Tutorial Hindi",
+          "Geeky Shows SQL Course Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "DB Browser for SQLite",
+        "MySQL Workbench",
+        "PgAdmin (PostgreSQL)",
+        "phpMyAdmin",
+        "SQL Server Management Studio",
+        "Online SQL Editors (W3Schools, SQLiteStudio)",
+        "DBeaver (Universal Database Tool)",
+        "HeidiSQL"
+      ],
+      "docsAndWebsites": [
+        "W3Schools SQL Tutorial",
+        "SQLBolt Interactive Tutorial",
+        "Mode Analytics SQL Tutorial",
+        "MySQL Official Documentation",
+        "PostgreSQL Tutorial"
+      ],
+      "projectIdeas": [
+        "Student Database System",
+        "Simple Employee Management DB",
+        "Library Management System",
+        "Basic Inventory Tracker",
+        "Personal Expense Tracker DB",
+        "Contact Management System",
+        "Simple Blog Database"
+      ],
+      "practicePlatforms": [
+        "LeetCode SQL (Easy Problems)",
+        "HackerRank SQL Domain",
+        "W3Schools SQL Exercises",
+        "SQLBolt Practice",
+        "SQL-Practice.com"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Intermediate SQL",
+    "description": "Advanced querying techniques and database operations",
+    "icon": "Filter",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "WHERE, ORDER BY, GROUP BY, HAVING Clauses",
+        "Aggregate Functions: COUNT, AVG, SUM, MIN, MAX",
+        "Joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN",
+        "Subqueries and Nested Queries",
+        "SQL Views and Aliases",
+        "UNION, INTERSECT, EXCEPT Operations",
+        "String Functions and Date Functions",
+        "Conditional Logic (CASE WHEN)",
+        "NULL Handling and COALESCE",
+        "Data Filtering and Sorting Techniques"
+      ],
+      "bestCourses": {
+        "english": [
+          "The Complete SQL Bootcamp - Udemy",
+          "Khan Academy - Advanced SQL",
+          "Coursera SQL for Data Science",
+          "edX Introduction to Databases",
+          "Pluralsight SQL Server Fundamentals"
+        ],
+        "hindi": [
+          "WsCube Tech Intermediate SQL",
+          "Apna College Advanced SQL",
+          "CodeWithHarry SQL Advanced Topics",
+          "Unacademy SQL Course",
+          "TechWorld with Nana SQL"
+        ]
+      },
+      "toolsToUse": [
+        "PostgreSQL with PgAdmin",
+        "MySQL Community Server",
+        "SQL Server Management Studio",
+        "Oracle SQL Developer",
+        "DataGrip (JetBrains)",
+        "Sequel Pro (Mac)",
+        "TablePlus",
+        "Azure Data Studio"
+      ],
+      "docsAndWebsites": [
+        "GeeksforGeeks SQL Tutorial",
+        "TutorialsPoint SQL Guide",
+        "PostgreSQL Documentation",
+        "MySQL Reference Manual",
+        "SQL Server Documentation"
+      ],
+      "projectIdeas": [
+        "Inventory Management System",
+        "Movie Recommendation Database",
+        "Mini e-Commerce Database",
+        "Sales Analytics Dashboard DB",
+        "University Course Management",
+        "Restaurant Order Management",
+        "Real Estate Property DB"
+      ],
+      "practicePlatforms": [
+        "LeetCode SQL (Medium Problems)",
+        "HackerRank Intermediate SQL",
+        "DataCamp SQL Practice",
+        "Kaggle Learn SQL",
+        "StrataScratch SQL Questions"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Advanced SQL (Expert Level)",
+    "description": "Master advanced SQL concepts and database optimization",
+    "icon": "TrendingUp",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Window Functions (RANK(), ROW_NUMBER(), LEAD(), LAG())",
+        "Common Table Expressions (CTEs)",
+        "Recursive Queries",
+        "Database Indexing and Optimization",
+        "Query Performance Tuning",
+        "Transactions (ACID Properties, COMMIT, ROLLBACK)",
+        "Triggers and Stored Procedures",
+        "User-Defined Functions",
+        "Partitioning and Sharding",
+        "Database Security and Permissions"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced SQL for Data Scientists - Udemy",
+          "SQL for Data Analysis - Udacity",
+          "The Complete SQL Bootcamp by Jose Portilla",
+          "Advanced Database Systems - Coursera",
+          "SQL Server Performance Tuning"
+        ],
+        "hindi": [
+          "Unacademy SQL Advanced Course",
+          "Advanced SQL Hindi - WsCube Tech",
+          "Database Optimization Hindi - TechGun",
+          "SQL Performance Tuning Hindi",
+          "Advanced Database Concepts Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "Apache Superset",
+        "DBeaver Professional",
+        "Google BigQuery",
+        "Snowflake",
+        "Amazon Redshift",
+        "Microsoft Azure SQL",
+        "Query Performance Analyzers",
+        "Database Monitoring Tools"
+      ],
+      "docsAndWebsites": [
+        "Mode Analytics Advanced SQL",
+        "PostgreSQL Advanced Documentation",
+        "SQL Server Query Optimization Guide",
+        "BigQuery Documentation",
+        "Snowflake SQL Reference"
+      ],
+      "projectIdeas": [
+        "Financial Dashboard Database",
+        "Hospital Management System DB",
+        "Custom CRM Database",
+        "Data Warehouse Design",
+        "Real-time Analytics Platform",
+        "Multi-tenant SaaS Database",
+        "Business Intelligence Dashboard"
+      ],
+      "practicePlatforms": [
+        "LeetCode SQL (Hard Problems)",
+        "HackerRank Advanced SQL",
+        "DataLemur SQL Questions",
+        "InterviewQuery SQL Practice",
+        "SQL Murder Mystery"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Database Design & Architecture",
+    "description": "Learn database design principles and system architecture",
+    "icon": "BarChart3",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Database Normalization (1NF, 2NF, 3NF, BCNF)",
+        "Entity-Relationship (ER) Modeling",
+        "Database Schema Design",
+        "Data Modeling Best Practices",
+        "ACID Properties and Transaction Management",
+        "Concurrency Control",
+        "Database Backup and Recovery",
+        "Replication and High Availability",
+        "Scalability Patterns",
+        "Data Warehousing Concepts"
+      ],
+      "bestCourses": {
+        "english": [
+          "Database Design Course - Coursera",
+          "Database Systems - Stanford Online",
+          "Data Modeling Fundamentals",
+          "Database Administration Course",
+          "System Design for Databases"
+        ],
+        "hindi": [
+          "Database Design Hindi - CodeWithHarry",
+          "DBMS Complete Course Hindi",
+          "Database Architecture Hindi",
+          "System Design Hindi - Apna College",
+          "Database Management Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "ER Diagram Tools (Lucidchart, Draw.io)",
+        "MySQL Workbench (Design Mode)",
+        "DbSchema",
+        "Vertabelo",
+        "SQL Power Architect",
+        "Database Design Tools",
+        "Backup and Recovery Tools",
+        "Monitoring Solutions"
+      ],
+      "docsAndWebsites": [
+        "Database Design Guide",
+        "Normalization Tutorial",
+        "ER Modeling Best Practices",
+        "Database Administration Guide",
+        "High Availability Documentation"
+      ],
+      "projectIdeas": [
+        "E-commerce Platform Database",
+        "Social Media Database Design",
+        "Banking System Database",
+        "Healthcare Records System",
+        "Educational Management System",
+        "Supply Chain Database",
+        "Multi-tenant Application DB"
+      ],
+      "practicePlatforms": [
+        "Database Design Challenges",
+        "System Design Interviews",
+        "Real-world Case Studies",
+        "Database Certification Prep",
+        "Architecture Review Sessions"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "SQL for Data Analysis & BI",
+    "description": "Master SQL for data analysis and business intelligence",
+    "icon": "Brain",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Analytical Functions and Window Functions",
+        "Statistical Functions in SQL",
+        "Data Aggregation and Summarization",
+        "Time Series Analysis with SQL",
+        "Cohort Analysis and Retention Metrics",
+        "A/B Testing with SQL",
+        "Data Cleaning and Transformation",
+        "Report Generation with SQL",
+        "SQL for ETL Processes",
+        "Integration with BI Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "SQL for Data Analysis - Udacity",
+          "Data Analysis with SQL - Coursera",
+          "Business Intelligence with SQL",
+          "Advanced Analytics with SQL",
+          "SQL for Data Scientists"
+        ],
+        "hindi": [
+          "Data Analysis SQL Hindi - WsCube Tech",
+          "Business Intelligence Hindi Course",
+          "SQL for Analytics Hindi - Unacademy",
+          "Data Science SQL Hindi",
+          "BI Tools with SQL Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "Tableau (SQL Integration)",
+        "Power BI",
+        "Looker",
+        "Google Data Studio",
+        "Apache Airflow",
+        "dbt (Data Build Tool)",
+        "Jupyter Notebooks with SQL",
+        "Google Colab"
+      ],
+      "docsAndWebsites": [
+        "SQL for Data Analysis Guide",
+        "Business Intelligence Best Practices",
+        "Statistical Functions Reference",
+        "Time Series Analysis with SQL",
+        "Data Warehouse SQL Patterns"
+      ],
+      "projectIdeas": [
+        "Sales Performance Dashboard",
+        "Customer Analytics Platform",
+        "Marketing Campaign Analysis",
+        "Financial Reporting System",
+        "Operational Analytics Dashboard",
+        "Product Usage Analytics",
+        "Supply Chain Analytics"
+      ],
+      "practicePlatforms": [
+        "Kaggle SQL Competitions",
+        "DataCamp Projects",
+        "Mode Analytics Public Datasets",
+        "Google BigQuery Public Data",
+        "Real Business Case Studies"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Modern SQL & Cloud Databases",
+    "description": "Explore modern SQL features and cloud database platforms",
+    "icon": "Zap",
+    "level": "Expert",
+    "content": {
+      "whatToLearn": [
+        "JSON Support in SQL (PostgreSQL, MySQL)",
+        "NoSQL Integration with SQL",
+        "Graph Database Queries",
+        "Cloud Database Platforms",
+        "Serverless SQL Solutions",
+        "Real-time Data Processing",
+        "Distributed SQL Systems",
+        "SQL on Big Data (Spark SQL, Presto)",
+        "API Integration with Databases",
+        "Modern SQL Standards (SQL:2016, SQL:2023)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Modern SQL on Cloud Platforms",
+          "Big Data SQL - Coursera",
+          "Cloud Database Architecture",
+          "Distributed Systems and SQL",
+          "Real-time Analytics with SQL"
+        ],
+        "hindi": [
+          "Cloud Databases Hindi Course",
+          "Modern SQL Features Hindi",
+          "Big Data SQL Hindi Tutorial",
+          "Cloud Computing with SQL Hindi",
+          "Distributed Databases Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "Google BigQuery",
+        "Amazon Redshift",
+        "Snowflake",
+        "Azure Synapse Analytics",
+        "CockroachDB",
+        "Apache Spark SQL",
+        "Presto/Trino",
+        "ClickHouse"
+      ],
+      "docsAndWebsites": [
+        "Cloud SQL Documentation",
+        "Modern SQL Features Guide",
+        "Distributed SQL Best Practices",
+        "JSON in SQL Tutorial",
+        "Real-time SQL Processing"
+      ],
+      "projectIdeas": [
+        "Real-time Analytics Dashboard",
+        "Serverless Data Pipeline",
+        "Multi-cloud Database Solution",
+        "IoT Data Processing System",
+        "Machine Learning Feature Store",
+        "Event-driven Data Architecture",
+        "Global Distributed Application"
+      ],
+      "practicePlatforms": [
+        "Cloud Platform Challenges",
+        "BigQuery Public Datasets",
+        "Snowflake Hands-on Labs",
+        "AWS Data Analytics Challenges",
+        "Modern SQL Competitions"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Career & Certification Path",
+    "description": "Build your SQL career with certifications and portfolio projects",
+    "icon": "Award",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "SQL Certification Preparation",
+        "Database Administrator Skills",
+        "Data Analyst Career Path",
+        "Data Engineer SQL Skills",
+        "Business Intelligence Developer",
+        "Interview Preparation",
+        "Portfolio Development",
+        "Open Source Contributions",
+        "Professional Networking",
+        "Continuous Learning Strategies"
+      ],
+      "bestCourses": {
+        "english": [
+          "SQL Certification Bootcamp",
+          "Database Career Fundamentals",
+          "Data Professional Skills",
+          "SQL Interview Preparation",
+          "Portfolio Building for Data Roles"
+        ],
+        "hindi": [
+          "SQL Career Guide Hindi",
+          "Database Jobs Preparation Hindi",
+          "Data Analyst Career Hindi",
+          "SQL Interview Hindi - Love Babbar",
+          "Tech Career Guidance Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "Certification Platforms",
+        "Portfolio Websites",
+        "GitHub for SQL Projects",
+        "LinkedIn Learning",
+        "Professional Forums",
+        "Meetup Groups",
+        "Conference Platforms",
+        "Mentoring Platforms"
+      ],
+      "docsAndWebsites": [
+        "SQL Certification Guide",
+        "Database Career Roadmap",
+        "Interview Question Banks",
+        "Portfolio Project Templates",
+        "Professional Development Resources"
+      ],
+      "projectIdeas": [
+        "Complete E-commerce Database",
+        "Data Analytics Portfolio",
+        "Open Source Database Tool",
+        "SQL Tutorial Blog/Website",
+        "Database Performance Optimizer",
+        "Real-time Dashboard Application",
+        "Industry-specific Database Solutions",
+        "SQL Code Review Platform",
+        "Database Migration Tool",
+        "Custom Reporting Framework"
+      ],
+      "practicePlatforms": [
+        "Certification Practice Tests",
+        "Mock Interview Platforms",
+        "GitHub Portfolio Reviews",
+        "Professional Communities",
+        "Industry Challenges",
+        "Hackathons and Competitions"
+      ]
+    }
+  }
+]

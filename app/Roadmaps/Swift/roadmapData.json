@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "title": "Swift Fundamentals & Setup",
+    "description": "Get started with Swift programming language basics and development environment",
+    "icon": "Settings",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "Installing Xcode & Swift",
+        "Variables & Constants (var, let)",
+        "Data Types (Int, String, Bool, Double)",
+        "Basic Operators & Expressions",
+        "String Interpolation",
+        "Comments & Documentation",
+        "Swift Playgrounds Basics",
+        "Hello World & Basic Programs"
+      ],
+      "bestCourses": {
+        "english": [
+          "Swift Programming Tutorial - Apple Developer",
+          "Learn Swift - Codecademy",
+          "Swift Crash Course - freeCodeCamp YouTube",
+          "100 Days of Swift - Paul Hudson"
+        ],
+        "hindi": [
+          "Swift Programming Hindi - CodeWithHarry",
+          "iOS Development Swift Hindi - WsCube Tech",
+          "Swift Tutorial Hindi - Thapa Technical",
+          "Swift Basics Hindi - Technical Suneja"
+        ]
+      },
+      "toolsToUse": [
+        "Xcode IDE",
+        "Swift Playgrounds (iPad/Mac)",
+        "Swift REPL",
+        "VS Code with Swift Extension",
+        "Swift Package Manager",
+        "Swift Compiler (swiftc)"
+      ],
+      "docsAndWebsites": [
+        "The Swift Programming Language Book",
+        "Swift.org Documentation",
+        "Apple Developer Swift Guide",
+        "Swift API Guidelines"
+      ],
+      "projectIdeas": [
+        "Simple Calculator",
+        "Temperature Converter",
+        "BMI Calculator",
+        "Basic Quiz App",
+        "Number Guessing Game"
+      ],
+      "practicePlatforms": [
+        "Swift Playgrounds App",
+        "HackerRank Swift",
+        "LeetCode Swift Problems",
+        "Codewars Swift"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Control Flow & Collections",
+    "description": "Master control structures, loops, and Swift's powerful collection types",
+    "icon": "Code",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "If-Else Statements & Switch Cases",
+        "For-In Loops & While Loops",
+        "Arrays & Dictionaries",
+        "Sets & Tuples",
+        "Optional Binding (if let, guard let)",
+        "Range Operators",
+        "Control Transfer Statements",
+        "Collection Iteration Methods"
+      ],
+      "bestCourses": {
+        "english": [
+          "Swift Collections - Ray Wenderlich",
+          "Control Flow in Swift - Stanford CS193p",
+          "Swift Fundamentals - Pluralsight",
+          "iOS Development with Swift - Udemy"
+        ],
+        "hindi": [
+          "Swift Control Flow Hindi - CodeWithHarry",
+          "Arrays & Collections Hindi - WsCube Tech",
+          "Swift Programming Hindi - Indian Coders",
+          "iOS Development Hindi - Thapa Technical"
+        ]
+      },
+      "toolsToUse": [
+        "Xcode Debugger",
+        "Swift Playgrounds",
+        "LLDB Debugger",
+        "Xcode Performance Tools",
+        "Swift Package Manager",
+        "Git Version Control"
+      ],
+      "docsAndWebsites": [
+        "Control Flow - Swift Language Guide",
+        "Collection Types - Swift Documentation",
+        "Basic Operators - Swift Guide",
+        "Strings and Characters Guide"
+      ],
+      "projectIdeas": [
+        "Student Grade Calculator",
+        "To-Do List App (Console)",
+        "Shopping Cart System",
+        "Simple Banking System",
+        "Contact Book Manager"
+      ],
+      "practicePlatforms": [
+        "Swift Algorithm Club",
+        "Exercism Swift Track",
+        "Codewars Collections",
+        "LeetCode Array Problems"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Object-Oriented Programming",
+    "description": "Learn OOP concepts, classes, structs, and protocols in Swift",
+    "icon": "Package",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Classes vs Structs",
+        "Properties & Methods",
+        "Initializers & Deinitializers",
+        "Inheritance & Polymorphism",
+        "Protocols & Extensions",
+        "Enumerations & Associated Values",
+        "Access Control (private, public, internal)",
+        "Type Casting & Any/AnyObject"
+      ],
+      "bestCourses": {
+        "english": [
+          "Swift OOP - Ray Wenderlich",
+          "Protocol-Oriented Programming - WWDC",
+          "Swift Classes & Structs - Udemy",
+          "Object-Oriented Swift - Pluralsight"
+        ],
+        "hindi": [
+          "Swift OOP Hindi - CodeWithHarry",
+          "Classes & Objects Hindi - WsCube Tech",
+          "Swift Programming Hindi - Indian Programming",
+          "OOP Concepts Hindi - Technical Suneja"
+        ]
+      },
+      "toolsToUse": [
+        "Xcode Class Navigator",
+        "Swift Refactoring Tools",
+        "Protocol-Oriented Programming",
+        "Swift Lint",
+        "Xcode Documentation",
+        "UML Design Tools"
+      ],
+      "docsAndWebsites": [
+        "Classes and Structures - Swift Guide",
+        "Protocols - Swift Documentation",
+        "Extensions - Swift Language Guide",
+        "Enumerations - Swift Reference"
+      ],
+      "projectIdeas": [
+        "Library Management System",
+        "Employee Management App",
+        "Vehicle Rental System",
+        "Banking Application (OOP)",
+        "Game Character System"
+      ],
+      "practicePlatforms": [
+        "Swift Design Patterns",
+        "OOP Challenges - Exercism",
+        "Protocol Practice Problems",
+        "Class Design Exercises"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Advanced Swift & Error Handling",
+    "description": "Master advanced Swift features, error handling, and memory management",
+    "icon": "Bug",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Error Handling (do-try-catch)",
+        "Optional Chaining & Nil Coalescing",
+        "Closures & Higher-Order Functions",
+        "Generics & Associated Types",
+        "Memory Management (ARC)",
+        "Strong/Weak References",
+        "Async/Await & Concurrency",
+        "Result Type & Error Protocols"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Swift - Ray Wenderlich",
+          "Swift Concurrency - WWDC Sessions",
+          "Memory Management - Paul Hudson",
+          "Error Handling Best Practices - iOS Academy"
+        ],
+        "hindi": [
+          "Advanced Swift Hindi - CodeWithHarry",
+          "Error Handling Hindi - WsCube Tech",
+          "Memory Management Hindi - Indian Coders",
+          "Swift Closures Hindi - Technical Suneja"
+        ]
+      },
+      "toolsToUse": [
+        "Xcode Instruments",
+        "Memory Graph Debugger",
+        "Swift Performance Tools",
+        "Allocation Instrument",
+        "Time Profiler",
+        "Leaks Instrument"
+      ],
+      "docsAndWebsites": [
+        "Error Handling - Swift Guide",
+        "Automatic Reference Counting",
+        "Concurrency - Swift Documentation",
+        "Generics - Swift Language Guide"
+      ],
+      "projectIdeas": [
+        "Network Request Handler",
+        "File Manager with Error Handling",
+        "Async Image Downloader",
+        "Generic Data Structure Library",
+        "Memory-Efficient Cache System"
+      ],
+      "practicePlatforms": [
+        "Swift Algorithm Challenges",
+        "Concurrency Practice Problems",
+        "Memory Management Exercises",
+        "Error Handling Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "SwiftUI Fundamentals",
+    "description": "Learn modern iOS UI development with SwiftUI framework",
+    "icon": "Smartphone",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "SwiftUI Views & Modifiers",
+        "State Management (@State, @Binding)",
+        "Navigation & Presentation",
+        "Lists & Forms",
+        "Animations & Transitions",
+        "Custom Views & ViewModels",
+        "Environment Objects",
+        "Combine Framework Basics"
+      ],
+      "bestCourses": {
+        "english": [
+          "SwiftUI Masterclass - Angela Yu",
+          "100 Days of SwiftUI - Paul Hudson",
+          "SwiftUI Fundamentals - Ray Wenderlich",
+          "iOS 17 SwiftUI - Udemy"
+        ],
+        "hindi": [
+          "SwiftUI Hindi - CodeWithHarry",
+          "iOS Development Hindi - WsCube Tech",
+          "SwiftUI Tutorial Hindi - Indian Programming",
+          "Mobile App Development Hindi - Thapa Technical"
+        ]
+      },
+      "toolsToUse": [
+        "Xcode SwiftUI Canvas",
+        "SwiftUI Previews",
+        "Interface Builder",
+        "SF Symbols App",
+        "SwiftUI Inspector",
+        "Simulator"
+      ],
+      "docsAndWebsites": [
+        "SwiftUI Documentation - Apple",
+        "Human Interface Guidelines",
+        "SwiftUI Tutorials - Apple Developer",
+        "Combine Framework Guide"
+      ],
+      "projectIdeas": [
+        "Weather App with SwiftUI",
+        "Notes App with Core Data",
+        "Expense Tracker",
+        "Recipe Book App",
+        "Fitness Tracker UI"
+      ],
+      "practicePlatforms": [
+        "SwiftUI Lab Exercises",
+        "iOS Development Challenges",
+        "UI/UX Implementation Practice",
+        "SwiftUI Animation Challenges"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "iOS App Development",
+    "description": "Build complete iOS applications with networking, data persistence, and deployment",
+    "icon": "Globe",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "REST API Integration",
+        "JSON Parsing & Codable",
+        "Core Data & Data Persistence",
+        "User Notifications",
+        "App Store Guidelines",
+        "Testing (Unit & UI Tests)",
+        "App Architecture (MVVM, MVC)",
+        "App Store Deployment"
+      ],
+      "bestCourses": {
+        "english": [
+          "Complete iOS App Development Bootcamp",
+          "iOS Architecture Patterns - Ray Wenderlich",
+          "App Store Deployment Guide",
+          "iOS Testing Best Practices"
+        ],
+        "hindi": [
+          "Complete iOS Development Hindi - CodeWithHarry",
+          "App Store Publishing Hindi - WsCube Tech",
+          "iOS Networking Hindi - Indian Coders",
+          "Core Data Hindi - Technical Suneja"
+        ]
+      },
+      "toolsToUse": [
+        "URLSession & Networking",
+        "Core Data Framework",
+        "Firebase SDK",
+        "TestFlight",
+        "Xcode Testing Framework",
+        "App Store Connect"
+      ],
+      "docsAndWebsites": [
+        "App Store Review Guidelines",
+        "Core Data Programming Guide",
+        "URL Loading System",
+        "Testing Documentation - Apple"
+      ],
+      "projectIdeas": [
+        "Social Media Feed App",
+        "E-commerce Shopping App",
+        "Chat Application with Firebase",
+        "News Reader App",
+        "Personal Finance Tracker"
+      ],
+      "practicePlatforms": [
+        "iOS App Development Challenges",
+        "App Store Optimization",
+        "Real-world Project Building",
+        "Code Review Practices"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Advanced iOS Development",
+    "description": "Master advanced iOS concepts, performance optimization, and specialized frameworks",
+    "icon": "Rocket",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Advanced SwiftUI (Custom Layouts)",
+        "Core Animation & Metal",
+        "ARKit & Machine Learning",
+        "Push Notifications & Background Tasks",
+        "Widget Development",
+        "App Extensions",
+        "Performance Optimization",
+        "Security & Keychain Services"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced iOS Development - Ray Wenderlich",
+          "ARKit & Machine Learning - Udemy",
+          "iOS Performance Optimization",
+          "Widget Development Course"
+        ],
+        "hindi": [
+          "Advanced iOS Hindi - CodeWithHarry",
+          "ARKit Development Hindi - WsCube Tech",
+          "iOS Performance Hindi - Indian Programming",
+          "Widget Development Hindi - Technical Suneja"
+        ]
+      },
+      "toolsToUse": [
+        "Instruments Profiler",
+        "ARKit Framework",
+        "Core ML Tools",
+        "WidgetKit",
+        "Keychain Services",
+        "Background App Refresh"
+      ],
+      "docsAndWebsites": [
+        "ARKit Documentation",
+        "Core ML Documentation",
+        "WidgetKit Programming Guide",
+        "Performance Optimization Guide"
+      ],
+      "projectIdeas": [
+        "AR Furniture Placement App",
+        "Health & Fitness Tracker",
+        "Photo Editing App with ML",
+        "Custom Widget Collection",
+        "Secure Banking App"
+      ],
+      "practicePlatforms": [
+        "Advanced iOS Challenges",
+        "AR Development Practice",
+        "Performance Optimization Tasks",
+        "Security Implementation Exercises"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Career & Professional Development",
+    "description": "Prepare for iOS developer roles and build your professional portfolio",
+    "icon": "Target",
+    "level": "All Levels",
+    "content": {
+      "whatToLearn": [
+        "iOS Interview Preparation",
+        "System Design for Mobile Apps",
+        "Code Review Best Practices",
+        "Technical Documentation",
+        "App Store Optimization (ASO)",
+        "Continuous Integration/Deployment",
+        "Open Source Contributions",
+        "Professional Networking"
+      ],
+      "bestCourses": {
+        "english": [
+          "iOS Interview Preparation Guide",
+          "Mobile System Design Course",
+          "App Store Marketing Strategies",
+          "iOS Developer Career Path"
+        ],
+        "hindi": [
+          "iOS Job Interview Hindi - CodeWithHarry",
+          "App Store Marketing Hindi - WsCube Tech",
+          "iOS Career Guide Hindi - Indian Programming",
+          "Portfolio Building Hindi - Technical Suneja"
+        ]
+      },
+      "toolsToUse": [
+        "GitHub Actions",
+        "Fastlane Automation",
+        "App Analytics Tools",
+        "TestFlight Beta Testing",
+        "App Store Connect API",
+        "CI/CD Pipelines"
+      ],
+      "docsAndWebsites": [
+        "iOS Interview Questions Guide",
+        "App Store Marketing Guidelines",
+        "Developer Career Resources",
+        "Open Source Contribution Guide"
+      ],
+      "projectIdeas": [
+        "Complete Portfolio App",
+        "Open Source iOS Library",
+        "Technical Blog Platform",
+        "Case Study Documentation",
+        "Developer Portfolio Website"
+      ],
+      "practicePlatforms": [
+        "LeetCode iOS Problems",
+        "System Design Practice",
+        "Code Review Platforms",
+        "Professional Networking Sites"
+      ]
+    }
+  }
+]

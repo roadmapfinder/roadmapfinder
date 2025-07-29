@@ -7,6 +7,7 @@ import { jsPDF } from "jspdf";
  * @param {boolean} darkMode - Whether dark mode is enabled
  * @returns {Promise<void>}
  */
+
 export const downloadRoadmapPDF = async (roadmapData, darkMode = false) => {
   if (!roadmapData || !Array.isArray(roadmapData)) {
     throw new Error("Invalid roadmap data provided");
