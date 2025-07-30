@@ -24,10 +24,12 @@ import {
   Leaf,
   Layers,
   Box,
-  Square
+  Square,
+  PenBox
   
   
 } from "lucide-react";
+import { Prompt } from "next/font/google";
 
 // Roadmaps data configuration
 export const roadmapsData = [
@@ -301,15 +303,15 @@ export const roadmapsData = [
     category: "trending",
     description: "Cloud platforms and services"
   },
-  // {
-  //   id: "video",
-  //   title: "Video Editing",
-  //   icon: <Video className="w-5 h-5 text-white" />,
-  //   link: "/Roadmaps/Video",
-  //   bgColor: "from-red-500 to-pink-500",
-  //   category: "trending",
-  //   description: "Video editing and production"
-  // },
+  {
+    id: "video",
+    title: "Video Editing",
+    icon: <Video className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Video",
+    bgColor: "from-red-500 to-pink-500",
+    category: "trending",
+    description: "Video editing and production"
+  },
   {
     id: "graphic",
     title: "Graphic Design",
@@ -363,6 +365,15 @@ export const roadmapsData = [
     bgColor: "from-red-600 to-red-800",
     category: "trending",
     description: "Cybersecurity and information security"
+  },
+  {
+    id: "prompt engineering",
+    title: "Prompt Engineering",
+    icon: <PenBox className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Prompt",
+    bgColor: "from-red-600 to-red-800",
+    category: "trending",
+    description: "Prompt Engineering and applications"
   },
   {
     id: "Internet of Things",

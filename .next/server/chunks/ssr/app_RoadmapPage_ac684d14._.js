@@ -21,6 +21,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$panels$2d$top$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Layout$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/panels-top-left.js [app-ssr] (ecmascript) <export default as Layout>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/smartphone.js [app-ssr] (ecmascript) <export default as Smartphone>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Cloud$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/cloud.js [app-ssr] (ecmascript) <export default as Cloud>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/video.js [app-ssr] (ecmascript) <export default as Video>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$paintbrush$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Paintbrush$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/paintbrush.js [app-ssr] (ecmascript) <export default as Paintbrush>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$blocks$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Blocks$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/blocks.js [app-ssr] (ecmascript) <export default as Blocks>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$settings$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Settings$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/settings.js [app-ssr] (ecmascript) <export default as Settings>");
@@ -40,6 +41,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript) <export default as Layers>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/box.js [app-ssr] (ecmascript) <export default as Box>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Square$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/square.js [app-ssr] (ecmascript) <export default as Square>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__PenBox$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/square-pen.js [app-ssr] (ecmascript) <export default as PenBox>");
 ;
 ;
 const roadmapsData = [
@@ -50,7 +52,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 37,
+            lineNumber: 39,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Aiml",
@@ -65,7 +67,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 46,
+            lineNumber: 48,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Web",
@@ -80,7 +82,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 55,
+            lineNumber: 57,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Django",
@@ -95,7 +97,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 64,
+            lineNumber: 66,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/React",
@@ -110,7 +112,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 73,
+            lineNumber: 75,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Next",
@@ -125,7 +127,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 82,
+            lineNumber: 84,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Reactnative",
@@ -140,7 +142,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 91,
+            lineNumber: 93,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Software",
@@ -155,7 +157,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 100,
+            lineNumber: 102,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Flutter",
@@ -170,7 +172,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 109,
+            lineNumber: 111,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Frontend",
@@ -185,7 +187,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 118,
+            lineNumber: 120,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Backend",
@@ -200,7 +202,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 127,
+            lineNumber: 129,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Nodejs",
@@ -215,7 +217,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 136,
+            lineNumber: 138,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Expressjs",
@@ -230,7 +232,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 145,
+            lineNumber: 147,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Javascript",
@@ -245,7 +247,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 154,
+            lineNumber: 156,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Typescript",
@@ -260,7 +262,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 163,
+            lineNumber: 165,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Python",
@@ -275,7 +277,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 172,
+            lineNumber: 174,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Java",
@@ -290,7 +292,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 181,
+            lineNumber: 183,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Rust",
@@ -305,7 +307,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 190,
+            lineNumber: 192,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Php",
@@ -320,7 +322,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 199,
+            lineNumber: 201,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Sql",
@@ -335,7 +337,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 208,
+            lineNumber: 210,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Go",
@@ -350,7 +352,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 217,
+            lineNumber: 219,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Swift",
@@ -365,7 +367,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 226,
+            lineNumber: 228,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Cpp",
@@ -380,7 +382,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 235,
+            lineNumber: 237,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/C",
@@ -395,7 +397,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 244,
+            lineNumber: 246,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Kotlin",
@@ -410,7 +412,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 253,
+            lineNumber: 255,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Springboot",
@@ -425,7 +427,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 262,
+            lineNumber: 264,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Data",
@@ -440,7 +442,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 271,
+            lineNumber: 273,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Excel",
@@ -455,7 +457,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 280,
+            lineNumber: 282,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/UIUX",
@@ -470,7 +472,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 289,
+            lineNumber: 291,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/APP",
@@ -485,7 +487,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 298,
+            lineNumber: 300,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Cloud",
@@ -493,15 +495,21 @@ const roadmapsData = [
         category: "trending",
         description: "Cloud platforms and services"
     },
-    // {
-    //   id: "video",
-    //   title: "Video Editing",
-    //   icon: <Video className="w-5 h-5 text-white" />,
-    //   link: "/Roadmaps/Video",
-    //   bgColor: "from-red-500 to-pink-500",
-    //   category: "trending",
-    //   description: "Video editing and production"
-    // },
+    {
+        id: "video",
+        title: "Video Editing",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__["Video"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 309,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Video",
+        bgColor: "from-red-500 to-pink-500",
+        category: "trending",
+        description: "Video editing and production"
+    },
     {
         id: "graphic",
         title: "Graphic Design",
@@ -509,7 +517,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 316,
+            lineNumber: 318,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Graphic",
@@ -524,7 +532,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 325,
+            lineNumber: 327,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Blockchain",
@@ -539,7 +547,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 334,
+            lineNumber: 336,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/System",
@@ -554,7 +562,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 343,
+            lineNumber: 345,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Devops",
@@ -569,7 +577,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 352,
+            lineNumber: 354,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/DSA",
@@ -584,7 +592,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 361,
+            lineNumber: 363,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/CyberSecurity",
@@ -593,13 +601,28 @@ const roadmapsData = [
         description: "Cybersecurity and information security"
     },
     {
+        id: "prompt engineering",
+        title: "Prompt Engineering",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__PenBox$3e$__["PenBox"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 372,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Prompt",
+        bgColor: "from-red-600 to-red-800",
+        category: "trending",
+        description: "Prompt Engineering and applications"
+    },
+    {
         id: "Internet of Things",
         title: "IOT",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cpu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Cpu$3e$__["Cpu"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 370,
+            lineNumber: 381,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/IOT",
@@ -614,7 +637,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 379,
+            lineNumber: 390,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Game",

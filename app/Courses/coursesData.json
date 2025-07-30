@@ -18,7 +18,9 @@
     "Operating System",
     "CyberSecurity",
     "Frameworks & Libraries",
-    "Generative AI"
+    "Generative AI",
+    "Prompt Engineering"
+    
 
   ],
 
@@ -801,6 +803,28 @@
       "videoId": "https://youtu.be/mEsleV16qdo?si=AQer3tqYCRrWGtWW",
       "badge": "POPULAR",
       "language": "English"
+    },
+    {
+      "id": 70,
+      "category": "Prompt Engineering",
+      "title": "Prompt Engineering Complete course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "prompte",
+      "videoId": "https://youtu.be/5i2Hn8OG94o?si=501iXSGWM8Yr_7wQ",
+      "badge": "NEW",
+      "language": "English"
+    },
+    {
+      "id": 71,
+      "category": "Prompt Engineering",
+      "title": "Prompt Engineering  course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "prompth",
+      "videoId": "https://youtu.be/mkiKUPqcFEs?si=a9BuhxPCSNdaagiL",
+      "badge": "NEW",
+      "language": "Hindi"
     }
     
 

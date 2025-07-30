@@ -1,0 +1,168 @@
+[
+  {
+    "id": 1,
+    "title": "Prompt Engineering Foundations",
+    "description": "Learn the basics of prompt engineering and understand LLM behavior",
+    "icon": "BookOpen",
+    "gradient": "from-blue-400 to-blue-600",
+    "content": {
+      "whatToLearn": [
+        "What is prompt engineering? Role prompting, context, instruction design",
+        "Understanding LLM behavior and response limitations",
+        "Key techniques: Chain-of-Thought, Few-shot prompting, zero-shot prompt design"
+      ],
+      "toolsToUse": [
+        "ChatGPT (OpenAI)",
+        "Claude (Anthropic)",
+        "Playground / API access"
+      ],
+      "bestCourses": {
+        "english": [
+          "ChatGPT Prompt Engineering for Developers by DeepLearning.AI on Coursera (free audit)"
+        ],
+        "hindi": ["Free beginner playlist on YouTube covering prompt basics"]
+      },
+      "docsAndWebsites": [
+        "Google Cloud Guide: What is prompt engineering?",
+        "GeeksforGeeks prompt engineer roadmap overview",
+        "Tom's Guide",
+        "Google Cloud"
+      ],
+      "projectIdeas": [
+        "Write prompts to summarize or expand text",
+        "Prompt ChatGPT to solve logic puzzles step-by-step",
+        "Use role prompting to generate structured outputs"
+      ],
+      "practicePlatforms": [
+        "ChatGPT Playground",
+        "Claude Interface",
+        "API Testing Environments"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Intermediate Prompt Techniques & Patterns",
+    "description": "Master prompt design patterns and best practices",
+    "icon": "Layers",
+    "gradient": "from-green-400 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "Prompt design patterns: role, chain-of-thought, decomposition patterns",
+        "Best practices: explicit instructions, tone control, constraints, example-based prompting"
+      ],
+      "toolsToUse": [
+        "Prompt design notebooks (Google Colab)",
+        "Version control for prompt versions",
+        "Integration with simple scripts (Python interactive)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Prompt engineering basics by IBM or Google (Coursera)",
+          "Vanderbilt University Prompt Engineering for ChatGPT course (Coursera)"
+        ],
+        "hindi": ["Advanced Hindi tutorials on YouTube"]
+      },
+      "docsAndWebsites": [
+        "LearnPrompting.org modules and pattern catalog",
+        "101BlockChains article on prompt engineer roadmap",
+        "Tom's Guide",
+        "LinkedIn Learning Resources"
+      ],
+      "projectIdeas": [
+        "Build prompt catalog: categories by task type",
+        "Prompt templates with example inputs/outputs",
+        "Design a role-based agent (e.g. medical assistant)"
+      ],
+      "practicePlatforms": [
+        "LearnPrompting.org",
+        "Google Colab",
+        "GitHub for version control"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Advanced Engineering & Tool Integration",
+    "description": "Learn prompt tuning, chaining, and RAG integration",
+    "icon": "Cog",
+    "gradient": "from-orange-400 to-orange-600",
+    "content": {
+      "whatToLearn": [
+        "Prompt tuning and prompt chaining techniques (multi-step breakdown)",
+        "Embeddings & retrieval-augmented generation (RAG) basics",
+        "Meta-prompting and using other LLMs to generate prompts"
+      ],
+      "toolsToUse": [
+        "OpenAI API / Azure OpenAI",
+        "Hugging Face RAG pipelines",
+        "PromptIDE or specialized prompt platforms"
+      ],
+      "bestCourses": {
+        "english": [
+          "GUVI + IIT-Madras AI/ML Course with Prompt Engineering (paid, advanced industry program)",
+          "Refonte Learning Master Prompt Engineering in 3 Months roadmap-based course"
+        ],
+        "hindi": ["Advanced technical Hindi courses"]
+      },
+      "docsAndWebsites": [
+        "Prompt Pattern Catalog (arXiv)",
+        "Prompt Report systematic survey (arXiv June 2024)",
+        "Wikipedia RAG Resources",
+        "Towards AI Publications"
+      ],
+      "projectIdeas": [
+        "Design RAG-enabled QA system",
+        "Create a prompt chain for task completion pipelines",
+        "Generate prompts programmatically via secondary LLM"
+      ],
+      "practicePlatforms": [
+        "Hugging Face Spaces",
+        "OpenAI Playground",
+        "Custom API integrations"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Expert Mastery & Domain-Specific Prompting",
+    "description": "Master domain adaptation and evaluation metrics",
+    "icon": "Trophy",
+    "gradient": "from-purple-400 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Domain adaptation: legal, technical, creative, marketing prompts",
+        "Fine-tuning prompt logic for user personas and industries",
+        "Evaluation metrics: prompt effectiveness, coherence, bias mitigation"
+      ],
+      "toolsToUse": [
+        "Fine-tuned LLM models (OpenAI fine-tune, Claude fine-tune)",
+        "Prompt analytics dashboards",
+        "Collaboration platforms (Notion, GitHub) for prompt versioning"
+      ],
+      "bestCourses": {
+        "english": [
+          "Specialized Coursera tracks: Prompt Engineering for Law, Education, AI agents (Vanderbilt, Google)"
+        ],
+        "hindi": [
+          "Advanced unofficial Youtube webinars on fine-tuning and prompting patterns"
+        ]
+      },
+      "docsAndWebsites": [
+        "Prompt Design & Engineering advanced methods (arXiv)",
+        "The Prompt Canvas framework for structured prompt creation (arXiv)",
+        "LinkedIn Advanced Courses"
+      ],
+      "projectIdeas": [
+        "Persona-based chatbot",
+        "Prompt-based content generation assistant (blog drafts, marketing copy)",
+        "Benchmark prompt variants with evaluation metrics"
+      ],
+      "practicePlatforms": [
+        "Professional evaluation platforms",
+        "Industry-specific testing environments",
+        "Academic research platforms"
+      ]
+    }
+  }
+]
