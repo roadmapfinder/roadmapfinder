@@ -38,7 +38,6 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "../lib/auth";
 import { auth } from "../lib/firebase";
 import Link from "next/link";
-import Logout from "../Logout/logout";
 import CourseTrending from "./CourseTrending"
 import RoadmapTrending from "./RoadmapTrending"
 
@@ -190,9 +189,10 @@ export default function HomePage() {
     },
     {
       name: "Logout",
-      icon: <Logout size={14} className="mr-3 mt-0" />,
+      icon: <LogOut size={24} className="mr-3" />,
       href: "/Logout",
       protected: true,
+      feature: "Logout"
     },
   ];
 
@@ -523,20 +523,6 @@ export default function HomePage() {
                 </div>
               ))}
             </nav>
-
-            {user && (
-              <div className="mt-8 pt-5 border-t">
-                <h3 className="text-sm font-medium text-gray-500 mb-3">Account</h3>
-                <Link
-                  href="/Logout"
-                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors py-2"
-                  onClick={toggleMobileMenu}
-                >
-                  <LogOut size={20} className="mr-3" />
-                  <span>Logout</span>
-                </Link>
-              </div>
-            )}
           </div>
         </div>
 
@@ -624,7 +610,7 @@ export default function HomePage() {
                  user={user}
                  handleProtectedAction={handleProtectedAction}
                 />
-              
+
 
 
               <Features handleProtectedAction={handleProtectedAction} />
