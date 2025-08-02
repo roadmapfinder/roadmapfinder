@@ -1,9 +1,5 @@
 {
-  "/Home/page": "app/Home/page.js",
-  "/Login/page": "app/Login/page.js",
-  "/Logout/page": "app/Logout/page.js",
-  "/Profile/page": "app/Profile/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Signup/page": "app/Signup/page.js",
+  "/Project-helper/page": "app/Project-helper/page.js",
+  "/api/generate-project/route": "app/api/generate-project/route.js",
   "/page": "app/page.js"
 }

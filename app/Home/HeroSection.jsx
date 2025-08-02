@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ChevronRight, BookOpen, ArrowRight, Brain, Star, Users, Award, CheckCircle } from "lucide-react";
+import { ChevronRight, BookOpen, ArrowRight, Brain, Star, Users, Award, CheckCircle, Wrench } from "lucide-react";
 import { useState, useEffect } from "react";
 import roadmap from "../Images/roadmap.png";
 
@@ -85,7 +85,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                 </div>
               </div>
 
-              {/* Mobile Action Buttons - Fixed missing implementation */}
+              {/* Mobile Action Buttons - Updated with Project Helper */}
               <div className="block xs:hidden space-y-2.5">
                 <button
                   onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
@@ -117,6 +117,20 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                     <span>AI Guide</span>
                   </button>
                 </div>
+
+                {/* Project Helper CTA - Mobile */}
+                <button
+                  onClick={() => handleProtectedAction && handleProtectedAction("/Project-helper")}
+                  disabled={!handleProtectedAction}
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-3 px-4 rounded-lg text-sm font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+                  aria-label="Get project help and guidance"
+                >
+                  <Wrench size={16} />
+                  <span>Project Helper</span>
+                  <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-1.5 py-0.5 rounded-full font-bold animate-pulse">
+                    NEW
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -233,14 +247,28 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
               AI Guidance
             </button>
           </div>
+
+          {/* Project Helper CTA - Small Mobile */}
+          <button
+            onClick={() => handleProtectedAction && handleProtectedAction("/Project-helper")}
+            disabled={!handleProtectedAction}
+            className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-4 px-6 rounded-xl text-base font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+            aria-label="Get project help and guidance"
+          >
+            <Wrench size={18} />
+            Project Helper
+            <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-1 rounded-full font-bold animate-pulse">
+              NEW
+            </span>
+          </button>
         </div>
 
         {/* Tablet Layout (640px - 1023px) */}
-        <div className="hidden sm:flex lg:hidden gap-3">
+        <div className="hidden sm:flex lg:hidden gap-3 flex-wrap">
           <button
             onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
             disabled={!handleProtectedAction}
-            className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 min-w-[200px] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Explore career roadmaps"
           >
             <ChevronRight size={18} />
@@ -249,7 +277,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           <button
             onClick={() => handleProtectedAction && handleProtectedAction("/Courses")}
             disabled={!handleProtectedAction}
-            className="flex-1 bg-white text-blue-600 text-center py-3 px-5 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 min-w-[150px] bg-white text-blue-600 text-center py-3 px-5 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Browse available courses"
           >
             <BookOpen size={18} />
@@ -258,16 +286,30 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           <button
             onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
             disabled={!handleProtectedAction}
-            className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 min-w-[180px] bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Get AI-powered career guidance"
           >
             <Brain size={18} />
             Career Guidance
           </button>
+
+          {/* Project Helper CTA - Tablet */}
+          <button
+            onClick={() => handleProtectedAction && handleProtectedAction("/Project-helper")}
+            disabled={!handleProtectedAction}
+            className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden shadow-lg mt-3"
+            aria-label="Get project help and guidance"
+          >
+            <Wrench size={18} />
+            Project Helper
+            <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-1 rounded-full font-bold animate-pulse">
+              NEW
+            </span>
+          </button>
         </div>
 
         {/* Desktop Layout (1024px and above) */}
-        <div className="hidden lg:flex gap-6 justify-center">
+        <div className="hidden lg:flex gap-6 justify-center flex-wrap">
           <button
             onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
             disabled={!handleProtectedAction}
@@ -293,6 +335,20 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           >
             <Brain size={20} />
             Career Guidance
+          </button>
+
+          {/* Project Helper CTA - Desktop */}
+          <button
+            onClick={() => handleProtectedAction && handleProtectedAction("/Project-helper")}
+            disabled={!handleProtectedAction}
+            className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-4 px-8 rounded-xl text-lg font-bold hover:from-orange-600 hover:to-red-600 transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 relative overflow-hidden"
+            aria-label="Get project help and guidance"
+          >
+            <Wrench size={20} />
+            Project Helper
+            <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded-full font-bold animate-pulse shadow-md">
+              NEW
+            </span>
           </button>
         </div>
       </section>
@@ -370,6 +426,21 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
           }
+        }
+
+        /* Enhanced styles for new badge */
+        .animate-pulse {
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Ensure proper stacking of relative positioned buttons */
+        button[class*="relative"] {
+          position: relative;
+          z-index: 1;
+        }
+
+        button[class*="relative"] span[class*="absolute"] {
+          z-index: 2;
         }
       `}</style>
     </div>
