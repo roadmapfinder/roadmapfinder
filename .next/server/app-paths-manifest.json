@@ -1,5 +1,5 @@
 {
-  "/Project-helper/page": "app/Project-helper/page.js",
-  "/api/generate-project/route": "app/api/generate-project/route.js",
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/APP/page": "app/Roadmaps/APP/page.js",
   "/page": "app/page.js"
 }

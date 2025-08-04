@@ -1,17 +1,39 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import roadmapData from './aiRoadmap.json';
 import { downloadRoadmapPDF } from './downloadPdf.js';
+
+
+
 
 export default function Home() {
   const [openSection, setOpenSection] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const sectionRefs = useRef({});
 
-  // Toggle section open/close
+  // Toggle section open/close with smooth scrolling
   const toggleSection = (id) => {
-    setOpenSection(openSection === id ? null : id);
+    if (openSection === id) {
+      setOpenSection(null);
+    } else {
+      setOpenSection(id);
+      // Scroll to section after state update
+      setTimeout(() => {
+        const element = sectionRefs.current[id];
+        if (element) {
+          const navHeight = 80; // Approximate nav height
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
   };
 
   // Toggle dark mode
@@ -24,9 +46,19 @@ export default function Home() {
     await downloadRoadmapPDF(roadmapData, setDownloading);
   };
 
+  // Handle YouTube course redirect
+  const handleYouTubeRedirect = () => {
+    window.open('https://youtu.be/5NgNicANyqMl', '_blank');
+  };
+
+  // Handle AI Guide redirect
+  const handleAIGuideRedirect = () => {
+    window.location.href = '/CareerGuidance';
+  };
+
   return (
     <div
-      className={`min-h-screen font-sora ${
+      className={`min-h-screen font-sora relative ${
         darkMode ? "dark bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
       }`}
     >
@@ -45,6 +77,75 @@ export default function Home() {
           rel="stylesheet" 
         />
       </Head>
+
+      {/* Side Buttons - Fixed Position */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4">
+        {/* YouTube Course Button */}
+        <button
+          onClick={handleYouTubeRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode 
+              ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600" 
+              : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+          } text-white`}
+          title="YouTube AI/ML Courses"
+        >
+          {/* YouTube Icon */}
+          <svg 
+            className="w-6 h-6 sm:w-7 sm:h-7" 
+            viewBox="0 0 24 24" 
+            fill="currentColor"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+
+          {/* Tooltip */}
+          <div className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+            darkMode ? "bg-gray-800 text-white border border-gray-700" : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+          }`}>
+            YouTube Courses
+            <div className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+              darkMode ? "border-l-gray-800" : "border-l-white"
+            }`}></div>
+          </div>
+        </button>
+
+        {/* AI Guide Button */}
+        <button
+          onClick={handleAIGuideRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode 
+              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600" 
+              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+          } text-white`}
+          title="AI Career Guidance"
+        >
+          {/* AI Guide Icon */}
+          <svg 
+            className="w-6 h-6 sm:w-7 sm:h-7" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" 
+            />
+          </svg>
+
+          {/* Tooltip */}
+          <div className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+            darkMode ? "bg-gray-800 text-white border border-gray-700" : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+          }`}>
+            AI Career Guide
+            <div className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+              darkMode ? "border-l-gray-800" : "border-l-white"
+            }`}></div>
+          </div>
+        </button>
+      </div>
 
       {/* Sticky Navigation Bar */}
       <nav
@@ -170,6 +271,7 @@ export default function Home() {
           {roadmapData.map((section) => (
             <div
               key={section.id}
+              ref={(el) => (sectionRefs.current[section.id] = el)}
               className={`${
                 darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"
               } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
