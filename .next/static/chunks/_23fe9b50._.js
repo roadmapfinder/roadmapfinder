@@ -10,303 +10,294 @@ __turbopack_context__.v(JSON.parse("[{\"id\":1,\"title\":\"Foundations (Absolute
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
-// Optimized PDF download utility functions
+// PDF download utility functions
 __turbopack_context__.s({
-    "cleanupPDFResources": (()=>cleanupPDFResources),
-    "handleDownloadPDF": (()=>handleDownloadPDF),
-    "preloadPDFLibraries": (()=>preloadPDFLibraries)
+    "handleDownloadPDF": (()=>handleDownloadPDF)
 });
 let html2canvas;
 let jsPDF;
-// Dynamically import libraries only on client side with preloading
+// Dynamically import libraries only on client side
 if ("TURBOPACK compile-time truthy", 1) {
-    // Preload libraries immediately when module loads
-    Promise.all([
-        __turbopack_context__.r("[project]/node_modules/html2canvas/dist/html2canvas.js [app-client] (ecmascript, async loader)")(__turbopack_context__.i),
-        __turbopack_context__.r("[project]/node_modules/jspdf/dist/jspdf.es.min.js [app-client] (ecmascript, async loader)")(__turbopack_context__.i)
-    ]).then(([html2canvasModule, jsPDFModule])=>{
-        html2canvas = html2canvasModule.default;
-        jsPDF = jsPDFModule.default;
+    __turbopack_context__.r("[project]/node_modules/html2canvas/dist/html2canvas.js [app-client] (ecmascript, async loader)")(__turbopack_context__.i).then((module)=>{
+        html2canvas = module.default;
+    });
+    __turbopack_context__.r("[project]/node_modules/jspdf/dist/jspdf.es.min.js [app-client] (ecmascript, async loader)")(__turbopack_context__.i).then((module)=>{
+        jsPDF = module.default;
     });
 }
-// Optimized content creation with virtual rendering
-const createOptimizedDownloadContent = (roadmapData)=>{
+// Create styled content for PDF generation
+const createDownloadContent = (roadmapData, darkMode)=>{
     const downloadDiv = document.createElement("div");
     downloadDiv.className = "roadmap-download-content";
-    // Optimized styles - removed expensive properties and simplified
-    const baseStyles = {
-        padding: "30px",
-        color: "#2c3e50",
-        backgroundColor: "white",
-        fontFamily: "Arial, sans-serif",
-        fontSize: "14px",
-        lineHeight: "1.5",
-        maxWidth: "750px",
-        margin: "0 auto",
-        // Add these for better performance
-        transform: "translateZ(0)",
-        willChange: "transform"
-    };
-    Object.assign(downloadDiv.style, baseStyles);
-    // Optimized title
+    // IMPROVED STYLES for better PDF output and readability
+    downloadDiv.style.padding = "40px";
+    downloadDiv.style.color = "#2c3e50";
+    downloadDiv.style.backgroundColor = "white";
+    downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+    downloadDiv.style.fontSize = "14px";
+    downloadDiv.style.lineHeight = "1.6";
+    downloadDiv.style.maxWidth = "800px";
+    downloadDiv.style.margin = "0 auto";
+    // Add title with better styling
     const title = document.createElement("h1");
-    Object.assign(title.style, {
-        textAlign: "center",
-        marginBottom: "25px",
-        fontSize: "28px",
-        fontWeight: "700",
-        color: "#2c3e50",
-        borderBottom: "2px solid #3498db",
-        paddingBottom: "10px"
-    });
-    title.textContent = "Excel Expert Roadmap";
+    title.style.textAlign = "center";
+    title.style.marginBottom = "30px";
+    title.style.fontSize = "32px";
+    title.style.fontWeight = "700";
+    title.style.color = "#2c3e50";
+    title.style.borderBottom = "3px solid #3498db";
+    title.style.paddingBottom = "15px";
+    title.textContent = "Excel expert Roadmap";
     downloadDiv.appendChild(title);
-    // Batch DOM operations for better performance
-    const fragment = document.createDocumentFragment();
+    // Add roadmap content with improved styling
     roadmapData.forEach((section)=>{
         const sectionDiv = document.createElement("div");
-        Object.assign(sectionDiv.style, {
-            marginBottom: "30px",
-            pageBreakInside: "avoid"
-        });
-        // Optimized section header
+        sectionDiv.style.marginBottom = "40px";
+        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
+        // Section header with better design
         const header = document.createElement("h2");
-        Object.assign(header.style, {
-            backgroundColor: "#f8f9fa",
-            padding: "12px 16px",
-            borderRadius: "6px",
-            borderLeft: "4px solid #3498db",
-            fontSize: "18px",
-            fontWeight: "600",
-            color: "#2c3e50",
-            marginBottom: "15px"
-        });
+        header.style.backgroundColor = "#ecf0f1";
+        header.style.padding = "15px 20px";
+        header.style.borderRadius = "8px";
+        header.style.borderLeft = "5px solid #3498db";
+        header.style.fontSize = "20px";
+        header.style.fontWeight = "600";
+        header.style.color = "#2c3e50";
+        header.style.marginBottom = "20px";
         header.textContent = `${section.id}. ${section.title}`;
         sectionDiv.appendChild(header);
-        // Optimized description
+        // Section description with better typography
         const desc = document.createElement("p");
-        Object.assign(desc.style, {
-            marginBottom: "20px",
-            fontStyle: "italic",
-            fontSize: "14px",
-            color: "#6c757d",
-            lineHeight: "1.5",
-            padding: "0 8px"
-        });
+        desc.style.marginBottom = "25px";
+        desc.style.fontStyle = "italic";
+        desc.style.fontSize = "15px";
+        desc.style.color = "#7f8c8d";
+        desc.style.lineHeight = "1.7";
+        desc.style.padding = "0 10px";
         desc.textContent = section.description;
         sectionDiv.appendChild(desc);
-        // Create sections more efficiently
-        const sections = [
-            {
-                title: "✅ What to Learn",
-                data: section.content.whatToLearn,
-                color: "#28a745"
-            },
-            {
-                title: "📚 Best Courses (English)",
-                data: section.content.bestCourses.english,
-                color: "#007bff"
-            },
-            {
-                title: "📚 Best Courses (Hindi)",
-                data: section.content.bestCourses.hindi,
-                color: "#007bff"
-            },
-            {
-                title: "🧰 Tools to Use",
-                data: section.content.toolsToUse,
-                color: "#fd7e14"
-            },
-            {
-                title: "📘 Docs & Websites",
-                data: section.content.docsAndWebsites,
-                color: "#dc3545"
-            },
-            {
-                title: "💡 Project Ideas",
-                data: section.content.projectIdeas,
-                color: "#6f42c1"
-            }
-        ];
-        sections.forEach(({ title, data, color })=>{
-            if (data && data.length > 0) {
-                const container = document.createElement("div");
-                container.style.marginBottom = "20px";
-                const titleEl = document.createElement("h3");
-                Object.assign(titleEl.style, {
-                    fontSize: "16px",
-                    fontWeight: "600",
-                    color: color,
-                    marginBottom: "10px",
-                    borderBottom: `1px solid ${color}`,
-                    paddingBottom: "4px"
-                });
-                titleEl.textContent = title;
-                container.appendChild(titleEl);
-                const list = document.createElement("ul");
-                Object.assign(list.style, {
-                    paddingLeft: "20px",
-                    margin: "10px 0"
-                });
-                // Batch create list items
-                const listHTML = data.map((item)=>`<li style="margin-bottom: 6px; font-size: 13px; line-height: 1.4; color: #495057;">${item}</li>`).join('');
-                list.innerHTML = listHTML;
-                container.appendChild(list);
-                sectionDiv.appendChild(container);
-            }
+        // What to Learn with improved styling
+        const whatToLearn = document.createElement("div");
+        whatToLearn.style.marginBottom = "25px";
+        const whatToLearnTitle = document.createElement("h3");
+        whatToLearnTitle.style.fontSize = "18px";
+        whatToLearnTitle.style.fontWeight = "600";
+        whatToLearnTitle.style.color = "#27ae60";
+        whatToLearnTitle.style.marginBottom = "12px";
+        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
+        whatToLearnTitle.style.paddingBottom = "5px";
+        whatToLearnTitle.textContent = "✅ What to Learn";
+        whatToLearn.appendChild(whatToLearnTitle);
+        const whatToLearnList = document.createElement("ul");
+        whatToLearnList.style.paddingLeft = "25px";
+        whatToLearnList.style.margin = "15px 0";
+        section.content.whatToLearn.forEach((item)=>{
+            const li = document.createElement("li");
+            li.style.marginBottom = "8px";
+            li.style.fontSize = "14px";
+            li.style.lineHeight = "1.6";
+            li.style.color = "#34495e";
+            li.textContent = item;
+            whatToLearnList.appendChild(li);
         });
-        fragment.appendChild(sectionDiv);
+        whatToLearn.appendChild(whatToLearnList);
+        sectionDiv.appendChild(whatToLearn);
+        // Best Courses with better organization
+        const bestCourses = document.createElement("div");
+        bestCourses.style.marginBottom = "25px";
+        const bestCoursesTitle = document.createElement("h3");
+        bestCoursesTitle.style.fontSize = "18px";
+        bestCoursesTitle.style.fontWeight = "600";
+        bestCoursesTitle.style.color = "#3498db";
+        bestCoursesTitle.style.marginBottom = "12px";
+        bestCoursesTitle.style.borderBottom = "2px solid #3498db";
+        bestCoursesTitle.style.paddingBottom = "5px";
+        bestCoursesTitle.textContent = "📚 Best Courses";
+        bestCourses.appendChild(bestCoursesTitle);
+        // English courses
+        const englishTitle = document.createElement("h4");
+        englishTitle.style.fontSize = "16px";
+        englishTitle.style.fontWeight = "500";
+        englishTitle.style.color = "#2c3e50";
+        englishTitle.style.marginTop = "15px";
+        englishTitle.style.marginBottom = "10px";
+        englishTitle.textContent = "In English:";
+        bestCourses.appendChild(englishTitle);
+        const englishList = document.createElement("ul");
+        englishList.style.paddingLeft = "25px";
+        englishList.style.margin = "10px 0";
+        section.content.bestCourses.english.forEach((course)=>{
+            const li = document.createElement("li");
+            li.style.marginBottom = "6px";
+            li.style.fontSize = "13px";
+            li.style.lineHeight = "1.5";
+            li.style.color = "#34495e";
+            li.textContent = course;
+            englishList.appendChild(li);
+        });
+        bestCourses.appendChild(englishList);
+        // Hindi courses
+        const hindiTitle = document.createElement("h4");
+        hindiTitle.style.fontSize = "16px";
+        hindiTitle.style.fontWeight = "500";
+        hindiTitle.style.color = "#2c3e50";
+        hindiTitle.style.marginTop = "15px";
+        hindiTitle.style.marginBottom = "10px";
+        hindiTitle.textContent = "In Hindi:";
+        bestCourses.appendChild(hindiTitle);
+        const hindiList = document.createElement("ul");
+        hindiList.style.paddingLeft = "25px";
+        hindiList.style.margin = "10px 0";
+        section.content.bestCourses.hindi.forEach((course)=>{
+            const li = document.createElement("li");
+            li.style.marginBottom = "6px";
+            li.style.fontSize = "13px";
+            li.style.lineHeight = "1.5";
+            li.style.color = "#34495e";
+            li.textContent = course;
+            hindiList.appendChild(li);
+        });
+        bestCourses.appendChild(hindiList);
+        sectionDiv.appendChild(bestCourses);
+        // Tools to Use with better styling
+        const tools = document.createElement("div");
+        tools.style.marginBottom = "25px";
+        const toolsTitle = document.createElement("h3");
+        toolsTitle.style.fontSize = "18px";
+        toolsTitle.style.fontWeight = "600";
+        toolsTitle.style.color = "#f39c12";
+        toolsTitle.style.marginBottom = "12px";
+        toolsTitle.style.borderBottom = "2px solid #f39c12";
+        toolsTitle.style.paddingBottom = "5px";
+        toolsTitle.textContent = "🧰 Tools to Use";
+        tools.appendChild(toolsTitle);
+        const toolsList = document.createElement("ul");
+        toolsList.style.paddingLeft = "25px";
+        toolsList.style.margin = "15px 0";
+        section.content.toolsToUse.forEach((tool)=>{
+            const li = document.createElement("li");
+            li.style.marginBottom = "8px";
+            li.style.fontSize = "14px";
+            li.style.lineHeight = "1.6";
+            li.style.color = "#34495e";
+            li.textContent = tool;
+            toolsList.appendChild(li);
+        });
+        tools.appendChild(toolsList);
+        sectionDiv.appendChild(tools);
+        // Docs & Websites with better styling
+        const docs = document.createElement("div");
+        docs.style.marginBottom = "25px";
+        const docsTitle = document.createElement("h3");
+        docsTitle.style.fontSize = "18px";
+        docsTitle.style.fontWeight = "600";
+        docsTitle.style.color = "#e74c3c";
+        docsTitle.style.marginBottom = "12px";
+        docsTitle.style.borderBottom = "2px solid #e74c3c";
+        docsTitle.style.paddingBottom = "5px";
+        docsTitle.textContent = "📘 Docs & Websites";
+        docs.appendChild(docsTitle);
+        const docsList = document.createElement("ul");
+        docsList.style.paddingLeft = "25px";
+        docsList.style.margin = "15px 0";
+        section.content.docsAndWebsites.forEach((doc)=>{
+            const li = document.createElement("li");
+            li.style.marginBottom = "8px";
+            li.style.fontSize = "14px";
+            li.style.lineHeight = "1.6";
+            li.style.color = "#34495e";
+            li.textContent = doc;
+            docsList.appendChild(li);
+        });
+        docs.appendChild(docsList);
+        sectionDiv.appendChild(docs);
+        // Project Ideas with better styling
+        const projects = document.createElement("div");
+        projects.style.marginBottom = "25px";
+        const projectsTitle = document.createElement("h3");
+        projectsTitle.style.fontSize = "18px";
+        projectsTitle.style.fontWeight = "600";
+        projectsTitle.style.color = "#9b59b6";
+        projectsTitle.style.marginBottom = "12px";
+        projectsTitle.style.borderBottom = "2px solid #9b59b6";
+        projectsTitle.style.paddingBottom = "5px";
+        projectsTitle.textContent = "💡 Project Ideas";
+        projects.appendChild(projectsTitle);
+        const projectsList = document.createElement("ul");
+        projectsList.style.paddingLeft = "25px";
+        projectsList.style.margin = "15px 0";
+        section.content.projectIdeas.forEach((project)=>{
+            const li = document.createElement("li");
+            li.style.marginBottom = "8px";
+            li.style.fontSize = "14px";
+            li.style.lineHeight = "1.6";
+            li.style.color = "#34495e";
+            li.textContent = project;
+            projectsList.appendChild(li);
+        });
+        projects.appendChild(projectsList);
+        sectionDiv.appendChild(projects);
+        downloadDiv.appendChild(sectionDiv);
     });
-    downloadDiv.appendChild(fragment);
     return downloadDiv;
 };
-// Optimized canvas rendering with chunking
-const renderCanvasOptimized = async (element)=>{
-    return await html2canvas(element, {
-        scale: 1.5,
-        useCORS: true,
-        logging: false,
-        letterRendering: false,
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        width: element.scrollWidth,
-        height: element.scrollHeight,
-        scrollX: 0,
-        scrollY: 0,
-        // Performance optimizations
-        foreignObjectRendering: false,
-        imageTimeout: 5000,
-        removeContainer: true,
-        async: true,
-        // Quality vs speed balance
-        quality: 0.92 // Slightly lower quality for speed
-    });
-};
-// Enhanced progress tracking
-const createProgressTracker = (callback)=>{
-    let progress = 0;
-    const steps = [
-        "Preparing content...",
-        "Rendering layout...",
-        "Generating canvas...",
-        "Creating PDF pages...",
-        "Finalizing document...",
-        "Complete!"
-    ];
-    return {
-        update: (step)=>{
-            progress = step;
-            callback(steps[step] || `Processing... ${step}%`, step / (steps.length - 1) * 100);
-        }
-    };
-};
-const handleDownloadPDF = async (roadmapData, setDownloading, onProgress = null)=>{
+const handleDownloadPDF = async (roadmapData, setDownloading)=>{
     if (!html2canvas || !jsPDF) {
-        // Show loading state and retry
-        const checkLibraries = ()=>{
-            if (html2canvas && jsPDF) {
-                handleDownloadPDF(roadmapData, setDownloading, onProgress);
-            } else {
-                setTimeout(checkLibraries, 500);
-            }
-        };
-        alert("PDF libraries are loading. Starting download...");
-        checkLibraries();
+        alert("PDF generation libraries are still loading. Please try again in a moment.");
         return;
     }
     setDownloading(true);
-    const progress = onProgress ? createProgressTracker(onProgress) : {
-        update: ()=>{}
-    };
     try {
-        progress.update(0);
-        // Use requestIdleCallback for better performance
-        await new Promise((resolve)=>{
-            if (window.requestIdleCallback) {
-                requestIdleCallback(resolve);
-            } else {
-                setTimeout(resolve, 0);
-            }
-        });
-        progress.update(1);
-        // Create optimized content
-        const downloadDiv = createOptimizedDownloadContent(roadmapData);
-        // Use invisible positioning for faster rendering
-        Object.assign(downloadDiv.style, {
-            position: "fixed",
-            top: "-9999px",
-            left: "-9999px",
-            zIndex: "-1000",
-            visibility: "hidden"
-        });
+        // Create temporary div with roadmap content
+        const downloadDiv = createDownloadContent(roadmapData);
+        // Temporarily add the div to the document to render it
         document.body.appendChild(downloadDiv);
-        progress.update(2);
-        // Force layout calculation
-        downloadDiv.offsetHeight;
-        // Render canvas with optimizations
-        const canvas = await renderCanvasOptimized(downloadDiv);
-        progress.update(3);
-        // Clean up DOM immediately
+        // IMPROVED html2canvas settings for better quality
+        const canvas = await html2canvas(downloadDiv, {
+            scale: 2,
+            useCORS: true,
+            logging: false,
+            letterRendering: true,
+            allowTaint: true,
+            backgroundColor: "#ffffff",
+            width: downloadDiv.scrollWidth,
+            height: downloadDiv.scrollHeight,
+            scrollX: 0,
+            scrollY: 0
+        });
+        // Remove the temporary div
         document.body.removeChild(downloadDiv);
-        // Create PDF with optimized settings
+        // Create PDF with better settings
         const pdf = new jsPDF({
             orientation: "portrait",
             unit: "mm",
             format: "a4",
             compress: true,
-            precision: 1,
-            userUnit: 1.0
+            precision: 2
         });
-        // Optimized image processing
-        const imgWidth = 210;
+        // Calculate dimensions for better fitting
+        const imgWidth = 210; // A4 width in mm
         const imgHeight = canvas.height * imgWidth / canvas.width;
-        const pageHeight = 297;
-        progress.update(4);
-        // Convert canvas to JPEG with optimized quality
-        const imgData = canvas.toDataURL("image/jpeg", 0.85); // Balanced quality vs size
+        const pageHeight = 297; // A4 height in mm
         let heightLeft = imgHeight;
         let position = 0;
-        let pageCount = 0;
-        // Add pages more efficiently
-        while(heightLeft > 0 || pageCount === 0){
-            if (pageCount > 0) {
-                pdf.addPage();
-            }
-            pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
+        // Add first page
+        pdf.addImage(canvas.toDataURL("image/jpeg", 0.95), "JPEG", 0, 0, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+        // Add additional pages if needed
+        while(heightLeft > 0){
             position = heightLeft - imgHeight;
-            pageCount++;
+            pdf.addPage();
+            pdf.addImage(canvas.toDataURL("image/jpeg", 0.95), "JPEG", 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
         }
-        progress.update(5);
-        // Save with optimized filename
-        const timestamp = new Date().toISOString().slice(0, 10);
-        pdf.save(`Excel_Expert_Roadmap_${timestamp}.pdf`);
-        // Clean up canvas
-        canvas.width = 0;
-        canvas.height = 0;
+        // Save the PDF
+        pdf.save("backend_Roadmap.pdf");
     } catch (error) {
         console.error("Error generating PDF:", error);
-        alert("Error generating PDF. Please try again or check your browser's memory settings.");
+        alert("There was an error generating the PDF. Please try again.");
     } finally{
         setDownloading(false);
-        if (onProgress) onProgress("Complete!", 100);
-    }
-};
-const preloadPDFLibraries = ()=>{
-    if (!html2canvas || !jsPDF) {
-        Promise.all([
-            __turbopack_context__.r("[project]/node_modules/html2canvas/dist/html2canvas.js [app-client] (ecmascript, async loader)")(__turbopack_context__.i),
-            __turbopack_context__.r("[project]/node_modules/jspdf/dist/jspdf.es.min.js [app-client] (ecmascript, async loader)")(__turbopack_context__.i)
-        ]).then(([html2canvasModule, jsPDFModule])=>{
-            html2canvas = html2canvasModule.default;
-            jsPDF = jsPDFModule.default;
-        });
-    }
-};
-const cleanupPDFResources = ()=>{
-    // Force garbage collection hint
-    if (window.gc) {
-        window.gc();
     }
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -333,12 +324,18 @@ var _s = __turbopack_context__.k.signature();
 ;
 function Home() {
     _s();
-    const [openSection, setOpenSection] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [openSections, setOpenSections] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(new Set());
     const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [downloading, setDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Toggle section open/close
+    // Toggle section open/close - now allows multiple sections to be open
     const toggleSection = (id)=>{
-        setOpenSection(openSection === id ? null : id);
+        const newOpenSections = new Set(openSections);
+        if (newOpenSections.has(id)) {
+            newOpenSections.delete(id);
+        } else {
+            newOpenSections.add(id);
+        }
+        setOpenSections(newOpenSections);
     };
     // Toggle dark mode
     const toggleDarkMode = ()=>{
@@ -348,9 +345,118 @@ function Home() {
     const handleDownload = async ()=>{
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Backend$2f$downloadPdf$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["handleDownloadPDF"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Backend$2f$roadmapData$2e$json__$28$json$29$__["default"], setDownloading);
     };
+    // Handle YouTube redirect
+    const handleYouTubeRedirect = ()=>{
+        window.open("https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k", "_blank");
+    };
+    // Handle AI Guide redirect
+    const handleAIGuideRedirect = ()=>{
+        window.location.href = "/CareerGuidance";
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: `min-h-screen font-sans ${darkMode ? "dark bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"}`,
         children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: handleYouTubeRedirect,
+                        className: `group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${darkMode ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600" : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"} text-white`,
+                        title: "YouTube AI/ML Courses",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                className: "w-6 h-6 sm:w-7 sm:h-7",
+                                viewBox: "0 0 24 24",
+                                fill: "currentColor",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                    d: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                    lineNumber: 69,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                lineNumber: 64,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: `absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${darkMode ? "bg-gray-800 text-white border border-gray-700" : "bg-white text-gray-900 border border-gray-200 shadow-lg"}`,
+                                children: [
+                                    "YouTube Courses",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                        lineNumber: 77,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                lineNumber: 73,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                        lineNumber: 54,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: handleAIGuideRedirect,
+                        className: `group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${darkMode ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600" : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"} text-white`,
+                        title: "AI Career Guidance",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                className: "w-6 h-6 sm:w-7 sm:h-7",
+                                fill: "none",
+                                stroke: "currentColor",
+                                viewBox: "0 0 24 24",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    strokeWidth: 2,
+                                    d: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                    lineNumber: 99,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                lineNumber: 93,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: `absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${darkMode ? "bg-gray-800 text-white border border-gray-700" : "bg-white text-gray-900 border border-gray-200 shadow-lg"}`,
+                                children: [
+                                    "AI Career Guide",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                        lineNumber: 112,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                lineNumber: 108,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                        lineNumber: 83,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                lineNumber: 52,
+                columnNumber: 9
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                 className: `sticky top-0 z-10 backdrop-blur-lg ${darkMode ? "bg-gray-900/90 border-gray-700/50" : "bg-white/90 border-gray-200/50"} border-b shadow-xl px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 transition-all duration-300`,
                 children: [
@@ -362,7 +468,7 @@ function Home() {
                                 children: "Backend Developer"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 43,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -370,13 +476,13 @@ function Home() {
                                 children: "Roadmap"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 46,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                        lineNumber: 42,
+                        lineNumber: 127,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -403,7 +509,7 @@ function Home() {
                                                     strokeWidth: "4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 156,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -412,13 +518,13 @@ function Home() {
                                                     d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                    lineNumber: 79,
+                                                    lineNumber: 164,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                            lineNumber: 65,
+                                            lineNumber: 150,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -426,7 +532,7 @@ function Home() {
                                             children: "Generating PDF..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                            lineNumber: 85,
+                                            lineNumber: 170,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -434,7 +540,7 @@ function Home() {
                                             children: "PDF..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                            lineNumber: 88,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, this)
                                     ]
@@ -452,12 +558,12 @@ function Home() {
                                                 d: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                lineNumber: 98,
+                                                lineNumber: 183,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                            lineNumber: 92,
+                                            lineNumber: 177,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -465,7 +571,7 @@ function Home() {
                                             children: "Download PDF"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                            lineNumber: 105,
+                                            lineNumber: 190,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -473,14 +579,14 @@ function Home() {
                                             children: "PDF"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                            lineNumber: 108,
+                                            lineNumber: 193,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 54,
+                                lineNumber: 139,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -496,12 +602,12 @@ function Home() {
                                         clipRule: "evenodd"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 128,
+                                        lineNumber: 213,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 123,
+                                    lineNumber: 208,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                     className: "w-4 h-4 sm:w-5 sm:h-5",
@@ -511,29 +617,29 @@ function Home() {
                                         d: "M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 140,
+                                        lineNumber: 225,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 135,
+                                    lineNumber: 220,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 114,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                        lineNumber: 52,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                lineNumber: 35,
+                lineNumber: 120,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -547,15 +653,15 @@ function Home() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent",
-                                        children: "backend Developer"
+                                        children: "Backend Developer"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 152,
+                                        lineNumber: 237,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 155,
+                                        lineNumber: 240,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -563,13 +669,13 @@ function Home() {
                                         children: "Roadmap"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 156,
+                                        lineNumber: 241,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 151,
+                                lineNumber: 236,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -577,7 +683,7 @@ function Home() {
                                 children: "A comprehensive guide to becoming a Backend Developer with step-by-step learning path, courses, tools, and project ideas."
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 160,
+                                lineNumber: 245,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -586,24 +692,25 @@ function Home() {
                                     className: `h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 167,
+                                    lineNumber: 252,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 166,
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                        lineNumber: 150,
+                        lineNumber: 235,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-6 sm:space-y-8",
                         children: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Backend$2f$roadmapData$2e$json__$28$json$29$__["default"].map((section)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: `${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${openSection === section.id ? "ring-2 ring-blue-500/20" : ""}`,
+                                id: `section-${section.id}`,
+                                className: `${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""}`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>toggleSection(section.id),
@@ -620,7 +727,7 @@ function Home() {
                                                                 children: section.id
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 195,
+                                                                lineNumber: 283,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -628,13 +735,13 @@ function Home() {
                                                                 children: section.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 198,
+                                                                lineNumber: 286,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 282,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -642,18 +749,18 @@ function Home() {
                                                         children: section.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 202,
+                                                        lineNumber: 290,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                lineNumber: 193,
+                                                lineNumber: 281,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0",
-                                                children: openSection === section.id ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                children: openSections.has(section.id) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     className: "w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600",
                                                     fill: "none",
                                                     stroke: "currentColor",
@@ -665,12 +772,12 @@ function Home() {
                                                         d: "M5 15l7-7 7 7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 216,
+                                                        lineNumber: 304,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                    lineNumber: 210,
+                                                    lineNumber: 298,
                                                     columnNumber: 21
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     className: "w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7",
@@ -684,27 +791,27 @@ function Home() {
                                                         d: "M19 9l-7 7-7-7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 230,
+                                                        lineNumber: 318,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 312,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                lineNumber: 208,
+                                                lineNumber: 296,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 187,
+                                        lineNumber: 275,
                                         columnNumber: 15
                                     }, this),
-                                    openSection === section.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: `px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t`,
+                                    openSections.has(section.id) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`,
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8",
@@ -720,14 +827,14 @@ function Home() {
                                                                         children: "✅"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 252,
+                                                                        lineNumber: 340,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "What to Learn"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 251,
+                                                                lineNumber: 339,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -740,7 +847,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 263,
+                                                                                lineNumber: 351,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -748,24 +855,24 @@ function Home() {
                                                                                 children: item
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 266,
+                                                                                lineNumber: 354,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 259,
+                                                                        lineNumber: 347,
                                                                         columnNumber: 27
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 257,
+                                                                lineNumber: 345,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 336,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -779,14 +886,14 @@ function Home() {
                                                                         children: "🧰"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 277,
+                                                                        lineNumber: 365,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "Tools to Use"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 276,
+                                                                lineNumber: 364,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -799,7 +906,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 288,
+                                                                                lineNumber: 376,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -807,24 +914,24 @@ function Home() {
                                                                                 children: tool
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 291,
+                                                                                lineNumber: 379,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 284,
+                                                                        lineNumber: 372,
                                                                         columnNumber: 27
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 282,
+                                                                lineNumber: 370,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 361,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -838,125 +945,75 @@ function Home() {
                                                                         children: "📚"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 302,
+                                                                        lineNumber: 390,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "Best Courses"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 301,
+                                                                lineNumber: 389,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "space-y-4 sm:space-y-5",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                                                                className: "font-bold mb-2 sm:mb-3 text-base sm:text-lg",
-                                                                                children: "In English:"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 309,
-                                                                                columnNumber: 27
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                                className: "space-y-1 sm:space-y-2",
-                                                                                children: section.content?.bestCourses?.english?.map((course, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                                        className: `text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`,
-                                                                                        children: [
-                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                                className: "text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0",
-                                                                                                children: "•"
-                                                                                            }, void 0, false, {
-                                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                                lineNumber: 319,
-                                                                                                columnNumber: 35
-                                                                                            }, this),
-                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                                className: "font-medium",
-                                                                                                children: course
-                                                                                            }, void 0, false, {
-                                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                                lineNumber: 322,
-                                                                                                columnNumber: 35
-                                                                                            }, this)
-                                                                                        ]
-                                                                                    }, index, true, {
-                                                                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                        lineNumber: 315,
-                                                                                        columnNumber: 33
-                                                                                    }, this)) || []
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 312,
-                                                                                columnNumber: 27
-                                                                            }, this)
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 308,
-                                                                        columnNumber: 25
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                                                                className: "font-bold mb-2 sm:mb-3 text-base sm:text-lg",
-                                                                                children: "In Hindi:"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 329,
-                                                                                columnNumber: 27
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                                className: "space-y-1 sm:space-y-2",
-                                                                                children: section.content?.bestCourses?.hindi?.map((course, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                                        className: `text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`,
-                                                                                        children: [
-                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                                className: "text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0",
-                                                                                                children: "•"
-                                                                                            }, void 0, false, {
-                                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                                lineNumber: 339,
-                                                                                                columnNumber: 35
-                                                                                            }, this),
-                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                                className: "font-medium",
-                                                                                                children: course
-                                                                                            }, void 0, false, {
-                                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                                lineNumber: 342,
-                                                                                                columnNumber: 35
-                                                                                            }, this)
-                                                                                        ]
-                                                                                    }, index, true, {
-                                                                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                        lineNumber: 335,
-                                                                                        columnNumber: 33
-                                                                                    }, this)) || []
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 332,
-                                                                                columnNumber: 27
-                                                                            }, this)
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 328,
-                                                                        columnNumber: 25
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
+                                                                            className: "font-bold mb-2 sm:mb-3 text-base sm:text-lg",
+                                                                            children: "In English:"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                                                            lineNumber: 397,
+                                                                            columnNumber: 27
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                                            className: "space-y-1 sm:space-y-2",
+                                                                            children: section.content?.bestCourses?.english?.map((course, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                                                    className: `text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`,
+                                                                                    children: [
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                            className: "text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0",
+                                                                                            children: "•"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                                                                            lineNumber: 407,
+                                                                                            columnNumber: 35
+                                                                                        }, this),
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                            className: "font-medium",
+                                                                                            children: course
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                                                                            lineNumber: 410,
+                                                                                            columnNumber: 35
+                                                                                        }, this)
+                                                                                    ]
+                                                                                }, index, true, {
+                                                                                    fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                                                                    lineNumber: 403,
+                                                                                    columnNumber: 33
+                                                                                }, this)) || []
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                                                            lineNumber: 400,
+                                                                            columnNumber: 27
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                                                    lineNumber: 396,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 307,
+                                                                lineNumber: 395,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 298,
+                                                        lineNumber: 386,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -970,14 +1027,14 @@ function Home() {
                                                                         children: "📘"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 356,
+                                                                        lineNumber: 424,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "Docs & Websites"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 355,
+                                                                lineNumber: 423,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -990,7 +1047,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 367,
+                                                                                lineNumber: 435,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -998,30 +1055,30 @@ function Home() {
                                                                                 children: doc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                                lineNumber: 370,
+                                                                                lineNumber: 438,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                        lineNumber: 363,
+                                                                        lineNumber: 431,
                                                                         columnNumber: 27
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 361,
+                                                                lineNumber: 429,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 352,
+                                                        lineNumber: 420,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                lineNumber: 246,
+                                                lineNumber: 334,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1035,14 +1092,14 @@ function Home() {
                                                                 children: "💡"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 380,
+                                                                lineNumber: 448,
                                                                 columnNumber: 23
                                                             }, this),
                                                             "Project Ideas"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 379,
+                                                        lineNumber: 447,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1057,7 +1114,7 @@ function Home() {
                                                                             children: "💡"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                            lineNumber: 392,
+                                                                            lineNumber: 460,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1065,46 +1122,46 @@ function Home() {
                                                                             children: project
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                            lineNumber: 395,
+                                                                            lineNumber: 463,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                    lineNumber: 391,
+                                                                    lineNumber: 459,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, index, false, {
                                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                                lineNumber: 387,
+                                                                lineNumber: 455,
                                                                 columnNumber: 25
                                                             }, this)) || []
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                        lineNumber: 385,
+                                                        lineNumber: 453,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                                lineNumber: 378,
+                                                lineNumber: 446,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                        lineNumber: 243,
+                                        lineNumber: 331,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, section.id, true, {
                                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                lineNumber: 176,
+                                lineNumber: 263,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                        lineNumber: 174,
+                        lineNumber: 261,
                         columnNumber: 9
                     }, this),
                     __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Backend$2f$roadmapData$2e$json__$28$json$29$__["default"].length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1117,7 +1174,7 @@ function Home() {
                                     children: "📚"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 417,
+                                    lineNumber: 485,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1125,26 +1182,26 @@ function Home() {
                                     children: "No Roadmap Data Available"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 418,
+                                    lineNumber: 486,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: `text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`,
-                                    children: "Add your roadmap data to get started with your backend Developer journey."
+                                    children: "Add your roadmap data to get started with your Backend Developer journey."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 421,
+                                    lineNumber: 489,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                            lineNumber: 414,
+                            lineNumber: 482,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                        lineNumber: 413,
+                        lineNumber: 481,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -1157,7 +1214,7 @@ function Home() {
                                     children: "Ready to Start Your Journey?"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 436,
+                                    lineNumber: 504,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1165,44 +1222,51 @@ function Home() {
                                     children: "Remember: Consistency is key. Start with the fundamentals and build your way up!"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 439,
+                                    lineNumber: 507,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: handleDownload,
-                                    disabled: downloading,
-                                    className: `px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${downloading ? "bg-gray-500 cursor-not-allowed scale-95" : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"}`,
-                                    children: downloading ? "Generating PDF..." : "Download Complete Roadmap"
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-col sm:flex-row gap-4 justify-center items-center",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: handleDownload,
+                                        disabled: downloading,
+                                        className: `px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${downloading ? "bg-gray-500 cursor-not-allowed scale-95" : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"}`,
+                                        children: downloading ? "Generating PDF..." : "Download Complete Roadmap"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
+                                        lineNumber: 514,
+                                        columnNumber: 15
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                                    lineNumber: 445,
+                                    lineNumber: 513,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                            lineNumber: 433,
+                            lineNumber: 501,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                        lineNumber: 432,
+                        lineNumber: 500,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-                lineNumber: 148,
+                lineNumber: 233,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Roadmaps/Backend/backend.jsx",
-        lineNumber: 27,
+        lineNumber: 44,
         columnNumber: 5
     }, this);
 }
-_s(Home, "ak8yleOJRSx1Zlm4SjLjbgv7eAk=");
+_s(Home, "Fl6cxlDRMe6qIZmvjBiq0349x8I=");
 _c = Home;
 var _c;
 __turbopack_context__.k.register(_c, "Home");

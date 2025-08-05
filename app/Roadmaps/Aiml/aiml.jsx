@@ -63,7 +63,8 @@ export default function Home() {
       }`}
     >
       <Head>
-        <title>AI/ML Engineer Roadmap</title>
+
+        
         <meta
           name="description"
           content="Complete roadmap for becoming an AI/ML Engineer"
