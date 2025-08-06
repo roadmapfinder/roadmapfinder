@@ -75,18 +75,35 @@ async function POST(request) {
             });
         }
         // Validate API key exists
-        if (!process.env.OPENROUTER_API_KEY) {
-            console.error('OPENROUTER_API_KEY is not set');
+        if (!process.env.GEMINI_API_KEY) {
+            console.error('GEMINI_API_KEY is not set');
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'API configuration error'
             }, {
                 status: 500
             });
         }
+        console.log('Making request to Gemini API for project generation...');
         const prompt = `
-You are an expert project consultant and technical architect. A user has described their project idea: "${projectIdea}"
+You are an expert full-stack software architect, AI consultant, and technical project planner.
+A user has described their project idea in natural language:
 
-Please provide a comprehensive project analysis in the following JSON format. Make sure to return ONLY valid JSON without any additional text:
+"${projectIdea}"
+
+Your task is to deeply analyze this idea — whether it's a simple utility, a full SaaS platform, an AI-driven application, a blockchain dApp, or a UI/UX design system.
+Provide a comprehensive, language-agnostic project breakdown in structured JSON format.
+
+⚠️ You must:
+
+Support all popular tech stacks: JavaScript/TypeScript, Python, Java, Dart/Flutter, Swift, Solidity, R, Rust, Go, etc.
+
+Include recommendations for AI/ML, data analytics, blockchain, and design-oriented projects where relevant
+
+Recommend only modern, well-maintained, and production-ready tools and libraries (2024–2025)
+
+Ensure every step is practical, structured, and developer-actionable
+
+Return ONLY a valid JSON object (no extra text), using the following format:
 
 {
   "mindMap": {
@@ -116,73 +133,132 @@ Please provide a comprehensive project analysis in the following JSON format. Ma
     }
   ],
   "techStack": {
-    "frontend": ["React", "Next.js"],
+    "frontend": ["React", "Next.js", "Tailwind CSS"],
     "backend": ["Node.js", "Express"],
     "database": ["PostgreSQL"],
+    "devops": ["Docker", "GitHub Actions"],
     "deployment": ["Vercel", "Railway"]
   },
   "packages": {
-    "npm": ["next", "react", "tailwindcss"],
-    "tools": ["VS Code", "Git", "Postman"]
+    "npm": ["next", "react", "axios", "tailwindcss"],
+    "python": [],
+    "tools": ["VS Code", "Postman", "Figma", "Git"]
   },
   "documentation": [
     {
       "title": "Next.js Documentation",
       "url": "https://nextjs.org/docs",
-      "description": "Complete guide to Next.js"
+      "description": "Official Next.js guide and API docs"
+    },
+    {
+      "title": "PostgreSQL Docs",
+      "url": "https://www.postgresql.org/docs/",
+      "description": "Official PostgreSQL documentation"
     }
   ],
   "youtubeResources": [
     {
-      "title": "Video Title",
-      "channel": "Channel Name",
-      "url": "https://youtube.com/watch?v=example",
-      "description": "What the video covers"
+      "title": "Build a Full-Stack App with Next.js 13",
+      "channel": "Traversy Media",
+      "url": "https://youtube.com/watch?v=example1",
+      "description": "Walkthrough of building a full-stack app using modern tech"
+    },
+    {
+      "title": "Complete Guide to Tailwind CSS",
+      "channel": "The Net Ninja",
+      "url": "https://youtube.com/watch?v=example2",
+      "description": "Master Tailwind CSS for frontend development"
     }
   ]
-}
-
-Make sure the response is practical, modern, and includes current best practices for 2024-2025. Focus on popular, well-maintained technologies and provide realistic development phases. Return ONLY the JSON object, no additional text.
-`;
-        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+}`;
+        // Gemini API request body
+        const requestBody = {
+            contents: [
+                {
+                    parts: [
+                        {
+                            text: prompt
+                        }
+                    ]
+                }
+            ],
+            generationConfig: {
+                temperature: 0.7,
+                topK: 40,
+                topP: 0.95,
+                maxOutputTokens: 8192,
+                responseMimeType: "text/plain"
+            },
+            safetySettings: [
+                {
+                    category: "HARM_CATEGORY_HARASSMENT",
+                    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                },
+                {
+                    category: "HARM_CATEGORY_HATE_SPEECH",
+                    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                },
+                {
+                    category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                },
+                {
+                    category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                }
+            ]
+        };
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${process.env.GEMINI_API_KEY}`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-                'Content-Type': 'application/json',
-                'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-                'X-Title': 'RoadmapFinder Project Helper Bot'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                model: 'anthropic/claude-3.5-sonnet',
-                messages: [
-                    {
-                        role: 'user',
-                        content: prompt
-                    }
-                ],
-                temperature: 0.7,
-                max_tokens: 4000
-            })
+            body: JSON.stringify(requestBody)
         });
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error(`OpenRouter API error: ${response.status} - ${errorText}`);
+            const errorData = await response.json().catch(()=>null);
+            console.error('Gemini API error:', response.status, errorData);
+            if (response.status === 401) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    error: 'Invalid API key configuration'
+                }, {
+                    status: 500
+                });
+            } else if (response.status === 429) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    error: 'API rate limit exceeded. Please try again in a few minutes.'
+                }, {
+                    status: 500
+                });
+            } else if (response.status === 403) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    error: 'API quota exceeded or access denied. Please check your Gemini API configuration.'
+                }, {
+                    status: 500
+                });
+            } else if (response.status >= 500) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    error: 'Gemini API service temporarily unavailable. Please try again later.'
+                }, {
+                    status: 500
+                });
+            }
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: `API request failed: ${response.status}`
+                error: 'Failed to connect to Gemini API'
             }, {
                 status: 500
             });
         }
         const data = await response.json();
-        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
-            console.error('Invalid response structure from OpenRouter API');
+        console.log('Gemini API response received for project generation');
+        if (!data.candidates || data.candidates.length === 0) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'Invalid response from AI service'
+                error: 'No response from AI model'
             }, {
                 status: 500
             });
         }
-        const content = data.choices[0].message.content;
+        const content = data.candidates[0].content.parts[0].text;
         // Extract JSON from the response - more robust parsing
         let jsonMatch = content.match(/\{[\s\S]*\}/);
         if (!jsonMatch) {
@@ -230,11 +306,28 @@ Make sure the response is practical, modern, and includes current best practices
                 projectData[field] = getDefaultValue(field);
             }
         }
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(projectData);
-    } catch (error) {
-        console.error('Error generating project:', error);
+        // Enhanced response with metadata
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: 'Failed to generate project guide'
+            ...projectData,
+            metadata: {
+                model: 'gemini-2.0-flash-exp',
+                timestamp: new Date().toISOString(),
+                tokens_used: data.usageMetadata?.totalTokenCount || 'N/A'
+            }
+        });
+    } catch (error) {
+        console.error('Project generation API error:', error.message);
+        // Enhanced error handling
+        if (error.name === 'AbortError') {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: 'Request timeout. The AI is taking longer than expected. Please try again.'
+            }, {
+                status: 500
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            error: 'Failed to generate project guide',
+            details: ("TURBOPACK compile-time truthy", 1) ? error.message : ("TURBOPACK unreachable", undefined)
         }, {
             status: 500
         });

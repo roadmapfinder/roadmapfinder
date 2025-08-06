@@ -1,5 +1,4 @@
 // app/api/generate-project/route.js
-import axios from 'axios';
 import { NextResponse } from 'next/server';
 
 export async function POST(request) {
@@ -11,12 +10,12 @@ export async function POST(request) {
     }
 
     // Validate API key exists
-    if (!process.env.OPENROUTER_API_KEY) {
-      console.error('OPENROUTER_API_KEY is not set');
+    if (!process.env.GEMINI_API_KEY) {
+      console.error('GEMINI_API_KEY is not set');
       return NextResponse.json({ error: 'API configuration error' }, { status: 500 });
     }
 
-    console.log('Making request to OpenRouter API for project generation...');
+    console.log('Making request to Gemini API for project generation...');
 
     const prompt = `
 You are an expert full-stack software architect, AI consultant, and technical project planner.
@@ -39,9 +38,6 @@ Ensure every step is practical, structured, and developer-actionable
 
 Return ONLY a valid JSON object (no extra text), using the following format:
 
-json
-Copy
-Edit
 {
   "mindMap": {
     "name": "Project Name",
@@ -109,40 +105,94 @@ Edit
   ]
 }`;
 
-    const response = await axios.post(
-      'https://openrouter.ai/api/v1/chat/completions',
-      {
-        model: 'anthropic/claude-3-haiku:beta',
-        messages: [
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
+    // Gemini API request body
+    const requestBody = {
+      contents: [{
+        parts: [{
+          text: prompt
+        }]
+      }],
+      generationConfig: {
         temperature: 0.7,
-        max_tokens: 4000,
+        topK: 40,
+        topP: 0.95,
+        maxOutputTokens: 8192,
+        responseMimeType: "text/plain"
       },
-      {
-        headers: {
-          'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-          'X-Title': 'RoadmapFinder Project Helper Bot',
+      safetySettings: [
+        {
+          category: "HARM_CATEGORY_HARASSMENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
         },
-        timeout: 45000, // 45 second timeout
+        {
+          category: "HARM_CATEGORY_HATE_SPEECH",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+          category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+          category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        }
+      ]
+    };
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
       }
     );
 
-    console.log('OpenRouter API response received for project generation');
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      console.error('Gemini API error:', response.status, errorData);
 
-    if (!response.data.choices || response.data.choices.length === 0) {
+      if (response.status === 401) {
+        return NextResponse.json(
+          { error: 'Invalid API key configuration' },
+          { status: 500 }
+        );
+      } else if (response.status === 429) {
+        return NextResponse.json(
+          { error: 'API rate limit exceeded. Please try again in a few minutes.' },
+          { status: 500 }
+        );
+      } else if (response.status === 403) {
+        return NextResponse.json(
+          { error: 'API quota exceeded or access denied. Please check your Gemini API configuration.' },
+          { status: 500 }
+        );
+      } else if (response.status >= 500) {
+        return NextResponse.json(
+          { error: 'Gemini API service temporarily unavailable. Please try again later.' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json(
+        { error: 'Failed to connect to Gemini API' },
+        { status: 500 }
+      );
+    }
+
+    const data = await response.json();
+    console.log('Gemini API response received for project generation');
+
+    if (!data.candidates || data.candidates.length === 0) {
       return NextResponse.json(
         { error: 'No response from AI model' },
         { status: 500 }
       );
     }
 
-    const content = response.data.choices[0].message.content;
+    const content = data.candidates[0].content.parts[0].text;
 
     // Extract JSON from the response - more robust parsing
     let jsonMatch = content.match(/\{[\s\S]*\}/);
@@ -185,43 +235,23 @@ Edit
       }
     }
 
-    // Enhanced response with metadata (consistent with career route)
+    // Enhanced response with metadata
     return NextResponse.json({ 
       ...projectData,
       metadata: {
-        model: 'anthropic/claude-3.5-sonnet',
+        model: 'gemini-2.0-flash-exp',
         timestamp: new Date().toISOString(),
-        tokens_used: response.data.usage?.total_tokens || 'N/A'
+        tokens_used: data.usageMetadata?.totalTokenCount || 'N/A'
       }
     });
 
   } catch (error) {
-    console.error('Project generation API error:', error.response?.data || error.message);
+    console.error('Project generation API error:', error.message);
 
-    // Enhanced error handling (consistent with career route)
-    if (error.response?.status === 401) {
-      return NextResponse.json(
-        { error: 'Invalid API key configuration' },
-        { status: 500 }
-      );
-    } else if (error.response?.status === 429) {
-      return NextResponse.json(
-        { error: 'API rate limit exceeded. Please try again in a few minutes.' },
-        { status: 500 }
-      );
-    } else if (error.response?.status === 402) {
-      return NextResponse.json(
-        { error: 'API quota exceeded. Please check your OpenRouter credits.' },
-        { status: 500 }
-      );
-    } else if (error.code === 'ECONNABORTED') {
+    // Enhanced error handling
+    if (error.name === 'AbortError') {
       return NextResponse.json(
         { error: 'Request timeout. The AI is taking longer than expected. Please try again.' },
-        { status: 500 }
-      );
-    } else if (error.response?.status >= 500) {
-      return NextResponse.json(
-        { error: 'AI service temporarily unavailable. Please try again later.' },
         { status: 500 }
       );
     }
@@ -229,7 +259,7 @@ Edit
     return NextResponse.json(
       { 
         error: 'Failed to generate project guide',
-        details: process.env.NODE_ENV === 'development' ? error.response?.data?.error || error.message : 'Please try again later'
+        details: process.env.NODE_ENV === 'development' ? error.message : 'Please try again later'
       },
       { status: 500 }
     );

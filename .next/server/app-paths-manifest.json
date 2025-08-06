@@ -1,8 +1,5 @@
 {
-  "/Courses/page": "app/Courses/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Blockchain/page": "app/Roadmaps/Blockchain/page.js",
-  "/Roadmaps/C/page": "app/Roadmaps/C/page.js",
-  "/Roadmaps/Cloud/page": "app/Roadmaps/Cloud/page.js",
+  "/Project-helper/page": "app/Project-helper/page.js",
+  "/api/generate-project/route": "app/api/generate-project/route.js",
   "/page": "app/page.js"
 }
