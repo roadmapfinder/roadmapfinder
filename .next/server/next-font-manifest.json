@@ -1,6 +1,15 @@
 {
   "app": {
-    "[project]/app/Project-helper/page": [
+    "[project]/app/Courses/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/RoadmapPage/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Roadmaps/Devops/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/_not-found/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [

@@ -19,7 +19,8 @@
     "CyberSecurity",
     "Frameworks & Libraries",
     "Generative AI",
-    "Prompt Engineering"
+    "Prompt Engineering",
+    "DevOps"
     
 
   ],
@@ -825,8 +826,51 @@
       "videoId": "https://youtu.be/mkiKUPqcFEs?si=a9BuhxPCSNdaagiL",
       "badge": "NEW",
       "language": "Hindi"
+    },
+    {
+      "id": 72,
+      "category": "DevOps",
+      "title": "DevOps Complete Course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "devops",
+      "videoId": "https://youtu.be/ZbG0c87wcM8?si=qu8eOwTSYypHCO15",
+      "badge": "NEW",
+      "language": "English"
+    },
+    {
+      "id": 73,
+      "category": "DevOps",
+      "title": "Docker complete  course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "docker",
+      "videoId": "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB",
+      "badge": "NEW",
+      "language": "Hindi"
+    },
+    {
+      "id": 74,
+      "category": "DevOps",
+      "title": "AWS complete  course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "aws",
+      "videoId": "https://youtu.be/AgOmeANl3ls?si=D7srdgd9cENn9Rqm",
+      "badge": "HOT",
+      "language": "Hindi"
+    },
+    {
+      "id": 75,
+      "category": "DevOps",
+      "title": "Kubernetes complete  course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "kubernetes",
+      "videoId": "https://youtu.be/7XDeI5fyj3w?si=5Mhk7eeWSOZPJzj9",
+      "badge": "Trending",
+      "language": "English"
     }
-    
 
   ]
 }

@@ -92,6 +92,10 @@ import rust from "../CoursesImage/rust.jpg"
 import go from "../CoursesImage/go.jpg"
 import prompte from "../CoursesImage/prompte.jpg"
 import prompth from "../CoursesImage/prompth.jpg"
+import devops from "../CoursesImage/devops.jpg"
+import kubernetes from "../CoursesImage/kubernetes.jpg"
+import docker from "../CoursesImage/docker.jpg"
+import aws from "../CoursesImage/aws.jpg"
 
 
 
@@ -106,7 +110,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte
+  prompth,prompte, devops , aws, docker, kubernetes
 };
 
 export default function CoursePage() {
