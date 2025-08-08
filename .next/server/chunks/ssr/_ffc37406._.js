@@ -17,7 +17,7 @@ var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
 {
 const e = new Error(`Could not parse module '[project]/app/Project-helper/page.jsx'
 
-Expression expected`);
+Unexpected token `(`. Expected jsx identifier`);
 e.code = 'MODULE_UNPARSEABLE';
 throw e;}}),
 "[project]/app/Project-helper/page.jsx [app-rsc] (ecmascript, Next.js server component)": ((__turbopack_context__) => {

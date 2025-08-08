@@ -5641,18 +5641,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-green-50:hover {
-      background-color: var(--color-green-50);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-green-600:hover {
-      background-color: var(--color-green-600);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-green-700:hover {
       background-color: var(--color-green-700);
     }
@@ -5677,20 +5665,8 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-red-50:hover {
-      background-color: var(--color-red-50);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-red-100:hover {
       background-color: var(--color-red-100);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-red-600:hover {
-      background-color: var(--color-red-600);
     }
   }
 
@@ -5951,38 +5927,14 @@
   }
 
   @media (hover: hover) {
-    .hover\:text-green-400:hover {
-      color: var(--color-green-400);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:text-green-600:hover {
-      color: var(--color-green-600);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:text-indigo-800:hover {
       color: var(--color-indigo-800);
     }
   }
 
   @media (hover: hover) {
-    .hover\:text-red-400:hover {
-      color: var(--color-red-400);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:text-red-500:hover {
       color: var(--color-red-500);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:text-red-600:hover {
-      color: var(--color-red-600);
     }
   }
 
@@ -6093,6 +6045,10 @@
     --tw-ring-color: var(--color-blue-600);
   }
 
+  .focus\:ring-gray-500:focus {
+    --tw-ring-color: var(--color-gray-500);
+  }
+
   .focus\:ring-green-500:focus {
     --tw-ring-color: var(--color-green-500);
   }
@@ -6192,6 +6148,12 @@
   }
 
   @media (width >= 40rem) {
+    .sm\:top-14 {
+      top: calc(var(--spacing) * 14);
+    }
+  }
+
+  @media (width >= 40rem) {
     .sm\:-right-1 {
       right: calc(var(--spacing) * -1);
     }
@@ -6200,6 +6162,12 @@
   @media (width >= 40rem) {
     .sm\:-right-40 {
       right: calc(var(--spacing) * -40);
+    }
+  }
+
+  @media (width >= 40rem) {
+    .sm\:right-4 {
+      right: calc(var(--spacing) * 4);
     }
   }
 
@@ -6216,8 +6184,20 @@
   }
 
   @media (width >= 40rem) {
+    .sm\:bottom-4 {
+      bottom: calc(var(--spacing) * 4);
+    }
+  }
+
+  @media (width >= 40rem) {
     .sm\:-left-40 {
       left: calc(var(--spacing) * -40);
+    }
+  }
+
+  @media (width >= 40rem) {
+    .sm\:left-4 {
+      left: calc(var(--spacing) * 4);
     }
   }
 
@@ -6605,6 +6585,12 @@
   @media (width >= 40rem) {
     .sm\:gap-0 {
       gap: calc(var(--spacing) * 0);
+    }
+  }
+
+  @media (width >= 40rem) {
+    .sm\:gap-2 {
+      gap: calc(var(--spacing) * 2);
     }
   }
 
@@ -7299,6 +7285,12 @@
   }
 
   @media (width >= 64rem) {
+    .lg\:mb-16 {
+      margin-bottom: calc(var(--spacing) * 16);
+    }
+  }
+
+  @media (width >= 64rem) {
     .lg\:ml-1 {
       margin-left: calc(var(--spacing) * 1);
     }
@@ -7516,6 +7508,12 @@
   @media (width >= 64rem) {
     .lg\:px-8 {
       padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:py-4 {
+      padding-block: calc(var(--spacing) * 4);
     }
   }
 

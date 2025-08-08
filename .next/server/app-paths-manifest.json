@@ -1,7 +1,12 @@
 {
   "/Courses/page": "app/Courses/page.js",
+  "/Project-helper/page": "app/Project-helper/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Devops/page": "app/Roadmaps/Devops/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/Roadmaps/Blockchain/page": "app/Roadmaps/Blockchain/page.js",
+  "/Roadmaps/C/page": "app/Roadmaps/C/page.js",
+  "/Roadmaps/Cpp/page": "app/Roadmaps/Cpp/page.js",
+  "/Roadmaps/CyberSecurity/page": "app/Roadmaps/CyberSecurity/page.js",
+  "/Roadmaps/UIUX/page": "app/Roadmaps/UIUX/page.js",
+  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
   "/page": "app/page.js"
 }

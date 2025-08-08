@@ -489,7 +489,7 @@ export default function Home() {
               <p
                 className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
               >
-                Add your roadmap data to get started with your Backend Developer
+                Add your roadmap data to get started with your Cloud Engineer
                 journey.
               </p>
             </div>

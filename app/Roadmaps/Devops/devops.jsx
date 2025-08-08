@@ -38,7 +38,6 @@ export default function Home() {
     },
     {
       name: "Docker",
-      icon: "🎯",
       url: "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB",
     },
     {
