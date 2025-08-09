@@ -1,12 +1,13 @@
 {
+  "/CareerGuidance/page": "app/CareerGuidance/page.js",
   "/Courses/page": "app/Courses/page.js",
   "/Project-helper/page": "app/Project-helper/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Blockchain/page": "app/Roadmaps/Blockchain/page.js",
-  "/Roadmaps/C/page": "app/Roadmaps/C/page.js",
-  "/Roadmaps/Cpp/page": "app/Roadmaps/Cpp/page.js",
-  "/Roadmaps/CyberSecurity/page": "app/Roadmaps/CyberSecurity/page.js",
-  "/Roadmaps/UIUX/page": "app/Roadmaps/UIUX/page.js",
-  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
+  "/Roadmaps/Backend/page": "app/Roadmaps/Backend/page.js",
+  "/Roadmaps/DSA/page": "app/Roadmaps/DSA/page.js",
+  "/Roadmaps/Django/page": "app/Roadmaps/Django/page.js",
+  "/Roadmaps/Excel/page": "app/Roadmaps/Excel/page.js",
+  "/Roadmaps/Frontend/page": "app/Roadmaps/Frontend/page.js",
+  "/api/generate-project/route": "app/api/generate-project/route.js",
   "/page": "app/page.js"
 }

@@ -29,33 +29,31 @@ var _s = __turbopack_context__.k.signature();
 ;
 function ProjectGeneratorApp() {
     _s();
-    const [projectIdea, setProjectIdea] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [projectIdea, setProjectIdea] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [result, setResult] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('overview');
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("overview");
     const handleSubmit = async (e)=>{
         e.preventDefault();
         if (!projectIdea.trim()) return;
         setIsLoading(true);
-        setError('');
+        setError("");
         setResult(null);
         try {
-            const response = await fetch('/api/generate-project', {
-                method: 'POST',
+            const response = await fetch("/api/generate-project", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     projectIdea
                 })
             });
             const data = await response.json();
-            if (!response.ok) {
-                throw new Error(data.error || 'Failed to generate project');
-            }
+            if (!response.ok) throw new Error(data.error || "Failed to generate project");
             setResult(data);
-            setActiveTab('overview');
+            setActiveTab("overview");
         } catch (err) {
             setError(err.message);
         } finally{
@@ -65,54 +63,54 @@ function ProjectGeneratorApp() {
     const projectTypes = [
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"],
-            label: 'Web App',
-            example: 'E-commerce platform with user authentication'
+            label: "Web App",
+            example: "E-commerce platform with user authentication"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"],
-            label: 'Mobile App',
-            example: 'Fitness tracking app with social features'
+            label: "Mobile App",
+            example: "Fitness tracking app with social features"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__["Brain"],
-            label: 'AI/ML Project',
-            example: 'Image recognition system for medical diagnosis'
+            label: "AI/ML Project",
+            example: "Image recognition system for medical diagnosis"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"],
-            label: 'Backend API',
-            example: 'RESTful API for inventory management'
+            label: "Backend API",
+            example: "RESTful API for inventory management"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__["Palette"],
-            label: 'Design System',
-            example: 'Component library for enterprise applications'
+            label: "Design System",
+            example: "Component library for enterprise applications"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cpu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Cpu$3e$__["Cpu"],
-            label: 'Blockchain',
-            example: 'NFT marketplace with smart contracts'
+            label: "Blockchain",
+            example: "NFT marketplace with smart contracts"
         }
     ];
     const tabs = [
         {
-            id: 'overview',
-            label: 'Overview',
+            id: "overview",
+            label: "Overview",
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"]
         },
         {
-            id: 'roadmap',
-            label: 'Roadmap',
+            id: "roadmap",
+            label: "Roadmap",
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__["Code"]
         },
         {
-            id: 'tech',
-            label: 'Tech Stack',
+            id: "tech",
+            label: "Tech Stack",
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cpu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Cpu$3e$__["Cpu"]
         },
         {
-            id: 'resources',
-            label: 'Resources',
+            id: "resources",
+            label: "Resources",
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"]
         }
     ];
@@ -122,13 +120,13 @@ function ProjectGeneratorApp() {
             fontFamily: "'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         },
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12",
+            className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12",
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-16",
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+                    className: "text-center mb-10 sm:mb-16",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "inline-flex items-center gap-3 mb-6",
+                            className: "inline-flex items-center gap-3 mb-4 sm:mb-6",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "p-3 bg-blue-600 rounded-xl",
@@ -136,58 +134,59 @@ function ProjectGeneratorApp() {
                                         className: "w-8 h-8 text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 68,
+                                        lineNumber: 79,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 78,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    className: "text-4xl font-bold text-gray-900",
+                                    className: "text-3xl sm:text-4xl font-bold text-gray-900",
                                     children: "AI Project Generator"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 70,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 66,
+                            lineNumber: 77,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed",
+                            className: "text-base sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed",
                             children: "Transform your ideas into actionable project plans with comprehensive tech stacks, roadmaps, and resources."
                         }, void 0, false, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 72,
+                            lineNumber: 85,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Project-helper/page.jsx",
-                    lineNumber: 65,
+                    lineNumber: 76,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-4xl mx-auto mb-12",
+                    className: "max-w-4xl mx-auto mb-10 sm:mb-12",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             onSubmit: handleSubmit,
                             className: "space-y-6",
+                            "aria-busy": isLoading,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-white rounded-2xl shadow-sm border border-gray-200 p-8",
+                                className: "bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                         htmlFor: "projectIdea",
-                                        className: "block text-lg font-semibold text-gray-900 mb-4",
+                                        className: "block text-lg font-semibold text-gray-900 mb-3 sm:mb-4",
                                         children: "Describe your project idea"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 81,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -195,45 +194,48 @@ function ProjectGeneratorApp() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                                 id: "projectIdea",
+                                                "aria-label": "Describe your project idea",
                                                 value: projectIdea,
                                                 onChange: (e)=>setProjectIdea(e.target.value),
-                                                placeholder: "e.g., A task management app with AI-powered priority suggestions, team collaboration features, and real-time notifications...",
-                                                className: "w-full p-4 border border-gray-300 rounded-xl resize-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200 text-base",
+                                                placeholder: "e.g., A task management app with AI-powered priority suggestions...",
+                                                className: "w-full p-3 sm:p-4 border border-gray-300 rounded-xl resize-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200 text-base sm:text-lg",
                                                 rows: 4,
+                                                maxLength: 1000,
                                                 disabled: isLoading
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 85,
+                                                lineNumber: 105,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute bottom-4 right-4 text-sm text-gray-400",
+                                                className: "absolute bottom-3 right-4 text-xs sm:text-sm text-gray-400",
                                                 children: [
                                                     projectIdea.length,
                                                     "/1000"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 94,
+                                                lineNumber: 116,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 84,
+                                        lineNumber: 104,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "submit",
                                         disabled: isLoading || !projectIdea.trim(),
-                                        className: "mt-6 w-full sm:w-auto px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 inline-flex items-center justify-center gap-2",
+                                        className: "mt-4 sm:mt-6 w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 inline-flex items-center justify-center gap-2 min-h-[44px]",
                                         children: isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                                    className: "w-5 h-5 animate-spin"
+                                                    className: "w-5 h-5 animate-spin",
+                                                    "aria-hidden": "true"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 106,
+                                                    lineNumber: 128,
                                                     columnNumber: 21
                                                 }, this),
                                                 "Generating Project Plan..."
@@ -241,10 +243,11 @@ function ProjectGeneratorApp() {
                                         }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                                    className: "w-5 h-5"
+                                                    className: "w-5 h-5",
+                                                    "aria-hidden": "true"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 133,
                                                     columnNumber: 21
                                                 }, this),
                                                 "Generate Project Plan"
@@ -252,45 +255,46 @@ function ProjectGeneratorApp() {
                                         }, void 0, true)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 99,
+                                        lineNumber: 121,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 80,
+                                lineNumber: 97,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 79,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, this),
-                        !result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-8",
+                        !result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                            className: "mt-6 sm:mt-8",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-lg font-semibold text-gray-900 mb-4",
+                                    className: "text-lg font-semibold text-gray-900 mb-3 sm:mb-4",
                                     children: "Popular project types"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 122,
+                                    lineNumber: 144,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+                                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4",
                                     children: projectTypes.map((type, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>setProjectIdea(type.example),
-                                            className: "text-left p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all duration-200 group",
+                                            className: "text-left p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all duration-200 group min-h-[44px]",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center gap-3 mb-2",
+                                                    className: "flex items-center gap-3 mb-1 sm:mb-2",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(type.icon, {
-                                                            className: "w-5 h-5 text-blue-600"
+                                                            className: "w-5 h-5 text-blue-600",
+                                                            "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 155,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -298,13 +302,13 @@ function ProjectGeneratorApp() {
                                                             children: type.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 132,
+                                                            lineNumber: 156,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 130,
+                                                    lineNumber: 154,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -312,42 +316,45 @@ function ProjectGeneratorApp() {
                                                     children: type.example
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 158,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 125,
+                                            lineNumber: 149,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 123,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 121,
+                            lineNumber: 143,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Project-helper/page.jsx",
-                    lineNumber: 78,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-4xl mx-auto mb-8",
+                    className: "max-w-4xl mx-auto mb-6 sm:mb-8",
+                    role: "alert",
+                    "aria-live": "polite",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bg-red-50 border border-red-200 rounded-xl p-4 flex items-center gap-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
-                                className: "w-5 h-5 text-red-600 flex-shrink-0"
+                                className: "w-5 h-5 text-red-600 flex-shrink-0",
+                                "aria-hidden": "true"
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 148,
+                                lineNumber: 176,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -355,174 +362,182 @@ function ProjectGeneratorApp() {
                                 children: error
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 149,
+                                lineNumber: 177,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Project-helper/page.jsx",
-                        lineNumber: 147,
+                        lineNumber: 175,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Project-helper/page.jsx",
-                    lineNumber: 146,
+                    lineNumber: 170,
                     columnNumber: 11
                 }, this),
                 result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "max-w-6xl mx-auto",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-green-50 border border-green-200 rounded-xl p-4 mb-8 flex items-center gap-3",
+                            className: "bg-green-50 border border-green-200 rounded-xl p-4 mb-6 sm:mb-8 flex items-center gap-3",
+                            role: "status",
+                            "aria-live": "polite",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                    className: "w-5 h-5 text-green-600 flex-shrink-0"
+                                    className: "w-5 h-5 text-green-600 flex-shrink-0",
+                                    "aria-hidden": "true"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 159,
+                                    lineNumber: 191,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-green-800 font-medium",
-                                    children: "Project plan generated successfully! Here's your comprehensive guide."
+                                    children: "Project plan generated successfully! Here's your guide."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 160,
+                                    lineNumber: 192,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 158,
+                            lineNumber: 186,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "border-b border-gray-200",
+                                    className: "border-b border-gray-200 overflow-x-auto",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                                        className: "flex",
+                                        className: "flex min-w-max sm:min-w-0 sm:flex-wrap",
+                                        role: "tablist",
+                                        "aria-label": "Project Sections",
                                         children: tabs.map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setActiveTab(tab.id),
-                                                className: `flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${activeTab === tab.id ? 'border-blue-600 text-blue-600 bg-blue-50' : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'}`,
+                                                className: `flex items-center gap-2 px-4 sm:px-6 py-3 sm:py-4 text-sm font-medium border-b-2 transition-all duration-200 min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${activeTab === tab.id ? "border-blue-600 text-blue-600 bg-blue-50" : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"}`,
+                                                role: "tab",
+                                                "aria-selected": activeTab === tab.id,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(tab.icon, {
-                                                        className: "w-4 h-4"
+                                                        className: "w-4 h-4",
+                                                        "aria-hidden": "true"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 179,
+                                                        lineNumber: 217,
                                                         columnNumber: 23
                                                     }, this),
-                                                    tab.label
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: tab.label
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Project-helper/page.jsx",
+                                                        lineNumber: 218,
+                                                        columnNumber: 23
+                                                    }, this)
                                                 ]
                                             }, tab.id, true, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 170,
+                                                lineNumber: 206,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 168,
+                                        lineNumber: 200,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 167,
+                                    lineNumber: 199,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-8",
+                                    className: "p-6 sm:p-8",
                                     children: [
-                                        activeTab === 'overview' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-8",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "text-2xl font-bold text-gray-900 mb-6",
-                                                        children: result.mindMap?.name || 'Project Overview'
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 191,
-                                                        columnNumber: 23
-                                                    }, this),
-                                                    result.mindMap?.children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "grid grid-cols-1 lg:grid-cols-2 gap-6",
-                                                        children: result.mindMap.children.map((component, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "bg-gray-50 rounded-xl p-6",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                        className: "text-lg font-semibold text-gray-900 mb-4",
-                                                                        children: component.name
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 199,
-                                                                        columnNumber: 31
-                                                                    }, this),
-                                                                    component.children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                        className: "space-y-2",
-                                                                        children: component.children.map((subComponent, subIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                                                className: "flex items-center gap-2 text-gray-700",
-                                                                                children: [
-                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                        className: "w-1.5 h-1.5 bg-blue-600 rounded-full"
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 206,
-                                                                                        columnNumber: 39
-                                                                                    }, this),
-                                                                                    subComponent.name
-                                                                                ]
-                                                                            }, subIndex, true, {
-                                                                                fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 205,
-                                                                                columnNumber: 37
-                                                                            }, this))
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 203,
-                                                                        columnNumber: 33
-                                                                    }, this)
-                                                                ]
-                                                            }, index, true, {
-                                                                fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 198,
-                                                                columnNumber: 29
-                                                            }, this))
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 196,
-                                                        columnNumber: 25
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 190,
-                                                columnNumber: 21
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 189,
-                                            columnNumber: 19
-                                        }, this),
-                                        activeTab === 'roadmap' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-8",
+                                        activeTab === "overview" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-6 sm:space-y-8",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "text-2xl font-bold text-gray-900",
+                                                    className: "text-xl sm:text-2xl font-bold text-gray-900",
+                                                    children: result.mindMap?.name || "Project Overview"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Project-helper/page.jsx",
+                                                    lineNumber: 229,
+                                                    columnNumber: 21
+                                                }, this),
+                                                result.mindMap?.children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6",
+                                                    children: result.mindMap.children.map((component, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "bg-gray-50 rounded-xl p-4 sm:p-6",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                    className: "text-lg font-semibold text-gray-900 mb-3",
+                                                                    children: component.name
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/Project-helper/page.jsx",
+                                                                    lineNumber: 236,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                component.children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                                    className: "space-y-2",
+                                                                    children: component.children.map((subComponent, subIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                                            className: "flex items-center gap-2 text-gray-700",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "w-1.5 h-1.5 bg-blue-600 rounded-full"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/app/Project-helper/page.jsx",
+                                                                                    lineNumber: 246,
+                                                                                    columnNumber: 37
+                                                                                }, this),
+                                                                                subComponent.name
+                                                                            ]
+                                                                        }, subIndex, true, {
+                                                                            fileName: "[project]/app/Project-helper/page.jsx",
+                                                                            lineNumber: 242,
+                                                                            columnNumber: 35
+                                                                        }, this))
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/Project-helper/page.jsx",
+                                                                    lineNumber: 240,
+                                                                    columnNumber: 31
+                                                                }, this)
+                                                            ]
+                                                        }, index, true, {
+                                                            fileName: "[project]/app/Project-helper/page.jsx",
+                                                            lineNumber: 235,
+                                                            columnNumber: 27
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Project-helper/page.jsx",
+                                                    lineNumber: 233,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Project-helper/page.jsx",
+                                            lineNumber: 228,
+                                            columnNumber: 19
+                                        }, this),
+                                        activeTab === "roadmap" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-6 sm:space-y-8",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                    className: "text-xl sm:text-2xl font-bold text-gray-900",
                                                     children: "Development Roadmap"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 223,
+                                                    lineNumber: 262,
                                                     columnNumber: 21
                                                 }, this),
-                                                result.roadmap && result.roadmap.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                result.roadmap?.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "space-y-6",
                                                     children: result.roadmap.map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "relative",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "bg-white border border-gray-200 rounded-xl p-6",
+                                                                    className: "bg-white border border-gray-200 rounded-xl p-4 sm:p-6",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                         className: "flex items-start gap-4",
                                                                         children: [
@@ -533,12 +548,12 @@ function ProjectGeneratorApp() {
                                                                                     children: index + 1
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 232,
+                                                                                    lineNumber: 272,
                                                                                     columnNumber: 35
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 231,
+                                                                                lineNumber: 271,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -549,7 +564,7 @@ function ProjectGeneratorApp() {
                                                                                         children: phase.phase
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 237,
+                                                                                        lineNumber: 277,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -557,7 +572,7 @@ function ProjectGeneratorApp() {
                                                                                         children: phase.description
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 240,
+                                                                                        lineNumber: 280,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     phase.tasks && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -569,91 +584,91 @@ function ProjectGeneratorApp() {
                                                                                                         className: "w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 245,
+                                                                                                        lineNumber: 288,
                                                                                                         columnNumber: 43
                                                                                                     }, this),
                                                                                                     task
                                                                                                 ]
                                                                                             }, taskIndex, true, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 244,
+                                                                                                lineNumber: 284,
                                                                                                 columnNumber: 41
                                                                                             }, this))
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 242,
+                                                                                        lineNumber: 282,
                                                                                         columnNumber: 37
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 236,
+                                                                                lineNumber: 276,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 230,
+                                                                        lineNumber: 270,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 229,
+                                                                    lineNumber: 269,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 index < result.roadmap.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "absolute left-4 top-14 w-0.5 h-6 bg-gray-300"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 255,
+                                                                    lineNumber: 298,
                                                                     columnNumber: 31
                                                                 }, this)
                                                             ]
                                                         }, index, true, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 228,
+                                                            lineNumber: 268,
                                                             columnNumber: 27
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 226,
+                                                    lineNumber: 266,
                                                     columnNumber: 23
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-gray-500",
                                                     children: "No roadmap data available."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 261,
+                                                    lineNumber: 304,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 222,
+                                            lineNumber: 261,
                                             columnNumber: 19
                                         }, this),
-                                        activeTab === 'tech' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-8",
+                                        activeTab === "tech" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-6 sm:space-y-8",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "text-2xl font-bold text-gray-900",
+                                                    className: "text-xl sm:text-2xl font-bold text-gray-900",
                                                     children: "Technology Stack"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 269,
+                                                    lineNumber: 312,
                                                     columnNumber: 21
                                                 }, this),
                                                 result.techStack && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+                                                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6",
                                                     children: Object.entries(result.techStack).map(([category, technologies])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "bg-gray-50 rounded-xl p-6",
+                                                            className: "bg-gray-50 rounded-xl p-4 sm:p-6",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                                     className: "text-lg font-semibold text-gray-900 mb-4 capitalize",
-                                                                    children: category.replace(/([A-Z])/g, ' $1').trim()
+                                                                    children: category.replace(/([A-Z])/g, " $1").trim()
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 275,
+                                                                    lineNumber: 319,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -663,117 +678,61 @@ function ProjectGeneratorApp() {
                                                                             children: tech
                                                                         }, index, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 281,
-                                                                            columnNumber: 35
+                                                                            lineNumber: 325,
+                                                                            columnNumber: 37
                                                                         }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                         className: "bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700",
                                                                         children: technologies
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 286,
-                                                                        columnNumber: 33
+                                                                        lineNumber: 333,
+                                                                        columnNumber: 35
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 278,
+                                                                    lineNumber: 322,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, category, true, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 274,
+                                                            lineNumber: 318,
                                                             columnNumber: 27
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 272,
-                                                    columnNumber: 23
-                                                }, this),
-                                                result.packages && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "mt-8",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-xl font-semibold text-gray-900 mb-4",
-                                                            children: "Packages & Tools"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 298,
-                                                            columnNumber: 25
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-1 md:grid-cols-2 gap-6",
-                                                            children: Object.entries(result.packages).map(([type, packages])=>Array.isArray(packages) && packages.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "bg-gray-50 rounded-xl p-6",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                            className: "font-semibold text-gray-900 mb-3 capitalize",
-                                                                            children: type
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 303,
-                                                                            columnNumber: 33
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "flex flex-wrap gap-2",
-                                                                            children: packages.map((pkg, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    className: "bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium",
-                                                                                    children: pkg
-                                                                                }, index, false, {
-                                                                                    fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 306,
-                                                                                    columnNumber: 37
-                                                                                }, this))
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 304,
-                                                                            columnNumber: 33
-                                                                        }, this)
-                                                                    ]
-                                                                }, type, true, {
-                                                                    fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 302,
-                                                                    columnNumber: 31
-                                                                }, this))
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 299,
-                                                            columnNumber: 25
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 297,
+                                                    lineNumber: 316,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 268,
+                                            lineNumber: 311,
                                             columnNumber: 19
                                         }, this),
-                                        activeTab === 'resources' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-8",
+                                        activeTab === "resources" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-6 sm:space-y-8",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "text-2xl font-bold text-gray-900",
+                                                    className: "text-xl sm:text-2xl font-bold text-gray-900",
                                                     children: "Learning Resources"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 348,
                                                     columnNumber: 21
                                                 }, this),
-                                                result.documentation && result.documentation.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                result.documentation?.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-xl font-semibold text-gray-900 mb-4",
+                                                            className: "text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4",
                                                             children: "Documentation"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 328,
+                                                            lineNumber: 354,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
                                                             children: result.documentation.map((doc, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                     href: doc.url,
                                                                     target: "_blank",
@@ -781,11 +740,11 @@ function ProjectGeneratorApp() {
                                                                     className: "block p-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all duration-200",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                            className: "font-semibold text-gray-900 mb-2",
+                                                                            className: "font-semibold text-gray-900 mb-1",
                                                                             children: doc.title
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 338,
+                                                                            lineNumber: 366,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -793,38 +752,38 @@ function ProjectGeneratorApp() {
                                                                             children: doc.description
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 339,
+                                                                            lineNumber: 367,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, index, true, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 331,
+                                                                    lineNumber: 359,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 329,
+                                                            lineNumber: 357,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 327,
+                                                    lineNumber: 353,
                                                     columnNumber: 23
                                                 }, this),
-                                                result.youtubeResources && result.youtubeResources.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                result.youtubeResources?.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-xl font-semibold text-gray-900 mb-4",
+                                                            className: "text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4",
                                                             children: "Video Tutorials"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 349,
+                                                            lineNumber: 376,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
                                                             children: result.youtubeResources.map((video, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                     href: video.url,
                                                                     target: "_blank",
@@ -836,15 +795,15 @@ function ProjectGeneratorApp() {
                                                                             children: video.title
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 359,
+                                                                            lineNumber: 388,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                            className: "text-sm text-blue-600 mb-2",
+                                                                            className: "text-sm text-blue-600 mb-1",
                                                                             children: video.channel
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 360,
+                                                                            lineNumber: 389,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -852,83 +811,83 @@ function ProjectGeneratorApp() {
                                                                             children: video.description
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 361,
+                                                                            lineNumber: 390,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, index, true, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 352,
+                                                                    lineNumber: 381,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 350,
+                                                            lineNumber: 379,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 348,
+                                                    lineNumber: 375,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 322,
+                                            lineNumber: 347,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 186,
+                                    lineNumber: 225,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 166,
+                            lineNumber: 198,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-8 text-center",
+                            className: "mt-6 sm:mt-8 text-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>{
                                     setResult(null);
-                                    setProjectIdea('');
-                                    setError('');
+                                    setProjectIdea("");
+                                    setError("");
                                 },
-                                className: "px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-xl hover:bg-gray-200 transition-all duration-200",
+                                className: "px-5 sm:px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-xl hover:bg-gray-200 transition-all duration-200 min-h-[44px]",
                                 children: "Generate Another Project"
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 374,
+                                lineNumber: 403,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Project-helper/page.jsx",
-                            lineNumber: 373,
+                            lineNumber: 402,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Project-helper/page.jsx",
-                    lineNumber: 156,
+                    lineNumber: 184,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Project-helper/page.jsx",
-            lineNumber: 63,
+            lineNumber: 73,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Project-helper/page.jsx",
-        lineNumber: 62,
+        lineNumber: 69,
         columnNumber: 5
     }, this);
 }
-_s(ProjectGeneratorApp, "z/42+Bm7dw9V1lxSZoDSEvoEbkM=");
+_s(ProjectGeneratorApp, "0xfH2lAqpJzDhSoHiwoNkHlCwSU=");
 _c = ProjectGeneratorApp;
 var _c;
 __turbopack_context__.k.register(_c, "ProjectGeneratorApp");

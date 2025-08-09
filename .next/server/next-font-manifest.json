@@ -1,5 +1,8 @@
 {
   "app": {
+    "[project]/app/CareerGuidance/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
     "[project]/app/Courses/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
@@ -9,22 +12,19 @@
     "[project]/app/RoadmapPage/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/Blockchain/page": [
+    "[project]/app/Roadmaps/Backend/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/C/page": [
+    "[project]/app/Roadmaps/DSA/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/Cpp/page": [
+    "[project]/app/Roadmaps/Django/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/CyberSecurity/page": [
+    "[project]/app/Roadmaps/Excel/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/UIUX/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/Roadmaps/Web/page": [
+    "[project]/app/Roadmaps/Frontend/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [
