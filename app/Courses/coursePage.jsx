@@ -52,7 +52,7 @@ import sql from "../CoursesImage/sql.jpg";
 import dataa from "../CoursesImage/dataa.jpg";
 import dataaw from "../CoursesImage/dataaw.jpg";
 import datas from "../CoursesImage/datas.jpg";
-import sys from "../CoursesImage/sys.jpg";
+import system from "../CoursesImage/system.jpg";
 import syse from "../CoursesImage/syse.jpg";
 import syss from "../CoursesImage/syss.jpg";
 import ai from "../CoursesImage/ai.jpg";
@@ -105,7 +105,7 @@ const imageMap = {
   figma, ui, design, uiux, graphic, graphics, logo, canva,
   js, python, java, cpp, c, php, blockchain, web3, block,
   dsajava, cppdsa, dsapy, dsajs, dbms, mongo, sql,
-  dataa, dataaw, datas, sys, syse, syss, ai, ml, deep,
+  dataa, dataaw, datas, system, syse, syss, ai, ml, deep,
   git, githube, githubh, os, osa, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,

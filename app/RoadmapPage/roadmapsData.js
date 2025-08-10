@@ -157,7 +157,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Typescript",
     bgColor: "from-blue-400 to-blue-600",
     category: "featured",
-    description: "Modern JavaScript programming"
+    description: "Modern Typescript programming"
   },
   {
     id: "python",

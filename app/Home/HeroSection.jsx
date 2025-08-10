@@ -137,7 +137,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
 
           {/* Desktop Layout (lg and above) - Enhanced with fixed min-height */}
           <div className="hidden lg:flex min-h-[400px]">
-            <div className="lg:w-1/2 p-8 xl:p-12 flex flex-col justify-center relative overflow-hidden">
+            <div className="lg:w-1/2 p-8 xl:p-10 flex flex-col justify-center relative overflow-hidden">
               {/* Background decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-xl opacity-60"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-pink-100 to-yellow-100 rounded-full blur-xl opacity-60"></div>

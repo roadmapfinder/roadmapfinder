@@ -32,6 +32,7 @@ import {
   TrendingUp,
   Shield,
   Clock,
+  Lightbulb,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -160,18 +161,12 @@ export default function HomePage() {
       feature: "Career Guidance"
     },
     {
-      name: "Docs",
-      icon: <FileText size={24} className="mr-3" />,
-      href: "/Docs",
+      name: "Project-helper",
+      icon: <Lightbulb size={24} className="mr-3" />,
+      href: "/ProjectHelper",
       protected: true,
-      feature: "Documentation"
-    },
-    {
-      name: "Tools",
-      icon: <PenTool size={24} className="mr-3" />,
-      href: "/TOOLS",
-      protected: true,
-      feature: "Tools"
+      feature: "Project Helper",
+      isNew: true
     },
     {
       name: "Blogs",
@@ -249,28 +244,16 @@ export default function HomePage() {
           { icon: <Rocket size={18} className="text-orange-500" />, text: "Salary negotiation guidance" }
         ]
       },
-      "Tools": {
-        icon: <PenTool size={28} className="text-blue-600" />,
-        title: "Access Developer Tools",
-        subtitle: "Boost your productivity with premium tools and resources",
+      "Project Helper": {
+        icon: <Lightbulb size={28} className="text-blue-600" />,
+        title: "AI-Powered Project Assistant",
+        subtitle: "Get intelligent help with your coding projects",
         benefits: [
-          { icon: <Wrench size={18} className="text-blue-500" />, text: "50+ productivity tools and utilities" },
-          { icon: <Zap size={18} className="text-green-500" />, text: "Code generators and templates" },
-          { icon: <Globe size={18} className="text-purple-500" />, text: "API testing and documentation tools" },
-          { icon: <Shield size={18} className="text-red-500" />, text: "Security and performance analyzers" },
-          { icon: <Star size={18} className="text-yellow-500" />, text: "Regular updates and new tools" }
-        ]
-      },
-      "Documentation": {
-        icon: <FileText size={28} className="text-blue-600" />,
-        title: "Comprehensive Documentation",
-        subtitle: "Access detailed guides and references for every technology",
-        benefits: [
-          { icon: <BookOpen size={18} className="text-blue-500" />, text: "Detailed API documentation" },
-          { icon: <CheckCircle size={18} className="text-green-500" />, text: "Step-by-step tutorials" },
-          { icon: <Star size={18} className="text-yellow-500" />, text: "Best practices and patterns" },
-          { icon: <Users size={18} className="text-purple-500" />, text: "Community-contributed examples" },
-          { icon: <Zap size={18} className="text-orange-500" />, text: "Regular updates and additions" }
+          { icon: <Zap size={18} className="text-blue-500" />, text: "Smart code suggestions and debugging" },
+          { icon: <Star size={18} className="text-yellow-500" />, text: "Project idea generation and planning" },
+          { icon: <CheckCircle size={18} className="text-green-500" />, text: "Architecture and design recommendations" },
+          { icon: <Users size={18} className="text-purple-500" />, text: "Best practices and code review" },
+          { icon: <Rocket size={18} className="text-orange-500" />, text: "24/7 AI-powered assistance" }
         ]
       }
     };
@@ -424,7 +407,7 @@ export default function HomePage() {
                           item.href === "/"
                             ? "text-blue-600 font-semibold bg-blue-50"
                             : "text-gray-600"
-                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
+                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group relative`}
                       >
                         <div className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}>
                           {item.icon}
@@ -433,13 +416,23 @@ export default function HomePage() {
                           )}
                         </div>
                         {!isSidebarCollapsed && (
-                          <span className="flex-1 text-left">{item.name}</span>
+                          <>
+                            <span className="flex-1 text-left">{item.name}</span>
+                            {item.isNew && (
+                              <span className="bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                                New
+                              </span>
+                            )}
+                          </>
+                        )}
+                        {isSidebarCollapsed && item.isNew && (
+                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                         )}
                       </button>
                     ) : (
                       <Link
                         href={item.href}
-                        className={`flex items-center ${
+                        className={`flex items-center relative ${
                           item.href === "/"
                             ? "text-blue-600 font-semibold bg-blue-50"
                             : "text-gray-600"
@@ -448,7 +441,19 @@ export default function HomePage() {
                         <div className={isSidebarCollapsed ? "mx-auto" : ""}>
                           {item.icon}
                         </div>
-                        {!isSidebarCollapsed && <span>{item.name}</span>}
+                        {!isSidebarCollapsed && (
+                          <>
+                            <span>{item.name}</span>
+                            {item.isNew && (
+                              <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                                New
+                              </span>
+                            )}
+                          </>
+                        )}
+                        {isSidebarCollapsed && item.isNew && (
+                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        )}
                       </Link>
                     )}
                   </div>
@@ -496,7 +501,7 @@ export default function HomePage() {
                         item.href === "/"
                           ? "text-blue-600 font-semibold bg-blue-50"
                           : "text-gray-600"
-                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group`}
+                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group relative`}
                     >
                       <div className="relative">
                         {item.icon}
@@ -505,11 +510,16 @@ export default function HomePage() {
                         )}
                       </div>
                       <span className="flex-1 text-left">{item.name}</span>
+                      {item.isNew && (
+                        <span className="bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                          New
+                        </span>
+                      )}
                     </button>
                   ) : (
                     <Link
                       href={item.href}
-                      className={`flex items-center ${
+                      className={`flex items-center relative ${
                         item.href === "/"
                           ? "text-blue-600 font-semibold bg-blue-50"
                           : "text-gray-600"
@@ -518,6 +528,11 @@ export default function HomePage() {
                     >
                       {item.icon}
                       <span>{item.name}</span>
+                      {item.isNew && (
+                        <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                          New
+                        </span>
+                      )}
                     </Link>
                   )}
                 </div>

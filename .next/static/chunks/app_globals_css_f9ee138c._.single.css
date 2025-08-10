@@ -1094,6 +1094,10 @@
     margin-left: calc(var(--spacing) * 10);
   }
 
+  .ml-auto {
+    margin-left: auto;
+  }
+
   .line-clamp-1 {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -7678,6 +7682,12 @@
   @media (width >= 80rem) {
     .xl\:p-8 {
       padding: calc(var(--spacing) * 8);
+    }
+  }
+
+  @media (width >= 80rem) {
+    .xl\:p-10 {
+      padding: calc(var(--spacing) * 10);
     }
   }
 

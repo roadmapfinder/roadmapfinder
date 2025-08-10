@@ -88,13 +88,7 @@ const Footer = () => {
                 <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"></span>
                 Docs
               </Link>
-              <Link
-                href="/TOOLS"
-                className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group"
-              >
-                <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"></span>
-                Tools
-              </Link>
+             
               <Link
                 href="/Login"
                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group"
