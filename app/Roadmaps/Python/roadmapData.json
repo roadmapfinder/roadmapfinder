@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "title": "Python Basics",
+    "description": "Foundation of Python programming language",
+    "icon": "Code",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Python Syntax & Indentation",
+        "Variables & Data Types",
+        "Input/Output Operations",
+        "Operators (Arithmetic, Logical, Comparison)",
+        "Control Flow (if/else, loops)",
+        "Basic Functions",
+        "Comments & Documentation"
+      ],
+      "toolsToUse": [
+        "Python 3.x",
+        "VS Code / PyCharm",
+        "Jupyter Notebook",
+        "Python IDLE",
+        "Online IDEs (Replit, CodePen)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Python for Everybody (Coursera)",
+          "Complete Python Bootcamp (Udemy)",
+          "Python Tutorial - w3schools",
+          "FreeCodeCamp Python Course"
+        ],
+        "hindi": [
+          "Python Tutorial for Beginners - CodeWithHarry",
+          "Complete Python Course - Apna College",
+          "Python Programming in Hindi - Geeky Shows",
+          "Python Basics Hindi - Tech Gun"
+        ]
+      },
+      "docsAndWebsites": [
+        "Official Python Documentation",
+        "Python.org Tutorial",
+        "Real Python Tutorials",
+        "GeeksforGeeks Python"
+      ],
+      "projectIdeas": [
+        "Simple Calculator",
+        "Number Guessing Game",
+        "Temperature Converter",
+        "Basic To-Do List",
+        "Simple Quiz Application"
+      ],
+      "practicePlatforms": [
+        "HackerRank Python",
+        "Codewars",
+        "Python.org Exercises",
+        "Exercism Python Track"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Data Structures & OOP",
+    "description": "Master Python's built-in data structures and object-oriented programming",
+    "icon": "Database",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Lists, Tuples, Sets, Dictionaries",
+        "List Comprehensions",
+        "Classes & Objects",
+        "Inheritance & Polymorphism",
+        "Encapsulation & Abstraction",
+        "Special Methods (__init__, __str__, etc.)",
+        "Iterators & Generators"
+      ],
+      "toolsToUse": [
+        "Python Built-in Data Structures",
+        "Memory Profiler",
+        "UML Diagram Tools",
+        "Class Diagram Generators",
+        "Python Debugger (pdb)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Python Data Structures - University of Michigan",
+          "Object Oriented Programming in Python",
+          "Python OOP Tutorial - Real Python",
+          "Data Structures in Python - EdX"
+        ],
+        "hindi": [
+          "Python OOP Complete Course Hindi - CodeWithHarry",
+          "Data Structures in Python Hindi - Apna College",
+          "Python Classes & Objects Hindi - Geeky Shows",
+          "Python OOP Concepts Hindi - Jenny's Lectures"
+        ]
+      },
+      "docsAndWebsites": [
+        "Python Data Structures - Official Docs",
+        "Python Classes Tutorial",
+        "Real Python OOP Guide",
+        "Python OOP - GeeksforGeeks"
+      ],
+      "projectIdeas": [
+        "Student Management System",
+        "Library Management System",
+        "Bank Account Simulation",
+        "Inventory Management",
+        "Simple Game using Classes"
+      ],
+      "practicePlatforms": [
+        "LeetCode (Easy Problems)",
+        "HackerRank Data Structures",
+        "CodeChef Python Practice",
+        "InterviewBit Python"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "File & Exception Handling",
+    "description": "Learn to handle files, errors, and exceptions gracefully",
+    "icon": "FileText",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "File I/O Operations (read, write, append)",
+        "Working with CSV, JSON, XML files",
+        "Exception Handling (try, except, finally)",
+        "Custom Exceptions",
+        "Context Managers (with statement)",
+        "File Path Manipulation",
+        "Regular Expressions (Regex)"
+      ],
+      "toolsToUse": [
+        "Built-in File Methods",
+        "CSV Module",
+        "JSON Module",
+        "OS & Path Libraries",
+        "RE (Regular Expression) Module",
+        "Pathlib",
+        "Pandas (for advanced file handling)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Python File Handling - Real Python",
+          "Exception Handling in Python",
+          "Working with Files in Python",
+          "Regular Expressions in Python"
+        ],
+        "hindi": [
+          "File Handling in Python Hindi - CodeWithHarry",
+          "Exception Handling Hindi - Apna College",
+          "Python File Operations Hindi - Geeky Shows",
+          "Regex in Python Hindi - Technical Suneja"
+        ]
+      },
+      "docsAndWebsites": [
+        "Python File I/O - Official Docs",
+        "Exception Handling - Python Docs",
+        "CSV Module Documentation",
+        "JSON Module Documentation"
+      ],
+      "projectIdeas": [
+        "Log File Analyzer",
+        "CSV Data Processor",
+        "Configuration File Manager",
+        "Text File Backup System",
+        "Data Validation Tool"
+      ],
+      "practicePlatforms": [
+        "HackerRank Python Strings",
+        "Regex101 (Practice Regex)",
+        "Codewars File Operations",
+        "Python Challenge"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Web Development with Python",
+    "description": "Build web applications using Python frameworks",
+    "icon": "Globe",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "HTTP Fundamentals",
+        "Flask Framework Basics",
+        "Django Framework Introduction",
+        "Templates & Static Files",
+        "Forms & User Input",
+        "Database Integration (SQLite, PostgreSQL)",
+        "API Development (REST APIs)",
+        "Authentication & Authorization"
+      ],
+      "toolsToUse": [
+        "Flask",
+        "Django",
+        "FastAPI",
+        "SQLAlchemy",
+        "PostgreSQL/MySQL",
+        "Postman (API Testing)",
+        "HTML/CSS/JavaScript",
+        "Bootstrap/Tailwind CSS"
+      ],
+      "bestCourses": {
+        "english": [
+          "Flask Web Development - Miguel Grinberg",
+          "Django for Beginners - William Vincent",
+          "Python Django Web Framework",
+          "FastAPI Course - Full Stack Python"
+        ],
+        "hindi": [
+          "Django Complete Course Hindi - CodeWithHarry",
+          "Flask Tutorial Hindi - Apna College",
+          "Python Web Development Hindi - Geeky Shows",
+          "Django REST API Hindi - Technical Suneja"
+        ]
+      },
+      "docsAndWebsites": [
+        "Django Official Documentation",
+        "Flask Documentation",
+        "FastAPI Documentation",
+        "Django REST Framework"
+      ],
+      "projectIdeas": [
+        "Personal Blog Website",
+        "To-Do List Web App",
+        "E-commerce Website",
+        "Social Media Clone",
+        "RESTful API for Mobile App"
+      ],
+      "practicePlatforms": [
+        "Django Girls Tutorial",
+        "Real Python Web Dev",
+        "Flask Examples",
+        "Awesome Django"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Data Science with Python",
+    "description": "Analyze data and build machine learning models",
+    "icon": "CircuitBoard",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "NumPy for Numerical Computing",
+        "Pandas for Data Manipulation",
+        "Matplotlib & Seaborn for Visualization",
+        "Statistics & Probability",
+        "Machine Learning with Scikit-learn",
+        "Data Cleaning & Preprocessing",
+        "Jupyter Notebooks & Google Colab"
+      ],
+      "toolsToUse": [
+        "NumPy",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn",
+        "Scikit-learn",
+        "Jupyter Notebook",
+        "Google Colab",
+        "Plotly"
+      ],
+      "bestCourses": {
+        "english": [
+          "Python for Data Science - Coursera",
+          "Data Analysis with Python - FreeCodeCamp",
+          "Machine Learning Course - Andrew Ng",
+          "Kaggle Learn Python"
+        ],
+        "hindi": [
+          "Data Science Complete Course Hindi - CodeWithHarry",
+          "Machine Learning Hindi - Krish Naik",
+          "Pandas Tutorial Hindi - Codebasics",
+          "NumPy Tutorial Hindi - Tech With Tim"
+        ]
+      },
+      "docsAndWebsites": [
+        "Pandas Documentation",
+        "NumPy Documentation",
+        "Matplotlib Documentation",
+        "Scikit-learn Documentation"
+      ],
+      "projectIdeas": [
+        "Sales Data Analysis",
+        "Stock Price Prediction",
+        "Customer Segmentation",
+        "Movie Recommendation System",
+        "COVID-19 Data Visualization"
+      ],
+      "practicePlatforms": [
+        "Kaggle Competitions",
+        "Google Colab",
+        "Jupyter Notebooks",
+        "Data Science Challenges"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Automation & Web Scraping",
+    "description": "Automate tasks and extract data from websites",
+    "icon": "Bot",
+    "gradient": "from-cyan-500 to-blue-600",
+    "content": {
+      "whatToLearn": [
+        "Web Scraping with BeautifulSoup",
+        "Selenium for Dynamic Content",
+        "API Integration & Requests",
+        "Task Automation Scripts",
+        "File System Automation",
+        "Email Automation",
+        "Scheduled Tasks (Cron Jobs)"
+      ],
+      "toolsToUse": [
+        "BeautifulSoup",
+        "Selenium WebDriver",
+        "Requests Library",
+        "Scrapy Framework",
+        "Schedule Library",
+        "PyAutoGUI",
+        "Pandas for Data Processing"
+      ],
+      "bestCourses": {
+        "english": [
+          "Web Scraping with Python - Real Python",
+          "Automate the Boring Stuff with Python",
+          "Python Automation Cookbook",
+          "Selenium with Python Tutorial"
+        ],
+        "hindi": [
+          "Web Scraping Python Hindi - CodeWithHarry",
+          "Python Automation Hindi - Technical Suneja",
+          "Selenium Python Hindi - Naveen AutomationLabs",
+          "BeautifulSoup Tutorial Hindi - Codebasics"
+        ]
+      },
+      "docsAndWebsites": [
+        "BeautifulSoup Documentation",
+        "Selenium Documentation",
+        "Requests Library",
+        "Scrapy Documentation"
+      ],
+      "projectIdeas": [
+        "News Article Scraper",
+        "Price Monitoring Tool",
+        "Social Media Automation",
+        "File Organization Script",
+        "Automated Report Generator"
+      ],
+      "practicePlatforms": [
+        "Quotes to Scrape",
+        "Books to Scrape",
+        "Scrape This Site",
+        "Web Scraping Sandbox"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Advanced Concepts",
+    "description": "Master advanced Python concepts and best practices",
+    "icon": "Target",
+    "gradient": "from-rose-500 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Decorators & Context Managers",
+        "Multithreading & Multiprocessing",
+        "Async Programming (asyncio)",
+        "Design Patterns",
+        "Testing (Unit Tests, PyTest)",
+        "Code Optimization & Profiling",
+        "Package Development & Distribution"
+      ],
+      "toolsToUse": [
+        "Threading & Multiprocessing",
+        "Asyncio",
+        "PyTest",
+        "Unittest",
+        "Memory Profiler",
+        "Line Profiler",
+        "Setup.py & Poetry",
+        "Virtual Environments"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Python - Real Python",
+          "Python Concurrency & Parallelism",
+          "Test-Driven Development with PyTest",
+          "Effective Python - Brett Slatkin"
+        ],
+        "hindi": [
+          "Advanced Python Concepts Hindi - Krish Naik",
+          "Python Decorators Hindi - CodeWithHarry",
+          "Threading in Python Hindi - Geeky Shows",
+          "Python Testing Hindi - Technical Suneja"
+        ]
+      },
+      "docsAndWebsites": [
+        "Python Advanced Topics",
+        "PyTest Documentation",
+        "Asyncio Documentation",
+        "Python Package Index (PyPI)"
+      ],
+      "projectIdeas": [
+        "Custom Python Package",
+        "Concurrent Web Scraper",
+        "Performance Optimization Tool",
+        "Test Suite for Existing Project",
+        "Async API Server"
+      ],
+      "practicePlatforms": [
+        "LeetCode (Hard Problems)",
+        "CodeWars Advanced Kata",
+        "Project Euler",
+        "TopCoder"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Portfolio + Resume + Interview",
+    "description": "Build your professional profile and prepare for job interviews",
+    "icon": "Wrench",
+    "gradient": "from-emerald-500 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "GitHub Profile Optimization",
+        "Technical Resume Writing",
+        "Portfolio Website Development",
+        "System Design Basics",
+        "Data Structures & Algorithms",
+        "Behavioral Interview Preparation",
+        "Mock Interview Practice"
+      ],
+      "toolsToUse": [
+        "GitHub",
+        "LinkedIn",
+        "Portfolio Websites",
+        "Resume Templates",
+        "LeetCode",
+        "HackerRank",
+        "Interview Platforms"
+      ],
+      "bestCourses": {
+        "english": [
+          "Cracking the Coding Interview",
+          "System Design Interview Prep",
+          "GitHub Portfolio Guide",
+          "Tech Interview Handbook"
+        ],
+        "hindi": [
+          "Resume Building for Developers Hindi",
+          "GitHub Profile Setup Hindi - CodeWithHarry",
+          "Interview Preparation Hindi - Apna College",
+          "DSA Interview Prep Hindi - Striver"
+        ]
+      },
+      "docsAndWebsites": [
+        "GitHub Profile README Guide",
+        "LinkedIn Profile Tips",
+        "Technical Writing Guide",
+        "Career Guide for Developers"
+      ],
+      "projectIdeas": [
+        "Personal Portfolio Website",
+        "Open Source Contributions",
+        "Technical Blog Writing",
+        "YouTube Channel/Tutorial Series",
+        "Freelance Python Projects"
+      ],
+      "practicePlatforms": [
+        "LeetCode Interview Prep",
+        "InterviewBit",
+        "Pramp (Mock Interviews)",
+        "Coding Interview University"
+      ]
+    }
+  }
+]

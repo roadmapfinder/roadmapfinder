@@ -1,931 +1,168 @@
 "use client";
 import { useState } from "react";
-import {
-  Code,
-  Database,
-  Globe,
-  Shield,
-  Wrench,
-  FileText,
-  Target,
-  Lightbulb,
-  Server,
-  BookOpen,
-  Layers,
-  Zap,
-} from "lucide-react";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import roadmapData from "./roadmapData.json";
+import { handleDownloadPDF } from "./downloadPdf.js";
 
-// PHP Roadmap Data Structure
-const phpRoadmap = [
-  {
-    id: 1,
-    title: "PHP Basics",
-    description: "Foundation of PHP programming language",
-    icon: <Code className="w-6 h-6" />,
-    gradient: "from-blue-500 to-cyan-500",
-    content: {
-      whatToLearn: [
-        "PHP Syntax & Tags (<?php ?>)",
-        "Variables & Data Types",
-        "Echo & Print Statements",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Structures (if/else, switch, loops)",
-        "Functions & Parameters",
-        "Arrays (Indexed & Associative)",
-        "Superglobals ($_GET, $_POST, $_SESSION)",
-      ],
-      toolsToUse: [
-        "XAMPP / WAMP / MAMP",
-        "VS Code with PHP Extensions",
-        "PHPStorm",
-        "PHP 8.x",
-        "Apache/Nginx Web Server",
-        "Browser Developer Tools",
-      ],
-      bestCourses: {
-        english: [
-          "PHP for Beginners - Codecourse",
-          "Complete PHP Course - Udemy",
-          "PHP Tutorial - W3Schools",
-          "Learn PHP - freeCodeCamp",
-        ],
-        hindi: [
-          "PHP Tutorial in Hindi - CodeWithHarry",
-          "Complete PHP Course Hindi - Yahoo Baba",
-          "PHP Basics Hindi - Geeky Shows",
-          "PHP Programming Hindi - WsCube Tech",
-        ],
-      },
-      documentation: [
-        "Official PHP Documentation",
-        "PHP.net Manual",
-        "PHP The Right Way",
-        "GeeksforGeeks PHP",
-      ],
-      projectIdeas: [
-        "Simple Calculator",
-        "Contact Form with Validation",
-        "Basic Login System",
-        "Todo List Application",
-        "Simple Blog with File Storage",
-      ],
-      practicePlatforms: [
-        "HackerRank PHP",
-        "Codewars PHP",
-        "PHP Exercises - W3Resource",
-        "LeetCode (Easy Problems)",
-      ],
-    },
-  },
-  {
-    id: 2,
-    title: "Intermediate PHP",
-    description: "Advanced PHP concepts and form handling",
-    icon: <Layers className="w-6 h-6" />,
-    gradient: "from-purple-500 to-pink-500",
-    content: {
-      whatToLearn: [
-        "Form Handling & Validation",
-        "File Upload & Management",
-        "Sessions & Cookies",
-        "Include & Require",
-        "Regular Expressions (preg_match)",
-        "Date & Time Functions",
-        "String Functions & Manipulation",
-        "Error Handling & Debugging",
-      ],
-      toolsToUse: [
-        "PHP Built-in Functions",
-        "Postman for Testing",
-        "Browser Network Tab",
-        "PHP Error Logs",
-        "Xdebug",
-        "File System Functions",
-      ],
-      bestCourses: {
-        english: [
-          "PHP Intermediate Course - Laracasts",
-          "Advanced PHP - Udemy",
-          "PHP Forms and Validation",
-          "PHP File Handling Tutorial",
-        ],
-        hindi: [
-          "PHP Advanced Concepts Hindi - CodeWithHarry",
-          "PHP Form Handling Hindi - Yahoo Baba",
-          "PHP Sessions & Cookies Hindi - Geeky Shows",
-          "PHP File Upload Hindi - WsCube Tech",
-        ],
-      },
-      documentation: [
-        "PHP Form Handling - Official Docs",
-        "PHP File Functions",
-        "PHP Session Management",
-        "PHP Error Handling Guide",
-      ],
-      projectIdeas: [
-        "User Registration System",
-        "File Upload Gallery",
-        "Shopping Cart with Sessions",
-        "Contact Management System",
-        "Simple CMS with File Storage",
-      ],
-      practicePlatforms: [
-        "PHP Practice Problems",
-        "Codingbat PHP Exercises",
-        "HackerEarth PHP",
-        "Sphere Online Judge",
-      ],
-    },
-  },
-  {
-    id: 3,
-    title: "Database Integration",
-    description: "Connect PHP with MySQL and perform CRUD operations",
-    icon: <Database className="w-6 h-6" />,
-    gradient: "from-green-500 to-teal-500",
-    content: {
-      whatToLearn: [
-        "MySQL Database Basics",
-        "SQL Queries (SELECT, INSERT, UPDATE, DELETE)",
-        "PHP MySQL Connection (MySQLi & PDO)",
-        "Prepared Statements",
-        "CRUD Operations",
-        "Database Security (SQL Injection Prevention)",
-        "Database Normalization",
-        "Joins & Relationships",
-      ],
-      toolsToUse: [
-        "MySQL/MariaDB",
-        "phpMyAdmin",
-        "MySQL Workbench",
-        "HeidiSQL",
-        "PDO (PHP Data Objects)",
-        "MySQLi Extension",
-        "XAMPP MySQL",
-      ],
-      bestCourses: {
-        english: [
-          "PHP MySQL Tutorial - W3Schools",
-          "Database Design Course",
-          "PHP PDO Tutorial",
-          "MySQL for Developers",
-        ],
-        hindi: [
-          "PHP MySQL Tutorial Hindi - CodeWithHarry",
-          "Database Connection PHP Hindi - Yahoo Baba",
-          "PHP PDO Hindi - Geeky Shows",
-          "MySQL PHP Integration Hindi - WsCube Tech",
-        ],
-      },
-      documentation: [
-        "PHP MySQL Documentation",
-        "PDO Documentation",
-        "MySQL Reference Manual",
-        "SQL Tutorial - W3Schools",
-      ],
-      projectIdeas: [
-        "Student Management System",
-        "Inventory Management",
-        "Blog with Database",
-        "E-commerce Product Catalog",
-        "User Authentication System",
-      ],
-      practicePlatforms: [
-        "SQLBolt",
-        "W3Schools SQL Tryit",
-        "MySQL Tutorial",
-        "Database Design Challenges",
-      ],
-    },
-  },
-  {
-    id: 4,
-    title: "Object-Oriented PHP",
-    description: "Master OOP concepts in PHP for better code organization",
-    icon: <Zap className="w-6 h-6" />,
-    gradient: "from-orange-500 to-red-500",
-    content: {
-      whatToLearn: [
-        "Classes & Objects",
-        "Properties & Methods",
-        "Constructor & Destructor",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Static Methods & Properties",
-        "Interfaces & Traits",
-        "Namespaces & Autoloading",
-      ],
-      toolsToUse: [
-        "PHP 8.x OOP Features",
-        "Composer (Autoloading)",
-        "UML Diagram Tools",
-        "PHPUnit (Testing)",
-        "PSR Standards",
-        "IDE with OOP Support",
-      ],
-      bestCourses: {
-        english: [
-          "PHP OOP Tutorial - Laracasts",
-          "Object Oriented PHP Course",
-          "PHP Design Patterns",
-          "Advanced PHP OOP Concepts",
-        ],
-        hindi: [
-          "PHP OOP Complete Course Hindi - CodeWithHarry",
-          "PHP Classes Objects Hindi - Yahoo Baba",
-          "PHP OOP Concepts Hindi - Geeky Shows",
-          "Advanced PHP OOP Hindi - WsCube Tech",
-        ],
-      },
-      documentation: [
-        "PHP OOP - Official Documentation",
-        "PHP Classes and Objects",
-        "PHP Namespaces Guide",
-        "PSR Standards Documentation",
-      ],  
-      projectIdeas: [
-        "Library Management System (OOP)",
-        "Banking System Simulation",
-        "E-commerce Cart (OOP Design)",
-        "User Management with Roles",
-        "MVC Framework Implementation",
-      ],
-      practicePlatforms: [
-        "PHP OOP Exercises",
-        "Design Pattern Practice",
-        "Code Review Platforms",
-        "OOP Challenge Problems",
-      ],
-    },
-  },
-  {
-    id: 5,
-    title: "REST APIs & Security",
-    description: "Build secure APIs and implement security best practices",
-    icon: <Shield className="w-6 h-6" />,
-    gradient: "from-indigo-500 to-purple-600",
-    content: {
-      whatToLearn: [
-        "REST API Principles",
-        "JSON Data Handling",
-        "HTTP Methods (GET, POST, PUT, DELETE)",
-        "API Authentication (JWT, OAuth)",
-        "Input Validation & Sanitization",
-        "Password Hashing (bcrypt)",
-        "CORS & CSRF Protection",
-        "Rate Limiting & Throttling",
-      ],
-      toolsToUse: [
-        "Postman/Insomnia",
-        "JWT Libraries",
-        "PHP Filter Functions",
-        "OpenSSL",
-        "Apache/Nginx Security",
-        "SSL/TLS Certificates",
-        "API Documentation Tools",
-      ],
-      bestCourses: {
-        english: [
-          "RESTful API with PHP",
-          "PHP Security Best Practices",
-          "JWT Authentication PHP",
-          "API Development Course",
-        ],
-        hindi: [
-          "REST API PHP Hindi - CodeWithHarry",
-          "PHP Security Hindi - Technical Suneja",
-          "API Development Hindi - WsCube Tech",
-          "PHP Authentication Hindi - Yahoo Baba",
-        ],
-      },
-      documentation: [
-        "PHP Security Guide",
-        "REST API Best Practices",
-        "JWT Documentation",
-        "OWASP PHP Security",
-      ],
-      projectIdeas: [
-        "Task Management API",
-        "User Authentication API",
-        "E-commerce API Backend",
-        "Social Media API",
-        "File Upload API with Security",
-      ],
-      practicePlatforms: [
-        "API Testing Challenges",
-        "Security CTF Challenges",
-        "OWASP WebGoat",
-        "HackerOne (Learning)",
-      ],
-    },
-  },
-  {
-    id: 6,
-    title: "PHP Frameworks",
-    description: "Master Laravel and other popular PHP frameworks",
-    icon: <Server className="w-6 h-6" />,
-    gradient: "from-cyan-500 to-blue-600",
-    content: {
-      whatToLearn: [
-        "Laravel Framework Basics",
-        "MVC Architecture",
-        "Routing & Controllers",
-        "Blade Templating Engine",
-        "Eloquent ORM",
-        "Middleware & Authentication",
-        "Artisan Commands",
-        "CodeIgniter Basics (Alternative)",
-      ],
-      toolsToUse: [
-        "Laravel Framework",
-        "Composer",
-        "Artisan CLI",
-        "Laravel Mix/Vite",
-        "Eloquent ORM",
-        "Laravel Tinker",
-        "Homestead/Valet",
-      ],
-      bestCourses: {
-        english: [
-          "Laravel from Scratch - Laracasts",
-          "Complete Laravel Course",
-          "Laravel API Development",
-          "Laravel E-commerce Course",
-        ],
-        hindi: [
-          "Laravel Tutorial Hindi - CodeWithHarry",
-          "Laravel Complete Course Hindi - Yahoo Baba",
-          "Laravel Framework Hindi - Geeky Shows",
-          "Laravel Project Hindi - WsCube Tech",
-        ],
-      },
-      documentation: [
-        "Laravel Official Documentation",
-        "Laravel Best Practices",
-        "Eloquent ORM Guide",
-        "Laravel API Resources",
-      ],
-      projectIdeas: [
-        "Blog Application (Laravel)",
-        "E-commerce Platform",
-        "Task Management System",
-        "Social Media Platform",
-        "Real-time Chat Application",
-      ],
-      practicePlatforms: [
-        "Laravel Daily Challenges",
-        "Laracasts Exercises",
-        "Laravel News",
-        "Framework Comparison Projects",
-      ],
-    },
-  },
-  {
-    id: 7,
-    title: "Testing & Deployment",
-    description: "Test your code and deploy applications to production",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
-    content: {
-      whatToLearn: [
-        "Unit Testing with PHPUnit",
-        "Integration Testing",
-        "Test-Driven Development (TDD)",
-        "Code Coverage Analysis",
-        "Deployment Strategies",
-        "Server Configuration",
-        "Version Control with Git",
-        "CI/CD Pipelines",
-      ],
-      toolsToUse: [
-        "PHPUnit",
-        "Git & GitHub",
-        "Docker",
-        "Apache/Nginx",
-        "Linux Server Management",
-        "GitHub Actions/Jenkins",
-        "Composer Scripts",
-        "Deployment Tools",
-      ],
-      bestCourses: {
-        english: [
-          "PHP Testing with PHPUnit",
-          "Laravel Testing Course",
-          "PHP Deployment Guide",
-          "DevOps for PHP Developers",
-        ],
-        hindi: [
-          "PHP Testing Hindi - Technical Suneja",
-          "Git GitHub Hindi - CodeWithHarry",
-          "Server Deployment Hindi - WsCube Tech",
-          "PHP DevOps Hindi - Geeky Shows",
-        ],
-      },
-      documentation: [
-        "PHPUnit Documentation",
-        "Git Documentation",
-        "Docker PHP Guide",
-        "Server Deployment Best Practices",
-      ],
-      projectIdeas: [
-        "Automated Testing Suite",
-        "CI/CD Pipeline Setup",
-        "Docker PHP Application",
-        "Multi-environment Deployment",
-        "Performance Testing Framework",
-      ],
-      practicePlatforms: [
-        "GitHub (Open Source)",
-        "Docker Hub",
-        "Testing Challenges",
-        "DevOps Practice Labs",
-      ],
-    },
-  },
-  {
-    id: 8,
-    title: "Portfolio & Career",
-    description: "Build your professional profile and prepare for opportunities",
-    icon: <Wrench className="w-6 h-6" />,
-    gradient: "from-emerald-500 to-green-600",
-    content: {
-      whatToLearn: [
-        "GitHub Portfolio Optimization",
-        "Technical Resume Writing",
-        "PHP Developer Portfolio Website",
-        "Open Source Contributions",
-        "Technical Interview Preparation",
-        "System Design for PHP",
-        "Freelancing & Client Work",
-        "Continuous Learning Path",
-      ],
-      toolsToUse: [
-        "GitHub",
-        "LinkedIn",
-        "Portfolio Frameworks",
-        "Interview Platforms",
-        "Freelance Platforms",
-        "Technical Blogs",
-        "Community Forums",
-      ],
-      bestCourses: {
-        english: [
-          "PHP Developer Career Guide",
-          "Technical Interview Prep",
-          "Freelancing for Developers",
-          "Open Source Contribution Guide",
-        ],
-        hindi: [
-          "PHP Developer Career Hindi - CodeWithHarry",
-          "Freelancing Guide Hindi - WsCube Tech",
-          "Interview Preparation Hindi - Technical Suneja",
-          "Portfolio Building Hindi - Yahoo Baba",
-        ],
-      },
-      documentation: [
-        "GitHub Profile Guide",
-        "PHP Career Roadmap",
-        "Developer Community Guidelines",
-        "Freelance Developer Guide",
-      ],
-      projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source PHP Package",
-        "Technical Blog with Tutorials",
-        "Full-stack Web Application",
-        "PHP Framework Contribution",
-      ],
-      practicePlatforms: [
-        "GitHub (Contributions)",
-        "Stack Overflow",
-        "Dev.to Community",
-        "PHP Community Forums",
-      ],
-    },
-  },
-];
-
-const PHPRoadmapComponent = () => {
+export default function Home() {
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
-  const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
 
+  // Toggle section open/close - now allows multiple sections to be open
+  const toggleSection = (id) => {
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
+  };
+
+  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const toggleSection = (sectionId) => {
-    setOpenSection(openSection === sectionId ? null : sectionId);
+  // Handle PDF download
+  const handleDownload = async () => {
+    await handleDownloadPDF(roadmapData, setDownloading);
   };
 
-  const handleDownload = async () => {
-    setDownloading(true);
+  // Handle YouTube redirect
+  const handleYouTubeRedirect = () => {
+    window.open(
+      "https://youtu.be/z8gIVootnUQ?si=cOA1CTpfeaecqbtd",
+      "_blank",
+    );
+  };
 
-    try {
-      // Create a temporary div to render the Python roadmap content for downloading
-      const downloadDiv = document.createElement("div");
-      downloadDiv.className = "roadmap-download-content";
-
-      // IMPROVED STYLES for better PDF output and readability
-      downloadDiv.style.padding = "40px";
-      downloadDiv.style.color = "#2c3e50";
-      downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-      downloadDiv.style.fontSize = "14px";
-      downloadDiv.style.lineHeight = "1.6";
-      downloadDiv.style.maxWidth = "800px";
-      downloadDiv.style.margin = "0 auto";
-
-      // Add title with better styling
-      const title = document.createElement("h1");
-      title.style.textAlign = "center";
-      title.style.marginBottom = "30px";
-      title.style.fontSize = "32px";
-      title.style.fontWeight = "700";
-      title.style.color = "#2c3e50";
-      title.style.borderBottom = "3px solid #3776ab"; // Python blue color
-      title.style.paddingBottom = "15px";
-      title.textContent = "Php Learning Roadmap";
-      downloadDiv.appendChild(title);
-
-      // Add Python logo/icon (optional text representation)
-      const subtitle = document.createElement("p");
-      subtitle.style.textAlign = "center";
-      subtitle.style.fontSize = "16px";
-      subtitle.style.color = "#7f8c8d";
-      subtitle.style.marginBottom = "40px";
-      subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Php Programming";
-      downloadDiv.appendChild(subtitle);
-
-      // Add roadmap content with improved styling
-      phpRoadmap.forEach((section) => {
-        const sectionDiv = document.createElement("div");
-        sectionDiv.style.marginBottom = "40px";
-        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
-
-        // Section header with better design
-        const header = document.createElement("h2");
-        header.style.backgroundColor = "#ecf0f1";
-        header.style.padding = "15px 20px";
-        header.style.borderRadius = "8px";
-        header.style.borderLeft = "5px solid #3776ab"; // Python blue
-        header.style.fontSize = "20px";
-        header.style.fontWeight = "600";
-        header.style.color = "#2c3e50";
-        header.style.marginBottom = "20px";
-        header.textContent = `${section.id}. ${section.title}`;
-        sectionDiv.appendChild(header);
-
-        // Section description with better typography
-        const desc = document.createElement("p");
-        desc.style.marginBottom = "25px";
-        desc.style.fontStyle = "italic";
-        desc.style.fontSize = "15px";
-        desc.style.color = "#7f8c8d";
-        desc.style.lineHeight = "1.7";
-        desc.style.padding = "0 10px";
-        desc.textContent = section.description;
-        sectionDiv.appendChild(desc);
-
-        // What to Learn with improved styling
-        const whatToLearn = document.createElement("div");
-        whatToLearn.style.marginBottom = "25px";
-
-        const whatToLearnTitle = document.createElement("h3");
-        whatToLearnTitle.style.fontSize = "18px";
-        whatToLearnTitle.style.fontWeight = "600";
-        whatToLearnTitle.style.color = "#27ae60";
-        whatToLearnTitle.style.marginBottom = "12px";
-        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
-        whatToLearnTitle.style.paddingBottom = "5px";
-        whatToLearnTitle.textContent = "✅ What to Learn";
-        whatToLearn.appendChild(whatToLearnTitle);
-
-        const whatToLearnList = document.createElement("ul");
-        whatToLearnList.style.paddingLeft = "25px";
-        whatToLearnList.style.margin = "15px 0";
-        section.content.whatToLearn.forEach((item) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = item;
-          whatToLearnList.appendChild(li);
-        });
-        whatToLearn.appendChild(whatToLearnList);
-        sectionDiv.appendChild(whatToLearn);
-
-        // Best Courses with better organization
-        const bestCourses = document.createElement("div");
-        bestCourses.style.marginBottom = "25px";
-
-        const bestCoursesTitle = document.createElement("h3");
-        bestCoursesTitle.style.fontSize = "18px";
-        bestCoursesTitle.style.fontWeight = "600";
-        bestCoursesTitle.style.color = "#3498db";
-        bestCoursesTitle.style.marginBottom = "12px";
-        bestCoursesTitle.style.borderBottom = "2px solid #3498db";
-        bestCoursesTitle.style.paddingBottom = "5px";
-        bestCoursesTitle.textContent = "📚 Best Courses";
-        bestCourses.appendChild(bestCoursesTitle);
-
-        // English courses
-        const englishTitle = document.createElement("h4");
-        englishTitle.style.fontSize = "16px";
-        englishTitle.style.fontWeight = "500";
-        englishTitle.style.color = "#2c3e50";
-        englishTitle.style.marginTop = "15px";
-        englishTitle.style.marginBottom = "10px";
-        englishTitle.textContent = "In English:";
-        bestCourses.appendChild(englishTitle);
-
-        const englishList = document.createElement("ul");
-        englishList.style.paddingLeft = "25px";
-        englishList.style.margin = "10px 0";
-        section.content.bestCourses.english.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          englishList.appendChild(li);
-        });
-        bestCourses.appendChild(englishList);
-
-        // Hindi courses
-        const hindiTitle = document.createElement("h4");
-        hindiTitle.style.fontSize = "16px";
-        hindiTitle.style.fontWeight = "500";
-        hindiTitle.style.color = "#2c3e50";
-        hindiTitle.style.marginTop = "15px";
-        hindiTitle.style.marginBottom = "10px";
-        hindiTitle.textContent = "In Hindi:";
-        bestCourses.appendChild(hindiTitle);
-
-        const hindiList = document.createElement("ul");
-        hindiList.style.paddingLeft = "25px";
-        hindiList.style.margin = "10px 0";
-        section.content.bestCourses.hindi.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          hindiList.appendChild(li);
-        });
-        bestCourses.appendChild(hindiList);
-        sectionDiv.appendChild(bestCourses);
-
-        // Tools to Use with better styling
-        const tools = document.createElement("div");
-        tools.style.marginBottom = "25px";
-
-        const toolsTitle = document.createElement("h3");
-        toolsTitle.style.fontSize = "18px";
-        toolsTitle.style.fontWeight = "600";
-        toolsTitle.style.color = "#f39c12";
-        toolsTitle.style.marginBottom = "12px";
-        toolsTitle.style.borderBottom = "2px solid #f39c12";
-        toolsTitle.style.paddingBottom = "5px";
-        toolsTitle.textContent = "🧰 Tools to Use";
-        tools.appendChild(toolsTitle);
-
-        const toolsList = document.createElement("ul");
-        toolsList.style.paddingLeft = "25px";
-        toolsList.style.margin = "15px 0";
-        section.content.toolsToUse.forEach((tool) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = tool;
-          toolsList.appendChild(li);
-        });
-        tools.appendChild(toolsList);
-        sectionDiv.appendChild(tools);
-
-        // Documentation with better styling
-        const docs = document.createElement("div");
-        docs.style.marginBottom = "25px";
-
-        const docsTitle = document.createElement("h3");
-        docsTitle.style.fontSize = "18px";
-        docsTitle.style.fontWeight = "600";
-        docsTitle.style.color = "#e74c3c";
-        docsTitle.style.marginBottom = "12px";
-        docsTitle.style.borderBottom = "2px solid #e74c3c";
-        docsTitle.style.paddingBottom = "5px";
-        docsTitle.textContent = "📘 Documentation";
-        docs.appendChild(docsTitle);
-
-        const docsList = document.createElement("ul");
-        docsList.style.paddingLeft = "25px";
-        docsList.style.margin = "15px 0";
-        section.content.documentation.forEach((doc) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = doc;
-          docsList.appendChild(li);
-        });
-        docs.appendChild(docsList);
-        sectionDiv.appendChild(docs);
-
-        // Project Ideas with better styling
-        const projects = document.createElement("div");
-        projects.style.marginBottom = "25px";
-
-        const projectsTitle = document.createElement("h3");
-        projectsTitle.style.fontSize = "18px";
-        projectsTitle.style.fontWeight = "600";
-        projectsTitle.style.color = "#9b59b6";
-        projectsTitle.style.marginBottom = "12px";
-        projectsTitle.style.borderBottom = "2px solid #9b59b6";
-        projectsTitle.style.paddingBottom = "5px";
-        projectsTitle.textContent = "💡 Project Ideas";
-        projects.appendChild(projectsTitle);
-
-        const projectsList = document.createElement("ul");
-        projectsList.style.paddingLeft = "25px";
-        projectsList.style.margin = "15px 0";
-        section.content.projectIdeas.forEach((project) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = project;
-          projectsList.appendChild(li);
-        });
-        projects.appendChild(projectsList);
-        sectionDiv.appendChild(projects);
-
-        // Practice Platforms with better styling
-        const practice = document.createElement("div");
-        practice.style.marginBottom = "25px";
-
-        const practiceTitle = document.createElement("h3");
-        practiceTitle.style.fontSize = "18px";
-        practiceTitle.style.fontWeight = "600";
-        practiceTitle.style.color = "#16a085";
-        practiceTitle.style.marginBottom = "12px";
-        practiceTitle.style.borderBottom = "2px solid #16a085";
-        practiceTitle.style.paddingBottom = "5px";
-        practiceTitle.textContent = "⚡ Practice Platforms";
-        practice.appendChild(practiceTitle);
-
-        const practiceList = document.createElement("ul");
-        practiceList.style.paddingLeft = "25px";
-        practiceList.style.margin = "15px 0";
-        section.content.practicePlatforms.forEach((platform) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = platform;
-          practiceList.appendChild(li);
-        });
-        practice.appendChild(practiceList);
-        sectionDiv.appendChild(practice);
-
-        downloadDiv.appendChild(sectionDiv);
-      });
-
-      // Add footer with generation date
-      const footer = document.createElement("div");
-      footer.style.marginTop = "40px";
-      footer.style.padding = "20px";
-      footer.style.borderTop = "2px solid #ecf0f1";
-      footer.style.textAlign = "center";
-      footer.style.fontSize = "12px";
-      footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Php Learning Roadmap`;
-      downloadDiv.appendChild(footer);
-
-      // Temporarily add the div to the document to render it
-      document.body.appendChild(downloadDiv);
-
-      // IMPROVED html2canvas settings for better quality
-      const canvas = await html2canvas(downloadDiv, {
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        logging: false,
-        letterRendering: true, // Better text rendering
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        width: downloadDiv.scrollWidth,
-        height: downloadDiv.scrollHeight,
-        scrollX: 0,
-        scrollY: 0
-      });
-
-      // Remove the temporary div
-      document.body.removeChild(downloadDiv);
-
-      // Create PDF with better settings
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-        compress: true, // Compress for smaller file size
-        precision: 2
-      });
-
-      // Calculate dimensions for better fitting
-      const imgWidth = 210; // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      const pageHeight = 297; // A4 height in mm
-
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      // Add first page
-      pdf.addImage(
-        canvas.toDataURL("image/jpeg", 0.95), // Use JPEG with high quality
-        "JPEG",
-        0,
-        0,
-        imgWidth,
-        imgHeight,
-      );
-      heightLeft -= pageHeight;
-
-      // Add additional pages if needed
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(
-          canvas.toDataURL("image/jpeg", 0.95),
-          "JPEG",
-          0,
-          position,
-          imgWidth,
-          imgHeight,
-        );
-        heightLeft -= pageHeight;
-      }
-
-      // Save the PDF with Python-specific filename
-      pdf.save("Php_Learning_Roadmap.pdf");
-
-      // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
-      // Instead, you could show a success message or update UI state
-      console.log("Php roadmap PDF generated successfully!");
-
-      // Show success message
-      alert("Php Learning Roadmap PDF downloaded successfully!");
-
-      // Navigate to Downloads page if router is available
-      // router.push('/Downloads'); // Uncomment if using Next.js router
-
-    } catch (error) {
-      console.error("Error generating Php roadmap PDF:", error);
-      alert("There was an error generating the PDF. Please try again.");
-    } finally {
-      setDownloading(false);
-    }
+  // Handle AI Guide redirect
+  const handleAIGuideRedirect = () => {
+    window.location.href = "/CareerGuidance";
   };
 
   return (
     <div
-      className={`min-h-screen ${
-        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+      className={`min-h-screen font-sans ${
+        darkMode
+          ? "dark bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
+          : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
       }`}
     >
+      {/* Side Action Buttons */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4">
+        {/* YouTube Course Button */}
+        <button
+          onClick={handleYouTubeRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600"
+              : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+          } text-white`}
+
+        >
+          {/* YouTube Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            YouTube Courses
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+
+        <button
+          onClick={handleAIGuideRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600"
+              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+          } text-white`}
+          title="AI Career Guidance"
+        >
+          {/* AI Guide Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            AI Career Guide
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+      </div>
+
       {/* Sticky Navigation Bar */}
       <nav
-        className={`sticky top-0 z-10 ${
-          darkMode ? "bg-gray-800" : "bg-white"
-        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+        className={`sticky top-0 z-10 backdrop-blur-lg ${
+          darkMode
+            ? "bg-gray-900/90 border-gray-700/50"
+            : "bg-white/90 border-gray-200/50"
+        } border-b shadow-xl px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 transition-all duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Php Learning Roadmap
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+           Php developer 
+          </span>
+          <span
+            className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
+          >
+            Roadmap
+          </span>
         </h1>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Download Button */}
           <button
             onClick={handleDownload}
             disabled={downloading}
-            className={`px-4 py-2 rounded-md text-white ${
+            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-medium text-xs sm:text-sm tracking-wide text-white shadow-lg transform transition-all duration-200 ${
               downloading
-                ? "bg-gray-500 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
-            } transition-colors flex items-center`}
+                ? "bg-gray-500 cursor-not-allowed scale-95"
+                : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:scale-105 active:scale-95"
+            } flex items-center`}
           >
             {downloading ? (
               <>
                 <svg
-                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                  className="animate-spin -ml-1 mr-2 sm:mr-3 h-3 w-3 sm:h-4 sm:w-4 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -944,19 +181,30 @@ const PHPRoadmapComponent = () => {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   ></path>
                 </svg>
-                Processing...
+                <span className="font-medium hidden sm:inline">
+                  Generating PDF...
+                </span>
+                <span className="font-medium sm:hidden">PDF...</span>
               </>
             ) : (
               <>
                 <svg
-                  className="w-4 h-4 mr-2"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-2 sm:mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
                 </svg>
-                Download Roadmap
+                <span className="font-medium hidden sm:inline">
+                  Download PDF
+                </span>
+                <span className="font-medium sm:hidden">PDF</span>
               </>
             )}
           </button>
@@ -964,19 +212,17 @@ const PHPRoadmapComponent = () => {
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
-            className={`p-2 rounded-full ${
+            className={`p-2 sm:p-3 rounded-xl shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95 ${
               darkMode
-                ? "bg-gray-700 text-yellow-300"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-300 hover:to-orange-400"
+                : "bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-600 hover:to-gray-700"
             }`}
-            aria-label="Toggle Dark Mode"
           >
             {darkMode ? (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="currentColor"
+                viewBox="0 0 20 20"
               >
                 <path
                   fillRule="evenodd"
@@ -986,10 +232,9 @@ const PHPRoadmapComponent = () => {
               </svg>
             ) : (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="currentColor"
+                viewBox="0 0 20 20"
               >
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
@@ -998,251 +243,243 @@ const PHPRoadmapComponent = () => {
         </div>
       </nav>
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Introduction */}
-        <div
-          className={`mb-8 p-6 rounded-lg ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md transition-colors duration-300`}
-        >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Php Learning Roadmap
+      {/* Main Content */}
+      <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
+        {/* Hero Section */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+           Php developer
+            </span>
+            <br />
+            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
+              Roadmap
+            </span>
           </h2>
-          <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Php
-            learning journey, from basic syntax to advanced concepts. Each
-            section contains curated resources in both English and Hindi, along
-            with practical projects and hands-on exercises. Click on any section
-            to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Php programming.
+          <p
+            className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
+          >
+            A comprehensive guide to becoming a Php developer,
+            step-by-step learning path, courses, tools, and project ideas.
           </p>
+          <div className="mt-6 sm:mt-8 flex justify-center">
+            <div
+              className={`h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`}
+            ></div>
+          </div>
         </div>
 
         {/* Roadmap Sections */}
-        <div className="space-y-4">
-          {phpRoadmap.map((section) => (
+        <div className="space-y-6 sm:space-y-8">
+          {roadmapData.map((section) => (
             <div
               key={section.id}
-              className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
+              id={`section-${section.id}`}
+              className={`${
                 darkMode
-                  ? "bg-gray-800 hover:bg-gray-750"
-                  : "bg-white hover:bg-gray-50"
+                  ? "bg-gray-800/50 border-gray-700/50"
+                  : "bg-white/70 border-gray-200/50"
+              } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
+                openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
               }`}
             >
               {/* Section Header */}
               <button
                 onClick={() => toggleSection(section.id)}
-                className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
-                aria-expanded={openSection === section.id}
+                className={`w-full p-4 sm:p-6 lg:p-8 text-left flex justify-between items-center ${
+                  darkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-50/50"
+                } transition-all duration-200 group`}
               >
-                <div className="flex items-center">
-                  <span
-                    className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
-                      darkMode ? "bg-blue-600" : "bg-blue-500"
-                    } text-white font-medium`}
-                  >
-                    {section.id}
-                  </span>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-lg">{section.title}</h3>
-                    <p
-                      className={`text-sm ${
-                        darkMode ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      {section.description}
-                    </p>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center mb-2 sm:mb-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 flex-shrink-0">
+                      {section.id}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight group-hover:text-blue-600 transition-colors truncate">
+                      {section.title}
+                    </h3>
                   </div>
+                  <p
+                    className={`text-sm sm:text-base lg:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} ml-9 sm:ml-12 pr-4`}
+                  >
+                    {section.description}
+                  </p>
                 </div>
-                <svg
-                  className={`w-5 h-5 transform transition-transform duration-300 ${
-                    openSection === section.id ? "rotate-180" : "rotate-0"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
+                  {openSections.has(section.id) ? (
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 15l7-7 7 7"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
+                </div>
               </button>
 
               {/* Section Content */}
-              {openSection === section.id && (
+              {openSections.has(section.id) && (
                 <div
-                  className={`px-6 pb-6 pt-2 border-t ${
-                    darkMode ? "border-gray-700" : "border-gray-200"
-                  } animate-fadeIn`}
+                  className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`}
                 >
-                  {/* What to Learn */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">✅</span>What to Learn
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.whatToLearn.map((item, index) => (
-                        <li
-                          key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Best Courses */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">📚</span>Best Courses
-                    </h4>
-
-                    <div className="space-y-4">
-                      {/* English Courses */}
-                      <div>
-                        <h5
-                          className={`font-medium mb-2 ${
-                            darkMode ? "text-gray-200" : "text-gray-800"
-                          }`}
-                        >
-                          In English:
-                        </h5>
-                        <ul className="space-y-1">
-                          {section.content.bestCourses.english.map(
-                            (course, index) => (
-                              <li
-                                key={index}
-                                className={`flex items-start ${
-                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                }`}
-                              >
-                                <span className="min-w-4 text-blue-500 mr-2">
-                                  •
-                                </span>
-                                {course}
-                              </li>
-                            ),
-                          )}
-                        </ul>
-                      </div>
-
-                      {/* Hindi Courses */}
-                      <div>
-                        <h5
-                          className={`font-medium mb-2 ${
-                            darkMode ? "text-gray-200" : "text-gray-800"
-                          }`}
-                        >
-                          In Hindi:
-                        </h5>
-                        <ul className="space-y-1">
-                          {section.content.bestCourses.hindi.map(
-                            (course, index) => (
-                              <li
-                                key={index}
-                                className={`flex items-start ${
-                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                }`}
-                              >
-                                <span className="min-w-4 text-blue-500 mr-2">
-                                  •
-                                </span>
-                                {course}
-                              </li>
-                            ),
-                          )}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Tools to Use */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">🧰</span>Tools to Use
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {section.content.toolsToUse.map((tool, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-sm ${
-                            darkMode
-                              ? "bg-gray-700 text-gray-200"
-                              : "bg-gray-200 text-gray-800"
-                          }`}
-                        >
-                          {tool}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
+                    {/* What to Learn */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-green-900/20 border-green-500/20" : "bg-green-50/80 border-green-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          ✅
                         </span>
-                      ))}
+                        What to Learn
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.whatToLearn?.map((item, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-green-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{item}</span>
+                          </li>
+                        )) || []}
+                      </ul>
                     </div>
-                  </div>
 
-                  {/* Documentation */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">📘</span>Documentation & Resources
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.documentation.map((resource, index) => (
-                        <li
-                          key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                          {resource}
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Tools to Use */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-orange-900/20 border-orange-500/20" : "bg-orange-50/80 border-orange-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          🧰
+                        </span>
+                        Tools to Use
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.toolsToUse?.map((tool, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-orange-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{tool}</span>
+                          </li>
+                        )) || []}
+                      </ul>
+                    </div>
+
+                    {/* Best Courses */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-blue-900/20 border-blue-500/20" : "bg-blue-50/80 border-blue-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          📚
+                        </span>
+                        Best Courses
+                      </h4>
+                      <div className="space-y-4 sm:space-y-5">
+                        <div>
+                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">
+                            In English:
+                          </h5>
+                          <ul className="space-y-1 sm:space-y-2">
+                            {section.content?.bestCourses?.english?.map(
+                              (course, index) => (
+                                <li
+                                  key={index}
+                                  className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}
+                                >
+                                  <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
+                                    •
+                                  </span>
+                                  <span className="font-medium">{course}</span>
+                                </li>
+                              ),
+                            ) || []}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Docs & Websites */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-red-900/20 border-red-500/20" : "bg-red-50/80 border-red-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          📘
+                        </span>
+                        Docs & Websites
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.docsAndWebsites?.map((doc, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{doc}</span>
+                          </li>
+                        )) || []}
+                      </ul>
+                    </div>
                   </div>
 
                   {/* Project Ideas */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">💡</span>Project Ideas
+                  <div className="mt-6 sm:mt-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-600 flex items-center">
+                      <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                        💡
+                      </span>
+                      Project Ideas
                     </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.projectIdeas.map((project, index) => (
-                        <li
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                      {section.content?.projectIdeas?.map((project, index) => (
+                        <div
                           key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
+                          className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
-                          {project}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Practice Platforms */}
-                  <div>
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">🏆</span>Practice Platforms
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {section.content.practicePlatforms.map(
-                        (platform, index) => (
-                          <span
-                            key={index}
-                            className={`px-3 py-1 rounded-full text-sm ${
-                              darkMode
-                                ? "bg-green-700 text-green-200"
-                                : "bg-green-200 text-green-800"
-                            }`}
-                          >
-                            {platform}
-                          </span>
-                        ),
-                      )}
+                          <div className="flex items-start">
+                            <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
+                              💡
+                            </span>
+                            <span
+                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
+                            >
+                              {project}
+                            </span>
+                          </div>
+                        </div>
+                      )) || []}
                     </div>
                   </div>
                 </div>
@@ -1251,37 +488,57 @@ const PHPRoadmapComponent = () => {
           ))}
         </div>
 
-        {/* Footer */}
-        <div
-          className={`mt-12 p-6 rounded-lg text-center ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md`}
-        >
-          <p
-            className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-          >
-            🚀 Start your Python journey today! Remember, consistency is key to
-            mastering programming.
-          </p>
-        </div>
-      </main>
+        {/* Empty State */}
+        {roadmapData.length === 0 && (
+          <div className="text-center py-16 sm:py-20">
+            <div
+              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
+            >
+              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                No Roadmap Data Available
+              </h3>
+              <p
+                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+              >
+                Add your roadmap data to get started with your Php developer journey.
+              </p>
+            </div>
+          </div>
+        )}
 
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-      `}</style>
+        {/* Footer */}
+        <footer className="mt-16 sm:mt-20 text-center">
+          <div
+            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Ready to Start Your Journey?
+            </h3>
+            <p
+              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
+            >
+              Remember: Consistency is key. Start with the fundamentals and
+              build your way up!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={handleDownload}
+                disabled={downloading}
+                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
+                  downloading
+                    ? "bg-gray-500 cursor-not-allowed scale-95"
+                    : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
+                }`}
+              >
+                {downloading
+                  ? "Generating PDF..."
+                  : "Download Complete Roadmap"}
+              </button>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
   );
-  }
-  export default PHPRoadmapComponent
+}

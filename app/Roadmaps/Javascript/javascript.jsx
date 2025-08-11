@@ -1,1288 +1,544 @@
-
 "use client";
 import { useState } from "react";
-import {
-  Book,
-  Wrench,
-  Lightbulb,
-  FileText,
-  ExternalLink,
-  Code,
-  ChevronDown,
-  ChevronUp,
-  Target,
-  Globe,
-  Database,
-  Bot,
-  CircuitBoard,
-  Coffee,
-  Server,
-  Shield,
-  Layers,
-  Zap,
-  Rocket,
-  Star,
-} from "lucide-react";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
+import roadmapData from "./roadmapData.json";
+import { handleDownloadPDF } from "./downloadPdf.js";
 
-
-// JavaScript Roadmap Data Structure
-const jsRoadmap = [
-  {
-    id: 1,
-    title: "JavaScript Fundamentals",
-    description: "Master the basics of JavaScript programming language",
-    icon: <Code className="w-6 h-6" />,
-    gradient: "from-yellow-500 to-orange-500",
-    content: {
-      whatToLearn: [
-        "Variables & Data Types (let, const, var)",
-        "Functions & Arrow Functions",
-        "Objects & Arrays",
-        "Conditional Statements & Loops",
-        "DOM Manipulation",
-        "Event Handling",
-        "Basic ES6+ Features",
-        "Error Handling (try/catch)",
-      ],
-      toolsToUse: [
-        "VS Code with JavaScript Extensions",
-        "Chrome DevTools",
-        "Node.js Runtime",
-        "Live Server Extension",
-        "ESLint for Code Quality",
-        "Prettier for Code Formatting",
-      ],
-      bestCourses: {
-        english: [
-          "JavaScript - The Complete Guide (Maximilian Schwarzmüller) - Udemy",
-          "JavaScript30 by Wes Bos - Free",
-          "freeCodeCamp JavaScript Course - YouTube",
-          "JavaScript.info - Interactive Tutorial",
-        ],
-        hindi: [
-          "JavaScript Complete Course - CodeWithHarry",
-          "JavaScript Tutorial Hindi - Thapa Technical",
-          "JS Complete Series - Chai aur Code",
-          "JavaScript Basics Hindi - Apna College",
-        ],
-      },
-      documentation: [
-        "MDN Web Docs - JavaScript",
-        "JavaScript.info",
-        "W3Schools JavaScript Tutorial",
-        "Eloquent JavaScript (Free Book)",
-      ],
-      projectIdeas: [
-        "Interactive Calculator",
-        "To-Do List App",
-        "Random Quote Generator",
-        "Simple Digital Clock",
-        "Color Palette Generator",
-      ],
-      practicePlatforms: [
-        "Codewars - JavaScript Kata",
-        "HackerRank JavaScript",
-        "LeetCode (Easy Problems)",
-        "JavaScript30.com",
-      ],
-    },
-  },
-  {
-    id: 2,
-    title: "Intermediate JavaScript",
-    description: "Deep dive into advanced concepts and modern JavaScript",
-    icon: <Zap className="w-6 h-6" />,
-    gradient: "from-blue-500 to-purple-500",
-    content: {
-      whatToLearn: [
-        "Closures & Scope",
-        "Promises & Async/Await",
-        "Prototypes & Inheritance",
-        "Higher-Order Functions",
-        "Destructuring & Spread Operator",
-        "Modules (Import/Export)",
-        "Regular Expressions",
-        "Local Storage & Session Storage",
-      ],
-      toolsToUse: [
-        "Babel for Transpiling",
-        "Webpack Module Bundler",
-        "Jest for Testing",
-        "Postman for API Testing",
-        "JSON Server for Mock APIs",
-        "Browser Developer Tools",
-      ],
-      bestCourses: {
-        english: [
-          "Advanced JavaScript Concepts - Andrei Neagoie (Udemy)",
-          "JavaScript: Understanding the Weird Parts - Anthony Alicea",
-          "Deep JavaScript Foundations - Kyle Simpson (Frontend Masters)",
-          "Modern JavaScript From The Beginning - Brad Traversy",
-        ],
-        hindi: [
-          "Advanced JavaScript Hindi - Hitesh Choudhary",
-          "JavaScript Advanced Concepts - Thapa Technical",
-          "Async JavaScript Hindi - CodeWithHarry",
-          "ES6+ Features Hindi - Apna College",
-        ],
-      },
-      documentation: [
-        "You Don't Know JS (Book Series)",
-        "JavaScript Promises - MDN",
-        "ES6 Features Guide",
-        "JavaScript Design Patterns",
-      ],
-      projectIdeas: [
-        "Weather App with API",
-        "Movie Search App",
-        "Expense Tracker",
-        "Quiz Application",
-        "Recipe Finder App",
-      ],
-      practicePlatforms: [
-        "JavaScript Algorithms - freeCodeCamp",
-        "Codepen Challenges",
-        "Frontend Mentor",
-        "JavaScript Quiz - W3Schools",
-      ],
-    },
-  },
-  {
-    id: 3,
-    title: "Advanced JavaScript & Patterns",
-    description: "Master complex concepts and design patterns",
-    icon: <CircuitBoard className="w-6 h-6" />,
-    gradient: "from-purple-500 to-pink-500",
-    content: {
-      whatToLearn: [
-        "Design Patterns (Observer, Module, Singleton)",
-        "Functional Programming Concepts",
-        "Advanced Async Patterns",
-        "Memory Management & Performance",
-        "Web APIs (Fetch, Geolocation, etc.)",
-        "WebSockets & Real-time Communication",
-        "Service Workers & PWA Basics",
-        "Advanced DOM Manipulation",
-      ],
-      toolsToUse: [
-        "Chrome Performance Tab",
-        "Lighthouse for Auditing",
-        "TypeScript (Optional)",
-        "Advanced Testing Tools",
-        "Performance Monitoring Tools",
-        "Code Splitting Tools",
-      ],
-      bestCourses: {
-        english: [
-          "JavaScript Design Patterns - Udemy",
-          "Advanced JavaScript - Pluralsight",
-          "Functional Programming in JavaScript - Frontend Masters",
-          "Performance Optimization - Web.dev",
-        ],
-        hindi: [
-          "JavaScript Design Patterns Hindi - Hitesh Choudhary",
-          "Advanced JS Concepts Hindi - Thapa Technical",
-          "Performance Optimization Hindi - CodeWithHarry",
-          "Functional Programming Hindi - Chai aur Code",
-        ],
-      },
-      documentation: [
-        "JavaScript Design Patterns - Addy Osmani",
-        "Web Performance Guidelines",
-        "PWA Documentation - Google",
-        "Advanced JavaScript Concepts - MDN",
-      ],
-      projectIdeas: [
-        "Real-time Chat Application",
-        "Progressive Web App (PWA)",
-        "Advanced Calculator with History",
-        "Image Gallery with Lazy Loading",
-        "Music Player with Playlists",
-      ],
-      practicePlatforms: [
-        "Advanced JavaScript Challenges",
-        "Performance Optimization Tasks",
-        "Real-world Project Challenges",
-        "Code Review Platforms",
-      ],
-    },
-  },
-  {
-    id: 4,
-    title: "Frontend Frameworks & Libraries",
-    description: "Master popular JavaScript frameworks and libraries",
-    icon: <Layers className="w-6 h-6" />,
-    gradient: "from-green-500 to-teal-500",
-    content: {
-      whatToLearn: [
-        "React.js Fundamentals",
-        "Vue.js or Angular Basics",
-        "State Management (Redux, Zustand)",
-        "Component Lifecycle",
-        "Routing (React Router, Vue Router)",
-        "Forms & Validation",
-        "CSS-in-JS Solutions",
-        "Testing Components",
-      ],
-      toolsToUse: [
-        "Create React App / Vite",
-        "Vue CLI / Nuxt.js",
-        "Redux DevTools",
-        "React Testing Library",
-        "Storybook for Components",
-        "Styled Components / Emotion",
-      ],
-      bestCourses: {
-        english: [
-          "Complete React Developer Course - Andrew Mead",
-          "Vue.js Complete Guide - Maximilian Schwarzmüller",
-          "Modern React with Redux - Stephen Grider",
-          "React & TypeScript - The Practical Guide",
-        ],
-        hindi: [
-          "React.js Complete Course - CodeWithHarry",
-          "React Tutorial Hindi - Thapa Technical",
-          "Vue.js Hindi Tutorial - Hitesh Choudhary",
-          "Redux Complete Guide Hindi - Chai aur Code",
-        ],
-      },
-      documentation: [
-        "React Official Documentation",
-        "Vue.js Guide",
-        "Redux Toolkit Documentation",
-        "React Router Documentation",
-      ],
-      projectIdeas: [
-        "E-commerce Shopping Cart",
-        "Social Media Dashboard",
-        "Task Management Board",
-        "Blog Platform with CMS",
-        "Real-time Collaboration Tool",
-      ],
-      practicePlatforms: [
-        "React Challenges - Frontend Mentor",
-        "Component Design Challenges",
-        "React/Vue Project Ideas",
-        "Open Source Contributions",
-      ],
-    },
-  },
-  {
-    id: 5,
-    title: "Backend & Full-Stack Development",
-    description: "Learn server-side JavaScript and full-stack development",
-    icon: <Server className="w-6 h-6" />,
-    gradient: "from-indigo-500 to-purple-600",
-    content: {
-      whatToLearn: [
-        "Node.js Fundamentals",
-        "Express.js Framework",
-        "RESTful API Development",
-        "Database Integration (MongoDB, PostgreSQL)",
-        "Authentication & Authorization",
-        "File Upload & Processing",
-        "WebSockets for Real-time Apps",
-        "Deployment & DevOps Basics",
-      ],
-      toolsToUse: [
-        "Node.js Runtime",
-        "Express.js Framework",
-        "MongoDB / PostgreSQL",
-        "Postman for API Testing",
-        "JWT for Authentication",
-        "Socket.io for WebSockets",
-        "Docker for Containerization",
-      ],
-      bestCourses: {
-        english: [
-          "Complete Node.js Developer Course - Andrew Mead",
-          "Node.js, Express, MongoDB - Jonas Schmedtmann",
-          "MERN Stack Development - Brad Traversy",
-          "API Design & Development - REST & GraphQL",
-        ],
-        hindi: [
-          "Node.js Complete Course - CodeWithHarry",
-          "MERN Stack Hindi - Thapa Technical",
-          "Express.js Tutorial Hindi - Hitesh Choudhary",
-          "MongoDB with Node.js Hindi - Chai aur Code",
-        ],
-      },
-      documentation: [
-        "Node.js Official Documentation",
-        "Express.js Guide",
-        "MongoDB Documentation",
-        "JWT Authentication Guide",
-      ],
-      projectIdeas: [
-        "Full-Stack Blog Platform",
-        "E-commerce API with Payment",
-        "Real-time Chat with Socket.io",
-        "Job Board Application",
-        "Social Media Clone",
-      ],
-      practicePlatforms: [
-        "HackerRank Node.js",
-        "Full-Stack Project Challenges",
-        "API Development Challenges",
-        "Backend Architecture Problems",
-      ],
-    },
-  },
-  {
-    id: 6,
-    title: "Testing & DevOps",
-    description: "Master testing frameworks and deployment practices",
-    icon: <Shield className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
-    content: {
-      whatToLearn: [
-        "Unit Testing with Jest",
-        "Integration & E2E Testing",
-        "Test-Driven Development (TDD)",
-        "CI/CD Pipelines",
-        "Docker & Containerization",
-        "Cloud Deployment (AWS, Vercel, Netlify)",
-        "Performance Monitoring",
-        "Security Best Practices",
-      ],
-      toolsToUse: [
-        "Jest Testing Framework",
-        "Cypress for E2E Testing",
-        "GitHub Actions / GitLab CI",
-        "Docker & Docker Compose",
-        "AWS / Vercel / Netlify",
-        "ESLint & Prettier",
-        "Husky for Git Hooks",
-      ],
-      bestCourses: {
-        english: [
-          "JavaScript Testing Introduction - Kent C. Dodds",
-          "Docker & Kubernetes Course",
-          "AWS for Developers",
-          "Complete DevOps Course",
-        ],
-        hindi: [
-          "Testing in JavaScript Hindi - Hitesh Choudhary",
-          "Docker Tutorial Hindi - CodeWithHarry",
-          "DevOps Complete Course Hindi - Thapa Technical",
-          "AWS Hindi Tutorial - Chai aur Code",
-        ],
-      },
-      documentation: [
-        "Jest Documentation",
-        "Cypress Testing Guide",
-        "Docker Documentation",
-        "AWS Developer Guide",
-      ],
-      projectIdeas: [
-        "Automated Testing Suite",
-        "CI/CD Pipeline Setup",
-        "Dockerized Full-Stack App",
-        "Performance Monitoring Dashboard",
-        "Security Audit Tool",
-      ],
-      practicePlatforms: [
-        "Testing JavaScript Challenges",
-        "DevOps Practice Labs",
-        "Cloud Platform Free Tiers",
-        "Open Source Testing Projects",
-      ],
-    },
-  },
-  {
-    id: 7,
-    title: "Job Preparation & Interview",
-    description: "Prepare for technical interviews and job opportunities",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-cyan-500 to-blue-600",
-    content: {
-      whatToLearn: [
-        "Data Structures & Algorithms in JS",
-        "System Design Basics",
-        "JavaScript Interview Questions",
-        "Coding Challenge Patterns",
-        "Portfolio Development",
-        "Resume & LinkedIn Optimization",
-        "Behavioral Interview Prep",
-        "Salary Negotiation",
-      ],
-      toolsToUse: [
-        "LeetCode for Algorithms",
-        "GitHub for Portfolio",
-        "LinkedIn Profile",
-        "Interview Platforms (Pramp, InterviewBit)",
-        "Portfolio Website Builders",
-        "Mock Interview Tools",
-      ],
-      bestCourses: {
-        english: [
-          "JavaScript Interview Questions - Akshay Saini",
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "Portfolio Development Course",
-        ],
-        hindi: [
-          "JavaScript Interview Questions Hindi - Akshay Saini",
-          "DSA in JavaScript Hindi - Striver",
-          "System Design Hindi - Gaurav Sen",
-          "Job Interview Tips Hindi - CodeWithHarry",
-        ],
-      },
-      documentation: [
-        "JavaScript Interview Handbook",
-        "Frontend Developer Roadmap",
-        "System Design Primer",
-        "Technical Resume Guide",
-      ],
-      projectIdeas: [
-        "Portfolio Website",
-        "Algorithm Visualization Tool",
-        "Interview Practice Platform",
-        "Resume Builder Application",
-        "Job Tracker Dashboard",
-      ],
-      practicePlatforms: [
-        "LeetCode JavaScript Problems",
-        "HackerRank Interview Prep",
-        "InterviewBit Practice",
-        "Pramp Mock Interviews",
-      ],
-    },
-  },
-  {
-    id: 8,
-    title: "Advanced Topics & Specialization",
-    description: "Explore advanced topics and choose your specialization",
-    icon: <Rocket className="w-6 h-6" />,
-    gradient: "from-emerald-500 to-green-600",
-    content: {
-      whatToLearn: [
-        "GraphQL & Apollo Client",
-        "Micro-frontends Architecture",
-        "WebAssembly with JavaScript",
-        "Progressive Web Apps (PWA)",
-        "Web3 & Blockchain Development",
-        "Machine Learning with TensorFlow.js",
-        "Mobile App Development (React Native)",
-        "Desktop Apps (Electron)",
-      ],
-      toolsToUse: [
-        "GraphQL Playground",
-        "Apollo Client/Server",
-        "Webpack Module Federation",
-        "TensorFlow.js",
-        "React Native CLI",
-        "Electron Framework",
-        "Web3.js Library",
-      ],
-      bestCourses: {
-        english: [
-          "GraphQL with React Course",
-          "React Native Complete Guide",
-          "TensorFlow.js Masterclass",
-          "Web3 Development Course",
-        ],
-        hindi: [
-          "GraphQL Complete Course Hindi - Hitesh Choudhary",
-          "React Native Hindi Tutorial - CodeWithHarry",
-          "Web3 Development Hindi - Chai aur Code",
-          "Advanced JavaScript Topics Hindi - Thapa Technical",
-        ],
-      },
-      documentation: [
-        "GraphQL Documentation",
-        "React Native Docs",
-        "TensorFlow.js Guide",
-        "Web3.js Documentation",
-      ],
-      projectIdeas: [
-        "GraphQL API with React Frontend",
-        "Cross-platform Mobile App",
-        "ML-powered Web Application",
-        "Blockchain DApp",
-        "Desktop Application with Electron",
-      ],
-      practicePlatforms: [
-        "GraphQL Challenges",
-        "React Native Projects",
-        "ML/AI JavaScript Projects",
-        "Web3 Development Challenges",
-      ],
-    },
-  },
-];
-
-const JavaScriptRoadmapComponent = () => {
+export default function Home() {
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
-  const [openSection, setOpenSection] = useState(null);
-   const [downloading, setDownloading] = useState(false);
+  const [downloading, setDownloading] = useState(false);
 
+  // Toggle section open/close - now allows multiple sections to be open
+  const toggleSection = (id) => {
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
+  };
+
+  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const toggleSection = (sectionId) => {
-    setOpenSection(openSection === sectionId ? null : sectionId);
+  // Handle PDF download
+  const handleDownload = async () => {
+    await handleDownloadPDF(roadmapData, setDownloading);
   };
 
-  const handleDownload = async () => {
-    setDownloading(true);
+  // Handle YouTube redirect
+  const handleYouTubeRedirect = () => {
+    window.open(
+      "https://youtu.be/Hr5iLG7sUa0?si=UFVybVAJIgRV-h5n",
+      "_blank",
+    );
+  };
 
-    try {
-      // Create a temporary div to render the Java roadmap content for downloading
-      const downloadDiv = document.createElement("div");
-      downloadDiv.className = "roadmap-download-content";
+  // Handle AI Guide redirect
+  const handleAIGuideRedirect = () => {
+    window.location.href = "/CareerGuidance";
+  };
 
-      // IMPROVED STYLES for better PDF output and readability
-      downloadDiv.style.padding = "40px";
-      downloadDiv.style.color = "#2c3e50";
-      downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-      downloadDiv.style.fontSize = "14px";
-      downloadDiv.style.lineHeight = "1.6";
-      downloadDiv.style.maxWidth = "800px";
-      downloadDiv.style.margin = "0 auto";
-
-      // Add title with better styling
-      const title = document.createElement("h1");
-      title.style.textAlign = "center";
-      title.style.marginBottom = "30px";
-      title.style.fontSize = "32px";
-      title.style.fontWeight = "700";
-      title.style.color = "#2c3e50";
-      title.style.borderBottom = "3px solid #f89820"; // Java orange color
-      title.style.paddingBottom = "15px";
-      title.textContent = "JavaScript Learning Roadmap";
-      downloadDiv.appendChild(title);
-
-      // Add Java logo/icon (optional text representation)
-      const subtitle = document.createElement("p");
-      subtitle.style.textAlign = "center";
-      subtitle.style.fontSize = "16px";
-      subtitle.style.color = "#7f8c8d";
-      subtitle.style.marginBottom = "40px";
-      subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "☕ Complete Guide to Master JavaScript Programming";
-      downloadDiv.appendChild(subtitle);
-
-      // Add roadmap content with improved styling
-      jsRoadmap.forEach((section) => {
-        const sectionDiv = document.createElement("div");
-        sectionDiv.style.marginBottom = "40px";
-        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
-
-        // Section header with better design
-        const header = document.createElement("h2");
-        header.style.backgroundColor = "#ecf0f1";
-        header.style.padding = "15px 20px";
-        header.style.borderRadius = "8px";
-        header.style.borderLeft = "5px solid #f89820"; // Java orange
-        header.style.fontSize = "20px";
-        header.style.fontWeight = "600";
-        header.style.color = "#2c3e50";
-        header.style.marginBottom = "20px";
-        header.textContent = `${section.id}. ${section.title}`;
-        sectionDiv.appendChild(header);
-
-        // Section description with better typography
-        const desc = document.createElement("p");
-        desc.style.marginBottom = "25px";
-        desc.style.fontStyle = "italic";
-        desc.style.fontSize = "15px";
-        desc.style.color = "#7f8c8d";
-        desc.style.lineHeight = "1.7";
-        desc.style.padding = "0 10px";
-        desc.textContent = section.description;
-        sectionDiv.appendChild(desc);
-
-        // What to Learn with improved styling
-        const whatToLearn = document.createElement("div");
-        whatToLearn.style.marginBottom = "25px";
-
-        const whatToLearnTitle = document.createElement("h3");
-        whatToLearnTitle.style.fontSize = "18px";
-        whatToLearnTitle.style.fontWeight = "600";
-        whatToLearnTitle.style.color = "#27ae60";
-        whatToLearnTitle.style.marginBottom = "12px";
-        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
-        whatToLearnTitle.style.paddingBottom = "5px";
-        whatToLearnTitle.textContent = "✅ What to Learn";
-        whatToLearn.appendChild(whatToLearnTitle);
-
-        const whatToLearnList = document.createElement("ul");
-        whatToLearnList.style.paddingLeft = "25px";
-        whatToLearnList.style.margin = "15px 0";
-        section.content.whatToLearn.forEach((item) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = item;
-          whatToLearnList.appendChild(li);
-        });
-        whatToLearn.appendChild(whatToLearnList);
-        sectionDiv.appendChild(whatToLearn);
-
-        // Best Courses with better organization
-        const bestCourses = document.createElement("div");
-        bestCourses.style.marginBottom = "25px";
-
-        const bestCoursesTitle = document.createElement("h3");
-        bestCoursesTitle.style.fontSize = "18px";
-        bestCoursesTitle.style.fontWeight = "600";
-        bestCoursesTitle.style.color = "#3498db";
-        bestCoursesTitle.style.marginBottom = "12px";
-        bestCoursesTitle.style.borderBottom = "2px solid #3498db";
-        bestCoursesTitle.style.paddingBottom = "5px";
-        bestCoursesTitle.textContent = "📚 Best Courses";
-        bestCourses.appendChild(bestCoursesTitle);
-
-        // English courses
-        const englishTitle = document.createElement("h4");
-        englishTitle.style.fontSize = "16px";
-        englishTitle.style.fontWeight = "500";
-        englishTitle.style.color = "#2c3e50";
-        englishTitle.style.marginTop = "15px";
-        englishTitle.style.marginBottom = "10px";
-        englishTitle.textContent = "In English:";
-        bestCourses.appendChild(englishTitle);
-
-        const englishList = document.createElement("ul");
-        englishList.style.paddingLeft = "25px";
-        englishList.style.margin = "10px 0";
-        section.content.bestCourses.english.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          englishList.appendChild(li);
-        });
-        bestCourses.appendChild(englishList);
-
-        // Hindi courses
-        const hindiTitle = document.createElement("h4");
-        hindiTitle.style.fontSize = "16px";
-        hindiTitle.style.fontWeight = "500";
-        hindiTitle.style.color = "#2c3e50";
-        hindiTitle.style.marginTop = "15px";
-        hindiTitle.style.marginBottom = "10px";
-        hindiTitle.textContent = "In Hindi:";
-        bestCourses.appendChild(hindiTitle);
-
-        const hindiList = document.createElement("ul");
-        hindiList.style.paddingLeft = "25px";
-        hindiList.style.margin = "10px 0";
-        section.content.bestCourses.hindi.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          hindiList.appendChild(li);
-        });
-        bestCourses.appendChild(hindiList);
-        sectionDiv.appendChild(bestCourses);
-
-        // Tools to Use with better styling
-        const tools = document.createElement("div");
-        tools.style.marginBottom = "25px";
-
-        const toolsTitle = document.createElement("h3");
-        toolsTitle.style.fontSize = "18px";
-        toolsTitle.style.fontWeight = "600";
-        toolsTitle.style.color = "#f39c12";
-        toolsTitle.style.marginBottom = "12px";
-        toolsTitle.style.borderBottom = "2px solid #f39c12";
-        toolsTitle.style.paddingBottom = "5px";
-        toolsTitle.textContent = "🧰 Tools to Use";
-        tools.appendChild(toolsTitle);
-
-        const toolsList = document.createElement("ul");
-        toolsList.style.paddingLeft = "25px";
-        toolsList.style.margin = "15px 0";
-        section.content.toolsToUse.forEach((tool) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = tool;
-          toolsList.appendChild(li);
-        });
-        tools.appendChild(toolsList);
-        sectionDiv.appendChild(tools);
-
-        // Documentation with better styling
-        const docs = document.createElement("div");
-        docs.style.marginBottom = "25px";
-
-        const docsTitle = document.createElement("h3");
-        docsTitle.style.fontSize = "18px";
-        docsTitle.style.fontWeight = "600";
-        docsTitle.style.color = "#e74c3c";
-        docsTitle.style.marginBottom = "12px";
-        docsTitle.style.borderBottom = "2px solid #e74c3c";
-        docsTitle.style.paddingBottom = "5px";
-        docsTitle.textContent = "📘 Documentation";
-        docs.appendChild(docsTitle);
-
-        const docsList = document.createElement("ul");
-        docsList.style.paddingLeft = "25px";
-        docsList.style.margin = "15px 0";
-        section.content.documentation.forEach((doc) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = doc;
-          docsList.appendChild(li);
-        });
-        docs.appendChild(docsList);
-        sectionDiv.appendChild(docs);
-
-        // Project Ideas with better styling
-        const projects = document.createElement("div");
-        projects.style.marginBottom = "25px";
-
-        const projectsTitle = document.createElement("h3");
-        projectsTitle.style.fontSize = "18px";
-        projectsTitle.style.fontWeight = "600";
-        projectsTitle.style.color = "#9b59b6";
-        projectsTitle.style.marginBottom = "12px";
-        projectsTitle.style.borderBottom = "2px solid #9b59b6";
-        projectsTitle.style.paddingBottom = "5px";
-        projectsTitle.textContent = "💡 Project Ideas";
-        projects.appendChild(projectsTitle);
-
-        const projectsList = document.createElement("ul");
-        projectsList.style.paddingLeft = "25px";
-        projectsList.style.margin = "15px 0";
-        section.content.projectIdeas.forEach((project) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = project;
-          projectsList.appendChild(li);
-        });
-        projects.appendChild(projectsList);
-        sectionDiv.appendChild(projects);
-
-        // Practice Platforms with better styling
-        const practice = document.createElement("div");
-        practice.style.marginBottom = "25px";
-
-        const practiceTitle = document.createElement("h3");
-        practiceTitle.style.fontSize = "18px";
-        practiceTitle.style.fontWeight = "600";
-        practiceTitle.style.color = "#16a085";
-        practiceTitle.style.marginBottom = "12px";
-        practiceTitle.style.borderBottom = "2px solid #16a085";
-        practiceTitle.style.paddingBottom = "5px";
-        practiceTitle.textContent = "🏆 Practice Platforms";
-        practice.appendChild(practiceTitle);
-
-        const practiceList = document.createElement("ul");
-        practiceList.style.paddingLeft = "25px";
-        practiceList.style.margin = "15px 0";
-        section.content.practicePlatforms.forEach((platform) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = platform;
-          practiceList.appendChild(li);
-        });
-        practice.appendChild(practiceList);
-        sectionDiv.appendChild(practice);
-
-        downloadDiv.appendChild(sectionDiv);
-      });
-
-      // Add footer with generation date
-      const footer = document.createElement("div");
-      footer.style.marginTop = "40px";
-      footer.style.padding = "20px";
-      footer.style.borderTop = "2px solid #ecf0f1";
-      footer.style.textAlign = "center";
-      footer.style.fontSize = "12px";
-      footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | JavaScript Learning Roadmap`;
-      downloadDiv.appendChild(footer);
-
-      // Temporarily add the div to the document to render it
-      document.body.appendChild(downloadDiv);
-
-      // IMPROVED html2canvas settings for better quality
-      const canvas = await html2canvas(downloadDiv, {
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        logging: false,
-        letterRendering: true, // Better text rendering
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        width: downloadDiv.scrollWidth,
-        height: downloadDiv.scrollHeight,
-        scrollX: 0,
-        scrollY: 0
-      });
-
-      // Remove the temporary div
-      document.body.removeChild(downloadDiv);
-
-      // Create PDF with better settings
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-        compress: true, // Compress for smaller file size
-        precision: 2
-      });
-
-      // Calculate dimensions for better fitting
-      const imgWidth = 210; // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      const pageHeight = 297; // A4 height in mm
-
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      // Add first page
-      pdf.addImage(
-        canvas.toDataURL("image/jpeg", 0.95), // Use JPEG with high quality
-        "JPEG",
-        0,
-        0,
-        imgWidth,
-        imgHeight,
-      );
-      heightLeft -= pageHeight;
-
-      // Add additional pages if needed
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(
-          canvas.toDataURL("image/jpeg", 0.95),
-          "JPEG",
-          0,
-          position,
-          imgWidth,
-          imgHeight,
-        );
-        heightLeft -= pageHeight;
-      }
-
-      // Save the PDF with Java-specific filename
-      pdf.save("JavaScript_Learning_Roadmap.pdf");
-
-      // Show success message
-      console.log("JavaScript roadmap PDF generated successfully!");
-      alert("JavaScript Learning Roadmap PDF downloaded successfully!");
-
-    } catch (error) {
-      console.error("Error generating Java roadmap PDF:", error);
-      alert("There was an error generating the PDF. Please try again.");
-    } finally {
-      setDownloading(false);
-    }
-  }; 
   return (
-      <div
-        className={`min-h-screen ${
-          darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-        }`}
-      >
-        {/* Sticky Navigation Bar */}
-        <nav
-          className={`sticky top-0 z-10 ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
-        >
-          <h1 className="text-xl md:text-2xl font-bold">
-           JavaScript Learning Roadmap
-          </h1>
-          <div className="flex items-center space-x-3">
-            {/* Download Button */}
-            <button
-              onClick={handleDownload}
-              disabled={downloading}
-              className={`px-4 py-2 rounded-md text-white ${
-                downloading
-                  ? "bg-gray-500 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
-              } transition-colors flex items-center`}
-            >
-              {downloading ? (
-                <>
-                  <svg
-                    className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    ></path>
-                  </svg>
-                  Processing...
-                </>
-              ) : (
-                <>
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-                  </svg>
-                  Download Roadmap
-                </>
-              )}
-            </button>
+    <div
+      className={`min-h-screen font-sans ${
+        darkMode
+          ? "dark bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
+          : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
+      }`}
+    >
+      {/* Side Action Buttons */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4">
+        {/* YouTube Course Button */}
+        <button
+          onClick={handleYouTubeRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600"
+              : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+          } text-white`}
 
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className={`p-2 rounded-full ${
-                darkMode
-                  ? "bg-gray-700 text-yellow-300"
-                  : "bg-gray-200 text-gray-700"
+        >
+          {/* YouTube Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            YouTube Courses
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
               }`}
-              aria-label="Toggle Dark Mode"
-            >
-              {darkMode ? (
+            ></div>
+          </div>
+        </button>
+
+        <button
+          onClick={handleAIGuideRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600"
+              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+          } text-white`}
+          title="AI Career Guidance"
+        >
+          {/* AI Guide Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            AI Career Guide
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+      </div>
+
+      {/* Sticky Navigation Bar */}
+      <nav
+        className={`sticky top-0 z-10 backdrop-blur-lg ${
+          darkMode
+            ? "bg-gray-900/90 border-gray-700/50"
+            : "bg-white/90 border-gray-200/50"
+        } border-b shadow-xl px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 transition-all duration-300`}
+      >
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+           Javscript developer 
+          </span>
+          <span
+            className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
+          >
+            Roadmap
+          </span>
+        </h1>
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          {/* Download Button */}
+          <button
+            onClick={handleDownload}
+            disabled={downloading}
+            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-medium text-xs sm:text-sm tracking-wide text-white shadow-lg transform transition-all duration-200 ${
+              downloading
+                ? "bg-gray-500 cursor-not-allowed scale-95"
+                : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:scale-105 active:scale-95"
+            } flex items-center`}
+          >
+            {downloading ? (
+              <>
                 <svg
+                  className="animate-spin -ml-1 mr-2 sm:mr-3 h-3 w-3 sm:h-4 sm:w-4 text-white"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                <span className="font-medium hidden sm:inline">
+                  Generating PDF...
+                </span>
+                <span className="font-medium sm:hidden">PDF...</span>
+              </>
+            ) : (
+              <>
+                <svg
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-2 sm:mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   />
                 </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </nav>
+                <span className="font-medium hidden sm:inline">
+                  Download PDF
+                </span>
+                <span className="font-medium sm:hidden">PDF</span>
+              </>
+            )}
+          </button>
 
-        <main className="container mx-auto px-4 py-8 max-w-4xl">
-          {/* Introduction */}
-          <div
-            className={`mb-8 p-6 rounded-lg ${
-              darkMode ? "bg-gray-800" : "bg-white"
-            } shadow-md transition-colors duration-300`}
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className={`p-2 sm:p-3 rounded-xl shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95 ${
+              darkMode
+                ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-300 hover:to-orange-400"
+                : "bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-600 hover:to-gray-700"
+            }`}
           >
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
-              Welcome to the JavaScript Learning Roadmap
-            </h2>
-            <p className="text-sm md:text-base leading-relaxed">
-              This comprehensive roadmap will guide you through your JavaScript development journey, 
-                from basic syntax to advanced full-stack applications. JavaScript is the language of the web, 
-                powering everything from interactive websites to mobile apps and server-side applications. 
-                Each section contains curated resources in both English and Hindi, along with practical 
-                projects and hands-on exercises that will help you master JavaScript development and 
-                land your dream job as a JavaScript developer.
-            </p>
-          </div>
-
-          {/* Roadmap Sections */}
-          <div className="space-y-4">
-            {jsRoadmap.map((section) => (
-              <div
-                key={section.id}
-                className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
-                  darkMode
-                    ? "bg-gray-800 hover:bg-gray-750"
-                    : "bg-white hover:bg-gray-50"
-                }`}
+            {darkMode ? (
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
               >
-                {/* Section Header */}
-                <button
-                  onClick={() => toggleSection(section.id)}
-                  className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
-                  aria-expanded={openSection === section.id}
-                >
-                  <div className="flex items-center">
-                    <span
-                      className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
-                        darkMode ? "bg-blue-600" : "bg-blue-500"
-                      } text-white font-medium`}
-                    >
+                <path
+                  fillRule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
+        {/* Hero Section */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+           Javascript developer
+            </span>
+            <br />
+            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
+              Roadmap
+            </span>
+          </h2>
+          <p
+            className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
+          >
+            A comprehensive guide to becoming a Javascript developer,
+            step-by-step learning path, courses, tools, and project ideas.
+          </p>
+          <div className="mt-6 sm:mt-8 flex justify-center">
+            <div
+              className={`h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`}
+            ></div>
+          </div>
+        </div>
+
+        {/* Roadmap Sections */}
+        <div className="space-y-6 sm:space-y-8">
+          {roadmapData.map((section) => (
+            <div
+              key={section.id}
+              id={`section-${section.id}`}
+              className={`${
+                darkMode
+                  ? "bg-gray-800/50 border-gray-700/50"
+                  : "bg-white/70 border-gray-200/50"
+              } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
+                openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
+              }`}
+            >
+              {/* Section Header */}
+              <button
+                onClick={() => toggleSection(section.id)}
+                className={`w-full p-4 sm:p-6 lg:p-8 text-left flex justify-between items-center ${
+                  darkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-50/50"
+                } transition-all duration-200 group`}
+              >
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center mb-2 sm:mb-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 flex-shrink-0">
                       {section.id}
                     </span>
-                    <div className="text-left">
-                      <h3 className="font-semibold text-lg">{section.title}</h3>
-                      <p
-                        className={`text-sm ${
-                          darkMode ? "text-gray-300" : "text-gray-600"
-                        }`}
-                      >
-                        {section.description}
-                      </p>
-                    </div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight group-hover:text-blue-600 transition-colors truncate">
+                      {section.title}
+                    </h3>
                   </div>
-                  <svg
-                    className={`w-5 h-5 transform transition-transform duration-300 ${
-                      openSection === section.id ? "rotate-180" : "rotate-0"
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                  <p
+                    className={`text-sm sm:text-base lg:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} ml-9 sm:ml-12 pr-4`}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
+                    {section.description}
+                  </p>
+                </div>
+                <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
+                  {openSections.has(section.id) ? (
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 15l7-7 7 7"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
+                </div>
+              </button>
 
-                {/* Section Content */}
-                {openSection === section.id && (
-                  <div
-                    className={`px-6 pb-6 pt-2 border-t ${
-                      darkMode ? "border-gray-700" : "border-gray-200"
-                    } animate-fadeIn`}
-                  >
+              {/* Section Content */}
+              {openSections.has(section.id) && (
+                <div
+                  className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
                     {/* What to Learn */}
-                    <div className="mb-6">
-                      <h4 className="flex items-center text-lg font-medium mb-3">
-                        <span className="mr-2">✅</span>What to Learn
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-green-900/20 border-green-500/20" : "bg-green-50/80 border-green-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          ✅
+                        </span>
+                        What to Learn
                       </h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {section.content.whatToLearn.map((item, index) => (
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.whatToLearn?.map((item, index) => (
                           <li
                             key={index}
-                            className={`flex items-center ${
-                              darkMode ? "text-gray-300" : "text-gray-700"
-                            }`}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                            {item}
+                            <span className="text-green-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{item}</span>
                           </li>
-                        ))}
+                        )) || []}
+                      </ul>
+                    </div>
+
+                    {/* Tools to Use */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-orange-900/20 border-orange-500/20" : "bg-orange-50/80 border-orange-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          🧰
+                        </span>
+                        Tools to Use
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.toolsToUse?.map((tool, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-orange-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{tool}</span>
+                          </li>
+                        )) || []}
                       </ul>
                     </div>
 
                     {/* Best Courses */}
-                    <div className="mb-6">
-                      <h4 className="flex items-center text-lg font-medium mb-3">
-                        <span className="mr-2">📚</span>Best Courses
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-blue-900/20 border-blue-500/20" : "bg-blue-50/80 border-blue-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          📚
+                        </span>
+                        Best Courses
                       </h4>
-
-                      <div className="space-y-4">
-                        {/* English Courses */}
+                      <div className="space-y-4 sm:space-y-5">
                         <div>
-                          <h5
-                            className={`font-medium mb-2 ${
-                              darkMode ? "text-gray-200" : "text-gray-800"
-                            }`}
-                          >
+                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">
                             In English:
                           </h5>
-                          <ul className="space-y-1">
-                            {section.content.bestCourses.english.map(
+                          <ul className="space-y-1 sm:space-y-2">
+                            {section.content?.bestCourses?.english?.map(
                               (course, index) => (
                                 <li
                                   key={index}
-                                  className={`flex items-start ${
-                                    darkMode ? "text-gray-300" : "text-gray-700"
-                                  }`}
+                                  className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}
                                 >
-                                  <span className="min-w-4 text-blue-500 mr-2">
+                                  <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
                                     •
                                   </span>
-                                  {course}
+                                  <span className="font-medium">{course}</span>
                                 </li>
                               ),
-                            )}
-                          </ul>
-                        </div>
-
-                        {/* Hindi Courses */}
-                        <div>
-                          <h5
-                            className={`font-medium mb-2 ${
-                              darkMode ? "text-gray-200" : "text-gray-800"
-                            }`}
-                          >
-                            In Hindi:
-                          </h5>
-                          <ul className="space-y-1">
-                            {section.content.bestCourses.hindi.map(
-                              (course, index) => (
-                                <li
-                                  key={index}
-                                  className={`flex items-start ${
-                                    darkMode ? "text-gray-300" : "text-gray-700"
-                                  }`}
-                                >
-                                  <span className="min-w-4 text-blue-500 mr-2">
-                                    •
-                                  </span>
-                                  {course}
-                                </li>
-                              ),
-                            )}
+                            ) || []}
                           </ul>
                         </div>
                       </div>
                     </div>
 
-                    {/* Tools to Use */}
-                    <div className="mb-6">
-                      <h4 className="flex items-center text-lg font-medium mb-3">
-                        <span className="mr-2">🧰</span>Tools to Use
+                    {/* Docs & Websites */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-red-900/20 border-red-500/20" : "bg-red-50/80 border-red-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          📘
+                        </span>
+                        Docs & Websites
                       </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {section.content.toolsToUse.map((tool, index) => (
-                          <span
-                            key={index}
-                            className={`px-3 py-1 rounded-full text-sm ${
-                              darkMode
-                                ? "bg-gray-700 text-gray-200"
-                                : "bg-gray-200 text-gray-800"
-                            }`}
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Documentation */}
-                    <div className="mb-6">
-                      <h4 className="flex items-center text-lg font-medium mb-3">
-                        <span className="mr-2">📘</span>Documentation & Resources
-                      </h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {section.content.documentation.map((resource, index) => (
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.docsAndWebsites?.map((doc, index) => (
                           <li
                             key={index}
-                            className={`flex items-center ${
-                              darkMode ? "text-gray-300" : "text-gray-700"
-                            }`}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                            {resource}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Project Ideas */}
-                    <div className="mb-6">
-                      <h4 className="flex items-center text-lg font-medium mb-3">
-                        <span className="mr-2">💡</span>Project Ideas
-                      </h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {section.content.projectIdeas.map((project, index) => (
-                          <li
-                            key={index}
-                            className={`flex items-center ${
-                              darkMode ? "text-gray-300" : "text-gray-700"
-                            }`}
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
-                            {project}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Practice Platforms */}
-                    <div>
-                      <h4 className="flex items-center text-lg font-medium mb-3">
-                        <span className="mr-2">🏆</span>Practice Platforms
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {section.content.practicePlatforms.map(
-                          (platform, index) => (
-                            <span
-                              key={index}
-                              className={`px-3 py-1 rounded-full text-sm ${
-                                darkMode
-                                  ? "bg-green-700 text-green-200"
-                                  : "bg-green-200 text-green-800"
-                              }`}
-                            >
-                              {platform}
+                            <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
                             </span>
-                          ),
-                        )}
-                      </div>
+                            <span className="font-medium">{doc}</span>
+                          </li>
+                        )) || []}
+                      </ul>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
 
-          {/* Footer */}
-          <div
-            className={`mt-12 p-6 rounded-lg text-center ${
-              darkMode ? "bg-gray-800" : "bg-white"
-            } shadow-md`}
-          >
-            <p
-              className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+                  {/* Project Ideas */}
+                  <div className="mt-6 sm:mt-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-600 flex items-center">
+                      <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                        💡
+                      </span>
+                      Project Ideas
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                      {section.content?.projectIdeas?.map((project, index) => (
+                        <div
+                          key={index}
+                          className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
+                        >
+                          <div className="flex items-start">
+                            <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
+                              💡
+                            </span>
+                            <span
+                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
+                            >
+                              {project}
+                            </span>
+                          </div>
+                        </div>
+                      )) || []}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Empty State */}
+        {roadmapData.length === 0 && (
+          <div className="text-center py-16 sm:py-20">
+            <div
+              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
             >
-              🚀 Start your JavaScript journey today! Remember, consistency is key to
-              mastering programming.
-            </p>
+              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                No Roadmap Data Available
+              </h3>
+              <p
+                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+              >
+                Add your roadmap data to get started with your Javascript developer journey.
+              </p>
+            </div>
           </div>
-        </main>
+        )}
 
-        <style jsx>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(-10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .animate-fadeIn {
-            animation: fadeIn 0.3s ease-out;
-          }
-        `}</style>
-      </div>
-    );
-    }
-
-  export default JavaScriptRoadmapComponent;
+        {/* Footer */}
+        <footer className="mt-16 sm:mt-20 text-center">
+          <div
+            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Ready to Start Your Journey?
+            </h3>
+            <p
+              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
+            >
+              Remember: Consistency is key. Start with the fundamentals and
+              build your way up!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={handleDownload}
+                disabled={downloading}
+                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
+                  downloading
+                    ? "bg-gray-500 cursor-not-allowed scale-95"
+                    : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
+                }`}
+              >
+                {downloading
+                  ? "Generating PDF..."
+                  : "Download Complete Roadmap"}
+              </button>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}

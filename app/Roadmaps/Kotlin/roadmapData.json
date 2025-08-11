@@ -1,0 +1,506 @@
+[
+  {
+    "id": 1,
+    "title": "Kotlin Fundamentals & Basics",
+    "description": "Master the core concepts of Kotlin programming language",
+    "icon": "Coffee",
+    "gradient": "from-purple-500 to-pink-500",
+    "level": "Beginner",
+    "content": {
+      "whatToLearn": [
+        "Kotlin Syntax & Structure",
+        "Variables & Data Types (val, var)",
+        "Operators & Expressions",
+        "Control Flow (if-else, when, loops)",
+        "Functions & Parameters",
+        "Nullable Types & Null Safety",
+        "Basic Input/Output Operations",
+        "String Templates & Manipulation"
+      ],
+      "toolsToUse": [
+        "IntelliJ IDEA Community Edition",
+        "Kotlin Playground (play.kotlinlang.org)",
+        "Android Studio",
+        "VS Code with Kotlin Extension",
+        "Command Line Tools (kotlinc)",
+        "Gradle Build Tool"
+      ],
+      "bestCourses": {
+        "english": [
+          "Kotlin Bootcamp for Programmers - Udacity (Google)",
+          "Kotlin Programming Fundamentals - JetBrains Academy",
+          "Complete Kotlin Course - Udemy",
+          "Kotlin for Beginners - freeCodeCamp"
+        ],
+        "hindi": [
+          "Kotlin Complete Course - CodeWithHarry",
+          "Kotlin Programming Hindi - Apna College",
+          "Kotlin Tutorial Hindi - WsCube Tech",
+          "Android Development with Kotlin Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Official Kotlin Documentation (kotlinlang.org)",
+        "Kotlin Reference Guide",
+        "Android Kotlin Developer Guide",
+        "JetBrains Kotlin Tutorial"
+      ],
+      "projectIdeas": [
+        "Simple Calculator",
+        "Number Guessing Game",
+        "Todo List CLI Application",
+        "Basic Unit Converter",
+        "Word Count Application"
+      ],
+      "practicePlatforms": [
+        "JetBrains Academy Kotlin Track",
+        "HackerRank Kotlin",
+        "Kotlin Koans",
+        "Codewars Kotlin Kata",
+        "Exercism Kotlin Track"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Object-Oriented Programming in Kotlin",
+    "description": "Deep dive into OOP concepts and advanced Kotlin features",
+    "icon": "Layers",
+    "gradient": "from-blue-500 to-cyan-500",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Classes & Objects",
+        "Properties & Backing Fields",
+        "Inheritance & Method Overriding",
+        "Interfaces & Abstract Classes",
+        "Data Classes & Sealed Classes",
+        "Object Declarations & Companion Objects",
+        "Enum Classes",
+        "Nested & Inner Classes"
+      ],
+      "toolsToUse": [
+        "IntelliJ IDEA Ultimate",
+        "Kotlin Compiler",
+        "UML Design Tools",
+        "Class Diagram Generators",
+        "Code Analysis Tools",
+        "Refactoring Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Object-Oriented Programming in Kotlin - Coursera",
+          "Kotlin OOP Masterclass - Udemy",
+          "Advanced Kotlin Programming - Pluralsight",
+          "Kotlin Design Patterns - LinkedIn Learning"
+        ],
+        "hindi": [
+          "Kotlin OOP Complete Hindi - CodeWithHarry",
+          "Object Oriented Programming Kotlin Hindi - Apna College",
+          "Kotlin Classes & Objects Hindi - WsCube Tech",
+          "Advanced Kotlin Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Kotlin Classes & Objects Documentation",
+        "Object-Oriented Design Principles",
+        "Kotlin Coding Conventions",
+        "Effective Kotlin Best Practices"
+      ],
+      "projectIdeas": [
+        "Library Management System",
+        "Employee Management Console App",
+        "Banking System Simulator",
+        "Online Shopping Cart Logic",
+        "Student Grade Management System"
+      ],
+      "practicePlatforms": [
+        "Object-Oriented Design Problems",
+        "Kotlin Coding Challenges",
+        "Design Pattern Implementations",
+        "Code Review Platforms",
+        "GitHub Kotlin Projects"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Collections, Functions & Advanced Concepts",
+    "description": "Master Kotlin collections, functional programming, and advanced features",
+    "icon": "Code",
+    "gradient": "from-green-500 to-teal-500",
+    "level": "Intermediate",
+    "content": {
+      "whatToLearn": [
+        "Collections Framework (List, Set, Map)",
+        "Higher-Order Functions & Lambdas",
+        "Extension Functions",
+        "Scope Functions (let, run, with, apply, also)",
+        "Generics & Type Parameters",
+        "Delegates & Delegation",
+        "Inline Functions",
+        "Destructuring Declarations"
+      ],
+      "toolsToUse": [
+        "Kotlin Standard Library",
+        "Collection Processing Tools",
+        "Functional Programming Libraries",
+        "Performance Profiling Tools",
+        "Memory Analysis Tools",
+        "Testing Frameworks"
+      ],
+      "bestCourses": {
+        "english": [
+          "Kotlin Collections & Functional Programming - Udemy",
+          "Advanced Kotlin Features - Coursera",
+          "Functional Programming with Kotlin - Pluralsight",
+          "Kotlin Best Practices - LinkedIn Learning"
+        ],
+        "hindi": [
+          "Kotlin Collections Hindi - CodeWithHarry",
+          "Functional Programming Kotlin Hindi - Apna College",
+          "Advanced Kotlin Features Hindi - WsCube Tech",
+          "Kotlin Lambda Functions Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Kotlin Collections Reference",
+        "Higher-Order Functions Guide",
+        "Scope Functions Documentation",
+        "Kotlin Idioms & Best Practices"
+      ],
+      "projectIdeas": [
+        "Data Processing Pipeline",
+        "File Analyzer with Collections",
+        "Functional Calculator",
+        "Text Processing Utility",
+        "Custom DSL Implementation"
+      ],
+      "practicePlatforms": [
+        "Kotlin Collections Exercises",
+        "Functional Programming Challenges",
+        "Lambda Expression Problems",
+        "Advanced Kotlin Coding Tests",
+        "Open Source Contributions"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Coroutines & Concurrency",
+    "description": "Learn asynchronous programming and concurrency in Kotlin",
+    "icon": "Zap",
+    "gradient": "from-yellow-500 to-orange-500",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Kotlin Coroutines Basics",
+        "Suspend Functions",
+        "Coroutine Builders (launch, async, runBlocking)",
+        "Coroutine Context & Dispatchers",
+        "Channels & Flow",
+        "Exception Handling in Coroutines",
+        "Structured Concurrency",
+        "Testing Coroutines"
+      ],
+      "toolsToUse": [
+        "Kotlinx Coroutines Library",
+        "Coroutine Debugger",
+        "Flow Testing Tools",
+        "Async Performance Monitors",
+        "Threading Analysis Tools",
+        "Coroutine Profilers"
+      ],
+      "bestCourses": {
+        "english": [
+          "Kotlin Coroutines by Roman Elizarov - Udemy",
+          "Asynchronous Programming with Kotlin - Coursera",
+          "Kotlin Coroutines Masterclass - Pluralsight",
+          "Advanced Coroutines - JetBrains Academy"
+        ],
+        "hindi": [
+          "Kotlin Coroutines Complete Hindi - CodeWithHarry",
+          "Async Programming Kotlin Hindi - Apna College",
+          "Coroutines & Flow Hindi - WsCube Tech",
+          "Multithreading Kotlin Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Kotlin Coroutines Guide",
+        "Flow Documentation",
+        "Coroutines Best Practices",
+        "Structured Concurrency Guide"
+      ],
+      "projectIdeas": [
+        "Async File Downloader",
+        "Real-time Data Processing App",
+        "Concurrent Web Scraper",
+        "Chat Application Backend",
+        "Reactive Data Pipeline"
+      ],
+      "practicePlatforms": [
+        "Coroutines Coding Challenges",
+        "Async Programming Problems",
+        "Flow Implementation Exercises",
+        "Concurrency Testing Scenarios",
+        "Performance Optimization Tasks"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Android Development with Kotlin",
+    "description": "Build Android applications using Kotlin and modern Android development",
+    "icon": "Smartphone",
+    "gradient": "from-indigo-500 to-purple-500",
+    "level": "Specialized",
+    "content": {
+      "whatToLearn": [
+        "Android Fundamentals with Kotlin",
+        "Activities & Fragments",
+        "Jetpack Compose UI",
+        "Room Database",
+        "ViewModel & LiveData",
+        "Navigation Component",
+        "Retrofit for API Calls",
+        "Material Design Components"
+      ],
+      "toolsToUse": [
+        "Android Studio",
+        "Android SDK",
+        "Firebase",
+        "Retrofit",
+        "Room Database",
+        "Jetpack Compose",
+        "Material Design Components",
+        "Android Emulator"
+      ],
+      "bestCourses": {
+        "english": [
+          "Android Kotlin Developer Nanodegree - Udacity",
+          "Android App Development with Kotlin - Coursera (Google)",
+          "Complete Android Development Course - Udemy",
+          "Android Jetpack Compose Course - Pluralsight"
+        ],
+        "hindi": [
+          "Android Development Complete Course Hindi - Apna College",
+          "Kotlin Android App Development Hindi - CodeWithHarry",
+          "Android Development Hindi - WsCube Tech",
+          "Complete Android Course Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Android Developer Documentation",
+        "Jetpack Compose Documentation",
+        "Android Architecture Guide",
+        "Material Design Guidelines"
+      ],
+      "projectIdeas": [
+        "Task Manager App",
+        "E-commerce Shopping App",
+        "Weather Forecast App",
+        "Social Media App",
+        "Expense Tracker App"
+      ],
+      "practicePlatforms": [
+        "Android Developer Challenges",
+        "Google Play Console",
+        "GitHub Android Projects",
+        "Android Open Source Projects",
+        "Google Developer Student Clubs"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Kotlin Multiplatform & Backend Development",
+    "description": "Explore Kotlin Multiplatform Mobile and server-side development",
+    "icon": "Globe",
+    "gradient": "from-red-500 to-pink-500",
+    "level": "Advanced",
+    "content": {
+      "whatToLearn": [
+        "Kotlin Multiplatform Mobile (KMM)",
+        "Ktor Framework for Backend",
+        "Shared Business Logic",
+        "Platform-Specific Implementations",
+        "Serialization with kotlinx.serialization",
+        "Database Integration",
+        "RESTful API Development",
+        "Microservices Architecture"
+      ],
+      "toolsToUse": [
+        "Kotlin Multiplatform Plugin",
+        "Ktor Framework",
+        "Exposed ORM",
+        "kotlinx.serialization",
+        "SQLDelight",
+        "Docker",
+        "Postman",
+        "Gradle Multiplatform"
+      ],
+      "bestCourses": {
+        "english": [
+          "Kotlin Multiplatform Development - JetBrains",
+          "Server-Side Development with Kotlin - Udemy",
+          "Ktor Framework Complete Course - Pluralsight",
+          "Kotlin Backend Development - Coursera"
+        ],
+        "hindi": [
+          "Kotlin Multiplatform Hindi - CodeWithHarry",
+          "Backend Development Kotlin Hindi - Apna College",
+          "Ktor Framework Hindi - WsCube Tech",
+          "Server-Side Kotlin Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Kotlin Multiplatform Documentation",
+        "Ktor Framework Guide",
+        "kotlinx.serialization Guide",
+        "Kotlin Server-Side Development"
+      ],
+      "projectIdeas": [
+        "Cross-Platform Mobile App",
+        "REST API with Ktor",
+        "Microservices Backend",
+        "Real-time Chat Server",
+        "E-commerce Backend System"
+      ],
+      "practicePlatforms": [
+        "KMM Sample Projects",
+        "Ktor Examples Repository",
+        "Kotlin Backend Challenges",
+        "Open Source KMP Projects",
+        "Server Development Practice"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Testing, DevOps & Best Practices",
+    "description": "Master testing frameworks, deployment, and professional development practices",
+    "icon": "Shield",
+    "gradient": "from-emerald-500 to-green-500",
+    "level": "Professional",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with JUnit & Mockk",
+        "Integration Testing",
+        "Test-Driven Development (TDD)",
+        "CI/CD with GitHub Actions",
+        "Code Quality & Static Analysis",
+        "Performance Testing",
+        "Docker & Containerization",
+        "Deployment Strategies"
+      ],
+      "toolsToUse": [
+        "JUnit 5",
+        "Mockk",
+        "Kotest",
+        "GitHub Actions",
+        "SonarQube",
+        "Docker",
+        "Kubernetes",
+        "Gradle"
+      ],
+      "bestCourses": {
+        "english": [
+          "Kotlin Testing Best Practices - Udemy",
+          "DevOps for Kotlin Developers - Pluralsight",
+          "Test-Driven Development with Kotlin - Coursera",
+          "Kotlin Code Quality & Performance - LinkedIn Learning"
+        ],
+        "hindi": [
+          "Testing in Kotlin Hindi - CodeWithHarry",
+          "DevOps Kotlin Hindi - Apna College",
+          "Unit Testing Hindi - WsCube Tech",
+          "Code Quality Kotlin Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Kotlin Testing Documentation",
+        "Mockk Documentation",
+        "GitHub Actions for Kotlin",
+        "Docker Kotlin Guide"
+      ],
+      "projectIdeas": [
+        "Automated Testing Suite",
+        "CI/CD Pipeline Setup",
+        "Dockerized Kotlin Application",
+        "Performance Monitoring Tool",
+        "Code Quality Dashboard"
+      ],
+      "practicePlatforms": [
+        "Testing Challenges",
+        "DevOps Practice Projects",
+        "Open Source Testing",
+        "Code Review Platforms",
+        "Quality Assurance Tasks"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Career Development & Advanced Projects",
+    "description": "Build impressive projects and prepare for professional opportunities",
+    "icon": "Target",
+    "gradient": "from-violet-500 to-purple-500",
+    "level": "Expert",
+    "content": {
+      "whatToLearn": [
+        "System Design with Kotlin",
+        "Architecture Patterns (MVVM, Clean Architecture)",
+        "Open Source Contributions",
+        "Technical Leadership Skills",
+        "Interview Preparation",
+        "Portfolio Development",
+        "Networking & Community Building",
+        "Continuous Learning Strategies"
+      ],
+      "toolsToUse": [
+        "GitHub Portfolio",
+        "LinkedIn Profile",
+        "Technical Blog Platforms",
+        "Interview Preparation Tools",
+        "System Design Tools",
+        "Portfolio Website Builders",
+        "Professional Networks",
+        "Conference Platforms"
+      ],
+      "bestCourses": {
+        "english": [
+          "System Design Interview Prep - Udemy",
+          "Kotlin Developer Career Guide - Coursera",
+          "Technical Leadership for Developers - Pluralsight",
+          "Android Interview Preparation - LinkedIn Learning"
+        ],
+        "hindi": [
+          "Career Development Hindi - CodeWithHarry",
+          "Interview Preparation Hindi - Apna College",
+          "System Design Hindi - WsCube Tech",
+          "Professional Skills Hindi - Coding Blocks"
+        ]
+      },
+      "docsAndWebsites": [
+        "Kotlin Career Resources",
+        "System Design Primer",
+        "Open Source Contribution Guide",
+        "Technical Interview Handbook"
+      ],
+      "projectIdeas": [
+        "Full-Stack E-commerce Platform",
+        "Social Media Platform with KMM",
+        "Real-time Collaboration Tool",
+        "AI-powered Mobile Application",
+        "Enterprise-level Backend System"
+      ],
+      "practicePlatforms": [
+        "LeetCode for Interviews",
+        "System Design Mock Interviews",
+        "Open Source Contributions",
+        "Professional Networking",
+        "Technical Writing Platforms"
+      ]
+    }
+  }
+]

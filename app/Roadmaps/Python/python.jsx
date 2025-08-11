@@ -1,926 +1,168 @@
 "use client";
 import { useState } from "react";
-import {
-  Book,
-  Wrench,
-  Lightbulb,
-  FileText,
-  ExternalLink,
-  Code,
-  ChevronDown,
-  ChevronUp,
-  Target,
-  Globe,
-  Database,
-  Bot,
-  CircuitBoard,
-} from "lucide-react";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import roadmapData from "./roadmapData.json";
+import { handleDownloadPDF } from "./downloadPdf.js";
 
-// Python Roadmap Data Structure
-const pythonRoadmap = [
-  {
-    id: 1,
-    title: "Python Basics",
-    description: "Foundation of Python programming language",
-    icon: <Code className="w-6 h-6" />,
-    gradient: "from-blue-500 to-cyan-500",
-    content: {
-      whatToLearn: [
-        "Python Syntax & Indentation",
-        "Variables & Data Types",
-        "Input/Output Operations",
-        "Operators (Arithmetic, Logical, Comparison)",
-        "Control Flow (if/else, loops)",
-        "Basic Functions",
-        "Comments & Documentation",
-      ],
-      toolsToUse: [
-        "Python 3.x",
-        "VS Code / PyCharm",
-        "Jupyter Notebook",
-        "Python IDLE",
-        "Online IDEs (Replit, CodePen)",
-      ],
-      bestCourses: {
-        english: [
-          "Python for Everybody (Coursera)",
-          "Complete Python Bootcamp (Udemy)",
-          "Python Tutorial - w3schools",
-          "FreeCodeCamp Python Course",
-        ],
-        hindi: [
-          "Python Tutorial for Beginners - CodeWithHarry",
-          "Complete Python Course - Apna College",
-          "Python Programming in Hindi - Geeky Shows",
-          "Python Basics Hindi - Tech Gun",
-        ],
-      },
-      documentation: [
-        "Official Python Documentation",
-        "Python.org Tutorial",
-        "Real Python Tutorials",
-        "GeeksforGeeks Python",
-      ],
-      projectIdeas: [
-        "Simple Calculator",
-        "Number Guessing Game",
-        "Temperature Converter",
-        "Basic To-Do List",
-        "Simple Quiz Application",
-      ],
-      practicePlatforms: [
-        "HackerRank Python",
-        "Codewars",
-        "Python.org Exercises",
-        "Exercism Python Track",
-      ],
-    },
-  },
-  {
-    id: 2,
-    title: "Data Structures & OOP",
-    description:
-      "Master Python's built-in data structures and object-oriented programming",
-    icon: <Database className="w-6 h-6" />,
-    gradient: "from-purple-500 to-pink-500",
-    content: {
-      whatToLearn: [
-        "Lists, Tuples, Sets, Dictionaries",
-        "List Comprehensions",
-        "Classes & Objects",
-        "Inheritance & Polymorphism",
-        "Encapsulation & Abstraction",
-        "Special Methods (__init__, __str__, etc.)",
-        "Iterators & Generators",
-      ],
-      toolsToUse: [
-        "Python Built-in Data Structures",
-        "Memory Profiler",
-        "UML Diagram Tools",
-        "Class Diagram Generators",
-        "Python Debugger (pdb)",
-      ],
-      bestCourses: {
-        english: [
-          "Python Data Structures - University of Michigan",
-          "Object Oriented Programming in Python",
-          "Python OOP Tutorial - Real Python",
-          "Data Structures in Python - EdX",
-        ],
-        hindi: [
-          "Python OOP Complete Course Hindi - CodeWithHarry",
-          "Data Structures in Python Hindi - Apna College",
-          "Python Classes & Objects Hindi - Geeky Shows",
-          "Python OOP Concepts Hindi - Jenny's Lectures",
-        ],
-      },
-      documentation: [
-        "Python Data Structures - Official Docs",
-        "Python Classes Tutorial",
-        "Real Python OOP Guide",
-        "Python OOP - GeeksforGeeks",
-      ],
-      projectIdeas: [
-        "Student Management System",
-        "Library Management System",
-        "Bank Account Simulation",
-        "Inventory Management",
-        "Simple Game using Classes",
-      ],
-      practicePlatforms: [
-        "LeetCode (Easy Problems)",
-        "HackerRank Data Structures",
-        "CodeChef Python Practice",
-        "InterviewBit Python",
-      ],
-    },
-  },
-  {
-    id: 3,
-    title: "File & Exception Handling",
-    description: "Learn to handle files, errors, and exceptions gracefully",
-    icon: <FileText className="w-6 h-6" />,
-    gradient: "from-green-500 to-teal-500",
-    content: {
-      whatToLearn: [
-        "File I/O Operations (read, write, append)",
-        "Working with CSV, JSON, XML files",
-        "Exception Handling (try, except, finally)",
-        "Custom Exceptions",
-        "Context Managers (with statement)",
-        "File Path Manipulation",
-        "Regular Expressions (Regex)",
-      ],
-      toolsToUse: [
-        "Built-in File Methods",
-        "CSV Module",
-        "JSON Module",
-        "OS & Path Libraries",
-        "RE (Regular Expression) Module",
-        "Pathlib",
-        "Pandas (for advanced file handling)",
-      ],
-      bestCourses: {
-        english: [
-          "Python File Handling - Real Python",
-          "Exception Handling in Python",
-          "Working with Files in Python",
-          "Regular Expressions in Python",
-        ],
-        hindi: [
-          "File Handling in Python Hindi - CodeWithHarry",
-          "Exception Handling Hindi - Apna College",
-          "Python File Operations Hindi - Geeky Shows",
-          "Regex in Python Hindi - Technical Suneja",
-        ],
-      },
-      documentation: [
-        "Python File I/O - Official Docs",
-        "Exception Handling - Python Docs",
-        "CSV Module Documentation",
-        "JSON Module Documentation",
-      ],
-      projectIdeas: [
-        "Log File Analyzer",
-        "CSV Data Processor",
-        "Configuration File Manager",
-        "Text File Backup System",
-        "Data Validation Tool",
-      ],
-      practicePlatforms: [
-        "HackerRank Python Strings",
-        "Regex101 (Practice Regex)",
-        "Codewars File Operations",
-        "Python Challenge",
-      ],
-    },
-  },
-  {
-    id: 4,
-    title: "Web Development with Python",
-    description: "Build web applications using Python frameworks",
-    icon: <Globe className="w-6 h-6" />,
-    gradient: "from-orange-500 to-red-500",
-    content: {
-      whatToLearn: [
-        "HTTP Fundamentals",
-        "Flask Framework Basics",
-        "Django Framework Introduction",
-        "Templates & Static Files",
-        "Forms & User Input",
-        "Database Integration (SQLite, PostgreSQL)",
-        "API Development (REST APIs)",
-        "Authentication & Authorization",
-      ],
-      toolsToUse: [
-        "Flask",
-        "Django",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL/MySQL",
-        "Postman (API Testing)",
-        "HTML/CSS/JavaScript",
-        "Bootstrap/Tailwind CSS",
-      ],
-      bestCourses: {
-        english: [
-          "Flask Web Development - Miguel Grinberg",
-          "Django for Beginners - William Vincent",
-          "Python Django Web Framework",
-          "FastAPI Course - Full Stack Python",
-        ],
-        hindi: [
-          "Django Complete Course Hindi - CodeWithHarry",
-          "Flask Tutorial Hindi - Apna College",
-          "Python Web Development Hindi - Geeky Shows",
-          "Django REST API Hindi - Technical Suneja",
-        ],
-      },
-      documentation: [
-        "Django Official Documentation",
-        "Flask Documentation",
-        "FastAPI Documentation",
-        "Django REST Framework",
-      ],
-      projectIdeas: [
-        "Personal Blog Website",
-        "To-Do List Web App",
-        "E-commerce Website",
-        "Social Media Clone",
-        "RESTful API for Mobile App",
-      ],
-      practicePlatforms: [
-        "Django Girls Tutorial",
-        "Real Python Web Dev",
-        "Flask Examples",
-        "Awesome Django",
-      ],
-    },
-  },
-  {
-    id: 5,
-    title: "Data Science with Python",
-    description: "Analyze data and build machine learning models",
-    icon: <CircuitBoard className="w-6 h-6" />,
-    gradient: "from-indigo-500 to-purple-600",
-    content: {
-      whatToLearn: [
-        "NumPy for Numerical Computing",
-        "Pandas for Data Manipulation",
-        "Matplotlib & Seaborn for Visualization",
-        "Statistics & Probability",
-        "Machine Learning with Scikit-learn",
-        "Data Cleaning & Preprocessing",
-        "Jupyter Notebooks & Google Colab",
-      ],
-      toolsToUse: [
-        "NumPy",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "Scikit-learn",
-        "Jupyter Notebook",
-        "Google Colab",
-        "Plotly",
-      ],
-      bestCourses: {
-        english: [
-          "Python for Data Science - Coursera",
-          "Data Analysis with Python - FreeCodeCamp",
-          "Machine Learning Course - Andrew Ng",
-          "Kaggle Learn Python",
-        ],
-        hindi: [
-          "Data Science Complete Course Hindi - CodeWithHarry",
-          "Machine Learning Hindi - Krish Naik",
-          "Pandas Tutorial Hindi - Codebasics",
-          "NumPy Tutorial Hindi - Tech With Tim",
-        ],
-      },
-      documentation: [
-        "Pandas Documentation",
-        "NumPy Documentation",
-        "Matplotlib Documentation",
-        "Scikit-learn Documentation",
-      ],
-      projectIdeas: [
-        "Sales Data Analysis",
-        "Stock Price Prediction",
-        "Customer Segmentation",
-        "Movie Recommendation System",
-        "COVID-19 Data Visualization",
-      ],
-      practicePlatforms: [
-        "Kaggle Competitions",
-        "Google Colab",
-        "Jupyter Notebooks",
-        "Data Science Challenges",
-      ],
-    },
-  },
-  {
-    id: 6,
-    title: "Automation & Web Scraping",
-    description: "Automate tasks and extract data from websites",
-    icon: <Bot className="w-6 h-6" />,
-    gradient: "from-cyan-500 to-blue-600",
-    content: {
-      whatToLearn: [
-        "Web Scraping with BeautifulSoup",
-        "Selenium for Dynamic Content",
-        "API Integration & Requests",
-        "Task Automation Scripts",
-        "File System Automation",
-        "Email Automation",
-        "Scheduled Tasks (Cron Jobs)",
-      ],
-      toolsToUse: [
-        "BeautifulSoup",
-        "Selenium WebDriver",
-        "Requests Library",
-        "Scrapy Framework",
-        "Schedule Library",
-        "PyAutoGUI",
-        "Pandas for Data Processing",
-      ],
-      bestCourses: {
-        english: [
-          "Web Scraping with Python - Real Python",
-          "Automate the Boring Stuff with Python",
-          "Python Automation Cookbook",
-          "Selenium with Python Tutorial",
-        ],
-        hindi: [
-          "Web Scraping Python Hindi - CodeWithHarry",
-          "Python Automation Hindi - Technical Suneja",
-          "Selenium Python Hindi - Naveen AutomationLabs",
-          "BeautifulSoup Tutorial Hindi - Codebasics",
-        ],
-      },
-      documentation: [
-        "BeautifulSoup Documentation",
-        "Selenium Documentation",
-        "Requests Library",
-        "Scrapy Documentation",
-      ],
-      projectIdeas: [
-        "News Article Scraper",
-        "Price Monitoring Tool",
-        "Social Media Automation",
-        "File Organization Script",
-        "Automated Report Generator",
-      ],
-      practicePlatforms: [
-        "Quotes to Scrape",
-        "Books to Scrape",
-        "Scrape This Site",
-        "Web Scraping Sandbox",
-      ],
-    },
-  },
-  {
-    id: 7,
-    title: "Advanced Concepts",
-    description: "Master advanced Python concepts and best practices",
-    icon: <Target className="w-6 h-6" />,
-    gradient: "from-rose-500 to-pink-600",
-    content: {
-      whatToLearn: [
-        "Decorators & Context Managers",
-        "Multithreading & Multiprocessing",
-        "Async Programming (asyncio)",
-        "Design Patterns",
-        "Testing (Unit Tests, PyTest)",
-        "Code Optimization & Profiling",
-        "Package Development & Distribution",
-      ],
-      toolsToUse: [
-        "Threading & Multiprocessing",
-        "Asyncio",
-        "PyTest",
-        "Unittest",
-        "Memory Profiler",
-        "Line Profiler",
-        "Setup.py & Poetry",
-        "Virtual Environments",
-      ],
-      bestCourses: {
-        english: [
-          "Advanced Python - Real Python",
-          "Python Concurrency & Parallelism",
-          "Test-Driven Development with PyTest",
-          "Effective Python - Brett Slatkin",
-        ],
-        hindi: [
-          "Advanced Python Concepts Hindi - Krish Naik",
-          "Python Decorators Hindi - CodeWithHarry",
-          "Threading in Python Hindi - Geeky Shows",
-          "Python Testing Hindi - Technical Suneja",
-        ],
-      },
-      documentation: [
-        "Python Advanced Topics",
-        "PyTest Documentation",
-        "Asyncio Documentation",
-        "Python Package Index (PyPI)",
-      ],
-      projectIdeas: [
-        "Custom Python Package",
-        "Concurrent Web Scraper",
-        "Performance Optimization Tool",
-        "Test Suite for Existing Project",
-        "Async API Server",
-      ],
-      practicePlatforms: [
-        "LeetCode (Hard Problems)",
-        "CodeWars Advanced Kata",
-        "Project Euler",
-        "TopCoder",
-      ],
-    },
-  },
-  {
-    id: 8,
-    title: "Portfolio + Resume + Interview",
-    description:
-      "Build your professional profile and prepare for job interviews",
-    icon: <Wrench className="w-6 h-6" />,
-    gradient: "from-emerald-500 to-green-600",
-    content: {
-      whatToLearn: [
-        "GitHub Profile Optimization",
-        "Technical Resume Writing",
-        "Portfolio Website Development",
-        "System Design Basics",
-        "Data Structures & Algorithms",
-        "Behavioral Interview Preparation",
-        "Mock Interview Practice",
-      ],
-      toolsToUse: [
-        "GitHub",
-        "LinkedIn",
-        "Portfolio Websites",
-        "Resume Templates",
-        "LeetCode",
-        "HackerRank",
-        "Interview Platforms",
-      ],
-      bestCourses: {
-        english: [
-          "Cracking the Coding Interview",
-          "System Design Interview Prep",
-          "GitHub Portfolio Guide",
-          "Tech Interview Handbook",
-        ],
-        hindi: [
-          "Resume Building for Developers Hindi",
-          "GitHub Profile Setup Hindi - CodeWithHarry",
-          "Interview Preparation Hindi - Apna College",
-          "DSA Interview Prep Hindi - Striver",
-        ],
-      },
-      documentation: [
-        "GitHub Profile README Guide",
-        "LinkedIn Profile Tips",
-        "Technical Writing Guide",
-        "Career Guide for Developers",
-      ],
-      projectIdeas: [
-        "Personal Portfolio Website",
-        "Open Source Contributions",
-        "Technical Blog Writing",
-        "YouTube Channel/Tutorial Series",
-        "Freelance Python Projects",
-      ],
-      practicePlatforms: [
-        "LeetCode Interview Prep",
-        "InterviewBit",
-        "Pramp (Mock Interviews)",
-        "Coding Interview University",
-      ],
-    },
-  },
-];
-  const PythonRoadmapComponent = () => {
+export default function Home() {
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
-  const [openSection, setOpenSection] = useState(null);
   const [downloading, setDownloading] = useState(false);
 
+  // Toggle section open/close - now allows multiple sections to be open
+  const toggleSection = (id) => {
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
+  };
+
+  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const toggleSection = (sectionId) => {
-    setOpenSection(openSection === sectionId ? null : sectionId);
-  };
+  // Handle PDF download
   const handleDownload = async () => {
-    setDownloading(true);
+    await handleDownloadPDF(roadmapData, setDownloading);
+  };
 
-    try {
-      // Create a temporary div to render the Python roadmap content for downloading
-      const downloadDiv = document.createElement("div");
-      downloadDiv.className = "roadmap-download-content";
+  // Handle YouTube redirect
+  const handleYouTubeRedirect = () => {
+    window.open(
+      "https://youtu.be/UrsmFxEIp5k?si=O_QPVpelXJdCHk62",
+      "_blank",
+    );
+  };
 
-      // IMPROVED STYLES for better PDF output and readability
-      downloadDiv.style.padding = "40px";
-      downloadDiv.style.color = "#2c3e50";
-      downloadDiv.style.backgroundColor = "white";
-      downloadDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-      downloadDiv.style.fontSize = "14px";
-      downloadDiv.style.lineHeight = "1.6";
-      downloadDiv.style.maxWidth = "800px";
-      downloadDiv.style.margin = "0 auto";
-
-      // Add title with better styling
-      const title = document.createElement("h1");
-      title.style.textAlign = "center";
-      title.style.marginBottom = "30px";
-      title.style.fontSize = "32px";
-      title.style.fontWeight = "700";
-      title.style.color = "#2c3e50";
-      title.style.borderBottom = "3px solid #3776ab"; // Python blue color
-      title.style.paddingBottom = "15px";
-      title.textContent = "Python Learning Roadmap";
-      downloadDiv.appendChild(title);
-
-      // Add Python logo/icon (optional text representation)
-      const subtitle = document.createElement("p");
-      subtitle.style.textAlign = "center";
-      subtitle.style.fontSize = "16px";
-      subtitle.style.color = "#7f8c8d";
-      subtitle.style.marginBottom = "40px";
-      subtitle.style.fontStyle = "italic";
-      subtitle.textContent = "🐍 Complete Guide to Master Python Programming";
-      downloadDiv.appendChild(subtitle);
-
-      // Add roadmap content with improved styling
-      pythonRoadmap.forEach((section) => {
-        const sectionDiv = document.createElement("div");
-        sectionDiv.style.marginBottom = "40px";
-        sectionDiv.style.pageBreakInside = "avoid"; // Prevent breaking inside sections
-
-        // Section header with better design
-        const header = document.createElement("h2");
-        header.style.backgroundColor = "#ecf0f1";
-        header.style.padding = "15px 20px";
-        header.style.borderRadius = "8px";
-        header.style.borderLeft = "5px solid #3776ab"; // Python blue
-        header.style.fontSize = "20px";
-        header.style.fontWeight = "600";
-        header.style.color = "#2c3e50";
-        header.style.marginBottom = "20px";
-        header.textContent = `${section.id}. ${section.title}`;
-        sectionDiv.appendChild(header);
-
-        // Section description with better typography
-        const desc = document.createElement("p");
-        desc.style.marginBottom = "25px";
-        desc.style.fontStyle = "italic";
-        desc.style.fontSize = "15px";
-        desc.style.color = "#7f8c8d";
-        desc.style.lineHeight = "1.7";
-        desc.style.padding = "0 10px";
-        desc.textContent = section.description;
-        sectionDiv.appendChild(desc);
-
-        // What to Learn with improved styling
-        const whatToLearn = document.createElement("div");
-        whatToLearn.style.marginBottom = "25px";
-
-        const whatToLearnTitle = document.createElement("h3");
-        whatToLearnTitle.style.fontSize = "18px";
-        whatToLearnTitle.style.fontWeight = "600";
-        whatToLearnTitle.style.color = "#27ae60";
-        whatToLearnTitle.style.marginBottom = "12px";
-        whatToLearnTitle.style.borderBottom = "2px solid #27ae60";
-        whatToLearnTitle.style.paddingBottom = "5px";
-        whatToLearnTitle.textContent = "✅ What to Learn";
-        whatToLearn.appendChild(whatToLearnTitle);
-
-        const whatToLearnList = document.createElement("ul");
-        whatToLearnList.style.paddingLeft = "25px";
-        whatToLearnList.style.margin = "15px 0";
-        section.content.whatToLearn.forEach((item) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = item;
-          whatToLearnList.appendChild(li);
-        });
-        whatToLearn.appendChild(whatToLearnList);
-        sectionDiv.appendChild(whatToLearn);
-
-        // Best Courses with better organization
-        const bestCourses = document.createElement("div");
-        bestCourses.style.marginBottom = "25px";
-
-        const bestCoursesTitle = document.createElement("h3");
-        bestCoursesTitle.style.fontSize = "18px";
-        bestCoursesTitle.style.fontWeight = "600";
-        bestCoursesTitle.style.color = "#3498db";
-        bestCoursesTitle.style.marginBottom = "12px";
-        bestCoursesTitle.style.borderBottom = "2px solid #3498db";
-        bestCoursesTitle.style.paddingBottom = "5px";
-        bestCoursesTitle.textContent = "📚 Best Courses";
-        bestCourses.appendChild(bestCoursesTitle);
-
-        // English courses
-        const englishTitle = document.createElement("h4");
-        englishTitle.style.fontSize = "16px";
-        englishTitle.style.fontWeight = "500";
-        englishTitle.style.color = "#2c3e50";
-        englishTitle.style.marginTop = "15px";
-        englishTitle.style.marginBottom = "10px";
-        englishTitle.textContent = "In English:";
-        bestCourses.appendChild(englishTitle);
-
-        const englishList = document.createElement("ul");
-        englishList.style.paddingLeft = "25px";
-        englishList.style.margin = "10px 0";
-        section.content.bestCourses.english.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          englishList.appendChild(li);
-        });
-        bestCourses.appendChild(englishList);
-
-        // Hindi courses
-        const hindiTitle = document.createElement("h4");
-        hindiTitle.style.fontSize = "16px";
-        hindiTitle.style.fontWeight = "500";
-        hindiTitle.style.color = "#2c3e50";
-        hindiTitle.style.marginTop = "15px";
-        hindiTitle.style.marginBottom = "10px";
-        hindiTitle.textContent = "In Hindi:";
-        bestCourses.appendChild(hindiTitle);
-
-        const hindiList = document.createElement("ul");
-        hindiList.style.paddingLeft = "25px";
-        hindiList.style.margin = "10px 0";
-        section.content.bestCourses.hindi.forEach((course) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "6px";
-          li.style.fontSize = "13px";
-          li.style.lineHeight = "1.5";
-          li.style.color = "#34495e";
-          li.textContent = course;
-          hindiList.appendChild(li);
-        });
-        bestCourses.appendChild(hindiList);
-        sectionDiv.appendChild(bestCourses);
-
-        // Tools to Use with better styling
-        const tools = document.createElement("div");
-        tools.style.marginBottom = "25px";
-
-        const toolsTitle = document.createElement("h3");
-        toolsTitle.style.fontSize = "18px";
-        toolsTitle.style.fontWeight = "600";
-        toolsTitle.style.color = "#f39c12";
-        toolsTitle.style.marginBottom = "12px";
-        toolsTitle.style.borderBottom = "2px solid #f39c12";
-        toolsTitle.style.paddingBottom = "5px";
-        toolsTitle.textContent = "🧰 Tools to Use";
-        tools.appendChild(toolsTitle);
-
-        const toolsList = document.createElement("ul");
-        toolsList.style.paddingLeft = "25px";
-        toolsList.style.margin = "15px 0";
-        section.content.toolsToUse.forEach((tool) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = tool;
-          toolsList.appendChild(li);
-        });
-        tools.appendChild(toolsList);
-        sectionDiv.appendChild(tools);
-
-        // Documentation with better styling
-        const docs = document.createElement("div");
-        docs.style.marginBottom = "25px";
-
-        const docsTitle = document.createElement("h3");
-        docsTitle.style.fontSize = "18px";
-        docsTitle.style.fontWeight = "600";
-        docsTitle.style.color = "#e74c3c";
-        docsTitle.style.marginBottom = "12px";
-        docsTitle.style.borderBottom = "2px solid #e74c3c";
-        docsTitle.style.paddingBottom = "5px";
-        docsTitle.textContent = "📘 Documentation";
-        docs.appendChild(docsTitle);
-
-        const docsList = document.createElement("ul");
-        docsList.style.paddingLeft = "25px";
-        docsList.style.margin = "15px 0";
-        section.content.documentation.forEach((doc) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = doc;
-          docsList.appendChild(li);
-        });
-        docs.appendChild(docsList);
-        sectionDiv.appendChild(docs);
-
-        // Project Ideas with better styling
-        const projects = document.createElement("div");
-        projects.style.marginBottom = "25px";
-
-        const projectsTitle = document.createElement("h3");
-        projectsTitle.style.fontSize = "18px";
-        projectsTitle.style.fontWeight = "600";
-        projectsTitle.style.color = "#9b59b6";
-        projectsTitle.style.marginBottom = "12px";
-        projectsTitle.style.borderBottom = "2px solid #9b59b6";
-        projectsTitle.style.paddingBottom = "5px";
-        projectsTitle.textContent = "💡 Project Ideas";
-        projects.appendChild(projectsTitle);
-
-        const projectsList = document.createElement("ul");
-        projectsList.style.paddingLeft = "25px";
-        projectsList.style.margin = "15px 0";
-        section.content.projectIdeas.forEach((project) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = project;
-          projectsList.appendChild(li);
-        });
-        projects.appendChild(projectsList);
-        sectionDiv.appendChild(projects);
-
-        // Practice Platforms with better styling
-        const practice = document.createElement("div");
-        practice.style.marginBottom = "25px";
-
-        const practiceTitle = document.createElement("h3");
-        practiceTitle.style.fontSize = "18px";
-        practiceTitle.style.fontWeight = "600";
-        practiceTitle.style.color = "#16a085";
-        practiceTitle.style.marginBottom = "12px";
-        practiceTitle.style.borderBottom = "2px solid #16a085";
-        practiceTitle.style.paddingBottom = "5px";
-        practiceTitle.textContent = "⚡ Practice Platforms";
-        practice.appendChild(practiceTitle);
-
-        const practiceList = document.createElement("ul");
-        practiceList.style.paddingLeft = "25px";
-        practiceList.style.margin = "15px 0";
-        section.content.practicePlatforms.forEach((platform) => {
-          const li = document.createElement("li");
-          li.style.marginBottom = "8px";
-          li.style.fontSize = "14px";
-          li.style.lineHeight = "1.6";
-          li.style.color = "#34495e";
-          li.textContent = platform;
-          practiceList.appendChild(li);
-        });
-        practice.appendChild(practiceList);
-        sectionDiv.appendChild(practice);
-
-        downloadDiv.appendChild(sectionDiv);
-      });
-
-      // Add footer with generation date
-      const footer = document.createElement("div");
-      footer.style.marginTop = "40px";
-      footer.style.padding = "20px";
-      footer.style.borderTop = "2px solid #ecf0f1";
-      footer.style.textAlign = "center";
-      footer.style.fontSize = "12px";
-      footer.style.color = "#95a5a6";
-      footer.textContent = `Generated on ${new Date().toLocaleDateString()} | Python Learning Roadmap`;
-      downloadDiv.appendChild(footer);
-
-      // Temporarily add the div to the document to render it
-      document.body.appendChild(downloadDiv);
-
-      // IMPROVED html2canvas settings for better quality
-      const canvas = await html2canvas(downloadDiv, {
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        logging: false,
-        letterRendering: true, // Better text rendering
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        width: downloadDiv.scrollWidth,
-        height: downloadDiv.scrollHeight,
-        scrollX: 0,
-        scrollY: 0
-      });
-
-      // Remove the temporary div
-      document.body.removeChild(downloadDiv);
-
-      // Create PDF with better settings
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-        compress: true, // Compress for smaller file size
-        precision: 2
-      });
-
-      // Calculate dimensions for better fitting
-      const imgWidth = 210; // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      const pageHeight = 297; // A4 height in mm
-
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      // Add first page
-      pdf.addImage(
-        canvas.toDataURL("image/jpeg", 0.95), // Use JPEG with high quality
-        "JPEG",
-        0,
-        0,
-        imgWidth,
-        imgHeight,
-      );
-      heightLeft -= pageHeight;
-
-      // Add additional pages if needed
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(
-          canvas.toDataURL("image/jpeg", 0.95),
-          "JPEG",
-          0,
-          position,
-          imgWidth,
-          imgHeight,
-        );
-        heightLeft -= pageHeight;
-      }
-
-      // Save the PDF with Python-specific filename
-      pdf.save("Python_Learning_Roadmap.pdf");
-
-      // Optional: Store the downloaded roadmap data (remove localStorage usage for Claude.ai artifacts)
-      // Instead, you could show a success message or update UI state
-      console.log("Python roadmap PDF generated successfully!");
-
-      // Show success message
-      alert("Python Learning Roadmap PDF downloaded successfully!");
-
-      // Navigate to Downloads page if router is available
-      // router.push('/Downloads'); // Uncomment if using Next.js router
-
-    } catch (error) {
-      console.error("Error generating Python roadmap PDF:", error);
-      alert("There was an error generating the PDF. Please try again.");
-    } finally {
-      setDownloading(false);
-    }
+  // Handle AI Guide redirect
+  const handleAIGuideRedirect = () => {
+    window.location.href = "/CareerGuidance";
   };
 
   return (
     <div
-      className={`min-h-screen ${
-        darkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+      className={`min-h-screen font-sans ${
+        darkMode
+          ? "dark bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
+          : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
       }`}
     >
+      {/* Side Action Buttons */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4">
+        {/* YouTube Course Button */}
+        <button
+          onClick={handleYouTubeRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600"
+              : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+          } text-white`}
+
+        >
+          {/* YouTube Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            YouTube Courses
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+
+        <button
+          onClick={handleAIGuideRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600"
+              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+          } text-white`}
+          title="AI Career Guidance"
+        >
+          {/* AI Guide Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            AI Career Guide
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+      </div>
+
       {/* Sticky Navigation Bar */}
       <nav
-        className={`sticky top-0 z-10 ${
-          darkMode ? "bg-gray-800" : "bg-white"
-        } shadow-md px-4 py-4 flex justify-between items-center transition-colors duration-300`}
+        className={`sticky top-0 z-10 backdrop-blur-lg ${
+          darkMode
+            ? "bg-gray-900/90 border-gray-700/50"
+            : "bg-white/90 border-gray-200/50"
+        } border-b shadow-xl px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 transition-all duration-300`}
       >
-        <h1 className="text-xl md:text-2xl font-bold">
-         Python Learning Roadmap
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+           Python Developer 
+          </span>
+          <span
+            className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
+          >
+            Roadmap
+          </span>
         </h1>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Download Button */}
           <button
             onClick={handleDownload}
             disabled={downloading}
-            className={`px-4 py-2 rounded-md text-white ${
+            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-medium text-xs sm:text-sm tracking-wide text-white shadow-lg transform transition-all duration-200 ${
               downloading
-                ? "bg-gray-500 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
-            } transition-colors flex items-center`}
+                ? "bg-gray-500 cursor-not-allowed scale-95"
+                : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl hover:scale-105 active:scale-95"
+            } flex items-center`}
           >
             {downloading ? (
               <>
                 <svg
-                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                  className="animate-spin -ml-1 mr-2 sm:mr-3 h-3 w-3 sm:h-4 sm:w-4 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -939,19 +181,30 @@ const pythonRoadmap = [
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   ></path>
                 </svg>
-                Processing...
+                <span className="font-medium hidden sm:inline">
+                  Generating PDF...
+                </span>
+                <span className="font-medium sm:hidden">PDF...</span>
               </>
             ) : (
               <>
                 <svg
-                  className="w-4 h-4 mr-2"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-2 sm:mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
                 </svg>
-                Download Roadmap
+                <span className="font-medium hidden sm:inline">
+                  Download PDF
+                </span>
+                <span className="font-medium sm:hidden">PDF</span>
               </>
             )}
           </button>
@@ -959,19 +212,17 @@ const pythonRoadmap = [
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
-            className={`p-2 rounded-full ${
+            className={`p-2 sm:p-3 rounded-xl shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95 ${
               darkMode
-                ? "bg-gray-700 text-yellow-300"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-300 hover:to-orange-400"
+                : "bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-600 hover:to-gray-700"
             }`}
-            aria-label="Toggle Dark Mode"
           >
             {darkMode ? (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="currentColor"
+                viewBox="0 0 20 20"
               >
                 <path
                   fillRule="evenodd"
@@ -981,10 +232,9 @@ const pythonRoadmap = [
               </svg>
             ) : (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="currentColor"
+                viewBox="0 0 20 20"
               >
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
               </svg>
@@ -993,251 +243,243 @@ const pythonRoadmap = [
         </div>
       </nav>
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Introduction */}
-        <div
-          className={`mb-8 p-6 rounded-lg ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md transition-colors duration-300`}
-        >
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">
-            Welcome to the Python Learning Roadmap
+      {/* Main Content */}
+      <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
+        {/* Hero Section */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+           Python Developer 
+            </span>
+            <br />
+            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
+              Roadmap
+            </span>
           </h2>
-          <p className="text-sm md:text-base leading-relaxed">
-            This comprehensive roadmap will guide you through your Python
-            learning journey, from basic syntax to advanced concepts. Each
-            section contains curated resources in both English and Hindi, along
-            with practical projects and hands-on exercises. Click on any section
-            to expand it and explore detailed learning materials, tools, and
-            project ideas that will help you master Python programming.
+          <p
+            className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
+          >
+            A comprehensive guide to becoming a Python Developer 
+            step-by-step learning path, courses, tools, and project ideas.
           </p>
+          <div className="mt-6 sm:mt-8 flex justify-center">
+            <div
+              className={`h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`}
+            ></div>
+          </div>
         </div>
 
         {/* Roadmap Sections */}
-        <div className="space-y-4">
-          {pythonRoadmap.map((section) => (
+        <div className="space-y-6 sm:space-y-8">
+          {roadmapData.map((section) => (
             <div
               key={section.id}
-              className={`rounded-lg shadow-md overflow-hidden transition-all duration-300 ${
+              id={`section-${section.id}`}
+              className={`${
                 darkMode
-                  ? "bg-gray-800 hover:bg-gray-750"
-                  : "bg-white hover:bg-gray-50"
+                  ? "bg-gray-800/50 border-gray-700/50"
+                  : "bg-white/70 border-gray-200/50"
+              } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
+                openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
               }`}
             >
               {/* Section Header */}
               <button
                 onClick={() => toggleSection(section.id)}
-                className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
-                aria-expanded={openSection === section.id}
+                className={`w-full p-4 sm:p-6 lg:p-8 text-left flex justify-between items-center ${
+                  darkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-50/50"
+                } transition-all duration-200 group`}
               >
-                <div className="flex items-center">
-                  <span
-                    className={`flex items-center justify-center w-8 h-8 rounded-full mr-3 ${
-                      darkMode ? "bg-blue-600" : "bg-blue-500"
-                    } text-white font-medium`}
-                  >
-                    {section.id}
-                  </span>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-lg">{section.title}</h3>
-                    <p
-                      className={`text-sm ${
-                        darkMode ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      {section.description}
-                    </p>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center mb-2 sm:mb-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 flex-shrink-0">
+                      {section.id}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight group-hover:text-blue-600 transition-colors truncate">
+                      {section.title}
+                    </h3>
                   </div>
+                  <p
+                    className={`text-sm sm:text-base lg:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} ml-9 sm:ml-12 pr-4`}
+                  >
+                    {section.description}
+                  </p>
                 </div>
-                <svg
-                  className={`w-5 h-5 transform transition-transform duration-300 ${
-                    openSection === section.id ? "rotate-180" : "rotate-0"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
+                  {openSections.has(section.id) ? (
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 15l7-7 7 7"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
+                </div>
               </button>
 
               {/* Section Content */}
-              {openSection === section.id && (
+              {openSections.has(section.id) && (
                 <div
-                  className={`px-6 pb-6 pt-2 border-t ${
-                    darkMode ? "border-gray-700" : "border-gray-200"
-                  } animate-fadeIn`}
+                  className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`}
                 >
-                  {/* What to Learn */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">✅</span>What to Learn
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.whatToLearn.map((item, index) => (
-                        <li
-                          key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Best Courses */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">📚</span>Best Courses
-                    </h4>
-
-                    <div className="space-y-4">
-                      {/* English Courses */}
-                      <div>
-                        <h5
-                          className={`font-medium mb-2 ${
-                            darkMode ? "text-gray-200" : "text-gray-800"
-                          }`}
-                        >
-                          In English:
-                        </h5>
-                        <ul className="space-y-1">
-                          {section.content.bestCourses.english.map(
-                            (course, index) => (
-                              <li
-                                key={index}
-                                className={`flex items-start ${
-                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                }`}
-                              >
-                                <span className="min-w-4 text-blue-500 mr-2">
-                                  •
-                                </span>
-                                {course}
-                              </li>
-                            ),
-                          )}
-                        </ul>
-                      </div>
-
-                      {/* Hindi Courses */}
-                      <div>
-                        <h5
-                          className={`font-medium mb-2 ${
-                            darkMode ? "text-gray-200" : "text-gray-800"
-                          }`}
-                        >
-                          In Hindi:
-                        </h5>
-                        <ul className="space-y-1">
-                          {section.content.bestCourses.hindi.map(
-                            (course, index) => (
-                              <li
-                                key={index}
-                                className={`flex items-start ${
-                                  darkMode ? "text-gray-300" : "text-gray-700"
-                                }`}
-                              >
-                                <span className="min-w-4 text-blue-500 mr-2">
-                                  •
-                                </span>
-                                {course}
-                              </li>
-                            ),
-                          )}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Tools to Use */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">🧰</span>Tools to Use
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {section.content.toolsToUse.map((tool, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-sm ${
-                            darkMode
-                              ? "bg-gray-700 text-gray-200"
-                              : "bg-gray-200 text-gray-800"
-                          }`}
-                        >
-                          {tool}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
+                    {/* What to Learn */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-green-900/20 border-green-500/20" : "bg-green-50/80 border-green-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          ✅
                         </span>
-                      ))}
+                        What to Learn
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.whatToLearn?.map((item, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-green-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{item}</span>
+                          </li>
+                        )) || []}
+                      </ul>
                     </div>
-                  </div>
 
-                  {/* Documentation */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">📘</span>Documentation & Resources
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.documentation.map((resource, index) => (
-                        <li
-                          key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
-                          {resource}
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Tools to Use */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-orange-900/20 border-orange-500/20" : "bg-orange-50/80 border-orange-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          🧰
+                        </span>
+                        Tools to Use
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.toolsToUse?.map((tool, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-orange-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{tool}</span>
+                          </li>
+                        )) || []}
+                      </ul>
+                    </div>
+
+                    {/* Best Courses */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-blue-900/20 border-blue-500/20" : "bg-blue-50/80 border-blue-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          📚
+                        </span>
+                        Best Courses
+                      </h4>
+                      <div className="space-y-4 sm:space-y-5">
+                        <div>
+                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">
+                            In English:
+                          </h5>
+                          <ul className="space-y-1 sm:space-y-2">
+                            {section.content?.bestCourses?.english?.map(
+                              (course, index) => (
+                                <li
+                                  key={index}
+                                  className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}
+                                >
+                                  <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
+                                    •
+                                  </span>
+                                  <span className="font-medium">{course}</span>
+                                </li>
+                              ),
+                            ) || []}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Docs & Websites */}
+                    <div
+                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-red-900/20 border-red-500/20" : "bg-red-50/80 border-red-200/50"} border`}
+                    >
+                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600 flex items-center">
+                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                          📘
+                        </span>
+                        Docs & Websites
+                      </h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {section.content?.docsAndWebsites?.map((doc, index) => (
+                          <li
+                            key={index}
+                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                          >
+                            <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                              •
+                            </span>
+                            <span className="font-medium">{doc}</span>
+                          </li>
+                        )) || []}
+                      </ul>
+                    </div>
                   </div>
 
                   {/* Project Ideas */}
-                  <div className="mb-6">
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">💡</span>Project Ideas
+                  <div className="mt-6 sm:mt-8">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-600 flex items-center">
+                      <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                        💡
+                      </span>
+                      Project Ideas
                     </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {section.content.projectIdeas.map((project, index) => (
-                        <li
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                      {section.content?.projectIdeas?.map((project, index) => (
+                        <div
                           key={index}
-                          className={`flex items-center ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
+                          className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
-                          {project}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Practice Platforms */}
-                  <div>
-                    <h4 className="flex items-center text-lg font-medium mb-3">
-                      <span className="mr-2">🏆</span>Practice Platforms
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {section.content.practicePlatforms.map(
-                        (platform, index) => (
-                          <span
-                            key={index}
-                            className={`px-3 py-1 rounded-full text-sm ${
-                              darkMode
-                                ? "bg-green-700 text-green-200"
-                                : "bg-green-200 text-green-800"
-                            }`}
-                          >
-                            {platform}
-                          </span>
-                        ),
-                      )}
+                          <div className="flex items-start">
+                            <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
+                              💡
+                            </span>
+                            <span
+                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
+                            >
+                              {project}
+                            </span>
+                          </div>
+                        </div>
+                      )) || []}
                     </div>
                   </div>
                 </div>
@@ -1246,37 +488,57 @@ const pythonRoadmap = [
           ))}
         </div>
 
-        {/* Footer */}
-        <div
-          className={`mt-12 p-6 rounded-lg text-center ${
-            darkMode ? "bg-gray-800" : "bg-white"
-          } shadow-md`}
-        >
-          <p
-            className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-          >
-            🚀 Start your Python journey today! Remember, consistency is key to
-            mastering programming.
-          </p>
-        </div>
-      </main>
+        {/* Empty State */}
+        {roadmapData.length === 0 && (
+          <div className="text-center py-16 sm:py-20">
+            <div
+              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
+            >
+              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                No Roadmap Data Available
+              </h3>
+              <p
+                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+              >
+                Add your roadmap data to get started with your Python Developer journey.
+              </p>
+            </div>
+          </div>
+        )}
 
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-      `}</style>
+        {/* Footer */}
+        <footer className="mt-16 sm:mt-20 text-center">
+          <div
+            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Ready to Start Your Journey?
+            </h3>
+            <p
+              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
+            >
+              Remember: Consistency is key. Start with the fundamentals and
+              build your way up!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={handleDownload}
+                disabled={downloading}
+                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
+                  downloading
+                    ? "bg-gray-500 cursor-not-allowed scale-95"
+                    : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
+                }`}
+              >
+                {downloading
+                  ? "Generating PDF..."
+                  : "Download Complete Roadmap"}
+              </button>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
   );
 }
-export default PythonRoadmapComponent

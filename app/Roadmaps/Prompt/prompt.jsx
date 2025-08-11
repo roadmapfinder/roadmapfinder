@@ -4,13 +4,19 @@ import roadmapData from "./roadmapData.json";
 import { handleDownloadPDF } from "./downloadPdf.js";
 
 export default function Home() {
-  const [openSection, setOpenSection] = useState(null);
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
 
-  // Toggle section open/close
+  // Toggle section open/close - now allows multiple sections to be open
   const toggleSection = (id) => {
-    setOpenSection(openSection === id ? null : id);
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
   };
 
   // Toggle dark mode
@@ -23,6 +29,19 @@ export default function Home() {
     await handleDownloadPDF(roadmapData, setDownloading);
   };
 
+  // Handle YouTube redirect
+  const handleYouTubeRedirect = () => {
+    window.open(
+      "https://youtu.be/mkiKUPqcFEs?si=a9BuhxPCSNdaagiL",
+      "_blank",
+    );
+  };
+
+  // Handle AI Guide redirect
+  const handleAIGuideRedirect = () => {
+    window.location.href = "/CareerGuidance";
+  };
+
   return (
     <div
       className={`min-h-screen font-sans ${
@@ -31,6 +50,86 @@ export default function Home() {
           : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
       }`}
     >
+      {/* Side Action Buttons */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4">
+        {/* YouTube Course Button */}
+        <button
+          onClick={handleYouTubeRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600"
+              : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+          } text-white`}
+
+        >
+          {/* YouTube Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            YouTube Courses
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+
+        <button
+          onClick={handleAIGuideRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600"
+              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+          } text-white`}
+          title="AI Career Guidance"
+        >
+          {/* AI Guide Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            AI Career Guide
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+      </div>
+
       {/* Sticky Navigation Bar */}
       <nav
         className={`sticky top-0 z-10 backdrop-blur-lg ${
@@ -41,7 +140,7 @@ export default function Home() {
       >
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-         Prompt Engineering 
+           Prompt Engineer 
           </span>
           <span
             className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
@@ -150,7 +249,7 @@ export default function Home() {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-           Prompt Engineering
+           Prompt Engineer
             </span>
             <br />
             <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
@@ -160,7 +259,7 @@ export default function Home() {
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
-            A comprehensive guide to becoming a Prompt Engineer with
+            A comprehensive guide to becoming a Prompt Engineer,
             step-by-step learning path, courses, tools, and project ideas.
           </p>
           <div className="mt-6 sm:mt-8 flex justify-center">
@@ -175,12 +274,13 @@ export default function Home() {
           {roadmapData.map((section) => (
             <div
               key={section.id}
+              id={`section-${section.id}`}
               className={`${
                 darkMode
                   ? "bg-gray-800/50 border-gray-700/50"
                   : "bg-white/70 border-gray-200/50"
               } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
-                openSection === section.id ? "ring-2 ring-blue-500/20" : ""
+                openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
               }`}
             >
               {/* Section Header */}
@@ -206,7 +306,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
-                  {openSection === section.id ? (
+                  {openSections.has(section.id) ? (
                     <svg
                       className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600"
                       fill="none"
@@ -239,9 +339,9 @@ export default function Home() {
               </button>
 
               {/* Section Content */}
-              {openSection === section.id && (
+              {openSections.has(section.id) && (
                 <div
-                  className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t`}
+                  className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
                     {/* What to Learn */}
@@ -311,26 +411,6 @@ export default function Home() {
                           </h5>
                           <ul className="space-y-1 sm:space-y-2">
                             {section.content?.bestCourses?.english?.map(
-                              (course, index) => (
-                                <li
-                                  key={index}
-                                  className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}
-                                >
-                                  <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
-                                    •
-                                  </span>
-                                  <span className="font-medium">{course}</span>
-                                </li>
-                              ),
-                            ) || []}
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">
-                            In Hindi:
-                          </h5>
-                          <ul className="space-y-1 sm:space-y-2">
-                            {section.content?.bestCourses?.hindi?.map(
                               (course, index) => (
                                 <li
                                   key={index}
@@ -421,8 +501,7 @@ export default function Home() {
               <p
                 className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
               >
-                Add your roadmap data to get started with your Prompt Engineer
-                journey.
+                Add your roadmap data to get started with your Prompt Engineer journey.
               </p>
             </div>
           </div>
@@ -442,17 +521,21 @@ export default function Home() {
               Remember: Consistency is key. Start with the fundamentals and
               build your way up!
             </p>
-            <button
-              onClick={handleDownload}
-              disabled={downloading}
-              className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
-                downloading
-                  ? "bg-gray-500 cursor-not-allowed scale-95"
-                  : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
-              }`}
-            >
-              {downloading ? "Generating PDF..." : "Download Complete Roadmap"}
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={handleDownload}
+                disabled={downloading}
+                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
+                  downloading
+                    ? "bg-gray-500 cursor-not-allowed scale-95"
+                    : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
+                }`}
+              >
+                {downloading
+                  ? "Generating PDF..."
+                  : "Download Complete Roadmap"}
+              </button>
+            </div>
           </div>
         </footer>
       </main>

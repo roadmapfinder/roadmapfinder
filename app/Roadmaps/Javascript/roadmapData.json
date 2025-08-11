@@ -1,0 +1,485 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript Fundamentals",
+    "description": "Master the basics of JavaScript programming language",
+    "icon": "Code",
+    "gradient": "from-yellow-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "Variables & Data Types (let, const, var)",
+        "Functions & Arrow Functions",
+        "Objects & Arrays",
+        "Conditional Statements & Loops",
+        "DOM Manipulation",
+        "Event Handling",
+        "Basic ES6+ Features",
+        "Error Handling (try/catch)"
+      ],
+      "toolsToUse": [
+        "VS Code with JavaScript Extensions",
+        "Chrome DevTools",
+        "Node.js Runtime",
+        "Live Server Extension",
+        "ESLint for Code Quality",
+        "Prettier for Code Formatting"
+      ],
+      "bestCourses": {
+        "english": [
+          "JavaScript - The Complete Guide (Maximilian Schwarzmüller) - Udemy",
+          "JavaScript30 by Wes Bos - Free",
+          "freeCodeCamp JavaScript Course - YouTube",
+          "JavaScript.info - Interactive Tutorial"
+        ],
+        "hindi": [
+          "JavaScript Complete Course - CodeWithHarry",
+          "JavaScript Tutorial Hindi - Thapa Technical",
+          "JS Complete Series - Chai aur Code",
+          "JavaScript Basics Hindi - Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "MDN Web Docs - JavaScript",
+        "JavaScript.info",
+        "W3Schools JavaScript Tutorial",
+        "Eloquent JavaScript (Free Book)"
+      ],
+      "projectIdeas": [
+        "Interactive Calculator",
+        "To-Do List App",
+        "Random Quote Generator",
+        "Simple Digital Clock",
+        "Color Palette Generator"
+      ],
+      "practicePlatforms": [
+        "Codewars - JavaScript Kata",
+        "HackerRank JavaScript",
+        "LeetCode (Easy Problems)",
+        "JavaScript30.com"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Intermediate JavaScript",
+    "description": "Deep dive into advanced concepts and modern JavaScript",
+    "icon": "Zap",
+    "gradient": "from-blue-500 to-purple-500",
+    "content": {
+      "whatToLearn": [
+        "Closures & Scope",
+        "Promises & Async/Await",
+        "Prototypes & Inheritance",
+        "Higher-Order Functions",
+        "Destructuring & Spread Operator",
+        "Modules (Import/Export)",
+        "Regular Expressions",
+        "Local Storage & Session Storage"
+      ],
+      "toolsToUse": [
+        "Babel for Transpiling",
+        "Webpack Module Bundler",
+        "Jest for Testing",
+        "Postman for API Testing",
+        "JSON Server for Mock APIs",
+        "Browser Developer Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced JavaScript Concepts - Andrei Neagoie (Udemy)",
+          "JavaScript: Understanding the Weird Parts - Anthony Alicea",
+          "Deep JavaScript Foundations - Kyle Simpson (Frontend Masters)",
+          "Modern JavaScript From The Beginning - Brad Traversy"
+        ],
+        "hindi": [
+          "Advanced JavaScript Hindi - Hitesh Choudhary",
+          "JavaScript Advanced Concepts - Thapa Technical",
+          "Async JavaScript Hindi - CodeWithHarry",
+          "ES6+ Features Hindi - Apna College"
+        ]
+      },
+      "docsAndWebsites": [
+        "You Don't Know JS (Book Series)",
+        "JavaScript Promises - MDN",
+        "ES6 Features Guide",
+        "JavaScript Design Patterns"
+      ],
+      "projectIdeas": [
+        "Weather App with API",
+        "Movie Search App",
+        "Expense Tracker",
+        "Quiz Application",
+        "Recipe Finder App"
+      ],
+      "practicePlatforms": [
+        "JavaScript Algorithms - freeCodeCamp",
+        "Codepen Challenges",
+        "Frontend Mentor",
+        "JavaScript Quiz - W3Schools"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Advanced JavaScript & Patterns",
+    "description": "Master complex concepts and design patterns",
+    "icon": "CircuitBoard",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Design Patterns (Observer, Module, Singleton)",
+        "Functional Programming Concepts",
+        "Advanced Async Patterns",
+        "Memory Management & Performance",
+        "Web APIs (Fetch, Geolocation, etc.)",
+        "WebSockets & Real-time Communication",
+        "Service Workers & PWA Basics",
+        "Advanced DOM Manipulation"
+      ],
+      "toolsToUse": [
+        "Chrome Performance Tab",
+        "Lighthouse for Auditing",
+        "TypeScript (Optional)",
+        "Advanced Testing Tools",
+        "Performance Monitoring Tools",
+        "Code Splitting Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "JavaScript Design Patterns - Udemy",
+          "Advanced JavaScript - Pluralsight",
+          "Functional Programming in JavaScript - Frontend Masters",
+          "Performance Optimization - Web.dev"
+        ],
+        "hindi": [
+          "JavaScript Design Patterns Hindi - Hitesh Choudhary",
+          "Advanced JS Concepts Hindi - Thapa Technical",
+          "Performance Optimization Hindi - CodeWithHarry",
+          "Functional Programming Hindi - Chai aur Code"
+        ]
+      },
+      "docsAndWebsites": [
+        "JavaScript Design Patterns - Addy Osmani",
+        "Web Performance Guidelines",
+        "PWA Documentation - Google",
+        "Advanced JavaScript Concepts - MDN"
+      ],
+      "projectIdeas": [
+        "Real-time Chat Application",
+        "Progressive Web App (PWA)",
+        "Advanced Calculator with History",
+        "Image Gallery with Lazy Loading",
+        "Music Player with Playlists"
+      ],
+      "practicePlatforms": [
+        "Advanced JavaScript Challenges",
+        "Performance Optimization Tasks",
+        "Real-world Project Challenges",
+        "Code Review Platforms"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Frontend Frameworks & Libraries",
+    "description": "Master popular JavaScript frameworks and libraries",
+    "icon": "Layers",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "React.js Fundamentals",
+        "Vue.js or Angular Basics",
+        "State Management (Redux, Zustand)",
+        "Component Lifecycle",
+        "Routing (React Router, Vue Router)",
+        "Forms & Validation",
+        "CSS-in-JS Solutions",
+        "Testing Components"
+      ],
+      "toolsToUse": [
+        "Create React App / Vite",
+        "Vue CLI / Nuxt.js",
+        "Redux DevTools",
+        "React Testing Library",
+        "Storybook for Components",
+        "Styled Components / Emotion"
+      ],
+      "bestCourses": {
+        "english": [
+          "Complete React Developer Course - Andrew Mead",
+          "Vue.js Complete Guide - Maximilian Schwarzmüller",
+          "Modern React with Redux - Stephen Grider",
+          "React & TypeScript - The Practical Guide"
+        ],
+        "hindi": [
+          "React.js Complete Course - CodeWithHarry",
+          "React Tutorial Hindi - Thapa Technical",
+          "Vue.js Hindi Tutorial - Hitesh Choudhary",
+          "Redux Complete Guide Hindi - Chai aur Code"
+        ]
+      },
+      "docsAndWebsites": [
+        "React Official Documentation",
+        "Vue.js Guide",
+        "Redux Toolkit Documentation",
+        "React Router Documentation"
+      ],
+      "projectIdeas": [
+        "E-commerce Shopping Cart",
+        "Social Media Dashboard",
+        "Task Management Board",
+        "Blog Platform with CMS",
+        "Real-time Collaboration Tool"
+      ],
+      "practicePlatforms": [
+        "React Challenges - Frontend Mentor",
+        "Component Design Challenges",
+        "React/Vue Project Ideas",
+        "Open Source Contributions"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Backend & Full-Stack Development",
+    "description": "Learn server-side JavaScript and full-stack development",
+    "icon": "Server",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Node.js Fundamentals",
+        "Express.js Framework",
+        "RESTful API Development",
+        "Database Integration (MongoDB, PostgreSQL)",
+        "Authentication & Authorization",
+        "File Upload & Processing",
+        "WebSockets for Real-time Apps",
+        "Deployment & DevOps Basics"
+      ],
+      "toolsToUse": [
+        "Node.js Runtime",
+        "Express.js Framework",
+        "MongoDB / PostgreSQL",
+        "Postman for API Testing",
+        "JWT for Authentication",
+        "Socket.io for WebSockets",
+        "Docker for Containerization"
+      ],
+      "bestCourses": {
+        "english": [
+          "Complete Node.js Developer Course - Andrew Mead",
+          "Node.js, Express, MongoDB - Jonas Schmedtmann",
+          "MERN Stack Development - Brad Traversy",
+          "API Design & Development - REST & GraphQL"
+        ],
+        "hindi": [
+          "Node.js Complete Course - CodeWithHarry",
+          "MERN Stack Hindi - Thapa Technical",
+          "Express.js Tutorial Hindi - Hitesh Choudhary",
+          "MongoDB with Node.js Hindi - Chai aur Code"
+        ]
+      },
+      "docsAndWebsites": [
+        "Node.js Official Documentation",
+        "Express.js Guide",
+        "MongoDB Documentation",
+        "JWT Authentication Guide"
+      ],
+      "projectIdeas": [
+        "Full-Stack Blog Platform",
+        "E-commerce API with Payment",
+        "Real-time Chat with Socket.io",
+        "Job Board Application",
+        "Social Media Clone"
+      ],
+      "practicePlatforms": [
+        "HackerRank Node.js",
+        "Full-Stack Project Challenges",
+        "API Development Challenges",
+        "Backend Architecture Problems"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Testing & DevOps",
+    "description": "Master testing frameworks and deployment practices",
+    "icon": "Shield",
+    "gradient": "from-rose-500 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with Jest",
+        "Integration & E2E Testing",
+        "Test-Driven Development (TDD)",
+        "CI/CD Pipelines",
+        "Docker & Containerization",
+        "Cloud Deployment (AWS, Vercel, Netlify)",
+        "Performance Monitoring",
+        "Security Best Practices"
+      ],
+      "toolsToUse": [
+        "Jest Testing Framework",
+        "Cypress for E2E Testing",
+        "GitHub Actions / GitLab CI",
+        "Docker & Docker Compose",
+        "AWS / Vercel / Netlify",
+        "ESLint & Prettier",
+        "Husky for Git Hooks"
+      ],
+      "bestCourses": {
+        "english": [
+          "JavaScript Testing Introduction - Kent C. Dodds",
+          "Docker & Kubernetes Course",
+          "AWS for Developers",
+          "Complete DevOps Course"
+        ],
+        "hindi": [
+          "Testing in JavaScript Hindi - Hitesh Choudhary",
+          "Docker Tutorial Hindi - CodeWithHarry",
+          "DevOps Complete Course Hindi - Thapa Technical",
+          "AWS Hindi Tutorial - Chai aur Code"
+        ]
+      },
+      "docsAndWebsites": [
+        "Jest Documentation",
+        "Cypress Testing Guide",
+        "Docker Documentation",
+        "AWS Developer Guide"
+      ],
+      "projectIdeas": [
+        "Automated Testing Suite",
+        "CI/CD Pipeline Setup",
+        "Dockerized Full-Stack App",
+        "Performance Monitoring Dashboard",
+        "Security Audit Tool"
+      ],
+      "practicePlatforms": [
+        "Testing JavaScript Challenges",
+        "DevOps Practice Labs",
+        "Cloud Platform Free Tiers",
+        "Open Source Testing Projects"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Job Preparation & Interview",
+    "description": "Prepare for technical interviews and job opportunities",
+    "icon": "Target",
+    "gradient": "from-cyan-500 to-blue-600",
+    "content": {
+      "whatToLearn": [
+        "Data Structures & Algorithms in JS",
+        "System Design Basics",
+        "JavaScript Interview Questions",
+        "Coding Challenge Patterns",
+        "Portfolio Development",
+        "Resume & LinkedIn Optimization",
+        "Behavioral Interview Prep",
+        "Salary Negotiation"
+      ],
+      "toolsToUse": [
+        "LeetCode for Algorithms",
+        "GitHub for Portfolio",
+        "LinkedIn Profile",
+        "Interview Platforms (Pramp, InterviewBit)",
+        "Portfolio Website Builders",
+        "Mock Interview Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "JavaScript Interview Questions - Akshay Saini",
+          "Cracking the Coding Interview",
+          "System Design Interview Prep",
+          "Portfolio Development Course"
+        ],
+        "hindi": [
+          "JavaScript Interview Questions Hindi - Akshay Saini",
+          "DSA in JavaScript Hindi - Striver",
+          "System Design Hindi - Gaurav Sen",
+          "Job Interview Tips Hindi - CodeWithHarry"
+        ]
+      },
+      "docsAndWebsites": [
+        "JavaScript Interview Handbook",
+        "Frontend Developer Roadmap",
+        "System Design Primer",
+        "Technical Resume Guide"
+      ],
+      "projectIdeas": [
+        "Portfolio Website",
+        "Algorithm Visualization Tool",
+        "Interview Practice Platform",
+        "Resume Builder Application",
+        "Job Tracker Dashboard"
+      ],
+      "practicePlatforms": [
+        "LeetCode JavaScript Problems",
+        "HackerRank Interview Prep",
+        "InterviewBit Practice",
+        "Pramp Mock Interviews"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Advanced Topics & Specialization",
+    "description": "Explore advanced topics and choose your specialization",
+    "icon": "Rocket",
+    "gradient": "from-emerald-500 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "GraphQL & Apollo Client",
+        "Micro-frontends Architecture",
+        "WebAssembly with JavaScript",
+        "Progressive Web Apps (PWA)",
+        "Web3 & Blockchain Development",
+        "Machine Learning with TensorFlow.js",
+        "Mobile App Development (React Native)",
+        "Desktop Apps (Electron)"
+      ],
+      "toolsToUse": [
+        "GraphQL Playground",
+        "Apollo Client/Server",
+        "Webpack Module Federation",
+        "TensorFlow.js",
+        "React Native CLI",
+        "Electron Framework",
+        "Web3.js Library"
+      ],
+      "bestCourses": {
+        "english": [
+          "GraphQL with React Course",
+          "React Native Complete Guide",
+          "TensorFlow.js Masterclass",
+          "Web3 Development Course"
+        ],
+        "hindi": [
+          "GraphQL Complete Course Hindi - Hitesh Choudhary",
+          "React Native Hindi Tutorial - CodeWithHarry",
+          "Web3 Development Hindi - Chai aur Code",
+          "Advanced JavaScript Topics Hindi - Thapa Technical"
+        ]
+      },
+      "docsAndWebsites": [
+        "GraphQL Documentation",
+        "React Native Docs",
+        "TensorFlow.js Guide",
+        "Web3.js Documentation"
+      ],
+      "projectIdeas": [
+        "GraphQL API with React Frontend",
+        "Cross-platform Mobile App",
+        "ML-powered Web Application",
+        "Blockchain DApp",
+        "Desktop Application with Electron"
+      ],
+      "practicePlatforms": [
+        "GraphQL Challenges",
+        "React Native Projects",
+        "ML/AI JavaScript Projects",
+        "Web3 Development Challenges"
+      ]
+    }
+  }
+]
