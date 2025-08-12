@@ -1,6 +1,9 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Web/page": [
+    "[project]/app/RoadmapPage/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Roadmaps/Java/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [
