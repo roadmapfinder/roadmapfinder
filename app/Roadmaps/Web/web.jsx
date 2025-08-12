@@ -488,56 +488,8 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Empty State */}
-        {roadmapData.length === 0 && (
-          <div className="text-center py-16 sm:py-20">
-            <div
-              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
-            >
-              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                No Roadmap Data Available
-              </h3>
-              <p
-                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-              >
-                Add your roadmap data to get started with your Web developer journey.
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Footer */}
-        <footer className="mt-16 sm:mt-20 text-center">
-          <div
-            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Ready to Start Your Journey?
-            </h3>
-            <p
-              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
-            >
-              Remember: Consistency is key. Start with the fundamentals and
-              build your way up!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={handleDownload}
-                disabled={downloading}
-                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
-                  downloading
-                    ? "bg-gray-500 cursor-not-allowed scale-95"
-                    : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
-                }`}
-              >
-                {downloading
-                  ? "Generating PDF..."
-                  : "Download Complete Roadmap"}
-              </button>
-            </div>
-          </div>
-        </footer>
+       
+       
       </main>
     </div>
   );
