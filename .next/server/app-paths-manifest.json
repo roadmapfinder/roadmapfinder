@@ -1,8 +1,4 @@
 {
-  "/Courses/page": "app/Courses/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Java/page": "app/Roadmaps/Java/page.js",
-  "/Roadmaps/Javascript/page": "app/Roadmaps/Javascript/page.js",
-  "/Roadmaps/Kotlin/page": "app/Roadmaps/Kotlin/page.js",
+  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
   "/page": "app/page.js"
 }

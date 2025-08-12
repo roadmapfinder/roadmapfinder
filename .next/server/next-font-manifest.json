@@ -1,18 +1,6 @@
 {
   "app": {
-    "[project]/app/Courses/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/RoadmapPage/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/Roadmaps/Java/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/Roadmaps/Javascript/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/Roadmaps/Kotlin/page": [
+    "[project]/app/Roadmaps/Web/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [
