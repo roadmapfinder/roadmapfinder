@@ -255,7 +255,7 @@ const createDownloadContent = (roadmapData, darkMode) => {
 };
 
 // Main PDF download function
-export const handleDownloadPDF = async (roadmapData, setDownloading) => {
+export const handleDownloadPDF = async (blockchainRoadmap, setDownloading) => {
   if (!html2canvas || !jsPDF) {
     alert("PDF generation libraries are still loading. Please try again in a moment.");
     return;
@@ -265,7 +265,7 @@ export const handleDownloadPDF = async (roadmapData, setDownloading) => {
 
   try {
     // Create temporary div with roadmap content
-    const downloadDiv = createDownloadContent(roadmapData);
+    const downloadDiv = createDownloadContent(blockchainRoadmap);
 
     // Temporarily add the div to the document to render it
     document.body.appendChild(downloadDiv);

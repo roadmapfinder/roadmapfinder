@@ -139,16 +139,7 @@ export default function Home() {
   return (
     <main className="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen p-4 sm:p-6 font-inter">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Complete Web Developer Roadmap 2025
-          </h1>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
-            A comprehensive guide from absolute beginner to professional web developer. 
-            Follow this structured path to master modern web development.
-          </p>
-        </div>
+        
 
         {/* Roadmap Sections */}
         <div className="space-y-12 sm:space-y-16">

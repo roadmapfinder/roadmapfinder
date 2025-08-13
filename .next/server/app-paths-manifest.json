@@ -1,5 +1,7 @@
 {
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Java/page": "app/Roadmaps/Java/page.js",
+  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
+  "/Roadmaps/Backend/page": "app/Roadmaps/Backend/page.js",
+  "/Roadmaps/Data/page": "app/Roadmaps/Data/page.js",
   "/page": "app/page.js"
 }
