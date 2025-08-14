@@ -315,17 +315,29 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Devops$2f
 ;
 function Home() {
     const [openSection, setOpenSection] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [openSections, setOpenSections] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(new Set());
     const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [downloading, setDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [youtubeDropdownOpen, setYoutubeDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isVisualMode, setIsVisualMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     // Create refs for dropdown and sections
     const dropdownRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const sectionRefs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({});
-    // Roadmap data - you need to import or define this
-    // Replace with your actual roadmap data
+    const toggleSections = (id)=>{
+        const newOpenSections = new Set(openSections);
+        if (newOpenSections.has(id)) {
+            newOpenSections.delete(id);
+        } else {
+            newOpenSections.add(id);
+        }
+        setOpenSections(newOpenSections);
+    };
     // Toggle dark mode
     const toggleDarkMode = ()=>{
         setDarkMode(!darkMode);
+    };
+    const toggleRoadmapView = ()=>{
+        setIsVisualMode(!isVisualMode);
     };
     // Handle PDF download
     const handleDownload = async ()=>{
@@ -339,22 +351,21 @@ function Home() {
         {
             name: "Devops",
             icon: "⚛️",
-            url: "https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c"
+            url: "https://youtu.be/ZbG0c87wcM8?si=qu8eOwTSYypHCO15"
         },
         {
             name: "Docker",
-            icon: "🎯",
-            url: "https://youtu.be/CzRQ9mnmh44"
+            url: "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB"
         },
         {
             name: "Kubernetes",
             icon: "🤖",
-            url: "https://youtu.be/BxM2DayeOBE"
+            url: "https://youtu.be/7XDeI5fyj3w?si=5Mhk7eeWSOZPJzj9"
         },
         {
             name: "AWS",
             icon: "🍎",
-            url: "https://youtu.be/8Xg7E9shq0U?si=QeqYNnO-4ZsmsACC"
+            url: "https://youtu.be/AgOmeANl3ls?si=D7srdgd9cENn9Rqm"
         }
     ];
     // Close dropdown when clicking outside
@@ -413,7 +424,7 @@ function Home() {
                                 children: "DevOps Engineer"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 122,
+                                lineNumber: 134,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -421,18 +432,116 @@ function Home() {
                                 children: "Roadmap"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 125,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 121,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-center space-x-2 sm:space-x-4",
                         children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>setIsVisualMode(false),
+                                        className: `flex items-center px-3 py-1 rounded-full transition-all ${!isVisualMode ? "bg-white dark:bg-gray-900 shadow text-blue-600 dark:text-blue-400" : "text-gray-600 dark:text-gray-300 hover:text-blue-500"}`,
+                                        title: "Switch to Textual Roadmap",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                className: "w-4 h-4 mr-1",
+                                                fill: "none",
+                                                stroke: "currentColor",
+                                                strokeWidth: 2,
+                                                viewBox: "0 0 24 24",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                    strokeLinecap: "round",
+                                                    strokeLinejoin: "round",
+                                                    d: "M4 6h16M4 12h16M4 18h16"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                    lineNumber: 162,
+                                                    columnNumber: 17
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                lineNumber: 155,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sm font-medium hidden sm:inline",
+                                                children: "Textual"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                lineNumber: 164,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                        lineNumber: 146,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>setIsVisualMode(true),
+                                        className: `flex items-center px-3 py-1 rounded-full transition-all ${isVisualMode ? "bg-white dark:bg-gray-900 shadow text-purple-600 dark:text-purple-400" : "text-gray-600 dark:text-gray-300 hover:text-purple-500"}`,
+                                        title: "Switch to Visual Roadmap",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                className: "w-4 h-4 mr-1",
+                                                fill: "none",
+                                                stroke: "currentColor",
+                                                strokeWidth: 2,
+                                                viewBox: "0 0 24 24",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                                        cx: "12",
+                                                        cy: "12",
+                                                        r: "3"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                        lineNumber: 183,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                        strokeLinecap: "round",
+                                                        strokeLinejoin: "round",
+                                                        d: "M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                        lineNumber: 184,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                lineNumber: 176,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sm font-medium hidden sm:inline",
+                                                children: "Visual"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                                lineNumber: 186,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                        lineNumber: 167,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
+                                lineNumber: 145,
+                                columnNumber: 11
+                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: handleDownload,
                                 disabled: downloading,
@@ -454,7 +563,7 @@ function Home() {
                                                     strokeWidth: "4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                    lineNumber: 150,
+                                                    lineNumber: 207,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -463,13 +572,13 @@ function Home() {
                                                     d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                    lineNumber: 158,
+                                                    lineNumber: 215,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 144,
+                                            lineNumber: 201,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -477,7 +586,7 @@ function Home() {
                                             children: "Generating PDF..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 164,
+                                            lineNumber: 221,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -485,7 +594,7 @@ function Home() {
                                             children: "PDF..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 167,
+                                            lineNumber: 224,
                                             columnNumber: 17
                                         }, this)
                                     ]
@@ -503,12 +612,12 @@ function Home() {
                                                 d: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 177,
+                                                lineNumber: 234,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 171,
+                                            lineNumber: 228,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -516,7 +625,7 @@ function Home() {
                                             children: "Download PDF"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 184,
+                                            lineNumber: 241,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -524,14 +633,14 @@ function Home() {
                                             children: "PDF"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 187,
+                                            lineNumber: 244,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 133,
+                                lineNumber: 190,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -547,12 +656,12 @@ function Home() {
                                         clipRule: "evenodd"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 207,
+                                        lineNumber: 264,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 202,
+                                    lineNumber: 259,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                     className: "w-4 h-4 sm:w-5 sm:h-5",
@@ -562,29 +671,29 @@ function Home() {
                                         d: "M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 219,
+                                        lineNumber: 276,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 214,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 193,
+                                lineNumber: 250,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 131,
+                        lineNumber: 143,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                lineNumber: 114,
+                lineNumber: 126,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -607,12 +716,12 @@ function Home() {
                                             d: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                            lineNumber: 245,
+                                            lineNumber: 302,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 240,
+                                        lineNumber: 297,
                                         columnNumber: 13
                                     }, this),
                                     !youtubeDropdownOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -623,19 +732,19 @@ function Home() {
                                                 className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 258,
+                                                lineNumber: 315,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 250,
+                                        lineNumber: 307,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 230,
+                                lineNumber: 287,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -651,12 +760,12 @@ function Home() {
                                                     children: "Choose Technology"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                    lineNumber: 284,
+                                                    lineNumber: 341,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 283,
+                                                lineNumber: 340,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -670,7 +779,7 @@ function Home() {
                                                                 children: course.icon
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 301,
+                                                                lineNumber: 358,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -678,7 +787,7 @@ function Home() {
                                                                 children: course.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 302,
+                                                                lineNumber: 359,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -693,48 +802,48 @@ function Home() {
                                                                     d: "M17 8l4 4m0 0l-4 4m4-4H3"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                    lineNumber: 311,
+                                                                    lineNumber: 368,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 305,
+                                                                lineNumber: 362,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, course.name, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 292,
+                                                        lineNumber: 349,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 290,
+                                                lineNumber: 347,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 275,
+                                        lineNumber: 332,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-r-0 border-t-8 border-b-8 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 324,
+                                        lineNumber: 381,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 268,
+                                lineNumber: 325,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 229,
+                        lineNumber: 286,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -754,12 +863,12 @@ function Home() {
                                     d: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 349,
+                                    lineNumber: 406,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 343,
+                                lineNumber: 400,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -770,25 +879,25 @@ function Home() {
                                         className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 366,
+                                        lineNumber: 423,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 358,
+                                lineNumber: 415,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 333,
+                        lineNumber: 390,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                lineNumber: 227,
+                lineNumber: 284,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -797,42 +906,12 @@ function Home() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-center mb-12 sm:mb-16",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent",
-                                        children: "DevOps Engineer"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 380,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 383,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: `${darkMode ? "text-gray-100" : "text-gray-800"}`,
-                                        children: "Roadmap"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 384,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 379,
-                                columnNumber: 11
-                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: `text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`,
                                 children: "A comprehensive guide to becoming a DevOps Engineer with step-by-step learning path, courses, tools, and project ideas."
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 388,
+                                lineNumber: 437,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -841,18 +920,18 @@ function Home() {
                                     className: `h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 395,
+                                    lineNumber: 444,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 394,
+                                lineNumber: 443,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 378,
+                        lineNumber: 435,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -876,7 +955,7 @@ function Home() {
                                                                 children: section.id
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 424,
+                                                                lineNumber: 473,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -884,13 +963,13 @@ function Home() {
                                                                 children: section.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 427,
+                                                                lineNumber: 476,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 423,
+                                                        lineNumber: 472,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -898,13 +977,13 @@ function Home() {
                                                         children: section.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 431,
+                                                        lineNumber: 480,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 422,
+                                                lineNumber: 471,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -921,12 +1000,12 @@ function Home() {
                                                         d: "M5 15l7-7 7 7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 445,
+                                                        lineNumber: 494,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                    lineNumber: 439,
+                                                    lineNumber: 488,
                                                     columnNumber: 21
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     className: "w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7",
@@ -940,23 +1019,23 @@ function Home() {
                                                         d: "M19 9l-7 7-7-7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 459,
+                                                        lineNumber: 508,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                    lineNumber: 453,
+                                                    lineNumber: 502,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 437,
+                                                lineNumber: 486,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 416,
+                                        lineNumber: 465,
                                         columnNumber: 15
                                     }, this),
                                     openSection === section.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -976,14 +1055,14 @@ function Home() {
                                                                         children: "✅"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 481,
+                                                                        lineNumber: 530,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "What to Learn"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 480,
+                                                                lineNumber: 529,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -996,7 +1075,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 492,
+                                                                                lineNumber: 541,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1004,24 +1083,24 @@ function Home() {
                                                                                 children: item
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 495,
+                                                                                lineNumber: 544,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 488,
+                                                                        lineNumber: 537,
                                                                         columnNumber: 27
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 486,
+                                                                lineNumber: 535,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 477,
+                                                        lineNumber: 526,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1035,14 +1114,14 @@ function Home() {
                                                                         children: "🧰"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 506,
+                                                                        lineNumber: 555,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "Tools to Use"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 505,
+                                                                lineNumber: 554,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1055,7 +1134,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 517,
+                                                                                lineNumber: 566,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1063,24 +1142,24 @@ function Home() {
                                                                                 children: tool
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 520,
+                                                                                lineNumber: 569,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 513,
+                                                                        lineNumber: 562,
                                                                         columnNumber: 27
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 511,
+                                                                lineNumber: 560,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 502,
+                                                        lineNumber: 551,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1094,14 +1173,14 @@ function Home() {
                                                                         children: "📚"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 531,
+                                                                        lineNumber: 580,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "Best Courses"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 530,
+                                                                lineNumber: 579,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1114,7 +1193,7 @@ function Home() {
                                                                                 children: "In English:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 538,
+                                                                                lineNumber: 587,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1127,7 +1206,7 @@ function Home() {
                                                                                                 children: "•"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                                lineNumber: 548,
+                                                                                                lineNumber: 597,
                                                                                                 columnNumber: 35
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1135,24 +1214,24 @@ function Home() {
                                                                                                 children: course
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                                lineNumber: 551,
+                                                                                                lineNumber: 600,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         ]
                                                                                     }, index, true, {
                                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                        lineNumber: 544,
+                                                                                        lineNumber: 593,
                                                                                         columnNumber: 33
                                                                                     }, this)) || []
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 541,
+                                                                                lineNumber: 590,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 537,
+                                                                        lineNumber: 586,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1162,7 +1241,7 @@ function Home() {
                                                                                 children: "In Hindi:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 558,
+                                                                                lineNumber: 607,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1175,7 +1254,7 @@ function Home() {
                                                                                                 children: "•"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                                lineNumber: 568,
+                                                                                                lineNumber: 617,
                                                                                                 columnNumber: 35
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1183,36 +1262,36 @@ function Home() {
                                                                                                 children: course
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                                lineNumber: 571,
+                                                                                                lineNumber: 620,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         ]
                                                                                     }, index, true, {
                                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                        lineNumber: 564,
+                                                                                        lineNumber: 613,
                                                                                         columnNumber: 33
                                                                                     }, this)) || []
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 561,
+                                                                                lineNumber: 610,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 557,
+                                                                        lineNumber: 606,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 536,
+                                                                lineNumber: 585,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 527,
+                                                        lineNumber: 576,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1226,14 +1305,14 @@ function Home() {
                                                                         children: "📘"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 585,
+                                                                        lineNumber: 634,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "Docs & Websites"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 584,
+                                                                lineNumber: 633,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1246,7 +1325,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 596,
+                                                                                lineNumber: 645,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1254,30 +1333,30 @@ function Home() {
                                                                                 children: doc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                                lineNumber: 599,
+                                                                                lineNumber: 648,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                        lineNumber: 592,
+                                                                        lineNumber: 641,
                                                                         columnNumber: 27
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 590,
+                                                                lineNumber: 639,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 581,
+                                                        lineNumber: 630,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 475,
+                                                lineNumber: 524,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1291,14 +1370,14 @@ function Home() {
                                                                 children: "💡"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 609,
+                                                                lineNumber: 658,
                                                                 columnNumber: 23
                                                             }, this),
                                                             "Project Ideas"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 608,
+                                                        lineNumber: 657,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1313,7 +1392,7 @@ function Home() {
                                                                             children: "💡"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                            lineNumber: 621,
+                                                                            lineNumber: 670,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1321,46 +1400,46 @@ function Home() {
                                                                             children: project
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                            lineNumber: 624,
+                                                                            lineNumber: 673,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                    lineNumber: 620,
+                                                                    lineNumber: 669,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, index, false, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                                lineNumber: 616,
+                                                                lineNumber: 665,
                                                                 columnNumber: 25
                                                             }, this)) || []
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                        lineNumber: 614,
+                                                        lineNumber: 663,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                                lineNumber: 607,
+                                                lineNumber: 656,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                        lineNumber: 472,
+                                        lineNumber: 521,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, section.id, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                lineNumber: 404,
+                                lineNumber: 453,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 402,
+                        lineNumber: 451,
                         columnNumber: 9
                     }, this),
                     __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Devops$2f$roadmapData$2e$json__$28$json$29$__["default"].length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1373,7 +1452,7 @@ function Home() {
                                     children: "📚"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 646,
+                                    lineNumber: 695,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1381,7 +1460,7 @@ function Home() {
                                     children: "No Roadmap Data Available"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 647,
+                                    lineNumber: 696,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1389,18 +1468,18 @@ function Home() {
                                     children: "Add your roadmap data to get started with your DevOps journey."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 650,
+                                    lineNumber: 699,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                            lineNumber: 643,
+                            lineNumber: 692,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 642,
+                        lineNumber: 691,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -1413,7 +1492,7 @@ function Home() {
                                     children: "Ready to Start Your Journey?"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 664,
+                                    lineNumber: 713,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1421,7 +1500,7 @@ function Home() {
                                     children: "Remember: Consistency is key. Start with the fundamentals and build your way up!"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 667,
+                                    lineNumber: 716,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1431,30 +1510,30 @@ function Home() {
                                     children: downloading ? "Generating PDF..." : "Download Complete Roadmap"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                                    lineNumber: 673,
+                                    lineNumber: 722,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                            lineNumber: 661,
+                            lineNumber: 710,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                        lineNumber: 660,
+                        lineNumber: 709,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-                lineNumber: 376,
+                lineNumber: 433,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Roadmaps/Devops/devops.jsx",
-        lineNumber: 106,
+        lineNumber: 118,
         columnNumber: 5
     }, this);
 }
