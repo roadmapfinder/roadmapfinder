@@ -1,7 +1,8 @@
 {
-  "/CareerGuidance/page": "app/CareerGuidance/page.js",
-  "/CareerGuidance/results/page": "app/CareerGuidance/results/page.js",
+  "/Courses/page": "app/Courses/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/api/career/route": "app/api/career/route.js",
+  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
+  "/Roadmaps/Backend/page": "app/Roadmaps/Backend/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

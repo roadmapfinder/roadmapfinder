@@ -19,6 +19,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
 export const metadata = {
   title: "RoadmapFinder - Curated Tech Skill Roadmaps & Best Learning Resources",
   description:
@@ -50,7 +51,6 @@ export const metadata = {
   metadataBase: new URL("https://roadmapfinder.tech"),
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={sora.variable}>
@@ -58,8 +58,7 @@ export default function RootLayout({ children }) {
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/roadmapfinder.svg" />
-        <link rel="manifest"    href="/manifest.json" />
-
+        <link rel="manifest" href="/manifest.json" />
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
           {
@@ -84,10 +83,12 @@ export default function RootLayout({ children }) {
             }
           }
         `}} />
-
       </head>
-      <body className="font-sora bg-[#F9FAFB] text-gray-900">{children}  <Analytics /> 
-      <SpeedInsights /> </body>
+      <body className={`${sora.className} bg-[#F9FAFB] text-gray-900`}>
+        {children}
+        <Analytics /> 
+        <SpeedInsights /> 
+      </body>
     </html>
   );
 }
