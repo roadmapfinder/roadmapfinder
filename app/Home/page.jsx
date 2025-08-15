@@ -163,7 +163,7 @@ export default function HomePage() {
     {
       name: "Project-helper",
       icon: <Lightbulb size={24} className="mr-3" />,
-      href: "/ProjectHelper",
+      href: "/Project-helper",
       protected: true,
       feature: "Project Helper",
       isNew: true

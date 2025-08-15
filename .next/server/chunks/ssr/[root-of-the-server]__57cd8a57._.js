@@ -3965,7 +3965,7 @@ function HomePage() {
                 lineNumber: 165,
                 columnNumber: 13
             }, this),
-            href: "/ProjectHelper",
+            href: "/Project-helper",
             protected: true,
             feature: "Project Helper",
             isNew: true
