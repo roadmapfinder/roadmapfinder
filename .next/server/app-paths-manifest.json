@@ -1,10 +1,8 @@
 {
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Devops/page": "app/Roadmaps/Devops/page.js",
-  "/Roadmaps/Frontend/page": "app/Roadmaps/Frontend/page.js",
-  "/Roadmaps/Graphic/page": "app/Roadmaps/Graphic/page.js",
-  "/Roadmaps/System/page": "app/Roadmaps/System/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/Roadmaps/APP/page": "app/Roadmaps/APP/page.js",
+  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
+  "/Roadmaps/Cloud/page": "app/Roadmaps/Cloud/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

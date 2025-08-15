@@ -3,15 +3,35 @@ import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import roadmapData from './appRoadmap.json';
 import { downloadRoadmapPDF } from './downloadPdf.js';
+import VisualRoadmap from './visualRoadmap'
 
 export default function Home() {
   const [openSection, setOpenSection] = useState(null);
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const [isVisualMode, setIsVisualMode] = useState(false);
   const [youtubeDropdownOpen, setYoutubeDropdownOpen] = useState(false);
   const sectionRefs = useRef({});
   const dropdownRef = useRef(null);
 
+  const toggleSections = (id) => {
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
+  };
+
+  // Toggle dark mode
+ 
+
+  // Toggle between visual and textual roadmap
+  const toggleRoadmapView = () => {
+    setIsVisualMode(!isVisualMode);
+  };
   // YouTube course links for different technologies
   const youtubeCourses = [
     {
@@ -267,6 +287,51 @@ export default function Home() {
           </span>
         </h1>
         <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
+          {/* Roadmap View Toggle */}
+          <div className="flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1">
+            <button
+              onClick={() => setIsVisualMode(false)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                !isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-blue-500"
+              }`}
+              title="Switch to Textual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Textual</span>
+            </button>
+
+            <button
+              onClick={() => setIsVisualMode(true)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-purple-600 dark:text-purple-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-purple-500"
+              }`}
+              title="Switch to Visual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Visual</span>
+            </button>
+          </div>
           {/* Download Button */}
           <button
             onClick={handleDownload}
@@ -353,15 +418,8 @@ export default function Home() {
       <main className="container mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12 max-w-7xl">
         {/* Hero Section */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Complete App Developer
-            </span>
-            <br />
-            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
-              Roadmap
-            </span>
-          </h2>
+      
+        
           <p className={`text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}>
             A comprehensive guide to becoming an App Developer with step-by-step learning path, 
             courses, tools, and project ideas.
@@ -371,7 +429,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Roadmap Sections */}
+        {isVisualMode ? (
+          /* Visual Roadmap */
+          <div className="transition-all duration-500 ease-in-out">
+            <VisualRoadmap 
+              roadmapData={roadmapData} 
+              darkMode={darkMode} 
+            />
+          </div>
+        ) : ( 
         <div className="space-y-4 sm:space-y-6 md:space-y-8">
           {roadmapData.map((section) => (
             <div
@@ -526,28 +592,9 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Footer */}
-        <footer className="mt-12 sm:mt-16 md:mt-20 text-center">
-          <div className={`p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Ready to Start Your Journey?
-            </h3>
-            <p className={`text-base sm:text-lg md:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}>
-              Remember: Consistency is key. Start with the fundamentals and build your way up!
-            </p>
-            <button
-              onClick={handleDownload}
-              disabled={downloading}
-              className={`px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
-                downloading 
-                  ? "bg-gray-500 cursor-not-allowed scale-95" 
-                  : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
-              }`}
-            >
-              {downloading ? "Generating PDF..." : "Download Complete Roadmap"}
-            </button>
-          </div>
-        </footer>
+        
+       )}
+        
       </main>
     </div>
   );

@@ -2,29 +2,43 @@
 import { useState, useEffect, useRef } from "react";
 import { handleDownloadPDF } from "./downloadPdf" 
 import roadmapData from "./roadmapData.json"  
+import VisualRoadmap from "./visualRoadmap"
 
 export default function Home() {
   const [openSection, setOpenSection] = useState(null);
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [youtubeDropdownOpen, setYoutubeDropdownOpen] = useState(false);
+  const [isVisualMode, setIsVisualMode] = useState(false);
+
 
   // Create refs for dropdown and sections
   const dropdownRef = useRef(null);
   const sectionRefs = useRef({});
 
-  // Roadmap data - you need to import or define this
- // Replace with your actual roadmap data
 
+  const toggleSections = (id) => {
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
+  };
   // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
+  const toggleRoadmapView = () => {
+    setIsVisualMode(!isVisualMode);
+  };
   // Handle PDF download
   const handleDownload = async () => {
     await handleDownloadPDF(roadmapData, setDownloading);
   };
+
   // Toggle YouTube dropdown
   const toggleYouTubeDropdown = () => {
     setYoutubeDropdownOpen(!youtubeDropdownOpen);
@@ -32,23 +46,24 @@ export default function Home() {
 
   const youtubeCourses = [
     {
-      name: "Java with dsa",
-      icon: "",
-      url: "https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S",
+      name: "Devops",
+      icon: "⚛️",
+      url: "https://youtu.be/ZbG0c87wcM8?si=qu8eOwTSYypHCO15",
     },
     {
-      name: "C++ with dsa",
-      url: "https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt",
+      name: "Docker",
+      url: "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB",
+      icon: "🤖",
     },
     {
-      name: "Python with dsa",
-      icon: "",
-      url: "https://youtu.be/f9Aje_cN_CY",
+      name: "Kubernetes",
+      icon: "🤖",
+      url: "https://youtu.be/7XDeI5fyj3w?si=5Mhk7eeWSOZPJzj9",
     },
     {
-      name: "Js with dsa",
-      icon: "",
-      url: "https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr",
+      name: "AWS",
+      icon: "🍎",
+      url: "https://youtu.be/AgOmeANl3ls?si=D7srdgd9cENn9Rqm",
     },
   ];
 
@@ -119,7 +134,7 @@ export default function Home() {
       >
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            DSA
+            Data Structure & Algorithm
           </span>
           <span
             className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
@@ -128,6 +143,51 @@ export default function Home() {
           </span>
         </h1>
         <div className="flex items-center space-x-2 sm:space-x-4">
+          {/* Roadmap View Toggle */}
+          <div className="flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1">
+            <button
+              onClick={() => setIsVisualMode(false)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                !isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-blue-500"
+              }`}
+              title="Switch to Textual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Textual</span>
+            </button>
+
+            <button
+              onClick={() => setIsVisualMode(true)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-purple-600 dark:text-purple-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-purple-500"
+              }`}
+              title="Switch to Visual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Visual</span>
+            </button>
+          </div> 
           {/* Download Button */}
           <button
             onClick={handleDownload}
@@ -375,19 +435,11 @@ export default function Home() {
       <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              DataStructure & Algorithm
-            </span>
-            <br />
-            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
-              Roadmap
-            </span>
-          </h2>
+
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
-            A comprehensive guide to becoming a DSA expert with
+            A comprehensive guide to becoming a  Dsa Expert with
             step-by-step learning path, courses, tools, and project ideas.
           </p>
           <div className="mt-6 sm:mt-8 flex justify-center">
@@ -396,8 +448,17 @@ export default function Home() {
             ></div>
           </div>
         </div>
+        {/* Roadmap Content - Conditional Rendering */}
+        {isVisualMode ? (
+          /* Visual Roadmap */
+          <div className="transition-all duration-500 ease-in-out">
+            <VisualRoadmap 
+              roadmapData={roadmapData} 
+              darkMode={darkMode} 
+            />
+          </div>
+        ) : (
 
-        {/* Roadmap Sections */}
         <div className="space-y-6 sm:space-y-8">
           {roadmapData.map((section) => (
             <div
@@ -636,52 +697,11 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Empty State */}
-        {roadmapData.length === 0 && (
-          <div className="text-center py-16 sm:py-20">
-            <div
-              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
-            >
-              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                No Roadmap Data Available
-              </h3>
-              <p
-                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-              >
-                Add your roadmap data to get started with your DSA journey.
-              </p>
-            </div>
-          </div>
+
+
         )}
 
-        {/* Footer */}
-        <footer className="mt-16 sm:mt-20 text-center">
-          <div
-            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Ready to Start Your Journey?
-            </h3>
-            <p
-              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
-            >
-              Remember: Consistency is key. Start with the fundamentals and
-              build your way up!
-            </p>
-            <button
-              onClick={handleDownload}
-              disabled={downloading}
-              className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
-                downloading
-                  ? "bg-gray-500 cursor-not-allowed scale-95"
-                  : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
-              }`}
-            >
-              {downloading ? "Generating PDF..." : "Download Complete Roadmap"}
-            </button>
-          </div>
-        </footer>
+
       </main>
     </div>
   );
