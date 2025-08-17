@@ -21,14 +21,14 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "RoadmapFinder - Curated Tech Skill Roadmaps & Best Learning Resources",
+  title: "RoadmapFinder -  Tech Skill Roadmaps & Best Learning Resources",
   description:
     "Get industry-ready with RoadmapFinder: Step-by-step technology skill roadmaps, best YouTube courses, AI powered Career Guidance , AI Project helper, and trending tech blogs. Learn faster, smarter, and job-oriented.",
   keywords:
-    "technology skill roadmap, roadmapfinder, learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses, developer tools, official documentation, tech tools blog, latest tech updates, RoadmapFinder learning path",
+    "technology skill roadmap, roadmapfinder, roadmaps , learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses,  tech tools blog, latest tech updates, RoadmapFinder learning path",
   applicationName: "RoadmapFinder",
   authors: [{ name: "RoadmapFinder", url: "https://roadmapfinder.tech" }],
-  creator: "Anonymous",
+  creator: "Sohel Khan",
   publisher: "RoadmapFinder",
   robots: "index, follow",
   openGraph: {
@@ -42,7 +42,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RoadmapFinder - Curated Tech Roadmaps & Learning Tools",
+    title: "RoadmapFinder -  Tech Roadmaps & Learning Resources",
     description:
       "Explore the best technology roadmaps, top YouTube learning resources, Career Guidance, AI project helper and tech blogs — all in one place. Start your skill journey today!",
     site: "@roadmapfinder",

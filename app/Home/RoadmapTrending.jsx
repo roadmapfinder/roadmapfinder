@@ -29,7 +29,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       title: "AI & Machine Learning",
       icon: <Brain className="w-6 h-6" />,
       link: "/Roadmaps/Aiml",
-      bgColor: "from-blue-500 to-indigo-600",
+      bgColor: "bg-blue-600",
       description: "Master AI, ML, and neural networks",
       difficulty: "Advanced",
       estimatedTime: "6-8 months",
@@ -43,7 +43,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       title: "Full Stack Web Dev",
       icon: <Globe className="w-6 h-6" />,
       link: "/Roadmaps/Web",
-      bgColor: "from-emerald-500 to-teal-600",
+      bgColor: "bg-blue-600",
       description: "Complete web development journey",
       difficulty: "Beginner",
       estimatedTime: "4-6 months",
@@ -57,7 +57,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       title: "React Development",
       icon: <Code2 className="w-6 h-6" />,
       link: "/Roadmaps/React",
-      bgColor: "from-cyan-500 to-blue-500",
+      bgColor: "bg-blue-600",
       description: "Build modern React applications",
       difficulty: "Intermediate",
       estimatedTime: "3-4 months",
@@ -71,7 +71,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       title: "Node.js Backend",
       icon: <Server className="w-6 h-6" />,
       link: "/Roadmaps/Nodejs",
-      bgColor: "from-green-500 to-emerald-600",
+      bgColor: "bg-blue-600",
       description: "Server-side JavaScript mastery",
       difficulty: "Intermediate",
       estimatedTime: "3-4 months",
@@ -85,7 +85,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       title: "React Native",
       icon: <Smartphone className="w-6 h-6" />,
       link: "/Roadmaps/Reactnative",
-      bgColor: "from-purple-500 to-pink-500",
+      bgColor: "bg-blue-600",
       description: "Cross-platform mobile apps",
       difficulty: "Intermediate",
       estimatedTime: "4-5 months",
@@ -99,7 +99,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       title: "Python Programming",
       icon: <Terminal className="w-6 h-6" />,
       link: "/Roadmaps/Python",
-      bgColor: "from-yellow-500 to-orange-500",
+      bgColor: "bg-blue-600",
       description: "Versatile Python development",
       difficulty: "Beginner",
       estimatedTime: "4-6 months",
@@ -151,7 +151,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-lg">
+          <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-lg">
             <TrendingUp className="w-4 h-4" />
             Most Popular This Month
           </div>
@@ -247,7 +247,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
         {/* View All Button - Always accessible */}
         <div className="text-center mt-10">
           <Link href="/RoadmapPage">
-            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+            <button className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <BookOpen className="w-5 h-5" />
               Explore All Roadmaps
               <ArrowRight className="w-5 h-5" />
@@ -259,7 +259,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
   );
 };
 
-// Enhanced Roadmap Card Component - Free Access
+// Enhanced Roadmap Card Component - Free Access with improved UX
 const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor, user, handleRoadmapClick, isMobile = false }) => {
   return (
     <div
@@ -270,7 +270,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
       {/* Hot Badge */}
       {roadmap.isHot && (
         <div className="absolute top-3 right-3 z-10">
-          <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+          <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
             🔥 TRENDING
           </div>
         </div>
@@ -278,24 +278,21 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
 
       {/* Free Badge */}
       <div className="absolute top-3 left-3 z-10">
-        <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+        <div className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
           <Star className="w-3 h-3" />
           FREE
         </div>
       </div>
 
-      {/* Gradient Background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${roadmap.bgColor} opacity-0 group-hover:opacity-8 transition-opacity duration-300`} />
-
       {/* Card Content */}
       <div className="relative p-6 h-full flex flex-col">
         {/* Icon Container */}
-        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${roadmap.bgColor} flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+        <div className={`w-16 h-16 rounded-2xl ${roadmap.bgColor} flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
           {roadmap.icon}
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 leading-tight">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
           {roadmap.title}
         </h3>
 
@@ -331,7 +328,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
           {/* Progress Bar */}
           <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
             <div 
-              className={`h-full bg-gradient-to-r ${roadmap.bgColor} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out`}
+              className="h-full bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
             />
           </div>
 
@@ -340,7 +337,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
             <Link href={roadmap.link}>
               <button 
                 onClick={(e) => handleRoadmapClick(roadmap, e)}
-                className={`w-full bg-gradient-to-r ${roadmap.bgColor} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group-hover:shadow-xl`}
+                className="w-full bg-blue-600 hover:bg-blue-700 hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group-hover:shadow-xl"
               >
                 <Play className="w-4 h-4" />
                 Start Learning
@@ -349,8 +346,8 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
           </div>
         </div>
 
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+        {/* Subtle Hover Overlay */}
+        <div className="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl pointer-events-none" />
       </div>
     </div>
   );

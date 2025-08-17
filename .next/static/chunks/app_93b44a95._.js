@@ -1405,7 +1405,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                 columnNumber: 13
             }, this),
             link: "/Roadmaps/Aiml",
-            bgColor: "from-blue-500 to-indigo-600",
+            bgColor: "bg-blue-600",
             description: "Master AI, ML, and neural networks",
             difficulty: "Advanced",
             estimatedTime: "6-8 months",
@@ -1425,7 +1425,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                 columnNumber: 13
             }, this),
             link: "/Roadmaps/Web",
-            bgColor: "from-emerald-500 to-teal-600",
+            bgColor: "bg-blue-600",
             description: "Complete web development journey",
             difficulty: "Beginner",
             estimatedTime: "4-6 months",
@@ -1445,7 +1445,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                 columnNumber: 13
             }, this),
             link: "/Roadmaps/React",
-            bgColor: "from-cyan-500 to-blue-500",
+            bgColor: "bg-blue-600",
             description: "Build modern React applications",
             difficulty: "Intermediate",
             estimatedTime: "3-4 months",
@@ -1465,7 +1465,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                 columnNumber: 13
             }, this),
             link: "/Roadmaps/Nodejs",
-            bgColor: "from-green-500 to-emerald-600",
+            bgColor: "bg-blue-600",
             description: "Server-side JavaScript mastery",
             difficulty: "Intermediate",
             estimatedTime: "3-4 months",
@@ -1485,7 +1485,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                 columnNumber: 13
             }, this),
             link: "/Roadmaps/Reactnative",
-            bgColor: "from-purple-500 to-pink-500",
+            bgColor: "bg-blue-600",
             description: "Cross-platform mobile apps",
             difficulty: "Intermediate",
             estimatedTime: "4-5 months",
@@ -1505,7 +1505,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                 columnNumber: 13
             }, this),
             link: "/Roadmaps/Python",
-            bgColor: "from-yellow-500 to-orange-500",
+            bgColor: "bg-blue-600",
             description: "Versatile Python development",
             difficulty: "Beginner",
             estimatedTime: "4-6 months",
@@ -1566,7 +1566,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                     className: "text-center mb-12",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-lg",
+                            className: "inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-lg",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
                                     className: "w-4 h-4"
@@ -1728,7 +1728,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         href: "/RoadmapPage",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300",
+                            className: "inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__["BookOpen"], {
                                     className: "w-5 h-5"
@@ -1775,7 +1775,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction })=>{
 };
 _s(TrendingRoadmapsHome, "E6yGGm8M3FdqgfbUUheCgXbMZcY=");
 _c = TrendingRoadmapsHome;
-// Enhanced Roadmap Card Component - Free Access
+// Enhanced Roadmap Card Component - Free Access with improved UX
 const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor, user, handleRoadmapClick, isMobile = false })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden h-full",
@@ -1785,7 +1785,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
             roadmap.isHot && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-3 right-3 z-10",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg",
+                    className: "bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg",
                     children: "🔥 TRENDING"
                 }, void 0, false, {
                     fileName: "[project]/app/Home/RoadmapTrending.jsx",
@@ -1800,7 +1800,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-3 left-3 z-10",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg",
+                    className: "bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
                             className: "w-3 h-3"
@@ -1822,29 +1822,22 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `absolute inset-0 bg-gradient-to-br ${roadmap.bgColor} opacity-0 group-hover:opacity-8 transition-opacity duration-300`
-            }, void 0, false, {
-                fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                lineNumber: 288,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "relative p-6 h-full flex flex-col",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `w-16 h-16 rounded-2xl bg-gradient-to-br ${roadmap.bgColor} flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`,
+                        className: `w-16 h-16 rounded-2xl ${roadmap.bgColor} flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`,
                         children: roadmap.icon
                     }, void 0, false, {
                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                        lineNumber: 293,
+                        lineNumber: 290,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        className: "text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 leading-tight",
+                        className: "text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300 leading-tight",
                         children: roadmap.title
                     }, void 0, false, {
                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                        lineNumber: 298,
+                        lineNumber: 295,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1852,7 +1845,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                         children: roadmap.description
                     }, void 0, false, {
                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                        lineNumber: 303,
+                        lineNumber: 300,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1866,7 +1859,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                         children: roadmap.difficulty
                                     }, void 0, false, {
                                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                        lineNumber: 311,
+                                        lineNumber: 308,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1874,13 +1867,13 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                         children: roadmap.estimatedTime
                                     }, void 0, false, {
                                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                        lineNumber: 314,
+                                        lineNumber: 311,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                lineNumber: 310,
+                                lineNumber: 307,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1893,7 +1886,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                                 className: "w-3 h-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                                lineNumber: 322,
+                                                lineNumber: 319,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1904,13 +1897,13 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                                lineNumber: 323,
+                                                lineNumber: 320,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                        lineNumber: 321,
+                                        lineNumber: 318,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1920,7 +1913,7 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                                 className: "w-3 h-3 fill-yellow-400 text-yellow-400"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                                lineNumber: 326,
+                                                lineNumber: 323,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1928,33 +1921,33 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                                 children: roadmap.rating
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                                lineNumber: 327,
+                                                lineNumber: 324,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                        lineNumber: 325,
+                                        lineNumber: 322,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                lineNumber: 320,
+                                lineNumber: 317,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full bg-gray-200 rounded-full h-2 overflow-hidden",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: `h-full bg-gradient-to-r ${roadmap.bgColor} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out`
+                                    className: "h-full bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                    lineNumber: 333,
+                                    lineNumber: 330,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                lineNumber: 332,
+                                lineNumber: 329,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1963,49 +1956,49 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                                     href: roadmap.link,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: (e)=>handleRoadmapClick(roadmap, e),
-                                        className: `w-full bg-gradient-to-r ${roadmap.bgColor} hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group-hover:shadow-xl`,
+                                        className: "w-full bg-blue-600 hover:bg-blue-700 hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group-hover:shadow-xl",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                                lineNumber: 345,
+                                                lineNumber: 342,
                                                 columnNumber: 17
                                             }, this),
                                             "Start Learning"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                        lineNumber: 341,
+                                        lineNumber: 338,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                    lineNumber: 340,
+                                    lineNumber: 337,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                                lineNumber: 339,
+                                lineNumber: 336,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                        lineNumber: 308,
+                        lineNumber: 305,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"
+                        className: "absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                        lineNumber: 353,
+                        lineNumber: 350,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Home/RoadmapTrending.jsx",
-                lineNumber: 291,
+                lineNumber: 288,
                 columnNumber: 7
             }, this)
         ]

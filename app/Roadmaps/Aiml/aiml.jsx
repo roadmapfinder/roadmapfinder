@@ -8,9 +8,8 @@ export default function Home() {
   const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const [isVisualMode, setIsVisualMode] = useState(false); // New state for roadmap view mode
-
-  // Toggle section open/close - now allows multiple sections to be open
+  const [isVisualMode, setIsVisualMode] = useState(false); 
+  
   const toggleSection = (id) => {
     const newOpenSections = new Set(openSections);
     if (newOpenSections.has(id)) {
@@ -301,7 +300,7 @@ export default function Home() {
       <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16">
-        
+    
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
