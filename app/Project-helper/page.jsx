@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from "react";
 import {
@@ -13,6 +14,15 @@ import {
   Smartphone,
   Cpu,
   Palette,
+  Copy,
+  Terminal,
+  Clock,
+  AlertTriangle,
+  FileText,
+  ChevronDown,
+  ChevronUp,
+  Play,
+  Package,
 } from "lucide-react";
 
 export default function ProjectGeneratorApp() {
@@ -21,6 +31,8 @@ export default function ProjectGeneratorApp() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [activeTab, setActiveTab] = useState("overview");
+  const [copiedText, setCopiedText] = useState("");
+  const [expandedPhases, setExpandedPhases] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,10 +54,40 @@ export default function ProjectGeneratorApp() {
 
       setResult(data);
       setActiveTab("overview");
+      // Expand first phase by default
+      if (data.roadmap?.length > 0) {
+        setExpandedPhases({ 0: true });
+      }
     } catch (err) {
       setError(err.message);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const copyToClipboard = async (text, identifier) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedText(identifier);
+      setTimeout(() => setCopiedText(""), 2000);
+    } catch (err) {
+      console.error("Failed to copy text:", err);
+    }
+  };
+
+  const togglePhase = (index) => {
+    setExpandedPhases(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const getDifficultyColor = (difficulty) => {
+    switch (difficulty?.toLowerCase()) {
+      case 'beginner': return 'text-green-600 bg-green-50';
+      case 'intermediate': return 'text-yellow-600 bg-yellow-50';
+      case 'advanced': return 'text-red-600 bg-red-50';
+      default: return 'text-gray-600 bg-gray-50';
     }
   };
 
@@ -60,6 +102,7 @@ export default function ProjectGeneratorApp() {
 
   const tabs = [
     { id: "overview", label: "Overview", icon: Lightbulb },
+    { id: "quickstart", label: "Quick Start", icon: Play },
     { id: "roadmap", label: "Roadmap", icon: Code },
     { id: "tech", label: "Tech Stack", icon: Cpu },
     { id: "resources", label: "Resources", icon: Database },
@@ -190,7 +233,7 @@ export default function ProjectGeneratorApp() {
             >
               <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" aria-hidden="true" />
               <p className="text-green-800 font-medium">
-                Project plan generated successfully! Here's your guide.
+                Project plan generated successfully! Here's your comprehensive guide.
               </p>
             </div>
 
@@ -256,7 +299,60 @@ export default function ProjectGeneratorApp() {
                   </div>
                 )}
 
-                {/* Roadmap Tab */}
+                {/* Quick Start Tab */}
+                {activeTab === "quickstart" && (
+                  <div className="space-y-6 sm:space-y-8">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                      Quick Start Guide
+                    </h2>
+                    {result.quickStart && (
+                      <div className="space-y-6">
+                        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Play className="w-5 h-5 text-blue-600" />
+                            <h3 className="text-lg font-semibold text-blue-900">
+                              Get Started in 5 Minutes
+                            </h3>
+                          </div>
+                          <p className="text-blue-800 mb-4">{result.quickStart.description}</p>
+
+                          <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                            <div className="flex items-center justify-between mb-2">
+                              <span className="text-green-400">Terminal</span>
+                              <button
+                                onClick={() => copyToClipboard(result.quickStart.commands.join('\n'), 'quickstart')}
+                                className="text-gray-400 hover:text-white transition-colors"
+                              >
+                                <Copy className="w-4 h-4" />
+                              </button>
+                            </div>
+                            {result.quickStart.commands.map((command, index) => (
+                              <div key={index} className="text-white mb-1">
+                                <span className="text-green-400">$ </span>{command}
+                              </div>
+                            ))}
+                          </div>
+
+                          {result.quickStart.notes && result.quickStart.notes.length > 0 && (
+                            <div className="mt-4">
+                              <h4 className="font-medium text-blue-900 mb-2">Important Notes:</h4>
+                              <ul className="space-y-1">
+                                {result.quickStart.notes.map((note, index) => (
+                                  <li key={index} className="text-sm text-blue-800 flex items-start gap-2">
+                                    <AlertTriangle className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                                    {note}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Enhanced Roadmap Tab */}
                 {activeTab === "roadmap" && (
                   <div className="space-y-6 sm:space-y-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
@@ -266,36 +362,174 @@ export default function ProjectGeneratorApp() {
                       <div className="space-y-6">
                         {result.roadmap.map((phase, index) => (
                           <div key={index} className="relative">
-                            <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6">
-                              <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0">
-                                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
-                                    {index + 1}
+                            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                              {/* Phase Header */}
+                              <div 
+                                className="p-4 sm:p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                                onClick={() => togglePhase(index)}
+                              >
+                                <div className="flex items-start gap-4">
+                                  <div className="flex-shrink-0">
+                                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                                      {index + 1}
+                                    </div>
+                                  </div>
+                                  <div className="flex-1">
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center gap-3 flex-wrap">
+                                        <h3 className="text-lg font-semibold text-gray-900">
+                                          {phase.phase}
+                                        </h3>
+                                        {phase.duration && (
+                                          <span className="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                                            <Clock className="w-3 h-3" />
+                                            {phase.duration}
+                                          </span>
+                                        )}
+                                        {phase.difficulty && (
+                                          <span className={`px-2 py-1 text-xs rounded-full ${getDifficultyColor(phase.difficulty)}`}>
+                                            {phase.difficulty}
+                                          </span>
+                                        )}
+                                      </div>
+                                      {expandedPhases[index] ? (
+                                        <ChevronUp className="w-5 h-5 text-gray-400" />
+                                      ) : (
+                                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                                      )}
+                                    </div>
+                                    <p className="text-gray-700 mt-2">{phase.description}</p>
                                   </div>
                                 </div>
-                                <div className="flex-1">
-                                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                    {phase.phase}
-                                  </h3>
-                                  <p className="text-gray-700 mb-4">{phase.description}</p>
-                                  {phase.tasks && (
-                                    <ul className="space-y-2">
-                                      {phase.tasks.map((task, taskIndex) => (
-                                        <li
-                                          key={taskIndex}
-                                          className="flex items-start gap-2 text-sm text-gray-600"
-                                        >
-                                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                                          {task}
-                                        </li>
-                                      ))}
-                                    </ul>
+                              </div>
+
+                              {/* Expanded Phase Content */}
+                              {expandedPhases[index] && (
+                                <div className="px-4 sm:px-6 pb-4 sm:pb-6 border-t border-gray-100">
+                                  {/* Prerequisites */}
+                                  {phase.prerequisites && phase.prerequisites.length > 0 && (
+                                    <div className="mb-6">
+                                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                        <Package className="w-4 h-4" />
+                                        Prerequisites
+                                      </h4>
+                                      <div className="flex flex-wrap gap-2">
+                                        {phase.prerequisites.map((prereq, idx) => (
+                                          <span key={idx} className="px-2 py-1 bg-yellow-100 text-yellow-800 text-sm rounded">
+                                            {prereq}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+
+                                  {/* Steps */}
+                                  {phase.steps && phase.steps.length > 0 && (
+                                    <div className="mb-6">
+                                      <h4 className="font-semibold text-gray-900 mb-3">Steps</h4>
+                                      <div className="space-y-4">
+                                        {phase.steps.map((step, stepIndex) => (
+                                          <div key={stepIndex} className="bg-gray-50 rounded-lg p-4">
+                                            <h5 className="font-medium text-gray-900 mb-2">{step.title}</h5>
+                                            <p className="text-gray-700 mb-3">{step.description}</p>
+
+                                            {step.commands && step.commands.length > 0 && (
+                                              <div className="bg-gray-900 rounded-lg p-3 font-mono text-sm">
+                                                <div className="flex items-center justify-between mb-2">
+                                                  <div className="flex items-center gap-2">
+                                                    <Terminal className="w-4 h-4 text-green-400" />
+                                                    <span className="text-green-400">Terminal</span>
+                                                  </div>
+                                                  <button
+                                                    onClick={() => copyToClipboard(step.commands.join('\n'), `step-${index}-${stepIndex}`)}
+                                                    className="text-gray-400 hover:text-white transition-colors"
+                                                  >
+                                                    {copiedText === `step-${index}-${stepIndex}` ? (
+                                                      <CheckCircle className="w-4 h-4 text-green-400" />
+                                                    ) : (
+                                                      <Copy className="w-4 h-4" />
+                                                    )}
+                                                  </button>
+                                                </div>
+                                                {step.commands.map((command, cmdIndex) => (
+                                                  <div key={cmdIndex} className="text-white mb-1">
+                                                    <span className="text-green-400">$ </span>{command}
+                                                  </div>
+                                                ))}
+                                              </div>
+                                            )}
+
+                                            {step.code && (
+                                              <div className="mt-3">
+                                                <div className="bg-gray-800 rounded-lg p-3">
+                                                  <div className="flex items-center justify-between mb-2">
+                                                    <div className="flex items-center gap-2">
+                                                      <FileText className="w-4 h-4 text-blue-400" />
+                                                      <span className="text-blue-400">{step.filename || 'Code'}</span>
+                                                    </div>
+                                                    <button
+                                                      onClick={() => copyToClipboard(step.code, `code-${index}-${stepIndex}`)}
+                                                      className="text-gray-400 hover:text-white transition-colors"
+                                                    >
+                                                      {copiedText === `code-${index}-${stepIndex}` ? (
+                                                        <CheckCircle className="w-4 h-4 text-green-400" />
+                                                      ) : (
+                                                        <Copy className="w-4 h-4" />
+                                                      )}
+                                                    </button>
+                                                  </div>
+                                                  <pre className="text-white text-sm overflow-x-auto">
+                                                    <code>{step.code}</code>
+                                                  </pre>
+                                                </div>
+                                              </div>
+                                            )}
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+
+                                  {/* Troubleshooting */}
+                                  {phase.troubleshooting && phase.troubleshooting.length > 0 && (
+                                    <div className="mb-6">
+                                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                        <AlertTriangle className="w-4 h-4 text-yellow-500" />
+                                        Troubleshooting
+                                      </h4>
+                                      <ul className="space-y-1">
+                                        {phase.troubleshooting.map((tip, idx) => (
+                                          <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                                            <div className="w-1 h-1 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                                            {tip}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )}
+
+                                  {/* Validation */}
+                                  {phase.validation && phase.validation.length > 0 && (
+                                    <div>
+                                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                        <CheckCircle className="w-4 h-4 text-green-500" />
+                                        Validation Steps
+                                      </h4>
+                                      <ul className="space-y-1">
+                                        {phase.validation.map((check, idx) => (
+                                          <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                                            <CheckCircle className="w-3 h-3 text-green-500 mt-0.5 flex-shrink-0" />
+                                            {check}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
                                   )}
                                 </div>
-                              </div>
+                              )}
                             </div>
                             {index < result.roadmap.length - 1 && (
-                              <div className="absolute left-4 top-14 w-0.5 h-6 bg-gray-300"></div>
+                              <div className="absolute left-4 -bottom-3 w-0.5 h-6 bg-gray-300"></div>
                             )}
                           </div>
                         ))}
@@ -337,6 +571,29 @@ export default function ProjectGeneratorApp() {
                             </div>
                           </div>
                         ))}
+                      </div>
+                    )}
+
+                    {/* Packages Section */}
+                    {result.packages && (
+                      <div className="mt-8">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Package Dependencies</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {Object.entries(result.packages).map(([packageManager, packages]) => (
+                            packages && packages.length > 0 && (
+                              <div key={packageManager} className="bg-white border border-gray-200 rounded-xl p-4">
+                                <h4 className="font-semibold text-gray-900 mb-3 capitalize">{packageManager}</h4>
+                                <div className="space-y-2">
+                                  {packages.map((pkg, index) => (
+                                    <div key={index} className="text-sm font-mono text-gray-600 bg-gray-50 px-2 py-1 rounded">
+                                      {pkg}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>

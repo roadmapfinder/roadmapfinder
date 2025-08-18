@@ -1,6 +1,329 @@
 // app/api/generate-project/route.js
 import { NextResponse } from 'next/server';
 
+// Enhanced YouTube API helper function with better search logic
+async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
+  try {
+    if (!process.env.YOUTUBE_API_KEY) {
+      console.warn('YOUTUBE_API_KEY not set, skipping video fetch');
+      return [];
+    }
+
+    // Enhanced search parameters for better results
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&maxResults=${maxResults}&order=relevance&videoDuration=medium&videoDefinition=any&key=${process.env.YOUTUBE_API_KEY}`;
+
+    const response = await fetch(searchUrl);
+
+    if (!response.ok) {
+      console.error('YouTube API error:', response.status, await response.text());
+      return [];
+    }
+
+    const data = await response.json();
+
+    if (!data.items || data.items.length === 0) {
+      console.log(`No videos found for query: ${searchQuery}`);
+      return [];
+    }
+
+    // Get additional video details for better filtering
+    const videoIds = data.items.map(item => item.id.videoId).join(',');
+    const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${videoIds}&key=${process.env.YOUTUBE_API_KEY}`;
+
+    const detailsResponse = await fetch(detailsUrl);
+    const detailsData = detailsResponse.ok ? await detailsResponse.json() : { items: [] };
+
+    return data.items.map((item, index) => {
+      const details = detailsData.items?.[index];
+      const viewCount = details?.statistics?.viewCount ? parseInt(details.statistics.viewCount) : 0;
+      const duration = details?.contentDetails?.duration || 'Unknown';
+
+      return {
+        title: item.snippet.title,
+        channel: item.snippet.channelTitle,
+        url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+        description: item.snippet.description.substring(0, 200) + '...',
+        thumbnail: item.snippet.thumbnails.medium?.url || item.snippet.thumbnails.default?.url,
+        publishedAt: item.snippet.publishedAt,
+        viewCount,
+        duration,
+        relevanceScore: calculateRelevanceScore(item, searchQuery)
+      };
+    }).filter(video => video.relevanceScore > 0.3) // Filter out low relevance videos
+      .sort((a, b) => b.relevanceScore - a.relevanceScore); // Sort by relevance
+
+  } catch (error) {
+    console.error('YouTube API fetch error:', error);
+    return [];
+  }
+}
+
+// Calculate relevance score based on title, description, and channel
+function calculateRelevanceScore(video, searchQuery) {
+  const queryTerms = searchQuery.toLowerCase().split(' ').filter(term => term.length > 2);
+  const title = video.snippet.title.toLowerCase();
+  const description = video.snippet.description.toLowerCase();
+  const channel = video.snippet.channelTitle.toLowerCase();
+
+  let score = 0;
+
+  queryTerms.forEach(term => {
+    if (title.includes(term)) score += 1;
+    if (description.includes(term)) score += 0.5;
+    if (channel.includes(term)) score += 0.3;
+  });
+
+  // Bonus for educational channels and tutorial keywords
+  const educationalKeywords = ['tutorial', 'course', 'learn', 'guide', 'how to', 'coding', 'programming'];
+  const educationalChannels = ['freecodecamp', 'traversy', 'net ninja', 'programming with mosh', 'academind', 'codevolution', 'web dev simplified'];
+
+  educationalKeywords.forEach(keyword => {
+    if (title.includes(keyword) || description.includes(keyword)) score += 0.2;
+  });
+
+  educationalChannels.forEach(channelName => {
+    if (channel.includes(channelName)) score += 0.5;
+  });
+
+  return Math.min(score / queryTerms.length, 1); // Normalize to 0-1
+}
+
+// Intelligent YouTube search query generation with project analysis
+async function generateIntelligentSearchQueries(projectData, projectIdea) {
+  const queries = [];
+
+  // Extract technologies from tech stack
+  const allTechnologies = [];
+  if (projectData.techStack) {
+    Object.values(projectData.techStack).forEach(techArray => {
+      if (Array.isArray(techArray)) {
+        allTechnologies.push(...techArray);
+      }
+    });
+  }
+
+  // Analyze project type and complexity
+  const projectAnalysis = analyzeProject(projectIdea, allTechnologies);
+
+  console.log('Project Analysis:', projectAnalysis);
+
+  // Priority 1: Exact project match tutorials
+  if (projectAnalysis.projectType !== 'generic') {
+    queries.push({
+      query: `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} tutorial 2024`,
+      priority: 'high',
+      category: 'project-specific'
+    });
+
+    queries.push({
+      query: `build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step`,
+      priority: 'high',
+      category: 'project-specific'
+    });
+  }
+
+  // Priority 2: Technology stack combinations
+  if (allTechnologies.length >= 2) {
+    const mainStack = allTechnologies.slice(0, 3);
+    queries.push({
+      query: `${mainStack.join(' ')} full stack tutorial`,
+      priority: 'high',
+      category: 'tech-stack'
+    });
+
+    // Frontend + Backend combination
+    const frontend = getFrontendTech(allTechnologies);
+    const backend = getBackendTech(allTechnologies);
+    if (frontend && backend) {
+      queries.push({
+        query: `${frontend} ${backend} complete project tutorial`,
+        priority: 'high',
+        category: 'tech-stack'
+      });
+    }
+  }
+
+  // Priority 3: Individual technology deep dives
+  allTechnologies.slice(0, 3).forEach(tech => {
+    queries.push({
+      query: `${tech} crash course 2024 beginners`,
+      priority: 'medium',
+      category: 'individual-tech'
+    });
+  });
+
+  // Priority 4: Domain-specific tutorials
+  projectAnalysis.domains.forEach(domain => {
+    queries.push({
+      query: `${domain} development tutorial ${allTechnologies[0] || 'programming'}`,
+      priority: 'medium',
+      category: 'domain-specific'
+    });
+  });
+
+  // Priority 5: Advanced concepts if detected
+  if (projectAnalysis.complexity === 'advanced') {
+    projectAnalysis.advancedConcepts.forEach(concept => {
+      queries.push({
+        query: `${concept} ${allTechnologies[0]} implementation tutorial`,
+        priority: 'low',
+        category: 'advanced-concepts'
+      });
+    });
+  }
+
+  // Sort by priority and return top queries
+  const priorityOrder = { 'high': 3, 'medium': 2, 'low': 1 };
+  return queries
+    .sort((a, b) => priorityOrder[b.priority] - priorityOrder[a.priority])
+    .slice(0, 6) // Limit to top 6 queries
+    .map(q => q.query);
+}
+
+// Advanced project analysis function
+function analyzeProject(projectIdea, technologies) {
+  const ideaLower = projectIdea.toLowerCase();
+  const analysis = {
+    projectType: 'generic',
+    domains: [],
+    complexity: 'beginner',
+    advancedConcepts: []
+  };
+
+  // Project type detection
+  const projectTypes = {
+    'e-commerce': ['shop', 'store', 'marketplace', 'cart', 'payment', 'product'],
+    'social media': ['social', 'chat', 'messaging', 'post', 'feed', 'friend'],
+    'blog': ['blog', 'cms', 'article', 'content', 'publishing'],
+    'dashboard': ['dashboard', 'admin', 'analytics', 'metrics', 'reporting'],
+    'mobile app': ['mobile', 'app', 'ios', 'android', 'native'],
+    'web app': ['web app', 'webapp', 'single page', 'spa'],
+    'api': ['api', 'rest', 'graphql', 'backend', 'service'],
+    'ai app': ['ai', 'ml', 'machine learning', 'neural', 'chatbot'],
+    'game': ['game', 'gaming', 'puzzle', 'arcade'],
+    'portfolio': ['portfolio', 'personal site', 'resume'],
+    'landing page': ['landing', 'marketing', 'promotional']
+  };
+
+  for (const [type, keywords] of Object.entries(projectTypes)) {
+    if (keywords.some(keyword => ideaLower.includes(keyword))) {
+      analysis.projectType = type;
+      break;
+    }
+  }
+
+  // Domain detection
+  const domains = {
+    'web development': ['web', 'website', 'html', 'css', 'javascript'],
+    'mobile development': ['mobile', 'app', 'ios', 'android', 'react native', 'flutter'],
+    'backend development': ['api', 'server', 'database', 'backend'],
+    'ai/ml': ['ai', 'machine learning', 'neural', 'deep learning'],
+    'blockchain': ['blockchain', 'crypto', 'smart contract', 'web3'],
+    'devops': ['deployment', 'docker', 'kubernetes', 'ci/cd'],
+    'data science': ['data', 'analytics', 'visualization', 'statistics']
+  };
+
+  for (const [domain, keywords] of Object.entries(domains)) {
+    if (keywords.some(keyword => ideaLower.includes(keyword) || technologies.some(tech => tech.toLowerCase().includes(keyword)))) {
+      analysis.domains.push(domain);
+    }
+  }
+
+  // Complexity assessment
+  const complexityIndicators = {
+    advanced: ['microservice', 'distributed', 'scalable', 'enterprise', 'real-time', 'machine learning', 'blockchain'],
+    intermediate: ['authentication', 'database', 'api', 'testing', 'deployment'],
+    beginner: ['simple', 'basic', 'learning', 'tutorial']
+  };
+
+  for (const [level, indicators] of Object.entries(complexityIndicators)) {
+    if (indicators.some(indicator => ideaLower.includes(indicator))) {
+      analysis.complexity = level;
+      break;
+    }
+  }
+
+  // Advanced concepts detection
+  const advancedConcepts = ['authentication', 'authorization', 'caching', 'testing', 'deployment', 'optimization', 'security'];
+  analysis.advancedConcepts = advancedConcepts.filter(concept => ideaLower.includes(concept));
+
+  return analysis;
+}
+
+// Helper functions for technology categorization
+function getFrontendTech(technologies) {
+  const frontendTechs = ['react', 'vue', 'angular', 'svelte', 'next.js', 'nuxt', 'html', 'css', 'javascript'];
+  return technologies.find(tech => frontendTechs.some(ft => tech.toLowerCase().includes(ft.toLowerCase())));
+}
+
+function getBackendTech(technologies) {
+  const backendTechs = ['node.js', 'express', 'django', 'flask', 'spring', 'laravel', 'ruby on rails', 'fastapi'];
+  return technologies.find(tech => backendTechs.some(bt => tech.toLowerCase().includes(bt.toLowerCase())));
+}
+
+// Enhanced video fetching with intelligent search
+async function fetchProjectRelevantVideos(projectData, projectIdea) {
+  console.log('Starting intelligent video search...');
+
+  const searchQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
+  console.log('Generated search queries:', searchQueries);
+
+  const videosByCategory = {
+    projectSpecific: [],
+    techStack: [],
+    individual: [],
+    general: []
+  };
+
+  // Fetch videos for each query with category tracking
+  for (const query of searchQueries) {
+    try {
+      const videos = await fetchYouTubeVideos(query, 4);
+
+      if (videos.length > 0) {
+        // Categorize videos based on query type
+        if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
+          videosByCategory.projectSpecific.push(...videos);
+        } else if (query.includes('full stack') || query.includes('crash course')) {
+          videosByCategory.techStack.push(...videos);
+        } else {
+          videosByCategory.individual.push(...videos);
+        }
+      }
+
+      // Add delay to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, 100));
+    } catch (error) {
+      console.error(`Error fetching videos for query "${query}":`, error);
+    }
+  }
+
+  // Combine and prioritize videos
+  let combinedVideos = [
+    ...videosByCategory.projectSpecific.slice(0, 4),
+    ...videosByCategory.techStack.slice(0, 3),
+    ...videosByCategory.individual.slice(0, 2),
+    ...videosByCategory.general.slice(0, 1)
+  ];
+
+  // Remove duplicates based on URL
+  const uniqueVideos = combinedVideos.filter((video, index, self) => 
+    index === self.findIndex(v => v.url === video.url)
+  );
+
+  // Final filtering and sorting
+  return uniqueVideos
+    .filter(video => video.viewCount > 1000) // Filter out very low view count videos
+    .sort((a, b) => {
+      // Sort by relevance score first, then by view count
+      if (Math.abs(a.relevanceScore - b.relevanceScore) > 0.1) {
+        return b.relevanceScore - a.relevanceScore;
+      }
+      return b.viewCount - a.viewCount;
+    })
+    .slice(0, 10); // Final limit to 10 videos
+}
+
 export async function POST(request) {
   try {
     const { projectIdea } = await request.json();
@@ -9,7 +332,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Project idea is required' }, { status: 400 });
     }
 
-    // Validate API key exists
+    // Validate API keys
     if (!process.env.GEMINI_API_KEY) {
       console.error('GEMINI_API_KEY is not set');
       return NextResponse.json({ error: 'API configuration error' }, { status: 500 });
@@ -36,6 +359,15 @@ Recommend only modern, well-maintained, and production-ready tools and libraries
 
 Ensure every step is practical, structured, and developer-actionable
 
+**ENHANCED ROADMAP REQUIREMENTS:**
+- Each phase should include detailed terminal commands for package installation
+- Provide actual code snippets for setup and configuration
+- Include file structure examples
+- Add estimated time duration for each phase
+- Include prerequisites and dependencies
+- Provide troubleshooting tips for common issues
+- Add testing commands and validation steps
+
 Return ONLY a valid JSON object (no extra text), using the following format:
 
 {
@@ -48,21 +380,44 @@ Return ONLY a valid JSON object (no extra text), using the following format:
           { "name": "Sub-component 1.1" },
           { "name": "Sub-component 1.2" }
         ]
-      },
-      {
-        "name": "Major Component 2",
-        "children": [
-          { "name": "Sub-component 2.1" },
-          { "name": "Sub-component 2.2" }
-        ]
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "Phase Name",
-      "description": "What this phase accomplishes",
-      "tasks": ["Task 1", "Task 2", "Task 3"]
+      "phase": "Phase 1: Project Setup & Environment",
+      "description": "Set up the development environment and project structure",
+      "duration": "2-4 hours",
+      "difficulty": "Beginner",
+      "prerequisites": ["Node.js v18+", "Git", "VS Code"],
+      "steps": [
+        {
+          "title": "Initialize Project",
+          "description": "Create project directory and initialize package.json",
+          "type": "terminal",
+          "commands": [
+            "mkdir my-project && cd my-project",
+            "npm init -y",
+            "git init"
+          ]
+        },
+        {
+          "title": "Install Dependencies",
+          "description": "Install core packages and development tools",
+          "type": "terminal",
+          "commands": [
+            "npm install next react react-dom",
+            "npm install -D tailwindcss postcss autoprefixer"
+          ]
+        }
+      ],
+      "troubleshooting": [
+        "If Node.js version errors occur, use nvm to switch versions"
+      ],
+      "validation": [
+        "Project starts without errors",
+        "localhost:3000 loads successfully"
+      ]
     }
   ],
   "techStack": {
@@ -82,30 +437,23 @@ Return ONLY a valid JSON object (no extra text), using the following format:
       "title": "Next.js Documentation",
       "url": "https://nextjs.org/docs",
       "description": "Official Next.js guide and API docs"
-    },
-    {
-      "title": "PostgreSQL Docs",
-      "url": "https://www.postgresql.org/docs/",
-      "description": "Official PostgreSQL documentation"
     }
   ],
-  "youtubeResources": [
-    {
-      "title": "Build a Full-Stack App with Next.js 13",
-      "channel": "Traversy Media",
-      "url": "https://youtube.com/watch?v=example1",
-      "description": "Walkthrough of building a full-stack app using modern tech"
-    },
-    {
-      "title": "Complete Guide to Tailwind CSS",
-      "channel": "The Net Ninja",
-      "url": "https://youtube.com/watch?v=example2",
-      "description": "Master Tailwind CSS for frontend development"
-    }
-  ]
+  "quickStart": {
+    "description": "Get started with this project in under 5 minutes",
+    "commands": [
+      "git clone <repository-url>",
+      "npm install",
+      "npm run dev"
+    ],
+    "notes": [
+      "Make sure to update environment variables",
+      "Visit http://localhost:3000 to see your project"
+    ]
+  }
 }`;
 
-    // Gemini API request body
+    // Gemini API request
     const requestBody = {
       contents: [{
         parts: [{
@@ -155,50 +503,28 @@ Return ONLY a valid JSON object (no extra text), using the following format:
       console.error('Gemini API error:', response.status, errorData);
 
       if (response.status === 401) {
-        return NextResponse.json(
-          { error: 'Invalid API key configuration' },
-          { status: 500 }
-        );
+        return NextResponse.json({ error: 'Invalid API key configuration' }, { status: 500 });
       } else if (response.status === 429) {
-        return NextResponse.json(
-          { error: 'API rate limit exceeded. Please try again in a few minutes.' },
-          { status: 500 }
-        );
+        return NextResponse.json({ error: 'API rate limit exceeded. Please try again in a few minutes.' }, { status: 500 });
       } else if (response.status === 403) {
-        return NextResponse.json(
-          { error: 'API quota exceeded or access denied. Please check your Gemini API configuration.' },
-          { status: 500 }
-        );
-      } else if (response.status >= 500) {
-        return NextResponse.json(
-          { error: 'Gemini API service temporarily unavailable. Please try again later.' },
-          { status: 500 }
-        );
+        return NextResponse.json({ error: 'API quota exceeded or access denied.' }, { status: 500 });
       }
 
-      return NextResponse.json(
-        { error: 'Failed to connect to Gemini API' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Failed to connect to Gemini API' }, { status: 500 });
     }
 
     const data = await response.json();
-    console.log('Gemini API response received for project generation');
+    console.log('Gemini API response received');
 
     if (!data.candidates || data.candidates.length === 0) {
-      return NextResponse.json(
-        { error: 'No response from AI model' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'No response from AI model' }, { status: 500 });
     }
 
     const content = data.candidates[0].content.parts[0].text;
 
-    // Extract JSON from the response - more robust parsing
+    // Enhanced JSON extraction
     let jsonMatch = content.match(/\{[\s\S]*\}/);
-
     if (!jsonMatch) {
-      // Try to find JSON if it's wrapped in markdown code blocks
       const codeBlockMatch = content.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
       if (codeBlockMatch) {
         jsonMatch = [codeBlockMatch[1]];
@@ -206,11 +532,8 @@ Return ONLY a valid JSON object (no extra text), using the following format:
     }
 
     if (!jsonMatch) {
-      console.error('No JSON found in AI response:', content);
-      return NextResponse.json(
-        { error: 'Invalid response format from AI service' },
-        { status: 500 }
-      );
+      console.error('No JSON found in AI response');
+      return NextResponse.json({ error: 'Invalid response format from AI service' }, { status: 500 });
     }
 
     let projectData;
@@ -218,55 +541,79 @@ Return ONLY a valid JSON object (no extra text), using the following format:
       projectData = JSON.parse(jsonMatch[0]);
     } catch (parseError) {
       console.error('JSON parsing error:', parseError);
-      console.error('Content that failed to parse:', jsonMatch[0]);
-      return NextResponse.json(
-        { error: 'Failed to parse AI response' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Failed to parse AI response' }, { status: 500 });
     }
 
-    // Validate the response structure
-    const requiredFields = ['mindMap', 'roadmap', 'techStack', 'packages', 'documentation', 'youtubeResources'];
+    // Validate required fields
+    const requiredFields = ['mindMap', 'roadmap', 'techStack', 'packages', 'documentation'];
     for (const field of requiredFields) {
       if (!projectData[field]) {
-        console.warn(`Missing field in response: ${field}`);
-        // Set default empty values instead of failing
         projectData[field] = getDefaultValue(field);
       }
     }
 
+    // **INTELLIGENT YOUTUBE VIDEO FETCHING**
+    console.log('Starting intelligent YouTube video analysis and fetching...');
+    let youtubeResources = [];
+
+    try {
+      youtubeResources = await fetchProjectRelevantVideos(projectData, projectIdea);
+      console.log(`Successfully fetched ${youtubeResources.length} relevant YouTube videos`);
+    } catch (youtubeError) {
+      console.error('YouTube video fetching error:', youtubeError);
+      youtubeResources = [];
+    }
+
+    // Fallback if no videos found
+    if (youtubeResources.length === 0) {
+      console.log('No relevant videos found, creating fallback search links');
+      const fallbackQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
+
+      youtubeResources = fallbackQueries.slice(0, 3).map(query => ({
+        title: `Search: ${query}`,
+        channel: "YouTube Search",
+        url: `https://youtube.com/results?search_query=${encodeURIComponent(query)}`,
+        description: `Click to search for tutorials about: ${query}`,
+        thumbnail: null,
+        publishedAt: new Date().toISOString(),
+        viewCount: 0,
+        duration: "Search",
+        relevanceScore: 1,
+        isSearchLink: true
+      }));
+    }
+
     // Enhanced response with metadata
-    return NextResponse.json({ 
+    const enhancedResponse = {
       ...projectData,
+      youtubeResources,
       metadata: {
         model: 'gemini-2.0-flash-exp',
         timestamp: new Date().toISOString(),
-        tokens_used: data.usageMetadata?.totalTokenCount || 'N/A'
+        tokens_used: data.usageMetadata?.totalTokenCount || 'N/A',
+        youtube_videos_found: youtubeResources.filter(v => !v.isSearchLink).length,
+        search_queries_generated: (await generateIntelligentSearchQueries(projectData, projectIdea)).length,
+        project_analysis: analyzeProject(projectIdea, Object.values(projectData.techStack || {}).flat())
       }
-    });
+    };
+
+    return NextResponse.json(enhancedResponse);
 
   } catch (error) {
-    console.error('Project generation API error:', error.message);
+    console.error('Project generation API error:', error);
 
-    // Enhanced error handling
     if (error.name === 'AbortError') {
-      return NextResponse.json(
-        { error: 'Request timeout. The AI is taking longer than expected. Please try again.' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Request timeout. Please try again.' }, { status: 500 });
     }
 
-    return NextResponse.json(
-      { 
-        error: 'Failed to generate project guide',
-        details: process.env.NODE_ENV === 'development' ? error.message : 'Please try again later'
-      },
-      { status: 500 }
-    );
+    return NextResponse.json({
+      error: 'Failed to generate project guide',
+      details: process.env.NODE_ENV === 'development' ? error.message : 'Please try again later'
+    }, { status: 500 });
   }
 }
 
-// Helper function to provide default values for missing fields
+// Helper function for default values
 function getDefaultValue(field) {
   const defaults = {
     mindMap: { name: "Project", children: [] },
@@ -274,7 +621,12 @@ function getDefaultValue(field) {
     techStack: {},
     packages: { npm: [], tools: [] },
     documentation: [],
-    youtubeResources: []
+    youtubeResources: [],
+    quickStart: {
+      description: "Quick setup commands",
+      commands: ["npm install", "npm run dev"],
+      notes: ["Check the documentation for detailed setup"]
+    }
   };
   return defaults[field] || null;
 }

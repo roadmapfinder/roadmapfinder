@@ -1,7 +1,14 @@
 {
+  "/CareerGuidance/page": "app/CareerGuidance/page.js",
+  "/CareerGuidance/results/page": "app/CareerGuidance/results/page.js",
+  "/Courses/page": "app/Courses/page.js",
+  "/Project-helper/page": "app/Project-helper/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
   "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
-  "/Roadmaps/DSA/page": "app/Roadmaps/DSA/page.js",
-  "/Roadmaps/Nodejs/page": "app/Roadmaps/Nodejs/page.js",
+  "/Roadmaps/System/page": "app/Roadmaps/System/page.js",
+  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/career/route": "app/api/career/route.js",
+  "/api/generate-project/route": "app/api/generate-project/route.js",
   "/page": "app/page.js"
 }

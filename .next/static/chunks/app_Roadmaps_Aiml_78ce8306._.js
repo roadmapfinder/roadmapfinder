@@ -1178,8 +1178,7 @@ function Home() {
     const [openSections, setOpenSections] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(new Set());
     const [darkMode, setDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [downloading, setDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [isVisualMode, setIsVisualMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false); // New state for roadmap view mode
-    // Toggle section open/close - now allows multiple sections to be open
+    const [isVisualMode, setIsVisualMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const toggleSection = (id)=>{
         const newOpenSections = new Set(openSections);
         if (newOpenSections.has(id)) {
@@ -1228,12 +1227,12 @@ function Home() {
                                     d: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 73,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1244,19 +1243,19 @@ function Home() {
                                         className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 90,
+                                        lineNumber: 89,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 82,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 63,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1276,12 +1275,12 @@ function Home() {
                                     d: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 108,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1292,25 +1291,25 @@ function Home() {
                                         className: `absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${darkMode ? "border-l-gray-800" : "border-l-white"}`
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 131,
+                                        lineNumber: 130,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 123,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 98,
+                        lineNumber: 97,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                lineNumber: 61,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1324,7 +1323,7 @@ function Home() {
                                 children: "AIML Engineer"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 149,
+                                lineNumber: 148,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1332,13 +1331,13 @@ function Home() {
                                 children: "Roadmap"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 152,
+                                lineNumber: 151,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 148,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1364,12 +1363,12 @@ function Home() {
                                                     d: "M4 6h16M4 12h16M4 18h16"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 176,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 170,
+                                                lineNumber: 169,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1377,13 +1376,13 @@ function Home() {
                                                 children: "Textual"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 179,
+                                                lineNumber: 178,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 161,
+                                        lineNumber: 160,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1404,7 +1403,7 @@ function Home() {
                                                         r: "3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 198,
+                                                        lineNumber: 197,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1413,13 +1412,13 @@ function Home() {
                                                         d: "M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 198,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 191,
+                                                lineNumber: 190,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1427,19 +1426,19 @@ function Home() {
                                                 children: "Visual"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 201,
+                                                lineNumber: 200,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 182,
+                                        lineNumber: 181,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 160,
+                                lineNumber: 159,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1463,7 +1462,7 @@ function Home() {
                                                     strokeWidth: "4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 223,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1472,13 +1471,13 @@ function Home() {
                                                     d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                    lineNumber: 232,
+                                                    lineNumber: 231,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                            lineNumber: 218,
+                                            lineNumber: 217,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1486,7 +1485,7 @@ function Home() {
                                             children: "Generating PDF..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                            lineNumber: 238,
+                                            lineNumber: 237,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1494,7 +1493,7 @@ function Home() {
                                             children: "PDF..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                            lineNumber: 241,
+                                            lineNumber: 240,
                                             columnNumber: 17
                                         }, this)
                                     ]
@@ -1512,12 +1511,12 @@ function Home() {
                                                 d: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 251,
+                                                lineNumber: 250,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                            lineNumber: 245,
+                                            lineNumber: 244,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1525,7 +1524,7 @@ function Home() {
                                             children: "Download PDF"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                            lineNumber: 258,
+                                            lineNumber: 257,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1533,14 +1532,14 @@ function Home() {
                                             children: "PDF"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                            lineNumber: 261,
+                                            lineNumber: 260,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 207,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1556,12 +1555,12 @@ function Home() {
                                         clipRule: "evenodd"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 281,
+                                        lineNumber: 280,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                    lineNumber: 276,
+                                    lineNumber: 275,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                     className: "w-4 h-4 sm:w-5 sm:h-5",
@@ -1571,29 +1570,29 @@ function Home() {
                                         d: "M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 293,
+                                        lineNumber: 292,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                    lineNumber: 288,
+                                    lineNumber: 287,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 267,
+                                lineNumber: 266,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 158,
+                        lineNumber: 157,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                lineNumber: 141,
+                lineNumber: 140,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1607,7 +1606,7 @@ function Home() {
                                 children: "A comprehensive guide to becoming a AIML Engineer, step-by-step learning path, courses, tools, and project ideas."
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 305,
+                                lineNumber: 304,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1616,18 +1615,18 @@ function Home() {
                                     className: `h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                    lineNumber: 312,
+                                    lineNumber: 311,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 311,
+                                lineNumber: 310,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 303,
+                        lineNumber: 302,
                         columnNumber: 9
                     }, this),
                     isVisualMode ? /* Visual Roadmap */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1637,12 +1636,12 @@ function Home() {
                             darkMode: darkMode
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                            lineNumber: 322,
+                            lineNumber: 321,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 321,
+                        lineNumber: 320,
                         columnNumber: 11
                     }, this) : /* Textual Roadmap */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-6 sm:space-y-8 transition-all duration-500 ease-in-out",
@@ -1665,7 +1664,7 @@ function Home() {
                                                                 children: section.id
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 351,
+                                                                lineNumber: 350,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1673,13 +1672,13 @@ function Home() {
                                                                 children: section.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 354,
+                                                                lineNumber: 353,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 350,
+                                                        lineNumber: 349,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1687,13 +1686,13 @@ function Home() {
                                                         children: section.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 358,
+                                                        lineNumber: 357,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 349,
+                                                lineNumber: 348,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1710,12 +1709,12 @@ function Home() {
                                                         d: "M5 15l7-7 7 7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 372,
+                                                        lineNumber: 371,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                    lineNumber: 366,
+                                                    lineNumber: 365,
                                                     columnNumber: 23
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     className: "w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7",
@@ -1729,23 +1728,23 @@ function Home() {
                                                         d: "M19 9l-7 7-7-7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 386,
+                                                        lineNumber: 385,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                    lineNumber: 380,
+                                                    lineNumber: 379,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 364,
+                                                lineNumber: 363,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 343,
+                                        lineNumber: 342,
                                         columnNumber: 17
                                     }, this),
                                     openSections.has(section.id) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1765,14 +1764,14 @@ function Home() {
                                                                         children: "✅"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 408,
+                                                                        lineNumber: 407,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "What to Learn"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 407,
+                                                                lineNumber: 406,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1785,7 +1784,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                lineNumber: 419,
+                                                                                lineNumber: 418,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1793,24 +1792,24 @@ function Home() {
                                                                                 children: item
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                lineNumber: 422,
+                                                                                lineNumber: 421,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 415,
+                                                                        lineNumber: 414,
                                                                         columnNumber: 29
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 413,
+                                                                lineNumber: 412,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 404,
+                                                        lineNumber: 403,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1824,14 +1823,14 @@ function Home() {
                                                                         children: "🧰"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 433,
+                                                                        lineNumber: 432,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Tools to Use"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 432,
+                                                                lineNumber: 431,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1844,7 +1843,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                lineNumber: 444,
+                                                                                lineNumber: 443,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1852,24 +1851,24 @@ function Home() {
                                                                                 children: tool
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                lineNumber: 447,
+                                                                                lineNumber: 446,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 440,
+                                                                        lineNumber: 439,
                                                                         columnNumber: 29
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 438,
+                                                                lineNumber: 437,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 429,
+                                                        lineNumber: 428,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1883,14 +1882,14 @@ function Home() {
                                                                         children: "📚"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 458,
+                                                                        lineNumber: 457,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Best Courses"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 457,
+                                                                lineNumber: 456,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1902,7 +1901,7 @@ function Home() {
                                                                             children: "In English:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                            lineNumber: 465,
+                                                                            lineNumber: 464,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1915,7 +1914,7 @@ function Home() {
                                                                                             children: "•"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                            lineNumber: 475,
+                                                                                            lineNumber: 474,
                                                                                             columnNumber: 37
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1923,35 +1922,35 @@ function Home() {
                                                                                             children: course
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                            lineNumber: 478,
+                                                                                            lineNumber: 477,
                                                                                             columnNumber: 37
                                                                                         }, this)
                                                                                     ]
                                                                                 }, index, true, {
                                                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                    lineNumber: 471,
+                                                                                    lineNumber: 470,
                                                                                     columnNumber: 35
                                                                                 }, this)) || []
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                            lineNumber: 468,
+                                                                            lineNumber: 467,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                    lineNumber: 464,
+                                                                    lineNumber: 463,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 463,
+                                                                lineNumber: 462,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 454,
+                                                        lineNumber: 453,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1965,14 +1964,14 @@ function Home() {
                                                                         children: "📘"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 492,
+                                                                        lineNumber: 491,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Docs & Websites"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 491,
+                                                                lineNumber: 490,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1985,7 +1984,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                lineNumber: 503,
+                                                                                lineNumber: 502,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1993,30 +1992,30 @@ function Home() {
                                                                                 children: doc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                                lineNumber: 506,
+                                                                                lineNumber: 505,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                        lineNumber: 499,
+                                                                        lineNumber: 498,
                                                                         columnNumber: 29
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 497,
+                                                                lineNumber: 496,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 488,
+                                                        lineNumber: 487,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 402,
+                                                lineNumber: 401,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2030,14 +2029,14 @@ function Home() {
                                                                 children: "💡"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 516,
+                                                                lineNumber: 515,
                                                                 columnNumber: 25
                                                             }, this),
                                                             "Project Ideas"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 515,
+                                                        lineNumber: 514,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2052,7 +2051,7 @@ function Home() {
                                                                             children: "💡"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                            lineNumber: 528,
+                                                                            lineNumber: 527,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2060,58 +2059,58 @@ function Home() {
                                                                             children: project
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                            lineNumber: 531,
+                                                                            lineNumber: 530,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                    lineNumber: 527,
+                                                                    lineNumber: 526,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, index, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                                lineNumber: 523,
+                                                                lineNumber: 522,
                                                                 columnNumber: 27
                                                             }, this)) || []
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                        lineNumber: 521,
+                                                        lineNumber: 520,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                                lineNumber: 514,
+                                                lineNumber: 513,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                        lineNumber: 399,
+                                        lineNumber: 398,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, section.id, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                                lineNumber: 331,
+                                lineNumber: 330,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                        lineNumber: 329,
+                        lineNumber: 328,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-                lineNumber: 301,
+                lineNumber: 300,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Roadmaps/Aiml/aiml.jsx",
-        lineNumber: 53,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }

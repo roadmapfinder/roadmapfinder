@@ -684,6 +684,10 @@
     bottom: calc(var(--spacing) * -2);
   }
 
+  .-bottom-3 {
+    bottom: calc(var(--spacing) * -3);
+  }
+
   .-bottom-4 {
     bottom: calc(var(--spacing) * -4);
   }
@@ -4656,6 +4660,10 @@
 
   .text-blue-100 {
     color: var(--color-blue-100);
+  }
+
+  .text-blue-400 {
+    color: var(--color-blue-400);
   }
 
   .text-blue-500 {
