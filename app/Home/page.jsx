@@ -39,8 +39,8 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "../lib/auth";
 import { auth } from "../lib/firebase";
 import Link from "next/link";
-import CourseTrending from "./CourseTrending"
-import RoadmapTrending from "./RoadmapTrending"
+
+import RoadmapTrending from "./RoadmapTrending";
 
 // Import the new components
 import HeroSection from "./HeroSection";
@@ -54,9 +54,6 @@ export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState("popular");
-  const [showSignupPopup, setShowSignupPopup] = useState(false);
-  const [popupTriggerContext, setPopupTriggerContext] = useState(null);
-  const [popupAnimation, setPopupAnimation] = useState("slide-in");
   const router = useRouter();
 
   // Firebase auth state listener
@@ -82,34 +79,21 @@ export default function HomePage() {
     setSidebarCollapsed(!isSidebarCollapsed);
   };
 
-  // Enhanced signup click handler with smooth transition
+  // Direct signup navigation handler
   const handleSignupClick = () => {
-    setPopupAnimation("slide-out");
-    setTimeout(() => {
-      setShowSignupPopup(false);
-      setPopupAnimation("slide-in");
-      router.push('/Signup');
-    }, 300);
+    router.push("/Signup");
   };
 
-  // Enhanced protected action handler with contextual popup
+  // Simplified protected action handler - direct redirect to signup if not authenticated
   const handleProtectedAction = (href, featureName) => {
     if (!user) {
-      setPopupTriggerContext(featureName);
-      setShowSignupPopup(true);
+      // Store the intended destination for post-login redirect (optional)
+      sessionStorage.setItem('redirectAfterLogin', href);
+      router.push("/Signup");
       return;
     }
+    // User is authenticated, proceed to the intended route
     router.push(href);
-  };
-
-  // Close popup with animation
-  const closePopup = () => {
-    setPopupAnimation("slide-out");
-    setTimeout(() => {
-      setShowSignupPopup(false);
-      setPopupAnimation("slide-in");
-      setPopupTriggerContext(null);
-    }, 300);
   };
 
   // Close mobile menu when screen gets larger
@@ -127,13 +111,13 @@ export default function HomePage() {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -144,21 +128,21 @@ export default function HomePage() {
       icon: <Map size={24} className="mr-3" />,
       href: "/RoadmapPage",
       protected: true,
-      feature: "Roadmaps"
+      feature: "Roadmaps",
     },
     {
       name: "Courses",
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
       protected: true,
-      feature: "Courses"
+      feature: "Courses",
     },
     {
       name: "Career Guidance",
       icon: <Brain size={24} className="mr-3" />,
       href: "/CareerGuidance",
       protected: true,
-      feature: "Career Guidance"
+      feature: "Career Guidance",
     },
     {
       name: "Project-helper",
@@ -166,100 +150,30 @@ export default function HomePage() {
       href: "/Project-helper",
       protected: true,
       feature: "Project Helper",
-      isNew: true
+      isNew: true,
     },
     {
       name: "Blogs",
       icon: <Newspaper size={24} className="mr-3" />,
       href: "/Blogs",
       protected: true,
-      feature: "Blogs"
+      feature: "Blogs",
     },
     {
       name: "Profile",
       icon: <User size={24} className="mr-3" />,
       href: "/Profile",
       protected: true,
-      feature: "Profile"
+      feature: "Profile",
     },
     {
       name: "Logout",
       icon: <LogOut size={24} className="mr-3" />,
       href: "/Logout",
       protected: true,
-      feature: "Logout"
+      feature: "Logout",
     },
   ];
-
-  // Get contextual popup content based on the feature user tried to access
-  const getPopupContent = () => {
-    const baseContent = {
-      icon: <Rocket size={28} className="text-blue-600" />,
-      title: "Start Your Tech Journey With RoadmapFinder",
-
-      benefits: [
-        { icon: <Map size={18} className="text-blue-500" />, text: "Personalized roadmaps for every skill level" },
-        { icon: <Award size={18} className="text-green-500" />, text: "Industry-ready Suggested Youtube Courses" },
-        { icon: <Users size={18} className="text-purple-500" />, text: "AI Career Guidance" },
-        { icon: <Clock size={18} className="text-orange-500" />, text: "Learn at your own pace" },
-        { icon: <Shield size={18} className="text-red-500" />, text: "Lifetime access to all content" }
-      ]
-    };
-
-    // Contextual content based on what feature user tried to access
-    const contextualContent = {
-      "Roadmaps": {
-        icon: <Map size={28} className="text-blue-600" />,
-        title: "Unlock Your Learning Path",
-        subtitle: "Get step-by-step roadmaps tailored to your goals",
-        benefits: [
-          { icon: <TrendingUp size={18} className="text-blue-500" />, text: "Structured learning paths for 20+ skills" },
-          { icon: <CheckCircle size={18} className="text-green-500" />, text: "Progress tracking and milestones" },
-          { icon: <Star size={18} className="text-yellow-500" />, text: "Expert-curated content" },
-          { icon: <Users size={18} className="text-purple-500" />, text: "Community support and mentorship" },
-          { icon: <Zap size={18} className="text-orange-500" />, text: "Fast-track your career growth" }
-        ]
-      },
-      "Courses": {
-        icon: <BookOpen size={28} className="text-blue-600" />,
-        title: "Access Premium Courses",
-        subtitle: "Learn from industry experts with hands-on projects",
-        benefits: [
-          { icon: <Play size={18} className="text-blue-500" />, text: "500+ video tutorials and workshops" },
-          { icon: <Award size={18} className="text-green-500" />, text: "Certificates upon completion" },
-          { icon: <Wrench size={18} className="text-purple-500" />, text: "Real-world projects and assignments" },
-          { icon: <Users size={18} className="text-orange-500" />, text: "Direct access to instructors" },
-          { icon: <Globe size={18} className="text-red-500" />, text: "Learn the latest technologies" }
-        ]
-      },
-      "Career Guidance": {
-        icon: <Brain size={28} className="text-blue-600" />,
-        title: "Accelerate Your Career",
-        subtitle: "Get personalized career advice from industry mentors",
-        benefits: [
-          { icon: <TrendingUp size={18} className="text-blue-500" />, text: "1-on-1 career coaching sessions" },
-          { icon: <FileText size={18} className="text-green-500" />, text: "Resume and portfolio reviews" },
-          { icon: <Users size={18} className="text-purple-500" />, text: "Interview preparation and mock tests" },
-          { icon: <Star size={18} className="text-yellow-500" />, text: "Job referrals and networking" },
-          { icon: <Rocket size={18} className="text-orange-500" />, text: "Salary negotiation guidance" }
-        ]
-      },
-      "Project Helper": {
-        icon: <Lightbulb size={28} className="text-blue-600" />,
-        title: "AI-Powered Project Assistant",
-        subtitle: "Get intelligent help with your coding projects",
-        benefits: [
-          { icon: <Zap size={18} className="text-blue-500" />, text: "Smart code suggestions and debugging" },
-          { icon: <Star size={18} className="text-yellow-500" />, text: "Project idea generation and planning" },
-          { icon: <CheckCircle size={18} className="text-green-500" />, text: "Architecture and design recommendations" },
-          { icon: <Users size={18} className="text-purple-500" />, text: "Best practices and code review" },
-          { icon: <Rocket size={18} className="text-orange-500" />, text: "24/7 AI-powered assistance" }
-        ]
-      }
-    };
-
-    return contextualContent[popupTriggerContext] || baseContent;
-  };
 
   if (loading) {
     return (
@@ -272,100 +186,8 @@ export default function HomePage() {
     );
   }
 
-  const popupContent = getPopupContent();
-
   return (
     <div className="min-h-screen bg-gray-50 font-['Sora']">
-      {/* Enhanced Signup Popup - Notification Style */}
-      {showSignupPopup && !user && (
-        <div className="fixed inset-0 z-50 pointer-events-none">
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm pointer-events-auto" onClick={closePopup}></div>
-
-          {/* Popup Container */}
-          <div className="flex items-start justify-center pt-4 px-4 h-full pointer-events-none">
-            <div className={`
-              bg-white rounded-2xl shadow-2xl max-w-md w-full pointer-events-auto
-              transform transition-all duration-300 ease-out
-              ${popupAnimation === 'slide-in' ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-full opacity-0 scale-95'}
-            `}>
-              {/* Header with close button */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                <div className="flex items-center gap-3">
-                  {popupContent.icon}
-                  <div>
-                    <h3 className="font-bold text-gray-900">{popupContent.title}</h3>
-                    <p className="text-sm text-gray-600">{popupContent.subtitle}</p>
-                  </div>
-                </div>
-                <button
-                  onClick={closePopup}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                >
-                  <X size={20} className="text-gray-400" />
-                </button>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                {/* Trust indicators */}
-                <div className="flex items-center gap-4 mb-6 p-4 bg-blue-50 rounded-xl">
-                  <div className="flex items-center gap-2">
-                    <Users size={20} className="text-blue-600" />
-                    <span className="text-sm font-medium text-blue-900">1000+</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Star size={20} className="text-yellow-500" />
-                    <span className="text-sm font-medium text-gray-700">4.5/5 Rating</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp size={20} className="text-green-600" />
-                    <span className="text-sm font-medium text-green-700">95% Success</span>
-                  </div>
-                </div>
-
-                {/* Benefits */}
-                <div className="space-y-3 mb-6">
-                  {popupContent.benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                      {benefit.icon}
-                      <span className="text-gray-700 text-sm">{benefit.text}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Action buttons */}
-                <div className="space-y-3">
-                  <button
-                    onClick={handleSignupClick}
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
-                  >
-                    <Rocket size={18} />
-                    Start Free 
-                    <ArrowRight size={18} />
-                  </button>
-
-                  <button
-                    onClick={closePopup}
-                    className="w-full text-gray-500 py-2 px-6 rounded-xl font-medium hover:text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    Maybe later
-                  </button>
-                </div>
-
-                {/* Trust badge */}
-                <div className="mt-4 text-center">
-                  <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-                    <Shield size={14} />
-                    <span>Completely Free • No Subscription Required</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Layout Container */}
       <div className="flex">
         {/* Desktop Sidebar - Hidden on mobile */}
@@ -381,7 +203,9 @@ export default function HomePage() {
               } items-center border-b`}
             >
               {!isSidebarCollapsed && (
-                <h1 className="text-xl font-bold text-blue-600">RoadmapFinder</h1>
+                <h1 className="text-xl font-bold text-blue-600">
+                  RoadmapFinder
+                </h1>
               )}
 
               <button
@@ -402,22 +226,31 @@ export default function HomePage() {
                   <div key={index}>
                     {item.protected && !user ? (
                       <button
-                        onClick={() => handleProtectedAction(item.href, item.feature)}
+                        onClick={() =>
+                          handleProtectedAction(item.href, item.feature)
+                        }
                         className={`flex items-center w-full ${
                           item.href === "/"
                             ? "text-blue-600 font-semibold bg-blue-50"
                             : "text-gray-600"
                         } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group relative`}
                       >
-                        <div className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}>
+                        <div
+                          className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}
+                        >
                           {item.icon}
                           {!user && item.protected && (
-                            <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
+                            <Lock
+                              size={12}
+                              className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500"
+                            />
                           )}
                         </div>
                         {!isSidebarCollapsed && (
                           <>
-                            <span className="flex-1 text-left">{item.name}</span>
+                            <span className="flex-1 text-left">
+                              {item.name}
+                            </span>
                             {item.isNew && (
                               <span className="bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
                                 New
@@ -506,7 +339,10 @@ export default function HomePage() {
                       <div className="relative">
                         {item.icon}
                         {!user && item.protected && (
-                          <Lock size={12} className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500" />
+                          <Lock
+                            size={12}
+                            className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500"
+                          />
                         )}
                       </div>
                       <span className="flex-1 text-left">{item.name}</span>
@@ -576,7 +412,9 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
               <p className="text-gray-500">
-                {user ? `Welcome back, ${username}` : "Welcome to RoadmapFinder"}
+                {user
+                  ? `Welcome back, ${username}`
+                  : "Welcome to RoadmapFinder"}
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -592,13 +430,15 @@ export default function HomePage() {
                     <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
                       <User size={16} className="text-blue-600" />
                     </div>
-                    <span className="text-gray-800 font-medium">{username}</span>
+                    <span className="text-gray-800 font-medium">
+                      {username}
+                    </span>
                   </div>
                 </>
               ) : (
                 <button
                   onClick={handleSignupClick}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
                 >
                   <Rocket size={18} />
                   Start Your Journey
@@ -611,7 +451,7 @@ export default function HomePage() {
           <div className="w-full">
             {/* Hero Section Container */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
-              <HeroSection 
+              <HeroSection
                 user={user}
                 handleProtectedAction={handleProtectedAction}
                 username={username}
@@ -620,13 +460,10 @@ export default function HomePage() {
 
             {/* Additional Content Sections */}
             <div className="w-full">
-              {/* Uncomment if needed */}
               <RoadmapTrending
-                 user={user}
-                 handleProtectedAction={handleProtectedAction}
-                />
-
-
+                user={user}
+                handleProtectedAction={handleProtectedAction}
+              />
 
               <Features handleProtectedAction={handleProtectedAction} />
               <ChooseUs />

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
   Brain, 
@@ -14,13 +15,16 @@ import {
   Users,
   Play,
   Star,
-  BookOpen
+  BookOpen,
+  Lock,
+  Rocket
 } from "lucide-react";
 
 const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
   const scrollContainerRef = useRef(null);
+  const router = useRouter();
 
   // Top 6 trending roadmaps for home page - all free and accessible
   const trendingRoadmaps = [
@@ -136,14 +140,32 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
     setCurrentSlide(Math.min(trendingRoadmaps.length - 1, currentSlide + 1));
   };
 
-  // Handle roadmap access - simplified for free platform
+  // Enhanced roadmap access handler with signup protection
   const handleRoadmapClick = (roadmap, e) => {
-    // All roadmaps are free and accessible
-    // Just track the click if needed
-    if (handleProtectedAction && !user) {
-      // Optional: still track for analytics but don't block access
+    e.preventDefault(); // Prevent default link behavior
+
+    if (!user) {
+      // Store the intended destination for post-login redirect
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('redirectAfterLogin', roadmap.link);
+      }
+      // Redirect to signup page
+      router.push("/Signup");
+      return;
+    }
+
+    // User is authenticated, proceed to the roadmap
+    router.push(roadmap.link);
+
+    // Optional: Call the parent's protected action handler for analytics
+    if (handleProtectedAction) {
       handleProtectedAction(roadmap.link, roadmap.feature, false); // false = don't block
     }
+  };
+
+  // Handle signup button click
+  const handleSignupClick = () => {
+    router.push("/Signup");
   };
 
   return (
@@ -159,7 +181,18 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
             Trending Learning Paths
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Join thousands of learners mastering the most in-demand technologies - <span className="font-semibold text-blue-600">completely free!</span>
+            Join thousands of learners mastering the most in-demand technologies
+            {!user && (
+              <span className="block mt-2">
+                <button
+                  onClick={handleSignupClick}
+                  className="inline-flex items-center gap-1 font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  <Rocket className="w-4 h-4" />
+                  Sign up to get started!
+                </button>
+              </span>
+            )}
           </p>
         </div>
 
@@ -174,6 +207,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
               getDifficultyColor={getDifficultyColor}
               user={user}
               handleRoadmapClick={handleRoadmapClick}
+              handleSignupClick={handleSignupClick}
             />
           ))}
         </div>
@@ -224,6 +258,7 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
                   getDifficultyColor={getDifficultyColor}
                   user={user}
                   handleRoadmapClick={handleRoadmapClick}
+                  handleSignupClick={handleSignupClick}
                   isMobile={true}
                 />
               </div>
@@ -244,23 +279,46 @@ const TrendingRoadmapsHome = ({ user, handleProtectedAction }) => {
           </div>
         </div>
 
-        {/* View All Button - Always accessible */}
+        {/* View All Button - Protected for non-authenticated users */}
         <div className="text-center mt-10">
-          <Link href="/RoadmapPage">
-            <button className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              <BookOpen className="w-5 h-5" />
-              Explore All Roadmaps
+          {user ? (
+            <Link href="/RoadmapPage">
+              <button className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <BookOpen className="w-5 h-5" />
+                Explore All Roadmaps
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+          ) : (
+            <button
+              onClick={() => {
+                sessionStorage.setItem('redirectAfterLogin', '/RoadmapPage');
+                handleSignupClick();
+              }}
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 relative group"
+            >
+              <Lock className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              Sign Up to Explore All Roadmaps
               <ArrowRight className="w-5 h-5" />
             </button>
-          </Link>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-// Enhanced Roadmap Card Component - Free Access with improved UX
-const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor, user, handleRoadmapClick, isMobile = false }) => {
+// Enhanced Roadmap Card Component with Signup Protection
+const RoadmapCard = ({ 
+  roadmap, 
+  hoveredCard, 
+  setHoveredCard, 
+  getDifficultyColor, 
+  user, 
+  handleRoadmapClick, 
+  handleSignupClick,
+  isMobile = false 
+}) => {
   return (
     <div
       className="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden h-full"
@@ -276,12 +334,19 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
         </div>
       )}
 
-      {/* Free Badge */}
+      {/* Authentication Status Badge */}
       <div className="absolute top-3 left-3 z-10">
-        <div className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
-          <Star className="w-3 h-3" />
-          FREE
-        </div>
+        {user ? (
+          <div className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+            <Star className="w-3 h-3" />
+            UNLOCKED
+          </div>
+        ) : (
+          <div className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+            <Lock className="w-3 h-3" />
+            SIGN UP
+          </div>
+        )}
       </div>
 
       {/* Card Content */}
@@ -332,9 +397,9 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
             />
           </div>
 
-          {/* Start Learning Button - Always accessible */}
+          {/* Action Button - Protected for non-authenticated users */}
           <div className="pt-2">
-            <Link href={roadmap.link}>
+            {user ? (
               <button 
                 onClick={(e) => handleRoadmapClick(roadmap, e)}
                 className="w-full bg-blue-600 hover:bg-blue-700 hover:shadow-lg text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group-hover:shadow-xl"
@@ -342,12 +407,46 @@ const RoadmapCard = ({ roadmap, hoveredCard, setHoveredCard, getDifficultyColor,
                 <Play className="w-4 h-4" />
                 Start Learning
               </button>
-            </Link>
+            ) : (
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Store intended destination before redirecting to signup
+                  if (typeof window !== 'undefined') {
+                    sessionStorage.setItem('redirectAfterLogin', roadmap.link);
+                  }
+                  handleSignupClick();
+                }}
+                className="w-full bg-gradient-to-r from-blue-500 to-red-500 hover:from-blue-600 hover:to-red-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl relative group"
+              >
+                <Lock className="w-4 h-4 group-hover:animate-pulse" />
+                Sign Up to Start
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300"></div>
+              </button>
+            )}
           </div>
+
+          {/* Additional CTA for non-authenticated users */}
+          {!user && (
+            <div className="text-center pt-2">
+              <p className="text-xs text-gray-500">
+                Join <span className="font-semibold text-blue-600">{roadmap.students}</span> learners already enrolled
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Subtle Hover Overlay */}
-        <div className="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+        <div className={`absolute inset-0 ${user ? 'bg-blue-50' : 'bg-orange-50'} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl pointer-events-none`} />
+
+        {/* Lock Overlay for Non-authenticated Users */}
+        {!user && (
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none flex items-center justify-center">
+            <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <Lock className="w-8 h-8 text-white opacity-80" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

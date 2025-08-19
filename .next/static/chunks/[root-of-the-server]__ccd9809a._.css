@@ -3363,6 +3363,17 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .from-gray-900\/10 {
+    --tw-gradient-from: #1018281a;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .from-gray-900\/10 {
+      --tw-gradient-from: color-mix(in oklab, var(--color-gray-900) 10%, transparent);
+    }
+  }
+
   .from-green-50 {
     --tw-gradient-from: var(--color-green-50);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -5444,6 +5455,13 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:translate-y-0:is(:where(.group):hover *) {
+      --tw-translate-y: calc(var(--spacing) * 0);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:scale-100:is(:where(.group):hover *) {
       --tw-scale-x: 100%;
       --tw-scale-y: 100%;
@@ -5486,6 +5504,12 @@
   @media (hover: hover) {
     .group-hover\:rotate-12:is(:where(.group):hover *) {
       rotate: 12deg;
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:animate-pulse:is(:where(.group):hover *) {
+      animation: var(--animate-pulse);
     }
   }
 
@@ -5669,6 +5693,12 @@
   @media (hover: hover) {
     .group-hover\:opacity-8:is(:where(.group):hover *) {
       opacity: .08;
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:opacity-10:is(:where(.group):hover *) {
+      opacity: .1;
     }
   }
 

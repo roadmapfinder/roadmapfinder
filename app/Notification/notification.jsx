@@ -37,26 +37,7 @@ export default function NotificationPage() {
       read: false,
       createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     },
-    {
-      id: 3,
-      type: 'tool',
-      icon: '🛠️',
-      title: 'VS Code Extensions',
-      message: 'New recommended extensions for React development added',
-      timestamp: '3 days ago',
-      read: true,
-      createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()
-    },
-    {
-      id: 4,
-      type: 'doc',
-      icon: '📄',
-      title: 'TypeScript Documentation',
-      message: 'Updated guides on Advanced Types and Generics',
-      timestamp: '5 days ago',
-      read: true,
-      createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
-    },
+
     {
       id: 5,
       type: 'course',
@@ -74,8 +55,7 @@ export default function NotificationPage() {
     { id: 'all', label: 'All', count: 0 },
     { id: 'courses', label: 'Courses', count: 0 },
     { id: 'roadmaps', label: 'Roadmaps', count: 0 },
-    { id: 'tools', label: 'Tools', count: 0 },
-    { id: 'docs', label: 'Docs', count: 0 }
+
   ], []);
 
   // Enhanced authentication state management

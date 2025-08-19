@@ -1,4 +1,8 @@
 {
-  "/Roadmaps/Python/page": "app/Roadmaps/Python/page.js",
+  "/Home/page": "app/Home/page.js",
+  "/Notification/page": "app/Notification/page.js",
+  "/Roadmaps/Java/page": "app/Roadmaps/Java/page.js",
+  "/Roadmaps/Javascript/page": "app/Roadmaps/Javascript/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

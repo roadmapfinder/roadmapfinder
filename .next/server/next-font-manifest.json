@@ -1,6 +1,18 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Python/page": [
+    "[project]/app/Home/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Notification/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Roadmaps/Java/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Roadmaps/Javascript/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/_not-found/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [

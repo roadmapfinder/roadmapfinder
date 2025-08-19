@@ -2,11 +2,13 @@
 import { useState } from "react";
 import roadmapData from "./roadmapData.json";
 import { handleDownloadPDF } from "./downloadPdf.js";
+import VisualRoadmap from "./visualRoadmap";
 
 export default function Home() {
   const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const [isVisualMode, setIsVisualMode] = useState(false); // New state for roadmap view mode
 
   // Toggle section open/close - now allows multiple sections to be open
   const toggleSection = (id) => {
@@ -24,6 +26,11 @@ export default function Home() {
     setDarkMode(!darkMode);
   };
 
+  // Toggle between visual and textual roadmap
+  const toggleRoadmapView = () => {
+    setIsVisualMode(!isVisualMode);
+  };
+
   // Handle PDF download
   const handleDownload = async () => {
     await handleDownloadPDF(roadmapData, setDownloading);
@@ -32,7 +39,7 @@ export default function Home() {
   // Handle YouTube redirect
   const handleYouTubeRedirect = () => {
     window.open(
-      "https://youtu.be/oveyab6lO_E?si=lp7E-XPF0Ar4Gtok",
+      "https://youtu.be/oveyab6lO_E?si=7siLPjddIn3SLTZj",
       "_blank",
     );
   };
@@ -60,7 +67,7 @@ export default function Home() {
               ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600"
               : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
           } text-white`}
-
+          title="YouTube AI/ML Courses"
         >
           {/* YouTube Icon */}
           <svg
@@ -140,7 +147,7 @@ export default function Home() {
       >
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-           Java  Programming
+           Java
           </span>
           <span
             className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
@@ -149,6 +156,53 @@ export default function Home() {
           </span>
         </h1>
         <div className="flex items-center space-x-2 sm:space-x-4">
+          {/* Roadmap View Toggle */}
+          <div className="flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1">
+            <button
+              onClick={() => setIsVisualMode(false)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                !isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-blue-500"
+              }`}
+              title="Switch to Textual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Textual</span>
+            </button>
+
+            <button
+              onClick={() => setIsVisualMode(true)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-purple-600 dark:text-purple-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-purple-500"
+              }`}
+              title="Switch to Visual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Visual</span>
+            </button>
+          </div>
+
+
           {/* Download Button */}
           <button
             onClick={handleDownload}
@@ -247,19 +301,11 @@ export default function Home() {
       <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-          Java Programmer
-            </span>
-            <br />
-            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
-              Roadmap
-            </span>
-          </h2>
+
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
-            A comprehensive guide to becoming a Java programmer,
+            A comprehensive guide to becoming a Java developer,
             step-by-step learning path, courses, tools, and project ideas.
           </p>
           <div className="mt-6 sm:mt-8 flex justify-center">
@@ -269,275 +315,235 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Roadmap Sections */}
-        <div className="space-y-6 sm:space-y-8">
-          {roadmapData.map((section) => (
-            <div
-              key={section.id}
-              id={`section-${section.id}`}
-              className={`${
-                darkMode
-                  ? "bg-gray-800/50 border-gray-700/50"
-                  : "bg-white/70 border-gray-200/50"
-              } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
-                openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
-              }`}
-            >
-              {/* Section Header */}
-              <button
-                onClick={() => toggleSection(section.id)}
-                className={`w-full p-4 sm:p-6 lg:p-8 text-left flex justify-between items-center ${
-                  darkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-50/50"
-                } transition-all duration-200 group`}
+        {/* Roadmap Content - Conditional Rendering */}
+        {isVisualMode ? (
+          /* Visual Roadmap */
+          <div className="transition-all duration-500 ease-in-out">
+            <VisualRoadmap 
+              roadmapData={roadmapData} 
+              darkMode={darkMode} 
+            />
+          </div>
+        ) : (
+          /* Textual Roadmap */
+          <div className="space-y-6 sm:space-y-8 transition-all duration-500 ease-in-out">
+            {roadmapData.map((section) => (
+              <div
+                key={section.id}
+                id={`section-${section.id}`}
+                className={`${
+                  darkMode
+                    ? "bg-gray-800/50 border-gray-700/50"
+                    : "bg-white/70 border-gray-200/50"
+                } backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border overflow-hidden transition-all duration-500 hover:shadow-2xl ${
+                  openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
+                }`}
               >
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center mb-2 sm:mb-3">
-                    <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 flex-shrink-0">
-                      {section.id}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight group-hover:text-blue-600 transition-colors truncate">
-                      {section.title}
-                    </h3>
-                  </div>
-                  <p
-                    className={`text-sm sm:text-base lg:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} ml-9 sm:ml-12 pr-4`}
-                  >
-                    {section.description}
-                  </p>
-                </div>
-                <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
-                  {openSections.has(section.id) ? (
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M5 15l7-7 7 7"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  )}
-                </div>
-              </button>
-
-              {/* Section Content */}
-              {openSections.has(section.id) && (
-                <div
-                  className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`}
+                {/* Section Header */}
+                <button
+                  onClick={() => toggleSection(section.id)}
+                  className={`w-full p-4 sm:p-6 lg:p-8 text-left flex justify-between items-center ${
+                    darkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-50/50"
+                  } transition-all duration-200 group`}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
-                    {/* What to Learn */}
-                    <div
-                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-green-900/20 border-green-500/20" : "bg-green-50/80 border-green-200/50"} border`}
-                    >
-                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600 flex items-center">
-                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
-                          ✅
-                        </span>
-                        What to Learn
-                      </h4>
-                      <ul className="space-y-2 sm:space-y-3">
-                        {section.content?.whatToLearn?.map((item, index) => (
-                          <li
-                            key={index}
-                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
-                          >
-                            <span className="text-green-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
-                              •
-                            </span>
-                            <span className="font-medium">{item}</span>
-                          </li>
-                        )) || []}
-                      </ul>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center mb-2 sm:mb-3">
+                      <span className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs sm:text-sm font-bold mr-3 sm:mr-4 flex-shrink-0">
+                        {section.id}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight group-hover:text-blue-600 transition-colors truncate">
+                        {section.title}
+                      </h3>
                     </div>
-
-                    {/* Tools to Use */}
-                    <div
-                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-orange-900/20 border-orange-500/20" : "bg-orange-50/80 border-orange-200/50"} border`}
+                    <p
+                      className={`text-sm sm:text-base lg:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} ml-9 sm:ml-12 pr-4`}
                     >
-                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-600 flex items-center">
-                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
-                          🧰
-                        </span>
-                        Tools to Use
-                      </h4>
-                      <ul className="space-y-2 sm:space-y-3">
-                        {section.content?.toolsToUse?.map((tool, index) => (
-                          <li
-                            key={index}
-                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
-                          >
-                            <span className="text-orange-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
-                              •
-                            </span>
-                            <span className="font-medium">{tool}</span>
-                          </li>
-                        )) || []}
-                      </ul>
-                    </div>
+                      {section.description}
+                    </p>
+                  </div>
+                  <div className="ml-4 sm:ml-6 transform transition-transform duration-200 group-hover:scale-110 flex-shrink-0">
+                    {openSections.has(section.id) ? (
+                      <svg
+                        className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M5 15l7-7 7 7"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                </button>
 
-                    {/* Best Courses */}
-                    <div
-                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-blue-900/20 border-blue-500/20" : "bg-blue-50/80 border-blue-200/50"} border`}
-                    >
-                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600 flex items-center">
-                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
-                          📚
-                        </span>
-                        Best Courses
-                      </h4>
-                      <div className="space-y-4 sm:space-y-5">
-                        <div>
-                          <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">
-                            In English:
-                          </h5>
-                          <ul className="space-y-1 sm:space-y-2">
-                            {section.content?.bestCourses?.english?.map(
-                              (course, index) => (
-                                <li
-                                  key={index}
-                                  className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}
-                                >
-                                  <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
-                                    •
-                                  </span>
-                                  <span className="font-medium">{course}</span>
-                                </li>
-                              ),
-                            ) || []}
-                          </ul>
+                {/* Section Content */}
+                {openSections.has(section.id) && (
+                  <div
+                    className={`px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8 ${darkMode ? "border-gray-700/50" : "border-gray-200/50"} border-t animate-in slide-in-from-top-2 duration-300`}
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-4 sm:mt-6 lg:mt-8">
+                      {/* What to Learn */}
+                      <div
+                        className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-green-900/20 border-green-500/20" : "bg-green-50/80 border-green-200/50"} border`}
+                      >
+                        <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-green-600 flex items-center">
+                          <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                            ✅
+                          </span>
+                          What to Learn
+                        </h4>
+                        <ul className="space-y-2 sm:space-y-3">
+                          {section.content?.whatToLearn?.map((item, index) => (
+                            <li
+                              key={index}
+                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                            >
+                              <span className="text-green-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                                •
+                              </span>
+                              <span className="font-medium">{item}</span>
+                            </li>
+                          )) || []}
+                        </ul>
+                      </div>
+
+                      {/* Tools to Use */}
+                      <div
+                        className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-orange-900/20 border-orange-500/20" : "bg-orange-50/80 border-orange-200/50"} border`}
+                      >
+                        <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-orange-600 flex items-center">
+                          <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                            🧰
+                          </span>
+                          Tools to Use
+                        </h4>
+                        <ul className="space-y-2 sm:space-y-3">
+                          {section.content?.toolsToUse?.map((tool, index) => (
+                            <li
+                              key={index}
+                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                            >
+                              <span className="text-orange-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                                •
+                              </span>
+                              <span className="font-medium">{tool}</span>
+                            </li>
+                          )) || []}
+                        </ul>
+                      </div>
+
+                      {/* Best Courses */}
+                      <div
+                        className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-blue-900/20 border-blue-500/20" : "bg-blue-50/80 border-blue-200/50"} border`}
+                      >
+                        <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600 flex items-center">
+                          <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                            📚
+                          </span>
+                          Best Courses
+                        </h4>
+                        <div className="space-y-4 sm:space-y-5">
+                          <div>
+                            <h5 className="font-bold mb-2 sm:mb-3 text-base sm:text-lg">
+                              In English:
+                            </h5>
+                            <ul className="space-y-1 sm:space-y-2">
+                              {section.content?.bestCourses?.english?.map(
+                                (course, index) => (
+                                  <li
+                                    key={index}
+                                    className={`text-xs sm:text-sm ${darkMode ? "text-gray-300" : "text-gray-600"} flex items-start leading-relaxed`}
+                                  >
+                                    <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
+                                      •
+                                    </span>
+                                    <span className="font-medium">{course}</span>
+                                  </li>
+                                ),
+                              ) || []}
+                            </ul>
+                          </div>
                         </div>
+                      </div>
+
+                      {/* Docs & Websites */}
+                      <div
+                        className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-red-900/20 border-red-500/20" : "bg-red-50/80 border-red-200/50"} border`}
+                      >
+                        <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600 flex items-center">
+                          <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                            📘
+                          </span>
+                          Docs & Websites
+                        </h4>
+                        <ul className="space-y-2 sm:space-y-3">
+                          {section.content?.docsAndWebsites?.map((doc, index) => (
+                            <li
+                              key={index}
+                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                            >
+                              <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                                •
+                              </span>
+                              <span className="font-medium">{doc}</span>
+                            </li>
+                          )) || []}
+                        </ul>
                       </div>
                     </div>
 
-                    {/* Docs & Websites */}
-                    <div
-                      className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-red-900/20 border-red-500/20" : "bg-red-50/80 border-red-200/50"} border`}
-                    >
-                      <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-red-600 flex items-center">
-                        <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
-                          📘
+                    {/* Project Ideas */}
+                    <div className="mt-6 sm:mt-8">
+                      <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-600 flex items-center">
+                        <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                          💡
                         </span>
-                        Docs & Websites
+                        Project Ideas
                       </h4>
-                      <ul className="space-y-2 sm:space-y-3">
-                        {section.content?.docsAndWebsites?.map((doc, index) => (
-                          <li
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        {section.content?.projectIdeas?.map((project, index) => (
+                          <div
                             key={index}
-                            className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                            className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
                           >
-                            <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
-                              •
-                            </span>
-                            <span className="font-medium">{doc}</span>
-                          </li>
-                        )) || []}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Project Ideas */}
-                  <div className="mt-6 sm:mt-8">
-                    <h4 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-purple-600 flex items-center">
-                      <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
-                        💡
-                      </span>
-                      Project Ideas
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                      {section.content?.projectIdeas?.map((project, index) => (
-                        <div
-                          key={index}
-                          className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
-                        >
-                          <div className="flex items-start">
-                            <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
-                              💡
-                            </span>
-                            <span
-                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
-                            >
-                              {project}
-                            </span>
+                            <div className="flex items-start">
+                              <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
+                                💡
+                              </span>
+                              <span
+                                className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
+                              >
+                                {project}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      )) || []}
+                        )) || []}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Empty State */}
-        {roadmapData.length === 0 && (
-          <div className="text-center py-16 sm:py-20">
-            <div
-              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
-            >
-              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                No Roadmap Data Available
-              </h3>
-              <p
-                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-              >
-                Add your roadmap data to get started with your Java programming journey.
-              </p>
-            </div>
+                )}
+              </div>
+            ))}
           </div>
         )}
-
-        {/* Footer */}
-        <footer className="mt-16 sm:mt-20 text-center">
-          <div
-            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Ready to Start Your Journey?
-            </h3>
-            <p
-              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
-            >
-              Remember: Consistency is key. Start with the fundamentals and
-              build your way up!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={handleDownload}
-                disabled={downloading}
-                className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
-                  downloading
-                    ? "bg-gray-500 cursor-not-allowed scale-95"
-                    : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
-                }`}
-              >
-                {downloading
-                  ? "Generating PDF..."
-                  : "Download Complete Roadmap"}
-              </button>
-            </div>
-          </div>
-        </footer>
       </main>
     </div>
   );

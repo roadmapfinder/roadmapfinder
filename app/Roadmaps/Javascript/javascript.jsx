@@ -305,7 +305,7 @@ export default function Home() {
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
-            A comprehensive guide to becoming a Javascript js developer,
+            A comprehensive guide to becoming a Javascript  developer,
             step-by-step learning path, courses, tools, and project ideas.
           </p>
           <div className="mt-6 sm:mt-8 flex justify-center">

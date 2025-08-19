@@ -20,8 +20,8 @@ const ChooseUs = () => {
     },
     {
       step: "3",
-      title: "Get Tools & Docs",
-      description: "Access premium tech tools and comprehensive documentation that enhance your development skills",
+      title: "AI project helper",
+      description: "Access premium AI powered project helper for builting project with complete map , tool to use , docs and Resources.",
       icon: <Zap size={24} className="text-emerald-600" />,
       color: "emerald"
     }

@@ -335,26 +335,6 @@ function NotificationPage() {
                 createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
             },
             {
-                id: 3,
-                type: 'tool',
-                icon: '🛠️',
-                title: 'VS Code Extensions',
-                message: 'New recommended extensions for React development added',
-                timestamp: '3 days ago',
-                read: true,
-                createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString()
-            },
-            {
-                id: 4,
-                type: 'doc',
-                icon: '📄',
-                title: 'TypeScript Documentation',
-                message: 'Updated guides on Advanced Types and Generics',
-                timestamp: '5 days ago',
-                read: true,
-                createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
-            },
-            {
                 id: 5,
                 type: 'course',
                 icon: '⚛️',
@@ -380,16 +360,6 @@ function NotificationPage() {
             {
                 id: 'roadmaps',
                 label: 'Roadmaps',
-                count: 0
-            },
-            {
-                id: 'tools',
-                label: 'Tools',
-                count: 0
-            },
-            {
-                id: 'docs',
-                label: 'Docs',
                 count: 0
             }
         ], []);
@@ -583,7 +553,7 @@ function NotificationPage() {
                                 className: "w-8 h-8 border-3 border-indigo-600 rounded-full animate-spin border-t-transparent"
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 269,
+                                lineNumber: 249,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -591,13 +561,13 @@ function NotificationPage() {
                                 children: "Checking authentication..."
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 270,
+                                lineNumber: 250,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 268,
+                        lineNumber: 248,
                         columnNumber: 11
                     }, this),
                     authError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -608,18 +578,18 @@ function NotificationPage() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 273,
+                        lineNumber: 253,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Notification/notification.jsx",
-                lineNumber: 267,
+                lineNumber: 247,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/Notification/notification.jsx",
-            lineNumber: 266,
+            lineNumber: 246,
             columnNumber: 7
         }, this);
     }
@@ -640,7 +610,7 @@ function NotificationPage() {
                                     children: "Notifications"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 290,
+                                    lineNumber: 270,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -652,7 +622,7 @@ function NotificationPage() {
                                             children: "Sign In"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 292,
+                                            lineNumber: 272,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -661,24 +631,24 @@ function NotificationPage() {
                                             children: "Sign Up"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 298,
+                                            lineNumber: 278,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 291,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Notification/notification.jsx",
-                            lineNumber: 289,
+                            lineNumber: 269,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 288,
+                        lineNumber: 268,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -689,7 +659,7 @@ function NotificationPage() {
                                 children: "🔔"
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 310,
+                                lineNumber: 290,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -697,7 +667,7 @@ function NotificationPage() {
                                 children: "Stay in the Loop!"
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 311,
+                                lineNumber: 291,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -705,7 +675,7 @@ function NotificationPage() {
                                 children: "Get instant notifications about new courses, roadmaps, tools, and documentation updates."
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 312,
+                                lineNumber: 292,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -713,7 +683,7 @@ function NotificationPage() {
                                 children: "Join our community to never miss important updates!"
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 315,
+                                lineNumber: 295,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -725,7 +695,7 @@ function NotificationPage() {
                                         children: "🚀 Get Started - It's Free!"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Notification/notification.jsx",
-                                        lineNumber: 320,
+                                        lineNumber: 300,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -734,13 +704,13 @@ function NotificationPage() {
                                         children: "📱 Already Have Account?"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Notification/notification.jsx",
-                                        lineNumber: 326,
+                                        lineNumber: 306,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 319,
+                                lineNumber: 299,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -754,7 +724,7 @@ function NotificationPage() {
                                                 children: "📚"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 337,
+                                                lineNumber: 317,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -762,7 +732,7 @@ function NotificationPage() {
                                                 children: "Course Updates"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 338,
+                                                lineNumber: 318,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -770,13 +740,13 @@ function NotificationPage() {
                                                 children: "New modules and lessons"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 339,
+                                                lineNumber: 319,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Notification/notification.jsx",
-                                        lineNumber: 336,
+                                        lineNumber: 316,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -787,7 +757,7 @@ function NotificationPage() {
                                                 children: "🗺️"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 342,
+                                                lineNumber: 322,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -795,7 +765,7 @@ function NotificationPage() {
                                                 children: "Roadmap Changes"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 343,
+                                                lineNumber: 323,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -803,13 +773,13 @@ function NotificationPage() {
                                                 children: "Updated learning paths"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 344,
+                                                lineNumber: 324,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Notification/notification.jsx",
-                                        lineNumber: 341,
+                                        lineNumber: 321,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -820,7 +790,7 @@ function NotificationPage() {
                                                 children: "🛠️"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 347,
+                                                lineNumber: 327,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -828,7 +798,7 @@ function NotificationPage() {
                                                 children: "New Tools"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 348,
+                                                lineNumber: 328,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -836,25 +806,25 @@ function NotificationPage() {
                                                 children: "Latest development resources"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 349,
+                                                lineNumber: 329,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Notification/notification.jsx",
-                                        lineNumber: 346,
+                                        lineNumber: 326,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 335,
+                                lineNumber: 315,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 309,
+                        lineNumber: 289,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -875,33 +845,33 @@ function NotificationPage() {
                                     d: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 362,
+                                    lineNumber: 342,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 361,
+                                lineNumber: 341,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Notification/notification.jsx",
-                            lineNumber: 356,
+                            lineNumber: 336,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 355,
+                        lineNumber: 335,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Notification/notification.jsx",
-                lineNumber: 286,
+                lineNumber: 266,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/Notification/notification.jsx",
-            lineNumber: 285,
+            lineNumber: 265,
             columnNumber: 7
         }, this);
     }
@@ -924,7 +894,7 @@ function NotificationPage() {
                                             children: "Notifications"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 379,
+                                            lineNumber: 359,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -936,13 +906,13 @@ function NotificationPage() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 380,
+                                            lineNumber: 360,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 378,
+                                    lineNumber: 358,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -959,7 +929,7 @@ function NotificationPage() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Notification/notification.jsx",
-                                                    lineNumber: 387,
+                                                    lineNumber: 367,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -968,13 +938,13 @@ function NotificationPage() {
                                                     children: "Mark all read"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Notification/notification.jsx",
-                                                    lineNumber: 390,
+                                                    lineNumber: 370,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 386,
+                                            lineNumber: 366,
                                             columnNumber: 17
                                         }, this),
                                         unreadCount === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -982,19 +952,19 @@ function NotificationPage() {
                                             children: "✅ All caught up!"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 399,
+                                            lineNumber: 379,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 384,
+                                    lineNumber: 364,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Notification/notification.jsx",
-                            lineNumber: 377,
+                            lineNumber: 357,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1007,7 +977,7 @@ function NotificationPage() {
                                             children: tab.label
                                         }, void 0, false, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 416,
+                                            lineNumber: 396,
                                             columnNumber: 17
                                         }, this),
                                         tabCounts[tab.id] > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1015,24 +985,24 @@ function NotificationPage() {
                                             children: tabCounts[tab.id]
                                         }, void 0, false, {
                                             fileName: "[project]/app/Notification/notification.jsx",
-                                            lineNumber: 418,
+                                            lineNumber: 398,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, tab.id, true, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 407,
+                                    lineNumber: 387,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Notification/notification.jsx",
-                            lineNumber: 405,
+                            lineNumber: 385,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Notification/notification.jsx",
-                    lineNumber: 376,
+                    lineNumber: 356,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1045,7 +1015,7 @@ function NotificationPage() {
                                 children: "📭"
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 431,
+                                lineNumber: 411,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1057,7 +1027,7 @@ function NotificationPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 432,
+                                lineNumber: 412,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1065,13 +1035,13 @@ function NotificationPage() {
                                 children: activeTab === 'all' ? "We'll notify you when there are new updates across all categories" : `No ${activeTab.toLowerCase()} updates at the moment. Check back later!`
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 435,
+                                lineNumber: 415,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 430,
+                        lineNumber: 410,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-3 pt-4",
@@ -1088,7 +1058,7 @@ function NotificationPage() {
                                                 children: notification.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 458,
+                                                lineNumber: 438,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1099,7 +1069,7 @@ function NotificationPage() {
                                                         children: notification.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Notification/notification.jsx",
-                                                        lineNumber: 462,
+                                                        lineNumber: 442,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1107,7 +1077,7 @@ function NotificationPage() {
                                                         children: notification.message
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Notification/notification.jsx",
-                                                        lineNumber: 465,
+                                                        lineNumber: 445,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1118,7 +1088,7 @@ function NotificationPage() {
                                                                 children: notification.timestamp || formatTimestamp(notification.createdAt)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                                lineNumber: 469,
+                                                                lineNumber: 449,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1126,19 +1096,19 @@ function NotificationPage() {
                                                                 children: "Click to view →"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                                lineNumber: 472,
+                                                                lineNumber: 452,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Notification/notification.jsx",
-                                                        lineNumber: 468,
+                                                        lineNumber: 448,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 461,
+                                                lineNumber: 441,
                                                 columnNumber: 23
                                             }, this),
                                             !notification.read && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1147,38 +1117,38 @@ function NotificationPage() {
                                                     className: "h-3 w-3 bg-indigo-500 rounded-full block animate-pulse"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Notification/notification.jsx",
-                                                    lineNumber: 479,
+                                                    lineNumber: 459,
                                                     columnNumber: 27
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Notification/notification.jsx",
-                                                lineNumber: 478,
+                                                lineNumber: 458,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Notification/notification.jsx",
-                                        lineNumber: 457,
+                                        lineNumber: 437,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Notification/notification.jsx",
-                                    lineNumber: 450,
+                                    lineNumber: 430,
                                     columnNumber: 19
                                 }, this)
                             }, notification.id, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 445,
+                                lineNumber: 425,
                                 columnNumber: 17
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 443,
+                        lineNumber: 423,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Notification/notification.jsx",
-                    lineNumber: 428,
+                    lineNumber: 408,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1199,33 +1169,33 @@ function NotificationPage() {
                                 d: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                             }, void 0, false, {
                                 fileName: "[project]/app/Notification/notification.jsx",
-                                lineNumber: 498,
+                                lineNumber: 478,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Notification/notification.jsx",
-                            lineNumber: 497,
+                            lineNumber: 477,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Notification/notification.jsx",
-                        lineNumber: 492,
+                        lineNumber: 472,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Notification/notification.jsx",
-                    lineNumber: 491,
+                    lineNumber: 471,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Notification/notification.jsx",
-            lineNumber: 374,
+            lineNumber: 354,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Notification/notification.jsx",
-        lineNumber: 373,
+        lineNumber: 353,
         columnNumber: 5
     }, this);
 }
