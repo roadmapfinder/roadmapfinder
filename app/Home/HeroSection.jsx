@@ -125,7 +125,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
 
                 <h2 className="text-2xl xl:text-4xl font-bold text-gray-900 mb-7 mt-3  transition-colors duration-300">
                   Start Your Tech Journey with 
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Clarity</span>
+                  <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent"> Clarity</span>
                 </h2>
 
                 <p className="text-medium xl:text-medium text-gray-600 mb-8 transition-colors duration-300 ">
