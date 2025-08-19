@@ -79,6 +79,15 @@ export const roadmapsData = [
     description: "Full-stack React framework"
   },
   {
+    id: "nestjs",
+    title: "Nest.js",
+    icon: <Triangle className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Nestjs",
+    bgColor: "from-pink-600 to-pink-700",
+    category: "featured",
+    description: "Enterprise standard for node.js backend"
+  },
+  {
     id: "reactnative",
     title: "React Native",
     icon: <Smartphone className="w-5 h-5 text-white" />,
