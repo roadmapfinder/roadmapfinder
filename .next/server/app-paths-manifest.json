@@ -1,4 +1,7 @@
 {
-  "/Roadmaps/Reactnative/page": "app/Roadmaps/Reactnative/page.js",
+  "/Roadmaps/Django/page": "app/Roadmaps/Django/page.js",
+  "/Roadmaps/Software/page": "app/Roadmaps/Software/page.js",
+  "/Roadmaps/Sql/page": "app/Roadmaps/Sql/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

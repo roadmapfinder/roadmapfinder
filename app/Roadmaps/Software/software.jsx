@@ -1,26 +1,124 @@
 "use client";
-import { useState } from "react";
-import roadmapData from "./roadmapData.json";
-import { handleDownloadPDF } from "./downloadPdf.js";
+import { useState, useEffect, useRef } from "react";
+import { handleDownloadPDF } from "./downloadPdf" 
+import roadmapData from "./roadmapData.json"  
+import VisualRoadmap from "./visualRoadmap"
 
 export default function Home() {
   const [openSection, setOpenSection] = useState(null);
+  const [openSections, setOpenSections] = useState(new Set());
   const [darkMode, setDarkMode] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const [youtubeDropdownOpen, setYoutubeDropdownOpen] = useState(false);
+  const [isVisualMode, setIsVisualMode] = useState(false);
 
-  // Toggle section open/close
-  const toggleSection = (id) => {
-    setOpenSection(openSection === id ? null : id);
+
+  // Create refs for dropdown and sections
+  const dropdownRef = useRef(null);
+  const sectionRefs = useRef({});
+
+
+  const toggleSections = (id) => {
+    const newOpenSections = new Set(openSections);
+    if (newOpenSections.has(id)) {
+      newOpenSections.delete(id);
+    } else {
+      newOpenSections.add(id);
+    }
+    setOpenSections(newOpenSections);
   };
-
   // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
+  const toggleRoadmapView = () => {
+    setIsVisualMode(!isVisualMode);
+  };
   // Handle PDF download
   const handleDownload = async () => {
     await handleDownloadPDF(roadmapData, setDownloading);
+  };
+
+  // Toggle YouTube dropdown
+  const toggleYouTubeDropdown = () => {
+    setYoutubeDropdownOpen(!youtubeDropdownOpen);
+  };
+
+  const youtubeCourses = [
+    {
+      name: "Web Development",
+      icon: "⚛️",
+      url: "https://youtu.be/tVzUXW6siu0?si=gEsH12gty2Wca6Rs",
+    },
+    {
+      name: "App Development",
+      url: "https://youtu.be/NMOdEHyMXBo?si=XuJlclTzfwLLaNYF",
+      icon: "🤖",
+    },
+    {
+      name: "Database",
+      url: "https://youtu.be/dl00fOOYLOM?si=bCam3UuAeb5Sq4Vl",
+      icon: "🤖",
+    },
+    {
+      name: "System design",
+      icon: "🤖",
+      url: "https://youtu.be/lFeYU31TnQ8?si=yHCNcIpkw6lNy3uO",
+    },
+    {
+      name: "Deployment",
+      icon: "🍎",
+      url: "https://youtu.be/gViEtIJ1DCw?si=_jTOPBzvH-8X64OS",
+    },
+  ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setYoutubeDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Toggle section open/close with smooth scrolling
+  const toggleSection = (id) => {
+    if (openSection === id) {
+      setOpenSection(null);
+    } else {
+      setOpenSection(id);
+      // Scroll to section after state update
+      setTimeout(() => {
+        const element = sectionRefs.current[id];
+        if (element) {
+          const navHeight = 80; // Approximate nav height
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    }
+  };
+
+  // Handle YouTube course redirect
+  const handleYouTubeCourseRedirect = (url) => {
+    window.open(url, "_blank");
+    setYoutubeDropdownOpen(false);
+  };
+
+  // Handle AI Guide redirect
+  const handleAIGuideRedirect = () => {
+    window.location.href = "/CareerGuidance";
   };
 
   return (
@@ -41,7 +139,7 @@ export default function Home() {
       >
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-           Software Engineer
+            Software Engineer
           </span>
           <span
             className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
@@ -50,6 +148,51 @@ export default function Home() {
           </span>
         </h1>
         <div className="flex items-center space-x-2 sm:space-x-4">
+          {/* Roadmap View Toggle */}
+          <div className="flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1">
+            <button
+              onClick={() => setIsVisualMode(false)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                !isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-blue-600 dark:text-blue-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-blue-500"
+              }`}
+              title="Switch to Textual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Textual</span>
+            </button>
+
+            <button
+              onClick={() => setIsVisualMode(true)}
+              className={`flex items-center px-3 py-1 rounded-full transition-all ${
+                isVisualMode
+                  ? "bg-white dark:bg-gray-900 shadow text-purple-600 dark:text-purple-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-purple-500"
+              }`}
+              title="Switch to Visual Roadmap"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z" />
+              </svg>
+              <span className="text-sm font-medium hidden sm:inline">Visual</span>
+            </button>
+          </div> 
           {/* Download Button */}
           <button
             onClick={handleDownload}
@@ -144,23 +287,164 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* Side Buttons - Fixed Position */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-4">
+        {/* YouTube Course Button with Dropdown */}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={toggleYouTubeDropdown}
+            className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+              darkMode
+                ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600"
+                : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+            } text-white ${youtubeDropdownOpen ? "scale-110 ring-4 ring-red-300/50" : ""}`}
+            title="YouTube Courses"
+          >
+            {/* YouTube Icon */}
+            <svg
+              className={`w-6 h-6 sm:w-7 sm:h-7 transition-transform duration-300 ${youtubeDropdownOpen ? "rotate-12" : ""}`}
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+
+            {/* Main Tooltip (shown when dropdown is closed) */}
+            {!youtubeDropdownOpen && (
+              <div
+                className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+                  darkMode
+                    ? "bg-gray-800 text-white border border-gray-700"
+                    : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+                }`}
+              >
+                YouTube Courses
+                <div
+                  className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                    darkMode ? "border-l-gray-800" : "border-l-white"
+                  }`}
+                ></div>
+              </div>
+            )}
+          </button>
+
+          {/* Animated Dropdown Menu */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 ease-out ${
+              youtubeDropdownOpen
+                ? "opacity-100 scale-100 translate-x-0"
+                : "opacity-0 scale-95 translate-x-2 pointer-events-none"
+            }`}
+          >
+            <div
+              className={`${
+                darkMode
+                  ? "bg-gray-800 border-gray-700"
+                  : "bg-white border-gray-200"
+              } border rounded-xl shadow-2xl backdrop-blur-lg p-2 min-w-[200px]`}
+            >
+              {/* Dropdown Header */}
+              <div className="px-3 py-2 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  Choose Technology
+                </h3>
+              </div>
+
+              {/* Course Options */}
+              <div className="py-1">
+                {youtubeCourses.map((course, index) => (
+                  <button
+                    key={course.name}
+                    onClick={() => handleYouTubeCourseRedirect(course.url)}
+                    className={`w-full px-3 py-3 text-left flex items-center gap-3 rounded-lg transition-all duration-200 transform hover:scale-105 ${
+                      darkMode
+                        ? "hover:bg-gray-700 text-gray-200 hover:text-white"
+                        : "hover:bg-gray-50 text-gray-700 hover:text-gray-900"
+                    } group`}
+                  >
+                    <span className="text-lg">{course.icon}</span>
+                    <span className="font-medium text-sm flex-1">
+                      {course.name}
+                    </span>
+                    <svg
+                      className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Arrow pointer */}
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-r-0 border-t-8 border-b-8 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </div>
+
+        {/* AI Guide Button */}
+        <button
+          onClick={handleAIGuideRedirect}
+          className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
+            darkMode
+              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600"
+              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+          } text-white`}
+          title="AI Career Guidance"
+        >
+          {/* AI Guide Icon */}
+          <svg
+            className="w-6 h-6 sm:w-7 sm:h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+
+          {/* Tooltip */}
+          <div
+            className={`absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${
+              darkMode
+                ? "bg-gray-800 text-white border border-gray-700"
+                : "bg-white text-gray-900 border border-gray-200 shadow-lg"
+            }`}
+          >
+            AI Career Guide
+            <div
+              className={`absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-transparent ${
+                darkMode ? "border-l-gray-800" : "border-l-white"
+              }`}
+            ></div>
+          </div>
+        </button>
+      </div>
+
       {/* Main Content */}
       <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Software Engineer
-            </span>
-            <br />
-            <span className={`${darkMode ? "text-gray-100" : "text-gray-800"}`}>
-              Roadmap
-            </span>
-          </h2>
+
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
-            A comprehensive guide to becoming a Software Engineer Developer with
+            A comprehensive guide to becoming a Software Engineer with
             step-by-step learning path, courses, tools, and project ideas.
           </p>
           <div className="mt-6 sm:mt-8 flex justify-center">
@@ -169,12 +453,22 @@ export default function Home() {
             ></div>
           </div>
         </div>
+        {/* Roadmap Content - Conditional Rendering */}
+        {isVisualMode ? (
+          /* Visual Roadmap */
+          <div className="transition-all duration-500 ease-in-out">
+            <VisualRoadmap 
+              roadmapData={roadmapData} 
+              darkMode={darkMode} 
+            />
+          </div>
+        ) : (
 
-        {/* Roadmap Sections */}
         <div className="space-y-6 sm:space-y-8">
           {roadmapData.map((section) => (
             <div
               key={section.id}
+              ref={(el) => (sectionRefs.current[section.id] = el)}
               className={`${
                 darkMode
                   ? "bg-gray-800/50 border-gray-700/50"
@@ -408,53 +702,11 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Empty State */}
-        {roadmapData.length === 0 && (
-          <div className="text-center py-16 sm:py-20">
-            <div
-              className={`p-8 sm:p-12 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border max-w-2xl mx-auto`}
-            >
-              <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">📚</div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                No Roadmap Data Available
-              </h3>
-              <p
-                className={`text-base sm:text-lg font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-              >
-                Add your roadmap data to get started with your Software Engineer
-                journey.
-              </p>
-            </div>
-          </div>
+
+
         )}
 
-        {/* Footer */}
-        <footer className="mt-16 sm:mt-20 text-center">
-          <div
-            className={`p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl ${darkMode ? "bg-gray-800/50 border-gray-700/50" : "bg-white/70 border-gray-200/50"} backdrop-blur-sm shadow-2xl border`}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Ready to Start Your Journey?
-            </h3>
-            <p
-              className={`text-base sm:text-lg lg:text-xl font-light leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} mb-6 sm:mb-8 max-w-2xl mx-auto px-4`}
-            >
-              Remember: Consistency is key. Start with the fundamentals and
-              build your way up!
-            </p>
-            <button
-              onClick={handleDownload}
-              disabled={downloading}
-              className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold text-white shadow-2xl transform transition-all duration-300 ${
-                downloading
-                  ? "bg-gray-500 cursor-not-allowed scale-95"
-                  : "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-3xl hover:scale-105 active:scale-95"
-              }`}
-            >
-              {downloading ? "Generating PDF..." : "Download Complete Roadmap"}
-            </button>
-          </div>
-        </footer>
+
       </main>
     </div>
   );

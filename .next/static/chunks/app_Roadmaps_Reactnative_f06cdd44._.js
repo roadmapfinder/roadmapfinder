@@ -620,22 +620,22 @@ function ReactNativeRoadmap2025() {
                                 children: "📱 32 Essential Steps • 🎯 9 Skill Levels • 🚀 Industry Ready"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                lineNumber: 286,
+                                lineNumber: 287,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                            lineNumber: 285,
+                            lineNumber: 286,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                        lineNumber: 284,
+                        lineNumber: 285,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                    lineNumber: 283,
+                    lineNumber: 284,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -653,7 +653,7 @@ function ReactNativeRoadmap2025() {
                                                     children: section.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                    lineNumber: 297,
+                                                    lineNumber: 299,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -661,26 +661,26 @@ function ReactNativeRoadmap2025() {
                                                     children: section.subtitle
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                    lineNumber: 298,
+                                                    lineNumber: 300,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                            lineNumber: 296,
+                                            lineNumber: 298,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent ml-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                            lineNumber: 300,
+                                            lineNumber: 302,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                    lineNumber: 295,
+                                    lineNumber: 297,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -694,12 +694,12 @@ function ReactNativeRoadmap2025() {
                                                         className: "w-2 h-2 rounded-full bg-gray-300 group-hover:bg-indigo-500 transition-colors duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                        lineNumber: 307,
+                                                        lineNumber: 309,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                    lineNumber: 306,
+                                                    lineNumber: 308,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -713,7 +713,7 @@ function ReactNativeRoadmap2025() {
                                                                     children: item.step
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                                    lineNumber: 312,
+                                                                    lineNumber: 314,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -721,13 +721,13 @@ function ReactNativeRoadmap2025() {
                                                                     children: item.category
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                                    lineNumber: 315,
+                                                                    lineNumber: 317,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                            lineNumber: 311,
+                                                            lineNumber: 313,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -735,7 +735,7 @@ function ReactNativeRoadmap2025() {
                                                             children: item.topic
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                            lineNumber: 320,
+                                                            lineNumber: 322,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -743,35 +743,35 @@ function ReactNativeRoadmap2025() {
                                                             children: item.details
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                            lineNumber: 324,
+                                                            lineNumber: 326,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                                    lineNumber: 310,
+                                                    lineNumber: 312,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, stepIdx, true, {
                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                            lineNumber: 305,
+                                            lineNumber: 307,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                    lineNumber: 303,
+                                    lineNumber: 305,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, sectionIdx, true, {
                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                            lineNumber: 294,
+                            lineNumber: 296,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                    lineNumber: 292,
+                    lineNumber: 294,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -782,7 +782,7 @@ function ReactNativeRoadmap2025() {
                             children: "🏗️ React Native Practice Projects"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                            lineNumber: 337,
+                            lineNumber: 339,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -795,7 +795,7 @@ function ReactNativeRoadmap2025() {
                                             children: item.level
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                            lineNumber: 341,
+                                            lineNumber: 343,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -803,24 +803,24 @@ function ReactNativeRoadmap2025() {
                                             children: item.project
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                            lineNumber: 342,
+                                            lineNumber: 344,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, idx, true, {
                                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                                    lineNumber: 340,
+                                    lineNumber: 342,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                            lineNumber: 338,
+                            lineNumber: 340,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                    lineNumber: 336,
+                    lineNumber: 338,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -830,23 +830,23 @@ function ReactNativeRoadmap2025() {
                         children: "📱 Master React Native 2025 — build cross-platform, scalable, and industry-ready mobile apps!"
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                        lineNumber: 350,
+                        lineNumber: 352,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-                    lineNumber: 349,
+                    lineNumber: 351,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-            lineNumber: 281,
+            lineNumber: 282,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Reactnative/visualRoadmap.jsx",
-        lineNumber: 280,
+        lineNumber: 281,
         columnNumber: 5
     }, this);
 }

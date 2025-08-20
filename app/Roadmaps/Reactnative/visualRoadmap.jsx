@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function ReactNativeRoadmap2025() {
   const roadmap = [
     {
@@ -284,6 +285,7 @@ export default function ReactNativeRoadmap2025() {
           <div className="mb-10 flex justify-center">
             <div className="bg-white rounded-full px-6 py-3 shadow-lg border border-gray-200">
               <span className="text-sm font-medium text-gray-700">📱 32 Essential Steps • 🎯 9 Skill Levels • 🚀 Industry Ready</span>
+            
             </div>
           </div>
         </div>
