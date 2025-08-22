@@ -1,13 +1,12 @@
 {
   "pages": {
-    "/Roadmaps/Django/page": [
+    "/Courses/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/node_modules_91ba22a4._.js",
-      "static/chunks/app_Roadmaps_Django_6f476111._.js",
-      "static/chunks/node_modules_next_dist_compiled_react_26ec58f1._.js",
-      "static/chunks/app_Roadmaps_Django_page_jsx_5ee60de8._.js",
+      "static/chunks/app_2786acc9._.js",
+      "static/chunks/node_modules_c4f620fd._.js",
+      "static/chunks/app_Courses_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -16,14 +15,13 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Roadmaps/Software/page": [
+    "/Project-helper/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/node_modules_f95b6ff1._.js",
-      "static/chunks/app_Roadmaps_Software_3925bd1b._.js",
-      "static/chunks/node_modules_next_dist_compiled_react_26ec58f1._.js",
-      "static/chunks/app_Roadmaps_Software_page_jsx_5ee60de8._.js",
+      "static/chunks/app_Project-helper_page_jsx_f672a01e._.js",
+      "static/chunks/node_modules_63b67ca7._.js",
+      "static/chunks/app_Project-helper_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -32,26 +30,12 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Roadmaps/Sql/page": [
+    "/RoadmapPage/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/node_modules_e47c0af0._.js",
-      "static/chunks/app_Roadmaps_Sql_406b99ff._.js",
-      "static/chunks/node_modules_next_dist_compiled_react_26ec58f1._.js",
-      "static/chunks/app_Roadmaps_Sql_page_jsx_5ee60de8._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/node_modules_659f1a1f._.js",
-      "static/chunks/[root-of-the-server]__ccd9809a._.css",
-      "static/chunks/app_layout_c0237562.js",
+      "static/chunks/_c7eee0fb._.js",
+      "static/chunks/app_RoadmapPage_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
