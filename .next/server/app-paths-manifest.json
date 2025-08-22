@@ -1,5 +1,9 @@
 {
+  "/Blogs/page": "app/Blogs/page.js",
   "/Project-helper/page": "app/Project-helper/page.js",
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
+  "/Roadmaps/Flutter/page": "app/Roadmaps/Flutter/page.js",
   "/api/generate-project/route": "app/api/generate-project/route.js",
   "/page": "app/page.js"
 }
