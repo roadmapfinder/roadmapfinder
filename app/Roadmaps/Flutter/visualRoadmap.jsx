@@ -147,14 +147,7 @@ export default function FlutterRoadmap() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="mb-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-3">
-              Flutter Development Roadmap 2025
-            </h1>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-              Complete guide from Dart fundamentals to production-ready cross-platform applications
-            </p>
-          </div>
+
           <div className="mb-10 flex justify-center">
             <div className="bg-white rounded-full px-6 py-3 shadow-lg border border-gray-200">
               <span className="text-sm font-medium text-gray-700">🚀 15 Essential Steps • 📱 4 Core Areas • 💼 Industry Ready</span>

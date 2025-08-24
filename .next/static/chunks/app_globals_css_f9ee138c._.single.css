@@ -151,6 +151,7 @@
     --color-cyan-600: oklch(60.9% .126 221.723);
     --color-cyan-800: oklch(45% .085 224.283);
     --color-sky-400: oklch(74.6% .16 232.661);
+    --color-sky-500: oklch(68.5% .169 237.323);
     --color-blue-50: oklch(97% .014 254.604);
     --color-blue-100: oklch(93.2% .032 255.585);
     --color-blue-200: oklch(88.2% .059 254.128);
@@ -3303,6 +3304,11 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
+  .from-emerald-50 {
+    --tw-gradient-from: var(--color-emerald-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
   .from-emerald-100 {
     --tw-gradient-from: var(--color-emerald-100);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -3592,6 +3598,11 @@
 
   .from-sky-400 {
     --tw-gradient-from: var(--color-sky-400);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .from-sky-500 {
+    --tw-gradient-from: var(--color-sky-500);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -4826,6 +4837,10 @@
     color: var(--color-green-800);
   }
 
+  .text-indigo-100 {
+    color: var(--color-indigo-100);
+  }
+
   .text-indigo-500 {
     color: var(--color-indigo-500);
   }
@@ -4840,6 +4855,10 @@
 
   .text-indigo-800 {
     color: var(--color-indigo-800);
+  }
+
+  .text-orange-100 {
+    color: var(--color-orange-100);
   }
 
   .text-orange-500 {
@@ -5547,6 +5566,12 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:border-orange-500:is(:where(.group):hover *) {
+      border-color: var(--color-orange-500);
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:border-pink-500:is(:where(.group):hover *) {
       border-color: var(--color-pink-500);
     }
@@ -5597,6 +5622,12 @@
   @media (hover: hover) {
     .group-hover\:bg-indigo-500:is(:where(.group):hover *) {
       background-color: var(--color-indigo-500);
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:bg-orange-500:is(:where(.group):hover *) {
+      background-color: var(--color-orange-500);
     }
   }
 

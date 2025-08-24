@@ -1,18 +1,21 @@
 {
   "app": {
-    "[project]/app/Blogs/page": [
+    "[project]/app/CareerGuidance/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Project-helper/page": [
+    "[project]/app/CareerGuidance/results/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Courses/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/RoadmapPage/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/Aiml/page": [
+    "[project]/app/Roadmaps/Database/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/Flutter/page": [
+    "[project]/app/_not-found/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [

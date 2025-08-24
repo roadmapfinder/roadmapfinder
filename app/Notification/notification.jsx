@@ -21,8 +21,8 @@ export default function NotificationPage() {
       id: 1,
       type: 'course',
       icon: '📘',
-      title: 'Advanced React Patterns',
-      message: 'New module available: "Custom Hooks for State Management"',
+      title: 'System design course',
+      message: 'New module available: "In english system design indepth course"',
       timestamp: '2 hours ago',
       read: false,
       createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()
@@ -31,8 +31,8 @@ export default function NotificationPage() {
       id: 2,
       type: 'roadmap',
       icon: '🧭',
-      title: 'Full Stack Developer Roadmap',
-      message: 'Your roadmap has been updated with new Backend technologies',
+      title: 'Database engineering roadmap',
+      message: 'Your roadmap has been updated with new Database engineering',
       timestamp: '1 day ago',
       read: false,
       createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
@@ -55,6 +55,7 @@ export default function NotificationPage() {
     { id: 'all', label: 'All', count: 0 },
     { id: 'courses', label: 'Courses', count: 0 },
     { id: 'roadmaps', label: 'Roadmaps', count: 0 },
+     { id: 'blogs', label: 'Blogs', count: 0 },
 
   ], []);
 

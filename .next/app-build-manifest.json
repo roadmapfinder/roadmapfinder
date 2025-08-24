@@ -1,11 +1,13 @@
 {
   "pages": {
-    "/Blogs/page": [
+    "/CareerGuidance/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_068bb890._.js",
-      "static/chunks/app_Blogs_page_jsx_5ee60de8._.js",
+      "static/chunks/node_modules_a8447a7a._.js",
+      "static/chunks/app_CareerGuidance_6f2702b6._.js",
+      "static/chunks/node_modules_e30eb271._.js",
+      "static/chunks/app_CareerGuidance_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -14,13 +16,29 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Project-helper/page": [
+    "/CareerGuidance/results/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/app_Project-helper_page_jsx_f672a01e._.js",
-      "static/chunks/node_modules_63b67ca7._.js",
-      "static/chunks/app_Project-helper_page_jsx_5ee60de8._.js",
+      "static/chunks/node_modules_b39306d4._.js",
+      "static/chunks/node_modules_825537e3._.js",
+      "static/chunks/app_CareerGuidance_787a1bd9._.js",
+      "static/chunks/app_CareerGuidance_results_page_jsx_5ee60de8._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
+      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
+      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
+      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
+      "static/chunks/_e69f0d32._.js",
+      "static/chunks/_93808211._.js"
+    ],
+    "/Courses/page": [
+      "static/chunks/node_modules_659f1a1f._.js",
+      "static/chunks/[root-of-the-server]__ccd9809a._.css",
+      "static/chunks/app_layout_c0237562.js",
+      "static/chunks/app_68a580de._.js",
+      "static/chunks/node_modules_c4f620fd._.js",
+      "static/chunks/app_Courses_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -43,14 +61,14 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Roadmaps/Aiml/page": [
+    "/Roadmaps/Database/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/node_modules_0902b703._.js",
-      "static/chunks/app_Roadmaps_Aiml_78ce8306._.js",
-      "static/chunks/node_modules_9fccb0f5._.js",
-      "static/chunks/app_Roadmaps_Aiml_page_jsx_5ee60de8._.js",
+      "static/chunks/node_modules_f28c1f29._.js",
+      "static/chunks/app_Roadmaps_Database_c62cfc01._.js",
+      "static/chunks/node_modules_next_dist_compiled_react_26ec58f1._.js",
+      "static/chunks/app_Roadmaps_Database_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -59,13 +77,10 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Roadmaps/Flutter/page": [
+    "/_not-found/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/node_modules_238198d2._.js",
-      "static/chunks/_05610aa9._.js",
-      "static/chunks/app_Roadmaps_Flutter_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",

@@ -1,9 +1,10 @@
 {
-  "/Blogs/page": "app/Blogs/page.js",
-  "/Project-helper/page": "app/Project-helper/page.js",
+  "/CareerGuidance/page": "app/CareerGuidance/page.js",
+  "/CareerGuidance/results/page": "app/CareerGuidance/results/page.js",
+  "/Courses/page": "app/Courses/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
-  "/Roadmaps/Flutter/page": "app/Roadmaps/Flutter/page.js",
-  "/api/generate-project/route": "app/api/generate-project/route.js",
+  "/Roadmaps/Database/page": "app/Roadmaps/Database/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/career/route": "app/api/career/route.js",
   "/page": "app/page.js"
 }

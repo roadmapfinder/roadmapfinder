@@ -277,6 +277,15 @@ export const roadmapsData = [
     description: "Data science and analytics"
   },
   {
+    id: "database",
+    title: "Database Engineering",
+    icon: <Database className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Database",
+    bgColor: "from-green-600 to-green-700",
+    category: "trending",
+    description: "Database in depth "
+  },
+  {
     id: "excel",
     title: "Excel",
     icon: <Database className="w-5 h-5 text-white" />,
