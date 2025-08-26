@@ -38,7 +38,7 @@ export default function Home() {
 
   // Handle YouTube redirect
   const handleYouTubeRedirect = () => {
-    window.open("https://youtu.be/fc2axTKm4ps?si=rf4rxxi6RgTwYqyr", "_blank");
+    window.open("https://youtu.be/rklidcZ-aLU?si=oI34WT5cTyM3lSRh", "_blank");
   };
 
   // Handle AI Guide redirect
