@@ -1,18 +1,9 @@
 {
   "app": {
-    "[project]/app/CareerGuidance/page": [
+    "[project]/app/Roadmaps/Full-Stack/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/CareerGuidance/results/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/Courses/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/RoadmapPage/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
-    "[project]/app/Roadmaps/Database/page": [
+    "[project]/app/Roadmaps/Mern/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/_not-found/page": [
