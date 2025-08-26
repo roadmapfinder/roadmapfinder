@@ -1,8 +1,1 @@
-{
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Full-Stack/page": "app/Roadmaps/Full-Stack/page.js",
-  "/Roadmaps/Java/page": "app/Roadmaps/Java/page.js",
-  "/Roadmaps/JavaFullStack/page": "app/Roadmaps/JavaFullStack/page.js",
-  "/Roadmaps/Mern/page": "app/Roadmaps/Mern/page.js",
-  "/page": "app/page.js"
-}
+{}
