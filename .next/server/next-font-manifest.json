@@ -1,12 +1,18 @@
 {
   "app": {
+    "[project]/app/RoadmapPage/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
     "[project]/app/Roadmaps/Full-Stack/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/Mern/page": [
+    "[project]/app/Roadmaps/Java/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/_not-found/page": [
+    "[project]/app/Roadmaps/JavaFullStack/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
+    ],
+    "[project]/app/Roadmaps/Mern/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [

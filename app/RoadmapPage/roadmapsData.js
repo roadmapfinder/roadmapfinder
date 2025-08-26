@@ -115,6 +115,15 @@ export const roadmapsData = [
     description: "Cross-platform mobile app development"
   },
   {
+    id: "fullstack",
+    title: "Full-Stack",
+    icon: <Globe className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Full-Stack",
+    bgColor: "from-blue-500 to-blue-700",
+    category: "featured",
+    description: "Full-Stack Web development"
+  },
+  {
     id: "frontend",
     title: "Frontend",
     icon: <Layers className="w-5 h-5 text-white" />,
@@ -122,6 +131,15 @@ export const roadmapsData = [
     bgColor: "from-blue-500 to-cyan-400",
     category: "featured",
     description: "Frontend development specialization"
+  },
+  {
+    id: "mern",
+    title: "Mern Stack",
+    icon: <Layers className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Mern",
+    bgColor: "from-blue-600 to-cyan-500",
+    category: "featured",
+    description: "Mern stack development specialization"
   },
   {
     id: "backend",
@@ -185,6 +203,15 @@ export const roadmapsData = [
     bgColor: "from-orange-500 to-red-600",
     category: "trending",
     description: "Java programming language"
+  },
+  {
+    id: "java full-stack",
+    title: "Java Full-Stack Developer",
+    icon: <FileCode className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/JavaFullStack",
+    bgColor: "from-orange-400 to-red-300",
+    category: "trending",
+    description: "Java Full-Stack Development"
   },
   {
     id: "rust",
