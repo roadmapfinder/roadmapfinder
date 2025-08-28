@@ -9,6 +9,7 @@ import {
   Bookmark,
   BookmarkCheck,
   Globe,
+  FileText, // Added for docs icon
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -193,6 +194,14 @@ export default function CoursePage() {
       window.open(videoLink, "_blank");
     } else {
       window.open(`https://www.youtube.com/watch?v=${videoLink}`, "_blank");
+    }
+  }, []);
+
+  // New function to handle docs navigation
+  const redirectToDocs = useCallback((docsPath) => {
+    if (docsPath) {
+      // Using Next.js router or window.location for navigation
+      window.location.href = docsPath;
     }
   }, []);
 
@@ -423,6 +432,20 @@ export default function CoursePage() {
                             <Bookmark size={16} className="text-gray-700" />
                           )}
                         </button>
+
+                        {/* Documentation button - NEW */}
+                        {course.docs && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              redirectToDocs(course.docs);
+                            }}
+                            className="absolute bottom-2 right-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all group"
+                            title="View Documentation"
+                          >
+                            <FileText size={16} className="text-gray-700 group-hover:text-blue-600" />
+                          </button>
+                        )}
                       </div>
 
                       <div className="p-3">
@@ -440,13 +463,27 @@ export default function CoursePage() {
                           </div>
                         </div>
 
-                        <button
-                          onClick={() => redirectToYoutube(course.videoId)}
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
-                        >
-                          <span>Watch on YouTube</span>
-                          <ExternalLink size={14} className="ml-1" />
-                        </button>
+                        {/* Button container with docs button */}
+                        <div className="flex space-x-2">
+                          <button
+                            onClick={() => redirectToYoutube(course.videoId)}
+                            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
+                          >
+                            <span>Watch on YouTube</span>
+                            <ExternalLink size={14} className="ml-1" />
+                          </button>
+
+                          {/* Documentation button in card footer */}
+                          {course.docs && (
+                            <button
+                              onClick={() => redirectToDocs(course.docs)}
+                              className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded transition-colors flex items-center justify-center"
+                              title="View Documentation"
+                            >
+                              <FileText size={14} />
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   ))}

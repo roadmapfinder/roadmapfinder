@@ -1,7 +1,7 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
-  "/Signup/page": "app/Signup/page.js",
+  "/Docs/kubernetes/page": "app/Docs/kubernetes/page.js",
+  "/Docs/page": "app/Docs/page.js",
+  "/Docs/sigma/page": "app/Docs/sigma/page.js",
   "/page": "app/page.js"
 }

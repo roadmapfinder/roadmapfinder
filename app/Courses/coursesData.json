@@ -35,7 +35,8 @@
       "image": "sigma",
       "videoId": "https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/sigma"
     },
     {
       "id": 2,
@@ -870,7 +871,8 @@
       "image": "kubernetes",
       "videoId": "https://youtu.be/7XDeI5fyj3w?si=5Mhk7eeWSOZPJzj9",
       "badge": "Trending",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/kubernetes"
     },
     {
       "id": 76,
