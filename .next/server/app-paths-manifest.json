@@ -1,8 +1,7 @@
 {
-  "/Bookmarks/page": "app/Bookmarks/page.js",
   "/Courses/page": "app/Courses/page.js",
-  "/Profile/page": "app/Profile/page.js",
-  "/Project-helper/page": "app/Project-helper/page.js",
-  "/Roadmaps/GenAi/page": "app/Roadmaps/GenAi/page.js",
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/Web/page": "app/Roadmaps/Web/page.js",
+  "/Signup/page": "app/Signup/page.js",
   "/page": "app/page.js"
 }

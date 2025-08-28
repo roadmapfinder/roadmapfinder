@@ -3764,8 +3764,12 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Images$2f$splash$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$Images$2f$splash$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/Images/splash.png.mjs { IMAGE => "[project]/app/Images/splash.png (static in ecmascript)" } [app-client] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$twitter$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Twitter$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/twitter.js [app-client] (ecmascript) <export default as Twitter>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Linkedin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-client] (ecmascript) <export default as Linkedin>");
+;
+;
 ;
 ;
 ;
@@ -3781,33 +3785,33 @@ const ThreadsIcon = ({ size = 20, className = "" })=>/*#__PURE__*/ (0, __TURBOPA
                 d: "M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.001v-.002C1.5 8.584 2.35 5.73 3.995 3.681 5.851 1.376 8.604.195 12.186.17h.014c3.581.024 6.334 1.205 8.184 3.509C21.65 5.73 22.5 8.584 22.5 12.001v.002c0 3.417-.85 6.271-2.495 8.32-1.856 2.304-4.609 3.485-8.186 3.509h-.014zm.007-22.75h-.007c-3.176.022-5.668 1.075-7.318 3.088C3.329 6.297 2.5 8.944 2.5 12.001v.002c0 3.057.829 5.704 2.368 7.663 1.65 2.013 4.142 3.066 7.318 3.088h.007c3.176-.022 5.668-1.075 7.318-3.088 1.539-1.959 2.368-4.606 2.368-7.663v-.002c0-3.057-.829-5.704-2.368-7.663-1.65-2.013-4.142-3.066-7.318-3.088z"
             }, void 0, false, {
                 fileName: "[project]/app/Footer/footer.jsx",
-                lineNumber: 14,
+                lineNumber: 16,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M16.999 9.5c0 2.5-1.5 3.5-3.5 3.5s-3.5-1-3.5-3.5S11.499 6 13.499 6s3.5 1.5 3.5 3.5zm-2 0c0-1.381-.672-2.5-1.5-2.5S12 8.119 12 9.5s.672 2.5 1.5 2.5 1.5-1.119 1.5-2.5z"
             }, void 0, false, {
                 fileName: "[project]/app/Footer/footer.jsx",
-                lineNumber: 15,
+                lineNumber: 17,
                 columnNumber: 5
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                 d: "M12 16c-2.5 0-4.5-1.5-4.5-4s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4-4.5 4zm0-7.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"
             }, void 0, false, {
                 fileName: "[project]/app/Footer/footer.jsx",
-                lineNumber: 16,
+                lineNumber: 18,
                 columnNumber: 5
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Footer/footer.jsx",
-        lineNumber: 7,
+        lineNumber: 9,
         columnNumber: 3
     }, this);
 _c = ThreadsIcon;
 const Footer = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-        className: "w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/30 rounded-3xl shadow-xl border border-gray-100/50 px-6 py-12 my-6 font-sora transition-all duration-300 lg:ml-74 lg:w-[calc(100%-16rem)] xl:ml-80 xl:w-[calc(100%-18rem)]",
+        className: "w-full bg-gradient-to-br from-white via-white to-blue-50 rounded-3xl shadow-xl border border-gray-100/50 px-6 py-12 my-6 font-sora transition-all duration-300 lg:ml-74 lg:w-[calc(100%-16rem)] xl:ml-80 xl:w-[calc(100%-18rem)]",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-6xl mx-auto",
             children: [
@@ -3822,32 +3826,36 @@ const Footer = ()=>{
                                     className: "flex items-center group",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-gradient-to-r from-blue-600 to-indigo-600 p-3 rounded-2xl shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-white text-xl font-bold",
-                                                children: "RF"
+                                            className: "relative w-12 h-12 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Images$2f$splash$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$Images$2f$splash$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                                                alt: "RoadmapFinder Logo",
+                                                width: 48,
+                                                height: 48,
+                                                className: "object-contain",
+                                                priority: true
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 30,
+                                                lineNumber: 32,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 29,
+                                            lineNumber: 31,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-gray-800 text-2xl font-bold ml-3 group-hover:text-blue-600 transition-colors",
+                                            className: "text-blue-600 text-2xl font-bold ml-3 group-hover:text-blue-600 transition-colors",
                                             children: "RoadmapFinder"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 32,
+                                            lineNumber: 41,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 28,
+                                    lineNumber: 30,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3855,7 +3863,7 @@ const Footer = ()=>{
                                     children: "Navigate your learning journey with expertly curated roadmaps and resources designed for modern developers"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 36,
+                                    lineNumber: 45,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3869,12 +3877,12 @@ const Footer = ()=>{
                                                 className: "text-gray-600 group-hover:text-blue-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 46,
+                                                lineNumber: 55,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 42,
+                                            lineNumber: 51,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3885,12 +3893,12 @@ const Footer = ()=>{
                                                 className: "text-gray-600 group-hover:text-blue-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 52,
+                                                lineNumber: 61,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 48,
+                                            lineNumber: 57,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3901,24 +3909,24 @@ const Footer = ()=>{
                                                 className: "text-gray-600 group-hover:text-gray-800"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 58,
+                                                lineNumber: 67,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 54,
+                                            lineNumber: 63,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 41,
+                                    lineNumber: 50,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 27,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3931,14 +3939,14 @@ const Footer = ()=>{
                                             className: "w-1 h-6 bg-gradient-to-b from-blue-600 to-indigo-600 rounded-full mr-3"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 66,
+                                            lineNumber: 75,
                                             columnNumber: 15
                                         }, this),
                                         "Quick Links"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 65,
+                                    lineNumber: 74,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -3952,14 +3960,14 @@ const Footer = ()=>{
                                                     className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 74,
+                                                    lineNumber: 83,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Roadmaps"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 70,
+                                            lineNumber: 79,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -3970,32 +3978,32 @@ const Footer = ()=>{
                                                     className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 90,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Courses"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 77,
+                                            lineNumber: 86,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/Docs",
+                                            href: "/Project-helper",
                                             className: "text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 88,
+                                                    lineNumber: 97,
                                                     columnNumber: 17
                                                 }, this),
-                                                "Docs"
+                                                "Project-helper"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 84,
+                                            lineNumber: 93,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4006,32 +4014,32 @@ const Footer = ()=>{
                                                     className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 96,
+                                                    lineNumber: 105,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Login"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 92,
+                                            lineNumber: 101,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 69,
+                                    lineNumber: 78,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 64,
+                            lineNumber: 73,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 24,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4044,12 +4052,12 @@ const Footer = ()=>{
                                 children: "© 2025 RoadmapFinder. All rights reserved."
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 108,
+                                lineNumber: 117,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 107,
+                            lineNumber: 116,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4060,7 +4068,7 @@ const Footer = ()=>{
                                     children: "Theme"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 116,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4073,34 +4081,34 @@ const Footer = ()=>{
                                                 className: "w-2 h-2 bg-gray-400 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 120,
+                                                lineNumber: 129,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 119,
+                                            lineNumber: 128,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Footer/footer.jsx",
-                                        lineNumber: 118,
+                                        lineNumber: 127,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 117,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 115,
+                            lineNumber: 124,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 106,
+                    lineNumber: 115,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4112,36 +4120,36 @@ const Footer = ()=>{
                                 className: "w-2 h-2 bg-green-500 rounded-full animate-pulse"
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 130,
+                                lineNumber: 139,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "All systems operational"
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 131,
+                                lineNumber: 140,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Footer/footer.jsx",
-                        lineNumber: 129,
+                        lineNumber: 138,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 128,
+                    lineNumber: 137,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Footer/footer.jsx",
-            lineNumber: 23,
+            lineNumber: 25,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Footer/footer.jsx",
-        lineNumber: 22,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 };

@@ -1,5 +1,7 @@
 // Footer.jsx
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../Images/splash.png"
 import { Twitter, Linkedin, Youtube } from "lucide-react";
 
 // Custom Threads Icon Component
@@ -19,17 +21,24 @@ const ThreadsIcon = ({ size = 20, className = "" }) => (
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/30 rounded-3xl shadow-xl border border-gray-100/50 px-6 py-12 my-6 font-sora transition-all duration-300 lg:ml-74 lg:w-[calc(100%-16rem)] xl:ml-80 xl:w-[calc(100%-18rem)]">
+    <footer className="w-full bg-gradient-to-br from-white via-white to-blue-50 rounded-3xl shadow-xl border border-gray-100/50 px-6 py-12 my-6 font-sora transition-all duration-300 lg:ml-74 lg:w-[calc(100%-16rem)] xl:ml-80 xl:w-[calc(100%-18rem)]">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
 
           {/* Logo and Tagline Section */}
           <div className="flex flex-col space-y-6 lg:col-span-6">
             <Link href="/" className="flex items-center group">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-3 rounded-2xl shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                <span className="text-white text-xl font-bold">RF</span>
+              <div className="relative w-12 h-12 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                <Image
+                  src={Logo}
+                  alt="RoadmapFinder Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <span className="text-gray-800 text-2xl font-bold ml-3 group-hover:text-blue-600 transition-colors">
+              <span className="text-blue-600 text-2xl font-bold ml-3 group-hover:text-blue-600 transition-colors">
                 RoadmapFinder
               </span>
             </Link>
@@ -82,13 +91,13 @@ const Footer = () => {
                 Courses
               </Link>
               <Link
-                href="/Docs"
+                href="/Project-helper"
                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group"
               >
                 <span className="w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"></span>
-                Docs
+              Project-helper
               </Link>
-             
+
               <Link
                 href="/Login"
                 className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group"
@@ -99,7 +108,7 @@ const Footer = () => {
             </nav>
           </div>
 
-       
+
         </div>
 
         {/* Bottom Section with Copyright and Terms */}
@@ -108,7 +117,7 @@ const Footer = () => {
             <p className="text-gray-600 text-sm font-medium">
               © 2025 RoadmapFinder. All rights reserved.
             </p>
-           
+
           </div>
 
           {/* Enhanced Theme Toggle */}

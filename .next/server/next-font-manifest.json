@@ -1,18 +1,15 @@
 {
   "app": {
-    "[project]/app/Bookmarks/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ],
     "[project]/app/Courses/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Profile/page": [
+    "[project]/app/RoadmapPage/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Project-helper/page": [
+    "[project]/app/Roadmaps/Web/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
-    "[project]/app/Roadmaps/GenAi/page": [
+    "[project]/app/Signup/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
     ],
     "[project]/app/page": [

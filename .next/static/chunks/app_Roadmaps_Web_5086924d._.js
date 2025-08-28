@@ -1041,7 +1041,7 @@ function Home() {
     };
     // Handle YouTube redirect
     const handleYouTubeRedirect = ()=>{
-        window.open("https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w", "_blank");
+        window.open("https://youtu.be/HcOc7P5BMi4?si=IcxgFz3okf4CwHct", "_blank");
     };
     // Handle AI Guide redirect
     const handleAIGuideRedirect = ()=>{

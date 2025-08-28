@@ -96,6 +96,7 @@ import devops from "./CoursesImage/devops.jpg"
 import kubernetes from "./CoursesImage/kubernetes.jpg"
 import docker from "./CoursesImage/docker.jpg"
 import aws from "./CoursesImage/aws.jpg"
+import genaijs from "./CoursesImage/genaijs.jpg"
 
 
 
@@ -110,7 +111,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs
 };
 
 export default function CoursePage() {

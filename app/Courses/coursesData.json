@@ -805,6 +805,7 @@
       "badge": "POPULAR",
       "language": "English"
     },
+  
     {
       "id": 70,
       "category": "Prompt Engineering",
@@ -870,6 +871,17 @@
       "videoId": "https://youtu.be/7XDeI5fyj3w?si=5Mhk7eeWSOZPJzj9",
       "badge": "Trending",
       "language": "English"
+    },
+    {
+      "id": 76,
+      "category": "Generative AI",
+      "title": "Generative AI with js",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "genaijs",
+      "videoId": "https://youtube.com/watch?v=qPxxxA-RdQw",
+      "badge": "NEW",
+      "language": "Hindi"
     }
 
   ]
