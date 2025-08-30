@@ -338,7 +338,7 @@ export default function Home() {
                   openSections.has(section.id) ? "ring-2 ring-blue-500/20" : ""
                 }`}
               >
-                {/* Section Header */}
+
                 <button
                   onClick={() => toggleSection(section.id)}
                   className={`w-full p-4 sm:p-6 lg:p-8 text-left flex justify-between items-center ${

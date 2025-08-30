@@ -6,10 +6,8 @@ import {
   Star,
   Search,
   ExternalLink,
-  Bookmark,
-  BookmarkCheck,
   Globe,
-  FileText, // Added for docs icon
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -98,6 +96,7 @@ import kubernetes from "./CoursesImage/kubernetes.jpg"
 import docker from "./CoursesImage/docker.jpg"
 import aws from "./CoursesImage/aws.jpg"
 import genaijs from "./CoursesImage/genaijs.jpg"
+import electron from "./CoursesImage/electron.jpg"
 
 
 
@@ -112,22 +111,14 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron
 };
 
 export default function CoursePage() {
   const [activeTab, setActiveTab] = useState("All");
   const [windowWidth, setWindowWidth] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [bookmarks, setBookmarks] = useState([]);
-  const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
-  const [showNotification, setShowNotification] = useState(false);
   const scrollContainerRefs = useRef({});
-
-  // Load bookmarks from memory (since localStorage is not available)
-  useEffect(() => {
-    setBookmarks([]);
-  }, []);
 
   // Handle window resize for responsiveness
   useEffect(() => {
@@ -150,13 +141,11 @@ export default function CoursePage() {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
     setSearchQuery("");
-    setShowBookmarksOnly(tab === "Bookmarks");
   };
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
     setActiveTab("All");
-    setShowBookmarksOnly(false);
   };
 
   const scrollLeft = useCallback((category) => {
@@ -175,20 +164,6 @@ export default function CoursePage() {
     }
   }, [windowWidth]);
 
-  const toggleBookmark = useCallback((courseId) => {
-    setBookmarks((prevBookmarks) => {
-      let newBookmarks;
-      if (prevBookmarks.includes(courseId)) {
-        newBookmarks = prevBookmarks.filter((id) => id !== courseId);
-      } else {
-        newBookmarks = [...prevBookmarks, courseId];
-        setShowNotification(true);
-        setTimeout(() => setShowNotification(false), 3000);
-      }
-      return newBookmarks;
-    });
-  }, []);
-
   const redirectToYoutube = useCallback((videoLink) => {
     if (videoLink.includes("youtube.com") || videoLink.includes("youtu.be")) {
       window.open(videoLink, "_blank");
@@ -197,10 +172,9 @@ export default function CoursePage() {
     }
   }, []);
 
-  // New function to handle docs navigation
+  // Function to handle docs navigation
   const redirectToDocs = useCallback((docsPath) => {
     if (docsPath) {
-      // Using Next.js router or window.location for navigation
       window.location.href = docsPath;
     }
   }, []);
@@ -219,12 +193,9 @@ export default function CoursePage() {
           ["BESTSELLER", "POPULAR", "HOT", "TRENDING"].includes(course.badge)) ||
         (activeTab === "New" && course.badge === "NEW");
 
-      const matchesBookmarks =
-        !showBookmarksOnly || bookmarks.includes(course.id);
-
-      return matchesSearch && matchesTab && matchesBookmarks;
+      return matchesSearch && matchesTab;
     });
-  }, [searchQuery, activeTab, showBookmarksOnly, bookmarks]);
+  }, [searchQuery, activeTab]);
 
   const filteredCategories = useMemo(() => {
     return [...new Set(filteredCourses.map((course) => course.category))];
@@ -232,19 +203,6 @@ export default function CoursePage() {
 
   return (
     <div className="w-full mx-auto bg-gray-50 font-['Sora'] pb-12 relative">
-      {/* Notification Popup */}
-      {showNotification && (
-        <div className="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg z-50 flex items-center space-x-3 border border-blue-100">
-          <BookmarkCheck className="text-blue-600 w-5 h-5" />
-          <div>
-            <p className="text-gray-800 font-medium">Course Bookmarked!</p>
-            <Link href="/Bookmarks" className="text-blue-600 text-sm hover:underline">
-              View your bookmarks
-            </Link>
-          </div>
-        </div>
-      )}
-
       {/* Header Section */}
       <div className="px-4 pt-4 pb-2">
         <Link href="/">
@@ -281,7 +239,7 @@ export default function CoursePage() {
 
       {/* Tabs */}
       <div className="flex justify-center px-4 space-x-4 mb-6 overflow-x-auto scrollbar-hide py-1">
-        {["All", "Popular", "New", "Bookmarks"].map((tab) => (
+        {["All", "Popular", "New"].map((tab) => (
           <button
             key={tab}
             onClick={() => handleTabClick(tab)}
@@ -291,14 +249,7 @@ export default function CoursePage() {
                 : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
             }`}
           >
-            {tab === "Bookmarks" ? (
-              <div className="flex items-center">
-                <BookmarkCheck size={16} className="mr-1" />
-                <span>Bookmarks</span>
-              </div>
-            ) : (
-              tab
-            )}
+            {tab}
           </button>
         ))}
       </div>
@@ -307,19 +258,16 @@ export default function CoursePage() {
       {filteredCategories.length === 0 && (
         <div className="text-center py-10">
           <p className="text-gray-600 text-lg">
-            {showBookmarksOnly
-              ? "No bookmarked courses found. Start bookmarking courses to see them here!"
-              : `No courses found for "${searchQuery}"`}
+            No courses found for "{searchQuery}"
           </p>
           <button
             onClick={() => {
               setSearchQuery("");
-              setShowBookmarksOnly(false);
               setActiveTab("All");
             }}
             className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
           >
-            {showBookmarksOnly ? "View All Courses" : "Clear Search"}
+            Clear Search
           </button>
         </div>
       )}
@@ -418,29 +366,14 @@ export default function CoursePage() {
                           </span>
                         </div>
 
-                        {/* Bookmark button */}
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleBookmark(course.id);
-                          }}
-                          className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all"
-                        >
-                          {bookmarks.includes(course.id) ? (
-                            <BookmarkCheck size={16} className="text-blue-600" />
-                          ) : (
-                            <Bookmark size={16} className="text-gray-700" />
-                          )}
-                        </button>
-
-                        {/* Documentation button - NEW */}
+                        {/* Documentation button */}
                         {course.docs && (
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               redirectToDocs(course.docs);
                             }}
-                            className="absolute bottom-2 right-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all group"
+                            className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all group"
                             title="View Documentation"
                           >
                             <FileText size={16} className="text-gray-700 group-hover:text-blue-600" />
@@ -463,7 +396,7 @@ export default function CoursePage() {
                           </div>
                         </div>
 
-                        {/* Button container with docs button */}
+                        {/* Button container */}
                         <div className="flex space-x-2">
                           <button
                             onClick={() => redirectToYoutube(course.videoId)}

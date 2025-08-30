@@ -1,0 +1,556 @@
+[
+  {
+    "id": 1,
+    "title": "Git Foundations (Absolute Beginner)",
+    "description": "Essential foundation concepts for version control and Git basics",
+    "icon": "GitBranch",
+    "gradient": "from-gray-500 to-slate-600",
+    "content": {
+      "whatToLearn": [
+        "What is Git? Distributed version control system",
+        "Why version control matters in development",
+        "Local vs Remote repositories",
+        "Working directory, staging area, repository",
+        "Basic Git workflow concepts",
+        "Understanding commits and snapshots",
+        "Git vs GitHub difference",
+        "Setting up Git environment",
+        "Basic terminal/command line for Git",
+        "Git configuration and user setup"
+      ],
+      "toolsToUse": [
+        "Git CLI (Command Line Interface)",
+        "Visual Studio Code with Git integration",
+        "GitHub Desktop (GUI alternative)",
+        "Terminal/Command Prompt",
+        "Git Bash (Windows)",
+        "Sourcetree (GUI tool)",
+        "GitKraken (Advanced GUI)"
+      ],
+      "bestCourses": {
+        "english": [
+          "freeCodeCamp – Git and GitHub Course",
+          "Traversy Media – Git Crash Course",
+          "Academind – Git & GitHub Complete Guide",
+          "Programming with Mosh – Ultimate Git Course",
+          "The Net Ninja – Git & GitHub Tutorial"
+        ],
+        "hindi": [
+          "CodeWithHarry – Git & GitHub Hindi",
+          "Apna College – Version Control Tutorial",
+          "Thapa Technical – Git Complete Course",
+          "WsCube Tech – Git & GitHub Hindi",
+          "Love Babbar – Git Fundamentals"
+        ]
+      },
+      "docsAndWebsites": [
+        "Official Git Documentation",
+        "GitHub Docs Getting Started",
+        "Atlassian Git Tutorials",
+        "Git Immersion Interactive Tutorial",
+        "Pro Git Book (Free Online)"
+      ],
+      "projectIdeas": [
+        "Initialize your first Git repository",
+        "Track simple text file changes",
+        "Create basic commit history",
+        "Practice staging and committing",
+        "Version a simple HTML/CSS project"
+      ],
+      "practicePlatforms": [
+        "GitHub Skills (Interactive Learning)",
+        "Learn Git Branching (Visual)",
+        "Git Immersion Tutorial",
+        "Codecademy Git Course",
+        "Katacoda Git Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Core Git Operations & Commands",
+    "description": "Master essential Git commands and local repository management",
+    "icon": "Terminal",
+    "gradient": "from-orange-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "git init - Initialize repositories",
+        "git clone - Clone existing repositories",
+        "git status - Check repository status",
+        "git add - Stage changes (files and hunks)",
+        "git commit - Save changes with messages",
+        "git log - View commit history",
+        "git diff - Compare changes",
+        "git show - Inspect commits",
+        "Working with .gitignore files",
+        "Understanding file states in Git"
+      ],
+      "toolsToUse": [
+        "Git CLI with essential commands",
+        "VS Code integrated Git features",
+        "Git log viewers and formatters",
+        "Diff tools and merge editors",
+        "gitignore.io for templates",
+        "Git aliases for efficiency"
+      ],
+      "bestCourses": {
+        "english": [
+          "Git & GitHub Crash Course - Traversy Media",
+          "Complete Git Guide - Academind",
+          "Git Mastery Course - Mosh Hamedani",
+          "Git Tutorial for Beginners - freeCodeCamp",
+          "Git and GitHub Bootcamp - Colt Steele"
+        ],
+        "hindi": [
+          "Git & GitHub Complete Tutorial - CodeWithHarry",
+          "Version Control with Git - Hitesh Choudhary",
+          "Git Basics to Advanced - Thapa Technical",
+          "Git & GitHub Hindi Course - Apna College",
+          "Complete Git Tutorial - WsCube Tech"
+        ]
+      },
+      "docsAndWebsites": [
+        "Git Reference Manual",
+        "Git Cheat Sheet (Official)",
+        "Git Command Reference",
+        "gitignore Templates",
+        "Git Best Practices Guide"
+      ],
+      "projectIdeas": [
+        "Personal Project Version Control",
+        "Code Portfolio with Git History",
+        "Documentation Project with Git",
+        "Multi-file Project Tracking",
+        "Experiment with Git Commands",
+        "Build a Git Cheat Sheet",
+        "Practice Commit Message Standards"
+      ],
+      "practicePlatforms": [
+        "Local Git Practice Repositories",
+        "Git Command Practice Labs",
+        "Interactive Git Tutorials",
+        "Git Visualization Tools",
+        "Command Line Practice"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Branching & Merging Mastery",
+    "description": "Advanced branching strategies, merging techniques, and conflict resolution",
+    "icon": "GitMerge",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Why branches matter for parallel development",
+        "Creating and switching branches",
+        "Branch naming conventions",
+        "Merging vs Rebasing strategies",
+        "Fast-forward vs three-way merges",
+        "Merge conflict resolution",
+        "Feature branch workflow",
+        "Hotfix and release branches",
+        "Branch cleanup and maintenance",
+        "Advanced branching patterns"
+      ],
+      "toolsToUse": [
+        "Git branch management commands",
+        "VS Code merge conflict resolver",
+        "GitKraken for visual merging",
+        "Meld or Beyond Compare",
+        "Git GUI tools for branch visualization",
+        "Branch protection tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Git Branching - Atlassian",
+          "Git Branching Strategies - Pluralsight",
+          "Mastering Git Branches - Udemy",
+          "Git Workflows and Branching - LinkedIn Learning",
+          "Advanced Git Techniques - Frontend Masters"
+        ],
+        "hindi": [
+          "Git Branching Hindi Tutorial - CodeWithHarry",
+          "Advanced Git Concepts - Hitesh Choudhary",
+          "Git Merge vs Rebase - Thapa Technical",
+          "Git Branching Strategies Hindi - WsCube Tech",
+          "Complete Git Workflow - Love Babbar"
+        ]
+      },
+      "docsAndWebsites": [
+        "Git Branching Documentation",
+        "Atlassian Git Branching Guide",
+        "Git Flow Documentation",
+        "GitHub Flow Guide",
+        "Merge vs Rebase Comparison"
+      ],
+      "projectIdeas": [
+        "Multi-feature Development Practice",
+        "Merge Conflict Simulation Project",
+        "Feature Branch Implementation",
+        "Release Branch Management",
+        "Hotfix Workflow Practice",
+        "Complex Merge Scenario Practice",
+        "Branch Strategy Documentation"
+      ],
+      "practicePlatforms": [
+        "Learn Git Branching (Interactive)",
+        "Git Branching Practice Labs",
+        "Merge Conflict Simulators",
+        "GitHub Flow Practice",
+        "GitFlow Practice Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "GitHub & Remote Repository Management",
+    "description": "Master GitHub platform features and remote repository workflows",
+    "icon": "Github",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Setting up GitHub account and SSH keys",
+        "Remote repository concepts",
+        "Push, pull, and fetch operations",
+        "Forking vs Cloning repositories",
+        "Pull Request (PR) creation and review",
+        "GitHub Issues and bug tracking",
+        "GitHub Projects and Kanban boards",
+        "Repository settings and permissions",
+        "GitHub Pages for documentation",
+        "GitHub API basics"
+      ],
+      "toolsToUse": [
+        "GitHub Web Interface",
+        "GitHub CLI (gh command)",
+        "SSH key management",
+        "GitHub Desktop app",
+        "GitHub Mobile app",
+        "VS Code GitHub integration",
+        "GitHub Copilot"
+      ],
+      "bestCourses": {
+        "english": [
+          "GitHub Skills Interactive Courses",
+          "Complete GitHub Guide - freeCodeCamp",
+          "GitHub Masterclass - Traversy Media",
+          "GitHub for Developers - Pluralsight",
+          "Open Source with GitHub - edX"
+        ],
+        "hindi": [
+          "GitHub Complete Tutorial - CodeWithHarry",
+          "GitHub Hindi Course - Hitesh Choudhary",
+          "GitHub Collaboration - Thapa Technical",
+          "GitHub Projects Hindi - WsCube Tech",
+          "Open Source Contribution - Love Babbar"
+        ]
+      },
+      "docsAndWebsites": [
+        "GitHub Documentation",
+        "GitHub Skills Platform",
+        "GitHub Community Guidelines",
+        "GitHub API Documentation",
+        "Open Source Guide"
+      ],
+      "projectIdeas": [
+        "Personal Portfolio Repository",
+        "Open Source Contribution",
+        "Team Collaboration Project",
+        "Documentation Website with GitHub Pages",
+        "Issue Tracking Practice Project",
+        "Fork and Contribute Workflow",
+        "Multi-contributor Project Management"
+      ],
+      "practicePlatforms": [
+        "GitHub Skills",
+        "First Contributions Repository",
+        "Good First Issues",
+        "Hacktoberfest Participation",
+        "Open Source Projects"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Collaboration & Professional Workflows",
+    "description": "Advanced collaboration techniques and industry-standard Git workflows",
+    "icon": "Users",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Pull Request best practices",
+        "Code review processes and etiquette",
+        "GitHub Flow vs Git Flow workflows",
+        "Conventional commit messages",
+        "Branch protection rules",
+        "Team collaboration strategies",
+        "Fork and pull request workflow",
+        "Issue templates and labels",
+        "Project management with GitHub",
+        "Release management and tagging"
+      ],
+      "toolsToUse": [
+        "GitHub Pull Request interface",
+        "Code review tools",
+        "GitHub Issue templates",
+        "GitHub Project boards",
+        "Branch protection settings",
+        "GitHub Organizations",
+        "Team management features"
+      ],
+      "bestCourses": {
+        "english": [
+          "GitHub for Teams - GitHub Learning Lab",
+          "Collaborative Development - Coursera",
+          "Git Workflows for Teams - Pluralsight",
+          "Open Source Collaboration - edX",
+          "Professional Git Workflows - Udemy"
+        ],
+        "hindi": [
+          "Team Collaboration Git - CodeWithHarry",
+          "Professional Git Workflows - Hitesh Choudhary",
+          "GitHub Team Management - Thapa Technical",
+          "Industry Git Practices - WsCube Tech",
+          "Collaborative Development - Love Babbar"
+        ]
+      },
+      "docsAndWebsites": [
+        "GitHub Collaboration Documentation",
+        "Git Workflow Comparisons",
+        "Conventional Commits Specification",
+        "Code Review Best Practices",
+        "GitHub Team Features Guide"
+      ],
+      "projectIdeas": [
+        "Team Project with Multiple Contributors",
+        "Open Source Project Contribution",
+        "Code Review Practice Project",
+        "Release Management Simulation",
+        "Issue Tracking and Project Management",
+        "Documentation Collaboration Project",
+        "Multi-team Repository Management"
+      ],
+      "practicePlatforms": [
+        "GitHub Organizations",
+        "Team Repository Practice",
+        "Open Source Contribution",
+        "Code Review Simulations",
+        "GitHub Flow Practice"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Advanced Git Operations & Recovery",
+    "description": "Master advanced Git techniques, troubleshooting, and repository recovery",
+    "icon": "Wrench",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "git stash - Save temporary work",
+        "git cherry-pick - Copy specific commits",
+        "git revert vs git reset - Undo changes safely",
+        "git reflog - Recovery and commit history",
+        "Interactive rebase (git rebase -i)",
+        "Squashing commits for clean history",
+        "Git hooks for automation",
+        "Large file handling with Git LFS",
+        "Repository maintenance and cleanup",
+        "Advanced merge strategies"
+      ],
+      "toolsToUse": [
+        "Advanced Git CLI commands",
+        "Git interactive rebase tools",
+        "Git hooks scripts",
+        "Git LFS (Large File Storage)",
+        "Git filter-branch",
+        "BFG Repo-Cleaner",
+        "Git maintenance tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Git Techniques - Pluralsight",
+          "Git Mastery - Complete Guide - Udemy",
+          "Pro Git Workflows - LinkedIn Learning",
+          "Advanced Git Operations - Frontend Masters",
+          "Git Troubleshooting - Atlassian University"
+        ],
+        "hindi": [
+          "Advanced Git Hindi - Hitesh Choudhary",
+          "Git Advanced Concepts - CodeWithHarry",
+          "Professional Git Usage - Thapa Technical",
+          "Git Recovery Techniques - WsCube Tech",
+          "Git Mastery Hindi - Love Babbar"
+        ]
+      },
+      "docsAndWebsites": [
+        "Git Advanced Documentation",
+        "Git Hooks Documentation",
+        "Git LFS Documentation",
+        "Git Troubleshooting Guide",
+        "Git Internals Documentation"
+      ],
+      "projectIdeas": [
+        "Repository Recovery Simulation",
+        "Advanced Git History Manipulation",
+        "Git Hooks Implementation",
+        "Large File Management Project",
+        "Complex Merge Scenario Practice",
+        "Git Automation Scripts",
+        "Repository Cleanup Project"
+      ],
+      "practicePlatforms": [
+        "Advanced Git Challenges",
+        "Git Recovery Scenarios",
+        "Complex Repository Simulations",
+        "Git Troubleshooting Labs",
+        "Advanced Git Workflows"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "CI/CD, Security & Automation",
+    "description": "Implement automated workflows, security practices, and continuous integration",
+    "icon": "Shield",
+    "gradient": "from-yellow-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "GitHub Actions for CI/CD automation",
+        "Automated testing with Git workflows",
+        "Security best practices and secrets management",
+        "GPG commit signing",
+        "Two-factor authentication setup",
+        "Dependabot for dependency management",
+        "Code scanning and vulnerability detection",
+        "Automated deployment pipelines",
+        "Environment variables and secrets",
+        "Branch protection and security policies"
+      ],
+      "toolsToUse": [
+        "GitHub Actions",
+        "GitHub Secrets management",
+        "GPG keys for commit signing",
+        "Dependabot",
+        "GitHub Security features",
+        "CodeQL for security scanning",
+        "GitHub Packages",
+        "Third-party CI/CD tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "GitHub Actions Complete Course - freeCodeCamp",
+          "CI/CD with GitHub Actions - Traversy Media",
+          "DevOps with Git and GitHub - Coursera",
+          "GitHub Security Best Practices - Pluralsight",
+          "Automated Testing Workflows - Udemy"
+        ],
+        "hindi": [
+          "GitHub Actions Hindi - CodeWithHarry",
+          "CI/CD Pipeline Hindi - Hitesh Choudhary",
+          "GitHub Security Hindi - Thapa Technical",
+          "Automation with GitHub - WsCube Tech",
+          "DevOps Basics Hindi - Love Babbar"
+        ]
+      },
+      "docsAndWebsites": [
+        "GitHub Actions Documentation",
+        "GitHub Security Documentation",
+        "CI/CD Best Practices Guide",
+        "GPG Signing Guide",
+        "Dependabot Documentation"
+      ],
+      "projectIdeas": [
+        "Automated Testing Pipeline",
+        "Deployment Automation Project",
+        "Security Scanning Implementation",
+        "Multi-environment CI/CD Setup",
+        "Dependency Management Automation",
+        "Code Quality Automation",
+        "Release Automation System"
+      ],
+      "practicePlatforms": [
+        "GitHub Actions Marketplace",
+        "CI/CD Pipeline Practice",
+        "Security Testing Labs",
+        "Automation Challenge Projects",
+        "DevOps Practice Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Enterprise-Level Git & Industry Mastery",
+    "description": "Master enterprise Git workflows, team leadership, and industry best practices",
+    "icon": "Briefcase",
+    "gradient": "from-rose-500 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Enterprise Git workflows (GitFlow, GitHub Flow)",
+        "Monorepo vs Polyrepo strategies",
+        "Git submodules and subtrees",
+        "Release management and semantic versioning",
+        "Team leadership in Git projects",
+        "Code review leadership and standards",
+        "Git performance optimization",
+        "Enterprise security and compliance",
+        "Git server administration",
+        "Migration and repository management"
+      ],
+      "toolsToUse": [
+        "GitHub Enterprise features",
+        "Git server administration tools",
+        "Advanced Git GUI tools",
+        "Repository management platforms",
+        "Git migration tools",
+        "Performance monitoring tools",
+        "Enterprise security tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Enterprise Git Workflows - Pluralsight",
+          "Git for Enterprise Teams - LinkedIn Learning",
+          "Advanced Git Administration - Coursera",
+          "Professional Git Workflows - Frontend Masters",
+          "Git Leadership and Team Management - Udemy"
+        ],
+        "hindi": [
+          "Enterprise Git Hindi - Hitesh Choudhary",
+          "Professional Git Workflows - CodeWithHarry",
+          "Git Team Management - Thapa Technical",
+          "Industry Git Practices - WsCube Tech",
+          "Advanced Git Concepts - Love Babbar"
+        ]
+      },
+      "docsAndWebsites": [
+        "Git Enterprise Documentation",
+        "GitHub Enterprise Docs",
+        "Git Workflows Comparison",
+        "Semantic Versioning Guide",
+        "Enterprise Git Best Practices"
+      ],
+      "projectIdeas": [
+        "Enterprise-scale Multi-team Project",
+        "Complete CI/CD Pipeline with Git",
+        "Open Source Project Maintenance",
+        "Git Server Setup and Management",
+        "Repository Migration Project",
+        "Team Workflow Documentation",
+        "Git Performance Optimization",
+        "Multi-repository Management System",
+        "Enterprise Security Implementation",
+        "Git Training Materials Creation"
+      ],
+      "practicePlatforms": [
+        "GitHub Enterprise",
+        "Enterprise Repository Management",
+        "Open Source Project Leadership",
+        "Team Collaboration Simulations",
+        "Git Administration Practice",
+        "Professional Development Projects",
+        "Industry Workflow Implementation"
+      ]
+    }
+  }
+]

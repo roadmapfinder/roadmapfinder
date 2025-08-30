@@ -47,7 +47,8 @@
       "image": "babbar",
       "videoId": "https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/mern"
     },
     {
       "id": 3,
@@ -58,7 +59,8 @@
       "image": "backend",
       "videoId": "https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/nodejs"
     },
     {
       "id": 4,
@@ -69,7 +71,9 @@
       "image": "apna",
       "videoId": "https://youtu.be/HcOc7P5BMi4?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/web"
+      
     },
     {
       "id": 5,
@@ -80,17 +84,19 @@
       "image": "native",
       "videoId": "https://youtu.be/kGtEax1WQFg?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/reactnative"
     },
     {
       "id": 6,
       "category": "App Development",
-      "title": "React Native Complete Course in Hindi",
+      "title": "Desktop application dev with Electron js",
       "level": "Beginner to Intermediate",
       "rating": 4.6,
-      "image": "native2",
-      "videoId": "https://youtu.be/KBWWxJdsFlY",
-      "language": "Hindi"
+      "image": "electron",
+      "videoId": "https://youtu.be/fP-371MN0Ck",
+      "language": "English",
+      "docs": "/Docs/electron"
     },
     {
       "id": 7,
@@ -101,7 +107,8 @@
       "image": "kotlin",
       "videoId": "https://youtu.be/BxM2DayeOBE",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/android"
     },
     {
       "id": 8,
@@ -112,18 +119,20 @@
       "image": "flutter",
       "videoId": "https://youtu.be/CzRQ9mnmh44",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/flutter"
     },
     {
       "id": 9,
       "category": "UI/UX Design",
-      "title": "UI/UX Design Fundamentals",
+      "title": "Figma Fundamentals with UX design",
       "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "figma",
       "videoId": "https://youtu.be/bI6q16ffdgQ?list=PLlHtucAD9KT19ckHqXpPSStZOyDSq9AW-",
       "badge": "POPULAR",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/figma"
     },
     {
       "id": 10,
@@ -134,7 +143,8 @@
       "image": "ui",
       "videoId": "https://youtu.be/O5IXf8qB9U4?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/uiux"
     },
     {
       "id": 11,
@@ -156,7 +166,8 @@
       "image": "uiux",
       "videoId": "https://youtu.be/kbZejnPXyLM",
       "badge": "HOT",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/webdesign"
     },
     {
       "id": 13,
@@ -748,7 +759,8 @@
       "image": "backendh",
       "videoId": "https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/backend"
     },
     {
       "id": 65,
@@ -770,7 +782,9 @@
       "image": "swift",
       "videoId": "https://youtu.be/8Xg7E9shq0U?si=QeqYNnO-4ZsmsACC",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/swift"
+      
     },
 
     {

@@ -104,7 +104,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                   aria-label="Browse available courses"
                 >
                   <BookOpen size={16} />
-                  <span>Browse Courses</span>
+                  <span>Youtube Courses</span>
                 </button>
               </div>
             </div>
@@ -209,7 +209,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
             aria-label="Browse available courses"
           >
             <BookOpen size={16} />
-            Browse Courses
+            Youtube Courses
           </button>
         </div>
 
@@ -261,7 +261,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
             className="bg-white text-blue-600 text-center py-4 px-8 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             aria-label="Browse available courses"
           >
-            Browse Courses
+            Youtube Courses
           </button>
           <button
             onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
