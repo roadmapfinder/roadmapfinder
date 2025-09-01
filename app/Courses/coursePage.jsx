@@ -97,6 +97,14 @@ import docker from "./CoursesImage/docker.jpg"
 import aws from "./CoursesImage/aws.jpg"
 import genaijs from "./CoursesImage/genaijs.jpg"
 import electron from "./CoursesImage/electron.jpg"
+import photoshop from "./CoursesImage/photoshop.jpg"
+import appdesign from "./CoursesImage/appdesign.jpg"
+import numpy from "./CoursesImage/numpy.jpg"
+import pandas from "./CoursesImage/pandas.jpg"
+import powerbi from "./CoursesImage/powerbi.jpg"
+import pyspark from "./CoursesImage/pyspark.jpg"
+import matplotlib from "./CoursesImage/matplotlib.jpg"
+
 
 
 
@@ -111,7 +119,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib
 };
 
 export default function CoursePage() {

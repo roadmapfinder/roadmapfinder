@@ -155,19 +155,20 @@
       "image": "design",
       "videoId": "https://youtu.be/j6Ule7GXaRs",
       "badge": "HOT",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/webdesign"
     },
     {
       "id": 12,
       "category": "UI/UX Design",
-      "title": "Web Designing Essential UI Course",
+      "title": "App Designing Mastery Course with project",
       "level": "Beginner to Intermediate",
       "rating": 4.7,
-      "image": "uiux",
-      "videoId": "https://youtu.be/kbZejnPXyLM",
+      "image": "appdesign",
+      "videoId": "https://youtu.be/N-PoAGryyq4?si=8U0Ud7wTSpEkRwXh",
       "badge": "HOT",
       "language": "English",
-      "docs": "/Docs/webdesign"
+      "docs": "/Docs/appdesign"
     },
     {
       "id": 13,
@@ -178,18 +179,20 @@
       "image": "graphic",
       "videoId": "https://youtu.be/90Zaa8dH4SU",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/graphic"
     },
     {
       "id": 14,
       "category": "Graphic Design",
-      "title": "Graphic Designing Essential Course",
-      "level": "Beginner to Intermediate",
+      "title": "Adobe Photoshop Course in depth",
+      "level": "Beginner to Master",
       "rating": 4.8,
-      "image": "graphics",
-      "videoId": "https://youtu.be/e_dv7GBHka8",
+      "image": "photoshop",
+      "videoId": "https://youtube.com/watch?v=xTzvQkOll2U",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/photoshop"
     },
     {
       "id": 15,
@@ -198,8 +201,9 @@
       "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "logo",
-      "videoId": "https://youtu.be/l9_BM1opTj8?list=PL-c9Rq56P4KmK4sVH49C4rjYh5VH6uK4o",
-      "language": "English"
+      "videoId": "https://youtu.be/sfkrp-ca8Gc?si=z1EZwTD1FzLiunhh",
+      "language": "English",
+      "docs": "/Docs/logo"
     },
     {
       "id": 16,
@@ -209,7 +213,8 @@
       "rating": 4.9,
       "image": "canva",
       "videoId": "https://youtu.be/rXLvN1FEkOE",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/canva"
     },
     {
       "id": 17,
@@ -220,7 +225,8 @@
       "image": "python",
       "videoId": "https://youtu.be/ERCMXc8x7mc",
       "badge": "BESTSELLER",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/python"
     },
     {
       "id": 18,
@@ -231,7 +237,8 @@
       "image": "java",
       "videoId": "https://youtu.be/oveyab6lO_E?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/java"
     },
     {
       "id": 19,
@@ -242,7 +249,8 @@
       "image": "php",
       "videoId": "https://youtu.be/z8gIVootnUQ",
       "badge": "BESTSELLER",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/php"
     },
     {
       "id": 20,
@@ -253,7 +261,8 @@
       "image": "c",
       "videoId": "https://youtu.be/aZb0iu4uGwA",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/c"
     },
     {
       "id": 21,
@@ -264,18 +273,20 @@
       "image": "cpp",
       "videoId": "https://youtu.be/WQoB2z67hvY?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/cpp"
     },
     {
       "id": 70,
       "category": "Programming",
       "title": "Rust Complete Bootcamp",
-      "level": "Beginner to Advance",
+      "level": "Intermediate to Advance",
       "rating": 4.9,
       "image": "rust",
       "videoId": "https://youtu.be/qP7LzZqGh30?si=G-lyoW-I3Fv4kQID",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/rust"
     },
     {
       "id": 71,
@@ -286,7 +297,8 @@
       "image": "go",
       "videoId": "https://youtu.be/yZgwW6Yuc_E?si=uOQEB7frP8sFDFF2",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/golang"
     },
     {
       "id": 22,
@@ -297,7 +309,8 @@
       "image": "js",
       "videoId": "https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/javascript"
     },
     {
       "id": 23,
@@ -423,11 +436,55 @@
     {
       "id": 34,
       "category": "Data Analysis & Science",
-      "title": "Data Analysis Crash Course",
+      "title": "Numpy complete crash course",
       "level": "Beginner to Intermediate",
       "rating": 4.9,
-      "image": "dataaw",
-      "videoId": "https://youtu.be/VaSjiJMrq24?list=PLjVLYmrlmjGdRs1sGqRrTE-EMraLclJga",
+      "image": "numpy",
+      "videoId": "https://youtu.be/x7ULDYs4X84?si=E719mb_Y3NedTE4f",
+      "badge": "HOT",
+      "language": "Hindi"
+    },
+    {
+      "id": 77,
+      "category": "Data Analysis & Science",
+      "title": "Pandas complete  course in Depth",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "pandas",
+      "videoId": "https://youtu.be/qrMnoY8qBJM?si=LLhZs_CIZ9U9gYuk",
+      "badge": "HOT",
+      "language": "Hindi"
+    },
+    {
+      "id": 78,
+      "category": "Data Analysis & Science",
+      "title": "PowerBI complete crash course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "powerbi",
+      "videoId": "https://youtu.be/bQ-HTp-tx40?si=MBVoUbzlvDwdECLB",
+      "badge": "HOT",
+      "language": "Hindi"
+    },
+    {
+      "id": 79,
+      "category": "Data Analysis & Science",
+      "title": "Matplotlib complete crash course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "matplotlib",
+      "videoId": "https://youtu.be/-jTD74eEy2I?si=nEBH7Ab5wWkni0IS",
+      "badge": "HOT",
+      "language": "Hindi"
+    },
+    {
+      "id": 80,
+      "category": "Data Analysis & Science",
+      "title": "Pyspark complete crash course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "pyspark",
+      "videoId": "https://youtu.be/94w6hPk7nkM?si=ta1deuVwB-4U9VGs",
       "badge": "HOT",
       "language": "Hindi"
     },
@@ -771,7 +828,8 @@
       "image": "ts",
       "videoId": "https://youtu.be/lVzb6pmel_E?si=_Qo8Pq0tmERvK2C0",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/typescript"
     },
     {
       "id": 66,

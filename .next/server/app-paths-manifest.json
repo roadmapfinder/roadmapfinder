@@ -1,7 +1,6 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/figma/page": "app/Docs/figma/page.js",
-  "/Docs/uiux/page": "app/Docs/uiux/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Docs/appdesign/page": "app/Docs/appdesign/page.js",
+  "/Docs/golang/page": "app/Docs/golang/page.js",
   "/page": "app/page.js"
 }

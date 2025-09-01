@@ -4,7 +4,7 @@
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/app_Courses_f4c79133._.js",
+      "static/chunks/app_Courses_b4842600._.js",
       "static/chunks/node_modules_d209e9ce._.js",
       "static/chunks/app_Courses_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
@@ -15,12 +15,12 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Docs/figma/page": [
+    "/Docs/appdesign/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_babc9024._.js",
-      "static/chunks/app_Docs_figma_page_jsx_5ee60de8._.js",
+      "static/chunks/_1ae95092._.js",
+      "static/chunks/app_Docs_appdesign_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -29,26 +29,12 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Docs/uiux/page": [
+    "/Docs/golang/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_e8aab1e2._.js",
-      "static/chunks/app_Docs_uiux_page_jsx_5ee60de8._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
-    ],
-    "/RoadmapPage/page": [
-      "static/chunks/node_modules_659f1a1f._.js",
-      "static/chunks/[root-of-the-server]__ccd9809a._.css",
-      "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_c7eee0fb._.js",
-      "static/chunks/app_RoadmapPage_page_jsx_5ee60de8._.js",
+      "static/chunks/_c0782236._.js",
+      "static/chunks/app_Docs_golang_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
