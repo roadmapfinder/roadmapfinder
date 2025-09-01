@@ -1,6 +1,8 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/appdesign/page": "app/Docs/appdesign/page.js",
-  "/Docs/golang/page": "app/Docs/golang/page.js",
+  "/Docs/blockchain/page": "app/Docs/blockchain/page.js",
+  "/Docs/dsa_java/page": "app/Docs/dsa_java/page.js",
+  "/Docs/nodejs/page": "app/Docs/nodejs/page.js",
+  "/Docs/solidity/page": "app/Docs/solidity/page.js",
   "/page": "app/page.js"
 }

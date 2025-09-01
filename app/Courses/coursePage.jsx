@@ -104,6 +104,7 @@ import pandas from "./CoursesImage/pandas.jpg"
 import powerbi from "./CoursesImage/powerbi.jpg"
 import pyspark from "./CoursesImage/pyspark.jpg"
 import matplotlib from "./CoursesImage/matplotlib.jpg"
+import redis from "./CoursesImage/redis.jpg"
 
 
 
@@ -119,7 +120,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis
 };
 
 export default function CoursePage() {

@@ -321,7 +321,8 @@
       "image": "blockchain",
       "videoId": "https://youtu.be/gyMwXuJrbJQ",
       "badge": "POPULAR",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/solidity"
     },
     {
       "id": 24,
@@ -332,7 +333,8 @@
       "image": "web3",
       "videoId": "https://youtu.be/ERAxd8gl1Eg",
       "badge": "NEW",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/web3"
     },
     {
       "id": 25,
@@ -343,7 +345,8 @@
       "image": "block",
       "videoId": "https://youtu.be/6aF6p2VUORE",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/blockchain"
     },
     {
       "id": 26,
@@ -354,7 +357,8 @@
       "image": "dsajava",
       "videoId": "https://youtu.be/54cYKItOkzI?list=PLA3GkZPtsafYzRj2lk6OyquJtRXoDLR_S",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/dsa_java"
     },
     {
       "id": 27,
@@ -365,7 +369,8 @@
       "image": "cppdsa",
       "videoId": "https://youtu.be/VTLCoHnyACE?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/dsa_cpp"
     },
     {
       "id": 28,
@@ -374,9 +379,10 @@
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "dsapy",
-      "videoId": "https://youtu.be/f9Aje_cN_CY",
+      "videoId": "https://youtu.be/wBtPGnVnA9g",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/dsa_python"
     },
     {
       "id": 29,
@@ -385,9 +391,10 @@
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "dsajs",
-      "videoId": "https://youtu.be/dY-OpnLZRd0?list=PLbtI3_MArDOmSKABu09sEs0SxCibd1wgr",
+      "videoId": "https://youtube.com/watch?v=wBtPGnVnA9g",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/dsa_js"
     },
     {
       "id": 30,
@@ -420,6 +427,17 @@
       "image": "mongo",
       "videoId": "https://youtu.be/rU9ZODw5yvU",
       "badge": "POPULAR",
+      "language": "Hindi"
+    },
+    {
+      "id": 81,
+      "category": "Database",
+      "title": "Redis Crash Course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "redis",
+      "videoId": "https://youtube.com/watch?v=Vx2zPMPvmug",
+      "badge": "NEW",
       "language": "Hindi"
     },
     {

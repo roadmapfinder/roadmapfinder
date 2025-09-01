@@ -1648,42 +1648,12 @@ function Home() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-center mb-12 sm:mb-16",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent",
-                                        children: "Blockchain Developer"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                        lineNumber: 305,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                        lineNumber: 308,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: `${darkMode ? "text-gray-100" : "text-gray-800"}`,
-                                        children: "Roadmap"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                        lineNumber: 309,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                lineNumber: 304,
-                                columnNumber: 11
-                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: `text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`,
                                 children: "A comprehensive guide to becoming a Blockchain Developer, step-by-step learning path, courses, tools, and project ideas."
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                lineNumber: 313,
+                                lineNumber: 305,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1692,12 +1662,12 @@ function Home() {
                                     className: `h-1 w-16 sm:w-24 rounded-full bg-gradient-to-r from-blue-600 to-purple-600`
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                    lineNumber: 320,
+                                    lineNumber: 312,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                lineNumber: 319,
+                                lineNumber: 311,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1713,12 +1683,12 @@ function Home() {
                             darkMode: darkMode
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                            lineNumber: 330,
+                            lineNumber: 322,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                        lineNumber: 329,
+                        lineNumber: 321,
                         columnNumber: 11
                     }, this) : /* Textual Roadmap */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-6 sm:space-y-8 transition-all duration-500 ease-in-out",
@@ -1741,7 +1711,7 @@ function Home() {
                                                                 children: section.id
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 359,
+                                                                lineNumber: 351,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1749,13 +1719,13 @@ function Home() {
                                                                 children: section.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 362,
+                                                                lineNumber: 354,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 358,
+                                                        lineNumber: 350,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1763,13 +1733,13 @@ function Home() {
                                                         children: section.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 366,
+                                                        lineNumber: 358,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                lineNumber: 357,
+                                                lineNumber: 349,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1786,12 +1756,12 @@ function Home() {
                                                         d: "M5 15l7-7 7 7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 380,
+                                                        lineNumber: 372,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                    lineNumber: 374,
+                                                    lineNumber: 366,
                                                     columnNumber: 23
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     className: "w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7",
@@ -1805,23 +1775,23 @@ function Home() {
                                                         d: "M19 9l-7 7-7-7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 394,
+                                                        lineNumber: 386,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                    lineNumber: 388,
+                                                    lineNumber: 380,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                lineNumber: 372,
+                                                lineNumber: 364,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                        lineNumber: 351,
+                                        lineNumber: 343,
                                         columnNumber: 17
                                     }, this),
                                     openSections.has(section.id) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1841,14 +1811,14 @@ function Home() {
                                                                         children: "✅"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 416,
+                                                                        lineNumber: 408,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "What to Learn"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 415,
+                                                                lineNumber: 407,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1861,7 +1831,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                lineNumber: 427,
+                                                                                lineNumber: 419,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1869,24 +1839,24 @@ function Home() {
                                                                                 children: item
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                lineNumber: 430,
+                                                                                lineNumber: 422,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 423,
+                                                                        lineNumber: 415,
                                                                         columnNumber: 29
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 421,
+                                                                lineNumber: 413,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 412,
+                                                        lineNumber: 404,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1900,14 +1870,14 @@ function Home() {
                                                                         children: "🧰"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 441,
+                                                                        lineNumber: 433,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Tools to Use"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 440,
+                                                                lineNumber: 432,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1920,7 +1890,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                lineNumber: 452,
+                                                                                lineNumber: 444,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1928,24 +1898,24 @@ function Home() {
                                                                                 children: tool
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                lineNumber: 455,
+                                                                                lineNumber: 447,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 448,
+                                                                        lineNumber: 440,
                                                                         columnNumber: 29
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 446,
+                                                                lineNumber: 438,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 437,
+                                                        lineNumber: 429,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1959,14 +1929,14 @@ function Home() {
                                                                         children: "📚"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 466,
+                                                                        lineNumber: 458,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Best Courses"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 465,
+                                                                lineNumber: 457,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1978,7 +1948,7 @@ function Home() {
                                                                             children: "In English:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                            lineNumber: 473,
+                                                                            lineNumber: 465,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1991,7 +1961,7 @@ function Home() {
                                                                                             children: "•"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                            lineNumber: 483,
+                                                                                            lineNumber: 475,
                                                                                             columnNumber: 37
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1999,35 +1969,35 @@ function Home() {
                                                                                             children: course
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                            lineNumber: 486,
+                                                                                            lineNumber: 478,
                                                                                             columnNumber: 37
                                                                                         }, this)
                                                                                     ]
                                                                                 }, index, true, {
                                                                                     fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                    lineNumber: 479,
+                                                                                    lineNumber: 471,
                                                                                     columnNumber: 35
                                                                                 }, this)) || []
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                            lineNumber: 476,
+                                                                            lineNumber: 468,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                    lineNumber: 472,
+                                                                    lineNumber: 464,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 471,
+                                                                lineNumber: 463,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 462,
+                                                        lineNumber: 454,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2041,14 +2011,14 @@ function Home() {
                                                                         children: "📘"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 500,
+                                                                        lineNumber: 492,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Docs & Websites"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 499,
+                                                                lineNumber: 491,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2061,7 +2031,7 @@ function Home() {
                                                                                 children: "•"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                lineNumber: 511,
+                                                                                lineNumber: 503,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2069,30 +2039,30 @@ function Home() {
                                                                                 children: doc
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                                lineNumber: 514,
+                                                                                lineNumber: 506,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                        lineNumber: 507,
+                                                                        lineNumber: 499,
                                                                         columnNumber: 29
                                                                     }, this)) || []
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 505,
+                                                                lineNumber: 497,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 496,
+                                                        lineNumber: 488,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                lineNumber: 410,
+                                                lineNumber: 402,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2106,14 +2076,14 @@ function Home() {
                                                                 children: "💡"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 524,
+                                                                lineNumber: 516,
                                                                 columnNumber: 25
                                                             }, this),
                                                             "Project Ideas"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 523,
+                                                        lineNumber: 515,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2128,7 +2098,7 @@ function Home() {
                                                                             children: "💡"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                            lineNumber: 536,
+                                                                            lineNumber: 528,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2136,46 +2106,46 @@ function Home() {
                                                                             children: project
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                            lineNumber: 539,
+                                                                            lineNumber: 531,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                    lineNumber: 535,
+                                                                    lineNumber: 527,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, index, false, {
                                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                                lineNumber: 531,
+                                                                lineNumber: 523,
                                                                 columnNumber: 27
                                                             }, this)) || []
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                        lineNumber: 529,
+                                                        lineNumber: 521,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                                lineNumber: 522,
+                                                lineNumber: 514,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                        lineNumber: 407,
+                                        lineNumber: 399,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, section.id, true, {
                                 fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                                lineNumber: 339,
+                                lineNumber: 331,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/Roadmaps/Blockchain/blockchain.jsx",
-                        lineNumber: 337,
+                        lineNumber: 329,
                         columnNumber: 11
                     }, this)
                 ]
