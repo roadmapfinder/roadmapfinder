@@ -20,7 +20,8 @@
     "Frameworks & Libraries",
     "Generative AI",
     "Prompt Engineering",
-    "DevOps"
+    "DevOps",
+    "Aptitude"
     
 
   ],
@@ -405,7 +406,8 @@
       "image": "dbms",
       "videoId": "https://youtu.be/dl00fOOYLOM",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/dbms"
     },
     {
       "id": 31,
@@ -416,7 +418,8 @@
       "image": "sql",
       "videoId": "https://youtu.be/hlGoQC332VM",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/sql"
     },
     {
       "id": 32,
@@ -427,7 +430,8 @@
       "image": "mongo",
       "videoId": "https://youtu.be/rU9ZODw5yvU",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/mongodb"
     },
     {
       "id": 81,
@@ -438,7 +442,8 @@
       "image": "redis",
       "videoId": "https://youtube.com/watch?v=Vx2zPMPvmug",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/redis"
     },
     {
       "id": 33,
@@ -449,7 +454,8 @@
       "image": "dataa",
       "videoId": "https://youtu.be/wQQR60KtnFY",
       "badge": "POPULAR",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/data_Analyst"
     },
     {
       "id": 34,
@@ -460,7 +466,8 @@
       "image": "numpy",
       "videoId": "https://youtu.be/x7ULDYs4X84?si=E719mb_Y3NedTE4f",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/numpy"
     },
     {
       "id": 77,
@@ -471,7 +478,8 @@
       "image": "pandas",
       "videoId": "https://youtu.be/qrMnoY8qBJM?si=LLhZs_CIZ9U9gYuk",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/pandas"
     },
     {
       "id": 78,
@@ -482,7 +490,8 @@
       "image": "powerbi",
       "videoId": "https://youtu.be/bQ-HTp-tx40?si=MBVoUbzlvDwdECLB",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/powerbi"
     },
     {
       "id": 79,
@@ -493,7 +502,8 @@
       "image": "matplotlib",
       "videoId": "https://youtu.be/-jTD74eEy2I?si=nEBH7Ab5wWkni0IS",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/matplotlib"
     },
     {
       "id": 80,
@@ -504,7 +514,8 @@
       "image": "pyspark",
       "videoId": "https://youtu.be/94w6hPk7nkM?si=ta1deuVwB-4U9VGs",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/pyspark"
     },
     {
       "id": 35,
@@ -515,7 +526,8 @@
       "image": "datas",
       "videoId": "https://youtu.be/gDZ6czwuQ18",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/data_science"
     },
     {
       "id": 36,
@@ -872,7 +884,8 @@
       "image": "post",
       "videoId": "https://youtu.be/SpfIwlAYaKk?si=Ulk7INKdmn7b8c-1",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/postgresql"
     },
     {
       "id": 68,
@@ -974,7 +987,19 @@
       "videoId": "https://youtube.com/watch?v=qPxxxA-RdQw",
       "badge": "NEW",
       "language": "Hindi"
+    },
+    {
+      "id": 81,
+      "category": "Aptitude",
+      "title": "Complete Aptitude course for placements",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "aptitude",
+      "videoId": "https://youtube.com/watch?v=hlyal4sR0m8",
+      "badge": "HOT",
+      "language": "Hindi"
     }
+    
 
   ]
 }

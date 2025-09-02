@@ -8,6 +8,7 @@ import {
   ExternalLink,
   Globe,
   FileText,
+  Play,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -105,9 +106,32 @@ import powerbi from "./CoursesImage/powerbi.jpg"
 import pyspark from "./CoursesImage/pyspark.jpg"
 import matplotlib from "./CoursesImage/matplotlib.jpg"
 import redis from "./CoursesImage/redis.jpg"
+import aptitude from "./CoursesImage/aptitude.jpg"
 
+// Import creator images (adjust paths as needed)
+import creator1 from "../Images/hitesh.jpg";
+import creator2 from "../Images/harkirat.jpg";
+import creator3 from "../Images/harry.jpg";
+import creator4 from "../Images/piyush.png";
+import creator5 from "../Images/shradha.jpeg";
+import creator6 from "../Images/engineer.jpg";
+import creator7 from "../Images/babbar.jpg";
+import creator8 from "../Images/ansh.png"
+import creator9 from "../Images/freecodecamp.jpg"
+import creator10 from "../Images/sagar.jpg"
 
-
+// YouTube Icon Component
+const YouTubeIcon = ({ size = 32, className = "" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
 
 // Image mapping object
 const imageMap = {
@@ -120,8 +144,11 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude
 };
+
+// Creator images array
+const creatorImages = [creator1, creator2, creator3, creator4, creator5, creator6, creator7 ,creator8, creator9,creator10];
 
 export default function CoursePage() {
   const [activeTab, setActiveTab] = useState("All");
@@ -177,7 +204,7 @@ export default function CoursePage() {
     if (videoLink.includes("youtube.com") || videoLink.includes("youtu.be")) {
       window.open(videoLink, "_blank");
     } else {
-      window.open(`https://www.youtube.com/watch?v=${videoLink}`, "_blank");
+      window.open(`https://www.youtube.com/search?q=${videoLink}`, "_blank");
     }
   }, []);
 
@@ -212,22 +239,53 @@ export default function CoursePage() {
 
   return (
     <div className="w-full mx-auto bg-gray-50 font-['Sora'] pb-12 relative">
-      {/* Header Section */}
-      <div className="px-4 pt-4 pb-2">
-        <Link href="/">
-          <div className="flex items-center text-blue-500 hover:text-blue-600 mb-1 mt-1">
-            <svg className="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"></path>
-            </svg>
-            <span className="text-sm font-medium">Home</span>
-          </div>
-        </Link>
-      </div>
+      {/* Enhanced Header Section */}
+      <div className="bg-gradient-to-br from-red-600 via-red-500 to-red-700 py-8 px-4 text-center mb-6 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-4 left-4 w-16 h-16 bg-white opacity-10 rounded-full"></div>
+          <div className="absolute bottom-4 right-4 w-20 h-20 bg-white opacity-5 rounded-full"></div>
+          <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-yellow-300 opacity-20 rounded-full"></div>
+        </div>
 
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-6 px-4 text-center mb-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-white">
-          Youtube Best Courses
-        </h1>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center mb-3">
+            <YouTubeIcon size={40} className="text-white mr-3" />
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+              Premium YouTube Courses
+            </h1>
+          </div>
+          <p className="text-lg md:text-xl text-red-100 mb-3 font-medium">
+            Master Skills with Industry Experts • Hindi & English • Latest Content
+          </p>
+          <p className="text-sm md:text-base text-red-200 mb-6 max-w-2xl mx-auto">
+            Discover handpicked premium courses from top YouTube creators. Learn cutting-edge technologies 
+            in both Hindi and English with the most up-to-date content in the industry! 🚀
+          </p>
+
+          {/* Creator Images */}
+          <div className="flex justify-center items-center space-x-3 mt-6">
+            <span className="text-white text-sm font-medium mr-2 hidden sm:block">Featured Creators:</span>
+            <div className="flex -space-x-2">
+              {creatorImages.map((creator, index) => (
+                <div key={index} className="relative">
+                  <Image
+                    src={creator}
+                    alt={`Creator ${index + 1}`}
+                    width={40}
+                    height={40}
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full border-3 border-white shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
+                  />
+                  {index === 0 && (
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
       </div>
 
       {/* Search Bar */}
@@ -341,7 +399,9 @@ export default function CoursePage() {
 
                         {/* Play button overlay */}
                         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
-                          <ExternalLink size={46} className="text-white" />
+                          <div className="bg-red-600 rounded-full p-3 shadow-lg">
+                            <Play size={24} className="text-white fill-white ml-1" />
+                          </div>
                         </div>
 
                         {/* Badge */}
@@ -409,10 +469,10 @@ export default function CoursePage() {
                         <div className="flex space-x-2">
                           <button
                             onClick={() => redirectToYoutube(course.videoId)}
-                            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
+                            className="flex-1 bg-red-600 hover:bg-red-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
                           >
-                            <span>Watch on YouTube</span>
-                            <ExternalLink size={14} className="ml-1" />
+                            <YouTubeIcon size={16} className="mr-2" />
+                            <span>Watch Now</span>
                           </button>
 
                           {/* Documentation button in card footer */}

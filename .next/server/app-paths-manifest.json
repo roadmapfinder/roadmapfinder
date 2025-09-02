@@ -1,8 +1,5 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/blockchain/page": "app/Docs/blockchain/page.js",
-  "/Docs/dsa_java/page": "app/Docs/dsa_java/page.js",
-  "/Docs/nodejs/page": "app/Docs/nodejs/page.js",
-  "/Docs/solidity/page": "app/Docs/solidity/page.js",
+  "/Docs/data_Analyst/page": "app/Docs/data_Analyst/page.js",
   "/page": "app/page.js"
 }
