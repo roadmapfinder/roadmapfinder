@@ -1,5 +1,9 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/data_Analyst/page": "app/Docs/data_Analyst/page.js",
+  "/Docs/genai_codersgyan/page": "app/Docs/genai_codersgyan/page.js",
+  "/Docs/genai_freecodecamp/page": "app/Docs/genai_freecodecamp/page.js",
+  "/Docs/prompt/page": "app/Docs/prompt/page.js",
+  "/Docs/prompt_engineering/page": "app/Docs/prompt_engineering/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

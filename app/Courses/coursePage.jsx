@@ -107,6 +107,8 @@ import pyspark from "./CoursesImage/pyspark.jpg"
 import matplotlib from "./CoursesImage/matplotlib.jpg"
 import redis from "./CoursesImage/redis.jpg"
 import aptitude from "./CoursesImage/aptitude.jpg"
+import angular from "./CoursesImage/angular.jpg"
+import nodejs from "./CoursesImage/nodejs.jpg"
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -144,7 +146,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular
 };
 
 // Creator images array

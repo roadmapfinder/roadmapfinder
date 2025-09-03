@@ -538,7 +538,8 @@
       "image": "system",
       "videoId": "https://youtu.be/lFeYU31TnQ8?si=21gpJt1PBcXH1cyM",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/system"
     },
     {
       "id": 37,
@@ -549,7 +550,9 @@
       "image": "syse",
       "videoId": "https://youtu.be/43-X22tdxiI?list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/systemdesign"
+      
     },
     {
       "id": 38,
@@ -560,7 +563,8 @@
       "image": "sys",
       "videoId": "https://youtu.be/m8Icp_Cid5o",
       "badge": "POPULAR",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/system_design"
     },
     {
       "id": 39,
@@ -571,7 +575,8 @@
       "image": "deep",
       "videoId": "https://youtu.be/G1P2IaBcXx8",
       "badge": "DEMANDED",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/deeplearning"
     },
     {
       "id": 40,
@@ -582,7 +587,8 @@
       "image": "ml",
       "videoId": "https://youtu.be/ie4oGI85SAE?si=JpKJkBdW2CNSdtex",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/machinelearning"
     },
     {
       "id": 41,
@@ -593,7 +599,8 @@
       "image": "ai",
       "videoId": "https://youtu.be/5NgNicANyqM",
       "badge": "POPULAR",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/aiml"
     },
     {
       "id": 42,
@@ -604,7 +611,8 @@
       "image": "git",
       "videoId": "https://youtu.be/q8EevlEpQ2A",
       "badge": "POPULAR",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/git"
     },
     {
       "id": 43,
@@ -615,7 +623,8 @@
       "image": "githubh",
       "videoId": "https://youtu.be/RDxQEzXN8AU",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/git_github"
     },
     {
       "id": 44,
@@ -626,7 +635,8 @@
       "image": "githube",
       "videoId": "https://youtu.be/S7XpTAnSDL4",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/github"
     },
     {
       "id": 45,
@@ -780,7 +790,8 @@
       "image": "reactjs",
       "videoId": "https://youtu.be/vz1RlUyrc3w?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
       "badge": "DEMANDED",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/reactjs"
     },
     {
       "id": 59,
@@ -791,7 +802,8 @@
       "image": "next",
       "videoId": "https://youtu.be/k7o9R6eaSes",
       "badge": "DEMANDED",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/nextjs"
     },
     {
       "id": 60,
@@ -802,7 +814,8 @@
       "image": "express",
       "videoId": "https://youtu.be/pKJ4GGyDgJo",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/expressjs"
     },
     {
       "id": 61,
@@ -813,7 +826,8 @@
       "image": "springboot",
       "videoId": "https://youtu.be/1993zSY5UBI?list=PLA3GkZPtsafacdBLdd3p1DyRd5FGfr3Ue",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/springboot"
     },
     {
       "id": 62,
@@ -824,18 +838,44 @@
       "image": "django",
       "videoId": "https://youtu.be/j6szNSzw4BU?list=PLu71SKxNbfoDOf-6vAcKmazT92uLnWAgy",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/django"
     },
     {
       "id": 63,
       "category": "Frameworks & Libraries",
       "title": "Laravel complete php backend course",
-      "level": "Beginner to Intermediate",
+      "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "laravel",
-      "videoId": "https://youtu.be/bixnv3xHccs",
-      "badge": "TRENDING",
-      "language": "Hindi"
+      "videoId": "https://youtu.be/bixnv3xHccs?si=Gj_tin0r9-u9B7aP",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/laravel"
+    },
+    {
+      "id": 63,
+      "category": "Frameworks & Libraries",
+      "title": "Complet node js masterclass in depth",
+      "level": "Beginner to Intermediate",
+      "rating": 4.9,
+      "image": "nodejs",
+      "videoId": "https://youtu.be/TIxK0ZkkTII?si=I2305XXQEu94PGq6",
+      "badge": "HOT",
+      "language": "Hindi",
+      "docs": "/Docs/nodejs"
+    },
+    {
+      "id": 63,
+      "category": "Frameworks & Libraries",
+      "title": "Angular complete Course",
+      "level": "Beginner to Intermediate",
+      "rating": 4.9,
+      "image": "angular",
+      "videoId": "https://youtu.be/44b90hAMMIo?si=OPH18pmZMMYVLfl5",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/angular"
     },
     {
       "id": 64,
@@ -896,7 +936,8 @@
       "image": "gen",
       "videoId": "https://youtu.be/BP-w99ZINTc?si=dfKwFwmTtrXr8hUh",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/genai_cwh"
     },
     {
       "id": 69,
@@ -907,7 +948,8 @@
       "image": "gene",
       "videoId": "https://youtu.be/mEsleV16qdo?si=AQer3tqYCRrWGtWW",
       "badge": "POPULAR",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/genai_freecodecamp"
     },
   
     {
@@ -919,7 +961,9 @@
       "image": "prompte",
       "videoId": "https://youtu.be/5i2Hn8OG94o?si=501iXSGWM8Yr_7wQ",
       "badge": "NEW",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/prompt"
+      
     },
     {
       "id": 71,
@@ -930,7 +974,8 @@
       "image": "prompth",
       "videoId": "https://youtu.be/mkiKUPqcFEs?si=a9BuhxPCSNdaagiL",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/prompt_engineering"
     },
     {
       "id": 72,
@@ -986,7 +1031,8 @@
       "image": "genaijs",
       "videoId": "https://youtube.com/watch?v=qPxxxA-RdQw",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/genai_codersgyan"
     },
     {
       "id": 81,
