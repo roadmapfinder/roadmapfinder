@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Bookmark, Download, Settings, Mail } from "lucide-react";
+import { BookOpen, GraduationCap, Settings, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 // Import a default placeholder image to use when no user image is available
@@ -151,46 +151,52 @@ export default function ProfilePage() {
         </Link>
       </div>
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 w-full max-w-md mx-auto shadow-lg font-sora">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 w-full max-w-md mx-auto shadow-lg font-sora relative">
+          {/* Edit Button - Positioned outside the main container */}
+          {!isEditing && (
+            <button
+              onClick={() => setIsEditing(true)}
+              className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-105 z-10"
+            >
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </button>
+          )}
+
           {/* Profile section */}
           <div className="mb-6 sm:mb-8 md:mb-10">
             {!isEditing ? (
-              <div className="flex flex-col sm:flex-row sm:items-center">
-                <div className="flex items-start flex-col sm:flex-row sm:items-center mb-4 sm:mb-0">
-                  <div className="relative mr-4 sm:mr-5 mb-4 sm:mb-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-sm transform -translate-x-1 -translate-y-1"></div>
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-white shadow-md">
-                      {/* Use a fallback if image fails to load */}
-                      <Image
-                        src={displayImageSrc}
-                        alt={profileData.name}
-                        fill
-                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
-                        style={{ objectFit: "cover" }}
-                        priority
-                        onError={handleImageError}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                      {profileData.name}
-                    </h2>
-                    <div className="flex items-center mt-1 text-gray-500">
-                      <Mail className="w-4 h-4 mr-1" />
-                      <span className="text-sm sm:text-base">
-                        {profileData.email}
-                      </span>
-                    </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-4">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-sm transform -translate-x-1 -translate-y-1"></div>
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+                    <Image
+                      src={displayImageSrc}
+                      alt={profileData.name}
+                      fill
+                      sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+                      style={{ objectFit: "cover" }}
+                      priority
+                      onError={handleImageError}
+                    />
                   </div>
                 </div>
-                <div className="mt-4 sm:mt-0 sm:ml-auto">
-                  <button
-                    onClick={() => setIsEditing(true)}
-                    className="w-full sm:w-auto border-2 border-gray-300 rounded-full px-4 sm:px-6 py-2 text-base sm:text-lg font-medium hover:bg-gray-50 hover:border-blue-400 transition-colors text-gray-700 hover:shadow-md"
-                  >
-                    Edit
-                  </button>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2">
+                    {profileData.name}
+                  </h2>
+                  <div className="flex items-center justify-center text-gray-500">
+                    <Mail className="w-4 h-4 mr-2" />
+                    <span className="text-sm sm:text-base">
+                      {profileData.email}
+                    </span>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -267,32 +273,30 @@ export default function ProfilePage() {
 
           {/* Menu Items */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
-            <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
-              <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
-                <Bookmark className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-              </div>
-              <Link href="/Bookmarks">
-              <span>Bookmarks</span>
-                </Link>
-            </button>
+            <Link href="/RoadmapPage" className="block">
+              <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
+                <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
+                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                </div>
+                <span>Roadmaps</span>
+              </button>
+            </Link>
 
             <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
               <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
-                <Download className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
               </div>
-              <Link href="/Downloads">
-              <span>Downloaded Roadmaps</span>
-                </Link>
+              <span>Courses</span>
             </button>
 
-            <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
-              <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
-                <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-              </div>
-              <Link href="/Logout">
+            <Link href="/Logout" className="block">
+              <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
+                <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
+                  <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                </div>
                 <span>Logout</span>
-                  </Link>
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -746,7 +746,8 @@
       "image": "premire",
       "videoId": "https://youtu.be/CVH6TKL12Wg",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/premiere_pro"
     },
     {
       "id": 55,
@@ -757,7 +758,8 @@
       "image": "capcut",
       "videoId": "https://youtu.be/fL-0G-2b3Sg",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/capcut"
     },
     {
       "id": 56,
@@ -768,7 +770,8 @@
       "image": "davanci",
       "videoId": "https://youtu.be/qDHnCFMZ9HA",
       "badge": "DEMANDED",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/davinci"
     },
     {
       "id": 57,
@@ -779,7 +782,8 @@
       "image": "video",
       "videoId": "https://youtube.com/watch?v=gbZ6hCNlq7g",
       "badge": "NEW",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/video_editing"
     },
     {
       "id": 58,
@@ -986,7 +990,8 @@
       "image": "devops",
       "videoId": "https://youtu.be/ZbG0c87wcM8?si=qu8eOwTSYypHCO15",
       "badge": "NEW",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/devops"
     },
     {
       "id": 73,
@@ -997,7 +1002,8 @@
       "image": "docker",
       "videoId": "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/docker"
     },
     {
       "id": 74,
@@ -1008,7 +1014,8 @@
       "image": "aws",
       "videoId": "https://youtu.be/AgOmeANl3ls?si=D7srdgd9cENn9Rqm",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/aws"
     },
     {
       "id": 75,
@@ -1043,7 +1050,8 @@
       "image": "aptitude",
       "videoId": "https://youtube.com/watch?v=hlyal4sR0m8",
       "badge": "HOT",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/aptitude"
     }
     
 

@@ -1,9 +1,8 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/genai_codersgyan/page": "app/Docs/genai_codersgyan/page.js",
-  "/Docs/genai_freecodecamp/page": "app/Docs/genai_freecodecamp/page.js",
-  "/Docs/prompt/page": "app/Docs/prompt/page.js",
-  "/Docs/prompt_engineering/page": "app/Docs/prompt_engineering/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/Docs/aptitude/page": "app/Docs/aptitude/page.js",
+  "/Profile/page": "app/Profile/page.js",
+  "/Project-helper/page": "app/Project-helper/page.js",
+  "/api/generate-project/route": "app/api/generate-project/route.js",
   "/page": "app/page.js"
 }

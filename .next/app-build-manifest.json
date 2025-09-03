@@ -15,12 +15,12 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Docs/genai_codersgyan/page": [
+    "/Docs/aptitude/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_13cfda29._.js",
-      "static/chunks/app_Docs_genai_codersgyan_page_jsx_5ee60de8._.js",
+      "static/chunks/_ee6c89b5._.js",
+      "static/chunks/app_Docs_aptitude_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -29,12 +29,16 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Docs/genai_freecodecamp/page": [
+    "/Profile/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_6f7a9e31._.js",
-      "static/chunks/app_Docs_genai_freecodecamp_page_jsx_5ee60de8._.js",
+      "static/chunks/node_modules_next_43734a94._.js",
+      "static/chunks/node_modules_@firebase_auth_dist_esm2017_1e046cbe._.js",
+      "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_c2fcaa2e.js",
+      "static/chunks/node_modules_4f61a9a2._.js",
+      "static/chunks/app_6a5f4d70._.js",
+      "static/chunks/app_Profile_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -43,38 +47,13 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Docs/prompt/page": [
+    "/Project-helper/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_3ec6af7f._.js",
-      "static/chunks/app_Docs_prompt_page_jsx_5ee60de8._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
-    ],
-    "/Docs/prompt_engineering/page": [
-      "static/chunks/node_modules_659f1a1f._.js",
-      "static/chunks/[root-of-the-server]__ccd9809a._.css",
-      "static/chunks/app_layout_c0237562.js",
-      "static/chunks/_961efa91._.js",
-      "static/chunks/app_Docs_prompt_engineering_page_jsx_5ee60de8._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/node_modules_659f1a1f._.js",
-      "static/chunks/[root-of-the-server]__ccd9809a._.css",
-      "static/chunks/app_layout_c0237562.js",
+      "static/chunks/app_Project-helper_page_jsx_f672a01e._.js",
+      "static/chunks/node_modules_63b67ca7._.js",
+      "static/chunks/app_Project-helper_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
