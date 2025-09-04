@@ -6016,12 +6016,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:border-blue-400:hover {
-      border-color: var(--color-blue-400);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:border-gray-200:hover {
       border-color: var(--color-gray-200);
     }
@@ -6108,18 +6102,6 @@
   @media (hover: hover) {
     .hover\:bg-gray-200:hover {
       background-color: var(--color-gray-200);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-gray-300:hover {
-      background-color: var(--color-gray-300);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-gray-600:hover {
-      background-color: var(--color-gray-600);
     }
   }
 
@@ -6734,12 +6716,6 @@
   }
 
   @media (width >= 40rem) {
-    .sm\:mt-0 {
-      margin-top: calc(var(--spacing) * 0);
-    }
-  }
-
-  @media (width >= 40rem) {
     .sm\:mt-3 {
       margin-top: calc(var(--spacing) * 3);
     }
@@ -6790,12 +6766,6 @@
   @media (width >= 40rem) {
     .sm\:mr-5 {
       margin-right: calc(var(--spacing) * 5);
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:mb-0 {
-      margin-bottom: calc(var(--spacing) * 0);
     }
   }
 
@@ -6856,12 +6826,6 @@
   @media (width >= 40rem) {
     .sm\:ml-12 {
       margin-left: calc(var(--spacing) * 12);
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:ml-auto {
-      margin-left: auto;
     }
   }
 
@@ -6943,12 +6907,6 @@
   @media (width >= 40rem) {
     .sm\:h-16 {
       height: calc(var(--spacing) * 16);
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:h-20 {
-      height: calc(var(--spacing) * 20);
     }
   }
 
@@ -7557,12 +7515,6 @@
   @media (width >= 48rem) {
     .md\:h-10 {
       height: calc(var(--spacing) * 10);
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:h-24 {
-      height: calc(var(--spacing) * 24);
     }
   }
 
@@ -8337,14 +8289,6 @@
   @media (prefers-color-scheme: dark) {
     .dark\:text-purple-400 {
       color: var(--color-purple-400);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    @media (hover: hover) {
-      .dark\:hover\:bg-gray-700:hover {
-        background-color: var(--color-gray-700);
-      }
     }
   }
 }

@@ -1,8 +1,5 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/aptitude/page": "app/Docs/aptitude/page.js",
-  "/Profile/page": "app/Profile/page.js",
-  "/Project-helper/page": "app/Project-helper/page.js",
-  "/api/generate-project/route": "app/api/generate-project/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

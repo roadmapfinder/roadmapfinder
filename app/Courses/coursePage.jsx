@@ -62,7 +62,7 @@ import git from "./CoursesImage/git.jpg";
 import githube from "./CoursesImage/Githube.jpg";
 import githubh from "./CoursesImage/githubh.jpg";
 import os from "./CoursesImage/os.jpg";
-import osa from "./CoursesImage/osa.jpg";
+import linux from "./CoursesImage/linux.jpg";
 import osf from "./CoursesImage/osf.jpg";
 import osb from "./CoursesImage/osb.jpg";
 import networking from "./CoursesImage/networking.jpg";
@@ -142,7 +142,7 @@ const imageMap = {
   js, python, java, cpp, c, php, blockchain, web3, block,
   dsajava, cppdsa, dsapy, dsajs, dbms, mongo, sql,
   dataa, dataaw, datas, system, syse, sys, ai, ml, deep,
-  git, githube, githubh, os, osa, osf, osb,
+  git, githube, githubh, os, linux, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,

@@ -652,12 +652,12 @@
     {
       "id": 46,
       "category": "Operating System",
-      "title": "Operating System Complete Course",
-      "level": "Beginner to Intermediate",
+      "title": "Linux complete course",
+      "level": "Beginner to Advanced",
       "rating": 4.9,
-      "image": "os",
-      "videoId": "https://youtu.be/A4G0hOI6XyQ",
-      "badge": "TRENDING",
+      "image": "linux",
+      "videoId": "https://youtu.be/e01GGTKmtpc?si=5-TF8zo6g3_lP7LL",
+      "badge": "NEW",
       "language": "Hindi"
     },
     {
@@ -677,7 +677,7 @@
       "title": "Operating System in one shot",
       "level": "Beginner",
       "rating": 4.9,
-      "image": "osa",
+      "image": "os",
       "videoId": "https://youtu.be/8XBtAjKwCm4",
       "badge": "TRENDING",
       "language": "Hindi"
