@@ -1,0 +1,590 @@
+[
+  {
+    "id": 1,
+    "title": "Foundations of Operating Systems (Beginner)",
+    "description": "Build fundamental understanding of operating systems concepts and components",
+    "content": {
+      "whatToLearn": [
+        "What is an OS and why it exists",
+        "Types of OS: Batch, Multi-tasking, Real-time, Distributed, Embedded",
+        "OS components: Kernel, Shell, System Programs & Libraries",
+        "Kernel types: monolithic, microkernel, hybrid",
+        "OS services: Process management, memory, I/O, file systems, security",
+        "Boot process: BIOS/UEFI → Bootloader → Kernel → Init → Shell"
+      ],
+      "bestCourses": {
+        "english": [
+          "Operating Systems Course (CS6200 - Georgia Tech)",
+          "Introduction to Operating Systems (UC Berkeley CS162)",
+          "Operating Systems Fundamentals (MIT OpenCourseWare)",
+          "Coursera Operating Systems Specialization"
+        ],
+        "hindi": [
+          "Operating System Complete Course Hindi (Gate Smashers)",
+          "OS Concepts Hindi (Neso Academy)",
+          "Operating System Hindi Tutorial (Knowledge Gate)",
+          "Computer Science OS Hindi (Easy Engineering Classes)"
+        ]
+      },
+      "toolsToUse": [
+        "Virtual Machines (VirtualBox, VMware)",
+        "Linux Distributions (Ubuntu, Fedora)",
+        "System Monitoring Tools (Task Manager, Activity Monitor)",
+        "Text Editors and IDEs",
+        "Command Line Interfaces"
+      ],
+      "docsAndWebsites": [
+        "Operating System Concepts (Silberschatz - Dinosaur Book)",
+        "Modern Operating Systems (Tanenbaum)",
+        "Operating Systems: Three Easy Pieces (OSTEP)",
+        "MIT Operating Systems Course Materials",
+        "GeeksforGeeks Operating Systems"
+      ],
+      "projectIdeas": [
+        "Create OS comparison chart with features",
+        "Implement simple shell commands",
+        "Boot process documentation project",
+        "OS components visualization diagram"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Linux/Unix Basics (Practical OS Entry)",
+    "description": "Get hands-on experience with Linux systems and command line operations",
+    "content": {
+      "whatToLearn": [
+        "Linux installation and setup (Ubuntu, Fedora, Arch)",
+        "Filesystem hierarchy: /bin, /etc, /dev, /proc",
+        "Essential commands: ls, cat, ps, kill, chmod, df, du, top",
+        "Shell scripting basics: bash, variables, loops, conditionals",
+        "Process management: ps, htop, signals, jobs, background tasks",
+        "File permissions and ownership concepts"
+      ],
+      "bestCourses": {
+        "english": [
+          "Introduction to Linux (Linux Foundation)",
+          "Linux Command Line Basics (edX)",
+          "Complete Linux Course (Udemy)",
+          "Linux for Beginners (Coursera)"
+        ],
+        "hindi": [
+          "Linux Complete Course Hindi (CodeWithHarry)",
+          "Linux Fundamentals Hindi (Technical Suneja)",
+          "Ubuntu Linux Tutorial Hindi (Great Learning)",
+          "Linux Commands Hindi (TechWorld with Nana)"
+        ]
+      },
+      "toolsToUse": [
+        "Linux Distributions (Ubuntu, Fedora, CentOS)",
+        "Terminal Emulators",
+        "Text Editors (nano, vim, emacs)",
+        "Package Managers (apt, yum, dnf)",
+        "SSH Clients"
+      ],
+      "docsAndWebsites": [
+        "The Linux Command Line (William Shotts)",
+        "Linux Documentation Project",
+        "Ubuntu Official Documentation",
+        "Arch Linux Wiki",
+        "LinuxCommand.org"
+      ],
+      "projectIdeas": [
+        "Create automated system setup script",
+        "Build file management utility",
+        "Develop system information dashboard",
+        "Implement basic shell with custom commands"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Process Management",
+    "description": "Master process lifecycle, scheduling algorithms, and inter-process communication",
+    "content": {
+      "whatToLearn": [
+        "Process concepts and states: new, ready, running, waiting, terminated",
+        "Scheduling algorithms: FCFS, SJF, Round Robin, Priority, Multilevel Queue",
+        "Inter-Process Communication: Pipes, Shared Memory, Message Queues, Semaphores",
+        "Context switching mechanisms",
+        "Threads vs Processes comparison",
+        "Multithreading and concurrency concepts"
+      ],
+      "bestCourses": {
+        "english": [
+          "Process Management in Operating Systems (Coursera)",
+          "Advanced Operating Systems (Georgia Tech)",
+          "System Programming (UC Berkeley)",
+          "Operating Systems Design (MIT)"
+        ],
+        "hindi": [
+          "Process Management OS Hindi (Gate Smashers)",
+          "Scheduling Algorithms Hindi (Neso Academy)",
+          "IPC Concepts Hindi (Knowledge Gate)",
+          "Threading Concepts Hindi (Easy Engineering)"
+        ]
+      },
+      "toolsToUse": [
+        "Process monitoring tools (ps, top, htop)",
+        "System call tracers (strace, ltrace)",
+        "Programming languages (C, Java, Python)",
+        "Threading libraries (pthreads)",
+        "IPC implementation tools"
+      ],
+      "docsAndWebsites": [
+        "Modern Operating Systems (Tanenbaum)",
+        "Advanced Programming in UNIX Environment",
+        "Linux System Programming (Robert Love)",
+        "Operating Systems: Three Easy Pieces",
+        "Process Management Documentation"
+      ],
+      "projectIdeas": [
+        "Implement process scheduler simulator",
+        "Create IPC communication system",
+        "Build multi-threaded application",
+        "Develop process monitoring tool"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Memory Management",
+    "description": "Understand virtual memory, paging, segmentation, and memory optimization techniques",
+    "content": {
+      "whatToLearn": [
+        "Physical vs Virtual memory concepts",
+        "Paging and Segmentation mechanisms",
+        "Demand paging and Page Replacement Algorithms: FIFO, LRU, Optimal",
+        "Thrashing and Working Set concepts",
+        "Memory allocation strategies: First-fit, Best-fit, Worst-fit",
+        "Stack vs Heap memory management"
+      ],
+      "bestCourses": {
+        "english": [
+          "Memory Management in Operating Systems (edX)",
+          "Virtual Memory Systems (Stanford)",
+          "Advanced Memory Management (Coursera)",
+          "System Programming Memory Concepts"
+        ],
+        "hindi": [
+          "Memory Management OS Hindi (Gate Smashers)",
+          "Virtual Memory Hindi (Neso Academy)",
+          "Paging Concepts Hindi (Knowledge Gate)",
+          "Memory Allocation Hindi (Easy Engineering)"
+        ]
+      },
+      "toolsToUse": [
+        "Memory analysis tools (valgrind, top)",
+        "System monitoring (/proc/meminfo)",
+        "Memory profilers",
+        "Programming tools for memory management",
+        "Virtual memory simulators"
+      ],
+      "docsAndWebsites": [
+        "Understanding Virtual Memory",
+        "Linux Memory Management Documentation",
+        "Memory Management Algorithms",
+        "Operating System Memory Concepts",
+        "Advanced Memory Management Techniques"
+      ],
+      "projectIdeas": [
+        "Memory management simulator",
+        "Page replacement algorithm implementation",
+        "Memory leak detection tool",
+        "Virtual memory usage analyzer"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Synchronization & Concurrency",
+    "description": "Handle race conditions, deadlocks, and implement synchronization mechanisms",
+    "content": {
+      "whatToLearn": [
+        "Race conditions, Deadlock, and Starvation concepts",
+        "Synchronization primitives: Locks, Semaphores, Monitors, Condition variables",
+        "Classic problems: Producer-Consumer, Reader-Writer problem",
+        "Deadlock detection, prevention, avoidance (Banker's algorithm)",
+        "Thread synchronization techniques",
+        "Atomic operations and memory barriers"
+      ],
+      "bestCourses": {
+        "english": [
+          "Concurrency in Operating Systems (Coursera)",
+          "Parallel and Concurrent Programming",
+          "Synchronization Mechanisms Course",
+          "Advanced Concurrency Concepts"
+        ],
+        "hindi": [
+          "Synchronization OS Hindi (Gate Smashers)",
+          "Deadlock Concepts Hindi (Neso Academy)",
+          "Concurrency Problems Hindi (Knowledge Gate)",
+          "Threading Synchronization Hindi (Easy Engineering)"
+        ]
+      },
+      "toolsToUse": [
+        "Threading libraries (pthreads, Java threads)",
+        "Synchronization tools",
+        "Deadlock detection tools",
+        "Concurrency testing frameworks",
+        "Race condition analyzers"
+      ],
+      "docsAndWebsites": [
+        "Concurrency Programming Documentation",
+        "Synchronization Algorithms Guide",
+        "Deadlock Prevention Strategies",
+        "Thread Safety Best Practices",
+        "Concurrent Programming Patterns"
+      ],
+      "projectIdeas": [
+        "Implement classic concurrency problems in C/Java/Python",
+        "Build deadlock detection system",
+        "Create thread pool implementation",
+        "Develop synchronization benchmark tool"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "File Systems",
+    "description": "Explore file organization, allocation methods, and disk scheduling algorithms",
+    "content": {
+      "whatToLearn": [
+        "File attributes and access methods (sequential, direct)",
+        "File allocation methods: Contiguous, Linked, Indexed",
+        "Directory structures: Single-level, Two-level, Tree, DAG",
+        "Journaling file systems: ext4, NTFS, XFS, ZFS",
+        "File system operations: mounting, unmounting",
+        "Disk scheduling algorithms: FCFS, SSTF, SCAN, C-SCAN, LOOK"
+      ],
+      "bestCourses": {
+        "english": [
+          "File Systems in Operating Systems (edX)",
+          "Storage Systems and File Management",
+          "Advanced File System Concepts",
+          "Disk Management and Optimization"
+        ],
+        "hindi": [
+          "File System OS Hindi (Gate Smashers)",
+          "Disk Scheduling Hindi (Neso Academy)",
+          "File Allocation Methods Hindi (Knowledge Gate)",
+          "Storage Management Hindi (Easy Engineering)"
+        ]
+      },
+      "toolsToUse": [
+        "Linux file system tools (lsblk, fdisk, mount, df, du, fsck)",
+        "Disk partitioning tools",
+        "File system analyzers",
+        "Disk performance monitoring tools",
+        "Storage management utilities"
+      ],
+      "docsAndWebsites": [
+        "Linux File System Documentation",
+        "File System Implementation Guide",
+        "Disk Scheduling Algorithms",
+        "Modern File Systems Overview",
+        "Storage System Architecture"
+      ],
+      "projectIdeas": [
+        "File system simulator implementation",
+        "Disk scheduling algorithm comparison",
+        "File organization utility",
+        "Storage performance analyzer"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "I/O Systems",
+    "description": "Master I/O hardware concepts, device drivers, and network programming",
+    "content": {
+      "whatToLearn": [
+        "I/O Hardware basics: controllers, buses, interrupts, DMA",
+        "I/O software layers: Device drivers, buffering, spooling",
+        "Blocking vs Non-blocking I/O operations",
+        "Network I/O fundamentals: sockets, TCP vs UDP",
+        "Interrupt handling and DMA operations",
+        "Device driver architecture and implementation"
+      ],
+      "bestCourses": {
+        "english": [
+          "I/O Systems and Device Management",
+          "Network Programming Fundamentals",
+          "Device Driver Development",
+          "System I/O Optimization"
+        ],
+        "hindi": [
+          "I/O Systems OS Hindi (Gate Smashers)",
+          "Device Management Hindi (Neso Academy)",
+          "Network Programming Hindi (Knowledge Gate)",
+          "I/O Operations Hindi (Easy Engineering)"
+        ]
+      },
+      "toolsToUse": [
+        "Socket programming tools",
+        "I/O monitoring utilities (iotop, iostat)",
+        "Network analysis tools",
+        "Device driver development kits",
+        "System call tracers"
+      ],
+      "docsAndWebsites": [
+        "Linux Device Drivers (LDD3)",
+        "Network Programming Documentation",
+        "I/O Systems Architecture",
+        "Socket Programming Guide",
+        "Device Driver Development"
+      ],
+      "projectIdeas": [
+        "Socket programming implementation in C/Python",
+        "Simple device driver development",
+        "I/O performance monitoring tool",
+        "Network communication system"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Advanced OS Concepts",
+    "description": "Explore virtualization, distributed systems, real-time OS, and security concepts",
+    "content": {
+      "whatToLearn": [
+        "Virtualization concepts: VMs vs Containers",
+        "Distributed OS and Cloud OS fundamentals",
+        "Real-Time Operating Systems (RTOS) principles",
+        "Microkernel vs Monolithic architecture debate",
+        "OS Security: Authentication, ACLs, SELinux, Sandboxing",
+        "Embedded OS: FreeRTOS, Zephyr, VxWorks"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Operating Systems (Georgia Tech)",
+          "Distributed Systems Concepts",
+          "Real-Time Systems Design",
+          "Operating System Security"
+        ],
+        "hindi": [
+          "Advanced OS Concepts Hindi (Gate Smashers)",
+          "Distributed Systems Hindi (Neso Academy)",
+          "RTOS Concepts Hindi (Knowledge Gate)",
+          "OS Security Hindi (Easy Engineering)"
+        ]
+      },
+      "toolsToUse": [
+        "Virtualization platforms (VMware, VirtualBox, KVM)",
+        "Container technologies (Docker, LXC)",
+        "RTOS development environments",
+        "Security analysis tools",
+        "Distributed system simulators"
+      ],
+      "docsAndWebsites": [
+        "Distributed Systems Documentation",
+        "Real-Time Systems Guide",
+        "Virtualization Technology Overview",
+        "Operating System Security Guide",
+        "Embedded Systems Documentation"
+      ],
+      "projectIdeas": [
+        "Virtualization performance comparison",
+        "Real-time task scheduler implementation",
+        "Distributed system simulation",
+        "Security hardening automation tool"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "System Programming (Industry Skills)",
+    "description": "Develop practical system programming skills with C and Linux system calls",
+    "content": {
+      "whatToLearn": [
+        "C Programming on Linux environment",
+        "System calls: fork(), exec(), wait(), pipe(), open(), read(), write()",
+        "Error handling with errno",
+        "File descriptors and I/O operations",
+        "Linux Kernel Modules (LKMs) development",
+        "Kernel module operations: insmod, rmmod, dmesg"
+      ],
+      "bestCourses": {
+        "english": [
+          "Advanced Programming in UNIX Environment",
+          "Linux System Programming Course",
+          "Kernel Module Development",
+          "System Calls and Libraries"
+        ],
+        "hindi": [
+          "System Programming Hindi (CodeWithHarry)",
+          "Linux System Calls Hindi (TechWorld)",
+          "C Programming Linux Hindi (Great Learning)",
+          "Kernel Programming Hindi (Technical Suneja)"
+        ]
+      },
+      "toolsToUse": [
+        "GCC Compiler and development tools",
+        "Debugging tools (gdb, strace, perf, ltrace)",
+        "Kernel development environment",
+        "System call tracers",
+        "Performance profiling tools"
+      ],
+      "docsAndWebsites": [
+        "Advanced Programming in UNIX Environment (APUE)",
+        "Linux System Programming (Robert Love)",
+        "Linux Kernel Development Guide",
+        "System Call Documentation",
+        "Kernel Module Programming Guide"
+      ],
+      "projectIdeas": [
+        "Simple kernel driver development",
+        "System call wrapper library",
+        "Process communication framework",
+        "Custom file system implementation"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "DevOps/Cloud/Security Integration",
+    "description": "Integrate OS knowledge with modern DevOps practices and cloud technologies",
+    "content": {
+      "whatToLearn": [
+        "Container orchestration with Docker and LXC",
+        "Cloud OS management: AWS EC2, GCP Compute, Azure VM",
+        "Configuration management: Ansible, Puppet, Chef",
+        "OS Security implementation: Firewalls, SELinux, AppArmor",
+        "System auditing and log management",
+        "OS Hardening following CIS Benchmarks"
+      ],
+      "bestCourses": {
+        "english": [
+          "DevOps with Linux (Linux Academy)",
+          "Cloud Security and Compliance",
+          "Configuration Management Course",
+          "Container Security Best Practices"
+        ],
+        "hindi": [
+          "DevOps Linux Integration Hindi (TechWorld)",
+          "Cloud Computing OS Hindi (Great Learning)",
+          "Linux Security Hindi (Technical Suneja)",
+          "Container Technologies Hindi (CodeWithHarry)"
+        ]
+      },
+      "toolsToUse": [
+        "Container platforms (Docker, Kubernetes)",
+        "Cloud CLI tools (AWS CLI, Azure CLI, gcloud)",
+        "Configuration management tools",
+        "Security scanning tools",
+        "Monitoring and alerting systems"
+      ],
+      "docsAndWebsites": [
+        "Docker and Container Documentation",
+        "Cloud Provider OS Guides",
+        "CIS Security Benchmarks",
+        "DevOps Integration Best Practices",
+        "Container Security Documentation"
+      ],
+      "projectIdeas": [
+        "Containerized application deployment",
+        "Cloud infrastructure automation",
+        "Security compliance checker",
+        "Multi-cloud OS management system"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "title": "Specialization Paths",
+    "description": "Choose your career specialization and focus on specific OS domains",
+    "content": {
+      "whatToLearn": [
+        "System Engineer/SRE: Linux administration, cloud, monitoring",
+        "Kernel Developer: Linux kernel internals, drivers, C/Rust programming",
+        "Embedded OS Developer: RTOS, C programming, ARM assembly",
+        "Cybersecurity/OS Internals: OS exploits, sandboxing, reverse engineering",
+        "Performance Engineering: System optimization, benchmarking",
+        "Cloud Architecture: OS in cloud environments, orchestration"
+      ],
+      "bestCourses": {
+        "english": [
+          "Linux Kernel Internals (Linux Foundation)",
+          "Embedded Systems Programming",
+          "Cybersecurity Fundamentals",
+          "Site Reliability Engineering"
+        ],
+        "hindi": [
+          "Kernel Development Hindi (Advanced Level)",
+          "Embedded Programming Hindi (Technical Suneja)",
+          "Cybersecurity OS Hindi (Great Learning)",
+          "SRE Practices Hindi (TechWorld)"
+        ]
+      },
+      "toolsToUse": [
+        "Specialized development environments",
+        "Industry-specific tools and frameworks",
+        "Professional monitoring and debugging tools",
+        "Security analysis and penetration testing tools",
+        "Performance optimization utilities"
+      ],
+      "docsAndWebsites": [
+        "Linux Kernel Development (Robert Love)",
+        "Understanding the Linux Kernel",
+        "Embedded Systems Documentation",
+        "Security Research Publications",
+        "SRE Best Practices Documentation"
+      ],
+      "projectIdeas": [
+        "Custom kernel module for specific hardware",
+        "Embedded real-time system implementation",
+        "Security vulnerability assessment tool",
+        "Production monitoring and alerting system"
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "title": "Practice & Projects",
+    "description": "Apply knowledge through hands-on projects and coding challenges",
+    "content": {
+      "whatToLearn": [
+        "LeetCode OS and concurrency problems",
+        "Build custom mini operating system (like xv6)",
+        "Implement classic OS algorithms",
+        "Create system utilities and tools",
+        "Performance benchmarking and optimization",
+        "Open source contribution to OS projects"
+      ],
+      "bestCourses": {
+        "english": [
+          "Operating Systems Engineering (MIT 6.828)",
+          "xv6 Operating System Implementation",
+          "Advanced System Programming Projects",
+          "Open Source OS Development"
+        ],
+        "hindi": [
+          "OS Projects Implementation Hindi",
+          "System Programming Projects Hindi",
+          "Advanced OS Concepts Projects Hindi",
+          "Mini OS Development Hindi"
+        ]
+      },
+      "toolsToUse": [
+        "Development environments for OS projects",
+        "Version control systems (Git)",
+        "Testing and debugging frameworks",
+        "Performance measurement tools",
+        "Documentation and presentation tools"
+      ],
+      "docsAndWebsites": [
+        "xv6 Operating System Source Code",
+        "OS Development Wiki (OSDev.org)",
+        "MIT 6.828 Course Materials",
+        "Linux Kernel Source Code",
+        "Operating Systems Project Ideas"
+      ],
+      "projectIdeas": [
+        "Build mini operating system from scratch",
+        "Implement custom scheduler algorithms",
+        "Create system monitoring dashboard",
+        "Develop kernel-level security module"
+      ]
+    }
+  }
+]

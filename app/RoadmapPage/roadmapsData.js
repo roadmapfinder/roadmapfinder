@@ -385,6 +385,15 @@ export const roadmapsData = [
     description: "Large-scale system architecture"
   },
   {
+    id: "Linux",
+    title: "linux",
+    icon: <Terminal className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Linux",
+    bgColor: "from-black to-gray-900",
+    category: "trending",
+    description: "Linux command line OS"
+  },
+  {
     id: "devops",
     title: "DevOps",
     icon: <Server className="w-5 h-5 text-white" />,

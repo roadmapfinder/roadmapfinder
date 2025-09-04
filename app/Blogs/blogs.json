@@ -198,7 +198,7 @@
     "content": "Notion brings together notes, tasks, wikis, and databases into one beautifully designed workspace. Whether you're organizing a product roadmap, drafting content, or managing a team project, Notion's block-based editor and customizable templates make it incredibly flexible. Its collaboration tools are especially helpful for startups, students, and remote teams. Users can embed code, databases, calendars, and even AI-powered writing features—all within the same page. With seamless integration into tools like Slack, GitHub, and Figma, Notion is ideal for anyone seeking clarity, structure, and creativity in one platform.",
     "toolUrl": "https://www.notion.so/",
     "category": "Productivity",
-    "tags": ["Notes", "Documentation", "Productivity", "Collaboration", "All-in-One"],
+    "tags": ["Notes", "Documentation", "Productivity", "Collaboration"],
     "createdAt": "2025-06-19T00:00:00.000Z",
     "rating": 4.8,
     "popularity": 95

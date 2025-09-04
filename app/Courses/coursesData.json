@@ -318,10 +318,10 @@
       "category": "Blockchain",
       "title": "Blockchain Complete Course",
       "level": "Beginner to Advanced",
-      "rating": 4.7,
+      "rating": 4.9,
       "image": "blockchain",
-      "videoId": "https://youtu.be/gyMwXuJrbJQ",
-      "badge": "POPULAR",
+      "videoId": "https://youtu.be/jcgfQEbptdo?si=YTWJYTmYvaAKIyDi",
+      "badge": "NEW",
       "language": "English",
       "docs": "/Docs/solidity"
     },
@@ -647,7 +647,8 @@
       "image": "osf",
       "videoId": "https://youtu.be/yK1uBHPdp30",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/os"
     },
     {
       "id": 46,
@@ -656,9 +657,10 @@
       "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "linux",
-      "videoId": "https://youtu.be/e01GGTKmtpc?si=5-TF8zo6g3_lP7LL",
+      "videoId": "https://youtu.be/bUXuZbU6tYw?si=BDlo4MDosS143x4s",
       "badge": "NEW",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/linux"
     },
     {
       "id": 47,
@@ -669,7 +671,8 @@
       "image": "osb",
       "videoId": "https://youtu.be/3obEP8eLsCw",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/os_hindi"
     },
     {
       "id": 48,
@@ -680,7 +683,8 @@
       "image": "os",
       "videoId": "https://youtu.be/8XBtAjKwCm4",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/os_oneshot"
     },
     {
       "id": 49,

@@ -144,7 +144,7 @@ const TechToolsBlog = () => {
         <div className="px-6 py-8">
           {/* Logo/Title */}
           <div className="mb-8">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 to-indigo-600 bg-clip-text text-transparent">
               Blogs Tech Hub
             </h1>
             <p className="text-sm text-gray-600 mt-2">Discover amazing tools</p>
@@ -242,7 +242,7 @@ const TechToolsBlog = () => {
       <header className="lg:hidden bg-white/80 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-40">
         <div className="px-4 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Blogs Tech Hub
             </h1>
           </div>
@@ -489,7 +489,7 @@ const TechToolsBlog = () => {
                           href={blog.toolUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                          className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                         >
                           Visit Tool
                           <ExternalLink className="w-4 h-4 ml-2" />

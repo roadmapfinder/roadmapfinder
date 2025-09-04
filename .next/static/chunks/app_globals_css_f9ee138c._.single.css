@@ -2324,6 +2324,10 @@
     border-color: var(--color-emerald-300);
   }
 
+  .border-emerald-600 {
+    border-color: var(--color-emerald-600);
+  }
+
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }
@@ -5012,6 +5016,10 @@
 
   .text-purple-700 {
     color: var(--color-purple-700);
+  }
+
+  .text-purple-800 {
+    color: var(--color-purple-800);
   }
 
   .text-red-100 {
