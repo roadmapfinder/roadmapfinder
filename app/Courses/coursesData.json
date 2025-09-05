@@ -695,7 +695,8 @@
       "image": "networkingk",
       "videoId": "https://youtu.be/IPvYjXCsTg8",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/networking"
     },
     {
       "id": 50,
@@ -706,7 +707,8 @@
       "image": "networkingf",
       "videoId": "https://youtu.be/qiQR5rTSshw",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/networking_freecode"
     },
     {
       "id": 51,
@@ -717,7 +719,8 @@
       "image": "networking",
       "videoId": "https://youtu.be/S7MNX_UD7vY?si=EeXKX7FayoZ5vtHk",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/networking_cnn"
     },
     {
       "id": 52,
@@ -728,7 +731,8 @@
       "image": "cybere",
       "videoId": "https://youtu.be/VbEx7B_PTOE?list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL",
       "badge": "TRENDING",
-      "language": "English"
+      "language": "English",
+      "docs": "/Docs/cyber"
     },
     {
       "id": 53,
@@ -739,7 +743,8 @@
       "image": "cyberh",
       "videoId": "https://youtu.be/v3iUx2SNspY",
       "badge": "TRENDING",
-      "language": "Hindi"
+      "language": "Hindi",
+      "docs": "/Docs/cybersecurity"
     },
     {
       "id": 54,

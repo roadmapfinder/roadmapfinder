@@ -1,0 +1,858 @@
+[
+  {
+    "id": 1,
+    "title": "Prerequisites & Foundations",
+    "description": "Essential foundation skills required before starting Angular development",
+    "icon": "BookOpen",
+    "gradient": "from-gray-500 to-slate-600",
+    "content": {
+      "whatToLearn": [
+        "HTML5: semantic elements, forms, media, canvas",
+        "CSS3: flexbox, grid, animations, responsive design",
+        "JavaScript (ES6+): Variables (let, const)",
+        "Functions, arrow functions, DOM manipulation",
+        "Arrays, Objects, Loops, Classes & Modules",
+        "TypeScript: Types (any, union, interface, enum)",
+        "Generics and OOP with TypeScript",
+        "Decorators & Metadata",
+        "Basic understanding of SPA concepts",
+        "Node.js and npm basics"
+      ],
+      "toolsToUse": [
+        "Visual Studio Code",
+        "Node.js & npm",
+        "TypeScript Compiler",
+        "Browser Dev Tools",
+        "Git & GitHub",
+        "Live Server Extension",
+        "TypeScript Playground",
+        "Chrome Angular DevTools"
+      ],
+      "bestCourses": {
+        "english": [
+          "JavaScript.info - Complete JavaScript Guide",
+          "TypeScript Handbook - Official Documentation",
+          "freeCodeCamp - JavaScript ES6+ Course",
+          "Traversy Media - Modern JavaScript Course",
+          "Net Ninja - TypeScript Tutorial"
+        ],
+        "hindi": [
+          "CodeWithHarry - JavaScript Tutorial Hindi",
+          "Thapa Technical - TypeScript Course",
+          "WsCube Tech - Modern JavaScript",
+          "Apna College - JavaScript Complete Course",
+          "Love Babbar - Frontend Development Basics"
+        ]
+      },
+      "docsAndWebsites": [
+        "MDN Web Docs - JavaScript",
+        "TypeScript Official Documentation",
+        "JavaScript.info",
+        "W3Schools JavaScript Tutorial",
+        "ES6 Features Overview"
+      ],
+      "projectIdeas": [
+        "Interactive Calculator with TypeScript",
+        "DOM Manipulation Practice Projects",
+        "ES6+ Features Implementation",
+        "TypeScript Class-based Applications",
+        "Responsive Layout with CSS Grid/Flexbox",
+        "Local Storage To-Do Application",
+        "Form Validation with JavaScript"
+      ],
+      "practicePlatforms": [
+        "CodeSandbox",
+        "StackBlitz",
+        "TypeScript Playground",
+        "Codepen",
+        "JSFiddle"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Angular Basics (Beginner Stage)",
+    "description": "Core Angular concepts including components, data binding, and basic architecture",
+    "icon": "Code",
+    "gradient": "from-red-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Angular CLI setup and project structure",
+        "Components: Templates (HTML), Styles (CSS/SCSS), Class (TS)",
+        "Data Binding: Interpolation {{}}, Property [ ], Event ( )",
+        "Two-way data binding [( )]",
+        "Directives: *ngIf, *ngFor, [ngClass], [ngStyle]",
+        "Services & Dependency Injection basics",
+        "Pipes (built-in & custom pipes)",
+        "Lifecycle Hooks (ngOnInit, ngOnDestroy, etc.)",
+        "Component communication basics",
+        "Angular project file structure understanding"
+      ],
+      "toolsToUse": [
+        "Angular CLI",
+        "Visual Studio Code",
+        "Angular Language Service",
+        "Chrome DevTools",
+        "Angular DevTools Extension",
+        "Prettier & ESLint",
+        "Angular Schematics",
+        "ng serve for development"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular Official Tutorial - Tour of Heroes",
+          "Maximilian Schwarzmüller - Angular Complete Guide",
+          "Codevolution - Angular Tutorial for Beginners",
+          "Traversy Media - Angular Crash Course",
+          "Fireship - Angular in 100 Seconds Series"
+        ],
+        "hindi": [
+          "CodeWithHarry - Angular Tutorial Hindi",
+          "Thapa Technical - Angular Complete Course",
+          "WsCube Tech - Angular Development",
+          "Apna College - Angular Basics",
+          "Techsith - Angular Hindi Tutorial"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular.dev Official Documentation",
+        "Angular CLI Documentation",
+        "Angular Component Guide",
+        "Angular Directives Reference",
+        "Angular Lifecycle Hooks Guide"
+      ],
+      "projectIdeas": [
+        "Basic To-Do App with Components",
+        "Student Information Display System",
+        "Simple Calculator with Angular",
+        "Product List with Filters",
+        "Employee Management Dashboard",
+        "Weather Display Component",
+        "News Article Viewer"
+      ],
+      "practicePlatforms": [
+        "StackBlitz",
+        "CodeSandbox",
+        "Angular DevKit",
+        "Plunker",
+        "JSBin"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Routing & Navigation",
+    "description": "Master Angular routing system for creating single-page applications with navigation",
+    "icon": "Navigation",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Router basics: RouterModule and Routes configuration",
+        "Navigation with routerLink and Router.navigate()",
+        "Route parameters and query parameters (:id)",
+        "Child routes and nested routing",
+        "Lazy loading modules and routes",
+        "Route guards: CanActivate, CanDeactivate, Resolve",
+        "Route data and static data passing",
+        "Programmatic navigation techniques",
+        "Route animations and transitions",
+        "Wildcard routes and error handling"
+      ],
+      "toolsToUse": [
+        "Angular Router",
+        "Angular CLI for route generation",
+        "Chrome DevTools for debugging",
+        "Angular DevTools Router Tab",
+        "Route Visualizer Tools",
+        "Lazy Loading Analyzer",
+        "Bundle Analyzer",
+        "Router Testing Utilities"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular University - Angular Router Course",
+          "Deborah Kurata - Angular Routing Pluralsight",
+          "Maximilian Schwarzmüller - Routing Section",
+          "Angular Official Routing Guide",
+          "John Papa - Angular Router Patterns"
+        ],
+        "hindi": [
+          "CodeWithHarry - Angular Routing Hindi",
+          "Thapa Technical - Navigation in Angular",
+          "WsCube Tech - Angular Router Tutorial",
+          "Apna College - Routing & Navigation",
+          "Technical Suneja - Angular Routing"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Router Documentation",
+        "Angular Lazy Loading Guide",
+        "Route Guards Documentation",
+        "Angular Navigation Cookbook",
+        "Router API Reference"
+      ],
+      "projectIdeas": [
+        "Multi-page Blog Application",
+        "E-commerce Product Catalog with Categories",
+        "Admin Dashboard with Protected Routes",
+        "Portfolio Website with Lazy Loading",
+        "Learning Management System Navigation",
+        "Social Media App with User Profiles",
+        "News Website with Category Routes"
+      ],
+      "practicePlatforms": [
+        "Angular Router Playground",
+        "StackBlitz Router Examples",
+        "Angular Challenges - Routing",
+        "CodeSandbox Routing Templates",
+        "Router Testing Environments"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Forms Management",
+    "description": "Master both template-driven and reactive forms with validation and dynamic form creation",
+    "icon": "FileText",
+    "gradient": "from-green-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Template-driven forms with ngModel",
+        "Reactive forms with FormControl and FormGroup",
+        "FormBuilder for complex form creation",
+        "Form validation (built-in and custom validators)",
+        "Async validators for server-side validation",
+        "Dynamic forms and form arrays",
+        "Form state management and error handling",
+        "Custom form controls and components",
+        "Form testing strategies",
+        "Accessibility in forms"
+      ],
+      "toolsToUse": [
+        "Angular Forms Module",
+        "Angular Reactive Forms",
+        "FormBuilder Service",
+        "Validators Class",
+        "Custom Validator Functions",
+        "Form Testing Utilities",
+        "Angular Material Form Controls",
+        "Form Validation Libraries"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular University - Angular Forms Course",
+          "Deborah Kurata - Angular Forms Pluralsight",
+          "Todd Motto - Angular Forms Masterclass",
+          "Angular Official Forms Guide",
+          "Kara Erickson - Angular Forms Deep Dive"
+        ],
+        "hindi": [
+          "CodeWithHarry - Angular Forms Tutorial",
+          "Thapa Technical - Forms in Angular",
+          "WsCube Tech - Form Validation Angular",
+          "Apna College - Angular Forms Hindi",
+          "Technical Suneja - Reactive Forms"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Forms Documentation",
+        "Reactive Forms Guide",
+        "Form Validation Documentation",
+        "Custom Validators Guide",
+        "Angular Forms Best Practices"
+      ],
+      "projectIdeas": [
+        "User Registration & Login System",
+        "Survey Form Builder",
+        "Dynamic Quiz Application",
+        "Contact Form with Validation",
+        "Multi-step Registration Wizard",
+        "Job Application Form System",
+        "Feedback Collection Platform",
+        "Order Form with Cart Integration"
+      ],
+      "practicePlatforms": [
+        "Angular Forms Playground",
+        "StackBlitz Form Examples",
+        "Form Validation Challenges",
+        "Reactive Forms Practice",
+        "Custom Validator Testing"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "HTTP & API Communication",
+    "description": "Master HTTP client for API communication, interceptors, and RxJS operators",
+    "icon": "Globe",
+    "gradient": "from-purple-500 to-indigo-500",
+    "content": {
+      "whatToLearn": [
+        "Angular HttpClient basics (get, post, put, delete)",
+        "HTTP interceptors for auth, logging, error handling",
+        "Observables and HTTP response handling",
+        "RxJS operators: map, switchMap, mergeMap, catchError",
+        "Error handling strategies and retry logic",
+        "HTTP headers and request configuration",
+        "File upload and download with HTTP",
+        "Async pipes for template integration",
+        "HTTP testing with HttpClientTestingModule",
+        "CORS handling and security considerations"
+      ],
+      "toolsToUse": [
+        "Angular HttpClient",
+        "HTTP Interceptors",
+        "RxJS Library",
+        "Postman for API Testing",
+        "JSON Server for Mock APIs",
+        "HttpClientTestingModule",
+        "Chrome Network Tab",
+        "Angular HTTP Error Handler"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular University - HTTP Client Course",
+          "RxJS Official Documentation Tutorials",
+          "Deborah Kurata - Angular HTTP Communication",
+          "Todd Motto - Angular HTTP Masterclass",
+          "Ben Lesh - RxJS Deep Dive"
+        ],
+        "hindi": [
+          "CodeWithHarry - HTTP Client Angular",
+          "Thapa Technical - API Integration Angular",
+          "WsCube Tech - HTTP Services Tutorial",
+          "Apna College - Angular HTTP Module",
+          "Technical Suneja - RxJS with Angular"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular HTTP Client Documentation",
+        "RxJS Official Documentation",
+        "HTTP Interceptors Guide",
+        "Angular HTTP Error Handling",
+        "RxJS Operators Reference"
+      ],
+      "projectIdeas": [
+        "Weather App with API Integration",
+        "News Reader Application",
+        "REST API Consumer Dashboard",
+        "Social Media Feed Reader",
+        "Product Catalog with Search",
+        "Real-time Chat Application",
+        "File Upload Service Integration",
+        "E-commerce API Integration"
+      ],
+      "practicePlatforms": [
+        "JSONPlaceholder API",
+        "HTTPBin for Testing",
+        "RxJS Playground",
+        "Angular HTTP Examples",
+        "API Integration Challenges"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "RxJS & State Management",
+    "description": "Master reactive programming with RxJS and implement state management solutions",
+    "icon": "Zap",
+    "gradient": "from-yellow-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "RxJS Observables, Subjects, BehaviorSubjects",
+        "Common operators: map, filter, debounceTime, switchMap",
+        "Advanced operators: mergeMap, concatMap, combineLatest",
+        "Error handling with RxJS (catchError, retry)",
+        "Local component state management",
+        "Service-based state management patterns",
+        "NgRx Store, Actions, Reducers, Effects",
+        "NgRx Entity for normalized state",
+        "State management best practices",
+        "Testing RxJS and NgRx code"
+      ],
+      "toolsToUse": [
+        "RxJS Library",
+        "NgRx Store & Effects",
+        "NgRx DevTools Extension",
+        "Angular Services for State",
+        "BehaviorSubject for State",
+        "NgRx Entity",
+        "Redux DevTools",
+        "RxJS Testing Utilities"
+      ],
+      "bestCourses": {
+        "english": [
+          "NgRx in Action - Oren Farhi",
+          "Ultimate Angular - NgRx Store + Effects",
+          "RxJS Deep Dive - Ben Lesh",
+          "Angular University - RxJS Course",
+          "Todd Motto - NgRx Masterclass"
+        ],
+        "hindi": [
+          "CodeWithHarry - RxJS Tutorial Hindi",
+          "Thapa Technical - State Management Angular",
+          "WsCube Tech - NgRx Tutorial",
+          "Apna College - RxJS Observables",
+          "Technical Suneja - NgRx Implementation"
+        ]
+      },
+      "docsAndWebsites": [
+        "RxJS Official Documentation",
+        "NgRx Documentation",
+        "Angular State Management Guide",
+        "RxJS Operators Decision Tree",
+        "NgRx Best Practices Guide"
+      ],
+      "projectIdeas": [
+        "Shopping Cart with NgRx Store",
+        "Task Management with State",
+        "Real-time Dashboard with RxJS",
+        "Multi-user Chat Application",
+        "Inventory Management System",
+        "Blog Platform with NgRx",
+        "Stock Market Tracker",
+        "Collaborative Whiteboard App"
+      ],
+      "practicePlatforms": [
+        "RxJS Playground",
+        "NgRx Examples Repository",
+        "State Management Challenges",
+        "RxJS Marble Testing",
+        "NgRx Workshop Exercises"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Advanced Angular Concepts",
+    "description": "Master advanced Angular features including change detection, SSR, and modern Angular patterns",
+    "icon": "Settings",
+    "gradient": "from-indigo-500 to-purple-600",
+    "content": {
+      "whatToLearn": [
+        "Change Detection strategies (Default vs OnPush)",
+        "Angular Modules vs Standalone Components (Angular 15+)",
+        "Content Projection with <ng-content>",
+        "ViewChild, ContentChild, and template references",
+        "Dynamic component rendering and ComponentFactory",
+        "Angular Universal for Server-Side Rendering (SSR)",
+        "Angular Signals (new reactivity model Angular 16+)",
+        "Custom directives and attribute directives",
+        "Angular Elements for custom elements",
+        "Micro-frontend architecture patterns"
+      ],
+      "toolsToUse": [
+        "Angular Universal",
+        "Angular Elements",
+        "Angular CDK",
+        "Standalone Components",
+        "Angular Signals",
+        "Component Dev Kit",
+        "Angular Builder API",
+        "SSR Development Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular University - Advanced Angular",
+          "Maximilian Schwarzmüller - Advanced Concepts",
+          "Deborah Kurata - Angular Architecture",
+          "John Papa - Angular Architecture Patterns",
+          "Minko Gechev - Angular Performance"
+        ],
+        "hindi": [
+          "CodeWithHarry - Advanced Angular Hindi",
+          "Thapa Technical - Angular Advanced Topics",
+          "WsCube Tech - Angular Architecture",
+          "Technical Suneja - Angular Performance",
+          "Apna College - Advanced Angular Concepts"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Architecture Guide",
+        "Angular Universal Documentation",
+        "Angular Signals Documentation",
+        "Change Detection Strategy Guide",
+        "Angular Elements Documentation"
+      ],
+      "projectIdeas": [
+        "SSR E-commerce Platform",
+        "Micro-frontend Dashboard",
+        "Custom Element Library",
+        "Performance-Optimized Blog",
+        "Real-time Collaboration Tool",
+        "Angular Element Widgets",
+        "Enterprise Admin Panel",
+        "Multi-tenant SaaS Application"
+      ],
+      "practicePlatforms": [
+        "Angular Advanced Examples",
+        "SSR Implementation Challenges",
+        "Performance Optimization Labs",
+        "Micro-frontend Workshops",
+        "Custom Element Builders"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "UI Frameworks & Styling",
+    "description": "Master Angular Material, CSS frameworks, and advanced styling techniques",
+    "icon": "Palette",
+    "gradient": "from-pink-500 to-rose-500",
+    "content": {
+      "whatToLearn": [
+        "SCSS advanced features and BEM methodology",
+        "Angular Material component library",
+        "Tailwind CSS integration with Angular",
+        "PrimeNG and NG-Zorro component libraries",
+        "Custom theming and design systems",
+        "Responsive design with CSS Grid/Flexbox",
+        "CSS animations and Angular Animations API",
+        "Component styling strategies",
+        "CSS-in-JS solutions for Angular",
+        "Accessibility (a11y) in UI components"
+      ],
+      "toolsToUse": [
+        "Angular Material",
+        "Tailwind CSS",
+        "PrimeNG Components",
+        "NG-Zorro Ant Design",
+        "SCSS/Sass Compiler",
+        "Angular Flex Layout",
+        "CDK Layout Module",
+        "Angular Animations API"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular Material Official Documentation",
+          "Maximilian Schwarzmüller - Angular Material",
+          "Traversy Media - Tailwind with Angular",
+          "Angular University - Styling Course",
+          "Net Ninja - SCSS Tutorial"
+        ],
+        "hindi": [
+          "CodeWithHarry - Angular Material Hindi",
+          "Thapa Technical - CSS Frameworks Angular",
+          "WsCube Tech - UI Design Angular",
+          "Apna College - Angular Styling",
+          "Technical Suneja - Material Design"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Material Documentation",
+        "Tailwind CSS Documentation",
+        "PrimeNG Component Library",
+        "Angular Animations Guide",
+        "CSS Grid Complete Guide"
+      ],
+      "projectIdeas": [
+        "Dashboard UI with Angular Material",
+        "E-commerce Frontend with Tailwind",
+        "Admin Panel with PrimeNG",
+        "Portfolio Website with Custom Animations",
+        "Mobile-first Responsive App",
+        "Data Visualization Dashboard",
+        "Social Media UI Clone",
+        "Design System Implementation"
+      ],
+      "practicePlatforms": [
+        "Angular Material Examples",
+        "Tailwind Play",
+        "PrimeNG Showcase",
+        "CSS Animation Challenges",
+        "Responsive Design Testing"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Testing & Debugging",
+    "description": "Master comprehensive testing strategies and debugging techniques for Angular applications",
+    "icon": "TestTube",
+    "gradient": "from-teal-500 to-green-600",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with Jasmine and Karma",
+        "Component testing with TestBed and ComponentFixture",
+        "Service testing and dependency injection mocking",
+        "HTTP testing with HttpClientTestingModule",
+        "End-to-End testing with Cypress/Playwright",
+        "Test-driven development (TDD) practices",
+        "Code coverage analysis and reporting",
+        "Angular DevTools for debugging",
+        "Performance testing and profiling",
+        "Accessibility testing automation"
+      ],
+      "toolsToUse": [
+        "Jasmine Testing Framework",
+        "Karma Test Runner",
+        "Angular Testing Utilities",
+        "Cypress E2E Testing",
+        "Playwright Testing",
+        "Angular DevTools",
+        "Chrome DevTools Profiler",
+        "Istanbul Code Coverage"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular University - Angular Testing Course",
+          "Testing Angular - Joe Eames Pluralsight",
+          "Cypress Real World Testing - Cypress.io",
+          "Angular Testing Masterclass - Ultimate Angular",
+          "Jest Testing Framework - Kent C. Dodds"
+        ],
+        "hindi": [
+          "CodeWithHarry - Angular Testing Hindi",
+          "Thapa Technical - Unit Testing Angular",
+          "WsCube Tech - Testing Strategies",
+          "Technical Suneja - E2E Testing",
+          "Apna College - Angular Testing Basics"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Testing Documentation",
+        "Jasmine Documentation",
+        "Cypress Documentation",
+        "Angular Testing Best Practices",
+        "Karma Configuration Guide"
+      ],
+      "projectIdeas": [
+        "Fully Tested Todo Application",
+        "E-commerce App with 90%+ Coverage",
+        "Dashboard with Comprehensive Tests",
+        "Form Validation Testing Suite",
+        "HTTP Service Testing Implementation",
+        "Component Integration Test Suite",
+        "E2E User Journey Testing",
+        "Performance Testing Dashboard"
+      ],
+      "practicePlatforms": [
+        "Angular Testing Playground",
+        "Cypress Testing Examples",
+        "Jasmine Testing Sandbox",
+        "Testing Challenges Platform",
+        "Code Coverage Analyzers"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Performance & Optimization",
+    "description": "Master performance optimization techniques, PWA features, and production-ready deployments",
+    "icon": "Zap",
+    "gradient": "from-orange-500 to-red-600",
+    "content": {
+      "whatToLearn": [
+        "Lazy loading modules and preloading strategies",
+        "Change detection optimization techniques",
+        "Pure pipes and memoization strategies",
+        "Bundle optimization with Angular CLI",
+        "Tree-shaking and code splitting",
+        "Service Workers and PWA implementation",
+        "Caching strategies and offline functionality",
+        "Performance monitoring and analytics",
+        "Memory leak prevention and detection",
+        "Core Web Vitals optimization"
+      ],
+      "toolsToUse": [
+        "Angular CLI Build Optimizer",
+        "Webpack Bundle Analyzer",
+        "Angular Service Worker",
+        "Lighthouse Performance Tool",
+        "Chrome DevTools Performance",
+        "Angular DevTools Profiler",
+        "Web Vitals Libraries",
+        "PWA Builder Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular Performance Optimization - Minko Gechev",
+          "PWA Development - Google Developers",
+          "Web Performance Optimization - Udacity",
+          "Angular University - Performance Course",
+          "Advanced Angular Performance - Todd Motto"
+        ],
+        "hindi": [
+          "CodeWithHarry - Angular Performance Hindi",
+          "Thapa Technical - PWA Development",
+          "WsCube Tech - Optimization Techniques",
+          "Technical Suneja - Performance Tuning",
+          "Apna College - Angular Production Build"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Performance Guide",
+        "PWA Documentation",
+        "Service Worker Documentation",
+        "Web.dev Performance Guides",
+        "Angular Build Optimization"
+      ],
+      "projectIdeas": [
+        "PWA News Application",
+        "Offline-first Task Manager",
+        "Optimized E-commerce Platform",
+        "Real-time Performance Dashboard",
+        "Mobile-optimized Social App",
+        "High-performance Data Grid",
+        "Cached Content Management System",
+        "Performance Monitoring Tool"
+      ],
+      "practicePlatforms": [
+        "PWA Builder",
+        "Lighthouse CI",
+        "Web Vitals Testing",
+        "Performance Budget Tools",
+        "Bundle Analysis Tools"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "title": "DevOps & Deployment",
+    "description": "Master deployment strategies, CI/CD pipelines, and production environment management",
+    "icon": "Cloud",
+    "gradient": "from-blue-600 to-indigo-600",
+    "content": {
+      "whatToLearn": [
+        "Environment configuration management",
+        "Angular production build optimization",
+        "CI/CD pipelines with GitHub Actions/GitLab CI",
+        "Docker containerization for Angular apps",
+        "Deployment to Firebase Hosting",
+        "Netlify and Vercel deployment strategies",
+        "AWS Amplify and S3 + CloudFront deployment",
+        "Kubernetes basics for Angular apps",
+        "Monitoring and logging in production",
+        "Security considerations for deployments"
+      ],
+      "toolsToUse": [
+        "Angular CLI",
+        "Docker & Docker Compose",
+        "GitHub Actions",
+        "Firebase CLI",
+        "Netlify CLI",
+        "AWS CLI",
+        "Kubernetes kubectl",
+        "Monitoring Tools (Sentry, LogRocket)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Docker for Developers - Traversy Media",
+          "Firebase Hosting - Firebase Documentation",
+          "AWS for Frontend Developers - freeCodeCamp",
+          "DevOps for Frontend Developers - Academind",
+          "CI/CD Pipeline Tutorial - GitHub Learning Lab"
+        ],
+        "hindi": [
+          "CodeWithHarry - Docker Tutorial Hindi",
+          "Thapa Technical - Firebase Hosting",
+          "WsCube Tech - DevOps Basics",
+          "Technical Suneja - AWS Deployment",
+          "Apna College - CI/CD Pipeline"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Deployment Documentation",
+        "Firebase Hosting Guide",
+        "Docker Documentation",
+        "AWS Amplify Documentation",
+        "GitHub Actions Documentation"
+      ],
+      "projectIdeas": [
+        "Dockerized Angular Application",
+        "Multi-environment Deployment Setup",
+        "CI/CD Pipeline Implementation",
+        "Automated Testing & Deployment",
+        "Monitoring Dashboard Setup",
+        "Load Balanced Angular App",
+        "Microservice Frontend Deployment",
+        "Blue-Green Deployment Strategy"
+      ],
+      "practicePlatforms": [
+        "Docker Hub",
+        "Firebase Console",
+        "AWS Free Tier",
+        "GitHub Actions",
+        "Netlify",
+        "Vercel",
+        "Railway"
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "title": "Industry-Level Practices & Specialization",
+    "description": "Master enterprise-level development practices and choose your specialization path",
+    "icon": "Briefcase",
+    "gradient": "from-purple-600 to-pink-600",
+    "content": {
+      "whatToLearn": [
+        "Component-driven development architecture",
+        "Scalable folder structure and organization",
+        "Monorepo management with Nx framework",
+        "Code quality tools: ESLint, Prettier, Husky",
+        "API integration best practices and DTOs",
+        "Role-based access control and route guards",
+        "Design patterns: Smart vs Dumb components",
+        "Micro-frontend architecture patterns",
+        "Enterprise-scale state management",
+        "Technical leadership and code review practices"
+      ],
+      "toolsToUse": [
+        "Nx Monorepo Tools",
+        "ESLint & Prettier",
+        "Husky Git Hooks",
+        "Angular Schematics",
+        "Storybook for Component Development",
+        "Compodoc Documentation",
+        "SonarQube Code Quality",
+        "Angular Elements"
+      ],
+      "bestCourses": {
+        "english": [
+          "Angular Up & Running - Shyam Seshadri",
+          "Enterprise Angular Applications - Nrwl",
+          "Angular Architecture Patterns - John Papa",
+          "Micro-frontends with Angular - Manfred Steyer",
+          "Angular for Enterprise - Doguhan Uluca"
+        ],
+        "hindi": [
+          "CodeWithHarry - Enterprise Angular",
+          "Thapa Technical - Angular Architecture",
+          "WsCube Tech - Industry Best Practices",
+          "Love Babbar - System Design Frontend",
+          "Technical Suneja - Angular Enterprise"
+        ]
+      },
+      "docsAndWebsites": [
+        "Angular Style Guide",
+        "Nx Documentation",
+        "Angular Enterprise Patterns",
+        "Micro-frontend Architecture Guide",
+        "Angular Best Practices Checklist"
+      ],
+      "projectIdeas": [
+        "Enterprise Admin Dashboard",
+        "Multi-tenant SaaS Application",
+        "Micro-frontend E-commerce Platform",
+        "Real-time Collaboration Suite",
+        "Learning Management System",
+        "Healthcare Management Portal",
+        "Financial Trading Dashboard",
+        "IoT Device Management Console",
+        "Video Streaming Platform Frontend",
+        "Social Media Analytics Dashboard"
+      ],
+      "practicePlatforms": [
+        "GitHub Enterprise Projects",
+        "Open Source Contributions",
+        "Angular Challenges",
+        "Frontend Mentor Pro",
+        "DevChallenges.io",
+        "Hackathons",
+        "Technical Interview Platforms",
+        "Industry Certifications"
+      ]
+    }
+  }
+]

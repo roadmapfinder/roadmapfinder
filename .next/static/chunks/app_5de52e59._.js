@@ -1321,7 +1321,7 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "jsx-6bbc618fe535106",
-                                                            children: "Browse Courses"
+                                                            children: "Youtube Courses"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
                                                             lineNumber: 107,
@@ -1665,7 +1665,7 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
                                         lineNumber: 211,
                                         columnNumber: 13
                                     }, this),
-                                    "Browse Courses"
+                                    "Youtube Courses"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/HeroSection.jsx",
@@ -1776,7 +1776,7 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
                                 disabled: !handleProtectedAction,
                                 "aria-label": "Browse available courses",
                                 className: "jsx-6bbc618fe535106" + " " + "bg-white text-blue-600 text-center py-4 px-8 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
-                                children: "Browse Courses"
+                                children: "Youtube Courses"
                             }, void 0, false, {
                                 fileName: "[project]/app/Home/HeroSection.jsx",
                                 lineNumber: 258,

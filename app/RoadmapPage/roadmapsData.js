@@ -169,6 +169,15 @@ export const roadmapsData = [
     description: "Server-side development and APIs"
   },
   {
+    id: "angular",
+    title: "Angular js",
+    icon: <Triangle className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Angular",
+    bgColor: "from-red-600 to-red-700",
+    category: "featured",
+    description: "Single page application development"
+  },
+  {
     id: "javascript",
     title: "JavaScript",
     icon: <Code className="w-5 h-5 text-white" />,
@@ -387,11 +396,20 @@ export const roadmapsData = [
   {
     id: "Linux",
     title: "linux",
-    icon: <Terminal className="w-5 h-5 text-white" />,
+    icon: <GitBranch className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Linux",
     bgColor: "from-black to-gray-900",
     category: "trending",
     description: "Linux command line OS"
+  },
+  {
+    id: "OS",
+    title: "Operating System",
+    icon: <Terminal className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/OS",
+    bgColor: "from-gray-800 to-gray-900",
+    category: "trending",
+    description: "Operating system fundamentals"
   },
   {
     id: "devops",

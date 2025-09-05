@@ -38,10 +38,7 @@ export default function Home() {
 
   // Handle YouTube redirect
   const handleYouTubeRedirect = () => {
-    window.open(
-      "https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k",
-      "_blank",
-    );
+    window.open("https://youtu.be/EH3vGeqeIAo?si=3H1-0mhBuQwKhP5k", "_blank");
   };
 
   // Handle AI Guide redirect
@@ -147,7 +144,7 @@ export default function Home() {
       >
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center sm:text-left">
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-          Backend Engineer
+            Backend Engineer
           </span>
           <span
             className={`ml-2 ${darkMode ? "text-gray-200" : "text-gray-800"}`}
@@ -174,9 +171,15 @@ export default function Home() {
                 strokeWidth={2}
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
-              <span className="text-sm font-medium hidden sm:inline">Textual</span>
+              <span className="text-sm font-medium hidden sm:inline">
+                Textual
+              </span>
             </button>
 
             <button
@@ -196,12 +199,17 @@ export default function Home() {
                 viewBox="0 0 24 24"
               >
                 <circle cx="12" cy="12" r="3" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.458 12C3.732 7.94 7.523 5 12 5s8.268 2.94 9.542 7c-1.274 4.06-5.064 7-9.542 7s-8.268-2.94-9.542-7z"
+                />
               </svg>
-              <span className="text-sm font-medium hidden sm:inline">Visual</span>
+              <span className="text-sm font-medium hidden sm:inline">
+                Visual
+              </span>
             </button>
           </div>
-
 
           {/* Download Button */}
           <button
@@ -301,12 +309,11 @@ export default function Home() {
       <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16">
-         
           <p
             className={`text-lg sm:text-xl md:text-2xl font-medium leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-4xl mx-auto px-4`}
           >
-            A comprehensive guide to becoming a Backend Engineer,
-            step-by-step learning path, courses, tools, and project ideas.
+            A comprehensive guide to becoming a Backend Engineer, step-by-step
+            learning path, courses, tools, and project ideas.
           </p>
           <div className="mt-6 sm:mt-8 flex justify-center">
             <div
@@ -319,10 +326,7 @@ export default function Home() {
         {isVisualMode ? (
           /* Visual Roadmap */
           <div className="transition-all duration-500 ease-in-out">
-            <VisualRoadmap 
-              roadmapData={roadmapData} 
-              darkMode={darkMode} 
-            />
+            <VisualRoadmap roadmapData={roadmapData} darkMode={darkMode} />
           </div>
         ) : (
           /* Textual Roadmap */
@@ -475,7 +479,9 @@ export default function Home() {
                                     <span className="text-blue-500 mr-2 sm:mr-3 mt-1 flex-shrink-0">
                                       •
                                     </span>
-                                    <span className="font-medium">{course}</span>
+                                    <span className="font-medium">
+                                      {course}
+                                    </span>
                                   </li>
                                 ),
                               ) || []}
@@ -495,17 +501,19 @@ export default function Home() {
                           Docs & Websites
                         </h4>
                         <ul className="space-y-2 sm:space-y-3">
-                          {section.content?.docsAndWebsites?.map((doc, index) => (
-                            <li
-                              key={index}
-                              className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
-                            >
-                              <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
-                                •
-                              </span>
-                              <span className="font-medium">{doc}</span>
-                            </li>
-                          )) || []}
+                          {section.content?.docsAndWebsites?.map(
+                            (doc, index) => (
+                              <li
+                                key={index}
+                                className={`${darkMode ? "text-gray-200" : "text-gray-700"} flex items-start text-sm sm:text-base leading-relaxed`}
+                              >
+                                <span className="text-red-500 mr-2 sm:mr-3 mt-1 text-base sm:text-lg flex-shrink-0">
+                                  •
+                                </span>
+                                <span className="font-medium">{doc}</span>
+                              </li>
+                            ),
+                          ) || []}
                         </ul>
                       </div>
                     </div>
@@ -519,23 +527,25 @@ export default function Home() {
                         Project Ideas
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        {section.content?.projectIdeas?.map((project, index) => (
-                          <div
-                            key={index}
-                            className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
-                          >
-                            <div className="flex items-start">
-                              <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
-                                💡
-                              </span>
-                              <span
-                                className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
-                              >
-                                {project}
-                              </span>
+                        {section.content?.projectIdeas?.map(
+                          (project, index) => (
+                            <div
+                              key={index}
+                              className={`p-4 sm:p-6 rounded-lg sm:rounded-xl ${darkMode ? "bg-purple-900/20 border-purple-500/20" : "bg-purple-50/80 border-purple-200/50"} border transition-all duration-200 hover:shadow-lg hover:scale-105`}
+                            >
+                              <div className="flex items-start">
+                                <span className="text-purple-500 mr-3 sm:mr-4 mt-1 text-lg sm:text-xl flex-shrink-0">
+                                  💡
+                                </span>
+                                <span
+                                  className={`${darkMode ? "text-gray-200" : "text-gray-700"} font-medium text-sm sm:text-base leading-relaxed`}
+                                >
+                                  {project}
+                                </span>
+                              </div>
                             </div>
-                          </div>
-                        )) || []}
+                          ),
+                        ) || []}
                       </div>
                     </div>
                   </div>
