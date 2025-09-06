@@ -85,106 +85,245 @@ export async function POST(request) {
  */
 async function generateProjectWithGemini(projectIdea) {
   const prompt = `
-You are a software architect. Analyze this project idea and generate a comprehensive JSON guide:
+You are an elite software architect and project consultant with 15+ years of experience. Analyze this project idea and create a premium, professional-grade project guide that would rival those from top tech consulting firms:
 
-"${projectIdea}"
+PROJECT IDEA: "${projectIdea}"
 
-Create a structured breakdown with:
-- Mind map of project components
-- Step-by-step roadmap with commands
-- Modern tech stack recommendations
-- Quick start guide
-- Essential documentation links
+Create an enterprise-level breakdown that feels like a $10,000 consulting package, tailored for beginners, intermediate, and advanced developers. Your output should be so comprehensive and actionable that developers feel confident building this project from scratch to production deployment.
 
-**Requirements:**
-- Use current 2024-2025 technologies
-- Include practical terminal commands
-- Add estimated durations for each phase
-- Provide code snippets for setup
-- Focus on actionable steps
+PREMIUM REQUIREMENTS:
+🏗️ ARCHITECTURE: Design scalable, production-ready architecture
+🔄 SKILL PROGRESSION: Structure roadmap for beginner → intermediate → advanced journey
+⚡ MODERN STACK: Use cutting-edge 2024-2025 technologies and best practices
+🛠️ PRACTICAL FOCUS: Every step must be immediately actionable with real commands
+🎯 PRODUCTION-READY: Include deployment, monitoring, security, and optimization
+📚 LEARNING PATHS: Multiple approaches based on developer experience level
+🔍 DETAILED GUIDANCE: Include file structures, code snippets, and troubleshooting
 
-Return ONLY valid JSON with this structure:
+ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON:
 
 {
+  "projectSummary": {
+    "name": "Professional Project Name",
+    "description": "Comprehensive project description with value proposition",
+    "complexity": "Beginner|Intermediate|Advanced",
+    "estimatedTime": "2-4 weeks",
+    "marketValue": "Commercial viability and use cases",
+    "skillsLearned": ["List of skills developers will master"]
+  },
   "mindMap": {
-    "name": "Project Name",
+    "name": "Project Architecture",
     "children": [
       {
-        "name": "Major Component 1",
+        "name": "Frontend Layer",
         "children": [
-          { "name": "Sub-component 1.1" },
-          { "name": "Sub-component 1.2" }
+          { "name": "UI Components", "details": "Reusable component library" },
+          { "name": "State Management", "details": "Global state handling" },
+          { "name": "Routing System", "details": "Navigation and page structure" }
+        ]
+      },
+      {
+        "name": "Backend Layer",
+        "children": [
+          { "name": "API Routes", "details": "RESTful endpoints" },
+          { "name": "Authentication", "details": "User management system" },
+          { "name": "Database Layer", "details": "Data persistence" }
+        ]
+      },
+      {
+        "name": "DevOps & Deployment",
+        "children": [
+          { "name": "CI/CD Pipeline", "details": "Automated deployment" },
+          { "name": "Monitoring", "details": "Performance tracking" }
         ]
       }
     ]
   },
+  "skillLevelPaths": {
+    "beginner": {
+      "focus": "Core functionality with guided setup",
+      "timeCommitment": "10-15 hours/week for 3-4 weeks",
+      "learningOutcome": "Build functional MVP with deployment",
+      "prerequisites": ["Basic HTML/CSS", "JavaScript fundamentals"]
+    },
+    "intermediate": {
+      "focus": "Advanced features, optimization, and testing",
+      "timeCommitment": "15-20 hours/week for 4-5 weeks", 
+      "learningOutcome": "Production-ready app with advanced patterns",
+      "prerequisites": ["React experience", "API knowledge", "Git proficiency"]
+    },
+    "advanced": {
+      "focus": "Scalable architecture, microservices, and enterprise patterns",
+      "timeCommitment": "20+ hours/week for 5-6 weeks",
+      "learningOutcome": "Enterprise-grade system with full DevOps pipeline",
+      "prerequisites": ["Full-stack experience", "Database design", "Cloud platforms"]
+    }
+  },
   "roadmap": [
     {
-      "phase": "Phase 1: Project Setup & Environment",
-      "description": "Set up the development environment and project structure",
+      "phase": "Phase 1: Foundation & Setup",
+      "description": "Environment setup and basic project structure",
       "duration": "2-4 hours",
       "difficulty": "Beginner",
-      "prerequisites": ["Node.js v18+", "Git", "VS Code"],
+      "skillLevel": "All levels",
+      "prerequisites": ["Node.js v18+", "Git", "Code editor"],
+      "learningObjectives": ["Project initialization", "Development environment", "Version control setup"],
       "steps": [
         {
-          "title": "Initialize Project",
-          "description": "Create project directory and initialize package.json",
-          "type": "terminal",
+          "title": "Environment Preparation",
+          "description": "Set up development environment with all necessary tools",
           "commands": [
-            "mkdir my-project && cd my-project",
-            "npm init -y",
-            "git init"
-          ]
+            "node --version # Verify Node.js 18+",
+            "npm --version # Verify npm",
+            "git --version # Verify Git"
+          ],
+          "codeSnippet": {
+            "filename": ".nvmrc",
+            "language": "text",
+            "code": "18.17.0"
+          }
         },
         {
-          "title": "Install Dependencies",
-          "description": "Install core packages and development tools",
-          "type": "terminal",
+          "title": "Project Initialization",
+          "description": "Create project structure and initialize configuration",
           "commands": [
-            "npm install next react react-dom",
-            "npm install -D tailwindcss postcss autoprefixer"
+            "npx create-next-app@latest my-project --typescript --tailwind --eslint --app",
+            "cd my-project",
+            "git init",
+            "git add .",
+            "git commit -m \"Initial project setup\""
+          ],
+          "fileStructure": [
+            "my-project/",
+            "├── app/",
+            "├── public/",
+            "├── package.json",
+            "└── README.md"
           ]
         }
       ],
       "troubleshooting": [
-        "If Node.js version errors occur, use nvm to switch versions"
+        {
+          "issue": "Node.js version conflicts",
+          "solution": "Use nvm: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
+        }
       ],
       "validation": [
-        "Project starts without errors",
-        "localhost:3000 loads successfully"
-      ]
+        "npm run dev starts without errors",
+        "localhost:3000 shows Next.js welcome page",
+        "ESLint runs without issues"
+      ],
+      "nextSteps": ["Proceed to Phase 2 for core development"]
     }
   ],
   "techStack": {
-    "frontend": ["React", "Next.js", "Tailwind CSS"],
-    "backend": ["Node.js", "Express"],
-    "database": ["PostgreSQL"],
-    "devops": ["Docker", "GitHub Actions"],
-    "deployment": ["Vercel", "Railway"]
+    "frontend": {
+      "primary": ["Next.js 14", "React 18", "TypeScript"],
+      "styling": ["Tailwind CSS", "Framer Motion", "Radix UI"],
+      "state": ["Zustand", "TanStack Query"],
+      "forms": ["React Hook Form", "Zod validation"]
+    },
+    "backend": {
+      "runtime": ["Node.js", "Edge Runtime"],
+      "framework": ["Next.js API Routes", "tRPC"],
+      "database": ["Prisma ORM", "PostgreSQL", "Redis"],
+      "auth": ["NextAuth.js", "JWT tokens"]
+    },
+    "devops": {
+      "deployment": ["Vercel", "Railway", "Docker"],
+      "monitoring": ["Vercel Analytics", "Sentry"],
+      "testing": ["Jest", "Playwright", "Vitest"],
+      "cicd": ["GitHub Actions", "Husky hooks"]
+    },
+    "tools": ["VS Code", "Postman", "Figma", "Git", "Docker Desktop"]
   },
   "packages": {
-    "npm": ["next", "react", "axios", "tailwindcss"],
-    "python": [],
-    "tools": ["VS Code", "Postman", "Figma", "Git"]
+    "dependencies": [
+      "next@14.x",
+      "react@18.x",
+      "typescript",
+      "@prisma/client",
+      "next-auth",
+      "tailwindcss",
+      "framer-motion"
+    ],
+    "devDependencies": [
+      "@types/node",
+      "@types/react",
+      "eslint",
+      "prettier",
+      "husky",
+      "lint-staged"
+    ]
+  },
+  "quickStart": {
+    "description": "Get your development environment running in under 5 minutes",
+    "estimatedTime": "3-5 minutes",
+    "commands": [
+      "git clone <your-repo-url>",
+      "cd project-name",
+      "npm install",
+      "cp .env.example .env.local",
+      "npm run dev"
+    ],
+    "environmentVariables": [
+      "DATABASE_URL=postgresql://...",
+      "NEXTAUTH_SECRET=your-secret-key",
+      "NEXTAUTH_URL=http://localhost:3000"
+    ],
+    "verificationSteps": [
+      "Open http://localhost:3000",
+      "Check console for no errors",
+      "Verify hot reload works by editing a file"
+    ]
   },
   "documentation": [
     {
-      "title": "Next.js Documentation",
-      "url": "https://nextjs.org/docs",
-      "description": "Official Next.js guide and API docs"
+      "category": "Framework",
+      "resources": [
+        {
+          "title": "Next.js 14 Documentation",
+          "url": "https://nextjs.org/docs",
+          "description": "Complete Next.js guide with App Router"
+        },
+        {
+          "title": "React 18 Documentation", 
+          "url": "https://react.dev",
+          "description": "Latest React features and best practices"
+        }
+      ]
+    },
+    {
+      "category": "Database & Backend",
+      "resources": [
+        {
+          "title": "Prisma Documentation",
+          "url": "https://prisma.io/docs",
+          "description": "Type-safe database client and ORM"
+        }
+      ]
     }
   ],
-  "quickStart": {
-    "description": "Get started with this project in under 5 minutes",
-    "commands": [
-      "git clone <repository-url>",
-      "npm install",
-      "npm run dev"
-    ],
-    "notes": [
-      "Make sure to update environment variables",
-      "Visit http://localhost:3000 to see your project"
+  "deploymentGuide": {
+    "platforms": [
+      {
+        "name": "Vercel",
+        "difficulty": "Beginner",
+        "steps": [
+          "Connect GitHub repository",
+          "Configure environment variables",
+          "Deploy with one click"
+        ],
+        "pros": ["Zero configuration", "Automatic HTTPS", "Global CDN"],
+        "bestFor": "Frontend-heavy apps with API routes"
+      }
     ]
+  },
+  "advancedFeatures": {
+    "performance": ["Code splitting", "Image optimization", "Caching strategies"],
+    "security": ["CSRF protection", "Rate limiting", "Input validation"],
+    "scaling": ["Database indexing", "Redis caching", "Load balancing"],
+    "monitoring": ["Error tracking", "Performance metrics", "User analytics"]
   }
 }`;
 

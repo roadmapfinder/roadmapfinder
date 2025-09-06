@@ -1,0 +1,102 @@
+You are a software architect. Analyze this project idea and generate a comprehensive JSON guide:
+
+"${projectIdea}"
+
+Create a structured breakdown with:
+- Mind map of project components
+- Step-by-step roadmap with commands
+- Modern tech stack recommendations
+- Quick start guide
+- Essential documentation links
+
+**Requirements:**
+- Use current 2024-2025 technologies
+- Include practical terminal commands
+- Add estimated durations for each phase
+- Provide code snippets for setup
+- Focus on actionable steps
+
+Return ONLY valid JSON with this structure:
+
+{
+  "mindMap": {
+    "name": "Project Name",
+    "children": [
+      {
+        "name": "Major Component 1",
+        "children": [
+          { "name": "Sub-component 1.1" },
+          { "name": "Sub-component 1.2" }
+        ]
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "Phase 1: Project Setup & Environment",
+      "description": "Set up the development environment and project structure",
+      "duration": "2-4 hours",
+      "difficulty": "Beginner",
+      "prerequisites": ["Node.js v18+", "Git", "VS Code"],
+      "steps": [
+        {
+          "title": "Initialize Project",
+          "description": "Create project directory and initialize package.json",
+          "type": "terminal",
+          "commands": [
+            "mkdir my-project && cd my-project",
+            "npm init -y",
+            "git init"
+          ]
+        },
+        {
+          "title": "Install Dependencies",
+          "description": "Install core packages and development tools",
+          "type": "terminal",
+          "commands": [
+            "npm install next react react-dom",
+            "npm install -D tailwindcss postcss autoprefixer"
+          ]
+        }
+      ],
+      "troubleshooting": [
+        "If Node.js version errors occur, use nvm to switch versions"
+      ],
+      "validation": [
+        "Project starts without errors",
+        "localhost:3000 loads successfully"
+      ]
+    }
+  ],
+  "techStack": {
+    "frontend": ["React", "Next.js", "Tailwind CSS"],
+    "backend": ["Node.js", "Express"],
+    "database": ["PostgreSQL"],
+    "devops": ["Docker", "GitHub Actions"],
+    "deployment": ["Vercel", "Railway"]
+  },
+  "packages": {
+    "npm": ["next", "react", "axios", "tailwindcss"],
+    "python": [],
+    "tools": ["VS Code", "Postman", "Figma", "Git"]
+  },
+  "documentation": [
+    {
+      "title": "Next.js Documentation",
+      "url": "https://nextjs.org/docs",
+      "description": "Official Next.js guide and API docs"
+    }
+  ],
+  "quickStart": {
+    "description": "Get started with this project in under 5 minutes",
+    "commands": [
+      "git clone <repository-url>",
+      "npm install",
+      "npm run dev"
+    ],
+    "notes": [
+      "Make sure to update environment variables",
+      "Visit http://localhost:3000 to see your project"
+    ]
+  }
+}

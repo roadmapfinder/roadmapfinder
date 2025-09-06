@@ -83,15 +83,31 @@ function calculateRelevanceScore(video, searchQuery) {
     if (channel.includes(term)) score += 0.3;
   });
 
-  // Bonus for educational channels and tutorial keywords
-  const educationalKeywords = ['tutorial', 'course', 'learn', 'guide', 'how to', 'coding', 'programming'];
-  const educationalChannels = ['freecodecamp', 'traversy', 'net ninja', 'programming with mosh', 'academind', 'codevolution', 'web dev simplified'];
+  // **ENHANCED: Bonus for educational channels and tutorial keywords (Hindi + English)**
+  const educationalKeywords = ['tutorial', 'course', 'learn', 'guide', 'how to', 'coding', 'programming', 'complete course', 'crash course', 'full stack', 'project'];
+  
+  // **Premium Educational Channels - English**
+  const englishChannels = [
+    'freecodecamp', 'net ninja', 'traversy media', 'programming with mosh', 'academind', 
+    'codevolution', 'web dev simplified', 'clever programmer', 'dev ed', 'coding addict',
+    'javascript mastery', 'fireship', 'ben awad', 'theo - ping․gg', 'coding garden'
+  ];
+  
+  // **Premium Educational Channels - Hindi**
+  const hindiChannels = [
+    'code with harry', 'thapa technical', 'apna college', 'love babbar', 'chai aur code',
+    'harkirat singh', 'hitesh choudhary', 'websitelearner', 'technical suneja', 
+    'programming pathshala', 'codingshuttle', 'programming knowledge', 'geeky shows',
+    'mysirg.com', 'saurabh shukla sir'
+  ];
+  
+  const allEducationalChannels = [...englishChannels, ...hindiChannels];
 
   educationalKeywords.forEach(keyword => {
     if (title.includes(keyword) || description.includes(keyword)) score += 0.2;
   });
 
-  educationalChannels.forEach(channelName => {
+  allEducationalChannels.forEach(channelName => {
     if (channel.includes(channelName)) score += 0.5;
   });
 
@@ -202,12 +218,19 @@ function getBackendTech(technologies) {
 async function generateIntelligentSearchQueries(projectData, projectIdea) {
   const queries = [];
 
-  // Extract technologies from tech stack
+  // Extract technologies from tech stack (enhanced for new structure)
   const allTechnologies = [];
   if (projectData.techStack) {
-    Object.values(projectData.techStack).forEach(techArray => {
-      if (Array.isArray(techArray)) {
-        allTechnologies.push(...techArray);
+    Object.values(projectData.techStack).forEach(techCategory => {
+      if (Array.isArray(techCategory)) {
+        allTechnologies.push(...techCategory);
+      } else if (typeof techCategory === 'object') {
+        // Handle nested structure like { primary: [], styling: [] }
+        Object.values(techCategory).forEach(techArray => {
+          if (Array.isArray(techArray)) {
+            allTechnologies.push(...techArray);
+          }
+        });
       }
     });
   }
@@ -217,28 +240,45 @@ async function generateIntelligentSearchQueries(projectData, projectIdea) {
 
   console.log('Project Analysis:', projectAnalysis);
 
-  // Priority 1: Exact project match tutorials
+  // **ENHANCED: Priority 1 - Exact project match tutorials (Hindi + English)**
   if (projectAnalysis.projectType !== 'generic') {
+    // English tutorials
     queries.push({
-      query: `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} tutorial 2024`,
+      query: `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} complete tutorial 2024`,
       priority: 'high',
-      category: 'project-specific'
+      category: 'project-specific-en'
     });
 
     queries.push({
-      query: `build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step`,
+      query: `build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step project`,
+      priority: 'high', 
+      category: 'project-specific-en'
+    });
+
+    // Hindi tutorials
+    queries.push({
+      query: `${projectAnalysis.projectType} ${allTechnologies[0]} hindi tutorial complete course`,
       priority: 'high',
-      category: 'project-specific'
+      category: 'project-specific-hi'
     });
   }
 
-  // Priority 2: Technology stack combinations
+  // **ENHANCED: Priority 2 - Technology stack combinations (Hindi + English)**
   if (allTechnologies.length >= 2) {
     const mainStack = allTechnologies.slice(0, 3);
+    
+    // English stack tutorials
     queries.push({
-      query: `${mainStack.join(' ')} full stack tutorial`,
+      query: `${mainStack.join(' ')} full stack tutorial 2024`,
       priority: 'high',
-      category: 'tech-stack'
+      category: 'tech-stack-en'
+    });
+
+    // Hindi stack tutorials
+    queries.push({
+      query: `${mainStack[0]} ${mainStack[1]} hindi tutorial complete project`,
+      priority: 'high',
+      category: 'tech-stack-hi'
     });
 
     // Frontend + Backend combination
@@ -246,9 +286,15 @@ async function generateIntelligentSearchQueries(projectData, projectIdea) {
     const backend = getBackendTech(allTechnologies);
     if (frontend && backend) {
       queries.push({
-        query: `${frontend} ${backend} complete project tutorial`,
+        query: `${frontend} ${backend} complete project tutorial english`,
         priority: 'high',
-        category: 'tech-stack'
+        category: 'tech-stack-en'
+      });
+      
+      queries.push({
+        query: `${frontend} ${backend} hindi me complete course`,
+        priority: 'medium',
+        category: 'tech-stack-hi'
       });
     }
   }
