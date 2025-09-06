@@ -63,15 +63,21 @@ export default function ProjectGeneratorApp() {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Failed to generate project");
 
+      // **INSTANT UI UPDATE** - Show results immediately
       setResult(data);
       setActiveTab("overview");
+      setIsLoading(false); // Stop loading immediately
+      
       // Expand first phase by default
       if (data.roadmap?.length > 0) {
         setExpandedPhases({ 0: true });
       }
+
+      // Show success message with instant feedback
+      console.log('Project generated successfully in record time!');
+      
     } catch (err) {
       setError(err.message);
-    } finally {
       setIsLoading(false);
     }
   };
@@ -239,7 +245,7 @@ export default function ProjectGeneratorApp() {
                 {isLoading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
-                    Generating Project Plan...
+                    Creating Your Project...
                   </>
                 ) : (
                   <>
