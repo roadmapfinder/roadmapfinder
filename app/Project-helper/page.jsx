@@ -183,25 +183,25 @@ export default function ProjectGeneratorApp() {
         </div>
 
             {/* Content Wrapper - Centered and Responsive */}
-            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+            <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-6 sm:py-8 lg:py-12">
 
-        {/* Header */}
-        <header className="text-center mb-10 sm:mb-16">
+        {/* Header - Hidden on desktop when sidebar is open to save space */}
+        <header className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-3 mb-4 sm:mb-6">
             <div className="p-3 bg-blue-600 rounded-xl">
-              <Brain className="w-8 h-8 text-white" />
+              <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               AI Project Generator
             </h1>
           </div>
-          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Transform your ideas into actionable project plans with comprehensive tech stacks, roadmaps, and resources.
           </p>
         </header>
 
         {/* Project Input Form */}
-        <div className="max-w-4xl mx-auto mb-10 sm:mb-12">
+        <div className="max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12">
           <form
             onSubmit={handleSubmit}
             className="space-y-6"
@@ -294,7 +294,7 @@ export default function ProjectGeneratorApp() {
 
         {/* Results Section */}
         {result && (
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Success Header */}
             <div
               className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6 sm:mb-8 flex items-center gap-3"
