@@ -337,10 +337,66 @@ async function generateIntelligentSearchQueries(projectData, projectIdea) {
 }
 
 /**
- * Enhanced video fetching with intelligent search
+ * Validate video accessibility and quality
+ * @param {Object} video - Video object from YouTube API
+ * @returns {boolean} Whether video meets quality standards
+ */
+function validateVideoQuality(video) {
+  try {
+    // Check if video has proper metadata
+    if (!video.snippet.title || !video.snippet.description) {
+      return false;
+    }
+
+    // Check if video is not private/deleted
+    if (video.snippet.title.toLowerCase().includes('private video') || 
+        video.snippet.title.toLowerCase().includes('deleted video') ||
+        video.snippet.title.toLowerCase().includes('[deleted]')) {
+      return false;
+    }
+
+    // Check if video has meaningful title (not just random characters)
+    if (video.snippet.title.length < 10) {
+      return false;
+    }
+
+    // Prefer videos from known educational channels (both Hindi & English)
+    const educationalChannels = [
+      // English channels
+      'freecodecamp', 'net ninja', 'traversy media', 'programming with mosh', 'academind',
+      'web dev simplified', 'javascript mastery', 'fireship', 'coding addict',
+      // Hindi channels  
+      'code with harry', 'thapa technical', 'apna college', 'love babbar', 'chai aur code',
+      'harkirat singh', 'hitesh choudhary', 'codingshuttle'
+    ];
+    
+    const channelName = video.snippet.channelTitle.toLowerCase();
+    const isEducationalChannel = educationalChannels.some(channel => 
+      channelName.includes(channel)
+    );
+
+    // Check upload recency (prefer newer content from trusted channels)
+    const uploadDate = new Date(video.snippet.publishedAt);
+    const threeYearsAgo = new Date();
+    threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
+    
+    // Allow older videos from trusted channels, recent videos from all channels
+    if (uploadDate < threeYearsAgo && !isEducationalChannel) {
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Video validation error:', error);
+    return false;
+  }
+}
+
+/**
+ * Enhanced video fetching with intelligent search and validation
  * @param {Object} projectData - Project data object
  * @param {string} projectIdea - Original project idea
- * @returns {Promise<Array>} Array of relevant YouTube videos
+ * @returns {Promise<Array>} Array of validated, relevant YouTube videos
  */
 async function fetchProjectRelevantVideos(projectData, projectIdea) {
   console.log('Starting intelligent video search...');
@@ -369,16 +425,24 @@ async function fetchProjectRelevantVideos(projectData, projectIdea) {
   // Wait for all queries to complete in parallel
   const results = await Promise.all(videoPromises);
   
-  // Process results
+  // Process results with validation
   results.forEach(({ query, videos }) => {
     if (videos.length > 0) {
-      // Categorize videos based on query type
-      if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
-        videosByCategory.projectSpecific.push(...videos);
-      } else if (query.includes('full stack') || query.includes('crash course')) {
-        videosByCategory.techStack.push(...videos);
-      } else {
-        videosByCategory.individual.push(...videos);
+      // **ENHANCED: Validate each video before categorizing**
+      const validatedVideos = videos.filter(video => validateVideoQuality(video));
+      
+      if (validatedVideos.length > 0) {
+        // Categorize videos based on query type and language
+        if (query.includes('hindi') || query.includes('hindi me')) {
+          // Hindi content gets priority for Indian users
+          videosByCategory.projectSpecific.push(...validatedVideos);
+        } else if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
+          videosByCategory.projectSpecific.push(...validatedVideos);
+        } else if (query.includes('full stack') || query.includes('crash course')) {
+          videosByCategory.techStack.push(...validatedVideos);
+        } else {
+          videosByCategory.individual.push(...validatedVideos);
+        }
       }
     }
   });
@@ -396,17 +460,52 @@ async function fetchProjectRelevantVideos(projectData, projectIdea) {
     index === self.findIndex(v => v.url === video.url)
   );
 
-  // Final filtering and sorting
-  return uniqueVideos
-    .filter(video => video.viewCount > 1000) // Filter out very low view count videos
+  // **ENHANCED: Final filtering and intelligent sorting with language balance**
+  const validatedVideos = uniqueVideos.filter(video => {
+    // More lenient view count filter (500+ for quality content)
+    return video.viewCount > 500 && validateVideoQuality(video);
+  });
+
+  // Separate Hindi and English videos for balanced representation
+  const hindiVideos = validatedVideos.filter(video => 
+    video.title.toLowerCase().includes('hindi') || 
+    video.channel.toLowerCase().includes('harry') ||
+    video.channel.toLowerCase().includes('thapa') ||
+    video.channel.toLowerCase().includes('apna') ||
+    video.channel.toLowerCase().includes('love babbar')
+  );
+
+  const englishVideos = validatedVideos.filter(video => !hindiVideos.includes(video));
+
+  // Create balanced final list (mix of Hindi and English)
+  const balancedVideos = [
+    ...englishVideos.slice(0, 6), // 6 English videos
+    ...hindiVideos.slice(0, 4),   // 4 Hindi videos
+  ];
+
+  return balancedVideos
     .sort((a, b) => {
-      // Sort by relevance score first, then by view count
+      // **PREMIUM: Multi-factor sorting algorithm**
+      // 1. Educational channels get priority
+      const aIsEducational = allEducationalChannels.some(channel => 
+        a.channel.toLowerCase().includes(channel)
+      );
+      const bIsEducational = allEducationalChannels.some(channel => 
+        b.channel.toLowerCase().includes(channel)
+      );
+      
+      if (aIsEducational && !bIsEducational) return -1;
+      if (!aIsEducational && bIsEducational) return 1;
+
+      // 2. Relevance score (quality of match)
       if (Math.abs(a.relevanceScore - b.relevanceScore) > 0.1) {
         return b.relevanceScore - a.relevanceScore;
       }
+
+      // 3. View count for popular content
       return b.viewCount - a.viewCount;
     })
-    .slice(0, 10); // Final limit to 10 videos
+    .slice(0, 10); // Final limit to 10 high-quality videos
 }
 
 /**
