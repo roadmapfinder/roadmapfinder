@@ -145,7 +145,7 @@ const ChatSidebar = ({
           isOpen ? "translate-x-0" : "-translate-x-full"
         } ${
           isDesktopOpen ? "lg:translate-x-0" : "lg:-translate-x-full"
-        } w-80 lg:w-72 xl:w-80 flex flex-col lg:relative lg:z-auto`}
+        } w-80 lg:w-64 xl:w-72 flex flex-col lg:relative lg:z-auto`}
       >
         {/* Header */}
         <div className="p-4 border-b border-gray-200">
