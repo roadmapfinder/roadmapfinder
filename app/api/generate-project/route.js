@@ -31,19 +31,24 @@ export async function POST(request) {
     // Generate comprehensive project data using Gemini AI
     const projectData = await generateProjectWithGemini(projectIdea);
 
-    // **ENHANCED: Fetch YouTube videos immediately but with timeout for instant response**
+    // **ENHANCED: Fetch YouTube videos immediately but with quick timeout for instant response**
     let youtubeResources = [];
-    try {
-      // Quick YouTube fetch with 2-second timeout to not delay response
-      const youtubePromise = fetchProjectRelevantVideos(projectData, projectIdea);
-      const timeoutPromise = new Promise((resolve) => setTimeout(() => resolve([]), 2000));
-      
-      youtubeResources = await Promise.race([youtubePromise, timeoutPromise]);
-      console.log(`Fetched ${youtubeResources.length} YouTube videos in time for response`);
-    } catch (error) {
-      console.log('YouTube fetch timed out, using AI-generated placeholders');
-      // Use AI-generated YouTube resources as fallback
-      youtubeResources = projectData.youtubeResources || [];
+    
+    // Only attempt YouTube fetch if API key is available
+    if (process.env.YOUTUBE_API_KEY) {
+      try {
+        // Very quick YouTube fetch with 1-second timeout to not delay response
+        const youtubePromise = fetchProjectRelevantVideos(projectData, projectIdea);
+        const timeoutPromise = new Promise((resolve) => setTimeout(() => resolve([]), 1000));
+        
+        youtubeResources = await Promise.race([youtubePromise, timeoutPromise]);
+        console.log(`Fetched ${youtubeResources.length} YouTube videos in time for response`);
+      } catch (error) {
+        console.log('YouTube fetch failed, using AI-generated placeholders');
+        youtubeResources = [];
+      }
+    } else {
+      console.log('YouTube API not configured, using AI-generated video suggestions');
     }
 
     // **ENHANCED RESPONSE with real YouTube data**

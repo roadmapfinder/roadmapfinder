@@ -605,6 +605,11 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
  * @param {string} projectIdea - Original project idea
  * @returns {Promise<Array>} Array of validated, relevant YouTube videos
  */ async function fetchProjectRelevantVideos(projectData, projectIdea) {
+    // **SAFETY CHECK: Return empty if no YouTube API key**
+    if (!process.env.YOUTUBE_API_KEY) {
+        console.log('YouTube API key not available, skipping video search');
+        return [];
+    }
     console.log('Starting intelligent video search...');
     const searchQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
     console.log('Generated search queries:', searchQueries);
@@ -747,35 +752,55 @@ async function POST(request) {
         console.log('Making request to Gemini API for project generation...');
         // Generate comprehensive project data using Gemini AI
         const projectData = await generateProjectWithGemini(projectIdea);
-        // **INSTANT RESPONSE - Return project data immediately**
-        const instantResponse = {
+        // **ENHANCED: Fetch YouTube videos immediately but with quick timeout for instant response**
+        let youtubeResources = [];
+        // Only attempt YouTube fetch if API key is available
+        if (process.env.YOUTUBE_API_KEY) {
+            try {
+                // Very quick YouTube fetch with 1-second timeout to not delay response
+                const youtubePromise = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["fetchProjectRelevantVideos"])(projectData, projectIdea);
+                const timeoutPromise = new Promise((resolve)=>setTimeout(()=>resolve([]), 1000));
+                youtubeResources = await Promise.race([
+                    youtubePromise,
+                    timeoutPromise
+                ]);
+                console.log(`Fetched ${youtubeResources.length} YouTube videos in time for response`);
+            } catch (error) {
+                console.log('YouTube fetch failed, using AI-generated placeholders');
+                youtubeResources = [];
+            }
+        } else {
+            console.log('YouTube API not configured, using AI-generated video suggestions');
+        }
+        // **ENHANCED RESPONSE with real YouTube data**
+        const enhancedResponse = {
             ...projectData,
-            youtubeResources: [],
+            youtubeResources: youtubeResources.length > 0 ? youtubeResources.map((video)=>({
+                    title: video.title || video.snippet?.title || 'Tutorial Video',
+                    channel: video.channel || video.snippet?.channelTitle || 'Educational Channel',
+                    url: video.url || `https://youtube.com/watch?v=${video.id}`,
+                    description: video.description || video.snippet?.description?.slice(0, 150) || 'Educational tutorial video'
+                })) : projectData.youtubeResources || [],
             metadata: {
                 model: 'gemini-2.0-flash-exp',
                 timestamp: new Date().toISOString(),
-                tokens_used: projectData.tokens_used || 'N/A',
-                youtube_videos_found: 0,
-                search_queries_generated: 0,
-                project_analysis: (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["analyzeProject"])(projectIdea, Object.values(projectData.techStack || {}).flat()),
-                loading_youtube: true // Indicates YouTube videos are being fetched
+                youtube_videos_found: youtubeResources.length,
+                project_analysis: (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["analyzeProject"])(projectIdea, Object.values(projectData.techStack || {}).flat())
             }
         };
-        // **NON-BLOCKING YOUTUBE FETCHING** - Fire and forget
-        // This runs in the background without blocking the response
-        setImmediate(async ()=>{
-            try {
-                console.log('Starting background YouTube video fetching...');
-                const youtubeResources = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["fetchProjectRelevantVideos"])(projectData, projectIdea);
-                console.log(`Background: Fetched ${youtubeResources.length} relevant YouTube videos`);
-            // In a real app, you'd store this in a database or cache
-            // and provide a way for the client to fetch updated data
-            // For now, we just log it as the initial response already went out
-            } catch (youtubeError) {
-                console.error('Background YouTube fetching error:', youtubeError);
-            }
-        });
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(instantResponse);
+        // **BACKGROUND ENHANCEMENT** - Continue fetching more videos if initial fetch was incomplete
+        if (youtubeResources.length < 5) {
+            setImmediate(async ()=>{
+                try {
+                    console.log('Starting background YouTube video fetching for additional resources...');
+                    const additionalVideos = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["fetchProjectRelevantVideos"])(projectData, projectIdea);
+                    console.log(`Background: Fetched ${additionalVideos.length} additional YouTube videos`);
+                } catch (error) {
+                    console.error('Background YouTube fetch error:', error);
+                }
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(enhancedResponse);
     } catch (error) {
         console.error('Project generation API error:', error);
         if (error.name === 'AbortError') {
@@ -813,6 +838,9 @@ PREMIUM REQUIREMENTS:
 🎯 PRODUCTION-READY: Include deployment, monitoring, security, and optimization
 📚 LEARNING PATHS: Multiple approaches based on developer experience level
 🔍 DETAILED GUIDANCE: Include file structures, code snippets, and troubleshooting
+🎥 LEARNING RESOURCES: Include comprehensive documentation and YouTube tutorial recommendations
+
+CRITICAL: You must include REAL YouTube tutorial resources that match the project. The system will later enhance these with actual video data.
 
 ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON with this exact format:
 
@@ -890,18 +918,24 @@ ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON with this exact format:
     "deployment": ["Vercel", "Railway"],
     "tools": ["VS Code", "Git", "Postman"]
   },
-  "packages": ["next", "react", "typescript", "tailwindcss", "prisma"],
+  "packages": {
+    "npm": ["next", "react", "typescript", "tailwindcss", "prisma"]
+  },
   "quickStart": {
     "commands": ["npm create next-app project", "cd project", "npm install", "npm run dev"],
     "notes": ["Open localhost:3000", "Edit files to see changes", "Check console for errors"]
   },
   "documentation": [
-    {"title": "Next.js Docs", "url": "https://nextjs.org/docs"},
-    {"title": "React Docs", "url": "https://react.dev"},
-    {"title": "Tailwind CSS", "url": "https://tailwindcss.com/docs"}
+    {"title": "Next.js Docs", "url": "https://nextjs.org/docs", "description": "Complete Next.js guide and API reference"},
+    {"title": "React Docs", "url": "https://react.dev", "description": "Learn React with interactive examples"},
+    {"title": "Tailwind CSS", "url": "https://tailwindcss.com/docs", "description": "Utility-first CSS framework documentation"}
   ],
   "deployment": ["Connect to Vercel", "Push to GitHub", "Auto-deploy enabled"],
-  "features": ["Authentication", "Database", "Responsive design", "SEO optimization"]
+  "features": ["Authentication", "Database", "Responsive design", "SEO optimization"],
+  "youtubeResources": [
+    {"title": "Complete Project Tutorial", "channel": "FreeCodeCamp", "url": "https://youtube.com/search?q=project+tutorial", "description": "Full stack development tutorial"},
+    {"title": "Hindi Tutorial", "channel": "Code with Harry", "url": "https://youtube.com/search?q=hindi+tutorial", "description": "Step-by-step Hindi explanation"}
+  ]
 }`;
     // Optimized Gemini API request configuration for speed
     const requestBody = {

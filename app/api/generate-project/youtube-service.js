@@ -404,6 +404,12 @@ function validateVideoQuality(video) {
  * @returns {Promise<Array>} Array of validated, relevant YouTube videos
  */
 async function fetchProjectRelevantVideos(projectData, projectIdea) {
+  // **SAFETY CHECK: Return empty if no YouTube API key**
+  if (!process.env.YOUTUBE_API_KEY) {
+    console.log('YouTube API key not available, skipping video search');
+    return [];
+  }
+
   console.log('Starting intelligent video search...');
 
   const searchQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
