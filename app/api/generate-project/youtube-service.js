@@ -282,11 +282,11 @@ async function generateIntelligentSearchQueries(projectData, projectIdea) {
     });
   }
 
-  // Sort by priority and return top queries
+  // **OPTIMIZED: Reduce to 4 queries for faster processing**
   const priorityOrder = { 'high': 3, 'medium': 2, 'low': 1 };
   return queries
     .sort((a, b) => priorityOrder[b.priority] - priorityOrder[a.priority])
-    .slice(0, 6) // Limit to top 6 queries
+    .slice(0, 4) // Reduced from 6 to 4 for speed
     .map(q => q.query);
 }
 
@@ -309,28 +309,33 @@ async function fetchProjectRelevantVideos(projectData, projectIdea) {
     general: []
   };
 
-  // Fetch videos for each query with category tracking
-  for (const query of searchQueries) {
+  // **OPTIMIZED: Fetch videos in parallel instead of sequentially**
+  const videoPromises = searchQueries.slice(0, 4).map(async (query) => { // Limit to 4 queries for speed
     try {
-      const videos = await fetchYouTubeVideos(query, 4);
-
-      if (videos.length > 0) {
-        // Categorize videos based on query type
-        if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
-          videosByCategory.projectSpecific.push(...videos);
-        } else if (query.includes('full stack') || query.includes('crash course')) {
-          videosByCategory.techStack.push(...videos);
-        } else {
-          videosByCategory.individual.push(...videos);
-        }
-      }
-
-      // Add delay to avoid rate limiting
-      await new Promise(resolve => setTimeout(resolve, 100));
+      const videos = await fetchYouTubeVideos(query, 3); // Reduced to 3 videos per query
+      return { query, videos };
     } catch (error) {
       console.error(`Error fetching videos for query "${query}":`, error);
+      return { query, videos: [] };
     }
-  }
+  });
+
+  // Wait for all queries to complete in parallel
+  const results = await Promise.all(videoPromises);
+  
+  // Process results
+  results.forEach(({ query, videos }) => {
+    if (videos.length > 0) {
+      // Categorize videos based on query type
+      if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
+        videosByCategory.projectSpecific.push(...videos);
+      } else if (query.includes('full stack') || query.includes('crash course')) {
+        videosByCategory.techStack.push(...videos);
+      } else {
+        videosByCategory.individual.push(...videos);
+      }
+    }
+  });
 
   // Combine and prioritize videos
   let combinedVideos = [

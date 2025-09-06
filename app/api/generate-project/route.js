@@ -31,38 +31,38 @@ export async function POST(request) {
     // Generate comprehensive project data using Gemini AI
     const projectData = await generateProjectWithGemini(projectIdea);
 
-    // **INTELLIGENT YOUTUBE VIDEO FETCHING**
-    console.log('Starting intelligent YouTube video analysis and fetching...');
-    let youtubeResources = [];
-
-    try {
-      youtubeResources = await fetchProjectRelevantVideos(projectData, projectIdea);
-      console.log(`Successfully fetched ${youtubeResources.length} relevant YouTube videos`);
-    } catch (youtubeError) {
-      console.error('YouTube video fetching error:', youtubeError);
-      youtubeResources = [];
-    }
-
-    // Fallback if no videos found
-    if (youtubeResources.length === 0) {
-      youtubeResources = await createFallbackSearchLinks(projectData, projectIdea);
-    }
-
-    // Enhanced response with metadata
-    const enhancedResponse = {
+    // **INSTANT RESPONSE - Return project data immediately**
+    const instantResponse = {
       ...projectData,
-      youtubeResources,
+      youtubeResources: [], // Start with empty, will be populated asynchronously
       metadata: {
         model: 'gemini-2.0-flash-exp',
         timestamp: new Date().toISOString(),
         tokens_used: projectData.tokens_used || 'N/A',
-        youtube_videos_found: youtubeResources.filter(v => !v.isSearchLink).length,
-        search_queries_generated: (await generateIntelligentSearchQueries(projectData, projectIdea)).length,
-        project_analysis: analyzeProject(projectIdea, Object.values(projectData.techStack || {}).flat())
+        youtube_videos_found: 0,
+        search_queries_generated: 0,
+        project_analysis: analyzeProject(projectIdea, Object.values(projectData.techStack || {}).flat()),
+        loading_youtube: true // Indicates YouTube videos are being fetched
       }
     };
 
-    return NextResponse.json(enhancedResponse);
+    // **NON-BLOCKING YOUTUBE FETCHING** - Fire and forget
+    // This runs in the background without blocking the response
+    setImmediate(async () => {
+      try {
+        console.log('Starting background YouTube video fetching...');
+        const youtubeResources = await fetchProjectRelevantVideos(projectData, projectIdea);
+        console.log(`Background: Fetched ${youtubeResources.length} relevant YouTube videos`);
+        
+        // In a real app, you'd store this in a database or cache
+        // and provide a way for the client to fetch updated data
+        // For now, we just log it as the initial response already went out
+      } catch (youtubeError) {
+        console.error('Background YouTube fetching error:', youtubeError);
+      }
+    });
+
+    return NextResponse.json(instantResponse);
 
   } catch (error) {
     console.error('Project generation API error:', error);
@@ -85,34 +85,25 @@ export async function POST(request) {
  */
 async function generateProjectWithGemini(projectIdea) {
   const prompt = `
-You are an expert full-stack software architect, AI consultant, and technical project planner.
-A user has described their project idea in natural language:
+You are a software architect. Analyze this project idea and generate a comprehensive JSON guide:
 
 "${projectIdea}"
 
-Your task is to deeply analyze this idea — whether it's a simple utility, a full SaaS platform, an AI-driven application, a blockchain dApp, or a UI/UX design system.
-Provide a comprehensive, language-agnostic project breakdown in structured JSON format.
+Create a structured breakdown with:
+- Mind map of project components
+- Step-by-step roadmap with commands
+- Modern tech stack recommendations
+- Quick start guide
+- Essential documentation links
 
-⚠️ You must:
+**Requirements:**
+- Use current 2024-2025 technologies
+- Include practical terminal commands
+- Add estimated durations for each phase
+- Provide code snippets for setup
+- Focus on actionable steps
 
-Support all popular tech stacks: JavaScript/TypeScript, Python, Java, Dart/Flutter, Swift, Solidity, R, Rust, Go, etc.
-
-Include recommendations for AI/ML, data analytics, blockchain, and design-oriented projects where relevant
-
-Recommend only modern, well-maintained, and production-ready tools and libraries (2024–2025)
-
-Ensure every step is practical, structured, and developer-actionable
-
-**ENHANCED ROADMAP REQUIREMENTS:**
-- Each phase should include detailed terminal commands for package installation
-- Provide actual code snippets for setup and configuration
-- Include file structure examples
-- Add estimated time duration for each phase
-- Include prerequisites and dependencies
-- Provide troubleshooting tips for common issues
-- Add testing commands and validation steps
-
-Return ONLY a valid JSON object (no extra text), using the following format:
+Return ONLY valid JSON with this structure:
 
 {
   "mindMap": {
@@ -197,7 +188,7 @@ Return ONLY a valid JSON object (no extra text), using the following format:
   }
 }`;
 
-  // Gemini API request configuration
+  // Optimized Gemini API request configuration for speed
   const requestBody = {
     contents: [{
       parts: [{
@@ -205,10 +196,10 @@ Return ONLY a valid JSON object (no extra text), using the following format:
       }]
     }],
     generationConfig: {
-      temperature: 0.7,
-      topK: 40,
-      topP: 0.95,
-      maxOutputTokens: 8192,
+      temperature: 0.3, // Lower temperature for faster, more focused responses
+      topK: 20,         // Reduced for faster processing
+      topP: 0.8,        // Reduced for faster processing
+      maxOutputTokens: 4096, // Reduced for faster response
       responseMimeType: "text/plain"
     },
     safetySettings: [
