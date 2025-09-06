@@ -7818,6 +7818,12 @@
   }
 
   @media (width >= 64rem) {
+    .lg\:relative {
+      position: relative;
+    }
+  }
+
+  @media (width >= 64rem) {
     .lg\:inset-y-0 {
       inset-block: calc(var(--spacing) * 0);
     }
@@ -7844,6 +7850,12 @@
   @media (width >= 64rem) {
     .lg\:z-50 {
       z-index: 50;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:z-auto {
+      z-index: auto;
     }
   }
 
@@ -7982,6 +7994,13 @@
   @media (width >= 64rem) {
     .lg\:max-w-lg {
       max-width: var(--container-lg);
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:translate-x-0 {
+      --tw-translate-x: calc(var(--spacing) * 0);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
 

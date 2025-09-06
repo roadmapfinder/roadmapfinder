@@ -1,1 +1,5 @@
-{}
+{
+  "/Project-helper/page": "app/Project-helper/page.js",
+  "/api/generate-project/route": "app/api/generate-project/route.js",
+  "/page": "app/page.js"
+}

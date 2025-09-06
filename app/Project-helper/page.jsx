@@ -37,6 +37,7 @@ export default function ProjectGeneratorApp() {
   const [copiedText, setCopiedText] = useState("");
   const [expandedPhases, setExpandedPhases] = useState({});
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = useState(true);
 
   const { 
     currentChatId, 
@@ -149,7 +150,16 @@ export default function ProjectGeneratorApp() {
       {/* Chat Sidebar */}
       <ChatSidebar
         isOpen={isSidebarOpen}
-        onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+        isDesktopOpen={isDesktopSidebarOpen}
+        onToggle={() => {
+          // On mobile, toggle mobile sidebar
+          // On desktop, toggle desktop sidebar
+          if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+            setIsDesktopSidebarOpen(!isDesktopSidebarOpen);
+          } else {
+            setIsSidebarOpen(!isSidebarOpen);
+          }
+        }}
         currentChatId={currentChatId}
         onChatSelect={onChatSelect}
         onNewChat={onNewChat}
@@ -158,7 +168,7 @@ export default function ProjectGeneratorApp() {
       />
 
       {/* Main Content */}
-      <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'lg:ml-72 xl:ml-80' : ''}`}>
+      <div className={`flex-1 transition-all duration-300 ${isDesktopSidebarOpen ? 'lg:ml-72 xl:ml-80' : 'lg:ml-0'}`}>
         {/* Mobile Header with Menu */}
         <div className="lg:hidden flex items-center justify-between p-4 bg-white border-b border-gray-200">
           <button

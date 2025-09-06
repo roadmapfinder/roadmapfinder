@@ -402,7 +402,7 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} w-80 lg:w-72 xl:w-80 flex flex-col`,
+                className: `fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"} w-80 lg:w-72 xl:w-80 flex flex-col lg:relative lg:z-auto`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "p-4 border-b border-gray-200",
@@ -436,15 +436,25 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: onToggle,
-                                        className: "p-1 rounded-md hover:bg-gray-100 transition-colors lg:hidden",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
-                                            className: "w-5 h-5 text-gray-500"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 158,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
+                                        className: "p-1 rounded-md hover:bg-gray-100 transition-colors",
+                                        title: isOpen ? "Close sidebar" : "Open sidebar",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                                                className: "w-5 h-5 text-gray-500 lg:hidden"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/ChatSidebar.jsx",
+                                                lineNumber: 159,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                                                className: "w-5 h-5 text-gray-500 hidden lg:block"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/ChatSidebar.jsx",
+                                                lineNumber: 160,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/app/components/ChatSidebar.jsx",
                                         lineNumber: 154,
                                         columnNumber: 13
@@ -463,14 +473,14 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/ChatSidebar.jsx",
-                                        lineNumber: 167,
+                                        lineNumber: 169,
                                         columnNumber: 13
                                     }, this),
                                     "New Project Chat"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/ChatSidebar.jsx",
-                                lineNumber: 163,
+                                lineNumber: 165,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -488,7 +498,7 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                     className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 175,
+                                    lineNumber: 177,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -499,18 +509,18 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                     className: "w-full pl-9 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 176,
+                                    lineNumber: 178,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                            lineNumber: 174,
+                            lineNumber: 176,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/ChatSidebar.jsx",
-                        lineNumber: 173,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -522,7 +532,7 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                     className: "w-12 h-12 text-gray-300 mx-auto mb-3"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 190,
+                                    lineNumber: 192,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -530,7 +540,7 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                     children: searchQuery ? "No chats found" : "No chat history yet"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 191,
+                                    lineNumber: 193,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -538,13 +548,13 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                     children: searchQuery ? "Try a different search term" : "Start a new project to begin"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 194,
+                                    lineNumber: 196,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                            lineNumber: 189,
+                            lineNumber: 191,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "p-2",
@@ -556,7 +566,7 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                             children: dateGroup
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 202,
+                                            lineNumber: 204,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -574,28 +584,28 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                                     onEditTitleChange: setEditingTitle
                                                 }, chat.id, false, {
                                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                                    lineNumber: 207,
+                                                    lineNumber: 209,
                                                     columnNumber: 23
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 205,
+                                            lineNumber: 207,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, dateGroup, true, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 201,
+                                    lineNumber: 203,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                            lineNumber: 199,
+                            lineNumber: 201,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/ChatSidebar.jsx",
-                        lineNumber: 187,
+                        lineNumber: 189,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -610,7 +620,7 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                             className: "w-3 h-3"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 232,
+                                            lineNumber: 234,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -620,13 +630,13 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 233,
+                                            lineNumber: 235,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 231,
+                                    lineNumber: 233,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,31 +646,31 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                                             className: "w-3 h-3"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 236,
+                                            lineNumber: 238,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Auto-saved"
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                                            lineNumber: 237,
+                                            lineNumber: 239,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                                    lineNumber: 235,
+                                    lineNumber: 237,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/ChatSidebar.jsx",
-                            lineNumber: 230,
+                            lineNumber: 232,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/ChatSidebar.jsx",
-                        lineNumber: 229,
+                        lineNumber: 231,
                         columnNumber: 9
                     }, this)
                 ]
@@ -676,12 +686,12 @@ const ChatSidebar = ({ isOpen, onToggle, currentChatId, onChatSelect, onNewChat,
                     className: "w-5 h-5 text-gray-600"
                 }, void 0, false, {
                     fileName: "[project]/app/components/ChatSidebar.jsx",
-                    lineNumber: 249,
+                    lineNumber: 251,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/ChatSidebar.jsx",
-                lineNumber: 245,
+                lineNumber: 247,
                 columnNumber: 9
             }, this)
         ]
@@ -839,6 +849,7 @@ function ProjectGeneratorApp() {
     const [copiedText, setCopiedText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [expandedPhases, setExpandedPhases] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
     const [isSidebarOpen, setIsSidebarOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isDesktopSidebarOpen, setIsDesktopSidebarOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const { currentChatId, handleNewChat, handleChatSelect } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useChatManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -989,7 +1000,16 @@ function ProjectGeneratorApp() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ChatSidebar$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 isOpen: isSidebarOpen,
-                onToggle: ()=>setIsSidebarOpen(!isSidebarOpen),
+                isDesktopOpen: isDesktopSidebarOpen,
+                onToggle: ()=>{
+                    // On mobile, toggle mobile sidebar
+                    // On desktop, toggle desktop sidebar
+                    if ("object" !== 'undefined' && window.innerWidth >= 1024) {
+                        setIsDesktopSidebarOpen(!isDesktopSidebarOpen);
+                    } else {
+                        setIsSidebarOpen(!isSidebarOpen);
+                    }
+                },
                 currentChatId: currentChatId,
                 onChatSelect: onChatSelect,
                 onNewChat: onNewChat,
@@ -997,11 +1017,11 @@ function ProjectGeneratorApp() {
                 currentResult: result
             }, void 0, false, {
                 fileName: "[project]/app/Project-helper/page.jsx",
-                lineNumber: 150,
+                lineNumber: 151,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `flex-1 transition-all duration-300 ${isSidebarOpen ? 'lg:ml-72 xl:ml-80' : ''}`,
+                className: `flex-1 transition-all duration-300 lg:ml-72 xl:ml-80`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "lg:hidden flex items-center justify-between p-4 bg-white border-b border-gray-200",
@@ -1013,12 +1033,12 @@ function ProjectGeneratorApp() {
                                     className: "w-6 h-6 text-gray-600"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 168,
+                                    lineNumber: 178,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 164,
+                                lineNumber: 174,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1026,21 +1046,21 @@ function ProjectGeneratorApp() {
                                 children: "AI Project Generator"
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 170,
+                                lineNumber: 180,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-10"
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 171,
+                                lineNumber: 181,
                                 columnNumber: 11
                             }, this),
                             " "
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Project-helper/page.jsx",
-                        lineNumber: 163,
+                        lineNumber: 173,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1058,12 +1078,12 @@ function ProjectGeneratorApp() {
                                                     className: "w-8 h-8 text-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 180,
+                                                    lineNumber: 190,
                                                     columnNumber: 15
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 179,
+                                                lineNumber: 189,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1071,13 +1091,13 @@ function ProjectGeneratorApp() {
                                                 children: "AI Project Generator"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 182,
+                                                lineNumber: 192,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 178,
+                                        lineNumber: 188,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1085,13 +1105,13 @@ function ProjectGeneratorApp() {
                                         children: "Transform your ideas into actionable project plans with comprehensive tech stacks, roadmaps, and resources."
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 186,
+                                        lineNumber: 196,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 177,
+                                lineNumber: 187,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1110,7 +1130,7 @@ function ProjectGeneratorApp() {
                                                     children: "Describe your project idea"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 199,
+                                                    lineNumber: 209,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1128,7 +1148,7 @@ function ProjectGeneratorApp() {
                                                             disabled: isLoading
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 206,
+                                                            lineNumber: 216,
                                                             columnNumber: 17
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1139,13 +1159,13 @@ function ProjectGeneratorApp() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 217,
+                                                            lineNumber: 227,
                                                             columnNumber: 17
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 215,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1159,7 +1179,7 @@ function ProjectGeneratorApp() {
                                                                 "aria-hidden": "true"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 229,
+                                                                lineNumber: 239,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Generating Project Plan..."
@@ -1171,7 +1191,7 @@ function ProjectGeneratorApp() {
                                                                 "aria-hidden": "true"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 234,
+                                                                lineNumber: 244,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Generate Project Plan"
@@ -1179,18 +1199,18 @@ function ProjectGeneratorApp() {
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 222,
+                                                    lineNumber: 232,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 198,
+                                            lineNumber: 208,
                                             columnNumber: 13
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 193,
+                                        lineNumber: 203,
                                         columnNumber: 11
                                     }, this),
                                     !result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1201,7 +1221,7 @@ function ProjectGeneratorApp() {
                                                 children: "Popular project types"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 245,
+                                                lineNumber: 255,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1218,7 +1238,7 @@ function ProjectGeneratorApp() {
                                                                         "aria-hidden": "true"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 256,
+                                                                        lineNumber: 266,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1226,13 +1246,13 @@ function ProjectGeneratorApp() {
                                                                         children: type.label
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 257,
+                                                                        lineNumber: 267,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 255,
+                                                                lineNumber: 265,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1240,30 +1260,30 @@ function ProjectGeneratorApp() {
                                                                 children: type.example
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 259,
+                                                                lineNumber: 269,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, index, true, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 260,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 248,
+                                                lineNumber: 258,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 244,
+                                        lineNumber: 254,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 192,
+                                lineNumber: 202,
                                 columnNumber: 9
                             }, this),
                             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1278,7 +1298,7 @@ function ProjectGeneratorApp() {
                                             "aria-hidden": "true"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 277,
+                                            lineNumber: 287,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1286,18 +1306,18 @@ function ProjectGeneratorApp() {
                                             children: error
                                         }, void 0, false, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 278,
+                                            lineNumber: 288,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                    lineNumber: 276,
+                                    lineNumber: 286,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 271,
+                                lineNumber: 281,
                                 columnNumber: 11
                             }, this),
                             result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1313,7 +1333,7 @@ function ProjectGeneratorApp() {
                                                 "aria-hidden": "true"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 292,
+                                                lineNumber: 302,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1321,13 +1341,13 @@ function ProjectGeneratorApp() {
                                                 children: "Project plan generated successfully! Here's your comprehensive guide."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 293,
+                                                lineNumber: 303,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 287,
+                                        lineNumber: 297,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1350,30 +1370,30 @@ function ProjectGeneratorApp() {
                                                                     "aria-hidden": "true"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 318,
+                                                                    lineNumber: 328,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: tab.label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 319,
+                                                                    lineNumber: 329,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, tab.id, true, {
                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                            lineNumber: 307,
+                                                            lineNumber: 317,
                                                             columnNumber: 21
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                    lineNumber: 301,
+                                                    lineNumber: 311,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 300,
+                                                lineNumber: 310,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1387,7 +1407,7 @@ function ProjectGeneratorApp() {
                                                                 children: result.mindMap?.name || "Project Overview"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 330,
+                                                                lineNumber: 340,
                                                                 columnNumber: 21
                                                             }, this),
                                                             result.mindMap?.children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1400,7 +1420,7 @@ function ProjectGeneratorApp() {
                                                                                 children: component.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 337,
+                                                                                lineNumber: 347,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             component.children && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1412,36 +1432,36 @@ function ProjectGeneratorApp() {
                                                                                                 className: "w-1.5 h-1.5 bg-blue-600 rounded-full"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 347,
+                                                                                                lineNumber: 357,
                                                                                                 columnNumber: 37
                                                                                             }, this),
                                                                                             subComponent.name
                                                                                         ]
                                                                                     }, subIndex, true, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 343,
+                                                                                        lineNumber: 353,
                                                                                         columnNumber: 35
                                                                                     }, this))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 341,
+                                                                                lineNumber: 351,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 336,
+                                                                        lineNumber: 346,
                                                                         columnNumber: 27
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 334,
+                                                                lineNumber: 344,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 329,
+                                                        lineNumber: 339,
                                                         columnNumber: 19
                                                     }, this),
                                                     activeTab === "quickstart" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1452,7 +1472,7 @@ function ProjectGeneratorApp() {
                                                                 children: "Quick Start Guide"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 363,
+                                                                lineNumber: 373,
                                                                 columnNumber: 21
                                                             }, this),
                                                             result.quickStart && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1467,7 +1487,7 @@ function ProjectGeneratorApp() {
                                                                                     className: "w-5 h-5 text-blue-600"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 370,
+                                                                                    lineNumber: 380,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1475,13 +1495,13 @@ function ProjectGeneratorApp() {
                                                                                     children: "Get Started in 5 Minutes"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 371,
+                                                                                    lineNumber: 381,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 369,
+                                                                            lineNumber: 379,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1489,7 +1509,7 @@ function ProjectGeneratorApp() {
                                                                             children: result.quickStart.description
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 375,
+                                                                            lineNumber: 385,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1503,7 +1523,7 @@ function ProjectGeneratorApp() {
                                                                                             children: "Terminal"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 379,
+                                                                                            lineNumber: 389,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1513,18 +1533,18 @@ function ProjectGeneratorApp() {
                                                                                                 className: "w-4 h-4"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 384,
+                                                                                                lineNumber: 394,
                                                                                                 columnNumber: 33
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 380,
+                                                                                            lineNumber: 390,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 378,
+                                                                                    lineNumber: 388,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 result.quickStart.commands.map((command, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1535,20 +1555,20 @@ function ProjectGeneratorApp() {
                                                                                                 children: "$ "
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 389,
+                                                                                                lineNumber: 399,
                                                                                                 columnNumber: 33
                                                                                             }, this),
                                                                                             command
                                                                                         ]
                                                                                     }, index, true, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 388,
+                                                                                        lineNumber: 398,
                                                                                         columnNumber: 31
                                                                                     }, this))
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 377,
+                                                                            lineNumber: 387,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         result.quickStart.notes && result.quickStart.notes.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1559,7 +1579,7 @@ function ProjectGeneratorApp() {
                                                                                     children: "Important Notes:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 396,
+                                                                                    lineNumber: 406,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1571,42 +1591,42 @@ function ProjectGeneratorApp() {
                                                                                                     className: "w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                    lineNumber: 400,
+                                                                                                    lineNumber: 410,
                                                                                                     columnNumber: 37
                                                                                                 }, this),
                                                                                                 note
                                                                                             ]
                                                                                         }, index, true, {
                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 399,
+                                                                                            lineNumber: 409,
                                                                                             columnNumber: 35
                                                                                         }, this))
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 397,
+                                                                                    lineNumber: 407,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                            lineNumber: 395,
+                                                                            lineNumber: 405,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                    lineNumber: 368,
+                                                                    lineNumber: 378,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 367,
+                                                                lineNumber: 377,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 362,
+                                                        lineNumber: 372,
                                                         columnNumber: 19
                                                     }, this),
                                                     activeTab === "roadmap" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1617,7 +1637,7 @@ function ProjectGeneratorApp() {
                                                                 children: "Development Roadmap"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 416,
+                                                                lineNumber: 426,
                                                                 columnNumber: 21
                                                             }, this),
                                                             result.roadmap?.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1641,12 +1661,12 @@ function ProjectGeneratorApp() {
                                                                                                         children: index + 1
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 431,
+                                                                                                        lineNumber: 441,
                                                                                                         columnNumber: 37
                                                                                                     }, this)
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                    lineNumber: 430,
+                                                                                                    lineNumber: 440,
                                                                                                     columnNumber: 35
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1663,7 +1683,7 @@ function ProjectGeneratorApp() {
                                                                                                                             children: phase.phase
                                                                                                                         }, void 0, false, {
                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                            lineNumber: 438,
+                                                                                                                            lineNumber: 448,
                                                                                                                             columnNumber: 41
                                                                                                                         }, this),
                                                                                                                         phase.duration && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1673,14 +1693,14 @@ function ProjectGeneratorApp() {
                                                                                                                                     className: "w-3 h-3"
                                                                                                                                 }, void 0, false, {
                                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                    lineNumber: 443,
+                                                                                                                                    lineNumber: 453,
                                                                                                                                     columnNumber: 45
                                                                                                                                 }, this),
                                                                                                                                 phase.duration
                                                                                                                             ]
                                                                                                                         }, void 0, true, {
                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                            lineNumber: 442,
+                                                                                                                            lineNumber: 452,
                                                                                                                             columnNumber: 43
                                                                                                                         }, this),
                                                                                                                         phase.difficulty && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1688,32 +1708,32 @@ function ProjectGeneratorApp() {
                                                                                                                             children: phase.difficulty
                                                                                                                         }, void 0, false, {
                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                            lineNumber: 448,
+                                                                                                                            lineNumber: 458,
                                                                                                                             columnNumber: 43
                                                                                                                         }, this)
                                                                                                                     ]
                                                                                                                 }, void 0, true, {
                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                    lineNumber: 437,
+                                                                                                                    lineNumber: 447,
                                                                                                                     columnNumber: 39
                                                                                                                 }, this),
                                                                                                                 expandedPhases[index] ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__["ChevronUp"], {
                                                                                                                     className: "w-5 h-5 text-gray-400"
                                                                                                                 }, void 0, false, {
                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                    lineNumber: 454,
+                                                                                                                    lineNumber: 464,
                                                                                                                     columnNumber: 41
                                                                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                                                                                     className: "w-5 h-5 text-gray-400"
                                                                                                                 }, void 0, false, {
                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                    lineNumber: 456,
+                                                                                                                    lineNumber: 466,
                                                                                                                     columnNumber: 41
                                                                                                                 }, this)
                                                                                                             ]
                                                                                                         }, void 0, true, {
                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                            lineNumber: 436,
+                                                                                                            lineNumber: 446,
                                                                                                             columnNumber: 37
                                                                                                         }, this),
                                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1721,24 +1741,24 @@ function ProjectGeneratorApp() {
                                                                                                             children: phase.description
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                            lineNumber: 459,
+                                                                                                            lineNumber: 469,
                                                                                                             columnNumber: 37
                                                                                                         }, this)
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                    lineNumber: 435,
+                                                                                                    lineNumber: 445,
                                                                                                     columnNumber: 35
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 429,
+                                                                                            lineNumber: 439,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 425,
+                                                                                        lineNumber: 435,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     expandedPhases[index] && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1754,14 +1774,14 @@ function ProjectGeneratorApp() {
                                                                                                                 className: "w-4 h-4"
                                                                                                             }, void 0, false, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 471,
+                                                                                                                lineNumber: 481,
                                                                                                                 columnNumber: 41
                                                                                                             }, this),
                                                                                                             "Prerequisites"
                                                                                                         ]
                                                                                                     }, void 0, true, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 470,
+                                                                                                        lineNumber: 480,
                                                                                                         columnNumber: 39
                                                                                                     }, this),
                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1771,18 +1791,18 @@ function ProjectGeneratorApp() {
                                                                                                                 children: prereq
                                                                                                             }, idx, false, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 476,
+                                                                                                                lineNumber: 486,
                                                                                                                 columnNumber: 43
                                                                                                             }, this))
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 474,
+                                                                                                        lineNumber: 484,
                                                                                                         columnNumber: 39
                                                                                                     }, this)
                                                                                                 ]
                                                                                             }, void 0, true, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 469,
+                                                                                                lineNumber: 479,
                                                                                                 columnNumber: 37
                                                                                             }, this),
                                                                                             phase.steps && phase.steps.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1793,7 +1813,7 @@ function ProjectGeneratorApp() {
                                                                                                         children: "Steps"
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 487,
+                                                                                                        lineNumber: 497,
                                                                                                         columnNumber: 39
                                                                                                     }, this),
                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1806,7 +1826,7 @@ function ProjectGeneratorApp() {
                                                                                                                         children: step.title
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                        lineNumber: 491,
+                                                                                                                        lineNumber: 501,
                                                                                                                         columnNumber: 45
                                                                                                                     }, this),
                                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1814,7 +1834,7 @@ function ProjectGeneratorApp() {
                                                                                                                         children: step.description
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                        lineNumber: 492,
+                                                                                                                        lineNumber: 502,
                                                                                                                         columnNumber: 45
                                                                                                                     }, this),
                                                                                                                     step.commands && step.commands.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1830,7 +1850,7 @@ function ProjectGeneratorApp() {
                                                                                                                                                 className: "w-4 h-4 text-green-400"
                                                                                                                                             }, void 0, false, {
                                                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                                lineNumber: 498,
+                                                                                                                                                lineNumber: 508,
                                                                                                                                                 columnNumber: 53
                                                                                                                                             }, this),
                                                                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1838,13 +1858,13 @@ function ProjectGeneratorApp() {
                                                                                                                                                 children: "Terminal"
                                                                                                                                             }, void 0, false, {
                                                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                                lineNumber: 499,
+                                                                                                                                                lineNumber: 509,
                                                                                                                                                 columnNumber: 53
                                                                                                                                             }, this)
                                                                                                                                         ]
                                                                                                                                     }, void 0, true, {
                                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                        lineNumber: 497,
+                                                                                                                                        lineNumber: 507,
                                                                                                                                         columnNumber: 51
                                                                                                                                     }, this),
                                                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1854,24 +1874,24 @@ function ProjectGeneratorApp() {
                                                                                                                                             className: "w-4 h-4 text-green-400"
                                                                                                                                         }, void 0, false, {
                                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                            lineNumber: 506,
+                                                                                                                                            lineNumber: 516,
                                                                                                                                             columnNumber: 55
                                                                                                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                                                                                                                             className: "w-4 h-4"
                                                                                                                                         }, void 0, false, {
                                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                            lineNumber: 508,
+                                                                                                                                            lineNumber: 518,
                                                                                                                                             columnNumber: 55
                                                                                                                                         }, this)
                                                                                                                                     }, void 0, false, {
                                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                        lineNumber: 501,
+                                                                                                                                        lineNumber: 511,
                                                                                                                                         columnNumber: 51
                                                                                                                                     }, this)
                                                                                                                                 ]
                                                                                                                             }, void 0, true, {
                                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                lineNumber: 496,
+                                                                                                                                lineNumber: 506,
                                                                                                                                 columnNumber: 49
                                                                                                                             }, this),
                                                                                                                             step.commands.map((command, cmdIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1882,20 +1902,20 @@ function ProjectGeneratorApp() {
                                                                                                                                             children: "$ "
                                                                                                                                         }, void 0, false, {
                                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                            lineNumber: 514,
+                                                                                                                                            lineNumber: 524,
                                                                                                                                             columnNumber: 53
                                                                                                                                         }, this),
                                                                                                                                         command
                                                                                                                                     ]
                                                                                                                                 }, cmdIndex, true, {
                                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                    lineNumber: 513,
+                                                                                                                                    lineNumber: 523,
                                                                                                                                     columnNumber: 51
                                                                                                                                 }, this))
                                                                                                                         ]
                                                                                                                     }, void 0, true, {
                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                        lineNumber: 495,
+                                                                                                                        lineNumber: 505,
                                                                                                                         columnNumber: 47
                                                                                                                     }, this),
                                                                                                                     step.code && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1913,7 +1933,7 @@ function ProjectGeneratorApp() {
                                                                                                                                                     className: "w-4 h-4 text-blue-400"
                                                                                                                                                 }, void 0, false, {
                                                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                                    lineNumber: 525,
+                                                                                                                                                    lineNumber: 535,
                                                                                                                                                     columnNumber: 55
                                                                                                                                                 }, this),
                                                                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1921,13 +1941,13 @@ function ProjectGeneratorApp() {
                                                                                                                                                     children: step.filename || 'Code'
                                                                                                                                                 }, void 0, false, {
                                                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                                    lineNumber: 526,
+                                                                                                                                                    lineNumber: 536,
                                                                                                                                                     columnNumber: 55
                                                                                                                                                 }, this)
                                                                                                                                             ]
                                                                                                                                         }, void 0, true, {
                                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                            lineNumber: 524,
+                                                                                                                                            lineNumber: 534,
                                                                                                                                             columnNumber: 53
                                                                                                                                         }, this),
                                                                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1937,24 +1957,24 @@ function ProjectGeneratorApp() {
                                                                                                                                                 className: "w-4 h-4 text-green-400"
                                                                                                                                             }, void 0, false, {
                                                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                                lineNumber: 533,
+                                                                                                                                                lineNumber: 543,
                                                                                                                                                 columnNumber: 57
                                                                                                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                                                                                                                                 className: "w-4 h-4"
                                                                                                                                             }, void 0, false, {
                                                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                                lineNumber: 535,
+                                                                                                                                                lineNumber: 545,
                                                                                                                                                 columnNumber: 57
                                                                                                                                             }, this)
                                                                                                                                         }, void 0, false, {
                                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                            lineNumber: 528,
+                                                                                                                                            lineNumber: 538,
                                                                                                                                             columnNumber: 53
                                                                                                                                         }, this)
                                                                                                                                     ]
                                                                                                                                 }, void 0, true, {
                                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                    lineNumber: 523,
+                                                                                                                                    lineNumber: 533,
                                                                                                                                     columnNumber: 51
                                                                                                                                 }, this),
                                                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("pre", {
@@ -1963,40 +1983,40 @@ function ProjectGeneratorApp() {
                                                                                                                                         children: step.code
                                                                                                                                     }, void 0, false, {
                                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                        lineNumber: 540,
+                                                                                                                                        lineNumber: 550,
                                                                                                                                         columnNumber: 53
                                                                                                                                     }, this)
                                                                                                                                 }, void 0, false, {
                                                                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                                    lineNumber: 539,
+                                                                                                                                    lineNumber: 549,
                                                                                                                                     columnNumber: 51
                                                                                                                                 }, this)
                                                                                                                             ]
                                                                                                                         }, void 0, true, {
                                                                                                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                            lineNumber: 522,
+                                                                                                                            lineNumber: 532,
                                                                                                                             columnNumber: 49
                                                                                                                         }, this)
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                        lineNumber: 521,
+                                                                                                                        lineNumber: 531,
                                                                                                                         columnNumber: 47
                                                                                                                     }, this)
                                                                                                                 ]
                                                                                                             }, stepIndex, true, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 490,
+                                                                                                                lineNumber: 500,
                                                                                                                 columnNumber: 43
                                                                                                             }, this))
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 488,
+                                                                                                        lineNumber: 498,
                                                                                                         columnNumber: 39
                                                                                                     }, this)
                                                                                                 ]
                                                                                             }, void 0, true, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 486,
+                                                                                                lineNumber: 496,
                                                                                                 columnNumber: 37
                                                                                             }, this),
                                                                                             phase.troubleshooting && phase.troubleshooting.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2009,14 +2029,14 @@ function ProjectGeneratorApp() {
                                                                                                                 className: "w-4 h-4 text-yellow-500"
                                                                                                             }, void 0, false, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 555,
+                                                                                                                lineNumber: 565,
                                                                                                                 columnNumber: 41
                                                                                                             }, this),
                                                                                                             "Troubleshooting"
                                                                                                         ]
                                                                                                     }, void 0, true, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 554,
+                                                                                                        lineNumber: 564,
                                                                                                         columnNumber: 39
                                                                                                     }, this),
                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2028,25 +2048,25 @@ function ProjectGeneratorApp() {
                                                                                                                         className: "w-1 h-1 bg-yellow-500 rounded-full mt-2 flex-shrink-0"
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                        lineNumber: 561,
+                                                                                                                        lineNumber: 571,
                                                                                                                         columnNumber: 45
                                                                                                                     }, this),
                                                                                                                     tip
                                                                                                                 ]
                                                                                                             }, idx, true, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 560,
+                                                                                                                lineNumber: 570,
                                                                                                                 columnNumber: 43
                                                                                                             }, this))
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 558,
+                                                                                                        lineNumber: 568,
                                                                                                         columnNumber: 39
                                                                                                     }, this)
                                                                                                 ]
                                                                                             }, void 0, true, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 553,
+                                                                                                lineNumber: 563,
                                                                                                 columnNumber: 37
                                                                                             }, this),
                                                                                             phase.validation && phase.validation.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2058,14 +2078,14 @@ function ProjectGeneratorApp() {
                                                                                                                 className: "w-4 h-4 text-green-500"
                                                                                                             }, void 0, false, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 573,
+                                                                                                                lineNumber: 583,
                                                                                                                 columnNumber: 41
                                                                                                             }, this),
                                                                                                             "Validation Steps"
                                                                                                         ]
                                                                                                     }, void 0, true, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 572,
+                                                                                                        lineNumber: 582,
                                                                                                         columnNumber: 39
                                                                                                     }, this),
                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2077,68 +2097,68 @@ function ProjectGeneratorApp() {
                                                                                                                         className: "w-3 h-3 text-green-500 mt-0.5 flex-shrink-0"
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                        lineNumber: 579,
+                                                                                                                        lineNumber: 589,
                                                                                                                         columnNumber: 45
                                                                                                                     }, this),
                                                                                                                     check
                                                                                                                 ]
                                                                                                             }, idx, true, {
                                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                                lineNumber: 578,
+                                                                                                                lineNumber: 588,
                                                                                                                 columnNumber: 43
                                                                                                             }, this))
                                                                                                     }, void 0, false, {
                                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                        lineNumber: 576,
+                                                                                                        lineNumber: 586,
                                                                                                         columnNumber: 39
                                                                                                     }, this)
                                                                                                 ]
                                                                                             }, void 0, true, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 571,
+                                                                                                lineNumber: 581,
                                                                                                 columnNumber: 37
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 466,
+                                                                                        lineNumber: 476,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 423,
+                                                                                lineNumber: 433,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             index < result.roadmap.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                 className: "absolute left-4 -bottom-3 w-0.5 h-6 bg-gray-300"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 590,
+                                                                                lineNumber: 600,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, index, true, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 422,
+                                                                        lineNumber: 432,
                                                                         columnNumber: 27
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 420,
+                                                                lineNumber: 430,
                                                                 columnNumber: 23
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-gray-500",
                                                                 children: "No roadmap data available."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 596,
+                                                                lineNumber: 606,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 415,
+                                                        lineNumber: 425,
                                                         columnNumber: 19
                                                     }, this),
                                                     activeTab === "tech" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2149,7 +2169,7 @@ function ProjectGeneratorApp() {
                                                                 children: "Technology Stack"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 604,
+                                                                lineNumber: 614,
                                                                 columnNumber: 21
                                                             }, this),
                                                             result.techStack && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2162,7 +2182,7 @@ function ProjectGeneratorApp() {
                                                                                 children: category.replace(/([A-Z])/g, " $1").trim()
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 611,
+                                                                                lineNumber: 621,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2172,30 +2192,30 @@ function ProjectGeneratorApp() {
                                                                                         children: tech
                                                                                     }, index, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 617,
+                                                                                        lineNumber: 627,
                                                                                         columnNumber: 37
                                                                                     }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                     className: "bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700",
                                                                                     children: technologies
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 625,
+                                                                                    lineNumber: 635,
                                                                                     columnNumber: 35
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 614,
+                                                                                lineNumber: 624,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, category, true, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 610,
+                                                                        lineNumber: 620,
                                                                         columnNumber: 27
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 608,
+                                                                lineNumber: 618,
                                                                 columnNumber: 23
                                                             }, this),
                                                             result.packages && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2206,7 +2226,7 @@ function ProjectGeneratorApp() {
                                                                         children: "Package Dependencies"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 638,
+                                                                        lineNumber: 648,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2219,7 +2239,7 @@ function ProjectGeneratorApp() {
                                                                                         children: packageManager
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 643,
+                                                                                        lineNumber: 653,
                                                                                         columnNumber: 33
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2229,35 +2249,35 @@ function ProjectGeneratorApp() {
                                                                                                 children: pkg
                                                                                             }, index, false, {
                                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                                lineNumber: 646,
+                                                                                                lineNumber: 656,
                                                                                                 columnNumber: 37
                                                                                             }, this))
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 644,
+                                                                                        lineNumber: 654,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 ]
                                                                             }, packageManager, true, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 642,
+                                                                                lineNumber: 652,
                                                                                 columnNumber: 31
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 639,
+                                                                        lineNumber: 649,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 637,
+                                                                lineNumber: 647,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 603,
+                                                        lineNumber: 613,
                                                         columnNumber: 19
                                                     }, this),
                                                     activeTab === "resources" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2268,7 +2288,7 @@ function ProjectGeneratorApp() {
                                                                 children: "Learning Resources"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 663,
+                                                                lineNumber: 673,
                                                                 columnNumber: 21
                                                             }, this),
                                                             result.documentation?.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2278,7 +2298,7 @@ function ProjectGeneratorApp() {
                                                                         children: "Documentation"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 669,
+                                                                        lineNumber: 679,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2294,7 +2314,7 @@ function ProjectGeneratorApp() {
                                                                                         children: doc.title
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 681,
+                                                                                        lineNumber: 691,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2302,24 +2322,24 @@ function ProjectGeneratorApp() {
                                                                                         children: doc.description
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 682,
+                                                                                        lineNumber: 692,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, index, true, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 674,
+                                                                                lineNumber: 684,
                                                                                 columnNumber: 29
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 672,
+                                                                        lineNumber: 682,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 668,
+                                                                lineNumber: 678,
                                                                 columnNumber: 23
                                                             }, this),
                                                             result.youtubeResources?.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2329,7 +2349,7 @@ function ProjectGeneratorApp() {
                                                                         children: "Video Tutorials"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 691,
+                                                                        lineNumber: 701,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2345,7 +2365,7 @@ function ProjectGeneratorApp() {
                                                                                         children: video.title
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 703,
+                                                                                        lineNumber: 713,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2353,7 +2373,7 @@ function ProjectGeneratorApp() {
                                                                                         children: video.channel
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 704,
+                                                                                        lineNumber: 714,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2361,42 +2381,42 @@ function ProjectGeneratorApp() {
                                                                                         children: video.description
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                        lineNumber: 705,
+                                                                                        lineNumber: 715,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, index, true, {
                                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                lineNumber: 696,
+                                                                                lineNumber: 706,
                                                                                 columnNumber: 29
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                                        lineNumber: 694,
+                                                                        lineNumber: 704,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                                lineNumber: 690,
+                                                                lineNumber: 700,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                                        lineNumber: 662,
+                                                        lineNumber: 672,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 326,
+                                                lineNumber: 336,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 299,
+                                        lineNumber: 309,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2411,40 +2431,40 @@ function ProjectGeneratorApp() {
                                             children: "Generate Another Project"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 718,
+                                            lineNumber: 728,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Project-helper/page.jsx",
-                                        lineNumber: 717,
+                                        lineNumber: 727,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                lineNumber: 285,
+                                lineNumber: 295,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Project-helper/page.jsx",
-                        lineNumber: 174,
+                        lineNumber: 184,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Project-helper/page.jsx",
-                lineNumber: 161,
+                lineNumber: 171,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Project-helper/page.jsx",
-        lineNumber: 145,
+        lineNumber: 146,
         columnNumber: 5
     }, this);
 }
-_s(ProjectGeneratorApp, "UiVo63GikMPfTEbTFsQaViokVgw=", false, function() {
+_s(ProjectGeneratorApp, "uQ52S8p+Y14uWpMPVmm58wqE5SU=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$hooks$2f$useChatManager$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
     ];

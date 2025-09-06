@@ -19,6 +19,7 @@ import ChatHistoryItem from "./ChatHistoryItem";
 
 const ChatSidebar = ({ 
   isOpen, 
+  isDesktopOpen = true,
   onToggle, 
   currentChatId, 
   onChatSelect, 
@@ -142,7 +143,9 @@ const ChatSidebar = ({
       <div
         className={`fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } w-80 lg:w-72 xl:w-80 flex flex-col`}
+        } ${
+          isDesktopOpen ? "lg:translate-x-0" : "lg:-translate-x-full"
+        } w-80 lg:w-72 xl:w-80 flex flex-col lg:relative lg:z-auto`}
       >
         {/* Header */}
         <div className="p-4 border-b border-gray-200">
@@ -153,9 +156,11 @@ const ChatSidebar = ({
             </div>
             <button
               onClick={onToggle}
-              className="p-1 rounded-md hover:bg-gray-100 transition-colors lg:hidden"
+              className="p-1 rounded-md hover:bg-gray-100 transition-colors"
+              title={isDesktopOpen ? "Close sidebar" : "Open sidebar"}
             >
-              <ChevronLeft className="w-5 h-5 text-gray-500" />
+              <ChevronLeft className="w-5 h-5 text-gray-500 lg:hidden" />
+              <ChevronLeft className="w-5 h-5 text-gray-500 hidden lg:block" />
             </button>
           </div>
 
@@ -245,6 +250,17 @@ const ChatSidebar = ({
         <button
           onClick={onToggle}
           className="fixed top-4 left-4 z-40 p-2 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow lg:hidden"
+        >
+          <ChevronRight className="w-5 h-5 text-gray-600" />
+        </button>
+      )}
+
+      {/* Desktop Toggle Button (when sidebar is closed) */}
+      {!isDesktopOpen && (
+        <button
+          onClick={onToggle}
+          className="fixed top-4 left-4 z-40 p-2 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow hidden lg:block"
+          title="Open chat history"
         >
           <ChevronRight className="w-5 h-5 text-gray-600" />
         </button>
