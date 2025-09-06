@@ -1,9 +1,5 @@
 {
-  "app": {
-    "[project]/app/Project-helper/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.0560adac.woff2"
-    ]
-  },
+  "app": {},
   "appUsingSizeAdjust": false,
   "pages": {},
   "pagesUsingSizeAdjust": false
