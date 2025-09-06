@@ -343,6 +343,11 @@ async function generateIntelligentSearchQueries(projectData, projectIdea) {
  */
 function validateVideoQuality(video) {
   try {
+    // Check if video and snippet exist
+    if (!video || !video.snippet) {
+      return false;
+    }
+
     // Check if video has proper metadata
     if (!video.snippet.title || !video.snippet.description) {
       return false;

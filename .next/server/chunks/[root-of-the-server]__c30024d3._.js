@@ -138,7 +138,7 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
         if (description.includes(term)) score += 0.5;
         if (channel.includes(term)) score += 0.3;
     });
-    // Bonus for educational channels and tutorial keywords
+    // **ENHANCED: Bonus for educational channels and tutorial keywords (Hindi + English)**
     const educationalKeywords = [
         'tutorial',
         'course',
@@ -146,21 +146,56 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
         'guide',
         'how to',
         'coding',
-        'programming'
+        'programming',
+        'complete course',
+        'crash course',
+        'full stack',
+        'project'
     ];
-    const educationalChannels = [
+    // **Premium Educational Channels - English**
+    const englishChannels = [
         'freecodecamp',
-        'traversy',
         'net ninja',
+        'traversy media',
         'programming with mosh',
         'academind',
         'codevolution',
-        'web dev simplified'
+        'web dev simplified',
+        'clever programmer',
+        'dev ed',
+        'coding addict',
+        'javascript mastery',
+        'fireship',
+        'ben awad',
+        'theo - ping․gg',
+        'coding garden'
+    ];
+    // **Premium Educational Channels - Hindi**
+    const hindiChannels = [
+        'code with harry',
+        'thapa technical',
+        'apna college',
+        'love babbar',
+        'chai aur code',
+        'harkirat singh',
+        'hitesh choudhary',
+        'websitelearner',
+        'technical suneja',
+        'programming pathshala',
+        'codingshuttle',
+        'programming knowledge',
+        'geeky shows',
+        'mysirg.com',
+        'saurabh shukla sir'
+    ];
+    const allEducationalChannels1 = [
+        ...englishChannels,
+        ...hindiChannels
     ];
     educationalKeywords.forEach((keyword)=>{
         if (title.includes(keyword) || description.includes(keyword)) score += 0.2;
     });
-    educationalChannels.forEach((channelName)=>{
+    allEducationalChannels1.forEach((channelName)=>{
         if (channel.includes(channelName)) score += 0.5;
     });
     return Math.min(score / queryTerms.length, 1); // Normalize to 0-1
@@ -399,47 +434,73 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
  * @returns {Promise<Array>} Array of search query strings
  */ async function generateIntelligentSearchQueries(projectData, projectIdea) {
     const queries = [];
-    // Extract technologies from tech stack
+    // Extract technologies from tech stack (enhanced for new structure)
     const allTechnologies = [];
     if (projectData.techStack) {
-        Object.values(projectData.techStack).forEach((techArray)=>{
-            if (Array.isArray(techArray)) {
-                allTechnologies.push(...techArray);
+        Object.values(projectData.techStack).forEach((techCategory)=>{
+            if (Array.isArray(techCategory)) {
+                allTechnologies.push(...techCategory);
+            } else if (typeof techCategory === 'object') {
+                // Handle nested structure like { primary: [], styling: [] }
+                Object.values(techCategory).forEach((techArray)=>{
+                    if (Array.isArray(techArray)) {
+                        allTechnologies.push(...techArray);
+                    }
+                });
             }
         });
     }
     // Analyze project type and complexity
     const projectAnalysis = analyzeProject(projectIdea, allTechnologies);
     console.log('Project Analysis:', projectAnalysis);
-    // Priority 1: Exact project match tutorials
+    // **ENHANCED: Priority 1 - Exact project match tutorials (Hindi + English)**
     if (projectAnalysis.projectType !== 'generic') {
+        // English tutorials
         queries.push({
-            query: `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} tutorial 2024`,
+            query: `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} complete tutorial 2024`,
             priority: 'high',
-            category: 'project-specific'
+            category: 'project-specific-en'
         });
         queries.push({
-            query: `build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step`,
+            query: `build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step project`,
             priority: 'high',
-            category: 'project-specific'
+            category: 'project-specific-en'
+        });
+        // Hindi tutorials
+        queries.push({
+            query: `${projectAnalysis.projectType} ${allTechnologies[0]} hindi tutorial complete course`,
+            priority: 'high',
+            category: 'project-specific-hi'
         });
     }
-    // Priority 2: Technology stack combinations
+    // **ENHANCED: Priority 2 - Technology stack combinations (Hindi + English)**
     if (allTechnologies.length >= 2) {
         const mainStack = allTechnologies.slice(0, 3);
+        // English stack tutorials
         queries.push({
-            query: `${mainStack.join(' ')} full stack tutorial`,
+            query: `${mainStack.join(' ')} full stack tutorial 2024`,
             priority: 'high',
-            category: 'tech-stack'
+            category: 'tech-stack-en'
+        });
+        // Hindi stack tutorials
+        queries.push({
+            query: `${mainStack[0]} ${mainStack[1]} hindi tutorial complete project`,
+            priority: 'high',
+            category: 'tech-stack-hi'
         });
         // Frontend + Backend combination
         const frontend = getFrontendTech(allTechnologies);
         const backend = getBackendTech(allTechnologies);
         if (frontend && backend) {
             queries.push({
-                query: `${frontend} ${backend} complete project tutorial`,
+                query: `${frontend} ${backend} complete project tutorial english`,
                 priority: 'high',
-                category: 'tech-stack'
+                category: 'tech-stack-en'
+            });
+            queries.push({
+                query: `${frontend} ${backend} hindi me complete course`,
+                priority: 'medium',
+                category: 'tech-stack-hi'
             });
         }
     }
@@ -479,10 +540,70 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
     .map((q)=>q.query);
 }
 /**
- * Enhanced video fetching with intelligent search
+ * Validate video accessibility and quality
+ * @param {Object} video - Video object from YouTube API
+ * @returns {boolean} Whether video meets quality standards
+ */ function validateVideoQuality(video) {
+    try {
+        // Check if video and snippet exist
+        if (!video || !video.snippet) {
+            return false;
+        }
+        // Check if video has proper metadata
+        if (!video.snippet.title || !video.snippet.description) {
+            return false;
+        }
+        // Check if video is not private/deleted
+        if (video.snippet.title.toLowerCase().includes('private video') || video.snippet.title.toLowerCase().includes('deleted video') || video.snippet.title.toLowerCase().includes('[deleted]')) {
+            return false;
+        }
+        // Check if video has meaningful title (not just random characters)
+        if (video.snippet.title.length < 10) {
+            return false;
+        }
+        // Prefer videos from known educational channels (both Hindi & English)
+        const educationalChannels = [
+            // English channels
+            'freecodecamp',
+            'net ninja',
+            'traversy media',
+            'programming with mosh',
+            'academind',
+            'web dev simplified',
+            'javascript mastery',
+            'fireship',
+            'coding addict',
+            // Hindi channels  
+            'code with harry',
+            'thapa technical',
+            'apna college',
+            'love babbar',
+            'chai aur code',
+            'harkirat singh',
+            'hitesh choudhary',
+            'codingshuttle'
+        ];
+        const channelName = video.snippet.channelTitle.toLowerCase();
+        const isEducationalChannel = educationalChannels.some((channel)=>channelName.includes(channel));
+        // Check upload recency (prefer newer content from trusted channels)
+        const uploadDate = new Date(video.snippet.publishedAt);
+        const threeYearsAgo = new Date();
+        threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
+        // Allow older videos from trusted channels, recent videos from all channels
+        if (uploadDate < threeYearsAgo && !isEducationalChannel) {
+            return false;
+        }
+        return true;
+    } catch (error) {
+        console.error('Video validation error:', error);
+        return false;
+    }
+}
+/**
+ * Enhanced video fetching with intelligent search and validation
  * @param {Object} projectData - Project data object
  * @param {string} projectIdea - Original project idea
- * @returns {Promise<Array>} Array of relevant YouTube videos
+ * @returns {Promise<Array>} Array of validated, relevant YouTube videos
  */ async function fetchProjectRelevantVideos(projectData, projectIdea) {
     console.log('Starting intelligent video search...');
     const searchQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
@@ -511,16 +632,23 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
     });
     // Wait for all queries to complete in parallel
     const results = await Promise.all(videoPromises);
-    // Process results
+    // Process results with validation
     results.forEach(({ query, videos })=>{
         if (videos.length > 0) {
-            // Categorize videos based on query type
-            if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
-                videosByCategory.projectSpecific.push(...videos);
-            } else if (query.includes('full stack') || query.includes('crash course')) {
-                videosByCategory.techStack.push(...videos);
-            } else {
-                videosByCategory.individual.push(...videos);
+            // **ENHANCED: Validate each video before categorizing**
+            const validatedVideos = videos.filter((video)=>validateVideoQuality(video));
+            if (validatedVideos.length > 0) {
+                // Categorize videos based on query type and language
+                if (query.includes('hindi') || query.includes('hindi me')) {
+                    // Hindi content gets priority for Indian users
+                    videosByCategory.projectSpecific.push(...validatedVideos);
+                } else if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
+                    videosByCategory.projectSpecific.push(...validatedVideos);
+                } else if (query.includes('full stack') || query.includes('crash course')) {
+                    videosByCategory.techStack.push(...validatedVideos);
+                } else {
+                    videosByCategory.individual.push(...validatedVideos);
+                }
             }
         }
     });
@@ -533,15 +661,33 @@ async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
     ];
     // Remove duplicates based on URL
     const uniqueVideos = combinedVideos.filter((video, index, self)=>index === self.findIndex((v)=>v.url === video.url));
-    // Final filtering and sorting
-    return uniqueVideos.filter((video)=>video.viewCount > 1000) // Filter out very low view count videos
-    .sort((a, b)=>{
-        // Sort by relevance score first, then by view count
+    // **ENHANCED: Final filtering and intelligent sorting with language balance**
+    const validatedVideos = uniqueVideos.filter((video)=>{
+        // More lenient view count filter (500+ for quality content)
+        return video.viewCount > 500 && validateVideoQuality(video);
+    });
+    // Separate Hindi and English videos for balanced representation
+    const hindiVideos = validatedVideos.filter((video)=>video.title.toLowerCase().includes('hindi') || video.channel.toLowerCase().includes('harry') || video.channel.toLowerCase().includes('thapa') || video.channel.toLowerCase().includes('apna') || video.channel.toLowerCase().includes('love babbar'));
+    const englishVideos = validatedVideos.filter((video)=>!hindiVideos.includes(video));
+    // Create balanced final list (mix of Hindi and English)
+    const balancedVideos = [
+        ...englishVideos.slice(0, 6),
+        ...hindiVideos.slice(0, 4)
+    ];
+    return balancedVideos.sort((a, b)=>{
+        // **PREMIUM: Multi-factor sorting algorithm**
+        // 1. Educational channels get priority
+        const aIsEducational = allEducationalChannels.some((channel)=>a.channel.toLowerCase().includes(channel));
+        const bIsEducational = allEducationalChannels.some((channel)=>b.channel.toLowerCase().includes(channel));
+        if (aIsEducational && !bIsEducational) return -1;
+        if (!aIsEducational && bIsEducational) return 1;
+        // 2. Relevance score (quality of match)
         if (Math.abs(a.relevanceScore - b.relevanceScore) > 0.1) {
             return b.relevanceScore - a.relevanceScore;
         }
+        // 3. View count for popular content
         return b.viewCount - a.viewCount;
-    }).slice(0, 10); // Final limit to 10 videos
+    }).slice(0, 10); // Final limit to 10 high-quality videos
 }
 /**
  * Create fallback search links when no videos are found
@@ -653,107 +799,109 @@ async function POST(request) {
  * @returns {Promise<Object>} The generated project data
  */ async function generateProjectWithGemini(projectIdea) {
     const prompt = `
-You are a software architect. Analyze this project idea and generate a comprehensive JSON guide:
+You are an elite software architect and project consultant with 15+ years of experience. Analyze this project idea and create a premium, professional-grade project guide that would rival those from top tech consulting firms:
 
-"${projectIdea}"
+PROJECT IDEA: "${projectIdea}"
 
-Create a structured breakdown with:
-- Mind map of project components
-- Step-by-step roadmap with commands
-- Modern tech stack recommendations
-- Quick start guide
-- Essential documentation links
+Create an enterprise-level breakdown that feels like a $10,000 consulting package, tailored for beginners, intermediate, and advanced developers. Your output should be so comprehensive and actionable that developers feel confident building this project from scratch to production deployment.
 
-**Requirements:**
-- Use current 2024-2025 technologies
-- Include practical terminal commands
-- Add estimated durations for each phase
-- Provide code snippets for setup
-- Focus on actionable steps
+PREMIUM REQUIREMENTS:
+🏗️ ARCHITECTURE: Design scalable, production-ready architecture
+🔄 SKILL PROGRESSION: Structure roadmap for beginner → intermediate → advanced journey
+⚡ MODERN STACK: Use cutting-edge 2024-2025 technologies and best practices
+🛠️ PRACTICAL FOCUS: Every step must be immediately actionable with real commands
+🎯 PRODUCTION-READY: Include deployment, monitoring, security, and optimization
+📚 LEARNING PATHS: Multiple approaches based on developer experience level
+🔍 DETAILED GUIDANCE: Include file structures, code snippets, and troubleshooting
 
-Return ONLY valid JSON with this structure:
+ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON with this exact format:
 
 {
-  "mindMap": {
+  "projectSummary": {
     "name": "Project Name",
+    "description": "Comprehensive description with value proposition",
+    "complexity": "Beginner",
+    "estimatedTime": "2-4 weeks",
+    "skillsLearned": ["React", "Node.js", "Database Design"]
+  },
+  "mindMap": {
+    "name": "Project Architecture",
     "children": [
       {
-        "name": "Major Component 1",
+        "name": "Frontend Layer",
         "children": [
-          { "name": "Sub-component 1.1" },
-          { "name": "Sub-component 1.2" }
+          { "name": "UI Components", "details": "Reusable component library" },
+          { "name": "State Management", "details": "Global state handling" },
+          { "name": "Routing System", "details": "Navigation and page structure" }
+        ]
+      },
+      {
+        "name": "Backend Layer",
+        "children": [
+          { "name": "API Routes", "details": "RESTful endpoints" },
+          { "name": "Authentication", "details": "User management system" },
+          { "name": "Database Layer", "details": "Data persistence" }
+        ]
+      },
+      {
+        "name": "DevOps & Deployment",
+        "children": [
+          { "name": "CI/CD Pipeline", "details": "Automated deployment" },
+          { "name": "Monitoring", "details": "Performance tracking" }
         ]
       }
     ]
   },
+  "learningPaths": {
+    "beginner": "Core functionality with guided setup - Build functional MVP",
+    "intermediate": "Advanced features and optimization - Production-ready app", 
+    "advanced": "Scalable architecture and enterprise patterns - Full system"
+  },
   "roadmap": [
     {
-      "phase": "Phase 1: Project Setup & Environment",
-      "description": "Set up the development environment and project structure",
+      "phase": "Phase 1: Foundation & Setup",
+      "description": "Environment setup and basic project structure",
       "duration": "2-4 hours",
       "difficulty": "Beginner",
-      "prerequisites": ["Node.js v18+", "Git", "VS Code"],
+      "skillLevel": "All levels",
+      "prerequisites": ["Node.js v18+", "Git", "Code editor"],
+      "learningObjectives": ["Project initialization", "Development environment", "Version control setup"],
       "steps": [
         {
-          "title": "Initialize Project",
-          "description": "Create project directory and initialize package.json",
-          "type": "terminal",
-          "commands": [
-            "mkdir my-project && cd my-project",
-            "npm init -y",
-            "git init"
-          ]
+          "title": "Environment Setup",
+          "commands": ["node --version", "npm install", "git init"]
         },
         {
-          "title": "Install Dependencies",
-          "description": "Install core packages and development tools",
-          "type": "terminal",
-          "commands": [
-            "npm install next react react-dom",
-            "npm install -D tailwindcss postcss autoprefixer"
-          ]
+          "title": "Project Creation", 
+          "commands": ["npx create-next-app@latest project", "cd project", "npm run dev"]
         }
       ],
-      "troubleshooting": [
-        "If Node.js version errors occur, use nvm to switch versions"
-      ],
       "validation": [
-        "Project starts without errors",
-        "localhost:3000 loads successfully"
-      ]
+        "npm run dev starts without errors",
+        "localhost:3000 shows Next.js welcome page",
+        "ESLint runs without issues"
+      ],
+      "nextSteps": ["Proceed to Phase 2 for core development"]
     }
   ],
   "techStack": {
-    "frontend": ["React", "Next.js", "Tailwind CSS"],
-    "backend": ["Node.js", "Express"],
-    "database": ["PostgreSQL"],
-    "devops": ["Docker", "GitHub Actions"],
-    "deployment": ["Vercel", "Railway"]
+    "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    "backend": ["Node.js", "PostgreSQL", "Prisma"],
+    "deployment": ["Vercel", "Railway"],
+    "tools": ["VS Code", "Git", "Postman"]
   },
-  "packages": {
-    "npm": ["next", "react", "axios", "tailwindcss"],
-    "python": [],
-    "tools": ["VS Code", "Postman", "Figma", "Git"]
+  "packages": ["next", "react", "typescript", "tailwindcss", "prisma"],
+  "quickStart": {
+    "commands": ["npm create next-app project", "cd project", "npm install", "npm run dev"],
+    "notes": ["Open localhost:3000", "Edit files to see changes", "Check console for errors"]
   },
   "documentation": [
-    {
-      "title": "Next.js Documentation",
-      "url": "https://nextjs.org/docs",
-      "description": "Official Next.js guide and API docs"
-    }
+    {"title": "Next.js Docs", "url": "https://nextjs.org/docs"},
+    {"title": "React Docs", "url": "https://react.dev"},
+    {"title": "Tailwind CSS", "url": "https://tailwindcss.com/docs"}
   ],
-  "quickStart": {
-    "description": "Get started with this project in under 5 minutes",
-    "commands": [
-      "git clone <repository-url>",
-      "npm install",
-      "npm run dev"
-    ],
-    "notes": [
-      "Make sure to update environment variables",
-      "Visit http://localhost:3000 to see your project"
-    ]
-  }
+  "deployment": ["Connect to Vercel", "Push to GitHub", "Auto-deploy enabled"],
+  "features": ["Authentication", "Database", "Responsive design", "SEO optimization"]
 }`;
     // Optimized Gemini API request configuration for speed
     const requestBody = {

@@ -100,16 +100,15 @@ PREMIUM REQUIREMENTS:
 📚 LEARNING PATHS: Multiple approaches based on developer experience level
 🔍 DETAILED GUIDANCE: Include file structures, code snippets, and troubleshooting
 
-ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON:
+ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON with this exact format:
 
 {
   "projectSummary": {
-    "name": "Professional Project Name",
-    "description": "Comprehensive project description with value proposition",
-    "complexity": "Beginner|Intermediate|Advanced",
+    "name": "Project Name",
+    "description": "Comprehensive description with value proposition",
+    "complexity": "Beginner",
     "estimatedTime": "2-4 weeks",
-    "marketValue": "Commercial viability and use cases",
-    "skillsLearned": ["List of skills developers will master"]
+    "skillsLearned": ["React", "Node.js", "Database Design"]
   },
   "mindMap": {
     "name": "Project Architecture",
@@ -139,25 +138,10 @@ ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON:
       }
     ]
   },
-  "skillLevelPaths": {
-    "beginner": {
-      "focus": "Core functionality with guided setup",
-      "timeCommitment": "10-15 hours/week for 3-4 weeks",
-      "learningOutcome": "Build functional MVP with deployment",
-      "prerequisites": ["Basic HTML/CSS", "JavaScript fundamentals"]
-    },
-    "intermediate": {
-      "focus": "Advanced features, optimization, and testing",
-      "timeCommitment": "15-20 hours/week for 4-5 weeks", 
-      "learningOutcome": "Production-ready app with advanced patterns",
-      "prerequisites": ["React experience", "API knowledge", "Git proficiency"]
-    },
-    "advanced": {
-      "focus": "Scalable architecture, microservices, and enterprise patterns",
-      "timeCommitment": "20+ hours/week for 5-6 weeks",
-      "learningOutcome": "Enterprise-grade system with full DevOps pipeline",
-      "prerequisites": ["Full-stack experience", "Database design", "Cloud platforms"]
-    }
+  "learningPaths": {
+    "beginner": "Core functionality with guided setup - Build functional MVP",
+    "intermediate": "Advanced features and optimization - Production-ready app", 
+    "advanced": "Scalable architecture and enterprise patterns - Full system"
   },
   "roadmap": [
     {
@@ -170,42 +154,12 @@ ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON:
       "learningObjectives": ["Project initialization", "Development environment", "Version control setup"],
       "steps": [
         {
-          "title": "Environment Preparation",
-          "description": "Set up development environment with all necessary tools",
-          "commands": [
-            "node --version # Verify Node.js 18+",
-            "npm --version # Verify npm",
-            "git --version # Verify Git"
-          ],
-          "codeSnippet": {
-            "filename": ".nvmrc",
-            "language": "text",
-            "code": "18.17.0"
-          }
+          "title": "Environment Setup",
+          "commands": ["node --version", "npm install", "git init"]
         },
         {
-          "title": "Project Initialization",
-          "description": "Create project structure and initialize configuration",
-          "commands": [
-            "npx create-next-app@latest my-project --typescript --tailwind --eslint --app",
-            "cd my-project",
-            "git init",
-            "git add .",
-            "git commit -m \"Initial project setup\""
-          ],
-          "fileStructure": [
-            "my-project/",
-            "├── app/",
-            "├── public/",
-            "├── package.json",
-            "└── README.md"
-          ]
-        }
-      ],
-      "troubleshooting": [
-        {
-          "issue": "Node.js version conflicts",
-          "solution": "Use nvm: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
+          "title": "Project Creation", 
+          "commands": ["npx create-next-app@latest project", "cd project", "npm run dev"]
         }
       ],
       "validation": [
@@ -217,114 +171,23 @@ ENHANCED PROJECT STRUCTURE - Return ONLY valid JSON:
     }
   ],
   "techStack": {
-    "frontend": {
-      "primary": ["Next.js 14", "React 18", "TypeScript"],
-      "styling": ["Tailwind CSS", "Framer Motion", "Radix UI"],
-      "state": ["Zustand", "TanStack Query"],
-      "forms": ["React Hook Form", "Zod validation"]
-    },
-    "backend": {
-      "runtime": ["Node.js", "Edge Runtime"],
-      "framework": ["Next.js API Routes", "tRPC"],
-      "database": ["Prisma ORM", "PostgreSQL", "Redis"],
-      "auth": ["NextAuth.js", "JWT tokens"]
-    },
-    "devops": {
-      "deployment": ["Vercel", "Railway", "Docker"],
-      "monitoring": ["Vercel Analytics", "Sentry"],
-      "testing": ["Jest", "Playwright", "Vitest"],
-      "cicd": ["GitHub Actions", "Husky hooks"]
-    },
-    "tools": ["VS Code", "Postman", "Figma", "Git", "Docker Desktop"]
+    "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    "backend": ["Node.js", "PostgreSQL", "Prisma"],
+    "deployment": ["Vercel", "Railway"],
+    "tools": ["VS Code", "Git", "Postman"]
   },
-  "packages": {
-    "dependencies": [
-      "next@14.x",
-      "react@18.x",
-      "typescript",
-      "@prisma/client",
-      "next-auth",
-      "tailwindcss",
-      "framer-motion"
-    ],
-    "devDependencies": [
-      "@types/node",
-      "@types/react",
-      "eslint",
-      "prettier",
-      "husky",
-      "lint-staged"
-    ]
-  },
+  "packages": ["next", "react", "typescript", "tailwindcss", "prisma"],
   "quickStart": {
-    "description": "Get your development environment running in under 5 minutes",
-    "estimatedTime": "3-5 minutes",
-    "commands": [
-      "git clone <your-repo-url>",
-      "cd project-name",
-      "npm install",
-      "cp .env.example .env.local",
-      "npm run dev"
-    ],
-    "environmentVariables": [
-      "DATABASE_URL=postgresql://...",
-      "NEXTAUTH_SECRET=your-secret-key",
-      "NEXTAUTH_URL=http://localhost:3000"
-    ],
-    "verificationSteps": [
-      "Open http://localhost:3000",
-      "Check console for no errors",
-      "Verify hot reload works by editing a file"
-    ]
+    "commands": ["npm create next-app project", "cd project", "npm install", "npm run dev"],
+    "notes": ["Open localhost:3000", "Edit files to see changes", "Check console for errors"]
   },
   "documentation": [
-    {
-      "category": "Framework",
-      "resources": [
-        {
-          "title": "Next.js 14 Documentation",
-          "url": "https://nextjs.org/docs",
-          "description": "Complete Next.js guide with App Router"
-        },
-        {
-          "title": "React 18 Documentation", 
-          "url": "https://react.dev",
-          "description": "Latest React features and best practices"
-        }
-      ]
-    },
-    {
-      "category": "Database & Backend",
-      "resources": [
-        {
-          "title": "Prisma Documentation",
-          "url": "https://prisma.io/docs",
-          "description": "Type-safe database client and ORM"
-        }
-      ]
-    }
+    {"title": "Next.js Docs", "url": "https://nextjs.org/docs"},
+    {"title": "React Docs", "url": "https://react.dev"},
+    {"title": "Tailwind CSS", "url": "https://tailwindcss.com/docs"}
   ],
-  "deploymentGuide": {
-    "platforms": [
-      {
-        "name": "Vercel",
-        "difficulty": "Beginner",
-        "steps": [
-          "Connect GitHub repository",
-          "Configure environment variables",
-          "Deploy with one click"
-        ],
-        "pros": ["Zero configuration", "Automatic HTTPS", "Global CDN"],
-        "bestFor": "Frontend-heavy apps with API routes"
-      }
-    ]
-  },
-  "advancedFeatures": {
-    "performance": ["Code splitting", "Image optimization", "Caching strategies"],
-    "security": ["CSRF protection", "Rate limiting", "Input validation"],
-    "scaling": ["Database indexing", "Redis caching", "Load balancing"],
-    "monitoring": ["Error tracking", "Performance metrics", "User analytics"]
-  }
+  "deployment": ["Connect to Vercel", "Push to GitHub", "Auto-deploy enabled"],
+  "features": ["Authentication", "Database", "Responsive design", "SEO optimization"]
 }`;
 
   // Optimized Gemini API request configuration for speed
