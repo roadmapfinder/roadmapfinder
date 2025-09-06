@@ -23,7 +23,10 @@ import {
   ChevronUp,
   Play,
   Package,
+  Menu,
 } from "lucide-react";
+import ChatSidebar from "../components/ChatSidebar";
+import useChatManager from "../hooks/useChatManager";
 
 export default function ProjectGeneratorApp() {
   const [projectIdea, setProjectIdea] = useState("");
@@ -33,6 +36,13 @@ export default function ProjectGeneratorApp() {
   const [activeTab, setActiveTab] = useState("overview");
   const [copiedText, setCopiedText] = useState("");
   const [expandedPhases, setExpandedPhases] = useState({});
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const { 
+    currentChatId, 
+    handleNewChat, 
+    handleChatSelect 
+  } = useChatManager();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -75,6 +85,29 @@ export default function ProjectGeneratorApp() {
     }
   };
 
+  const onNewChat = () => {
+    const newChatData = handleNewChat();
+    setProjectIdea(newChatData.projectIdea);
+    setResult(newChatData.result);
+    setIsLoading(newChatData.isLoading);
+    setError(newChatData.error);
+    setActiveTab(newChatData.activeTab);
+    setExpandedPhases({});
+    setCopiedText("");
+  };
+
+  const onChatSelect = (chat) => {
+    const chatData = handleChatSelect(chat);
+    setProjectIdea(chatData.projectIdea);
+    setResult(chatData.result);
+    setIsLoading(chatData.isLoading);
+    setError(chatData.error);
+    setActiveTab(chatData.activeTab);
+    setExpandedPhases(chatData.result?.roadmap?.length > 0 ? { 0: true } : {});
+    setCopiedText("");
+    setIsSidebarOpen(false); // Close sidebar on mobile after selection
+  };
+
   const togglePhase = (index) => {
     setExpandedPhases(prev => ({
       ...prev,
@@ -110,10 +143,35 @@ export default function ProjectGeneratorApp() {
 
   return (
     <div
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen bg-gray-50 flex"
       style={{ fontFamily: "'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      {/* Chat Sidebar */}
+      <ChatSidebar
+        isOpen={isSidebarOpen}
+        onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+        currentChatId={currentChatId}
+        onChatSelect={onChatSelect}
+        onNewChat={onNewChat}
+        currentProjectIdea={projectIdea}
+        currentResult={result}
+      />
+
+      {/* Main Content */}
+      <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'lg:ml-72 xl:ml-80' : ''}`}>
+        {/* Mobile Header with Menu */}
+        <div className="lg:hidden flex items-center justify-between p-4 bg-white border-b border-gray-200">
+          <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="p-2 rounded-md hover:bg-gray-100 transition-colors"
+          >
+            <Menu className="w-6 h-6 text-gray-600" />
+          </button>
+          <h1 className="text-lg font-semibold text-gray-900">AI Project Generator</h1>
+          <div className="w-10"></div> {/* Spacer for centering */}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
 
         {/* Header */}
         <header className="text-center mb-10 sm:mb-16">
@@ -670,6 +728,7 @@ export default function ProjectGeneratorApp() {
             </div>
           </div>
         )}
+        </div>
       </div>
     </div>
   );
