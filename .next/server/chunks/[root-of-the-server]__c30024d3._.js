@@ -59,549 +59,126 @@ module.exports = mod;
 var { g: global, __dirname } = __turbopack_context__;
 {
 // lib/youtube-service.js
-// Enhanced YouTube API Integration Service with Intelligent Multi-language Search
+// YouTube API Integration Service
 /**
- * Enhanced YouTube API helper function with intelligent search logic
+ * Enhanced YouTube API helper function with better search logic
  * @param {string} searchQuery - The search query string
- * @param {number} maxResults - Maximum number of results to fetch (default: 8)
- * @param {string} language - Language preference ('en', 'hi', or 'mixed')
+ * @param {number} maxResults - Maximum number of results to fetch (default: 5)
  * @returns {Promise<Array>} Array of video objects
  */ __turbopack_context__.s({
     "analyzeProject": (()=>analyzeProject),
-    "calculateIntelligentRelevanceScore": (()=>calculateIntelligentRelevanceScore),
-    "calculateQualityScore": (()=>calculateQualityScore),
+    "calculateRelevanceScore": (()=>calculateRelevanceScore),
     "createFallbackSearchLinks": (()=>createFallbackSearchLinks),
-    "detectVideoLanguage": (()=>detectVideoLanguage),
-    "enhanceSearchQuery": (()=>enhanceSearchQuery),
     "fetchProjectRelevantVideos": (()=>fetchProjectRelevantVideos),
     "fetchYouTubeVideos": (()=>fetchYouTubeVideos),
-    "formatDuration": (()=>formatDuration),
     "generateIntelligentSearchQueries": (()=>generateIntelligentSearchQueries),
     "getBackendTech": (()=>getBackendTech),
     "getFrontendTech": (()=>getFrontendTech)
 });
-async function fetchYouTubeVideos(searchQuery, maxResults = 8, language = 'mixed') {
+async function fetchYouTubeVideos(searchQuery, maxResults = 5) {
     try {
         if (!process.env.YOUTUBE_API_KEY) {
             console.warn('YOUTUBE_API_KEY not set, skipping video fetch');
             return [];
         }
-        // Enhanced search parameters for better, more recent results
-        const currentYear = new Date().getFullYear();
-        const lastYear = currentYear - 1;
-        // Add recency and language filters to the query
-        const enhancedQuery = enhanceSearchQuery(searchQuery, language, currentYear);
-        const searchParams = new URLSearchParams({
-            part: 'snippet',
-            q: enhancedQuery,
-            type: 'video',
-            maxResults: maxResults,
-            order: 'relevance',
-            videoDuration: 'medium',
-            videoDefinition: 'any',
-            publishedAfter: `${lastYear}-01-01T00:00:00Z`,
-            relevanceLanguage: language === 'hi' ? 'hi' : 'en',
-            key: process.env.YOUTUBE_API_KEY
-        });
-        const searchUrl = `https://www.googleapis.com/youtube/v3/search?${searchParams}`;
-        console.log(`Searching YouTube: ${enhancedQuery} (Language: ${language})`);
+        // Enhanced search parameters for better results
+        const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&maxResults=${maxResults}&order=relevance&videoDuration=medium&videoDefinition=any&key=${process.env.YOUTUBE_API_KEY}`;
         const response = await fetch(searchUrl);
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error('YouTube API error:', response.status, errorText);
+            console.error('YouTube API error:', response.status, await response.text());
             return [];
         }
         const data = await response.json();
         if (!data.items || data.items.length === 0) {
-            console.log(`No videos found for query: ${enhancedQuery}`);
+            console.log(`No videos found for query: ${searchQuery}`);
             return [];
         }
         // Get additional video details for better filtering
         const videoIds = data.items.map((item)=>item.id.videoId).join(',');
-        const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails,snippet&id=${videoIds}&key=${process.env.YOUTUBE_API_KEY}`;
+        const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${videoIds}&key=${process.env.YOUTUBE_API_KEY}`;
         const detailsResponse = await fetch(detailsUrl);
         const detailsData = detailsResponse.ok ? await detailsResponse.json() : {
             items: []
         };
-        const processedVideos = data.items.map((item, index)=>{
-            const details = detailsData.items?.find((d)=>d.id === item.id.videoId);
+        return data.items.map((item, index)=>{
+            const details = detailsData.items?.[index];
             const viewCount = details?.statistics?.viewCount ? parseInt(details.statistics.viewCount) : 0;
             const duration = details?.contentDetails?.duration || 'Unknown';
-            const publishedAt = new Date(item.snippet.publishedAt);
-            // Calculate recency score (higher for newer videos)
-            const daysSincePublished = (Date.now() - publishedAt.getTime()) / (1000 * 60 * 60 * 24);
-            const recencyScore = Math.max(0, 1 - daysSincePublished / 730); // 2 years max
-            const relevanceScore = calculateIntelligentRelevanceScore(item, searchQuery, language, recencyScore, viewCount);
             return {
                 title: item.snippet.title,
                 channel: item.snippet.channelTitle,
                 url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
                 description: item.snippet.description.substring(0, 200) + '...',
-                thumbnail: item.snippet.thumbnails.high?.url || item.snippet.thumbnails.medium?.url || item.snippet.thumbnails.default?.url,
+                thumbnail: item.snippet.thumbnails.medium?.url || item.snippet.thumbnails.default?.url,
                 publishedAt: item.snippet.publishedAt,
                 viewCount,
-                duration: formatDuration(duration),
-                relevanceScore,
-                recencyScore,
-                language: detectVideoLanguage(item.snippet.title, item.snippet.description),
-                isRecent: daysSincePublished <= 180,
-                qualityScore: calculateQualityScore(viewCount, daysSincePublished, item.snippet.channelTitle)
+                duration,
+                relevanceScore: calculateRelevanceScore(item, searchQuery)
             };
-        });
-        // Advanced filtering and sorting
-        return processedVideos.filter((video)=>video.relevanceScore > 0.4) // Higher threshold for better quality
-        .filter((video)=>video.viewCount > 500) // Minimum view count
-        .sort((a, b)=>{
-            // Weighted sorting: relevance (40%) + recency (30%) + quality (30%)
-            const scoreA = a.relevanceScore * 0.4 + a.recencyScore * 0.3 + a.qualityScore * 0.3;
-            const scoreB = b.relevanceScore * 0.4 + b.recencyScore * 0.3 + b.qualityScore * 0.3;
-            return scoreB - scoreA;
-        });
+        }).filter((video)=>video.relevanceScore > 0.3) // Filter out low relevance videos
+        .sort((a, b)=>b.relevanceScore - a.relevanceScore); // Sort by relevance
     } catch (error) {
         console.error('YouTube API fetch error:', error);
         return [];
     }
 }
 /**
- * Enhance search query with language-specific terms and recency filters
- * @param {string} query - Original search query
- * @param {string} language - Target language ('en', 'hi', 'mixed')
- * @param {number} currentYear - Current year for recency
- * @returns {string} Enhanced search query
- */ function enhanceSearchQuery(query, language, currentYear) {
-    let enhancedQuery = query;
-    // Add year for recency
-    if (!query.includes(currentYear.toString()) && !query.includes((currentYear - 1).toString())) {
-        enhancedQuery += ` ${currentYear}`;
-    }
-    // Language-specific enhancements
-    if (language === 'hi') {
-        // Add Hindi tutorial keywords
-        const hindiKeywords = [
-            'tutorial',
-            'सिखें',
-            'टुटोरिअल',
-            'कोर्स',
-            'हिंदी में'
-        ];
-        const hasHindiKeyword = hindiKeywords.some((keyword)=>enhancedQuery.toLowerCase().includes(keyword.toLowerCase()));
-        if (!hasHindiKeyword) {
-            enhancedQuery += ' tutorial हिंदी';
-        }
-    } else if (language === 'en') {
-        // Add English tutorial keywords if not present
-        const englishKeywords = [
-            'tutorial',
-            'course',
-            'guide',
-            'learn',
-            'how to'
-        ];
-        const hasEnglishKeyword = englishKeywords.some((keyword)=>enhancedQuery.toLowerCase().includes(keyword.toLowerCase()));
-        if (!hasEnglishKeyword) {
-            enhancedQuery += ' tutorial';
-        }
-    } else {
-        // Mixed language - add both
-        enhancedQuery += ' tutorial';
-    }
-    return enhancedQuery;
-}
-/**
- * Advanced relevance scoring with language, recency, and quality factors
+ * Calculate relevance score based on title, description, and channel
  * @param {Object} video - Video object from YouTube API
  * @param {string} searchQuery - Original search query
- * @param {string} language - Target language
- * @param {number} recencyScore - Recency score (0-1)
- * @param {number} viewCount - Video view count
  * @returns {number} Relevance score between 0 and 1
- */ function calculateIntelligentRelevanceScore(video, searchQuery, language, recencyScore, viewCount) {
+ */ function calculateRelevanceScore(video, searchQuery) {
     const queryTerms = searchQuery.toLowerCase().split(' ').filter((term)=>term.length > 2);
     const title = video.snippet.title.toLowerCase();
     const description = video.snippet.description.toLowerCase();
     const channel = video.snippet.channelTitle.toLowerCase();
     let score = 0;
-    let termMatchCount = 0;
-    // Term matching with weighted importance
     queryTerms.forEach((term)=>{
-        let termScore = 0;
-        if (title.includes(term)) {
-            termScore += 2; // Title matches are most important
-            termMatchCount++;
-        }
-        if (description.includes(term)) {
-            termScore += 1; // Description matches are less important
-        }
-        if (channel.includes(term)) {
-            termScore += 0.5; // Channel matches are least important
-        }
-        score += termScore;
+        if (title.includes(term)) score += 1;
+        if (description.includes(term)) score += 0.5;
+        if (channel.includes(term)) score += 0.3;
     });
-    // Normalize by query terms
-    score = score / (queryTerms.length * 2); // Max possible score per term is 2
-    // Language preference bonus
-    const detectedLanguage = detectVideoLanguage(video.snippet.title, video.snippet.description);
-    if (language === 'mixed') {
-        score += 0.1; // Small bonus for any language in mixed mode
-    } else if (language === detectedLanguage) {
-        score += 0.3; // Significant bonus for matching language
-    }
-    // Educational content bonus
+    // Bonus for educational channels and tutorial keywords
     const educationalKeywords = [
-        // English
         'tutorial',
         'course',
         'learn',
         'guide',
         'how to',
-        'step by step',
-        'complete',
-        'full course',
-        'crash course',
-        'beginner',
-        'explained',
-        'project',
-        'build',
-        'create',
-        'development',
-        // Hindi
-        'tutorial',
-        'सिखें',
-        'टुटोरिअल',
-        'कोर्स',
-        'गाइड',
-        'कैसे',
-        'सीखिए',
-        'प्रोजेक्ट'
+        'coding',
+        'programming'
     ];
-    educationalKeywords.forEach((keyword)=>{
-        if (title.includes(keyword.toLowerCase()) || description.includes(keyword.toLowerCase())) {
-            score += 0.1;
-        }
-    });
-    // Trusted educational channels bonus
-    const trustedChannels = [
-        // English channels
+    const educationalChannels = [
         'freecodecamp',
-        'traversy media',
-        'the net ninja',
+        'traversy',
+        'net ninja',
         'programming with mosh',
         'academind',
         'codevolution',
-        'web dev simplified',
-        'dave gray',
-        'javascript mastery',
-        'coding addict',
-        'fireship',
-        'techno tim',
-        'coding train',
-        'sentdex',
-        'derek banas',
-        // Hindi channels
-        'code with harry',
-        'thapa technical',
-        'learn code with durgesh',
-        'college wallah',
-        'apna college',
-        'krishna sakinala',
-        'technical suneja',
-        'web cifar',
-        'geeky shows',
-        'code step by step',
-        'procademy',
-        'easytuts4you',
-        'yahoo baba'
+        'web dev simplified'
     ];
-    trustedChannels.forEach((trustedChannel)=>{
-        if (channel.includes(trustedChannel.toLowerCase())) {
-            score += 0.4; // Significant bonus for trusted channels
-        }
+    educationalKeywords.forEach((keyword)=>{
+        if (title.includes(keyword) || description.includes(keyword)) score += 0.2;
     });
-    // Recency bonus (newer videos get higher scores)
-    score += recencyScore * 0.2;
-    // View count normalization (logarithmic scale to avoid bias towards viral videos)
-    const viewScore = Math.min(Math.log10(viewCount + 1) / 7, 0.2); // Max 0.2 bonus
-    score += viewScore;
-    // Must have minimum term matches to be relevant
-    if (termMatchCount === 0) {
-        score *= 0.3; // Heavily penalize videos with no term matches
-    }
-    return Math.min(score, 1); // Cap at 1.0
-}
-/**
- * Detect video language based on title and description
- * @param {string} title - Video title
- * @param {string} description - Video description
- * @returns {string} Detected language ('en', 'hi', 'mixed')
- */ function detectVideoLanguage(title, description) {
-    const text = (title + ' ' + description).toLowerCase();
-    // Hindi indicators
-    const hindiPatterns = [
-        /[\u0900-\u097F]/,
-        /\b(tutorial|सिखें|टुटोरिअल|कोर्स|गाइड|कैसे|सीखिए|हिंदी|मे)\b/i
-    ];
-    // English indicators
-    const englishPatterns = [
-        /\b(tutorial|course|learn|guide|how\s+to|step\s+by\s+step|english|in\s+english)\b/i
-    ];
-    const hasHindi = hindiPatterns.some((pattern)=>pattern.test(text));
-    const hasEnglish = englishPatterns.some((pattern)=>pattern.test(text));
-    if (hasHindi && hasEnglish) return 'mixed';
-    if (hasHindi) return 'hi';
-    if (hasEnglish) return 'en';
-    return 'en'; // Default to English
-}
-/**
- * Calculate quality score based on various factors
- * @param {number} viewCount - Video view count
- * @param {number} daysSincePublished - Days since video was published
- * @param {string} channelTitle - Channel title
- * @returns {number} Quality score between 0 and 1
- */ function calculateQualityScore(viewCount, daysSincePublished, channelTitle) {
-    let score = 0;
-    // View count factor (logarithmic to avoid bias)
-    score += Math.min(Math.log10(viewCount + 1) / 7, 0.4);
-    // Age factor (newer videos get bonus, but not too new to be untested)
-    if (daysSincePublished >= 7 && daysSincePublished <= 365) {
-        score += 0.3; // Sweet spot: 1 week to 1 year old
-    } else if (daysSincePublished <= 730) {
-        score += 0.2; // Up to 2 years old
-    }
-    // Channel reputation (subscriber count proxy)
-    const channel = channelTitle.toLowerCase();
-    if (channel.includes('official') || channel.includes('academy') || channel.includes('university')) {
-        score += 0.3;
-    }
-    return Math.min(score, 1);
-}
-/**
- * Format video duration from ISO 8601 to readable format
- * @param {string} duration - ISO 8601 duration string
- * @returns {string} Formatted duration
- */ function formatDuration(duration) {
-    if (!duration || duration === 'Unknown') return 'Unknown';
-    const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-    if (!match) return duration;
-    const hours = parseInt(match[1]) || 0;
-    const minutes = parseInt(match[2]) || 0;
-    const seconds = parseInt(match[3]) || 0;
-    if (hours > 0) {
-        return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    } else {
-        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    }
-}
-/**
- * Super intelligent search query generation with multi-language support
- * @param {Object} projectData - Project data object
- * @param {string} projectIdea - Original project idea
- * @returns {Promise<Array>} Array of intelligent search query objects
- */ async function generateIntelligentSearchQueries(projectData, projectIdea) {
-    const queries = [];
-    const currentYear = new Date().getFullYear();
-    // Extract and analyze technologies
-    const allTechnologies = [];
-    if (projectData.techStack) {
-        Object.values(projectData.techStack).forEach((techArray)=>{
-            if (Array.isArray(techArray)) {
-                allTechnologies.push(...techArray);
-            }
-        });
-    }
-    const projectAnalysis = analyzeProject(projectIdea, allTechnologies);
-    console.log('Enhanced Project Analysis:', projectAnalysis);
-    // Helper function to create bilingual queries
-    const createBilingualQuery = (englishQuery, hindiTerms = [])=>{
-        const english = {
-            query: englishQuery,
-            language: 'en',
-            priority: 'high',
-            type: 'english'
-        };
-        const hindi = {
-            query: englishQuery + ' ' + hindiTerms.join(' '),
-            language: 'hi',
-            priority: 'high',
-            type: 'hindi'
-        };
-        return [
-            english,
-            hindi
-        ];
-    };
-    // 1. PROJECT-SPECIFIC QUERIES (Highest Priority)
-    if (projectAnalysis.projectType !== 'generic') {
-        const englishQuery = `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} complete tutorial ${currentYear}`;
-        const hindiTerms = [
-            'tutorial',
-            'हिंदी',
-            'प्रोजेक्ट'
-        ];
-        queries.push(...createBilingualQuery(englishQuery, hindiTerms));
-        // Step-by-step project building queries
-        queries.push(...createBilingualQuery(`build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step ${currentYear}`, [
-            'कैसे',
-            'बनाये',
-            'step by step'
-        ]));
-    }
-    // 2. TECHNOLOGY STACK COMBINATIONS
-    if (allTechnologies.length >= 2) {
-        const mainStack = allTechnologies.slice(0, 3);
-        // Full stack tutorial
-        queries.push(...createBilingualQuery(`${mainStack.join(' ')} full stack project ${currentYear}`, [
-            'full stack',
-            'प्रोजेक्ट',
-            'tutorial'
-        ]));
-        // Frontend + Backend specific
-        const frontend = getFrontendTech(allTechnologies);
-        const backend = getBackendTech(allTechnologies);
-        if (frontend && backend) {
-            queries.push(...createBilingualQuery(`${frontend} ${backend} complete application tutorial ${currentYear}`, [
-                'complete',
-                'application',
-                'tutorial'
-            ]));
-        }
-    }
-    // 3. INDIVIDUAL TECHNOLOGY DEEP DIVES
-    allTechnologies.slice(0, 3).forEach((tech)=>{
-        queries.push(...createBilingualQuery(`${tech} crash course ${currentYear} complete guide`, [
-            'crash course',
-            'complete',
-            'tutorial'
-        ]));
+    educationalChannels.forEach((channelName)=>{
+        if (channel.includes(channelName)) score += 0.5;
     });
-    // 4. DOMAIN-SPECIFIC ADVANCED QUERIES
-    projectAnalysis.domains.forEach((domain)=>{
-        queries.push(...createBilingualQuery(`${domain} project ${allTechnologies[0]} best practices ${currentYear}`, [
-            'project',
-            'best practices',
-            'tutorial'
-        ]));
-    });
-    // 5. COMPLEXITY-BASED QUERIES
-    if (projectAnalysis.complexity === 'advanced') {
-        projectAnalysis.advancedConcepts.forEach((concept)=>{
-            queries.push(...createBilingualQuery(`${concept} ${allTechnologies[0]} implementation guide ${currentYear}`, [
-                'implementation',
-                'guide',
-                'advanced'
-            ]));
-        });
-    } else if (projectAnalysis.complexity === 'beginner') {
-        queries.push(...createBilingualQuery(`${allTechnologies[0]} beginner complete course ${currentYear}`, [
-            'beginner',
-            'complete',
-            'course',
-            'शुरुआती'
-        ]));
-    }
-    // 6. TRENDING AND LATEST QUERIES
-    queries.push(...createBilingualQuery(`${allTechnologies[0]} latest features ${currentYear} tutorial`, [
-        'latest',
-        'new features',
-        'tutorial'
-    ]));
-    // Sort by priority and language diversity
-    const priorityOrder = {
-        'high': 3,
-        'medium': 2,
-        'low': 1
-    };
-    const sortedQueries = queries.sort((a, b)=>priorityOrder[b.priority] - priorityOrder[a.priority]).slice(0, 12); // Increased limit for better coverage
-    // Ensure balanced language distribution
-    const englishQueries = sortedQueries.filter((q)=>q.language === 'en').slice(0, 6);
-    const hindiQueries = sortedQueries.filter((q)=>q.language === 'hi').slice(0, 6);
-    return [
-        ...englishQueries,
-        ...hindiQueries
-    ];
+    return Math.min(score / queryTerms.length, 1); // Normalize to 0-1
 }
 /**
- * Enhanced video fetching with intelligent multi-language search
- * @param {Object} projectData - Project data object
- * @param {string} projectIdea - Original project idea
- * @returns {Promise<Array>} Array of relevant YouTube videos
- */ async function fetchProjectRelevantVideos(projectData, projectIdea) {
-    console.log('Starting super intelligent multi-language video search...');
-    const searchQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
-    console.log(`Generated ${searchQueries.length} intelligent search queries`);
-    const videosByLanguage = {
-        english: [],
-        hindi: [],
-        mixed: []
-    };
-    // Fetch videos for each query
-    for (const queryObj of searchQueries){
-        try {
-            console.log(`Searching: "${queryObj.query}" (${queryObj.language})`);
-            const videos = await fetchYouTubeVideos(queryObj.query, 6, queryObj.language);
-            if (videos.length > 0) {
-                if (queryObj.language === 'hi') {
-                    videosByLanguage.hindi.push(...videos);
-                } else {
-                    videosByLanguage.english.push(...videos);
-                }
-            }
-            // Rate limiting
-            await new Promise((resolve)=>setTimeout(resolve, 200));
-        } catch (error) {
-            console.error(`Error fetching videos for query "${queryObj.query}":`, error);
-        }
-    }
-    // Combine and balance languages
-    let combinedVideos = [
-        ...videosByLanguage.english.slice(0, 8),
-        ...videosByLanguage.hindi.slice(0, 8),
-        ...videosByLanguage.mixed.slice(0, 2)
-    ];
-    // Remove duplicates and final processing
-    const uniqueVideos = combinedVideos.filter((video, index, self)=>index === self.findIndex((v)=>v.url === video.url));
-    // Advanced filtering with quality metrics
-    return uniqueVideos.filter((video)=>video.viewCount > 1000).filter((video)=>video.relevanceScore > 0.5).sort((a, b)=>{
-        // Multi-factor sorting
-        const scoreA = a.relevanceScore * 0.4 + a.recencyScore * 0.3 + a.qualityScore * 0.3;
-        const scoreB = b.relevanceScore * 0.4 + b.recencyScore * 0.3 + b.qualityScore * 0.3;
-        return scoreB - scoreA;
-    }).slice(0, 15); // Increased final limit
-}
-/**
- * Create intelligent fallback search links
- * @param {Object} projectData - Project data object
- * @param {string} projectIdea - Original project idea
- * @returns {Promise<Array>} Array of fallback search links
- */ async function createFallbackSearchLinks(projectData, projectIdea) {
-    console.log('Creating intelligent multi-language fallback search links');
-    const fallbackQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
-    const currentYear = new Date().getFullYear();
-    return fallbackQueries.slice(0, 6).map((queryObj)=>({
-            title: `${queryObj.language === 'hi' ? '🇮🇳 Hindi' : '🇺🇸 English'}: ${queryObj.query}`,
-            channel: "YouTube Search",
-            url: `https://youtube.com/results?search_query=${encodeURIComponent(queryObj.query)}&sp=EgQIAhAB`,
-            description: `Search for ${queryObj.language === 'hi' ? 'Hindi' : 'English'} tutorials: ${queryObj.query}`,
-            thumbnail: null,
-            publishedAt: new Date().toISOString(),
-            viewCount: 0,
-            duration: "Search Link",
-            relevanceScore: 1,
-            language: queryObj.language,
-            isSearchLink: true,
-            isRecent: true
-        }));
-}
-// Keep existing helper functions
-function analyzeProject(projectIdea, technologies) {
+ * Advanced project analysis function
+ * @param {string} projectIdea - The project idea description
+ * @param {Array} technologies - Array of technologies used in the project
+ * @returns {Object} Project analysis object
+ */ function analyzeProject(projectIdea, technologies) {
     const ideaLower = projectIdea.toLowerCase();
     const analysis = {
         projectType: 'generic',
         domains: [],
         complexity: 'beginner',
-        advancedConcepts: [],
-        targetAudience: 'general'
+        advancedConcepts: []
     };
-    // Enhanced project type detection
+    // Project type detection
     const projectTypes = {
         'e-commerce': [
             'shop',
@@ -609,9 +186,7 @@ function analyzeProject(projectIdea, technologies) {
             'marketplace',
             'cart',
             'payment',
-            'product',
-            'ecommerce',
-            'shopping'
+            'product'
         ],
         'social media': [
             'social',
@@ -619,84 +194,64 @@ function analyzeProject(projectIdea, technologies) {
             'messaging',
             'post',
             'feed',
-            'friend',
-            'social network'
+            'friend'
         ],
         'blog': [
             'blog',
             'cms',
             'article',
             'content',
-            'publishing',
-            'news'
+            'publishing'
         ],
         'dashboard': [
             'dashboard',
             'admin',
             'analytics',
             'metrics',
-            'reporting',
-            'panel'
+            'reporting'
         ],
         'mobile app': [
             'mobile',
             'app',
             'ios',
             'android',
-            'native',
-            'flutter',
-            'react native'
+            'native'
         ],
         'web app': [
             'web app',
             'webapp',
             'single page',
-            'spa',
-            'pwa'
+            'spa'
         ],
         'api': [
             'api',
             'rest',
             'graphql',
             'backend',
-            'service',
-            'microservice'
+            'service'
         ],
         'ai app': [
             'ai',
             'ml',
             'machine learning',
             'neural',
-            'chatbot',
-            'nlp',
-            'computer vision'
+            'chatbot'
         ],
         'game': [
             'game',
             'gaming',
             'puzzle',
-            'arcade',
-            'unity',
-            'godot'
+            'arcade'
         ],
         'portfolio': [
             'portfolio',
             'personal site',
-            'resume',
-            'cv'
+            'resume'
         ],
         'landing page': [
             'landing',
             'marketing',
-            'promotional',
-            'business'
-        ],
-        'saas': [
-            'saas',
-            'subscription',
-            'tenant',
-            'cloud',
-            'platform'
+            'promotional'
         ]
     };
     for (const [type, keywords] of Object.entries(projectTypes)){
@@ -705,7 +260,60 @@ function analyzeProject(projectIdea, technologies) {
             break;
         }
     }
-    // Enhanced complexity assessment
+    // Domain detection
+    const domains = {
+        'web development': [
+            'web',
+            'website',
+            'html',
+            'css',
+            'javascript'
+        ],
+        'mobile development': [
+            'mobile',
+            'app',
+            'ios',
+            'android',
+            'react native',
+            'flutter'
+        ],
+        'backend development': [
+            'api',
+            'server',
+            'database',
+            'backend'
+        ],
+        'ai/ml': [
+            'ai',
+            'machine learning',
+            'neural',
+            'deep learning'
+        ],
+        'blockchain': [
+            'blockchain',
+            'crypto',
+            'smart contract',
+            'web3'
+        ],
+        'devops': [
+            'deployment',
+            'docker',
+            'kubernetes',
+            'ci/cd'
+        ],
+        'data science': [
+            'data',
+            'analytics',
+            'visualization',
+            'statistics'
+        ]
+    };
+    for (const [domain, keywords] of Object.entries(domains)){
+        if (keywords.some((keyword)=>ideaLower.includes(keyword) || technologies.some((tech)=>tech.toLowerCase().includes(keyword)))) {
+            analysis.domains.push(domain);
+        }
+    }
+    // Complexity assessment
     const complexityIndicators = {
         advanced: [
             'microservice',
@@ -714,27 +322,20 @@ function analyzeProject(projectIdea, technologies) {
             'enterprise',
             'real-time',
             'machine learning',
-            'blockchain',
-            'kubernetes',
-            'docker'
+            'blockchain'
         ],
         intermediate: [
             'authentication',
             'database',
             'api',
             'testing',
-            'deployment',
-            'responsive',
-            'state management'
+            'deployment'
         ],
         beginner: [
             'simple',
             'basic',
             'learning',
-            'tutorial',
-            'static',
-            'html',
-            'css'
+            'tutorial'
         ]
     };
     for (const [level, indicators] of Object.entries(complexityIndicators)){
@@ -743,9 +344,24 @@ function analyzeProject(projectIdea, technologies) {
             break;
         }
     }
+    // Advanced concepts detection
+    const advancedConcepts = [
+        'authentication',
+        'authorization',
+        'caching',
+        'testing',
+        'deployment',
+        'optimization',
+        'security'
+    ];
+    analysis.advancedConcepts = advancedConcepts.filter((concept)=>ideaLower.includes(concept));
     return analysis;
 }
-function getFrontendTech(technologies) {
+/**
+ * Helper function to identify frontend technology from tech stack
+ * @param {Array} technologies - Array of technologies
+ * @returns {string|undefined} Frontend technology if found
+ */ function getFrontendTech(technologies) {
     const frontendTechs = [
         'react',
         'vue',
@@ -755,13 +371,15 @@ function getFrontendTech(technologies) {
         'nuxt',
         'html',
         'css',
-        'javascript',
-        'flutter',
-        'react native'
+        'javascript'
     ];
     return technologies.find((tech)=>frontendTechs.some((ft)=>tech.toLowerCase().includes(ft.toLowerCase())));
 }
-function getBackendTech(technologies) {
+/**
+ * Helper function to identify backend technology from tech stack
+ * @param {Array} technologies - Array of technologies
+ * @returns {string|undefined} Backend technology if found
+ */ function getBackendTech(technologies) {
     const backendTechs = [
         'node.js',
         'express',
@@ -770,11 +388,170 @@ function getBackendTech(technologies) {
         'spring',
         'laravel',
         'ruby on rails',
-        'fastapi',
-        'nestjs',
-        'koa'
+        'fastapi'
     ];
     return technologies.find((tech)=>backendTechs.some((bt)=>tech.toLowerCase().includes(bt.toLowerCase())));
+}
+/**
+ * Intelligent YouTube search query generation with project analysis
+ * @param {Object} projectData - Project data object
+ * @param {string} projectIdea - Original project idea
+ * @returns {Promise<Array>} Array of search query strings
+ */ async function generateIntelligentSearchQueries(projectData, projectIdea) {
+    const queries = [];
+    // Extract technologies from tech stack
+    const allTechnologies = [];
+    if (projectData.techStack) {
+        Object.values(projectData.techStack).forEach((techArray)=>{
+            if (Array.isArray(techArray)) {
+                allTechnologies.push(...techArray);
+            }
+        });
+    }
+    // Analyze project type and complexity
+    const projectAnalysis = analyzeProject(projectIdea, allTechnologies);
+    console.log('Project Analysis:', projectAnalysis);
+    // Priority 1: Exact project match tutorials
+    if (projectAnalysis.projectType !== 'generic') {
+        queries.push({
+            query: `${projectAnalysis.projectType} ${allTechnologies.slice(0, 2).join(' ')} tutorial 2024`,
+            priority: 'high',
+            category: 'project-specific'
+        });
+        queries.push({
+            query: `build ${projectAnalysis.projectType} ${allTechnologies[0]} step by step`,
+            priority: 'high',
+            category: 'project-specific'
+        });
+    }
+    // Priority 2: Technology stack combinations
+    if (allTechnologies.length >= 2) {
+        const mainStack = allTechnologies.slice(0, 3);
+        queries.push({
+            query: `${mainStack.join(' ')} full stack tutorial`,
+            priority: 'high',
+            category: 'tech-stack'
+        });
+        // Frontend + Backend combination
+        const frontend = getFrontendTech(allTechnologies);
+        const backend = getBackendTech(allTechnologies);
+        if (frontend && backend) {
+            queries.push({
+                query: `${frontend} ${backend} complete project tutorial`,
+                priority: 'high',
+                category: 'tech-stack'
+            });
+        }
+    }
+    // Priority 3: Individual technology deep dives
+    allTechnologies.slice(0, 3).forEach((tech)=>{
+        queries.push({
+            query: `${tech} crash course 2024 beginners`,
+            priority: 'medium',
+            category: 'individual-tech'
+        });
+    });
+    // Priority 4: Domain-specific tutorials
+    projectAnalysis.domains.forEach((domain)=>{
+        queries.push({
+            query: `${domain} development tutorial ${allTechnologies[0] || 'programming'}`,
+            priority: 'medium',
+            category: 'domain-specific'
+        });
+    });
+    // Priority 5: Advanced concepts if detected
+    if (projectAnalysis.complexity === 'advanced') {
+        projectAnalysis.advancedConcepts.forEach((concept)=>{
+            queries.push({
+                query: `${concept} ${allTechnologies[0]} implementation tutorial`,
+                priority: 'low',
+                category: 'advanced-concepts'
+            });
+        });
+    }
+    // Sort by priority and return top queries
+    const priorityOrder = {
+        'high': 3,
+        'medium': 2,
+        'low': 1
+    };
+    return queries.sort((a, b)=>priorityOrder[b.priority] - priorityOrder[a.priority]).slice(0, 6) // Limit to top 6 queries
+    .map((q)=>q.query);
+}
+/**
+ * Enhanced video fetching with intelligent search
+ * @param {Object} projectData - Project data object
+ * @param {string} projectIdea - Original project idea
+ * @returns {Promise<Array>} Array of relevant YouTube videos
+ */ async function fetchProjectRelevantVideos(projectData, projectIdea) {
+    console.log('Starting intelligent video search...');
+    const searchQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
+    console.log('Generated search queries:', searchQueries);
+    const videosByCategory = {
+        projectSpecific: [],
+        techStack: [],
+        individual: [],
+        general: []
+    };
+    // Fetch videos for each query with category tracking
+    for (const query of searchQueries){
+        try {
+            const videos = await fetchYouTubeVideos(query, 4);
+            if (videos.length > 0) {
+                // Categorize videos based on query type
+                if (query.includes('tutorial') && (query.includes('build') || query.includes('project'))) {
+                    videosByCategory.projectSpecific.push(...videos);
+                } else if (query.includes('full stack') || query.includes('crash course')) {
+                    videosByCategory.techStack.push(...videos);
+                } else {
+                    videosByCategory.individual.push(...videos);
+                }
+            }
+            // Add delay to avoid rate limiting
+            await new Promise((resolve)=>setTimeout(resolve, 100));
+        } catch (error) {
+            console.error(`Error fetching videos for query "${query}":`, error);
+        }
+    }
+    // Combine and prioritize videos
+    let combinedVideos = [
+        ...videosByCategory.projectSpecific.slice(0, 4),
+        ...videosByCategory.techStack.slice(0, 3),
+        ...videosByCategory.individual.slice(0, 2),
+        ...videosByCategory.general.slice(0, 1)
+    ];
+    // Remove duplicates based on URL
+    const uniqueVideos = combinedVideos.filter((video, index, self)=>index === self.findIndex((v)=>v.url === video.url));
+    // Final filtering and sorting
+    return uniqueVideos.filter((video)=>video.viewCount > 1000) // Filter out very low view count videos
+    .sort((a, b)=>{
+        // Sort by relevance score first, then by view count
+        if (Math.abs(a.relevanceScore - b.relevanceScore) > 0.1) {
+            return b.relevanceScore - a.relevanceScore;
+        }
+        return b.viewCount - a.viewCount;
+    }).slice(0, 10); // Final limit to 10 videos
+}
+/**
+ * Create fallback search links when no videos are found
+ * @param {Object} projectData - Project data object
+ * @param {string} projectIdea - Original project idea
+ * @returns {Promise<Array>} Array of fallback search links
+ */ async function createFallbackSearchLinks(projectData, projectIdea) {
+    console.log('No relevant videos found, creating fallback search links');
+    const fallbackQueries = await generateIntelligentSearchQueries(projectData, projectIdea);
+    return fallbackQueries.slice(0, 3).map((query)=>({
+            title: `Search: ${query}`,
+            channel: "YouTube Search",
+            url: `https://youtube.com/results?search_query=${encodeURIComponent(query)}`,
+            description: `Click to search for tutorials about: ${query}`,
+            thumbnail: null,
+            publishedAt: new Date().toISOString(),
+            viewCount: 0,
+            duration: "Search",
+            relevanceScore: 1,
+            isSearchLink: true
+        }));
 }
 ;
 }}),
@@ -785,11 +562,10 @@ var { g: global, __dirname } = __turbopack_context__;
 {
 // app/api/generate-project/route.js
 __turbopack_context__.s({
-    "GET": (()=>GET),
     "POST": (()=>POST)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/api/generate-project/youtube-service.js [app-route] (ecmascript)"); // Fixed import path
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/api/generate-project/youtube-service.js [app-route] (ecmascript)");
 ;
 ;
 async function POST(request) {
@@ -818,28 +594,17 @@ async function POST(request) {
         console.log('Starting intelligent YouTube video analysis and fetching...');
         let youtubeResources = [];
         try {
-            // Use imported function from youtube-service.js
             youtubeResources = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["fetchProjectRelevantVideos"])(projectData, projectIdea);
             console.log(`Successfully fetched ${youtubeResources.length} relevant YouTube videos`);
         } catch (youtubeError) {
             console.error('YouTube video fetching error:', youtubeError);
             youtubeResources = [];
         }
-        // Fallback if no videos found - use imported function
+        // Fallback if no videos found
         if (youtubeResources.length === 0) {
-            console.log('No videos found, creating fallback search links...');
             youtubeResources = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createFallbackSearchLinks"])(projectData, projectIdea);
         }
-        // Get tech stack for analysis
-        const allTechnologies = [];
-        if (projectData.techStack) {
-            Object.values(projectData.techStack).forEach((techArray)=>{
-                if (Array.isArray(techArray)) {
-                    allTechnologies.push(...techArray);
-                }
-            });
-        }
-        // Enhanced response with metadata using imported functions
+        // Enhanced response with metadata
         const enhancedResponse = {
             ...projectData,
             youtubeResources,
@@ -849,13 +614,7 @@ async function POST(request) {
                 tokens_used: projectData.tokens_used || 'N/A',
                 youtube_videos_found: youtubeResources.filter((v)=>!v.isSearchLink).length,
                 search_queries_generated: (await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["generateIntelligentSearchQueries"])(projectData, projectIdea)).length,
-                project_analysis: (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["analyzeProject"])(projectIdea, allTechnologies),
-                total_resources: youtubeResources.length,
-                language_distribution: {
-                    english: youtubeResources.filter((v)=>v.language === 'en').length,
-                    hindi: youtubeResources.filter((v)=>v.language === 'hi').length,
-                    mixed: youtubeResources.filter((v)=>v.language === 'mixed').length
-                }
+                project_analysis: (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$generate$2d$project$2f$youtube$2d$service$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["analyzeProject"])(projectIdea, Object.values(projectData.techStack || {}).flat())
             }
         };
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(enhancedResponse);
@@ -1076,7 +835,6 @@ Return ONLY a valid JSON object (no extra text), using the following format:
         projectData = JSON.parse(jsonMatch[0]);
     } catch (parseError) {
         console.error('JSON parsing error:', parseError);
-        console.error('Raw content:', content);
         throw new Error('Failed to parse AI response');
     }
     // Validate required fields
@@ -1126,20 +884,6 @@ Return ONLY a valid JSON object (no extra text), using the following format:
         }
     };
     return defaults[field] || null;
-}
-async function GET() {
-    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        status: 'OK',
-        message: 'Project Generation API is running',
-        timestamp: new Date().toISOString(),
-        features: [
-            'Gemini AI Integration',
-            'Intelligent YouTube Video Search',
-            'Multi-language Support (English/Hindi)',
-            'Advanced Project Analysis',
-            'Technology Stack Recommendations'
-        ]
-    });
 }
 }}),
 
