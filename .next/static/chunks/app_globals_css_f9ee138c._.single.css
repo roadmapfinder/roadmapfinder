@@ -7896,6 +7896,12 @@
   }
 
   @media (width >= 64rem) {
+    .lg\:ml-0 {
+      margin-left: calc(var(--spacing) * 0);
+    }
+  }
+
+  @media (width >= 64rem) {
     .lg\:ml-1 {
       margin-left: calc(var(--spacing) * 1);
     }
@@ -7994,6 +8000,13 @@
   @media (width >= 64rem) {
     .lg\:max-w-lg {
       max-width: var(--container-lg);
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:-translate-x-full {
+      --tw-translate-x: -100%;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
 
