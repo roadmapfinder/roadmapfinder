@@ -772,7 +772,7 @@ async function POST(request) {
         } else {
             console.log('YouTube API not configured, using AI-generated video suggestions');
         }
-        // **ENHANCED RESPONSE with real YouTube data**
+        // **ENHANCED RESPONSE with real YouTube data or AI-generated fallbacks**
         const enhancedResponse = {
             ...projectData,
             youtubeResources: youtubeResources.length > 0 ? youtubeResources.map((video)=>({
@@ -780,7 +780,21 @@ async function POST(request) {
                     channel: video.channel || video.snippet?.channelTitle || 'Educational Channel',
                     url: video.url || `https://youtube.com/watch?v=${video.id}`,
                     description: video.description || video.snippet?.description?.slice(0, 150) || 'Educational tutorial video'
-                })) : projectData.youtubeResources || [],
+                })) : projectData.youtubeResources && projectData.youtubeResources.length > 0 ? projectData.youtubeResources : [
+                // Fallback YouTube resources when API is not available
+                {
+                    title: `Complete ${projectData.projectSummary?.name || 'Project'} Tutorial`,
+                    channel: "FreeCodeCamp",
+                    url: "https://youtube.com/results?search_query=" + encodeURIComponent(`${projectIdea} tutorial 2024`),
+                    description: "Comprehensive full-stack development tutorial"
+                },
+                {
+                    title: `${projectData.projectSummary?.name || 'Project'} Tutorial - Hindi`,
+                    channel: "Code with Harry",
+                    url: "https://youtube.com/results?search_query=" + encodeURIComponent(`${projectIdea} hindi tutorial`),
+                    description: "Step-by-step Hindi tutorial for beginners"
+                }
+            ],
             metadata: {
                 model: 'gemini-2.0-flash-exp',
                 timestamp: new Date().toISOString(),

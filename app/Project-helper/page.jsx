@@ -703,14 +703,14 @@ export default function ProjectGeneratorApp() {
                         </div>
                       </section>
                     )}
-                    {/* YouTube */}
-                    {result.youtubeResources?.length > 0 && (
+                    {/* YouTube Resources */}
+                    {(result.youtubeResources?.length > 0 || result.youtubeResources === undefined) && (
                       <section>
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                           Video Tutorials
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          {result.youtubeResources.map((video, index) => (
+                          {(result.youtubeResources || []).map((video, index) => (
                             <a
                               key={index}
                               href={video.url}
@@ -723,6 +723,11 @@ export default function ProjectGeneratorApp() {
                               <p className="text-sm text-gray-600">{video.description}</p>
                             </a>
                           ))}
+                          {(!result.youtubeResources || result.youtubeResources.length === 0) && (
+                            <div className="col-span-2 p-4 text-center text-gray-500 bg-gray-50 rounded-lg">
+                              <p>No video tutorials available for this project.</p>
+                            </div>
+                          )}
                         </div>
                       </section>
                     )}
