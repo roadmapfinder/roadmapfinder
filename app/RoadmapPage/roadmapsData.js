@@ -358,6 +358,15 @@ export const roadmapsData = [
     description: "Cloud platforms and services"
   },
   {
+    id: "networking",
+    title: "Networking",
+    icon: <Globe className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Networking",
+    bgColor: "from-blue-500 to-cyan-600",
+    category: "trending",
+    description: "Network engineering fundamentals"
+  },
+  {
     id: "video",
     title: "Video Editing",
     icon: <Video className="w-5 h-5 text-white" />,
