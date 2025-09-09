@@ -2363,7 +2363,7 @@ function ProjectGeneratorApp() {
                                                                     lineNumber: 686,
                                                                     columnNumber: 23
                                                                 }, this),
-                                                                result.youtubeResources?.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                                                                (result.youtubeResources?.length > 0 || result.youtubeResources === undefined) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                                             className: "text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4",
@@ -2375,43 +2375,59 @@ function ProjectGeneratorApp() {
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                             className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
-                                                                            children: result.youtubeResources.map((video, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                                    href: video.url,
-                                                                                    target: "_blank",
-                                                                                    rel: "noopener noreferrer",
-                                                                                    className: "block p-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all duration-200",
-                                                                                    children: [
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                                            className: "font-semibold text-gray-900 mb-1",
-                                                                                            children: video.title
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 721,
-                                                                                            columnNumber: 31
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                            className: "text-sm text-blue-600 mb-1",
-                                                                                            children: video.channel
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 722,
-                                                                                            columnNumber: 31
-                                                                                        }, this),
-                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                            className: "text-sm text-gray-600",
-                                                                                            children: video.description
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                            lineNumber: 723,
-                                                                                            columnNumber: 31
-                                                                                        }, this)
-                                                                                    ]
-                                                                                }, index, true, {
+                                                                            children: [
+                                                                                (result.youtubeResources || []).map((video, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                                        href: video.url,
+                                                                                        target: "_blank",
+                                                                                        rel: "noopener noreferrer",
+                                                                                        className: "block p-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all duration-200",
+                                                                                        children: [
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                                                className: "font-semibold text-gray-900 mb-1",
+                                                                                                children: video.title
+                                                                                            }, void 0, false, {
+                                                                                                fileName: "[project]/app/Project-helper/page.jsx",
+                                                                                                lineNumber: 721,
+                                                                                                columnNumber: 31
+                                                                                            }, this),
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                                className: "text-sm text-blue-600 mb-1",
+                                                                                                children: video.channel
+                                                                                            }, void 0, false, {
+                                                                                                fileName: "[project]/app/Project-helper/page.jsx",
+                                                                                                lineNumber: 722,
+                                                                                                columnNumber: 31
+                                                                                            }, this),
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                                className: "text-sm text-gray-600",
+                                                                                                children: video.description
+                                                                                            }, void 0, false, {
+                                                                                                fileName: "[project]/app/Project-helper/page.jsx",
+                                                                                                lineNumber: 723,
+                                                                                                columnNumber: 31
+                                                                                            }, this)
+                                                                                        ]
+                                                                                    }, index, true, {
+                                                                                        fileName: "[project]/app/Project-helper/page.jsx",
+                                                                                        lineNumber: 714,
+                                                                                        columnNumber: 29
+                                                                                    }, this)),
+                                                                                (!result.youtubeResources || result.youtubeResources.length === 0) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "col-span-2 p-4 text-center text-gray-500 bg-gray-50 rounded-lg",
+                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                        children: "No video tutorials available for this project."
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/app/Project-helper/page.jsx",
+                                                                                        lineNumber: 728,
+                                                                                        columnNumber: 31
+                                                                                    }, this)
+                                                                                }, void 0, false, {
                                                                                     fileName: "[project]/app/Project-helper/page.jsx",
-                                                                                    lineNumber: 714,
+                                                                                    lineNumber: 727,
                                                                                     columnNumber: 29
-                                                                                }, this))
-                                                                        }, void 0, false, {
+                                                                                }, this)
+                                                                            ]
+                                                                        }, void 0, true, {
                                                                             fileName: "[project]/app/Project-helper/page.jsx",
                                                                             lineNumber: 712,
                                                                             columnNumber: 25
@@ -2452,12 +2468,12 @@ function ProjectGeneratorApp() {
                                                 children: "Generate Another Project"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Project-helper/page.jsx",
-                                                lineNumber: 736,
+                                                lineNumber: 741,
                                                 columnNumber: 15
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Project-helper/page.jsx",
-                                            lineNumber: 735,
+                                            lineNumber: 740,
                                             columnNumber: 13
                                         }, this)
                                     ]

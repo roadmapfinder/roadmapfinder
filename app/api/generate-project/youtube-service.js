@@ -543,6 +543,142 @@ async function createFallbackSearchLinks(projectData, projectIdea) {
   }));
 }
 
+// Validate if a YouTube video exists and is accessible
+async function validateVideoExists(videoId) {
+  try {
+    const response = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`, {
+      method: 'GET',
+      signal: AbortSignal.timeout(3000) // 3 second timeout
+    });
+    
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+// Extract video ID from YouTube URL
+function extractVideoId(url) {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
+  return match ? match[1] : null;
+}
+
+// Validate and filter existing videos
+async function validateVideos(videos) {
+  console.log(`Validating ${videos.length} videos for existence...`);
+  
+  const validationPromises = videos.map(async (video) => {
+    const videoId = extractVideoId(video.url);
+    if (!videoId) return null;
+    
+    const exists = await validateVideoExists(videoId);
+    return exists ? video : null;
+  });
+  
+  const results = await Promise.all(validationPromises);
+  const validVideos = results.filter(video => video !== null);
+  
+  console.log(`${validVideos.length} out of ${videos.length} videos are valid and accessible`);
+  return validVideos;
+}
+
+// Curated, verified video resources for common project types
+function getCuratedVideoResources(projectAnalysis) {
+  console.log('Using curated video resources for better reliability...');
+  
+  const { projectType, domains, complexity } = projectAnalysis;
+  
+  // Verified, high-quality videos that exist and are project-relevant
+  const verifiedVideos = {
+    'web development': [
+      {
+        title: 'Complete Web Development Course 2024',
+        channel: 'freeCodeCamp.org',
+        url: 'https://www.youtube.com/watch?v=nu_pCVPKzTk',
+        description: 'Full stack web development course covering HTML, CSS, JavaScript, and more.',
+        relevantFor: ['beginner', 'intermediate']
+      },
+      {
+        title: 'React Tutorial for Beginners',
+        channel: 'Programming with Mosh',
+        url: 'https://www.youtube.com/watch?v=SqcY0GlETPk',
+        description: 'Learn React fundamentals with practical examples.',
+        relevantFor: ['beginner', 'intermediate']
+      }
+    ],
+    'mobile development': [
+      {
+        title: 'React Native Tutorial for Beginners',
+        channel: 'Programming with Mosh',
+        url: 'https://www.youtube.com/watch?v=0-S5a0eXPoc',
+        description: 'Complete React Native course for mobile app development.',
+        relevantFor: ['beginner', 'intermediate']
+      }
+    ],
+    'backend development': [
+      {
+        title: 'Node.js Tutorial for Beginners',
+        channel: 'Programming with Mosh',
+        url: 'https://www.youtube.com/watch?v=TlB_eWDSMt4',
+        description: 'Learn Node.js from scratch with practical projects.',
+        relevantFor: ['beginner', 'intermediate']
+      }
+    ],
+    'ai/ml': [
+      {
+        title: 'Machine Learning Course for Beginners',
+        channel: 'freeCodeCamp.org',
+        url: 'https://www.youtube.com/watch?v=NWONeJKn6kc',
+        description: 'Complete machine learning course covering fundamentals and applications.',
+        relevantFor: ['beginner', 'intermediate']
+      }
+    ],
+    'hindi': [
+      {
+        title: 'Complete Web Development Course Hindi',
+        channel: 'CodeWithHarry',
+        url: 'https://www.youtube.com/watch?v=tVzUXW6siu0',
+        description: 'Complete web development tutorial in Hindi.',
+        relevantFor: ['beginner', 'intermediate']
+      },
+      {
+        title: 'React JS Tutorial in Hindi',
+        channel: 'Thapa Technical',
+        url: 'https://www.youtube.com/watch?v=tiLWCNFzThE',
+        description: 'Learn React.js in Hindi with practical examples.',
+        relevantFor: ['beginner', 'intermediate']
+      }
+    ]
+  };
+  
+  // Select relevant videos based on project analysis
+  let selectedVideos = [];
+  
+  // Add domain-specific videos
+  domains.forEach(domain => {
+    if (verifiedVideos[domain]) {
+      selectedVideos.push(...verifiedVideos[domain].filter(video => 
+        video.relevantFor.includes(complexity)
+      ));
+    }
+  });
+  
+  // Add Hindi videos for variety
+  if (verifiedVideos.hindi) {
+    selectedVideos.push(...verifiedVideos.hindi.filter(video => 
+      video.relevantFor.includes(complexity)
+    ).slice(0, 1)); // Just add one Hindi video
+  }
+  
+  // Remove duplicates and limit to top 4 videos
+  const uniqueVideos = selectedVideos.filter((video, index, self) => 
+    index === self.findIndex(v => v.url === video.url)
+  ).slice(0, 4);
+  
+  console.log(`Selected ${uniqueVideos.length} curated videos for project`);
+  return uniqueVideos;
+}
+
 // Export all functions
 export {
   fetchYouTubeVideos,
@@ -552,5 +688,9 @@ export {
   getBackendTech,
   generateIntelligentSearchQueries,
   fetchProjectRelevantVideos,
-  createFallbackSearchLinks
+  createFallbackSearchLinks,
+  validateVideoExists,
+  extractVideoId,
+  validateVideos,
+  getCuratedVideoResources
 };

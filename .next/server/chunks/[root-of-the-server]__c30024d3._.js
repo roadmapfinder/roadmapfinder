@@ -814,6 +814,9 @@ async function POST(request) {
                 }
             });
         }
+        // **DEBUG: Log the final YouTube resources to verify they exist**
+        console.log('Final YouTube resources count:', enhancedResponse.youtubeResources.length);
+        console.log('YouTube resources sample:', enhancedResponse.youtubeResources.slice(0, 2));
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(enhancedResponse);
     } catch (error) {
         console.error('Project generation API error:', error);
