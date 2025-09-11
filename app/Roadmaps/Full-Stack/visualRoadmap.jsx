@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { handleDownloadVisualPDF } from "./downloadVisualPdf";
 
 export default function WebDevRoadmap() {
   const [activeTab, setActiveTab] = useState("fullstack");
+  const [downloading, setDownloading] = useState(false);
 
   const fullStackRoadmap = [
     {
@@ -398,11 +400,70 @@ export default function WebDevRoadmap() {
 
   return (
     <main className="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen p-4 sm:p-6 font-sans">
+      {/* Download Visual PDF Button */}
+      <div className="flex justify-end max-w-7xl mx-auto mb-4">
+        <button
+          onClick={() =>
+            handleDownloadVisualPDF(
+              activeTab === "frontend" ? frontendRoadmap : fullStackRoadmap,
+              activeTab,
+              (val) => setDownloading(val)
+            )
+          }
+          disabled={downloading}
+          className={`px-4 py-2 rounded-lg font-medium text-sm shadow-md transition-all duration-200 flex items-center gap-2
+            ${
+              downloading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover:scale-105"
+            }`}
+        >
+          {downloading ? (
+            <>
+              <svg
+                className="animate-spin h-4 w-4 mr-2"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Generating PDF...
+            </>
+          ) : (
+            <>
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              Download Visual PDF
+            </>
+          )}
+        </button>
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-        
-
           {/* Tab Navigation */}
           <div className="flex justify-center mb-8">
             <div className="bg-white rounded-full p-2 shadow-lg border border-gray-200 flex">
@@ -449,7 +510,9 @@ export default function WebDevRoadmap() {
                   {/* Section Title */}
                   <div className="flex-shrink-0">
                     <div
-                      className={`px-6 py-4 rounded-lg text-lg font-semibold min-w-[150px] text-center text-white shadow-md ${getSectionColor(sectionIdx)}`}
+                      className={`px-6 py-4 rounded-lg text-lg font-semibold min-w-[150px] text-center text-white shadow-md ${getSectionColor(
+                        sectionIdx
+                      )}`}
                     >
                       <div className="font-bold">{section.title}</div>
                       <div className="text-sm font-normal opacity-90 mt-1">
@@ -534,7 +597,9 @@ export default function WebDevRoadmap() {
                 {/* Section Header */}
                 <div className="flex items-center mb-6">
                   <div
-                    className={`px-4 py-3 rounded-lg text-base sm:text-lg font-semibold text-white shadow-md ${getSectionColor(sectionIdx)} flex-shrink-0`}
+                    className={`px-4 py-3 rounded-lg text-base sm:text-lg font-semibold text-white shadow-md ${getSectionColor(
+                      sectionIdx
+                    )} flex-shrink-0`}
                   >
                     <div className="font-bold">{section.title}</div>
                     <div className="text-xs sm:text-sm font-normal opacity-90">
