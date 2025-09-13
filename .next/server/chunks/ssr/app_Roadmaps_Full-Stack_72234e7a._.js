@@ -309,7 +309,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 function WebDevRoadmap() {
-    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("fullstack");
+    const [downloading, setDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const fullStackRoadmap = [
         {
             title: "Foundations",
@@ -462,128 +462,6 @@ function WebDevRoadmap() {
             ]
         }
     ];
-    const frontendRoadmap = [
-        {
-            title: "Foundation",
-            subtitle: "Build Your Core",
-            steps: [
-                {
-                    step: "Step - 1",
-                    topic: "Internet & Web Basics",
-                    category: "Web Fundamentals",
-                    details: "DNS, hosting, domain names, client vs server, HTTP/HTTPS, request-response cycle, browser rendering process, HTML/CSS/JS basics"
-                },
-                {
-                    step: "Step - 2",
-                    topic: "HTML Mastery",
-                    category: "Markup Language",
-                    details: "Semantic HTML (header, main, footer), forms & validations, accessibility tags (aria-label, roles), media elements (video, audio, picture)"
-                },
-                {
-                    step: "Step - 3",
-                    topic: "CSS Mastery",
-                    category: "Styling & Layout",
-                    details: "Box model, flexbox, grid, positioning, BEM, CSS variables, responsive design, media queries, animations, SASS, Tailwind CSS"
-                },
-                {
-                    step: "Step - 4",
-                    topic: "JavaScript Fundamentals",
-                    category: "Core Programming",
-                    details: "Variables, functions, DOM manipulation, ES6+ features, async/await, Fetch API, error handling, event loop understanding"
-                }
-            ]
-        },
-        {
-            title: "Intermediate",
-            subtitle: "Level Up Your Skills",
-            steps: [
-                {
-                    step: "Step - 5",
-                    topic: "Advanced JavaScript",
-                    category: "Advanced Concepts",
-                    details: "Prototypes, inheritance, 'this' keyword, modules (ESM, CommonJS), generators, debouncing/throttling, Web APIs, Service Workers"
-                },
-                {
-                    step: "Step - 6",
-                    topic: "Git & Version Control",
-                    category: "Development Workflow",
-                    details: "Git basics (init, add, commit, push, pull), branching & merging strategies, GitHub/GitLab workflows, collaboration practices"
-                },
-                {
-                    step: "Step - 7",
-                    topic: "Frontend Framework (React)",
-                    category: "Framework Mastery",
-                    details: "JSX, components, props, state, Hooks (useState, useEffect, useContext), Context API, React Router, custom hooks, component lifecycle"
-                },
-                {
-                    step: "Step - 8",
-                    topic: "TypeScript Integration",
-                    category: "Type Safety",
-                    details: "Static typing basics, interfaces & types, generics, type narrowing & unions, TypeScript with React/Vue, advanced type patterns"
-                }
-            ]
-        },
-        {
-            title: "Advanced",
-            subtitle: "Production Ready",
-            steps: [
-                {
-                    step: "Step - 9",
-                    topic: "API Integration & Data",
-                    category: "Data Management",
-                    details: "REST API integration (Fetch, Axios), GraphQL (Apollo Client), error handling & retries, infinite scroll & pagination"
-                },
-                {
-                    step: "Step - 10",
-                    topic: "State Management & Performance",
-                    category: "Optimization",
-                    details: "Redux Toolkit, Zustand, memoization (React.memo, useMemo, useCallback), code splitting, lazy loading, virtualized lists"
-                },
-                {
-                    step: "Step - 11",
-                    topic: "Testing & Quality Assurance",
-                    category: "Testing Strategy",
-                    details: "Unit testing (Jest, Vitest), component testing (React Testing Library), E2E testing (Playwright, Cypress), test coverage"
-                },
-                {
-                    step: "Step - 12",
-                    topic: "Build Tools & Optimization",
-                    category: "Development Tools",
-                    details: "Vite (2025 standard), Webpack basics, Babel/SWC, environment variables, image optimization, tree shaking, bundle analysis"
-                }
-            ]
-        },
-        {
-            title: "Professional",
-            subtitle: "Industry Standard",
-            steps: [
-                {
-                    step: "Step - 13",
-                    topic: "Deployment & DevOps",
-                    category: "Production Deployment",
-                    details: "Vercel, Netlify, Render deployment, CI/CD pipelines (GitHub Actions), environment configs, monitoring & analytics"
-                },
-                {
-                    step: "Step - 14",
-                    topic: "UI/UX for Engineers",
-                    category: "Design Integration",
-                    details: "Design systems (Material UI, Chakra UI, Radix UI), Figma for devs, accessibility testing (Lighthouse, axe-core), responsive design"
-                },
-                {
-                    step: "Step - 15",
-                    topic: "Advanced Topics 2025",
-                    category: "Cutting Edge",
-                    details: "Progressive Web Apps (PWA), WebAssembly (Wasm), Web Components (Lit, Stencil), micro-frontends, AI-assisted UI tools"
-                },
-                {
-                    step: "Step - 16",
-                    topic: "Real-World Projects",
-                    category: "Portfolio Building",
-                    details: "Portfolio with Next.js, e-commerce frontend, real-time chat app (WebSockets), dashboard with charts & auth, PWA weather app"
-                }
-            ]
-        }
-    ];
     const projectIdeas = [
         {
             category: "Beginner Projects",
@@ -638,7 +516,6 @@ function WebDevRoadmap() {
             resources: "Dev.to, Stack Overflow, Reddit r/webdev, Discord Communities, Twitter #WebDev"
         }
     ];
-    const currentRoadmap = activeTab === "fullstack" ? fullStackRoadmap : frontendRoadmap;
     const getSectionColor = (idx)=>{
         const colors = [
             "bg-gradient-to-r from-blue-500 to-blue-600",
@@ -649,46 +526,91 @@ function WebDevRoadmap() {
         ];
         return colors[idx] || colors[0];
     };
+    const handleDownloadPDF = ()=>{
+        setDownloading(true);
+        // Simulate PDF generation
+        setTimeout(()=>{
+            setDownloading(false);
+            alert("PDF download functionality would be implemented here");
+        }, 2000);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen p-4 sm:p-6 font-sans",
+        className: "bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen p-4 sm:p-6 font-sans",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-7xl mx-auto",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "text-center mb-8",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex justify-center mb-8",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-white rounded-full p-2 shadow-lg border border-gray-200 flex",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: handleDownloadPDF,
+                            disabled: downloading,
+                            className: `px-6 py-3 rounded-lg font-medium text-sm shadow-md transition-all duration-200 flex items-center gap-2 mx-auto mb-6
+              ${downloading ? "bg-gray-400 cursor-not-allowed" : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover:scale-105"}`,
+                            children: downloading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setActiveTab("fullstack"),
-                                        className: `px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === "fullstack" ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md" : "text-gray-600 hover:text-gray-800"}`,
-                                        children: "🚀 Full-Stack Path"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        className: "animate-spin h-4 w-4",
+                                        viewBox: "0 0 24 24",
+                                        fill: "none",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                                className: "opacity-25",
+                                                cx: "12",
+                                                cy: "12",
+                                                r: "10",
+                                                stroke: "currentColor",
+                                                strokeWidth: "4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
+                                                lineNumber: 291,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                className: "opacity-75",
+                                                fill: "currentColor",
+                                                d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
+                                                lineNumber: 299,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                        lineNumber: 409,
-                                        columnNumber: 15
+                                        lineNumber: 286,
+                                        columnNumber: 17
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setActiveTab("frontend"),
-                                        className: `px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === "frontend" ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md" : "text-gray-600 hover:text-gray-800"}`,
-                                        children: "🎨 Frontend Focus"
+                                    "Generating PDF..."
+                                ]
+                            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        className: "w-4 h-4",
+                                        fill: "none",
+                                        stroke: "currentColor",
+                                        viewBox: "0 0 24 24",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            strokeWidth: 2,
+                                            d: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
+                                            lineNumber: 315,
+                                            columnNumber: 19
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                        lineNumber: 419,
-                                        columnNumber: 15
-                                    }, this)
+                                        lineNumber: 309,
+                                        columnNumber: 17
+                                    }, this),
+                                    "Visual PDF"
                                 ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                lineNumber: 408,
-                                columnNumber: 13
-                            }, this)
+                            }, void 0, true)
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 407,
+                            lineNumber: 274,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -699,36 +621,36 @@ function WebDevRoadmap() {
                                     className: "text-sm font-medium text-gray-700",
                                     children: [
                                         "💻 ",
-                                        currentRoadmap.length * 4,
+                                        fullStackRoadmap.length * 4,
                                         " Essential Steps • 🎯",
                                         " ",
-                                        currentRoadmap.length,
+                                        fullStackRoadmap.length,
                                         " Skill Areas • 🚀 Career Ready"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 434,
+                                    lineNumber: 329,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                lineNumber: 433,
+                                lineNumber: 328,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 432,
+                            lineNumber: 327,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                    lineNumber: 403,
+                    lineNumber: 270,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "space-y-12 sm:space-y-16",
-                    children: currentRoadmap.map((section, sectionIdx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                    children: fullStackRoadmap.map((section, sectionIdx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                             className: "relative",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -746,7 +668,7 @@ function WebDevRoadmap() {
                                                             children: section.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 454,
+                                                            lineNumber: 351,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -754,18 +676,18 @@ function WebDevRoadmap() {
                                                             children: section.subtitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 455,
+                                                            lineNumber: 352,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                    lineNumber: 451,
+                                                    lineNumber: 346,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                lineNumber: 450,
+                                                lineNumber: 345,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -780,7 +702,7 @@ function WebDevRoadmap() {
                                                                     children: item.step
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 467,
+                                                                    lineNumber: 364,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -804,7 +726,7 @@ function WebDevRoadmap() {
                                                                                         stopColor: "#3B82F6"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                                        lineNumber: 488,
+                                                                                        lineNumber: 385,
                                                                                         columnNumber: 33
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
@@ -812,18 +734,18 @@ function WebDevRoadmap() {
                                                                                         stopColor: "#8B5CF6"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                                        lineNumber: 489,
+                                                                                        lineNumber: 386,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                                lineNumber: 481,
+                                                                                lineNumber: 378,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 480,
+                                                                            lineNumber: 377,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -834,7 +756,7 @@ function WebDevRoadmap() {
                                                                             stroke: `url(#gradient-${sectionIdx}-${stepIdx})`
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 492,
+                                                                            lineNumber: 389,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
@@ -842,13 +764,13 @@ function WebDevRoadmap() {
                                                                             stroke: `url(#gradient-${sectionIdx}-${stepIdx})`
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 499,
+                                                                            lineNumber: 396,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 472,
+                                                                    lineNumber: 369,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -859,7 +781,7 @@ function WebDevRoadmap() {
                                                                             children: item.topic
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 507,
+                                                                            lineNumber: 404,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -867,7 +789,7 @@ function WebDevRoadmap() {
                                                                             children: item.category
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 510,
+                                                                            lineNumber: 407,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -875,20 +797,20 @@ function WebDevRoadmap() {
                                                                             children: item.details
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 513,
+                                                                            lineNumber: 410,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 506,
+                                                                    lineNumber: 403,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent min-w-[20px]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 519,
+                                                                    lineNumber: 416,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -897,39 +819,39 @@ function WebDevRoadmap() {
                                                                         className: "w-3 h-3 rounded-full bg-gray-300 group-hover:bg-blue-500 transition-colors duration-300"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                        lineNumber: 523,
+                                                                        lineNumber: 420,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 522,
+                                                                    lineNumber: 419,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 465,
+                                                            lineNumber: 362,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, stepIdx, false, {
                                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                        lineNumber: 464,
+                                                        lineNumber: 361,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                lineNumber: 462,
+                                                lineNumber: 359,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                        lineNumber: 448,
+                                        lineNumber: 343,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 447,
+                                    lineNumber: 342,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -946,7 +868,7 @@ function WebDevRoadmap() {
                                                             children: section.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 539,
+                                                            lineNumber: 438,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -954,26 +876,26 @@ function WebDevRoadmap() {
                                                             children: section.subtitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 540,
+                                                            lineNumber: 439,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                    lineNumber: 536,
+                                                    lineNumber: 433,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent ml-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                    lineNumber: 544,
+                                                    lineNumber: 443,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 535,
+                                            lineNumber: 432,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -987,12 +909,12 @@ function WebDevRoadmap() {
                                                                 className: "w-2 h-2 rounded-full bg-gray-300 group-hover:bg-blue-500 transition-colors duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                lineNumber: 553,
+                                                                lineNumber: 452,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 552,
+                                                            lineNumber: 451,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1006,7 +928,7 @@ function WebDevRoadmap() {
                                                                             children: item.step
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 559,
+                                                                            lineNumber: 458,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1014,13 +936,13 @@ function WebDevRoadmap() {
                                                                             children: item.category
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                            lineNumber: 562,
+                                                                            lineNumber: 461,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 558,
+                                                                    lineNumber: 457,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1028,7 +950,7 @@ function WebDevRoadmap() {
                                                                     children: item.topic
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 567,
+                                                                    lineNumber: 466,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1036,41 +958,41 @@ function WebDevRoadmap() {
                                                                     children: item.details
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                                    lineNumber: 571,
+                                                                    lineNumber: 470,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                            lineNumber: 557,
+                                                            lineNumber: 456,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, stepIdx, true, {
                                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                                    lineNumber: 550,
+                                                    lineNumber: 449,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 548,
+                                            lineNumber: 447,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 533,
+                                    lineNumber: 430,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, sectionIdx, true, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 445,
+                            lineNumber: 340,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                    lineNumber: 443,
+                    lineNumber: 338,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1081,7 +1003,7 @@ function WebDevRoadmap() {
                             children: "🚀 Project Ideas by Skill Level"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 585,
+                            lineNumber: 484,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1094,7 +1016,7 @@ function WebDevRoadmap() {
                                             children: item.category
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 594,
+                                            lineNumber: 493,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1102,24 +1024,24 @@ function WebDevRoadmap() {
                                             children: item.projects
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 597,
+                                            lineNumber: 496,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, idx, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 590,
+                                    lineNumber: 489,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 588,
+                            lineNumber: 487,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                    lineNumber: 584,
+                    lineNumber: 483,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1130,7 +1052,7 @@ function WebDevRoadmap() {
                             children: "🏆 Industry Certifications by Level"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 607,
+                            lineNumber: 506,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1143,7 +1065,7 @@ function WebDevRoadmap() {
                                             children: item.level
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 616,
+                                            lineNumber: 515,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1151,24 +1073,24 @@ function WebDevRoadmap() {
                                             children: item.certs
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 619,
+                                            lineNumber: 518,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, idx, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 612,
+                                    lineNumber: 511,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 610,
+                            lineNumber: 509,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                    lineNumber: 606,
+                    lineNumber: 505,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1179,7 +1101,7 @@ function WebDevRoadmap() {
                             children: "💻 Hands-On Practice Platforms"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 629,
+                            lineNumber: 528,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1192,7 +1114,7 @@ function WebDevRoadmap() {
                                             children: item.category
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 638,
+                                            lineNumber: 537,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1200,24 +1122,24 @@ function WebDevRoadmap() {
                                             children: item.resources
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 641,
+                                            lineNumber: 540,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, idx, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 634,
+                                    lineNumber: 533,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 632,
+                            lineNumber: 531,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                    lineNumber: 628,
+                    lineNumber: 527,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1228,7 +1150,7 @@ function WebDevRoadmap() {
                             children: "🛠️ Essential Development Tools & Technologies"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 651,
+                            lineNumber: 550,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1242,7 +1164,7 @@ function WebDevRoadmap() {
                                             children: "Frontend Frameworks"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 656,
+                                            lineNumber: 555,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1250,13 +1172,13 @@ function WebDevRoadmap() {
                                             children: "React, Vue, Angular, Svelte, Next.js, Nuxt.js"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 657,
+                                            lineNumber: 556,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 655,
+                                    lineNumber: 554,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1267,7 +1189,7 @@ function WebDevRoadmap() {
                                             children: "Backend Technologies"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 662,
+                                            lineNumber: 561,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1275,13 +1197,13 @@ function WebDevRoadmap() {
                                             children: "Node.js, Express, NestJS, GraphQL, REST APIs"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 663,
+                                            lineNumber: 562,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 661,
+                                    lineNumber: 560,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1292,7 +1214,7 @@ function WebDevRoadmap() {
                                             children: "Databases"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 668,
+                                            lineNumber: 567,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1300,13 +1222,13 @@ function WebDevRoadmap() {
                                             children: "PostgreSQL, MySQL, MongoDB, Redis, Prisma"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 669,
+                                            lineNumber: 568,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 667,
+                                    lineNumber: 566,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1317,7 +1239,7 @@ function WebDevRoadmap() {
                                             children: "DevOps & Cloud"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 674,
+                                            lineNumber: 573,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1325,36 +1247,60 @@ function WebDevRoadmap() {
                                             children: "Docker, AWS, Vercel, GitHub Actions, Nginx"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                            lineNumber: 675,
+                                            lineNumber: 574,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                                    lineNumber: 673,
+                                    lineNumber: 572,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                            lineNumber: 654,
+                            lineNumber: 553,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-                    lineNumber: 650,
+                    lineNumber: 549,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+                    className: "mt-16 text-center text-gray-500 text-sm",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "mb-2",
+                            children: "🎯 Complete this roadmap to become a job-ready full-stack developer"
+                        }, void 0, false, {
+                            fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
+                            lineNumber: 583,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            children: "💡 Remember: Practice consistently, build projects, and never stop learning!"
+                        }, void 0, false, {
+                            fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
+                            lineNumber: 586,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
+                    lineNumber: 582,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-            lineNumber: 401,
+            lineNumber: 268,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Full-Stack/visualRoadmap.jsx",
-        lineNumber: 400,
+        lineNumber: 267,
         columnNumber: 5
     }, this);
 }
@@ -1465,7 +1411,7 @@ function Home() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: handleAIGuideRedirect,
-                        className: `group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${darkMode ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600" : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"} text-white`,
+                        className: `group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${darkMode ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-purple-500 hover:to-indigo-600" : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-purple-600 hover:to-indigo-700"} text-white`,
                         title: "AI Career Guidance",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {

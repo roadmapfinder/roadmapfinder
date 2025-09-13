@@ -603,6 +603,18 @@
       "docs": "/Docs/aiml"
     },
     {
+      "id": 41,
+      "category": "AI & ML",
+      "title": "Vector DB complete crash course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "vectorDB",
+      "videoId": "https://youtu.be/JEBDfGqrAUA?si=gnkDOUXHtLzxW8j3",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/vectorDB"
+    },
+    {
       "id": 42,
       "category": "Git & Github",
       "title": "Git & Github Complete course",
@@ -804,7 +816,19 @@
       "videoId": "https://youtu.be/vz1RlUyrc3w?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige",
       "badge": "DEMANDED",
       "language": "Hindi",
-      "docs": "/Docs/reactjs"
+      "docs": "/Docs/react"
+    },
+    {
+      "id": 82,
+      "category": "Frameworks & Libraries",
+      "title": "Tailwind css Complete course",
+      "level": "Beginner to advance",
+      "rating": 4.9,
+      "image": "tailwindcss",
+      "videoId": "https://youtu.be/mGN9-FPsX9o?si=nevMgg62Uh3jhQ-B",
+      "badge": "POPULAR",
+      "language": "Hindi",
+      "docs": "/Docs/tailwindcss"
     },
     {
       "id": 59,

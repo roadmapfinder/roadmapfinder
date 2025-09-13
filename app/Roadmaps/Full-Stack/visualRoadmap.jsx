@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { handleDownloadVisualPDF } from "./downloadVisualPdf";
 
 export default function WebDevRoadmap() {
-  const [activeTab, setActiveTab] = useState("fullstack");
   const [downloading, setDownloading] = useState(false);
 
   const fullStackRoadmap = [
@@ -178,145 +176,6 @@ export default function WebDevRoadmap() {
     },
   ];
 
-  const frontendRoadmap = [
-    {
-      title: "Foundation",
-      subtitle: "Build Your Core",
-      steps: [
-        {
-          step: "Step - 1",
-          topic: "Internet & Web Basics",
-          category: "Web Fundamentals",
-          details:
-            "DNS, hosting, domain names, client vs server, HTTP/HTTPS, request-response cycle, browser rendering process, HTML/CSS/JS basics",
-        },
-        {
-          step: "Step - 2",
-          topic: "HTML Mastery",
-          category: "Markup Language",
-          details:
-            "Semantic HTML (header, main, footer), forms & validations, accessibility tags (aria-label, roles), media elements (video, audio, picture)",
-        },
-        {
-          step: "Step - 3",
-          topic: "CSS Mastery",
-          category: "Styling & Layout",
-          details:
-            "Box model, flexbox, grid, positioning, BEM, CSS variables, responsive design, media queries, animations, SASS, Tailwind CSS",
-        },
-        {
-          step: "Step - 4",
-          topic: "JavaScript Fundamentals",
-          category: "Core Programming",
-          details:
-            "Variables, functions, DOM manipulation, ES6+ features, async/await, Fetch API, error handling, event loop understanding",
-        },
-      ],
-    },
-    {
-      title: "Intermediate",
-      subtitle: "Level Up Your Skills",
-      steps: [
-        {
-          step: "Step - 5",
-          topic: "Advanced JavaScript",
-          category: "Advanced Concepts",
-          details:
-            "Prototypes, inheritance, 'this' keyword, modules (ESM, CommonJS), generators, debouncing/throttling, Web APIs, Service Workers",
-        },
-        {
-          step: "Step - 6",
-          topic: "Git & Version Control",
-          category: "Development Workflow",
-          details:
-            "Git basics (init, add, commit, push, pull), branching & merging strategies, GitHub/GitLab workflows, collaboration practices",
-        },
-        {
-          step: "Step - 7",
-          topic: "Frontend Framework (React)",
-          category: "Framework Mastery",
-          details:
-            "JSX, components, props, state, Hooks (useState, useEffect, useContext), Context API, React Router, custom hooks, component lifecycle",
-        },
-        {
-          step: "Step - 8",
-          topic: "TypeScript Integration",
-          category: "Type Safety",
-          details:
-            "Static typing basics, interfaces & types, generics, type narrowing & unions, TypeScript with React/Vue, advanced type patterns",
-        },
-      ],
-    },
-    {
-      title: "Advanced",
-      subtitle: "Production Ready",
-      steps: [
-        {
-          step: "Step - 9",
-          topic: "API Integration & Data",
-          category: "Data Management",
-          details:
-            "REST API integration (Fetch, Axios), GraphQL (Apollo Client), error handling & retries, infinite scroll & pagination",
-        },
-        {
-          step: "Step - 10",
-          topic: "State Management & Performance",
-          category: "Optimization",
-          details:
-            "Redux Toolkit, Zustand, memoization (React.memo, useMemo, useCallback), code splitting, lazy loading, virtualized lists",
-        },
-        {
-          step: "Step - 11",
-          topic: "Testing & Quality Assurance",
-          category: "Testing Strategy",
-          details:
-            "Unit testing (Jest, Vitest), component testing (React Testing Library), E2E testing (Playwright, Cypress), test coverage",
-        },
-        {
-          step: "Step - 12",
-          topic: "Build Tools & Optimization",
-          category: "Development Tools",
-          details:
-            "Vite (2025 standard), Webpack basics, Babel/SWC, environment variables, image optimization, tree shaking, bundle analysis",
-        },
-      ],
-    },
-    {
-      title: "Professional",
-      subtitle: "Industry Standard",
-      steps: [
-        {
-          step: "Step - 13",
-          topic: "Deployment & DevOps",
-          category: "Production Deployment",
-          details:
-            "Vercel, Netlify, Render deployment, CI/CD pipelines (GitHub Actions), environment configs, monitoring & analytics",
-        },
-        {
-          step: "Step - 14",
-          topic: "UI/UX for Engineers",
-          category: "Design Integration",
-          details:
-            "Design systems (Material UI, Chakra UI, Radix UI), Figma for devs, accessibility testing (Lighthouse, axe-core), responsive design",
-        },
-        {
-          step: "Step - 15",
-          topic: "Advanced Topics 2025",
-          category: "Cutting Edge",
-          details:
-            "Progressive Web Apps (PWA), WebAssembly (Wasm), Web Components (Lit, Stencil), micro-frontends, AI-assisted UI tools",
-        },
-        {
-          step: "Step - 16",
-          topic: "Real-World Projects",
-          category: "Portfolio Building",
-          details:
-            "Portfolio with Next.js, e-commerce frontend, real-time chat app (WebSockets), dashboard with charts & auth, PWA weather app",
-        },
-      ],
-    },
-  ];
-
   const projectIdeas = [
     {
       category: "Beginner Projects",
@@ -384,9 +243,6 @@ export default function WebDevRoadmap() {
     },
   ];
 
-  const currentRoadmap =
-    activeTab === "fullstack" ? fullStackRoadmap : frontendRoadmap;
-
   const getSectionColor = (idx) => {
     const colors = [
       "bg-gradient-to-r from-blue-500 to-blue-600",
@@ -398,103 +254,81 @@ export default function WebDevRoadmap() {
     return colors[idx] || colors[0];
   };
 
+  const handleDownloadPDF = () => {
+    setDownloading(true);
+    // Simulate PDF generation
+    setTimeout(() => {
+      setDownloading(false);
+      alert("PDF download functionality would be implemented here");
+    }, 2000);
+  };
+
   return (
-    <main className="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen p-4 sm:p-6 font-sans">
-      {/* Download Visual PDF Button */}
-      <div className="flex justify-end max-w-7xl mx-auto mb-4">
-        <button
-          onClick={() =>
-            handleDownloadVisualPDF(
-              activeTab === "frontend" ? frontendRoadmap : fullStackRoadmap,
-              activeTab,
-              (val) => setDownloading(val)
-            )
-          }
-          disabled={downloading}
-          className={`px-4 py-2 rounded-lg font-medium text-sm shadow-md transition-all duration-200 flex items-center gap-2
-            ${
-              downloading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover:scale-105"
-            }`}
-        >
-          {downloading ? (
-            <>
-              <svg
-                className="animate-spin h-4 w-4 mr-2"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              Generating PDF...
-            </>
-          ) : (
-            <>
-              <svg
-                className="w-4 h-4 mr-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              Download Visual PDF
-            </>
-          )}
-        </button>
-      </div>
+    <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen p-4 sm:p-6 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          {/* Tab Navigation */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-white rounded-full p-2 shadow-lg border border-gray-200 flex">
-              <button
-                onClick={() => setActiveTab("fullstack")}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeTab === "fullstack"
-                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md"
-                    : "text-gray-600 hover:text-gray-800"
-                }`}
-              >
-                🚀 Full-Stack Path
-              </button>
-              <button
-                onClick={() => setActiveTab("frontend")}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeTab === "frontend"
-                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md"
-                    : "text-gray-600 hover:text-gray-800"
-                }`}
-              >
-                🎨 Frontend Focus
-              </button>
-            </div>
-          </div>
+          
+
+          {/* Download PDF Button */}
+          <button
+            onClick={handleDownloadPDF}
+            disabled={downloading}
+            className={`px-6 py-3 rounded-lg font-medium text-sm shadow-md transition-all duration-200 flex items-center gap-2 mx-auto mb-6
+              ${
+                downloading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover:scale-105"
+              }`}
+          >
+            {downloading ? (
+              <>
+                <svg
+                  className="animate-spin h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Generating PDF...
+              </>
+            ) : (
+              <>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                 Visual PDF
+              </>
+            )}
+          </button>
 
           <div className="flex justify-center">
             <div className="bg-white rounded-full px-6 py-3 shadow-lg border border-gray-200">
               <span className="text-sm font-medium text-gray-700">
-                💻 {currentRoadmap.length * 4} Essential Steps • 🎯{" "}
-                {currentRoadmap.length} Skill Areas • 🚀 Career Ready
+                💻 {fullStackRoadmap.length * 4} Essential Steps • 🎯{" "}
+                {fullStackRoadmap.length} Skill Areas • 🚀 Career Ready
               </span>
             </div>
           </div>
@@ -502,7 +336,7 @@ export default function WebDevRoadmap() {
 
         {/* Roadmap Sections */}
         <div className="space-y-12 sm:space-y-16">
-          {currentRoadmap.map((section, sectionIdx) => (
+          {fullStackRoadmap.map((section, sectionIdx) => (
             <section key={sectionIdx} className="relative">
               {/* Desktop Layout */}
               <div className="hidden lg:block">
@@ -743,6 +577,16 @@ export default function WebDevRoadmap() {
             </div>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="mt-16 text-center text-gray-500 text-sm">
+          <p className="mb-2">
+            🎯 Complete this roadmap to become a job-ready full-stack developer
+          </p>
+          <p>
+            💡 Remember: Practice consistently, build projects, and never stop learning!
+          </p>
+        </footer>
       </div>
     </main>
   );

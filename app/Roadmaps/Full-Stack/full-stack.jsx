@@ -96,8 +96,8 @@ export default function Home() {
           onClick={handleAIGuideRedirect}
           className={`group relative p-3 sm:p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 active:scale-95 ${
             darkMode
-              ? "bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600"
-              : "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
+              ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-purple-500 hover:to-indigo-600"
+              : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-purple-600 hover:to-indigo-700"
           } text-white`}
           title="AI Career Guidance"
         >

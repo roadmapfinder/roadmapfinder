@@ -109,6 +109,8 @@ import redis from "./CoursesImage/redis.jpg"
 import aptitude from "./CoursesImage/aptitude.jpg"
 import angular from "./CoursesImage/angular.jpg"
 import nodejs from "./CoursesImage/nodejs.jpg"
+import tailwindcss from "./CoursesImage/tailwindcss.jpg"
+import vectorDB from "./CoursesImage/vectorDB.jpg"
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -121,6 +123,7 @@ import creator7 from "../Images/babbar.jpg";
 import creator8 from "../Images/ansh.png"
 import creator9 from "../Images/freecodecamp.jpg"
 import creator10 from "../Images/sagar.jpg"
+
 
 // YouTube Icon Component
 const YouTubeIcon = ({ size = 32, className = "" }) => (
@@ -146,7 +149,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB
 };
 
 // Creator images array
