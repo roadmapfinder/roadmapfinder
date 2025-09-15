@@ -295,6 +295,15 @@ export const roadmapsData = [
     description: "Kotlin for Android development"
   },
   {
+    id: "spring",
+    title: "Spring",
+    icon: <Leaf className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Spring",
+    bgColor: "from-green-600 to-green-800",
+    category: "trending",
+    description: "Spring framework"
+  },
+  {
     id: "springboot",
     title: "Springboot",
     icon: <Leaf className="w-5 h-5 text-white" />,

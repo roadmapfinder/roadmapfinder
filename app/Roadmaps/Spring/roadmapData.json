@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "title": "Java Prerequisites & Foundation",
+    "description": "Master essential Java concepts required before diving into Spring Framework",
+    "icon": "Settings",
+    "gradient": "from-blue-500 to-cyan-500",
+    "content": {
+      "whatToLearn": [
+        "Java SE Fundamentals & OOP Concepts",
+        "Collections Framework (List, Set, Map)",
+        "Generics & Type Safety",
+        "Lambda Expressions & Functional Interfaces",
+        "Stream API & Optional Class",
+        "Exception Handling Best Practices",
+        "Maven/Gradle Build Tools",
+        "JDBC & Basic SQL Operations"
+      ],
+      "toolsToUse": [
+        "Java 11+ or Java 17+",
+        "IntelliJ IDEA or Eclipse",
+        "Maven or Gradle",
+        "MySQL/PostgreSQL",
+        "Git & GitHub",
+        "JUnit 5 (Basic Testing)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Java Programming Masterclass - Tim Buchalka",
+          "Complete Java Developer Course - Udemy",
+          "Java Fundamentals - Oracle University",
+          "Modern Java Development - Pluralsight"
+        ],
+        "hindi": [
+          "Java Complete Course - CodeWithHarry",
+          "Java Programming Hindi - Apna College",
+          "Java Basics to Advanced - Coding Blocks Hindi",
+          "Core Java Hindi - Durga Sir"
+        ]
+      },
+      "docsAndWebsites": [
+        "Oracle Java Documentation",
+        "Java 17 Language Specification",
+        "Maven Getting Started Guide",
+        "JDBC Tutorial - Oracle"
+      ],
+      "projectIdeas": [
+        "Library Management System (Console)",
+        "Student Grade Calculator",
+        "File-based CRUD Operations",
+        "Basic Banking System with JDBC",
+        "Employee Management CLI Tool"
+      ],
+      "practicePlatforms": [
+        "HackerRank Java",
+        "LeetCode Java Problems",
+        "Codewars Java Track",
+        "Java Code Challenges - Exercism"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Spring Core Framework",
+    "description": "Master the foundation of Spring Framework with IoC, DI, and AOP concepts",
+    "icon": "Package",
+    "gradient": "from-cyan-500 to-teal-500",
+    "content": {
+      "whatToLearn": [
+        "Inversion of Control (IoC) Container",
+        "Dependency Injection Patterns",
+        "ApplicationContext & BeanFactory",
+        "Spring Bean Configuration (XML, Annotation, Java)",
+        "Bean Scopes & Lifecycle Management",
+        "Aspect-Oriented Programming (AOP)",
+        "Spring JDBC Template",
+        "Spring with Hibernate Integration"
+      ],
+      "toolsToUse": [
+        "Spring Framework 5.x/6.x",
+        "Spring Tool Suite (STS)",
+        "XML Configuration",
+        "Annotation-based Configuration",
+        "AspectJ for AOP",
+        "HikariCP (Connection Pooling)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Framework 6 & Spring Boot 3 - Chad Darby",
+          "Spring Core Complete Course - in28Minutes",
+          "Master Spring Framework - John Thompson",
+          "Spring Framework Deep Dive - Pluralsight"
+        ],
+        "hindi": [
+          "Spring Framework Hindi - CodeWithHarry",
+          "Complete Spring Course Hindi - Durgesh Tiwari",
+          "Spring Core Concepts Hindi - Java Techie",
+          "Spring Framework Tutorial Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Framework Reference Documentation",
+        "Spring IoC Container Guide",
+        "AOP with Spring Documentation",
+        "Spring JDBC Documentation"
+      ],
+      "projectIdeas": [
+        "Employee Management with Spring Core",
+        "Product Catalog with AOP Logging",
+        "Banking System with Transaction Management",
+        "Library System with JDBC Template",
+        "IoC Container Implementation Demo"
+      ],
+      "practicePlatforms": [
+        "Spring Framework Exercises",
+        "IoC Container Implementation Practice",
+        "AOP Practical Examples",
+        "Spring Configuration Challenges"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Spring Boot Fundamentals",
+    "description": "Learn modern Spring development with Spring Boot's auto-configuration and rapid development features",
+    "icon": "Rocket",
+    "gradient": "from-teal-500 to-green-500",
+    "content": {
+      "whatToLearn": [
+        "Spring Boot Auto Configuration",
+        "Spring Boot Starter Dependencies",
+        "Application Properties & YAML Configuration",
+        "Spring Profiles (Dev, Test, Prod)",
+        "Embedded Servers (Tomcat, Jetty, Undertow)",
+        "Spring Boot Actuator (Health Checks)",
+        "DevTools for Development",
+        "Custom Auto Configuration"
+      ],
+      "toolsToUse": [
+        "Spring Boot 3.x",
+        "Spring Initializr",
+        "Spring Boot CLI",
+        "Spring Boot DevTools",
+        "Spring Boot Actuator",
+        "Application Properties/YAML"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Boot Complete Guide - Dan Vega",
+          "Master Spring Boot - in28Minutes",
+          "Spring Boot Masterclass - Amigoscode",
+          "Spring Boot 3 & Spring 6 - Chad Darby"
+        ],
+        "hindi": [
+          "Spring Boot Hindi Complete - Durgesh Tiwari",
+          "Spring Boot Tutorial Hindi - CodeWithHarry",
+          "Spring Boot Crash Course Hindi - Java Techie",
+          "Spring Boot Projects Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Boot Reference Guide",
+        "Spring Boot Actuator Documentation",
+        "Spring Boot Starter Reference",
+        "Spring Boot Configuration Properties"
+      ],
+      "projectIdeas": [
+        "RESTful Blog Application",
+        "Task Management API",
+        "File Upload/Download Service",
+        "Configuration Management Tool",
+        "Health Monitoring Dashboard"
+      ],
+      "practicePlatforms": [
+        "Spring Boot Exercises",
+        "Configuration Practice Challenges",
+        "Actuator Implementation Tasks",
+        "Profile Management Exercises"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "REST APIs & Web Development",
+    "description": "Build robust REST APIs and web applications with Spring Boot",
+    "icon": "Server",
+    "gradient": "from-green-500 to-emerald-500",
+    "content": {
+      "whatToLearn": [
+        "@RestController & @RequestMapping",
+        "HTTP Methods (GET, POST, PUT, DELETE)",
+        "@PathVariable, @RequestParam, @RequestBody",
+        "Response Entity & HTTP Status Codes",
+        "Exception Handling with @ControllerAdvice",
+        "Bean Validation (JSR-303)",
+        "CORS Configuration",
+        "API Versioning Strategies"
+      ],
+      "toolsToUse": [
+        "Spring Web MVC",
+        "Jackson (JSON Processing)",
+        "Hibernate Validator",
+        "Postman (API Testing)",
+        "Swagger/OpenAPI 3",
+        "Spring Boot Web Starter"
+      ],
+      "bestCourses": {
+        "english": [
+          "Building REST APIs with Spring Boot - Baeldung",
+          "Spring Boot REST API Tutorial - Amigoscode",
+          "RESTful Web Services with Spring Boot - in28Minutes",
+          "Advanced REST API Development - Pluralsight"
+        ],
+        "hindi": [
+          "REST API Spring Boot Hindi - Java Techie",
+          "Web Services Hindi - CodeWithHarry",
+          "Spring Boot REST Hindi - Durgesh Tiwari",
+          "API Development Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Web MVC Documentation",
+        "REST API Design Best Practices",
+        "Bean Validation Specification",
+        "OpenAPI 3 Specification"
+      ],
+      "projectIdeas": [
+        "E-commerce Product API",
+        "Social Media Posts API",
+        "Employee Management REST Service",
+        "Online Banking API",
+        "Recipe Sharing Platform API"
+      ],
+      "practicePlatforms": [
+        "REST API Development Challenges",
+        "HTTP Methods Practice",
+        "Validation Implementation Exercises",
+        "Error Handling Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Spring Data JPA & Persistence",
+    "description": "Master data persistence with Spring Data JPA, Hibernate, and database operations",
+    "icon": "Database",
+    "gradient": "from-emerald-500 to-indigo-500",
+    "content": {
+      "whatToLearn": [
+        "Spring Data JPA Repositories",
+        "Entity Mapping & Annotations",
+        "JPQL & Native Queries",
+        "Pagination & Sorting",
+        "Entity Relationships (OneToMany, ManyToMany)",
+        "Transaction Management",
+        "Database Migration (Flyway/Liquibase)",
+        "Connection Pooling & Performance"
+      ],
+      "toolsToUse": [
+        "Spring Data JPA",
+        "Hibernate ORM",
+        "H2 Database (Testing)",
+        "MySQL/PostgreSQL",
+        "Flyway or Liquibase",
+        "HikariCP (Connection Pool)"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Data JPA Complete Guide - Vlad Mihalcea",
+          "Hibernate & JPA with Spring Boot - in28Minutes",
+          "Database Design with Spring Data - Baeldung",
+          "Advanced JPA and Hibernate - Pluralsight"
+        ],
+        "hindi": [
+          "Spring Data JPA Hindi - Java Techie",
+          "Hibernate Tutorial Hindi - CodeWithHarry",
+          "Database Integration Hindi - Durgesh Tiwari",
+          "JPA Mapping Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Data JPA Reference",
+        "Hibernate User Guide",
+        "JPA Specification Documentation",
+        "Database Migration Best Practices"
+      ],
+      "projectIdeas": [
+        "University Management System",
+        "Hospital Patient Records",
+        "E-commerce Inventory System",
+        "Social Media Database Design",
+        "Financial Transaction System"
+      ],
+      "practicePlatforms": [
+        "JPA Query Practice",
+        "Entity Relationship Modeling",
+        "Transaction Management Exercises",
+        "Performance Optimization Tasks"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Spring Security & Authentication",
+    "description": "Implement comprehensive security solutions with authentication and authorization",
+    "icon": "Shield",
+    "gradient": "from-indigo-500 to-purple-500",
+    "content": {
+      "whatToLearn": [
+        "Spring Security Architecture",
+        "Authentication & Authorization",
+        "JWT Token Implementation",
+        "OAuth2 & OpenID Connect",
+        "Role-Based Access Control (RBAC)",
+        "Method-Level Security",
+        "CSRF Protection",
+        "Security Testing Strategies"
+      ],
+      "toolsToUse": [
+        "Spring Security 6.x",
+        "JWT (jsonwebtoken)",
+        "OAuth2 Client/Resource Server",
+        "BCrypt Password Encoding",
+        "Security Filter Chain",
+        "Spring Security Test"
+      ],
+      "bestCourses": {
+        "english": [
+          "Spring Security Complete Guide - Dan Vega",
+          "OAuth2 and JWT with Spring Security - in28Minutes",
+          "Advanced Spring Security - Baeldung",
+          "Spring Security Fundamentals - Pluralsight"
+        ],
+        "hindi": [
+          "Spring Security Hindi - Java Techie",
+          "Authentication JWT Hindi - CodeWithHarry",
+          "Security Implementation Hindi - Durgesh Tiwari",
+          "OAuth2 Tutorial Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Security Reference",
+        "JWT.io Documentation",
+        "OAuth 2.0 RFC Specification",
+        "Spring Security Architecture Guide"
+      ],
+      "projectIdeas": [
+        "Secure Banking Application",
+        "Multi-tenant SaaS Platform",
+        "Role-based CMS System",
+        "OAuth2 Social Login Integration",
+        "JWT-based Microservices Auth"
+      ],
+      "practicePlatforms": [
+        "Security Implementation Challenges",
+        "JWT Token Practice",
+        "OAuth2 Flow Exercises",
+        "Role-based Access Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "title": "Spring Cloud & Microservices",
+    "description": "Build distributed systems and microservices architecture with Spring Cloud",
+    "icon": "Network",
+    "gradient": "from-purple-500 to-pink-500",
+    "content": {
+      "whatToLearn": [
+        "Microservices Design Patterns",
+        "Service Discovery (Eureka, Consul)",
+        "API Gateway (Spring Cloud Gateway)",
+        "Configuration Management (Config Server)",
+        "Circuit Breaker (Resilience4j)",
+        "Distributed Tracing (Sleuth, Zipkin)",
+        "Event-Driven Architecture",
+        "Service Mesh Basics"
+      ],
+      "toolsToUse": [
+        "Spring Cloud 2022.x",
+        "Netflix Eureka",
+        "Spring Cloud Gateway",
+        "Spring Cloud Config",
+        "Resilience4j",
+        "Spring Cloud Sleuth"
+      ],
+      "bestCourses": {
+        "english": [
+          "Microservices with Spring Cloud - in28Minutes",
+          "Spring Cloud Complete Guide - Amigoscode",
+          "Distributed Systems with Spring Cloud - Pluralsight",
+          "Cloud Native Java - Josh Long"
+        ],
+        "hindi": [
+          "Microservices Spring Cloud Hindi - Java Techie",
+          "Distributed Systems Hindi - CodeWithHarry",
+          "Spring Cloud Tutorial Hindi - Durgesh Tiwari",
+          "Microservices Architecture Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Cloud Reference Guide",
+        "Microservices Patterns - Chris Richardson",
+        "Netflix OSS Documentation",
+        "Cloud Native Computing Foundation"
+      ],
+      "projectIdeas": [
+        "E-commerce Microservices Platform",
+        "Distributed Banking System",
+        "Multi-service Order Management",
+        "Cloud-native Chat Application",
+        "Microservices Monitoring Dashboard"
+      ],
+      "practicePlatforms": [
+        "Microservices Design Challenges",
+        "Service Discovery Implementation",
+        "Circuit Breaker Pattern Practice",
+        "Distributed System Scenarios"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Advanced Spring Features",
+    "description": "Master advanced Spring concepts including reactive programming, caching, and batch processing",
+    "icon": "Zap",
+    "gradient": "from-pink-500 to-red-500",
+    "content": {
+      "whatToLearn": [
+        "Spring WebFlux (Reactive Programming)",
+        "Mono & Flux Reactive Types",
+        "Spring Cache Abstraction",
+        "Redis Integration & Caching",
+        "Spring Batch Processing",
+        "Async & Scheduled Tasks",
+        "Event-Driven Programming",
+        "Custom Starters Development"
+      ],
+      "toolsToUse": [
+        "Spring WebFlux",
+        "Reactor Core",
+        "Redis & Spring Data Redis",
+        "Spring Batch",
+        "Spring Events",
+        "Spring Cache"
+      ],
+      "bestCourses": {
+        "english": [
+          "Reactive Programming with Spring WebFlux - in28Minutes",
+          "Spring Batch Complete Guide - Baeldung",
+          "Caching with Spring - Pluralsight",
+          "Advanced Spring Boot Features - Amigoscode"
+        ],
+        "hindi": [
+          "Reactive Programming Hindi - Java Techie",
+          "Spring Batch Hindi - CodeWithHarry",
+          "Caching Strategies Hindi - Durgesh Tiwari",
+          "Advanced Features Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring WebFlux Documentation",
+        "Reactor Reference Guide",
+        "Spring Batch Reference",
+        "Spring Cache Abstraction Guide"
+      ],
+      "projectIdeas": [
+        "Reactive REST API",
+        "Data Processing Pipeline",
+        "Real-time Chat with WebFlux",
+        "Batch Job Processing System",
+        "High-performance Caching Layer"
+      ],
+      "practicePlatforms": [
+        "Reactive Programming Challenges",
+        "Batch Processing Exercises",
+        "Caching Implementation Tasks",
+        "Event-driven Architecture Practice"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "title": "Testing & DevOps Integration",
+    "description": "Implement comprehensive testing strategies and modern DevOps practices for Spring applications",
+    "icon": "Bug",
+    "gradient": "from-red-500 to-orange-500",
+    "content": {
+      "whatToLearn": [
+        "Unit Testing with JUnit 5 & Mockito",
+        "Integration Testing (@SpringBootTest)",
+        "Test Slices (@WebMvcTest, @DataJpaTest)",
+        "TestContainers for Integration Tests",
+        "Docker & Containerization",
+        "CI/CD Pipelines (GitHub Actions, Jenkins)",
+        "Kubernetes Deployment",
+        "Monitoring & Observability"
+      ],
+      "toolsToUse": [
+        "JUnit 5 & Mockito",
+        "TestContainers",
+        "Docker & Docker Compose",
+        "GitHub Actions/GitLab CI",
+        "Kubernetes & Helm",
+        "Micrometer & Prometheus"
+      ],
+      "bestCourses": {
+        "english": [
+          "Testing Spring Boot Applications - Philip Riecks",
+          "Docker for Java Developers - in28Minutes",
+          "Kubernetes for Spring Boot - Baeldung",
+          "CI/CD for Spring Applications - Pluralsight"
+        ],
+        "hindi": [
+          "Testing Spring Boot Hindi - Java Techie",
+          "Docker Kubernetes Hindi - CodeWithHarry",
+          "DevOps Spring Boot Hindi - Durgesh Tiwari",
+          "CI/CD Pipeline Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Boot Testing Documentation",
+        "TestContainers Documentation",
+        "Docker Best Practices for Java",
+        "Kubernetes Spring Boot Guide"
+      ],
+      "projectIdeas": [
+        "Comprehensive Test Suite Implementation",
+        "Dockerized Microservices",
+        "CI/CD Pipeline for Spring App",
+        "Kubernetes Native Application",
+        "Monitoring & Alerting System"
+      ],
+      "practicePlatforms": [
+        "Testing Strategy Implementation",
+        "Docker Containerization Practice",
+        "CI/CD Pipeline Creation",
+        "Kubernetes Deployment Exercises"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "title": "Production & Career Readiness",
+    "description": "Build industry-ready projects and prepare for Spring developer career opportunities",
+    "icon": "Target",
+    "gradient": "from-orange-500 to-yellow-500",
+    "content": {
+      "whatToLearn": [
+        "Production-Ready Application Development",
+        "System Design with Spring",
+        "Performance Optimization & Profiling",
+        "Cloud Deployment (AWS, GCP, Azure)",
+        "API Documentation (OpenAPI/Swagger)",
+        "Code Review & Best Practices",
+        "Spring Framework Contributions",
+        "Technical Interview Preparation"
+      ],
+      "toolsToUse": [
+        "Spring Boot Production Features",
+        "Cloud Platforms (AWS/GCP/Azure)",
+        "API Documentation Tools",
+        "Performance Monitoring Tools",
+        "Code Quality Tools (SonarQube)",
+        "Portfolio Development Tools"
+      ],
+      "bestCourses": {
+        "english": [
+          "Production-Ready Spring Boot - Josh Long",
+          "Spring Boot on AWS - in28Minutes",
+          "System Design for Java Developers - Grokking",
+          "Spring Framework Interview Guide - Baeldung"
+        ],
+        "hindi": [
+          "Production Ready Apps Hindi - Java Techie",
+          "System Design Hindi - CodeWithHarry",
+          "Cloud Deployment Hindi - Durgesh Tiwari",
+          "Interview Preparation Hindi - Telusko"
+        ]
+      },
+      "docsAndWebsites": [
+        "Spring Boot Production Ready Features",
+        "AWS Spring Cloud Documentation",
+        "System Design Primer",
+        "Spring Framework Interview Questions"
+      ],
+      "projectIdeas": [
+        "Complete E-commerce Platform",
+        "Multi-tenant SaaS Application",
+        "Real-time Collaboration Platform",
+        "Distributed Social Media System",
+        "Enterprise Resource Planning (ERP) System"
+      ],
+      "practicePlatforms": [
+        "LeetCode System Design",
+        "Spring Framework Interview Practice",
+        "Open Source Contributions",
+        "Technical Blog Writing & Portfolio"
+      ]
+    }
+  }
+]

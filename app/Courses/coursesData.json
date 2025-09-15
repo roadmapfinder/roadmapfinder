@@ -855,6 +855,18 @@
       "docs": "/Docs/expressjs"
     },
     {
+      "id": 83,
+      "category": "Frameworks & Libraries",
+      "title": "Spring complete course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "spring",
+      "videoId": "https://youtu.be/Jl9OKQ92SJU?si=dKFu-sxZEoq_Bxzy",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/spring"
+    },
+    {
       "id": 61,
       "category": "Frameworks & Libraries",
       "title": "Spring boot complete course",

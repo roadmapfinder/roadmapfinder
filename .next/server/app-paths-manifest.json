@@ -1,1 +1,6 @@
-{}
+{
+  "/Courses/page": "app/Courses/page.js",
+  "/Docs/spring/page": "app/Docs/spring/page.js",
+  "/Docs/vectorDB/page": "app/Docs/vectorDB/page.js",
+  "/page": "app/page.js"
+}

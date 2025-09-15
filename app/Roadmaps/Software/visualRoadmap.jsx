@@ -5,6 +5,7 @@ export default function SoftwareEngineeringRoadmap() {
     {
       title: "Foundation",
       subtitle: "Core Fundamentals",
+
       steps: [
         { 
           step: "Step - 1", 
