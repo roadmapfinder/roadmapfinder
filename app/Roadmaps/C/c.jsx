@@ -39,7 +39,7 @@ export default function Home() {
   // Handle YouTube redirect
   const handleYouTubeRedirect = () => {
     window.open(
-      "https://youtu.be/oveyab6lO_E?si=7siLPjddIn3SLTZj",
+      "https://youtu.be/aZb0iu4uGwA?si=HUioRYWCA7hK76sG",
       "_blank",
     );
   };

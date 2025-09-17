@@ -85,7 +85,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
                 </div>
               </div>
 
-              {/* Mobile Action Buttons - Updated without AI Guide and Project Helper */}
+              {/* Mobile Action Buttons */}
               <div className="block xs:hidden space-y-2.5">
                 <button
                   onClick={() => handleProtectedAction && handleProtectedAction("/RoadmapPage")}
