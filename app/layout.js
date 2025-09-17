@@ -1,6 +1,6 @@
 // app/layout.js
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Sora } from "next/font/google";
 
@@ -55,13 +55,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={sora.variable}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs"
+        />
         {/* Favicon - Multiple formats for better compatibility */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/roadmapfinder.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
@@ -83,12 +90,14 @@ export default function RootLayout({ children }) {
               }
             }
           }
-        `}} />
+        `,
+          }}
+        />
       </head>
       <body className={`${sora.className} bg-[#F9FAFB] text-gray-900`}>
         {children}
-        <Analytics /> 
-        <SpeedInsights /> 
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
