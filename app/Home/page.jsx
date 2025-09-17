@@ -144,14 +144,7 @@ export default function HomePage() {
       protected: true,
       feature: "Career Guidance",
     },
-    {
-      name: "Project-helper",
-      icon: <Lightbulb size={24} className="mr-3" />,
-      href: "/Project-helper",
-      protected: true,
-      feature: "Project Helper",
-      isNew: true,
-    },
+   
     {
       name: "Blogs",
       icon: <Newspaper size={24} className="mr-3" />,
