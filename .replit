@@ -6,7 +6,9 @@ channel = "stable-25_05"
 packages = ["nano"]
 
 [deployment]
-run = ["sh", "-c", "npm run dev"]
+run = ["npm", "start"]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
 
 [[ports]]
 localPort = 3000
@@ -23,6 +25,10 @@ externalPort = 3002
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 46381
+externalPort = 3000
 
 [agent]
 expertMode = true
