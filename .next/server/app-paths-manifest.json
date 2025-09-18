@@ -1,9 +1,5 @@
 {
+  "/CareerGuidance/page": "app/CareerGuidance/page.js",
   "/Courses/page": "app/Courses/page.js",
-  "/Home/page": "app/Home/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/C/page": "app/Roadmaps/C/page.js",
-  "/Roadmaps/Cpp/page": "app/Roadmaps/Cpp/page.js",
-  "/Signup/page": "app/Signup/page.js",
   "/page": "app/page.js"
 }
