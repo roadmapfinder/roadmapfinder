@@ -1,9 +1,6 @@
 {
   "app": {
-    "[project]/app/CareerGuidance/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Courses/page": [
+    "[project]/app/Roadmaps/Frontend/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
     "[project]/app/page": [
