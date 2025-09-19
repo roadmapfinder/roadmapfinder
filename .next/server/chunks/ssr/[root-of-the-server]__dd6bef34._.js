@@ -17,40 +17,58 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 const docsList = [
     {
-        title: "Figma Help Center & Figma Learn",
-        description: "Official Figma docs and tutorials: components, auto-layout, design systems, prototyping, plugins.",
-        url: "https://help.figma.com/hc/en-us",
-        citation: "Figma Help Center & Learn Library"
+        title: "HTML/CSS",
+        description: "Learn the foundation of the web with semantic HTML and modern CSS.",
+        url: "https://developer.mozilla.org/",
+        citation: "MDN Web Docs"
     },
     {
-        title: "WCAG 2.2 Standard & Understanding",
-        description: "W3C’s official WCAG 2.2 specification, “How to Meet”, and “Understanding” guidance for accessibility compliance.",
-        url: "https://www.w3.org/TR/WCAG22/",
-        citation: "WCAG 2.2 spec and Understanding guides"
+        title: "JavaScript",
+        description: "Comprehensive JS guide for beginners to advanced developers.",
+        url: "https://javascript.info/",
+        citation: "JavaScript.info"
     },
     {
-        title: "Material Design 3 (Material.io)",
-        description: "Google’s official Material Design 3 guidelines: theming, components, layout, motion & tokens.",
-        url: "https://m3.material.io/",
-        citation: "Material Design 3 documentation"
+        title: "React",
+        description: "Official React documentation with guides, hooks, and examples.",
+        url: "https://react.dev/",
+        citation: "React Docs"
     },
     {
-        title: "Apple Human Interface Guidelines",
-        description: "Apple’s official design guidelines across iOS/macOS/visionOS: typography, animation, components, best practices.",
-        url: "https://developer.apple.com/design/human-interface-guidelines",
-        citation: "Apple HIG"
+        title: "Next.js",
+        description: "Learn full-stack React with routing, SSR, and API routes.",
+        url: "https://nextjs.org/docs",
+        citation: "Next.js Docs"
     },
     {
-        title: "Mixpanel Documentation",
-        description: "Official Mixpanel docs: “What is Mixpanel?”, quickstart, APIs, data-structure & cohorts guides.",
-        url: "https://docs.mixpanel.com/docs/what-is-mixpanel",
-        citation: "Mixpanel docs"
+        title: "TypeScript",
+        description: "Typed JavaScript at scale – official docs and guides.",
+        url: "https://www.typescriptlang.org/docs/",
+        citation: "TypeScript Docs"
     },
     {
-        title: "Hotjar Help Center & Guides",
-        description: "Official Hotjar guides: heatmaps, session recordings, feedback tools and help center instructions.",
-        url: "https://help.hotjar.com/hc/en-us",
-        citation: "Hotjar Help Center & Resource Library"
+        title: "Tailwind CSS",
+        description: "Utility-first CSS framework for rapid UI development.",
+        url: "https://tailwindcss.com/docs",
+        citation: "Tailwind Docs"
+    },
+    {
+        title: "Redux Toolkit",
+        description: "State management made easy with Redux Toolkit.",
+        url: "https://redux-toolkit.js.org/",
+        citation: "Redux Toolkit Docs"
+    },
+    {
+        title: "Jest (Testing)",
+        description: "Delightful JavaScript testing framework with unit test support.",
+        url: "https://jestjs.io/docs/getting-started",
+        citation: "Jest Docs"
+    },
+    {
+        title: "Cypress (Testing)",
+        description: "End-to-end testing framework for modern web apps.",
+        url: "https://docs.cypress.io/",
+        citation: "Cypress Docs"
     }
 ];
 function Docs() {
@@ -61,18 +79,18 @@ function Docs() {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                     className: "text-3xl font-bold text-gray-900 mb-6",
-                    children: "📚 Product Designer Docs"
+                    children: "📚 Frontend Developer Docs"
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                    lineNumber: 55,
+                    lineNumber: 76,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-gray-600 mb-10",
-                    children: "Explore official documentation resources that will guide you from beginner to industry-ready product designer."
+                    children: "Explore official and popular documentation resources that every frontend developer should master — from HTML/CSS and JavaScript to modern frameworks, state management, and testing tools."
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                    lineNumber: 58,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -91,21 +109,22 @@ function Docs() {
                                             children: doc.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                                            lineNumber: 74,
+                                            lineNumber: 96,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
                                             size: 18,
-                                            className: "text-gray-400 group-hover:text-blue-600"
+                                            className: "text-gray-400 group-hover:text-blue-600",
+                                            "aria-hidden": "true"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                                            lineNumber: 77,
+                                            lineNumber: 99,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                                    lineNumber: 73,
+                                    lineNumber: 95,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -113,7 +132,7 @@ function Docs() {
                                     children: doc.description
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                                    lineNumber: 82,
+                                    lineNumber: 106,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -121,29 +140,29 @@ function Docs() {
                                     children: doc.citation
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                                    lineNumber: 83,
+                                    lineNumber: 108,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, doc.title, true, {
                             fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                            lineNumber: 66,
+                            lineNumber: 88,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-                    lineNumber: 64,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-            lineNumber: 53,
+            lineNumber: 74,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Frontend/docs.jsx",
-        lineNumber: 52,
+        lineNumber: 73,
         columnNumber: 5
     }, this);
 }
@@ -735,7 +754,7 @@ const downloadRoadmapPDF = async (phases)=>{
         }, this)).toBlob();
         // Generate filename with current date
         const currentDate = new Date().toISOString().split('T')[0];
-        const filename = `product-designer-roadmap-${currentDate}.pdf`;
+        const filename = `Frontend-Engineer-roadmap-${currentDate}.pdf`;
         // Save the file
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$file$2d$saver$2f$dist$2f$FileSaver$2e$min$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["saveAs"])(blob, filename);
         return {
@@ -758,7 +777,7 @@ const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }
             lineNumber: 270,
             columnNumber: 15
         }, void 0),
-        fileName: `product-designer-roadmap-${new Date().toISOString().split('T')[0]}.pdf`,
+        fileName: `Frontend-Engineer-roadmap-${new Date().toISOString().split('T')[0]}.pdf`,
         className: className,
         children: ({ blob, url, loading, error })=>{
             if (loading) return 'Generating PDF...';
@@ -771,7 +790,7 @@ const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }
         columnNumber: 3
     }, this);
 const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
-    const { includeWatermark = true, customTitle = "Product Designer Roadmap", customSubtitle = "Your Complete Journey from Beginner to Professional", pageSize = "A4", orientation = "portrait" } = options;
+    const { includeWatermark = true, customTitle = "Frontend Engineer Roadmap", customSubtitle = "Your Complete Journey from Beginner to Professional", pageSize = "A4", orientation = "portrait" } = options;
     try {
         const AdvancedPDFDocument = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$react$2d$pdf$2f$renderer__$5b$external$5d$__$2840$react$2d$pdf$2f$renderer$2c$__esm_import$29$__["Document"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$react$2d$pdf$2f$renderer__$5b$external$5d$__$2840$react$2d$pdf$2f$renderer$2c$__esm_import$29$__["Page"], {

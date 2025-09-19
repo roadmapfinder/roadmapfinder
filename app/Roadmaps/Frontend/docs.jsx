@@ -4,46 +4,67 @@ import { ExternalLink } from "lucide-react";
 
 const docsList = [
   {
-    title: "Figma Help Center & Figma Learn",
+    title: "HTML/CSS",
     description:
-      "Official Figma docs and tutorials: components, auto-layout, design systems, prototyping, plugins.",
-    url: "https://help.figma.com/hc/en-us",
-    citation: "Figma Help Center & Learn Library",
+      "Learn the foundation of the web with semantic HTML and modern CSS.",
+    url: "https://developer.mozilla.org/",
+    citation: "MDN Web Docs",
   },
   {
-    title: "WCAG 2.2 Standard & Understanding",
+    title: "JavaScript",
     description:
-      "W3C’s official WCAG 2.2 specification, “How to Meet”, and “Understanding” guidance for accessibility compliance.",
-    url: "https://www.w3.org/TR/WCAG22/",
-    citation: "WCAG 2.2 spec and Understanding guides",
+      "Comprehensive JS guide for beginners to advanced developers.",
+    url: "https://javascript.info/",
+    citation: "JavaScript.info",
   },
   {
-    title: "Material Design 3 (Material.io)",
+    title: "React",
     description:
-      "Google’s official Material Design 3 guidelines: theming, components, layout, motion & tokens.",
-    url: "https://m3.material.io/",
-    citation: "Material Design 3 documentation",
+      "Official React documentation with guides, hooks, and examples.",
+    url: "https://react.dev/",
+    citation: "React Docs",
   },
   {
-    title: "Apple Human Interface Guidelines",
+    title: "Next.js",
     description:
-      "Apple’s official design guidelines across iOS/macOS/visionOS: typography, animation, components, best practices.",
-    url: "https://developer.apple.com/design/human-interface-guidelines",
-    citation: "Apple HIG",
+      "Learn full-stack React with routing, SSR, and API routes.",
+    url: "https://nextjs.org/docs",
+    citation: "Next.js Docs",
   },
   {
-    title: "Mixpanel Documentation",
+    title: "TypeScript",
     description:
-      "Official Mixpanel docs: “What is Mixpanel?”, quickstart, APIs, data-structure & cohorts guides.",
-    url: "https://docs.mixpanel.com/docs/what-is-mixpanel",
-    citation: "Mixpanel docs",
+      "Typed JavaScript at scale – official docs and guides.",
+    url: "https://www.typescriptlang.org/docs/",
+    citation: "TypeScript Docs",
   },
   {
-    title: "Hotjar Help Center & Guides",
+    title: "Tailwind CSS",
     description:
-      "Official Hotjar guides: heatmaps, session recordings, feedback tools and help center instructions.",
-    url: "https://help.hotjar.com/hc/en-us",
-    citation: "Hotjar Help Center & Resource Library",
+      "Utility-first CSS framework for rapid UI development.",
+    url: "https://tailwindcss.com/docs",
+    citation: "Tailwind Docs",
+  },
+  {
+    title: "Redux Toolkit",
+    description:
+      "State management made easy with Redux Toolkit.",
+    url: "https://redux-toolkit.js.org/",
+    citation: "Redux Toolkit Docs",
+  },
+  {
+    title: "Jest (Testing)",
+    description:
+      "Delightful JavaScript testing framework with unit test support.",
+    url: "https://jestjs.io/docs/getting-started",
+    citation: "Jest Docs",
+  },
+  {
+    title: "Cypress (Testing)",
+    description:
+      "End-to-end testing framework for modern web apps.",
+    url: "https://docs.cypress.io/",
+    citation: "Cypress Docs",
   },
 ];
 
@@ -53,11 +74,12 @@ export default function Docs() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
-          📚 Product Designer Docs
+          📚 Frontend Developer Docs
         </h1>
         <p className="text-gray-600 mb-10">
-          Explore official documentation resources that will guide you from
-          beginner to industry-ready product designer.
+          Explore official and popular documentation resources that every
+          frontend developer should master — from HTML/CSS and JavaScript
+          to modern frameworks, state management, and testing tools.
         </p>
 
         {/* Cards Grid */}
@@ -77,9 +99,12 @@ export default function Docs() {
                 <ExternalLink
                   size={18}
                   className="text-gray-400 group-hover:text-blue-600"
+                  aria-hidden="true"
                 />
               </div>
+
               <p className="mt-3 text-sm text-gray-600">{doc.description}</p>
+
               <p className="mt-4 text-xs text-indigo-600 font-medium">
                 {doc.citation}
               </p>

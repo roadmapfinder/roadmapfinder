@@ -252,7 +252,7 @@ export const downloadRoadmapPDF = async (phases) => {
 
     // Generate filename with current date
     const currentDate = new Date().toISOString().split('T')[0];
-    const filename = `Frontend-Engine-roadmap-${currentDate}.pdf`;
+    const filename = `Frontend-Engineer-roadmap-${currentDate}.pdf`;
 
     // Save the file
     saveAs(blob, filename);
@@ -268,7 +268,7 @@ export const downloadRoadmapPDF = async (phases) => {
 export const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }) => (
   <PDFDownloadLink
     document={<RoadmapPDFDocument phases={phases} />}
-    fileName={`FrontendEngi-roadmap-${new Date().toISOString().split('T')[0]}.pdf`}
+    fileName={`Frontend-Engineer-roadmap-${new Date().toISOString().split('T')[0]}.pdf`}
     className={className}
   >
     {({ blob, url, loading, error }) => {
@@ -283,7 +283,7 @@ export const PDFDownloadButton = ({ phases, className = "", children = "Download
 export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
   const {
     includeWatermark = true,
-    customTitle = "Product Designer Roadmap",
+    customTitle = "Frontend Engineer Roadmap",
     customSubtitle = "Your Complete Journey from Beginner to Professional",
     pageSize = "A4",
     orientation = "portrait"

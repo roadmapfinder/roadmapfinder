@@ -1,9 +1,15 @@
 {
   "app": {
+    "[project]/app/Roadmaps/Backend/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
     "[project]/app/Roadmaps/Frontend/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/page": [
+    "[project]/app/Roadmaps/Full-Stack/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/_not-found/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ]
   },
