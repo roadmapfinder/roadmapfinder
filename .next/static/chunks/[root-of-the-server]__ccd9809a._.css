@@ -120,6 +120,7 @@
     --color-yellow-500: oklch(79.5% .184 86.047);
     --color-yellow-600: oklch(68.1% .162 75.834);
     --color-yellow-800: oklch(47.6% .114 61.907);
+    --color-yellow-900: oklch(42.1% .095 57.708);
     --color-green-50: oklch(98.2% .018 155.826);
     --color-green-100: oklch(96.2% .044 156.743);
     --color-green-200: oklch(92.5% .084 155.995);
@@ -2871,6 +2872,10 @@
     background-color: var(--color-gray-500);
   }
 
+  .bg-gray-600 {
+    background-color: var(--color-gray-600);
+  }
+
   .bg-gray-700 {
     background-color: var(--color-gray-700);
   }
@@ -5320,6 +5325,10 @@
     color: var(--color-yellow-800);
   }
 
+  .text-yellow-900 {
+    color: var(--color-yellow-900);
+  }
+
   .capitalize {
     text-transform: capitalize;
   }
@@ -6450,6 +6459,12 @@
   @media (hover: hover) {
     .hover\:bg-orange-700:hover {
       background-color: var(--color-orange-700);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-purple-600:hover {
+      background-color: var(--color-purple-600);
     }
   }
 
