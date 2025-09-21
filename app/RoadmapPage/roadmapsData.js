@@ -43,13 +43,13 @@ export const roadmapsData = [
     description: "Machine Learning, Deep Learning, Neural Networks"
   },
   {
-    id: "web",
-    title: "Web Development",
+    id: "mern",
+    title: "Mern Stack",
     icon: <Globe className="w-5 h-5 text-white" />,
-    link: "/Roadmaps/Web",
+    link: "/Roadmaps/Mern",
     bgColor: "from-blue-600 to-blue-400",
     category: "featured",
-    description: "Full-stack web development fundamentals"
+    description: "Mern-stack web development fundamentals"
   },
   {
     id: "django",

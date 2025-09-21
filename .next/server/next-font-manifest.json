@@ -1,15 +1,15 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Aiml/page": [
+    "[project]/app/Roadmaps/Mern/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Roadmaps/Backend/page": [
+    "[project]/app/Roadmaps/System/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Roadmaps/Blockchain/page": [
+    "[project]/app/_not-found/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Roadmaps/DSA/page": [
+    "[project]/app/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ]
   },

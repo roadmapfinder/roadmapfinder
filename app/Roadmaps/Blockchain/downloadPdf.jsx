@@ -220,7 +220,7 @@ const RoadmapPDFDocument = ({ phases }) => (
       <View style={styles.footer}>
         <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
         <Text style={styles.footerText}>
-          You've completed the Blockchain Engineer Roadmap and are now ready to take on professional design challenges.
+          You've completed the Blockchain Engineer Roadmap and are now ready to take on professional  challenges.
         </Text>
       </View>
 
@@ -301,7 +301,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
 
           {/* Conditional Watermark */}
           {includeWatermark && (
-            <Text style={styles.watermark}>ProductDesignerRoadmap.com</Text>
+            <Text style={styles.watermark}>Blockchain-Engineer-Roadmap.com</Text>
           )}
 
           {/* Content remains the same */}

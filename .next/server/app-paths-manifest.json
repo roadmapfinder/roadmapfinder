@@ -1,6 +1,6 @@
 {
-  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
-  "/Roadmaps/Backend/page": "app/Roadmaps/Backend/page.js",
-  "/Roadmaps/Blockchain/page": "app/Roadmaps/Blockchain/page.js",
-  "/Roadmaps/DSA/page": "app/Roadmaps/DSA/page.js"
+  "/Roadmaps/Mern/page": "app/Roadmaps/Mern/page.js",
+  "/Roadmaps/System/page": "app/Roadmaps/System/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
 }
