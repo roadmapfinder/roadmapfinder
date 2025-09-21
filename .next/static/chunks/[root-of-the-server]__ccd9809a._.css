@@ -6163,6 +6163,12 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:text-purple-600:is(:where(.group):hover *) {
+      color: var(--color-purple-600);
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:text-red-500:is(:where(.group):hover *) {
       color: var(--color-red-500);
     }

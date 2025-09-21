@@ -1,9 +1,6 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Mern/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/System/page": [
+    "[project]/app/Roadmaps/CyberSecurity/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
     "[project]/app/_not-found/page": [
