@@ -299,10 +299,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
             <Text style={styles.subtitle}>{customSubtitle}</Text>
           </View>
 
-          {/* Conditional Watermark */}
-          {includeWatermark && (
-            <Text style={styles.watermark}>ProductDesignerRoadmap.com</Text>
-          )}
+         
 
           {/* Content remains the same */}
           {phases.map((phase, index) => (
@@ -348,7 +345,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
           <View style={styles.footer}>
             <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
             <Text style={styles.footerText}>
-              You've completed the Frontend Engineer Roadmap and are now ready to take on professional  challenges.
+              You've completed AIML  Engineer Roadmap and are now ready to take on professional  challenges.
             </Text>
           </View>
 

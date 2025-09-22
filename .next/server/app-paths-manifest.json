@@ -1,5 +1,10 @@
 {
-  "/Roadmaps/CyberSecurity/page": "app/Roadmaps/CyberSecurity/page.js",
+  "/Roadmaps/Cloud/page": "app/Roadmaps/Cloud/page.js",
+  "/Roadmaps/Data/page": "app/Roadmaps/Data/page.js",
+  "/Roadmaps/Full-Stack/page": "app/Roadmaps/Full-Stack/page.js",
+  "/Roadmaps/GenAi/page": "app/Roadmaps/GenAi/page.js",
+  "/Roadmaps/JavaFullStack/page": "app/Roadmaps/JavaFullStack/page.js",
+  "/Roadmaps/ProductDesigner/page": "app/Roadmaps/ProductDesigner/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

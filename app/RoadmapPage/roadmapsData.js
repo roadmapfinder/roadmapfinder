@@ -314,12 +314,12 @@ export const roadmapsData = [
   },
   {
     id: "data",
-    title: "Data Analysis & Science",
+    title: "Data Engineering",
     icon: <Database className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Data",
     bgColor: "from-green-500 to-green-400",
     category: "trending",
-    description: "Data science and analytics"
+    description: "Data architecture and engineering"
   },
   {
     id: "database",
