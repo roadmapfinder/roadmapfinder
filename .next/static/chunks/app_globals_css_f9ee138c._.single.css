@@ -2525,6 +2525,10 @@
     border-color: var(--color-indigo-200);
   }
 
+  .border-indigo-300 {
+    border-color: var(--color-indigo-300);
+  }
+
   .border-indigo-400 {
     border-color: var(--color-indigo-400);
   }
@@ -2691,6 +2695,10 @@
 
   .border-yellow-200 {
     border-color: var(--color-yellow-200);
+  }
+
+  .border-yellow-300 {
+    border-color: var(--color-yellow-300);
   }
 
   .border-yellow-500 {
@@ -3169,6 +3177,10 @@
     background-color: var(--color-teal-100);
   }
 
+  .bg-teal-500 {
+    background-color: var(--color-teal-500);
+  }
+
   .bg-transparent {
     background-color: #0000;
   }
@@ -3289,6 +3301,10 @@
 
   .bg-yellow-500 {
     background-color: var(--color-yellow-500);
+  }
+
+  .bg-yellow-600 {
+    background-color: var(--color-yellow-600);
   }
 
   .bg-gradient-to-b {
@@ -3849,6 +3865,11 @@
 
   .from-violet-500 {
     --tw-gradient-from: var(--color-violet-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .from-violet-600 {
+    --tw-gradient-from: var(--color-violet-600);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -6525,6 +6546,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-yellow-600:hover {
+      background-color: var(--color-yellow-600);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:from-blue-600:hover {
       --tw-gradient-from: var(--color-blue-600);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -6992,6 +7019,10 @@
 
   .disabled\:bg-red-400:disabled {
     background-color: var(--color-red-400);
+  }
+
+  .disabled\:bg-yellow-400:disabled {
+    background-color: var(--color-yellow-400);
   }
 
   .disabled\:opacity-50:disabled {

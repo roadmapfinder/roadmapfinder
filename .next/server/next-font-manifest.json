@@ -1,27 +1,9 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Cloud/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/Data/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/Full-Stack/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/GenAi/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/JavaFullStack/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/ProductDesigner/page": [
+    "[project]/app/Roadmaps/Data-Science/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
     "[project]/app/_not-found/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ]
   },

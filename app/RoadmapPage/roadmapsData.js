@@ -321,6 +321,34 @@ export const roadmapsData = [
     category: "trending",
     description: "Data architecture and engineering"
   },
+  // NEW ROADMAPS ADDED HERE
+  {
+    id: "data-science",
+    title: "Data Science",
+    icon: <BarChart3 className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Data-Science",
+    bgColor: "from-violet-600 to-purple-700",
+    category: "trending",
+    description: "Statistical analysis, machine learning, and data insights"
+  },
+  {
+    id: "data-analysis",
+    title: "Data Analysis",
+    icon: <TrendingUp className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Data-Analysis",
+    bgColor: "from-emerald-500 to-teal-600",
+    category: "trending",
+    description: "Data visualization, statistical analysis, and business intelligence"
+  },
+  {
+    id: "product-designer",
+    title: "Product Designer",
+    icon: <Palette className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/ProductDesigner",
+    bgColor: "from-rose-500 to-pink-600",
+    category: "trending",
+    description: "User research, design thinking, and product strategy"
+  },
   {
     id: "database",
     title: "Database Engineering",

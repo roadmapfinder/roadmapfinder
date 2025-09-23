@@ -874,14 +874,6 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                             lineNumber: 297,
                             columnNumber: 11
                         }, this),
-                        includeWatermark && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                            style: styles.watermark,
-                            children: "ProductDesignerRoadmap.com"
-                        }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 304,
-                            columnNumber: 13
-                        }, this),
                         phases.map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                                 wrap: false,
                                 children: [
@@ -901,7 +893,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                         children: phase.id
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 312,
+                                                        lineNumber: 309,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -912,7 +904,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: phase.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 316,
+                                                                lineNumber: 313,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -920,7 +912,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: phase.subtitle
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 317,
+                                                                lineNumber: 314,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -928,19 +920,19 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: phase.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 318,
+                                                                lineNumber: 315,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 315,
+                                                        lineNumber: 312,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 311,
+                                                lineNumber: 308,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -953,7 +945,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: section.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 325,
+                                                                lineNumber: 322,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -969,7 +961,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                                lineNumber: 329,
+                                                                                lineNumber: 326,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             " ",
@@ -977,29 +969,29 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                         ]
                                                                     }, itemIndex, true, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                        lineNumber: 328,
+                                                                        lineNumber: 325,
                                                                         columnNumber: 27
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 326,
+                                                                lineNumber: 323,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, sectionIndex, true, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 321,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 322,
+                                                lineNumber: 319,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                        lineNumber: 310,
+                                        lineNumber: 307,
                                         columnNumber: 15
                                     }, this),
                                     index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -1012,18 +1004,18 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                            lineNumber: 340,
+                                            lineNumber: 337,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                        lineNumber: 339,
+                                        lineNumber: 336,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, phase.id, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                lineNumber: 309,
+                                lineNumber: 306,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -1034,21 +1026,21 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     children: "🎉 Congratulations!"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 349,
+                                    lineNumber: 346,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                     style: styles.footerText,
-                                    children: "You've completed the Frontend Engineer Roadmap and are now ready to take on professional  challenges."
+                                    children: "You've completed AIML  Engineer Roadmap and are now ready to take on professional  challenges."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 350,
+                                    lineNumber: 347,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 348,
+                            lineNumber: 345,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -1057,7 +1049,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                             fixed: true
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 355,
+                            lineNumber: 352,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1073,7 +1065,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
             }, this);
         const blob = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["pdf"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AdvancedPDFDocument, {}, void 0, false, {
             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-            lineNumber: 362,
+            lineNumber: 359,
             columnNumber: 28
         }, this)).toBlob();
         const currentDate = new Date().toISOString().split('T')[0];
