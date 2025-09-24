@@ -1,9 +1,12 @@
 {
   "app": {
-    "[project]/app/Courses/page": [
+    "[project]/app/Roadmaps/Full-Stack/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Docs/big_data/page": [
+    "[project]/app/Roadmaps/Mern/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ]
   },

@@ -8,7 +8,7 @@ const projects = [
     level: "Frontend — Beginner",
     title: "Personal Portfolio Website",
     description:
-      "Build a responsive portfolio with React + Tailwind CSS, learn layout, components, and basic deployment.",
+      "Build a responsive portfolio with Html css js",
     url: "https://www.youtube.com/watch?v=lcnmx5h5jss" // 2025 Hindi/English
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     title: "Quiz App with React",
     description:
       "Learn React state management, props, and conditional rendering by creating a simple quiz app.",
-    url: "https://www.youtube.com/watch?v=tiLWCNFzThE"
+    url: "https://youtu.be/VMZ7lcSdVnY?si=WWXQIcbYRtHpVDK3"
   },
   {
     id: "phase3-dashboard",
@@ -25,15 +25,15 @@ const projects = [
     title: "Admin Dashboard UI",
     description:
       "Create a responsive dashboard with charts, tables, and authentication using React and Tailwind.",
-    url: "https://www.youtube.com/watch?v=cY0b6qYzKqs"
+    url: "https://youtu.be/vdxnBKRD7kU?si=6XoPxp8L9OXAD252"
   },
   {
     id: "phase4-chat-ui",
     level: "Frontend — Intermediate",
     title: "Chat App UI",
     description:
-      "Design and implement a modern chat interface with React, context API, and WebSocket UI simulation.",
-    url: "https://www.youtube.com/watch?v=E1E08i2UJGI"
+      "Design and implement a modern chat interface with Next js, context API, and WebSocket UI simulation.",
+    url: "https://youtu.be/CQQc8QyIGl0?si=LNOeCXH_JTwSUKXM"
   },
   {
     id: "phase5-nextjs-blog",
@@ -41,7 +41,7 @@ const projects = [
     title: "Blog with Next.js & Tailwind",
     description:
       "Learn server-side rendering, dynamic routing, and Markdown blog content with Next.js.",
-    url: "https://www.youtube.com/watch?v=1GNsWa_EZdw"
+    url: "https://youtu.be/1g32IlH3SUs?si=Ev0f6FNKTMuC87L3"
   },
 
   // ---------- FULLSTACK / BACKEND PROJECTS ----------
@@ -51,7 +51,7 @@ const projects = [
     title: "To-Do List API / Full-Stack Todo App",
     description:
       "Build a simple CRUD API for tasks with authentication and database integration. Perfect to learn REST basics.",
-    url: "https://www.youtube.com/watch?v=fQZVQ7moCgg"
+    url: "https://youtu.be/16_OrEwWUIM?si=32meZrjb41v5340c"
   },
   {
     id: "phase7-url-shortener",
@@ -59,15 +59,15 @@ const projects = [
     title: "URL Shortening Service",
     description:
       "Learn routing, database mapping, and redirects by building a Node.js URL shortener with MongoDB or TypeScript.",
-    url: "https://www.youtube.com/watch?v=sKq-aSrnZog"
+    url: "https://youtu.be/Ojo_lo0djbQ?si=bq2EvdMCNdD6DB07"
   },
   {
     id: "phase8-ecommerce",
     level: "Fullstack — Intermediate",
-    title: "E-commerce Store (MERN / Java Spring Boot)",
+    title: "E-commerce Store (MERN & Next js)",
     description:
       "Develop a shopping cart backend with JWT authentication, product catalog, and payments. Add frontend shop UI.",
-    url: "https://www.youtube.com/watch?v=EWd3_I4X32g"
+    url: "https://youtu.be/nxK_TCt2pKw?si=juyEBfEqDA_BjB6j"
   },
   {
     id: "phase9-subscription",
@@ -75,7 +75,7 @@ const projects = [
     title: "Subscription Management App",
     description:
       "Build a real-world app handling subscriptions, payments, authentication, and full CRUD APIs.",
-    url: "https://www.youtube.com/watch?v=rOpEN1JDaD0"
+    url: "https://youtu.be/Pez37wmUaQM?si=olwnViJRhCn3FYSM"
   },
   {
     id: "phase10-mern-production",

@@ -541,7 +541,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                             style: styles.title,
-                            children: "DevOps Engineer Roadmap"
+                            children: "Mern Stack Engineer Roadmap"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
                             lineNumber: 168,
@@ -559,14 +559,6 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
                     lineNumber: 167,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                    style: styles.watermark,
-                    children: "DevOps-EngineerRoadmap.com"
-                }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                    lineNumber: 173,
                     columnNumber: 7
                 }, this),
                 phases.map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -588,7 +580,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                 children: phase.id
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                lineNumber: 181,
+                                                lineNumber: 180,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -599,7 +591,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         children: phase.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 185,
+                                                        lineNumber: 184,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -607,7 +599,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         children: phase.subtitle
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 185,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -615,19 +607,19 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         children: phase.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 187,
+                                                        lineNumber: 186,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                lineNumber: 184,
+                                                lineNumber: 183,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                        lineNumber: 180,
+                                        lineNumber: 179,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -640,7 +632,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         children: section.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 195,
+                                                        lineNumber: 194,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -656,7 +648,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                        lineNumber: 199,
+                                                                        lineNumber: 198,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     " ",
@@ -664,29 +656,29 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                                 ]
                                                             }, itemIndex, true, {
                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                lineNumber: 198,
+                                                                lineNumber: 197,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 196,
+                                                        lineNumber: 195,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, sectionIndex, true, {
                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                lineNumber: 194,
+                                                lineNumber: 193,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                        lineNumber: 192,
+                                        lineNumber: 191,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                lineNumber: 178,
+                                lineNumber: 177,
                                 columnNumber: 11
                             }, this),
                             index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -699,18 +691,18 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                    lineNumber: 211,
+                                    lineNumber: 210,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                lineNumber: 210,
+                                lineNumber: 209,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, phase.id, true, {
                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                        lineNumber: 177,
+                        lineNumber: 176,
                         columnNumber: 9
                     }, this)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -721,7 +713,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                             children: "🎉 Congratulations!"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                            lineNumber: 221,
+                            lineNumber: 220,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -729,13 +721,13 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                             children: "You've completed the MERN Stack Engineer Roadmap and are now ready to take on professional challenges."
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                            lineNumber: 222,
+                            lineNumber: 221,
                             columnNumber: 9
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                    lineNumber: 220,
+                    lineNumber: 219,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -744,7 +736,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                     fixed: true
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                    lineNumber: 228,
+                    lineNumber: 227,
                     columnNumber: 7
                 }, this)
             ]
@@ -777,7 +769,7 @@ const downloadRoadmapPDF = async (phases)=>{
             phases: phases
         }, void 0, false, {
             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-            lineNumber: 251,
+            lineNumber: 250,
             columnNumber: 28
         }, this)).toBlob();
         // Generate filename with current date
@@ -802,7 +794,7 @@ const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }
             phases: phases
         }, void 0, false, {
             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-            lineNumber: 270,
+            lineNumber: 269,
             columnNumber: 15
         }, void 0),
         fileName: `MERN-Engineer-roadmap-${new Date().toISOString().split('T')[0]}.pdf`,
@@ -814,7 +806,7 @@ const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }
         }
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-        lineNumber: 269,
+        lineNumber: 268,
         columnNumber: 3
     }, this);
 _c1 = PDFDownloadButton;
@@ -835,7 +827,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     children: customTitle
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                    lineNumber: 298,
+                                    lineNumber: 297,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -843,13 +835,13 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     children: customSubtitle
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                    lineNumber: 299,
+                                    lineNumber: 298,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                            lineNumber: 297,
+                            lineNumber: 296,
                             columnNumber: 11
                         }, this),
                         includeWatermark && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -857,7 +849,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                             children: "MernStackEngineerRoadmap.com"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                            lineNumber: 304,
+                            lineNumber: 303,
                             columnNumber: 13
                         }, this),
                         phases.map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -879,7 +871,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                         children: phase.id
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 312,
+                                                        lineNumber: 311,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -890,7 +882,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: phase.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                lineNumber: 316,
+                                                                lineNumber: 315,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -898,7 +890,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: phase.subtitle
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                lineNumber: 317,
+                                                                lineNumber: 316,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -906,19 +898,19 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: phase.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                lineNumber: 318,
+                                                                lineNumber: 317,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 315,
+                                                        lineNumber: 314,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                lineNumber: 311,
+                                                lineNumber: 310,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -931,7 +923,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 children: section.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                lineNumber: 325,
+                                                                lineNumber: 324,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -947,7 +939,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                                lineNumber: 329,
+                                                                                lineNumber: 328,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             " ",
@@ -955,29 +947,29 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                         ]
                                                                     }, itemIndex, true, {
                                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                        lineNumber: 328,
+                                                                        lineNumber: 327,
                                                                         columnNumber: 27
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                                lineNumber: 326,
+                                                                lineNumber: 325,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, sectionIndex, true, {
                                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 323,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                                lineNumber: 322,
+                                                lineNumber: 321,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                        lineNumber: 310,
+                                        lineNumber: 309,
                                         columnNumber: 15
                                     }, this),
                                     index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -990,18 +982,18 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                            lineNumber: 340,
+                                            lineNumber: 339,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                        lineNumber: 339,
+                                        lineNumber: 338,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, phase.id, true, {
                                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                lineNumber: 309,
+                                lineNumber: 308,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -1012,7 +1004,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     children: "🎉 Congratulations!"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                    lineNumber: 349,
+                                    lineNumber: 348,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -1020,13 +1012,13 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     children: "You've completed the Mern Stack Engineer Roadmap and are now ready to take on professional  challenges."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                                    lineNumber: 350,
+                                    lineNumber: 349,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                            lineNumber: 348,
+                            lineNumber: 347,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -1035,23 +1027,23 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                             fixed: true
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                            lineNumber: 355,
+                            lineNumber: 354,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                    lineNumber: 295,
+                    lineNumber: 294,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-                lineNumber: 294,
+                lineNumber: 293,
                 columnNumber: 7
             }, this);
         const blob = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["pdf"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AdvancedPDFDocument, {}, void 0, false, {
             fileName: "[project]/app/Roadmaps/Mern/downloadPdf.jsx",
-            lineNumber: 362,
+            lineNumber: 361,
             columnNumber: 28
         }, this)).toBlob();
         const currentDate = new Date().toISOString().split('T')[0];

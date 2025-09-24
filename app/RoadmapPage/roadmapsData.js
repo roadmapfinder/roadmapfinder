@@ -125,7 +125,7 @@ export const roadmapsData = [
   },
   {
     id: "fullstack",
-    title: "Full-Stack",
+    title: "Full-Stack Web Developer",
     icon: <Globe className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Full-Stack",
     bgColor: "from-blue-500 to-blue-700",

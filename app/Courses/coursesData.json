@@ -1062,6 +1062,42 @@
       "language": "English",
       "docs": "/Docs/genai_freecodecamp"
     },
+    {
+      "id": 95,
+      "category": "AI Agents",
+      "title": "AI agents complete masterclass course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "aiagents",
+      "videoId": "https://youtu.be/dhhVxJ_qUPc?si=cxWmBQuHCrL7pERX",
+      "badge": "NEW",
+      "language": "aiagents",
+      "docs": "/Docs/ai_agents"
+    },
+    {
+      "id": 95,
+      "category": "AI Agents",
+      "title": "n8n complete crash course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "n8n",
+      "videoId": "https://youtu.be/Ey18PDiaAYI?si=mj4Ic9O6FNefiETM",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/n8n"
+    },
+    {
+      "id": 96,
+      "category": "AI Agents",
+      "title": "n8n complete course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "n8nh",
+      "videoId": "https://youtu.be/r367XoxIfic?si=A-OI2zyRfk3mv44O",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/n8n_hindi"
+    },
   
     {
       "id": 70,
