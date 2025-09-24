@@ -460,6 +460,42 @@
       "docs": "/Docs/redis"
     },
     {
+      "id": 92,
+      "category": "Data Engineering",
+      "title": "Big Data Masterclass in depth",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "bigdata",
+      "videoId": "https://youtu.be/Tyg1FVNq40g?si=Zk4NZQJfpqDX7I3S",
+      "badge": "POPULAR",
+      "language": "English",
+      "docs": "/Docs/big_data"
+    },
+    {
+      "id": 93,
+      "category": "Data Engineering",
+      "title": "Complete Data Engineering Course",
+      "level": "Beginner",
+      "rating": 4.9,
+      "image": "data",
+      "videoId": "https://youtu.be/T23Bs75F7ZQ?si=Q3luucThgzAILyfj",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/data"
+    },
+    {
+      "id": 94,
+      "category": "Data Engineering",
+      "title": "Complete Data Engineering Course with project",
+      "level": "Beginner to advanced",
+      "rating": 4.9,
+      "image": "dataproject",
+      "videoId": "https://youtu.be/9GVqKuTVANE?si=rT3kW66dU1Ou7v6Y",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/data_project"
+    },
+    {
       "id": 33,
       "category": "Data Analysis & Science",
       "title": "Data Analyst Complete course",
@@ -579,6 +615,18 @@
       "badge": "POPULAR",
       "language": "English",
       "docs": "/Docs/system_design"
+    },
+    {
+      "id": 91,
+      "category": "System Design",
+      "title": "Database Design Fundamental Course",
+      "level": "Beginner",
+      "rating": 4.9,
+      "image": "datadesign",
+      "videoId": "https://youtu.be/lWX5mk2adrg?si=T0LEZVv3K_dcm0iG",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/data_design"
     },
     {
       "id": 39,

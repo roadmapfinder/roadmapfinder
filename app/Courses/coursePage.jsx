@@ -113,6 +113,13 @@ import tailwindcss from "./CoursesImage/tailwindcss.jpg"
 import vectorDB from "./CoursesImage/vectorDB.jpg"
 import spring from "./CoursesImage/spring.jpg"
 import ios from "./CoursesImage/ios.jpg"
+import bigdata from "./CoursesImage/bigdata.jpg"
+import data from "./CoursesImage/data.jpg"
+import datadesign from "./CoursesImage/datadesign.jpg"
+import dataproject from './CoursesImage/dataproject.jpg'
+import aiagents from './CoursesImage/aiagents.jpg'
+import n8n from './CoursesImage/n8n.jpg'
+import n8nh from './CoursesImage/n8nh.jpg'
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -151,7 +158,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh
 };
 
 // Creator images array

@@ -1,6 +1,4 @@
 {
-  "/Roadmaps/AI-Agent/page": "app/Roadmaps/AI-Agent/page.js",
-  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js"
+  "/Courses/page": "app/Courses/page.js",
+  "/Docs/big_data/page": "app/Docs/big_data/page.js"
 }
