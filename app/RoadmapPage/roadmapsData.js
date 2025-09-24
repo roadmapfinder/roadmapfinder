@@ -232,6 +232,24 @@ export const roadmapsData = [
     description: "Systems programming with Rust"
   },
   {
+    id: "ios",
+    title: "iOS Development",
+    icon: <Smartphone className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Ios",
+    bgColor: "from-gray-700 to-gray-900",
+    category: "featured",
+    description: "Native iOS app development with Swift and UIKit"
+  },
+  {
+    id: "android",
+    title: "Android Development",
+    icon: <Smartphone className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Android",
+    bgColor: "from-green-500 to-green-700",
+    category: "featured",
+    description: "Native Android app development with Kotlin and Java"
+  },
+  {
     id: "php",
     title: "PHP",
     icon: <Code className="w-5 h-5 text-white" />,

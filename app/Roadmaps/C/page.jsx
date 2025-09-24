@@ -1,10 +1,611 @@
-import CRoadmapComponent from "./c"
+"use client"
+import React, { useState } from 'react';
+import { ChevronDown, Download, FileText, FolderOpen, Map, Menu, X, Loader2, Code } from 'lucide-react';
+import Docs from './docs';
+import Projects from './projects';
+import { downloadRoadmapPDF, PDFDownloadButton } from './downloadPdf';
 
-const page = ()=>{
-  return(
-    <>
-    <CRoadmapComponent />
-    </>
-  )
-}
-export default page
+const CProgrammingMasterRoadmap = () => {
+  const [activeTab, setActiveTab] = useState('roadmap');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const phases = [
+    {
+      id: 0,
+      title: "Preparation",
+      subtitle: "Pre-C Basics (Setup Phase)",
+      description: "Prepare your programming mindset and development environment",
+      color: "bg-gray-500",
+      sections: [
+        {
+          title: "Essentials",
+          items: [
+            "Understanding what C is: procedural, low-level, compiled language",
+            "Learn how computers execute code (compilation, linking, execution)",
+            "Basic concepts of memory: stack vs heap fundamentals",
+            "Setting up proper development workflow and practices"
+          ]
+        },
+        {
+          title: "Tools Installation & Setup",
+          items: [
+            "Compiler: GCC (GNU Compiler Collection) or Clang",
+            "IDE/Editor: VS Code with C/C++ extensions, CLion, or Code::Blocks",
+            "Debugger: GDB (GNU Debugger) for debugging C programs",
+            "Version control: Git setup and basic commands"
+          ]
+        },
+        {
+          title: "Foundation Resources",
+          items: [
+            "Book: Computer Science Distilled by Wladston Ferreira Filho",
+            "Video: Introduction to Programming Concepts (modern beginner course)",
+            "Understanding compilation process and linking",
+            "Basic command line navigation and file operations"
+          ]
+        },
+        {
+          title: "Environment Verification",
+          items: [
+            "Write and compile your first 'Hello World' program",
+            "Test debugger functionality with simple breakpoints",
+            "Verify all tools are working correctly together",
+            "Setup project directory structure and workflow"
+          ]
+        }
+      ]
+    },
+    {
+      id: 1,
+      title: "Beginner C",
+      subtitle: "Foundation Level (0-2 months)",
+      description: "Learn syntax, basic constructs, and write small programs",
+      color: "bg-green-500",
+      sections: [
+        {
+          title: "Basic Syntax & Structure",
+          items: [
+            "main() function, printf(), scanf(), return 0 fundamentals",
+            "Program structure: headers, main function, statements",
+            "Comments (single-line // and multi-line /* */)",
+            "Semicolons, braces, and basic C syntax rules"
+          ]
+        },
+        {
+          title: "Variables & Data Types",
+          items: [
+            "int, float, char, double, long data types",
+            "unsigned types and their applications",
+            "Variable declaration, initialization, and scope",
+            "Constants using #define and const keyword"
+          ]
+        },
+        {
+          title: "Operators & Control Structures",
+          items: [
+            "Arithmetic operators (+, -, *, /, %), assignment operators",
+            "Relational (==, !=, <, >) and logical operators (&&, ||, !)",
+            "Bitwise operators (basic understanding)",
+            "if, else, switch statements for decision making"
+          ]
+        },
+        {
+          title: "Loops & Functions",
+          items: [
+            "for, while, do-while loops with practical examples",
+            "Function declaration, definition, return types",
+            "Function arguments and void functions",
+            "Basic I/O: console input/output with scanf and printf"
+          ]
+        },
+        {
+          title: "Beginner Projects",
+          items: [
+            "Calculator: Basic arithmetic operations with user input",
+            "Temperature Converter: Celsius/Fahrenheit conversion",
+            "Number Programs: Factorial, Fibonacci sequence, prime checker",
+            "Simple menu-driven programs with switch statements"
+          ]
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: "Core C",
+      subtitle: "Intermediate Level (2-4 months)",
+      description: "Master memory, arrays, pointers, strings, and file I/O",
+      color: "bg-orange-500",
+      sections: [
+        {
+          title: "Arrays & Strings",
+          items: [
+            "1D arrays: declaration, initialization, accessing elements",
+            "2D arrays and multi-dimensional array concepts",
+            "Character arrays and string handling fundamentals",
+            "String functions: strlen(), strcpy(), strcmp(), strcat()"
+          ]
+        },
+        {
+          title: "Pointers Fundamentals",
+          items: [
+            "Pointer basics: * (dereference) and & (address-of) operators",
+            "Pointer arithmetic and memory address manipulation",
+            "Pointers with arrays and functions (pass by reference)",
+            "Pointer to pointer concepts and applications"
+          ]
+        },
+        {
+          title: "Dynamic Memory Management",
+          items: [
+            "malloc(), calloc(), realloc() for dynamic allocation",
+            "free() function and preventing memory leaks",
+            "Understanding heap vs stack memory usage",
+            "Common memory management mistakes and solutions"
+          ]
+        },
+        {
+          title: "Structures & File I/O",
+          items: [
+            "struct keyword: defining and using structures",
+            "Nested structures and array of structures",
+            "File operations: fopen(), fclose(), fread(), fwrite()",
+            "Text file I/O: fprintf(), fscanf() for data persistence"
+          ]
+        },
+        {
+          title: "Core Projects",
+          items: [
+            "Student Management System: structs + file I/O operations",
+            "Inventory Management: dynamic arrays with structures",
+            "Simple Text Editor: file manipulation and string processing",
+            "Data processing programs with file input/output"
+          ]
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "Intermediate C",
+      subtitle: "Advanced Level (4-6 months)",
+      description: "Develop problem-solving skills, advanced pointers, and modular programming",
+      color: "bg-blue-500",
+      sections: [
+        {
+          title: "Advanced Pointers",
+          items: [
+            "Function pointers: declaring and using function addresses",
+            "Pointer arrays and array of function pointers",
+            "Callback functions and their practical applications",
+            "Complex pointer expressions and declarations"
+          ]
+        },
+        {
+          title: "Memory Management Mastery",
+          items: [
+            "Stack vs heap: detailed understanding and usage",
+            "Avoiding memory leaks and dangling pointers",
+            "Valgrind usage for memory debugging and profiling",
+            "Memory alignment and optimization techniques"
+          ]
+        },
+        {
+          title: "Data Structures Implementation",
+          items: [
+            "Linked lists: single, double, and circular implementations",
+            "Stack and Queue data structures from scratch",
+            "Binary trees and Binary Search Tree basics",
+            "Hash table concepts and simple implementations"
+          ]
+        },
+        {
+          title: "Modular Programming",
+          items: [
+            "Header files (.h) and source files (.c) organization",
+            "Separate compilation and linking multiple files",
+            "#include, #define, and conditional compilation",
+            "Include guards and preventing multiple inclusions"
+          ]
+        },
+        {
+          title: "Intermediate Projects",
+          items: [
+            "Dynamic Linked List: complete implementation with operations",
+            "Mini Banking System: menu-driven with file persistence",
+            "Calculator with Function Pointers: advanced calculator design",
+            "Data structure visualization programs"
+          ]
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: "Advanced C",
+      subtitle: "Professional Level (6-12 months)",
+      description: "Master systems programming, debugging, and performance optimization",
+      color: "bg-purple-500",
+      sections: [
+        {
+          title: "Advanced Data Structures & Algorithms",
+          items: [
+            "Graphs, Hash tables, and Trie data structures",
+            "Sorting algorithms: QuickSort, MergeSort, HeapSort",
+            "Searching algorithms: Binary search, DFS, BFS traversals",
+            "Algorithm complexity analysis and optimization"
+          ]
+        },
+        {
+          title: "File Handling & I/O Mastery",
+          items: [
+            "Binary file operations: reading/writing structures",
+            "File buffering and performance optimization",
+            "Random access file operations with fseek/ftell",
+            "Advanced file manipulation techniques"
+          ]
+        },
+        {
+          title: "Libraries & Linking",
+          items: [
+            "Creating dynamic libraries (.so files) with gcc -shared",
+            "Static libraries (.a files) creation and usage",
+            "Library linking process and dependency management",
+            "Understanding symbol tables and name resolution"
+          ]
+        },
+        {
+          title: "Debugging & Testing",
+          items: [
+            "GDB mastery: breakpoints, watchpoints, stack traces",
+            "Valgrind for memory leak detection and profiling",
+            "AddressSanitizer for runtime error detection",
+            "Unit testing frameworks: CUnit, Unity testing"
+          ]
+        },
+        {
+          title: "Concurrency Basics",
+          items: [
+            "POSIX Threads (pthreads) introduction",
+            "Thread creation, joining, and synchronization",
+            "Mutex and semaphore for thread safety",
+            "Basic multi-threaded programming concepts"
+          ]
+        },
+        {
+          title: "Advanced Projects",
+          items: [
+            "Multi-threaded Chat Server: sockets + pthreads implementation",
+            "File Compression Program: Huffman coding algorithm",
+            "CLI Database Engine: basic SQL-like operations",
+            "System monitoring tools with real-time data"
+          ]
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: "Industry-Level C",
+      subtitle: "Expert Level (1-2 years)",
+      description: "Become professional C engineer for OS, embedded, or high-performance software",
+      color: "bg-red-500",
+      sections: [
+        {
+          title: "Systems Programming",
+          items: [
+            "Operating system concepts: processes, threads, memory management",
+            "System calls: fork(), exec(), wait(), signal handling",
+            "Inter-Process Communication: pipes, shared memory, message queues",
+            "Process synchronization and communication mechanisms"
+          ]
+        },
+        {
+          title: "Networking & Communication",
+          items: [
+            "Socket programming: TCP/UDP client-server applications",
+            "Network protocols understanding and implementation",
+            "Concurrent server design patterns",
+            "Network security basics and secure communication"
+          ]
+        },
+        {
+          title: "Embedded Systems & Hardware",
+          items: [
+            "Register-level programming and hardware interfaces",
+            "Microcontroller programming: STM32/Arduino with C",
+            "Device drivers and hardware abstraction layers",
+            "Real-time programming concepts and constraints"
+          ]
+        },
+        {
+          title: "Performance & Security",
+          items: [
+            "Cache-friendly code and memory alignment optimization",
+            "Profiling tools: gprof, perf for performance analysis",
+            "Security: buffer overflow prevention, secure coding",
+            "CERT C secure coding standards compliance"
+          ]
+        },
+        {
+          title: "Professional Practices",
+          items: [
+            "Version control with Git: branching, merging, workflows",
+            "Continuous Integration/Deployment for C projects",
+            "Documentation with Doxygen and technical writing",
+            "Code review processes and quality assurance"
+          ]
+        },
+        {
+          title: "Industry Projects",
+          items: [
+            "Custom Shell Implementation: bash-like command interpreter",
+            "Mini OS Components: basic process scheduler",
+            "TCP/UDP Networking Application: complete client-server system",
+            "Embedded Sensor Data Logger: hardware integration project"
+          ]
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: "Expert & Mastery",
+      subtitle: "Senior C Developer",
+      description: "Contribute to high-performance systems and open-source projects",
+      color: "bg-indigo-500",
+      sections: [
+        {
+          title: "Advanced System Topics",
+          items: [
+            "Operating system internals: Linux kernel understanding",
+            "Compiler design and interpreter implementation",
+            "High-performance computing: parallelism, SIMD, GPU integration",
+            "Real-time systems and RTOS programming"
+          ]
+        },
+        {
+          title: "Specialized Domains",
+          items: [
+            "Embedded firmware development with FreeRTOS",
+            "Device driver development for Linux kernel",
+            "Database engine internals and optimization",
+            "Networking stack implementation and protocols"
+          ]
+        },
+        {
+          title: "Open Source & Leadership",
+          items: [
+            "Contributing to major projects: Linux kernel, Redis, PostgreSQL",
+            "Code review and mentoring junior developers",
+            "Technical architecture design and documentation",
+            "Performance benchmarking and optimization strategies"
+          ]
+        },
+        {
+          title: "Master-Level Projects",
+          items: [
+            "Linux Kernel Module: contribute to open-source kernel",
+            "Custom Memory Allocator: high-performance memory management",
+            "Real-time Embedded Project: complete RTOS application",
+            "Distributed System Component: scalable C-based service"
+          ]
+        }
+      ]
+    }
+  ];
+
+  // Handle PDF download with loading state
+  const handlePDFDownload = async () => {
+    setIsDownloading(true);
+    try {
+      const result = await downloadRoadmapPDF(phases, 'C Programming');
+      if (result.success) {
+        console.log(`PDF downloaded successfully: ${result.filename}`);
+      } else {
+        console.error('PDF download failed:', result.error);
+      }
+    } catch (error) {
+      console.error('PDF download error:', error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'documentation':
+        return <Docs />;
+      case 'projects':
+        return <Projects />;
+      default:
+        return (
+          <div className="relative">
+            {/* Timeline */}
+            <div className="flex flex-col space-y-8 md:space-y-12">
+              {phases.map((phase, index) => (
+                <div key={phase.id} className="relative">
+                  {/* Connection Line */}
+                  {index < phases.length - 1 && (
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-full h-8 md:h-12 w-0.5 md:w-1 bg-gray-300 z-10"></div>
+                  )}
+
+                  {/* Phase Card */}
+                  <div className="flex flex-col items-center">
+                    {/* Phase Header */}
+                    <div className="text-center mb-4 md:mb-6 px-4">
+                      <div className={`inline-block ${phase.color} text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold text-base md:text-lg mb-2`}>
+                        Phase {phase.id}: {phase.title}
+                      </div>
+                      <p className="text-gray-600 text-xs md:text-sm">{phase.subtitle}</p>
+                      <p className="text-gray-800 font-medium mt-1 text-sm md:text-base">{phase.description}</p>
+                    </div>
+
+                    {/* Phase Content */}
+                    <div className="w-full max-w-5xl px-4">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+                        {phase.sections.map((section, sectionIndex) => (
+                          <div
+                            key={sectionIndex}
+                            className="bg-white rounded-lg border-2 border-blue-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow"
+                          >
+                            <h3 className="text-blue-600 font-semibold text-base md:text-lg mb-3 md:mb-4">
+                              {section.title}
+                            </h3>
+                            <ol className="space-y-2">
+                              {section.items.map((item, itemIndex) => (
+                                <li key={itemIndex} className="text-gray-700 text-xs md:text-sm leading-relaxed">
+                                  <span className="font-medium text-gray-900">{itemIndex + 1}.</span> {item}
+                                </li>
+                              ))}
+                            </ol>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Step Indicators */}
+                    {index < phases.length - 1 && (
+                      <div className="mt-6 md:mt-8 flex items-center space-x-2 md:space-x-4">
+                        <div className="text-gray-500 font-medium text-xs md:text-sm transform -rotate-12">
+                          Phase {phase.id}
+                        </div>
+                        <ChevronDown className="text-gray-400" size={20} />
+                        <div className="text-gray-500 font-medium text-xs md:text-sm transform rotate-12">
+                          Phase {phase.id + 1}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Final Message */}
+            <div className="text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-blue-50 to-blue-50 rounded-lg border border-blue-200">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                🏆 Congratulations! You're C Programming Industry Expert!
+              </h2>
+              <p className="text-gray-700 text-base md:text-lg mb-4">
+                You've mastered the C Programming Roadmap and are now ready to work on operating systems, embedded systems, and high-performance applications.
+              </p>
+              <div className="bg-white p-4 rounded-lg border border-blue-300 mt-4">
+                <h3 className="font-semibold text-blue-600 mb-2">🎯 Recommended Learning Strategy</h3>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Code Daily: Start small, gradually move to complex projects</li>
+                  <li>• Master Debugging: Learn GDB/Valgrind thoroughly</li>
+                  <li>• Focus on Pointers & Memory: Foundation of C mastery</li>
+                  <li>• Build Projects: Always apply theory to real implementations</li>
+                  <li>• Contribute to Open Source: Read and modify production code</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6 md:mb-8">
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <Code className="text-blue-600" size={32} />
+            <h1 className="text-xl md:text-3xl font-bold text-gray-900">
+              C Programming <span className="text-blue-600">Mastery Roadmap</span>
+              <span className="text-sm md:text-base font-normal text-gray-600 ml-2">(2025 Edition)</span>
+            </h1>
+          </div>
+
+          {/* Desktop Download Button */}
+          <button 
+            onClick={handlePDFDownload}
+            disabled={isDownloading}
+            className="hidden md:flex bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg items-center space-x-2 transition-colors"
+          >
+            {isDownloading ? (
+              <Loader2 size={18} className="animate-spin" />
+            ) : (
+              <Download size={18} />
+            )}
+            <span>{isDownloading ? 'Generating PDF...' : 'Download PDF'}</span>
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {/* Mobile Download Button */}
+        <div className="md:hidden mb-4">
+          <button 
+            onClick={handlePDFDownload}
+            disabled={isDownloading}
+            className="w-full bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+          >
+            {isDownloading ? (
+              <Loader2 size={18} className="animate-spin" />
+            ) : (
+              <Download size={18} />
+            )}
+            <span>{isDownloading ? 'Generating PDF...' : 'Download PDF'}</span>
+          </button>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:block mb-6 md:mb-8`}>
+          <div className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-1 bg-white p-1 rounded-lg shadow-sm w-full md:w-fit">
+            <button
+              onClick={() => {
+                setActiveTab('roadmap');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${
+                activeTab === 'roadmap'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <Map size={18} className="mr-2" />
+              Roadmap
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('documentation');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${
+                activeTab === 'documentation'
+                  ? 'bg-blue-500 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <FileText size={18} className="mr-2" />
+              Documentation
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('projects');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${
+                activeTab === 'projects'
+                  ? 'bg-blue-500 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <FolderOpen size={18} className="mr-2" />
+              Projects
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        {renderContent()}
+      </div>
+    </div>
+  );
+};
+
+export default CProgrammingMasterRoadmap;

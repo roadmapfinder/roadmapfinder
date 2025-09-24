@@ -102,7 +102,7 @@
     {
       "id": 7,
       "category": "App Development",
-      "title": "Kotlin App Development",
+      "title": "Kotlin Android App Development",
       "level": "Beginner to Intermediate",
       "rating": 4.8,
       "image": "kotlin",
@@ -110,6 +110,18 @@
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/android"
+    },
+    {
+      "id": 7,
+      "category": "App Development",
+      "title": "Ios App Development",
+      "level": "Beginner to Intermediate",
+      "rating": 4.8,
+      "image": "ios",
+      "videoId": "https://youtu.be/t_mypMqSXNw?si=8jkV_xNeVC5G5D4m",
+      "badge": "POPULAR",
+      "language": "Hindi",
+      "docs": "/Docs/ios"
     },
     {
       "id": 8,

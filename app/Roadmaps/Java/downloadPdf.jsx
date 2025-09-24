@@ -339,7 +339,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
           <View style={styles.footer}>
             <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
             <Text style={styles.footerText}>
-              You've completed the Javascript Developer Roadmap and are now ready to take on professional  challenges.
+              You've completed the Java Developer Roadmap and are now ready to take on professional  challenges.
             </Text>
           </View>
 
