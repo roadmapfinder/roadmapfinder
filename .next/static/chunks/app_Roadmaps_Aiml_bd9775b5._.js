@@ -563,7 +563,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                             style: styles.title,
-                            children: "Frontend Engineer Roadmap"
+                            children: "AIML Engineer Roadmap"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
                             lineNumber: 168,
@@ -1100,15 +1100,15 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDown>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/brain.js [app-client] (ecmascript) <export default as Brain>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/download.js [app-client] (ecmascript) <export default as Download>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map.js [app-client] (ecmascript) <export default as Map>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/file-text.js [app-client] (ecmascript) <export default as FileText>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderOpen$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/folder-open.js [app-client] (ecmascript) <export default as FolderOpen>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map.js [app-client] (ecmascript) <export default as Map>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDown>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/brain.js [app-client] (ecmascript) <export default as Brain>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Aiml$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Aiml/docs.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Aiml$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Aiml/projects.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Aiml$2f$downloadPdf$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Aiml/downloadPdf.jsx [app-client] (ecmascript)");
@@ -1120,43 +1120,45 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const AIMasterRoadmap = ()=>{
+const AIMLMasteryRoadmap = ()=>{
     _s();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('roadmap');
     const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isDownloading, setIsDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // AI/ML Roadmap data structured according to your AI/ML Mastery content
     const phases = [
         {
             id: 1,
             title: "Core Foundations",
             subtitle: "Beginner Level",
-            description: "Build strong math, programming, and data fundamentals",
-            color: "bg-green-500",
+            description: "Build strong math, programming, and data fundamentals.",
+            color: "bg-blue-500",
             sections: [
                 {
-                    title: "Mathematics for ML",
+                    title: "🧮 Mathematics for ML",
                     items: [
                         "Linear Algebra → Vectors, matrices, eigenvalues, SVD",
                         "Probability & Statistics → Bayes theorem, distributions, hypothesis testing",
                         "Calculus → Derivatives, gradients, chain rule, optimization basics",
-                        "Resources: Khan Academy (Linear Algebra), MIT OCW (Probability & Statistics)"
+                        "Khan Academy Linear Algebra & MIT OCW Statistics courses"
                     ]
                 },
                 {
-                    title: "Programming & Tools",
+                    title: "💻 Programming & Tools",
                     items: [
                         "Python (NumPy, Pandas, Matplotlib, Seaborn)",
                         "Jupyter Notebook / Google Colab",
                         "Git + GitHub version control",
-                        "Data manipulation and visualization fundamentals"
+                        "Python Official Docs, NumPy, Pandas documentation"
                     ]
                 },
                 {
-                    title: "Foundation Projects",
+                    title: "🎯 Foundation Projects",
                     items: [
-                        "Basic data cleaning (Titanic dataset)",
-                        "Visualization dashboard (COVID-19, Stock market trends)",
-                        "Exploratory Data Analysis (EDA) on real datasets"
+                        "✅ Basic data cleaning (Titanic dataset)",
+                        "✅ Visualization dashboard (COVID-19, Stock market trends)",
+                        "Data manipulation and exploration exercises",
+                        "Statistical analysis on real-world datasets"
                     ]
                 }
             ]
@@ -1165,33 +1167,43 @@ const AIMasterRoadmap = ()=>{
             id: 2,
             title: "Core Machine Learning",
             subtitle: "Intermediate Level",
-            description: "Master ML algorithms and model building fundamentals",
-            color: "bg-orange-500",
+            description: "Master ML algorithms & model building.",
+            color: "bg-green-500",
             sections: [
                 {
-                    title: "Supervised Learning",
+                    title: "📊 Supervised Learning",
                     items: [
                         "Regression: Linear, Polynomial, Ridge/Lasso",
                         "Classification: Logistic Regression, Decision Trees, Random Forests, SVMs",
                         "Evaluation: Confusion matrix, Precision/Recall, ROC-AUC",
-                        "Cross-validation and model selection techniques"
+                        "Model selection and performance metrics"
                     ]
                 },
                 {
-                    title: "Unsupervised Learning & Tools",
+                    title: "🔍 Unsupervised Learning",
                     items: [
                         "Clustering (KMeans, DBSCAN, Hierarchical)",
                         "Dimensionality Reduction (PCA, t-SNE)",
-                        "Feature engineering and selection",
-                        "ML Libraries: Scikit-learn, XGBoost, LightGBM"
+                        "Anomaly detection techniques",
+                        "Association rule learning"
                     ]
                 },
                 {
-                    title: "Core ML Projects",
+                    title: "⚡ Model Improvement",
                     items: [
-                        "Spam Email Classifier with feature engineering",
-                        "Customer Segmentation using Clustering algorithms",
-                        "House Price Prediction with hyperparameter tuning"
+                        "Cross-validation, Hyperparameter tuning (GridSearchCV, RandomizedSearchCV)",
+                        "Feature engineering, Regularization",
+                        "Scikit-learn, XGBoost, LightGBM",
+                        "Ensemble methods and model stacking"
+                    ]
+                },
+                {
+                    title: "🚀 ML Projects",
+                    items: [
+                        "✅ Spam Email Classifier",
+                        "✅ Customer Segmentation using Clustering",
+                        "✅ House Price Prediction",
+                        "End-to-end ML pipeline development"
                     ]
                 }
             ]
@@ -1200,11 +1212,11 @@ const AIMasterRoadmap = ()=>{
             id: 3,
             title: "Deep Learning",
             subtitle: "Advanced Level",
-            description: "Learn neural networks and modern deep learning frameworks",
-            color: "bg-blue-500",
+            description: "Learn neural networks and modern DL frameworks.",
+            color: "bg-purple-500",
             sections: [
                 {
-                    title: "Neural Networks Fundamentals",
+                    title: "🧠 Neural Networks Basics",
                     items: [
                         "Perceptron, Multi-Layer Perceptron (MLP)",
                         "Activation functions (ReLU, Sigmoid, Tanh, Softmax)",
@@ -1213,197 +1225,147 @@ const AIMasterRoadmap = ()=>{
                     ]
                 },
                 {
-                    title: "Deep Learning Frameworks",
+                    title: "🔧 Deep Learning Frameworks",
                     items: [
-                        "TensorFlow and Keras for model building",
-                        "PyTorch for research and experimentation",
-                        "Model architecture design and implementation",
-                        "GPU acceleration and performance optimization"
+                        "TensorFlow ecosystem and Keras API",
+                        "PyTorch framework and dynamic computation graphs",
+                        "Model architecture design patterns",
+                        "GPU acceleration and distributed training"
                     ]
                 },
                 {
-                    title: "Computer Vision & NLP",
+                    title: "👁️ Computer Vision",
                     items: [
-                        "CNNs for image processing and computer vision",
+                        "CNNs (Convolutional Neural Networks)",
                         "Transfer Learning (ResNet, VGG, EfficientNet)",
-                        "RNN, LSTM, GRU for sequence modeling",
-                        "Word Embeddings (Word2Vec, GloVe, FastText)"
+                        "Object Detection (YOLO, Faster R-CNN)",
+                        "Image segmentation and GANs"
                     ]
                 },
                 {
-                    title: "Deep Learning Projects",
+                    title: "📝 Natural Language Processing",
                     items: [
-                        "Handwritten Digit Recognition (MNIST)",
-                        "Image Classifier with Transfer Learning",
-                        "Sentiment Analysis on social media data",
-                        "Object Detection with pre-trained models"
+                        "Word Embeddings (Word2Vec, GloVe, FastText)",
+                        "RNN, LSTM, GRU architectures",
+                        "Transformers & Attention mechanisms",
+                        "Text preprocessing and tokenization"
+                    ]
+                },
+                {
+                    title: "🎯 Deep Learning Projects",
+                    items: [
+                        "✅ Handwritten Digit Recognition (MNIST)",
+                        "✅ Image Classifier with Transfer Learning",
+                        "✅ Sentiment Analysis on Tweets",
+                        "Multi-modal learning projects"
                     ]
                 }
             ]
         },
         {
             id: 4,
-            title: "Modern AI & LLMs",
-            subtitle: "Advanced → Expert Level",
-            description: "Master cutting-edge AI and Large Language Models",
-            color: "bg-purple-500",
+            title: "Modern AI & Industry-Ready Skills",
+            subtitle: "Advanced Level",
+            description: "Master cutting-edge AI/ML for real-world applications.",
+            color: "bg-orange-500",
             sections: [
                 {
-                    title: "Large Language Models",
+                    title: "🤖 Large Language Models (LLMs)",
                     items: [
-                        "Transformers architecture (BERT, GPT, T5)",
-                        "Attention mechanisms and self-attention",
-                        "Fine-tuning pre-trained models",
-                        "Prompt Engineering and few-shot learning",
-                        "Hugging Face Transformers library"
+                        "Transformers in detail (BERT, GPT, T5)",
+                        "Fine-tuning & Prompt Engineering",
+                        "Hugging Face Transformers library",
+                        "LLM deployment and optimization"
                     ]
                 },
                 {
-                    title: "Advanced NLP & Vision",
+                    title: "🚀 MLOps & Deployment",
                     items: [
-                        "Question-Answering systems",
-                        "Text summarization and generation",
-                        "Named Entity Recognition (NER)",
-                        "Object Detection (YOLO, Faster R-CNN)",
-                        "Image captioning and multimodal AI"
+                        "Model Serving (Flask, FastAPI, Streamlit, Gradio)",
+                        "Docker, Kubernetes basics for ML",
+                        "MLflow for experiment tracking",
+                        "CI/CD for ML models"
                     ]
                 },
                 {
-                    title: "Modern AI Projects",
+                    title: "☁️ Cloud & Big Data",
                     items: [
-                        "AI-powered Chatbot with Transformers",
-                        "Document Q&A system with RAG",
-                        "Image Captioning System",
-                        "Multi-modal AI applications"
+                        "AWS/GCP/Azure ML services",
+                        "Big Data processing (Spark, Hadoop basics)",
+                        "Distributed training and inference",
+                        "Auto-scaling and model monitoring"
+                    ]
+                },
+                {
+                    title: "⚖️ Ethics & AI Safety",
+                    items: [
+                        "Fairness, Bias detection and mitigation in ML",
+                        "Responsible AI practices and guidelines",
+                        "Model interpretability and explainability",
+                        "Privacy-preserving ML techniques"
+                    ]
+                },
+                {
+                    title: "📈 Industry Projects",
+                    items: [
+                        "✅ AI-powered Chatbot with Transformers",
+                        "✅ Image Captioning System",
+                        "✅ Model Deployment on AWS/GCP with Docker",
+                        "Production-ready ML systems"
                     ]
                 }
             ]
         },
         {
             id: 5,
-            title: "MLOps & Deployment",
-            subtitle: "Industry-Ready Level",
-            description: "Deploy and scale ML models in production environments",
-            color: "bg-yellow-500",
-            sections: [
-                {
-                    title: "Model Deployment",
-                    items: [
-                        "Model Serving (Flask, FastAPI, Streamlit, Gradio)",
-                        "REST APIs for ML models",
-                        "Docker containerization for ML apps",
-                        "Model versioning and A/B testing"
-                    ]
-                },
-                {
-                    title: "MLOps Infrastructure",
-                    items: [
-                        "MLflow for experiment tracking",
-                        "CI/CD pipelines for ML models",
-                        "Model monitoring and drift detection",
-                        "Kubernetes basics for ML deployment"
-                    ]
-                },
-                {
-                    title: "Cloud & Big Data",
-                    items: [
-                        "AWS/GCP/Azure ML services",
-                        "Big Data processing (Spark, Hadoop basics)",
-                        "Distributed training and inference",
-                        "Cloud storage and data pipelines"
-                    ]
-                },
-                {
-                    title: "Production Projects",
-                    items: [
-                        "End-to-End ML pipeline (Data → Training → Deployment)",
-                        "Model Deployment on AWS/GCP with Docker",
-                        "Real-time prediction API with monitoring",
-                        "Scalable ML system architecture"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 6,
-            title: "AI Specializations",
+            title: "Specializations",
             subtitle: "Expert Level",
-            description: "Master specialized domains and cutting-edge AI techniques",
+            description: "Master niche domains in AI/ML - Choose one or more paths.",
             color: "bg-red-500",
             sections: [
                 {
-                    title: "Advanced Computer Vision",
+                    title: "👁️ Computer Vision Specialization",
                     items: [
+                        "Advanced object detection and tracking",
+                        "Medical imaging and diagnostic AI",
                         "Generative Adversarial Networks (GANs)",
-                        "Diffusion Models and Stable Diffusion",
-                        "Medical imaging and healthcare AI",
                         "Real-time video processing and analysis"
                     ]
                 },
                 {
-                    title: "Advanced NLP & Generative AI",
+                    title: "💬 NLP Specialization",
                     items: [
-                        "Large Language Model fine-tuning",
-                        "Retrieval-Augmented Generation (RAG)",
-                        "Multi-agent systems and AI orchestration",
-                        "Custom transformer architectures"
+                        "Advanced chatbots and conversational AI",
+                        "Question-answering systems",
+                        "Document summarization and information extraction",
+                        "Multilingual and cross-lingual NLP"
                     ]
                 },
                 {
-                    title: "Emerging AI Fields",
+                    title: "🎨 Generative AI",
                     items: [
-                        "Reinforcement Learning (Q-Learning, DQN, PPO)",
-                        "AI for Edge computing and IoT",
-                        "Robotics and autonomous systems",
-                        "Quantum Machine Learning basics"
+                        "GANs and Variational Autoencoders",
+                        "Diffusion models and Stable Diffusion",
+                        "Text-to-image and image-to-image generation",
+                        "Creative AI applications"
                     ]
                 },
                 {
-                    title: "Ethics & AI Safety",
+                    title: "🎮 Reinforcement Learning",
                     items: [
-                        "Fairness and bias detection in ML models",
-                        "Responsible AI practices and governance",
-                        "Explainable AI (XAI) techniques",
-                        "AI security and adversarial attacks"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 7,
-            title: "Industry Mastery",
-            subtitle: "Senior AI/ML Engineer",
-            description: "Build production-grade AI systems and lead AI initiatives",
-            color: "bg-indigo-500",
-            sections: [
-                {
-                    title: "Advanced System Design",
-                    items: [
-                        "Distributed ML systems architecture",
-                        "Real-time inference at scale",
-                        "Multi-model serving and orchestration",
-                        "AI system performance optimization",
-                        "Cost optimization for AI workloads"
+                        "Q-Learning and Deep Q-Networks (DQN)",
+                        "Policy Gradient Methods (PPO, A3C)",
+                        "Multi-agent reinforcement learning",
+                        "RL for robotics and game AI"
                     ]
                 },
                 {
-                    title: "Leadership & Strategy",
+                    title: "🔧 AI for Edge/Robotics",
                     items: [
-                        "AI project management and team leadership",
-                        "Technical documentation and knowledge sharing",
-                        "Open-source contributions to AI projects",
-                        "Research paper reading and implementation",
-                        "AI strategy and business impact assessment"
-                    ]
-                },
-                {
-                    title: "Capstone Portfolio (Industry-Ready)",
-                    items: [
-                        "LLM-powered AI Assistant (ChatGPT-like application)",
-                        "Computer Vision App (Real-time Object Detection)",
-                        "NLP System (Document Summarizer/Search Engine)",
-                        "End-to-End AI Platform (Data → Model → Deployment → Monitoring)",
-                        "Research project with novel AI technique implementation"
+                        "Model optimization (TensorRT, ONNX)",
+                        "IoT AI and edge computing",
+                        "Robotics perception and control",
+                        "Real-time inference on embedded systems"
                     ]
                 }
             ]
@@ -1430,13 +1392,13 @@ const AIMasterRoadmap = ()=>{
             case 'documentation':
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Aiml$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                    lineNumber: 318,
+                    lineNumber: 280,
                     columnNumber: 16
                 }, this);
             case 'projects':
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Aiml$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                    lineNumber: 320,
+                    lineNumber: 282,
                     columnNumber: 16
                 }, this);
             default:
@@ -1452,7 +1414,7 @@ const AIMasterRoadmap = ()=>{
                                             className: "absolute left-1/2 transform -translate-x-1/2 top-full h-8 md:h-12 w-0.5 md:w-1 bg-gray-300 z-10"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                            lineNumber: 330,
+                                            lineNumber: 292,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1471,7 +1433,7 @@ const AIMasterRoadmap = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                            lineNumber: 337,
+                                                            lineNumber: 299,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1479,7 +1441,7 @@ const AIMasterRoadmap = ()=>{
                                                             children: phase.subtitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                            lineNumber: 340,
+                                                            lineNumber: 302,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1487,19 +1449,19 @@ const AIMasterRoadmap = ()=>{
                                                             children: phase.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                            lineNumber: 341,
+                                                            lineNumber: 303,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 336,
+                                                    lineNumber: 298,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-full max-w-5xl px-4",
+                                                    className: "w-full max-w-6xl px-4",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6",
+                                                        className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6",
                                                         children: phase.sections.map((section, sectionIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "bg-white rounded-lg border-2 border-blue-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow",
                                                                 children: [
@@ -1508,7 +1470,7 @@ const AIMasterRoadmap = ()=>{
                                                                         children: section.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                                        lineNumber: 352,
+                                                                        lineNumber: 314,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1524,7 +1486,7 @@ const AIMasterRoadmap = ()=>{
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                                                        lineNumber: 358,
+                                                                                        lineNumber: 320,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     " ",
@@ -1532,28 +1494,28 @@ const AIMasterRoadmap = ()=>{
                                                                                 ]
                                                                             }, itemIndex, true, {
                                                                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                                                lineNumber: 357,
+                                                                                lineNumber: 319,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                                        lineNumber: 355,
+                                                                        lineNumber: 317,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, sectionIndex, true, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                                lineNumber: 348,
+                                                                lineNumber: 310,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                        lineNumber: 346,
+                                                        lineNumber: 308,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 345,
+                                                    lineNumber: 307,
                                                     columnNumber: 21
                                                 }, this),
                                                 index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1567,7 +1529,7 @@ const AIMasterRoadmap = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 332,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
@@ -1575,7 +1537,7 @@ const AIMasterRoadmap = ()=>{
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                            lineNumber: 373,
+                                                            lineNumber: 335,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1586,49 +1548,682 @@ const AIMasterRoadmap = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                            lineNumber: 374,
+                                                            lineNumber: 336,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 331,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                            lineNumber: 334,
+                                            lineNumber: 296,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, phase.id, true, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 327,
+                                    lineNumber: 289,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                            lineNumber: 325,
+                            lineNumber: 287,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-blue-50 to-blue-50 rounded-lg border border-blue-200",
+                            className: "text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-xl md:text-2xl font-bold text-gray-900 mb-4",
-                                    children: "🚀 Congratulations! You're AI/ML Industry Ready!"
+                                    children: "🚀 Capstone Projects (Industry-Ready Portfolio)"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 386,
+                                    lineNumber: 348,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-gray-700 mb-6",
+                                    children: "Build 3–4 production-grade projects to showcase your expertise:"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 351,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid grid-cols-1 md:grid-cols-2 gap-4 text-left",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-green-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-green-600 mb-2",
+                                                    children: "🏗️ End-to-End ML Pipeline"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 354,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Complete workflow: Data → Training → Deployment → Monitoring"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 355,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 353,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-blue-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-blue-600 mb-2",
+                                                    children: "🤖 LLM-Powered AI Assistant"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 358,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Chatbot with LangChain + OpenAI API/HuggingFace"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 359,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 357,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-purple-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-purple-600 mb-2",
+                                                    children: "👁️ Computer Vision App"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 362,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Real-time Object Detection with YOLO"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 363,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 361,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-orange-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-orange-600 mb-2",
+                                                    children: "📝 NLP System"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 366,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Document Summarizer/Search Engine"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 367,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 365,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 352,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                            lineNumber: 347,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-xl md:text-2xl font-bold text-gray-900 mb-4",
+                                    children: "📚 Key Resources & Tools by Phase"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 374,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-blue-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-blue-600 mb-2",
+                                                    children: "🔤 Mathematics"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 379,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                    className: "text-sm text-gray-600 space-y-1",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Khan Academy Linear Algebra"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 381,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• MIT OCW Statistics"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 382,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• 3Blue1Brown YouTube"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 383,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 380,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 378,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-green-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-green-600 mb-2",
+                                                    children: "🐍 Programming"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 387,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                    className: "text-sm text-gray-600 space-y-1",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Python Official Docs"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 389,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• NumPy, Pandas, Matplotlib"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 390,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Jupyter Notebooks"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 391,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 388,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 386,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-purple-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-purple-600 mb-2",
+                                                    children: "🧠 Deep Learning"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 395,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                    className: "text-sm text-gray-600 space-y-1",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• TensorFlow & PyTorch"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 397,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Fast.ai Course"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 398,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Deep Learning Specialization"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 399,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 396,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 394,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-orange-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-orange-600 mb-2",
+                                                    children: "☁️ MLOps"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 403,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                    className: "text-sm text-gray-600 space-y-1",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Docker & Kubernetes"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 405,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• MLflow, Weights & Biases"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 406,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• AWS/GCP/Azure ML"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 407,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 404,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 402,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-red-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-red-600 mb-2",
+                                                    children: "🤖 Advanced AI"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 411,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                    className: "text-sm text-gray-600 space-y-1",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Hugging Face Hub"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 413,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Papers with Code"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 414,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• OpenAI Gymnasium"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 415,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 412,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 410,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-indigo-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-indigo-600 mb-2",
+                                                    children: "📖 Research"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 419,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                    className: "text-sm text-gray-600 space-y-1",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• ArXiv papers"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 421,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• Google Scholar"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 422,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                            children: "• AI/ML conferences"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                            lineNumber: 423,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 420,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 418,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 377,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                            lineNumber: 373,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border border-indigo-200",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-xl md:text-2xl font-bold text-gray-900 mb-4",
+                                    children: "⏳ Suggested Timeline (12-15 hrs/week)"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 431,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-blue-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-blue-600 mb-2",
+                                                    children: "Phase 1"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 436,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-2xl font-bold text-blue-600",
+                                                    children: "2-3 months"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 437,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Foundations"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 438,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 435,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-green-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-green-600 mb-2",
+                                                    children: "Phase 2"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 441,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-2xl font-bold text-green-600",
+                                                    children: "3-4 months"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 442,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Core ML"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 443,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 440,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-purple-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-purple-600 mb-2",
+                                                    children: "Phase 3"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 446,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-2xl font-bold text-purple-600",
+                                                    children: "4-6 months"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 447,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Deep Learning"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 448,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 445,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-orange-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibentfold text-orange-600 mb-2",
+                                                    children: "Phase 4"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 451,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-2xl font-bold text-orange-600",
+                                                    children: "3-4 months"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 452,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Modern AI"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 453,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 450,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-white p-4 rounded-lg border border-red-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "font-semibold text-red-600 mb-2",
+                                                    children: "Phase 5"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 456,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-2xl font-bold text-red-600",
+                                                    children: "Ongoing"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 457,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Specialization"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 458,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                            lineNumber: 455,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 434,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                            lineNumber: 430,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-xl md:text-2xl font-bold text-gray-900 mb-4",
+                                    children: "🏆 Final Tips to Become Industry-Ready"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                    lineNumber: 465,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-gray-700 text-base md:text-lg mb-4",
-                                    children: "You've completed the AI/ML Mastery Roadmap and are now ready to build cutting-edge AI systems and lead AI initiatives."
+                                    children: "Congratulations! You've completed the AI/ML Mastery Roadmap and are ready to tackle real-world AI challenges."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 389,
+                                    lineNumber: 468,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1636,10 +2231,10 @@ const AIMasterRoadmap = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                             className: "font-semibold text-blue-600 mb-2",
-                                            children: "🏆 Final Tips to Become Industry-Ready"
+                                            children: "🎯 Next Steps for Success"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                            lineNumber: 393,
+                                            lineNumber: 472,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1649,52 +2244,66 @@ const AIMasterRoadmap = ()=>{
                                                     children: "• Contribute to open-source AI projects (HuggingFace, Scikit-learn, PyTorch)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 395,
+                                                    lineNumber: 474,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "• Build portfolio projects & showcase on GitHub + LinkedIn"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 396,
+                                                    lineNumber: 475,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                    children: "• Write blogs/tutorials to explain your work"
+                                                    children: "• Write blogs/tutorials to explain your work and share knowledge"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 397,
+                                                    lineNumber: 476,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                    children: "• Stay updated via paperswithcode.com, Arxiv, and AI newsletters"
+                                                    children: "• Stay updated via paperswithcode.com, ArXiv, and AI newsletters"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                                    lineNumber: 398,
+                                                    lineNumber: 477,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    children: "• Join AI/ML communities and participate in competitions (Kaggle, DrivenData)"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 478,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    children: "• Attend conferences and workshops to network with professionals"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
+                                                    lineNumber: 479,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                            lineNumber: 394,
+                                            lineNumber: 473,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 392,
+                                    lineNumber: 471,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                            lineNumber: 385,
+                            lineNumber: 464,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                    lineNumber: 323,
+                    lineNumber: 285,
                     columnNumber: 11
                 }, this);
         }
@@ -1715,7 +2324,7 @@ const AIMasterRoadmap = ()=>{
                                     size: 32
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 413,
+                                    lineNumber: 494,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1727,7 +2336,7 @@ const AIMasterRoadmap = ()=>{
                                             children: "Mastery Roadmap"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                            lineNumber: 415,
+                                            lineNumber: 496,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1735,19 +2344,19 @@ const AIMasterRoadmap = ()=>{
                                             children: "(2025 Edition)"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                            lineNumber: 416,
+                                            lineNumber: 497,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 414,
+                                    lineNumber: 495,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                            lineNumber: 412,
+                            lineNumber: 493,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1760,26 +2369,26 @@ const AIMasterRoadmap = ()=>{
                                     className: "animate-spin"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 427,
+                                    lineNumber: 508,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 429,
+                                    lineNumber: 510,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: isDownloading ? 'Generating PDF...' : 'Download PDF'
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                    lineNumber: 431,
+                                    lineNumber: 512,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                            lineNumber: 421,
+                            lineNumber: 502,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1789,24 +2398,24 @@ const AIMasterRoadmap = ()=>{
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 439,
+                                lineNumber: 520,
                                 columnNumber: 31
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 439,
+                                lineNumber: 520,
                                 columnNumber: 49
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                            lineNumber: 435,
+                            lineNumber: 516,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                    lineNumber: 411,
+                    lineNumber: 492,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1821,31 +2430,31 @@ const AIMasterRoadmap = ()=>{
                                 className: "animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 451,
+                                lineNumber: 532,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                 size: 18
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 453,
+                                lineNumber: 534,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: isDownloading ? 'Generating PDF...' : 'Download PDF'
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 455,
+                                lineNumber: 536,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                        lineNumber: 445,
+                        lineNumber: 526,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                    lineNumber: 444,
+                    lineNumber: 525,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1865,14 +2474,14 @@ const AIMasterRoadmap = ()=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                        lineNumber: 473,
+                                        lineNumber: 554,
                                         columnNumber: 15
                                     }, this),
                                     "Roadmap"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 462,
+                                lineNumber: 543,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1887,14 +2496,14 @@ const AIMasterRoadmap = ()=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                        lineNumber: 487,
+                                        lineNumber: 568,
                                         columnNumber: 15
                                     }, this),
                                     "Documentation"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 476,
+                                lineNumber: 557,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1909,45 +2518,45 @@ const AIMasterRoadmap = ()=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                        lineNumber: 501,
+                                        lineNumber: 582,
                                         columnNumber: 15
                                     }, this),
                                     "Projects"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                                lineNumber: 490,
+                                lineNumber: 571,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                        lineNumber: 461,
+                        lineNumber: 542,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-                    lineNumber: 460,
+                    lineNumber: 541,
                     columnNumber: 9
                 }, this),
                 renderContent()
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-            lineNumber: 409,
+            lineNumber: 490,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Aiml/page.jsx",
-        lineNumber: 408,
+        lineNumber: 489,
         columnNumber: 5
     }, this);
 };
-_s(AIMasterRoadmap, "0HA4EeIJlOOJC7wNk0pgM7ZTfQQ=");
-_c = AIMasterRoadmap;
-const __TURBOPACK__default__export__ = AIMasterRoadmap;
+_s(AIMLMasteryRoadmap, "0HA4EeIJlOOJC7wNk0pgM7ZTfQQ=");
+_c = AIMLMasteryRoadmap;
+const __TURBOPACK__default__export__ = AIMLMasteryRoadmap;
 var _c;
-__turbopack_context__.k.register(_c, "AIMasterRoadmap");
+__turbopack_context__.k.register(_c, "AIMLMasteryRoadmap");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }

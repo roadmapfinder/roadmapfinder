@@ -1,10 +1,10 @@
 {
   "pages": {
-    "/Roadmaps/Android/page": [
+    "/Roadmaps/AI-Agent/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/app_Roadmaps_Android_50e2cef0._.js",
+      "static/chunks/app_Roadmaps_AI-Agent_7eb700ad._.js",
       "static/chunks/node_modules_brotli_f5b4e07f._.js",
       "static/chunks/node_modules_fontkit_dist_browser-module_mjs_a9dafd54._.js",
       "static/chunks/node_modules_pako_lib_6b9b1414._.js",
@@ -14,8 +14,8 @@
       "static/chunks/node_modules_yoga-layout_dist_066da2a1._.js",
       "static/chunks/node_modules_@react-pdf_layout_lib_index_582cd017.js",
       "static/chunks/node_modules_@react-pdf_reconciler_lib_bccb4d72._.js",
-      "static/chunks/node_modules_e50b901c._.js",
-      "static/chunks/app_Roadmaps_Android_page_jsx_5ee60de8._.js",
+      "static/chunks/node_modules_de50ca54._.js",
+      "static/chunks/app_Roadmaps_AI-Agent_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -24,11 +24,11 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Roadmaps/C/page": [
+    "/Roadmaps/Aiml/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/app_Roadmaps_C_764e3bc2._.js",
+      "static/chunks/app_Roadmaps_Aiml_bd9775b5._.js",
       "static/chunks/node_modules_brotli_f5b4e07f._.js",
       "static/chunks/node_modules_fontkit_dist_browser-module_mjs_a9dafd54._.js",
       "static/chunks/node_modules_pako_lib_6b9b1414._.js",
@@ -38,8 +38,8 @@
       "static/chunks/node_modules_yoga-layout_dist_066da2a1._.js",
       "static/chunks/node_modules_@react-pdf_layout_lib_index_582cd017.js",
       "static/chunks/node_modules_@react-pdf_reconciler_lib_bccb4d72._.js",
-      "static/chunks/node_modules_0a8f0f0d._.js",
-      "static/chunks/app_Roadmaps_C_page_jsx_5ee60de8._.js",
+      "static/chunks/node_modules_de50ca54._.js",
+      "static/chunks/app_Roadmaps_Aiml_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
@@ -48,22 +48,10 @@
       "static/chunks/_e69f0d32._.js",
       "static/chunks/_93808211._.js"
     ],
-    "/Roadmaps/CyberSecurity/page": [
+    "/_not-found/page": [
       "static/chunks/node_modules_659f1a1f._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
-      "static/chunks/app_Roadmaps_CyberSecurity_71185c5c._.js",
-      "static/chunks/node_modules_brotli_f5b4e07f._.js",
-      "static/chunks/node_modules_fontkit_dist_browser-module_mjs_a9dafd54._.js",
-      "static/chunks/node_modules_pako_lib_6b9b1414._.js",
-      "static/chunks/node_modules_crypto-js_465d446e._.js",
-      "static/chunks/node_modules_@react-pdf_png-js_lib_png-js_browser_a6d2f71c.js",
-      "static/chunks/node_modules_@react-pdf_pdfkit_lib_pdfkit_browser_729b17f6.js",
-      "static/chunks/node_modules_yoga-layout_dist_066da2a1._.js",
-      "static/chunks/node_modules_@react-pdf_layout_lib_index_582cd017.js",
-      "static/chunks/node_modules_@react-pdf_reconciler_lib_bccb4d72._.js",
-      "static/chunks/node_modules_ab904522._.js",
-      "static/chunks/app_Roadmaps_CyberSecurity_page_jsx_5ee60de8._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",

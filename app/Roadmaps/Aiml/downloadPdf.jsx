@@ -165,7 +165,7 @@ const RoadmapPDFDocument = ({ phases }) => (
     <Page size="A4" style={styles.page}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.title}>Frontend Engineer Roadmap</Text>
+        <Text style={styles.title}>AIML Engineer Roadmap</Text>
         <Text style={styles.subtitle}>Your Complete Journey from Beginner to Professional</Text>
       </View>
 

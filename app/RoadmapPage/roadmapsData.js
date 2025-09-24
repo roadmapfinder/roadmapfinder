@@ -43,6 +43,15 @@ export const roadmapsData = [
     description: "Machine Learning, Deep Learning, Neural Networks"
   },
   {
+    id: "ai agents",
+    title: "AI Agents (No code)",
+    icon: <Brain className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/AI-Agent",
+    bgColor: "from-blue-700 to-blue-900",
+    category: "featured",
+    description: "No code AI agents and applications"
+  },
+  {
     id: "mern",
     title: "Mern Stack",
     icon: <Globe className="w-5 h-5 text-white" />,
