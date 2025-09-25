@@ -1,5 +1,6 @@
 {
-  "/Roadmaps/Full-Stack/page": "app/Roadmaps/Full-Stack/page.js",
-  "/Roadmaps/Mern/page": "app/Roadmaps/Mern/page.js",
+  "/Courses/page": "app/Courses/page.js",
+  "/Roadmaps/Backend/page": "app/Roadmaps/Backend/page.js",
+  "/Roadmaps/Frontend/page": "app/Roadmaps/Frontend/page.js",
   "/page": "app/page.js"
 }

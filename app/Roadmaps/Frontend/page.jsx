@@ -1,256 +1,16 @@
 "use client"
 import React, { useState } from 'react';
-import { ChevronDown, Download, FileText, FolderOpen, Map, Menu, X, Loader2 } from 'lucide-react';
+import { ChevronDown, Download, FileText, FolderOpen, Map, Menu, X, Loader2, HelpCircle } from 'lucide-react';
 import Docs from './docs';
 import Projects from './projects';
-import { downloadRoadmapPDF, PDFDownloadButton } from './downloadPdf';
+import Faq from './Faq';
+import { phases } from './roadmapData';
+import { downloadRoadmapPDF } from './downloadPdf';
 
 const FrontendEngineerRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
-
-  const phases = [
-    {
-      id: 1,
-      title: "Web Foundations",
-      subtitle: "Beginner Level",
-      description: "Build a strong base in core web technologies",
-      color: "bg-blue-500",
-      sections: [
-        {
-          title: "HTML & CSS",
-          items: [
-            "Semantic HTML5 (forms, tables, media, accessibility basics)",
-            "CSS3 (selectors, box model, positioning, flexbox, grid, transitions)",
-            "Responsive design & mobile-first approach",
-            "CSS variables & BEM methodology"
-          ]
-        },
-        {
-          title: "JavaScript (Core)",
-          items: [
-            "Variables (let/const), Data types",
-            "DOM manipulation",
-            "Events & Event delegation",
-            "Functions, Scope, Closures",
-            "Arrays, Objects, Loops, ES6+ features (arrow functions, spread, destructuring)"
-          ]
-        },
-        {
-          title: "Beginner Projects",
-          items: [
-            "Personal Portfolio Website",
-            "Responsive Landing Page",
-            "Simple To-Do List (Vanilla JS)"
-          ]
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Advanced JavaScript & Web APIs",
-      subtitle: "Junior Level",
-      description: "Become confident with modern JS and browser APIs",
-      color: "bg-purple-500",
-      sections: [
-        {
-          title: "Advanced JavaScript",
-          items: [
-            "Asynchronous JS (Callbacks, Promises, async/await)",
-            "Fetch API & REST API consumption",
-            "Modules (ES6 import/export)",
-            "Error handling & debugging",
-            "Object-Oriented JS & Prototypes"
-          ]
-        },
-        {
-          title: "Web APIs & Browser Features",
-          items: [
-            "LocalStorage / SessionStorage",
-            "Geolocation API",
-            "File & Media APIs",
-            "Web Workers basics"
-          ]
-        },
-        {
-          title: "Junior Projects",
-          items: [
-            "Weather App (API fetch + UI)",
-            "Notes App with LocalStorage",
-            "Movie Search App using OMDb API"
-          ]
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Frontend Framework (React + Ecosystem)",
-      subtitle: "Mid-Level",
-      description: "Master a modern frontend framework (React dominates 2025)",
-      color: "bg-green-500",
-      sections: [
-        {
-          title: "React Core",
-          items: [
-            "JSX, Components, Props, State",
-            "Events & Forms",
-            "Conditional rendering & lists",
-            "Hooks (useState, useEffect, useRef, useContext)"
-          ]
-        },
-        {
-          title: "React Advanced",
-          items: [
-            "Custom hooks",
-            "React Router (navigation)",
-            "Context API & State Management basics",
-            "Performance optimization (memo, lazy loading)"
-          ]
-        },
-        {
-          title: "Ecosystem & Styling",
-          items: [
-            "Tailwind CSS (modern styling)",
-            "Styled-components / CSS Modules",
-            "Component libraries (MUI, ShadCN, Radix UI)"
-          ]
-        },
-        {
-          title: "Mid-Level Projects",
-          items: [
-            "Blog App (React + API)",
-            "E-commerce Product Page (React + Tailwind)",
-            "Chat UI with Context API"
-          ]
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "State Management & Next.js",
-      subtitle: "Mid-Level → Advanced",
-      description: "Build scalable, production-ready apps",
-      color: "bg-orange-500",
-      sections: [
-        {
-          title: "State Management",
-          items: [
-            "Redux Toolkit (or Zustand / Jotai alternatives)",
-            "Server state management (React Query / TanStack Query)"
-          ]
-        },
-        {
-          title: "Next.js (Full-Stack Frontend)",
-          items: [
-            "File-based routing (App Router)",
-            "Server Components & Client Components",
-            "API Routes (backend inside Next.js)",
-            "Data fetching (SSR, SSG, ISR, CSR)",
-            "Authentication (NextAuth.js, Clerk)",
-            "Middleware & Edge Functions"
-          ]
-        },
-        {
-          title: "APIs & Integrations",
-          items: [
-            "REST APIs (best practices)",
-            "GraphQL basics (Apollo / URQL)",
-            "Using third-party APIs"
-          ]
-        },
-        {
-          title: "Projects",
-          items: [
-            "Full-stack Blog with Next.js (Auth + Database)",
-            "E-commerce Store (Next.js + Stripe Payments)",
-            "Dashboard (Next.js + Charts + Role-based Auth)"
-          ]
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Advanced Frontend Engineering",
-      subtitle: "Senior-Level Prep",
-      description: "Be industry-ready with real-world practices",
-      color: "bg-red-500",
-      sections: [
-        {
-          title: "TypeScript",
-          items: [
-            "Static typing for React & Next.js",
-            "Interfaces, Generics, Utility Types",
-            "Type-safe API calls & components"
-          ]
-        },
-        {
-          title: "Testing",
-          items: [
-            "Unit testing (Jest, Vitest)",
-            "Component testing (React Testing Library)",
-            "E2E testing (Cypress, Playwright)"
-          ]
-        },
-        {
-          title: "Performance & Optimization",
-          items: [
-            "Code splitting, Lazy loading, Bundle analysis",
-            "Caching strategies (Service Workers, SWR, TanStack Query)",
-            "Web Vitals & Lighthouse audits"
-          ]
-        },
-        {
-          title: "CI/CD & DevOps Basics",
-          items: [
-            "Git & GitHub best practices (branches, PRs, Actions)",
-            "Deployment (Vercel, Netlify)",
-            "Docker basics (optional)"
-          ]
-        },
-        {
-          title: "Senior-Level Projects (Portfolio-Ready)",
-          items: [
-            "SaaS Dashboard (Next.js + Auth + Payments + Charts)",
-            "Social Media App clone (Next.js + Realtime DB like Firebase/Supabase)",
-            "Project Management Tool (Kanban board with drag & drop)"
-          ]
-        }
-      ]
-    },
-    {
-      id: 6,
-      title: "Career & Growth",
-      subtitle: "Professional Level",
-      description: "Get hired as a frontend engineer",
-      color: "bg-indigo-500",
-      sections: [
-        {
-          title: "Portfolio Building",
-          items: [
-            "3–5 polished projects (case study style, not just code dumps)",
-            "Personal website with blog/portfolio"
-          ]
-        },
-        {
-          title: "Soft Skills & System Knowledge",
-          items: [
-            "Collaboration (GitHub, Jira, Notion, Agile workflows)",
-            "Understanding UX & accessibility (WCAG 2.2)",
-            "API contracts & working with backend teams"
-          ]
-        },
-        {
-          title: "Interview Prep",
-          items: [
-            "DSA basics (arrays, strings, recursion, common LeetCode easy/medium)",
-            "System design basics for frontend (SPAs, caching, CDNs)",
-            "Whiteboard problems (debouncing, throttling, event bubbling)"
-          ]
-        }
-      ]
-    }
-  ];
 
   // Handle PDF download with loading state
   const handlePDFDownload = async () => {
@@ -277,6 +37,8 @@ const FrontendEngineerRoadmap = () => {
         return <Docs />;
       case 'projects':
         return <Projects />;
+      case 'faq':
+        return <Faq />;
       default:
         return (
           <div className="relative">
@@ -448,6 +210,20 @@ const FrontendEngineerRoadmap = () => {
             >
               <FolderOpen size={18} className="mr-2" />
               Projects
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('faq');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${
+                activeTab === 'faq'
+                  ? 'bg-blue-500 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <HelpCircle size={18} className="mr-2" />
+              FAQ
             </button>
           </div>
         </div>

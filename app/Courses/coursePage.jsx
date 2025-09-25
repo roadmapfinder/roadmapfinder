@@ -254,14 +254,8 @@ export default function CoursePage() {
   return (
     <div className="w-full mx-auto bg-gray-50 font-['Sora'] pb-12 relative">
       {/* Enhanced Header Section */}
-      <div className="bg-gradient-to-br from-red-600 via-red-500 to-red-700 py-8 px-4 text-center mb-6 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-4 left-4 w-16 h-16 bg-white opacity-10 rounded-full"></div>
-          <div className="absolute bottom-4 right-4 w-20 h-20 bg-white opacity-5 rounded-full"></div>
-          <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-yellow-300 opacity-20 rounded-full"></div>
-        </div>
+      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 py-8 px-4 text-center mb-6 relative overflow-hidden">
+       
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex items-center justify-center mb-3">
@@ -270,10 +264,10 @@ export default function CoursePage() {
               Premium YouTube Courses
             </h1>
           </div>
-          <p className="text-lg md:text-xl text-red-100 mb-3 font-medium">
+          <p className="text-lg md:text-xl text-gray-100 mb-3 font-medium">
             Master Skills with Industry Experts • Hindi & English • Latest Content
           </p>
-          <p className="text-sm md:text-base text-red-200 mb-6 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-200 mb-6 max-w-2xl mx-auto">
             Discover handpicked premium courses from top YouTube creators. Learn cutting-edge technologies 
             in both Hindi and English with the most up-to-date content in the industry! 🚀
           </p>
@@ -483,7 +477,7 @@ export default function CoursePage() {
                         <div className="flex space-x-2">
                           <button
                             onClick={() => redirectToYoutube(course.videoId)}
-                            className="flex-1 bg-red-600 hover:bg-red-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
+                            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium p-2 rounded transition-colors flex items-center justify-center"
                           >
                             <YouTubeIcon size={16} className="mr-2" />
                             <span>Watch Now</span>
