@@ -106,13 +106,13 @@ export const roadmapsData = [
     description: "Cross-platform mobile app development"
   },
   {
-    id: "softwareengineer",
-    title: "Software Engineer",
+    id: "software architect",
+    title: "Software Architect",
     icon: <Square className="w-5 h-5 text-white" />,
     link: "/Roadmaps/Software",
     bgColor: "from-blue-500 to-cyan-400",
     category: "featured",
-    description: "Cross-platform mobile app development"
+    description: "Software architecture fundamentals"
   },
   {
     id: "flutter",
