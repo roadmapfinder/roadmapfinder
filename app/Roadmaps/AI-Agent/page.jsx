@@ -3,197 +3,14 @@ import React, { useState } from 'react';
 import { Brain, Download, Map, FileText, FolderOpen, ChevronDown, Menu, X, Loader2 } from 'lucide-react';
 import Docs from './docs';
 import Projects from './projects';
+import Faq from './Faq';
 import { downloadRoadmapPDF } from './downloadPdf';
+import { phases, learningPathData, timelineData, finalTips } from './roadmapData';
 
 const NoCodeAIAgentRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
-
-  // Roadmap data structured according to your No-Code AI Agent content
-  const phases = [
-    {
-      id: 1,
-      title: "Foundations",
-      subtitle: "Beginner Level",
-      description: "Learn how AI agents work without touching heavy code.",
-      color: "bg-blue-500",
-      sections: [
-        {
-          title: "🤖 Basics of AI & LLMs",
-          items: [
-            "What are AI agents? (Reasoning + Tools + Memory)",
-            "Core terms: prompt, context, embedding, RAG, function calling",
-            "Learn about OpenAI, Claude, LLaMA, Mistral APIs (just how to connect via no-code)",
-            "Understanding AI agent architecture and workflows"
-          ]
-        },
-        {
-          title: "🛠️ Tools to Start",
-          items: [
-            "ChatGPT / Claude (prompting basics)",
-            "Perplexity AI (research assistant examples)",
-            "Prompt marketplaces (PromptBase, FlowGPT)",
-            "Basic prompt engineering techniques"
-          ]
-        },
-        {
-          title: "🎯 Mini Projects",
-          items: [
-            "Design prompts to create an email writer",
-            "Prompt engineer a 'travel planner assistant'",
-            "Create a personal productivity AI assistant",
-            "Build a simple Q&A bot using prompts"
-          ]
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Agent Building with No-Code Platforms",
-      subtitle: "Intermediate Level",
-      description: "Start connecting LLMs with external tools using visual builders.",
-      color: "bg-green-500",
-      sections: [
-        {
-          title: "🎨 Visual Agent Builders",
-          items: [
-            "Langflow – drag-and-drop chains, memory, tools",
-            "Flowise AI – open-source no-code LangChain UI",
-            "Relevance AI – multi-agent studio with templates",
-            "Poe by Quora – simple agent creation"
-          ]
-        },
-        {
-          title: "⚡ Automation + AI Workflows",
-          items: [
-            "Zapier AI Actions – connect LLMs to 6000+ apps",
-            "Make (Integromat) – AI + API workflows",
-            "n8n – open-source automation with AI integrations",
-            "Power Automate + AI Builder integration"
-          ]
-        },
-        {
-          title: "🧠 Knowledge & Memory (No-Code RAG)",
-          items: [
-            "Chatbase (chat with your data)",
-            "DocuAsk / CustomGPT for document processing",
-            "Pinecone (GUI) + Flowise for embeddings",
-            "Vector database integration without coding"
-          ]
-        },
-        {
-          title: "🚀 Intermediate Projects",
-          items: [
-            "Create a Q&A bot for a PDF (Flowise + ChromaDB)",
-            "Customer support agent with memory (Langflow)",
-            "AI agent that drafts social media posts (Zapier + OpenAI)",
-            "Company FAQ chatbot trained on your docs"
-          ]
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Multi-Agent Systems",
-      subtitle: "Advanced Intermediate",
-      description: "Build collaborative AI agent teams without coding.",
-      color: "bg-purple-500",
-      sections: [
-        {
-          title: "👥 Multi-Agent Orchestration (No-Code)",
-          items: [
-            "CrewAI Studio (GUI) – define multiple roles (researcher, coder, tester)",
-            "Relevance AI Multi-Agent Hub – agents collaborate visually",
-            "AutoGen Studio (UI) – Microsoft's no-code agent playground",
-            "Agent workflow coordination and task delegation"
-          ]
-        },
-        {
-          title: "🔗 Advanced Integrations",
-          items: [
-            "CRM Integrations (HubSpot, Salesforce)",
-            "E-commerce AI (Shopify AI agents with Zapier)",
-            "Analytics & Monitoring (LangSmith dashboard without coding)",
-            "API connections through visual interfaces"
-          ]
-        },
-        {
-          title: "🎯 Multi-Agent Projects",
-          items: [
-            "AI research team (Researcher agent + Writer agent)",
-            "Multi-agent 'startup simulation' (CEO, marketer, developer)",
-            "Sales assistant that logs leads in CRM",
-            "E-commerce agent that answers customer questions from product catalog"
-          ]
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Scaling & Deployment",
-      subtitle: "Advanced Level",
-      description: "Build deployable, production-ready AI agents — still no-code.",
-      color: "bg-orange-500",
-      sections: [
-        {
-          title: "🌐 Deployment & Hosting",
-          items: [
-            "Vercel AI SDK (GUI options) – deploy chatbots on websites",
-            "Typedream + Chatbase widget – embed AI agent on site",
-            "Glide / Bubble.io – no-code apps with AI backends",
-            "Botpress – conversational AI without coding"
-          ]
-        },
-        {
-          title: "⚙️ Production Features",
-          items: [
-            "User authentication and session management",
-            "Scalable hosting and load balancing",
-            "Monitoring and analytics dashboards",
-            "Error handling and fallback systems"
-          ]
-        },
-        {
-          title: "📈 Advanced Projects",
-          items: [
-            "Deploy AI customer support widget on website",
-            "Launch an AI 'resume coach' app on Bubble",
-            "Multi-channel chatbot (web, Slack, Discord)",
-            "AI-powered workflow automation system"
-          ]
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Mastery",
-      subtitle: "Cutting-Edge No-Code",
-      description: "Build autonomous and self-improving AI agent systems.",
-      color: "bg-red-500",
-      sections: [
-        {
-          title: "🤖 Autonomous & Self-Improving Agents",
-          items: [
-            "Use AutoGPT UIs (Camel AGI UI, AgentGPT)",
-            "Relevance AI's self-learning agents",
-            "Plug-in multiple APIs to make agents truly autonomous",
-            "Continuous learning and adaptation systems"
-          ]
-        },
-        {
-          title: "🏆 Capstone Projects (Industry-Ready)",
-          items: [
-            "Fully automated market research agent (scrapes web, summarizes, stores results)",
-            "Multi-agent AI consultancy firm (Planner, Researcher, Writer, Designer agents)",
-            "AI-powered business intelligence system",
-            "Autonomous customer service ecosystem",
-            "Self-optimizing marketing campaign manager"
-          ]
-        }
-      ]
-    }
-  ];
 
   // Handle PDF download with loading state
   const handlePDFDownload = async () => {
@@ -218,6 +35,8 @@ const NoCodeAIAgentRoadmap = () => {
         return <Docs />;
       case 'projects':
         return <Projects />;
+      case 'faq':
+        return <Faq />;
       default:
         return (
           <div className="relative">
@@ -290,29 +109,33 @@ const NoCodeAIAgentRoadmap = () => {
                 <div className="bg-white p-4 rounded-lg border border-green-300">
                   <h3 className="font-semibold text-green-600 mb-2">🎯 Beginner Tools</h3>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Prompting → ChatGPT / Claude / Poe</li>
-                    <li>• Visual agent builders → Flowise, Langflow</li>
+                    {learningPathData.beginnerTools.map((tool, index) => (
+                      <li key={index}>• {tool}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-blue-300">
                   <h3 className="font-semibold text-blue-600 mb-2">🚀 Advanced Tools</h3>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Automation → Zapier AI, Make, n8n</li>
-                    <li>• Memory → Chatbase, Relevance AI, Pinecone GUI</li>
+                    {learningPathData.advancedTools.map((tool, index) => (
+                      <li key={index}>• {tool}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-purple-300">
                   <h3 className="font-semibold text-purple-600 mb-2">👥 Multi-Agent Tools</h3>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Multi-agent → CrewAI Studio, Relevance AI Multi-Agent</li>
-                    <li>• Deployment → Bubble, Glide, Typedream, Botpress</li>
+                    {learningPathData.multiAgentTools.map((tool, index) => (
+                      <li key={index}>• {tool}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-orange-300">
                   <h3 className="font-semibold text-orange-600 mb-2">📈 Scaling Tools</h3>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Scaling → Vercel, LangSmith dashboards</li>
-                    <li>• Autonomous → AutoGPT UIs, AgentGPT</li>
+                    {learningPathData.scalingTools.map((tool, index) => (
+                      <li key={index}>• {tool}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -324,26 +147,13 @@ const NoCodeAIAgentRoadmap = () => {
                 ⏳ Timeline (If you dedicate 10–12 hrs/week)
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="bg-white p-4 rounded-lg border border-blue-300">
-                  <h3 className="font-semibold text-blue-600 mb-2">Phase 1: Foundations</h3>
-                  <p className="text-2xl font-bold text-blue-600">1 month</p>
-                  <p className="text-sm text-gray-600">Beginner Level</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg border border-green-300">
-                  <h3 className="font-semibold text-green-600 mb-2">Phase 2: Agent Building</h3>
-                  <p className="text-2xl font-bold text-green-600">2-3 months</p>
-                  <p className="text-sm text-gray-600">Intermediate Level</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg border border-purple-300">
-                  <h3 className="font-semibold text-purple-600 mb-2">Phase 3: Multi-Agent</h3>
-                  <p className="text-2xl font-bold text-purple-600">3-5 months</p>
-                  <p className="text-sm text-gray-600">Advanced Level</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg border border-red-300">
-                  <h3 className="font-semibold text-red-600 mb-2">Phase 4-5: Mastery</h3>
-                  <p className="text-2xl font-bold text-red-600">Ongoing</p>
-                  <p className="text-sm text-gray-600">Expert Level</p>
-                </div>
+                {timelineData.map((timeline, index) => (
+                  <div key={index} className={`bg-white p-4 rounded-lg border ${timeline.color}`}>
+                    <h3 className={`font-semibold ${timeline.textColor} mb-2`}>{timeline.phase}</h3>
+                    <p className={`text-2xl font-bold ${timeline.textColor}`}>{timeline.duration}</p>
+                    <p className="text-sm text-gray-600">{timeline.level}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -358,11 +168,9 @@ const NoCodeAIAgentRoadmap = () => {
               <div className="bg-white p-4 rounded-lg border border-blue-300 mt-4">
                 <h3 className="font-semibold text-blue-600 mb-2">🏆 Final Tips to Become Industry-Ready</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Join no-code AI communities (Discord, Reddit, LinkedIn groups)</li>
-                  <li>• Share your agent builds on social media & portfolio sites</li>
-                  <li>• Write tutorials about your no-code AI solutions</li>
-                  <li>• Stay updated via no-code newsletters and AI agent platforms</li>
-                  <li>• Experiment with new no-code AI tools as they emerge</li>
+                  {finalTips.map((tip, index) => (
+                    <li key={index}>• {tip}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -467,6 +275,20 @@ const NoCodeAIAgentRoadmap = () => {
             >
               <FolderOpen size={18} className="mr-2" />
               Projects
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('faq');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${
+                activeTab === 'faq'
+                  ? 'bg-blue-500 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <FileText size={18} className="mr-2" />
+              FAQ
             </button>
           </div>
         </div>

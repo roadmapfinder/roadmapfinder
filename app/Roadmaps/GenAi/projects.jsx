@@ -9,7 +9,7 @@ const projects = [
     title: "Text Autocomplete with LSTM",
     description:
       "Learn sequence modeling by training an LSTM on text data (e.g., books, scripts) to predict the next word. Covers tokenization and sampling.",
-    url: "https://www.youtube.com/watch?v=iIm8acWm1ns" // Generative AI Full Course 2025
+    url: "https://youtu.be/z7IPBg6MyrU?si=HWtH5crk_5ROKorP" // Generative AI Full Course 2025
   },
   {
     id: "genai-autoencoder-denoiser",
@@ -17,7 +17,7 @@ const projects = [
     title: "Image Denoiser with Autoencoders",
     description:
       "Train a convolutional autoencoder to remove noise from images, learning encoder-decoder architecture and reconstruction loss.",
-    url: "https://www.youtube.com/watch?v=iIm8acWm1ns" // Included in Full Course
+    url: "https://youtu.be/JoR5HCs0n0s?si=Ep6v31Wq2VrSHk53" // Included in Full Course
   },
 
   // ---------- INTERMEDIATE PROJECTS ----------
@@ -27,7 +27,7 @@ const projects = [
     title: "Text-to-Image Generation (Stable Diffusion)",
     description:
       "Use Stable Diffusion pipeline to generate images from text prompts. Experiment with fine-tuning via DreamBooth or LoRA.",
-    url: "https://www.youtube.com/watch?v=pFXVYrdok-Y"
+    url: "https://youtu.be/x2GRE-RzmD8?si=Rz7yX4V31Hnc32A7"
   },
   {
     id: "genai-stable-diffusion-beginner",
@@ -35,7 +35,7 @@ const projects = [
     title: "Stable Diffusion Beginner's Guide",
     description:
       "Learn prompt engineering and basic workflow with Stable Diffusion for creative image generation.",
-    url: "https://www.youtube.com/watch?v=TA6Yz7_-OCc"
+    url: "https://youtu.be/dMkiOex_cKU?si=F-mEsc8Hc2s8qAf1"
   },
   {
     id: "genai-rag-chatbot",
@@ -43,7 +43,7 @@ const projects = [
     title: "Domain-Specific RAG Chatbot",
     description:
       "Build a retrieval-augmented chatbot (e.g., Medical FAQ, Programming Tutor) with LLaMA/Mistral + vector DB (FAISS/Pinecone).",
-    url: "https://www.youtube.com/watch?v=63B-3rqRFbQ"
+    url: "https://youtu.be/1ifymr7SiH8?si=TVBy6iUf8A8iU_GR"
   },
   {
     id: "genai-langchain-rag",
@@ -51,7 +51,7 @@ const projects = [
     title: "LangChain Deep Dive RAG",
     description:
       "Hands-on LangChain tutorial for building smarter RAG systems, embeddings, context handling, and memory.",
-    url: "https://www.youtube.com/watch?v=My8npHdJORw"
+    url: "https://youtu.be/sVcwVQRHIc8?si=pOEoX6fzi_EOHbbd"
   },
 
   // ---------- ADVANCED PROJECTS ----------
@@ -61,7 +61,7 @@ const projects = [
     title: "Advanced RAG with LangChain & Multi-Source Data",
     description:
       "Chain RAG flows, add external knowledge sources, and handle memory/history for domain-specific assistants.",
-    url: "https://www.youtube.com/watch?v=XXa82wxzKuA"
+    url: "https://youtu.be/2_gSXyt2108?si=dhjVNyRQKDCTsJMf"
   },
   {
     id: "genai-finetune-sd",
@@ -69,7 +69,7 @@ const projects = [
     title: "Fine-Tuning Stable Diffusion (DreamBooth/LoRA)",
     description:
       "Step-by-step tutorial on training and fine-tuning Stable Diffusion for custom text-to-image generation.",
-    url: "https://www.youtube.com/watch?v=3YhMf5if0Wk"
+    url: "https://youtu.be/SPNaP4ik9a4?si=LAwDRvBebQHIKqFj"
   }
 ];
 
