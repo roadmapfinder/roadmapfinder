@@ -3,60 +3,68 @@ import React from "react";
 
 const projects = [
   {
-    id: "portfolio-standout-2025",
+    id: "portfolio-website",
     level: "Phase 1 — Beginner",
-    title: "How to Create your UX Design Portfolio to Stand Out 2025",
+    title: "Personal Portfolio Website",
     description:
-      "Guide to building a standout portfolio site, covering wireframe → UI → interactive prototype and storytelling.",
-    url: "https://www.youtube.com/watch?v=MpmIyTMKx30",
+      "Design and prototype a personal portfolio site showcasing case studies, responsive layout, and accessibility best practices.",
+    url: "https://youtu.be/pYQBvAYnL1I?si=MJMw3ym6VAZ8dS-R",
   },
   {
-    id: "figma-crash-course-2025",
-    level: "Phase 0 — Tool Fundamentals",
-    title: "Free Figma Crash Course for Beginners 2025 | UI/UX Design",
+    id: "app-redesign",
+    level: "Phase 2 — Usability",
+    title: "Mobile App Redesign",
     description:
-      "Master Figma’s Auto Layout, components, prototyping and AI features—perfect prep before starting projects.",
-    url: "https://www.youtube.com/watch?v=1SNZRCVNizg",
+      "Redesign a cluttered app (e.g., food delivery or banking), improve navigation, run heuristic evaluation, and build a clickable prototype.",
+    url: "https://youtu.be/DyNGwhLcm0w?si=9o0FnKWXj9HrrIKk",
   },
   {
-    id: "design-system-full-course",
+    id: "design-system",
     level: "Phase 2 — Design System",
-    title: "Build a Design System – Full Course",
+    title: "Design System / Component Library",
     description:
-      "Comprehensive Figma course building a design system from scratch—tokens, components, variants.",
-    url: "https://www.youtube.com/watch?v=opTANvl9G1g",
+      "Create reusable components in Figma—buttons, forms, grids, typography, tokens, and accessibility guidelines.",
+    url: "https://youtu.be/opTANvl9G1g?si=2p3RrvzpB3Z9977K",
   },
   {
-    id: "figma-variables-setup",
-    level: "Phase 2 — Design System",
-    title: "Design System & Figma Variable Set Up – Full Tutorial",
+    id: "ecommerce-experience",
+    level: "Phase 3 — Intermediate",
+    title: "E-commerce Web/App Experience",
     description:
-      "Step-by-step walkthrough for setting up Figma variables and scaling a real design system.",
-    url: "https://www.youtube.com/watch?v=L-tpK7Eeuow",
+      "Design full user flow from browsing → cart → checkout. Solve real-world UX problems: filters, search, product pages, reviews.",
+    url: "https://youtu.be/J7g0pZXo1V8?si=MhFi3Y16fpdxscOq",
   },
   {
-    id: "fintech-mobile-design",
-    level: "Phase 3 — Advanced / Fintech Flow",
-    title: "Figma Mobile App Design Tutorial | Fintech App UI/UX",
+    id: "analytics-dashboard",
+    level: "Phase 3 — Intermediate",
+    title: "Dashboard / SaaS Tool",
     description:
-      "End-to-end modern fintech app UI design in Figma, ideal for transaction flow and checkout flows.",
-    url: "https://www.youtube.com/watch?v=oMoH6KGQ60M",
+      "Build an analytics dashboard with tables, charts, and filters. Explore dark/light mode and data visualization principles.",
+    url: "https://youtu.be/DLo5ybmRcE0?si=rxeed1pGNirSeiwz",
   },
   {
-    id: "banking-app-walkthrough",
-    level: "Phase 3 — Advanced / Fintech",
-    title: "Design a Banking App in Figma | Step by Step",
+    id: "accessible-redesign",
+    level: "Phase 4 — Advanced",
+    title: "Accessibility-Focused Redesign",
     description:
-      "Complete banking app walkthrough: onboarding flows, 2FA, UI structure—great for fintech or security flows.",
-    url: "https://www.youtube.com/watch?v=EPhAp2uW49Q",
+      "Redesign an app to meet WCAG guidelines: color contrast, keyboard navigation, screen reader compatibility, and inclusive UX.",
+    url: "https://youtu.be/QqDXDXd9y5k?si=BQ3Ueo3Sz1vQNC7m",
   },
   {
-    id: "portfolio-coaching-2025",
-    level: "Phase 1 — Beginner",
-    title: "How to Build Your First UI/UX Design Portfolio Website | Step ...",
+    id: "team-project",
+    level: "Phase 4 — Advanced",
+    title: "Collaboration Project (Industry Simulation)",
     description:
-      "End-to-end tutorial: planning, designing, prototyping and publishing a portfolio website.",
-    url: "https://www.youtube.com/watch?v=bAHuwiEZrP8",
+      "Work with peers in Figma using version control, shared libraries, critique sessions, and design documentation.",
+    url: "https://youtu.be/v3AkpgApvSI?si=uWQNdnAVzm4YLtH_",
+  },
+  {
+    id: "onboarding-microinteractions",
+    level: "Phase 5 — Industry Ready",
+    title: "Onboarding & Micro-interactions",
+    description:
+      "Design onboarding flows and add delight with micro-interactions (hover states, button animations, success feedback).",
+    url: "https://youtu.be/hHp4FGVcHjY?si=-zWpqL8kD77KL-G8",
   },
 ];
 
@@ -66,10 +74,11 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">
-            🎥 Verified UI/UX Design Tutorials (2025)
+            🎨 Industry-Ready UI/UX Projects (Learner Roadmap)
           </h2>
           <p className="mt-2 text-gray-600">
-            Carefully selected, real-world UI/UX tutorials in English—project-based from tool fundamentals to industry-ready flows.
+            Hands-on UI/UX projects structured by phases—from beginner
+            fundamentals to advanced, real-world workflows.
           </p>
         </header>
 
@@ -96,14 +105,15 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
               >
-                Watch Tutorial ▶
+                View Details ▶
               </a>
             </article>
           ))}
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          These tutorials are up-to-date (2025) and aligned with key UI/UX project phases from tool mastery to advanced fintech workflows.
+          These projects cover the complete journey of a UI/UX learner—
+          progressing from portfolio basics to advanced, industry-ready designs.
         </footer>
       </div>
     </section>

@@ -9,7 +9,7 @@ const projects = [
     title: "Simple Vlog Edit",
     description:
       "Learn basic editing techniques like trimming, timeline editing, music sync, and fade in/out in Adobe Premiere Pro.",
-    url: "https://www.youtube.com/watch?v=axuksj7FlS8",
+    url: "https://youtu.be/rLL-zb-CNoA?si=_sLlKj4y2FRLT6Np",
   },
   {
     id: "photo-slideshow-music",
@@ -17,7 +17,7 @@ const projects = [
     title: "Photo Slideshow with Music",
     description:
       "Create engaging photo slideshows with music, applying transitions and adding simple text titles.",
-    url: "https://www.youtube.com/playlist?list=PLAU_hjQazNAyhlvydcizgZe6o9MrN4o0w",
+    url: "https://youtu.be/hWZ6tcCODYY?si=m6EIYHiqmRd-q-iO",
   },
   {
     id: "social-media-reel",
@@ -25,7 +25,7 @@ const projects = [
     title: "Short Social Media Reel (30–60 sec)",
     description:
       "Learn to edit short-form content optimized for platforms like TikTok and Instagram using CapCut.",
-    url: "https://www.youtube.com/watch?v=IulghiX6TuI",
+    url: "https://youtu.be/FDOi29blAFI?si=vgrYJ5FgmQKAUhJd",
   },
 
   // 🟡 Intermediate Level
@@ -35,7 +35,7 @@ const projects = [
     title: "Mini Documentary (3–5 min)",
     description:
       "Dive into documentary-style editing, including syncing audio, adding subtitles, and applying basic color correction in DaVinci Resolve.",
-    url: "https://www.youtube.com/watch?v=uO-P_C8cJkE",
+    url: "https://youtu.be/SrJOE2pEp7A?si=8rdweEPZgRhzvA5E",
   },
   {
     id: "music-video-edit",
@@ -43,7 +43,7 @@ const projects = [
     title: "Music Video Edit",
     description:
       "Learn advanced editing techniques like speed ramping, transitions, and stylized color grading for music videos.",
-    url: "https://www.youtube.com/watch?v=Ta4nyuMvqok",
+    url: "https://youtu.be/oFxnBnmgaGs?si=F1KAT2m4U7UdhZXL",
   },
   {
     id: "event-highlight-video",
@@ -51,25 +51,18 @@ const projects = [
     title: "Event Highlight Video (Birthday/Wedding/Concert)",
     description:
       "Understand the nuances of editing event highlights, focusing on pacing, music synchronization, and emotional storytelling.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
+    url: "https://youtu.be/CmVA3cWllB8?si=dWoLmeQYc_DgwzKB",
   },
 
   // 🔵 Advanced Level
-  {
-    id: "multi-camera-interview",
-    level: "Advanced",
-    title: "Multi-Camera Interview/Podcast",
-    description:
-      "Master multi-camera editing techniques, including syncing multiple camera angles and audio tracks for interviews and podcasts.",
-    url: "https://www.youtube.com/watch?v=a_1BblRcCdo",
-  },
+
   {
     id: "commercial-ad",
     level: "Advanced",
     title: "Commercial Ad (30–60 sec)",
     description:
       "Create compelling commercial ads with product shots, voice-overs, and text animations.",
-    url: "https://www.mindluster.com/lesson/268897-video",
+    url: "https://youtu.be/pUlH1UQgK0o?si=UkofPGFYDp-eDbxP",
   },
   {
     id: "cinematic-travel-film",
@@ -77,15 +70,7 @@ const projects = [
     title: "Cinematic Travel Film",
     description:
       "Capture and edit cinematic travel footage, incorporating techniques like drone shots, slow motion, and color grading.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
-  },
-  {
-    id: "motion-graphics-explainer",
-    level: "Advanced",
-    title: "Motion Graphics Explainer Video",
-    description:
-      "Combine stock footage with motion graphics to create engaging explainer videos.",
-    url: "https://www.mindluster.com/lesson/268897-video",
+    url: "https://youtu.be/AbNmaVD38Z0?si=usWYuea0e9TfW4UF",
   },
 
   // 🏆 Industry-Ready Projects
@@ -95,7 +80,7 @@ const projects = [
     title: "Corporate Promo Video",
     description:
       "Produce professional corporate promo videos with scripting, voiceovers, and branded graphics.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
+    url: "https://youtu.be/GnlL8IHUz_E?si=tAYFqoeCoGrSHF47",
   },
   {
     id: "short-film",
@@ -103,32 +88,9 @@ const projects = [
     title: "Short Film (5–15 min)",
     description:
       "Collaborate on editing short films, focusing on storytelling, dialogue synchronization, and pacing.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
-  },
-  {
-    id: "youtube-content-package",
-    level: "Industry-Ready",
-    title: "YouTube Content Package",
-    description:
-      "Edit YouTube content with branding elements like intros, outros, and lower thirds.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
-  },
-  {
-    id: "event-coverage",
-    level: "Industry-Ready",
-    title: "Event Coverage (Conference/Wedding)",
-    description:
-      "Handle multi-camera setups and deliver highlight reels and long-form versions for events.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
-  },
-  {
-    id: "showreel",
-    level: "Industry-Ready",
-    title: "Showreel (1–2 min)",
-    description:
-      "Compile your best work into a professional showreel to showcase your skills to potential clients.",
-    url: "https://www.udemy.com/course/learn-video-editing-beginner-to-advanced-in-hindi/",
-  },
+    url: "https://youtu.be/8QCK_qEp_PI?si=fWDuvUgRUpCR5YP1",
+  }
+
 ];
 
 export default function Projects() {
