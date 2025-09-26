@@ -23,7 +23,8 @@
     "Prompt Engineering",
     "AI Agents",
     "DevOps",
-    "Aptitude"
+    "Aptitude",
+    "Software Architecture"
     
 
   ],
@@ -1014,7 +1015,7 @@
     },
     {
       "id": 66,
-      "category": "App Development",
+      "category": "Programming",
       "title": "Swift complete course",
       "level": "Beginner to Advanced",
       "rating": 4.9,
@@ -1195,6 +1196,18 @@
       "badge": "HOT",
       "language": "Hindi",
       "docs": "/Docs/aptitude"
+    },
+    {
+      "id": 97,
+      "category": "Software Architecture",
+      "title": "Complete Software Architecture course in depth",
+      "level": "Beginner to Intermediate",
+      "rating": 4.7,
+      "image": "software",
+      "videoId": "https://youtu.be/ywrENvIPfdo",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/software"
     }
     
 

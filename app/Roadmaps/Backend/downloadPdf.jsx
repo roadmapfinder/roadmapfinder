@@ -216,14 +216,7 @@ const RoadmapPDFDocument = ({ phases }) => (
         </View>
       ))}
 
-      {/* Footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
-        <Text style={styles.footerText}>
-          You've completed the Product Designer Roadmap and are now ready to take on professional design challenges.
-        </Text>
-      </View>
-
+     
       {/* Page Number */}
       <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
         `${pageNumber} / ${totalPages}`
@@ -299,11 +292,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
             <Text style={styles.subtitle}>{customSubtitle}</Text>
           </View>
 
-          {/* Conditional Watermark */}
-          {includeWatermark && (
-            <Text style={styles.watermark}>ProductDesignerRoadmap.com</Text>
-          )}
-
+          
           {/* Content remains the same */}
           {phases.map((phase, index) => (
             <View key={phase.id} wrap={false}>

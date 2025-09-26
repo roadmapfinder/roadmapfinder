@@ -2,40 +2,85 @@ import React from "react";
 
 const projects = [
   {
-    id: "counter-app",
-    level: "Phase 1 — Fundamentals",
-    title: "Counter App (useState, events)",
+    id: "react-beginner-1",
+    level: "Phase 1 — Beginner (Foundations)",
+    title: "Portfolio Website (with Dark/Light Mode)",
     description:
-      "Short, beginner-friendly walkthrough demonstrating useState to build a clickable counter.",
-    cta: "Watch tutorial",
-    url: "https://www.youtube.com/watch?v=WMxRwmj_wxE" // React Counter App Tutorial (2025)
+      "Build a personal portfolio to showcase projects. Learn JSX, components, props, state, event handling, conditional rendering, and styling with CSS-in-JS or Tailwind.",
+    cta: "Explore project",
+    url: "https://youtu.be/bOk2qfkq2Sk?si=ge2dGykCeJJkZh0k"
   },
   {
-    id: "todo-app",
-    level: "Phase 1 — CRUD Basics",
-    title: "Todo List App (CRUD, Context/useReducer, Hindi available)",
+    id: "react-beginner-2",
+    level: "Phase 1 — Beginner (Foundations)",
+    title: "Task Manager",
     description:
-      "Build a todo list with create, edit, delete tasks. Hindi & English versions available. Learn Context/useReducer for scalable state.",
-    cta: "Watch tutorial",
-    url: "https://www.youtube.com/watch?v=mF0fBaY-lYc" // React v19 Todo List in Hindi
+      "A Kanban-style task manager with CRUD, useState/useReducer, and drag-and-drop using react-beautiful-dnd. Great practice for complex state handling.",
+    cta: "Explore project",
+    url: "https://youtu.be/3RWMktZNsJQ?si=er188gqsJgW7z6Eu"
   },
   {
-    id: "weather-app",
-    level: "Phase 2 — API Integration",
-    title: "Weather App (API fetching, loading/error states)",
+    id: "react-beginner-3",
+    level: "Phase 1 — Beginner (Foundations)",
+    title: "Weather Dashboard",
     description:
-      "Professional-looking weather dashboard using OpenWeather API. Covers fetching, useEffect, error & loading handling.",
-    cta: "Watch tutorial",
-    url: "https://www.youtube.com/watch?v=ViYs8tE2RjU" // React Weather App Tutorial
+      "Fetch live weather using APIs. Practice async/await, conditional rendering, and error boundaries. Extend with geolocation and multiple city comparison.",
+    cta: "Explore project",
+    url: "https://youtu.be/zs1Nq2s_uy4?si=CfMXXTIbrULoujFf"
   },
   {
-    id: "movie-app",
-    level: "Phase 2 — API + UI Rendering",
-    title: "Movie Search App (OMDb API, Hindi support)",
+    id: "react-intermediate-1",
+    level: "Phase 2 — Intermediate (Applied Concepts)",
+    title: "Blogging Platform",
     description:
-      "Movie search app using fetch + OMDb backend. Learn API integration, rendering results, posters & ratings. Hindi tutorial included.",
-    cta: "Watch tutorial",
-    url: "https://www.youtube.com/watch?v=YsPqjYGauns" // React Movie App Tutorial (Hindi, Piyush Garg)
+      "A blog app with routing, authentication (JWT), and global state via Context or Redux. Add markdown editor and image uploads for real-world use.",
+    cta: "Explore project",
+    url: "https://youtu.be/yukmW5T_62I?si=_CHoJtsoKEJOllp5"
+  },
+  {
+    id: "react-intermediate-2",
+    level: "Phase 2 — Intermediate (Applied Concepts)",
+    title: "E-Commerce Storefront",
+    description:
+      "Product listing with filters, cart, and checkout. Learn Redux Toolkit/Zustand, pagination, and authentication. Extend with Stripe integration and order tracking.",
+    cta: "Explore project",
+    url: "https://youtu.be/4sc6BhgS_Co?si=Wms-Lu6PT5OAzXx4"
+  },
+  {
+    id: "react-intermediate-3",
+    level: "Phase 2 — Intermediate (Applied Concepts)",
+    title: "Real-Time Chat App",
+    description:
+      "Messaging app using WebSockets or Firebase. Covers list rendering, form control, and infinite scroll. Extend with typing indicators and read receipts.",
+    cta: "Explore project",
+    url: "https://youtu.be/Xn_j5sE6M_k?si=EO4FHJfCy8QcvKcf"
+  },
+  {
+    id: "react-advanced-1",
+    level: "Phase 3 — Advanced (Industry-Level Challenges)",
+    title: "Project Management Dashboard (Jira Lite)",
+    description:
+      "Jira-style Kanban board with nested routes, role-based auth, and API integration. Extend with charts (Recharts/Victory) for analytics.",
+    cta: "Explore project",
+    url: "https://youtu.be/R5dBYINNouY?si=FjLW2Q2BnX6p5y_D"
+  },
+  {
+    id: "react-advanced-2",
+    level: "Phase 3 — Advanced (Industry-Level Challenges)",
+    title: "Video Streaming Platform (YouTube Lite)",
+    description:
+      "Stream videos with infinite scroll, comments, likes, and subscriptions. Extend with recommendation system via backend APIs.",
+    cta: "Explore project",
+    url: "https://youtu.be/Hn0uZwjghng?si=FMLvCVnst7pV-sBf"
+  },
+  {
+    id: "react-advanced-3",
+    level: "Phase 3 — Advanced (Industry-Level Challenges)",
+    title: "SaaS Analytics Dashboard",
+    description:
+      "Enterprise-style analytics dashboard with data visualizations, lazy loading, and RBAC. Extend with CSV/PDF exports and CI/CD deployment.",
+    cta: "Explore project",
+    url: "https://youtu.be/jx5hdo50a2M?si=qu6Dp-eJWB9k-PRD"
   }
 ];
 
@@ -44,12 +89,12 @@ export default function ProjectCards() {
     <section className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            🎯 React Projects Path — Beginner → API Apps
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">
+            ⚛️ React Projects Path — Beginner → Industry-Ready
           </h2>
           <p className="mt-2 text-slate-600 max-w-2xl">
-            Follow these projects and their step-by-step YouTube tutorials to
-            move from React fundamentals to real-world apps with APIs.
+            Build these projects step by step to progress from React foundations
+            to enterprise-grade apps with complex real-world challenges.
           </p>
         </header>
 
@@ -71,7 +116,7 @@ export default function ProjectCards() {
                   className="text-xs text-slate-400 hover:text-blue-600 transition"
                   aria-label={`Open tutorial for ${p.title}`}
                 >
-                  YouTube ▶
+                  Docs ▶
                 </a>
               </div>
 
@@ -101,19 +146,24 @@ export default function ProjectCards() {
                     strokeWidth={2}
                     aria-hidden="true"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
                   </svg>
                 </a>
 
-                <span className="text-xs text-slate-400">~20–60 mins</span>
+                <span className="text-xs text-slate-400">~1–4 weeks</span>
               </div>
             </article>
           ))}
         </div>
 
         <footer className="mt-10 text-sm text-slate-500">
-          Tip: Do each project in order, commit on GitHub, and upgrade Todo/Weather apps with features
-          like dark mode, search filters, or pagination.
+          Tip: Don’t just build — scale! Add features like role-based access,
+          offline-first patterns, or CI/CD pipelines to simulate real-world
+          engineering challenges.
         </footer>
       </div>
     </section>

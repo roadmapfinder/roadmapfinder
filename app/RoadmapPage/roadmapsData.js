@@ -25,7 +25,10 @@ import {
   Layers,
   Box,
   Square,
-  PenBox
+  PenBox,
+  BarChart3,
+  TrendingUp,
+   Palette 
   
   
 } from "lucide-react";

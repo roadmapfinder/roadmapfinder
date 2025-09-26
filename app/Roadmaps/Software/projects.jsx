@@ -89,13 +89,12 @@ export default function ProjectCards() {
     <section className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">
             🏗 Software Architect Projects Path — Beginner → Industry-Ready
           </h2>
           <p className="mt-2 text-slate-600 max-w-2xl">
             Build these projects step by step to progress from monolithic
-            foundations to enterprise-grade SaaS systems. Each project aligns
-            with real-world architectural concepts.
+            foundations to enterprise-grade SaaS systems. 
           </p>
         </header>
 

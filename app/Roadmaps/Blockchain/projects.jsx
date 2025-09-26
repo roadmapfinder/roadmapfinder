@@ -1,110 +1,167 @@
-// components/Projects.jsx
 import React from "react";
 
 const projects = [
   {
-    id: "phase1-toy-blockchain",
-    level: "Phase 1 — Beginner",
-    title: "Toy Blockchain (PoW + Mempool + P2P Gossip)",
+    id: "blockchain-beginner-1",
+    level: "Phase 1 — Beginner (Foundations)",
+    title: "Basic Wallet & Transaction Tracker",
     description:
-      "Implement a simple blockchain with proof-of-work, transaction mempool, and peer-to-peer gossip networking. Focus on consensus & data structures.",
-    url: "https://www.youtube.com/watch?v=j66ib9b35XI" // Blockchain PoW in Python
+      "Learn Ethereum, Ethers.js/Web3.js, and connect to MetaMask. Build a wallet interface to track transactions and balances. Extend with ENS name resolution and token balances for more complexity.",
+    cta: "Explore project",
+    url: "https://youtu.be/x5FHbr0Em5A?si=sBh83jp9ZKqa7ilr"
   },
   {
-    id: "phase2-erc20-token",
-    level: "Phase 2 — Beginner",
-    title: "ERC-20 Token + Unit Tests + Faucet",
+    id: "blockchain-beginner-2",
+    level: "Phase 1 — Beginner (Foundations)",
+    title: "Simple Voting DApp (Decentralized Polls)",
     description:
-      "Write, compile, deploy an ERC-20 token on testnet using Hardhat. Learn ABI interaction, unit testing, and deployment workflows.",
-    url: "https://www.quicknode.com/guides/ethereum-development/smart-contracts/how-to-create-and-deploy-an-erc20-token" // QuickNode tutorial
+      "Create a DApp with Solidity smart contracts for decentralized voting. Learn CRUD on blockchain, event logs, and contract deployment. Add wallet-based authentication and double-vote prevention to boost complexity.",
+    cta: "Explore project",
+    url: "https://youtu.be/v-Fa4Es9rDE?si=3sz4AdfojUN76X3V"
   },
   {
-    id: "phase3-nft-marketplace",
-    level: "Phase 3 — Intermediate",
-    title: "NFT Marketplace (Mint / Buy / Sell / Royalties)",
+    id: "blockchain-beginner-3",
+    level: "Phase 1 — Beginner (Foundations)",
+    title: "ERC-20 Token Deployment",
     description:
-      "Build a full NFT marketplace with smart contracts (ERC-721) using OpenZeppelin. Handle minting, buying, selling, and events efficiently.",
-    url: "https://chain.link/tutorials/how-to-build-an-nft-marketplace-with-hardhat-and-solidity" // Chainlink NFT Marketplace
+      "Deploy your own ERC-20 token on Ethereum. Learn contract writing, gas optimization, and tokenomics. Extend with minting/burning functions and token transfer events UI.",
+    cta: "Explore project",
+    url: "https://youtu.be/88-hpZE4OU8?si=pzneX3Xp0tHwnVdI"
   },
   {
-    id: "phase4-multisig-timelock",
-    level: "Phase 4 — Intermediate",
-    title: "Multi-sig Wallet + Timelock",
+    id: "blockchain-intermediate-1",
+    level: "Phase 2 — Intermediate (Applied Concepts)",
+    title: "NFT Marketplace (OpenSea Lite)",
     description:
-      "Create a secure Gnosis-style multi-signature wallet with timelock and proxy upgradeability. Focus on access control and governance patterns.",
-    url: "https://forum.openzeppelin.com/t/tutorial-on-using-a-gnosis-safe-multisig-with-a-timelock-to-upgrade-contracts-and-use-functions-in-a-proxy-contract/7272" // OpenZeppelin Forum
+      "Build an NFT marketplace using ERC-721/ERC-1155 tokens, IPFS/Pinata for file storage, and contract event handling. Boost complexity with bidding and auction features.",
+    cta: "Explore project",
+    url: "https://youtu.be/oJdGoAirTY4?si=cnmVrsQJmwAWhcen"
   },
   {
-    id: "phase5-dex-amm",
-    level: "Phase 5 — Advanced",
-    title: "Decentralized Exchange (AMM Clone + Flashloan)",
+    id: "blockchain-intermediate-2",
+    level: "Phase 2 — Intermediate (Applied Concepts)",
+    title: "DeFi Lending Platform (Aave Lite)",
     description:
-      "Develop an AMM-style DEX with swap, liquidity pools, and k-constant math. Add flashloan detection and tests. Focus on precision & economic attacks.",
-    url: "https://www.youtube.com/watch?v=FJEVuhyywI8" // Flash Loans & Arbitrage on Uniswap V3
+      "Develop a DeFi platform with smart contracts for lending and borrowing. Learn about collateral, liquidity pools, and interest calculations. Add liquidation logic for more advanced functionality.",
+    cta: "Explore project",
+    url: "https://youtu.be/d1ocEqWTU78?si=76rCmZs2y3xicy50"
   },
   {
-    id: "phase6-layer2-rollup",
-    level: "Phase 6 — Advanced",
-    title: "Layer-2 Experiment (Optimistic Rollup)",
+    id: "blockchain-intermediate-3",
+    level: "Phase 2 — Intermediate (Applied Concepts)",
+    title: "DAO Governance Platform",
     description:
-      "Build a simple optimistic-rollup prototype or zk-proof flow. Learn sequencing, fraud-proof flow, batching, and data availability.",
-    url: "https://www.youtube.com/watch?v=PcgAKoUKRv4" // Launch your own Rollup (OP Stack)
+      "Create a DAO with governance tokens, proposal execution, and voting mechanisms. Learn decentralized organization frameworks. Add quadratic voting and proposal treasury to increase complexity.",
+    cta: "Explore project",
+    url: "https://youtu.be/t7futl5D4rs?si=DG2sfrAywRpq4RX0"
   },
   {
-    id: "phase7-security-audit",
-    level: "Phase 7 — Advanced",
-    title: "Security Audit & Formal Check",
+    id: "blockchain-advanced-1",
+    level: "Phase 3 — Advanced (Industry-Level Challenges)",
+    title: "Cross-Chain Bridge (Token Swap)",
     description:
-      "Pick a deployed smart contract and run Slither, Echidna, fuzz tests, and MythX. Prepare a professional audit report. Focus on production readiness.",
-    url: "https://www.youtube.com/watch?v=TmZ8gH-toX0" // Smart Contract Audit tutorial
+      "Build a cross-chain bridge for token swaps using oracles (Chainlink) and wrapped tokens. Prepare for interoperability challenges. Extend with multi-chain liquidity pools for scalability.",
+    cta: "Explore project",
+    url: "https://youtu.be/7W9Ts36Dhco?si=szxE0o6W1-bCS_t_"
+  },
+  {
+    id: "blockchain-advanced-2",
+    level: "Phase 3 — Advanced (Industry-Level Challenges)",
+    title: "Layer-2 Payment Channel (Lightning/State Channels)",
+    description:
+      "Implement off-chain payment channels to enable fast, scalable transactions. Learn dispute resolution and rollups. Extend with zkRollups or optimistic rollups for advanced scaling.",
+    cta: "Explore project",
+    url: "https://youtu.be/rAhe_b-CJZU?si=sCgPLtiZmuFfbuX7"
+  },
+  {
+    id: "blockchain-advanced-3",
+    level: "Phase 3 — Advanced (Industry-Level Challenges)",
+    title: "Full Web3 SaaS dApp (Production Ready)",
+    description:
+      "Develop a decentralized freelancing platform (Upwork on blockchain). Covers smart contracts, React/Next.js frontend, wallet integration, gas optimization, and security audits. Boost with multi-sig escrow and cross-chain payments.",
+    cta: "Explore project",
+    url: "https://youtu.be/zi0iR3UN-u0?si=jQ_v9wvFv5qzE6yD"
   }
 ];
 
-export default function Projects() {
+export default function ProjectCards() {
   return (
-    <section className="bg-gray-50 py-12 min-h-screen">
+    <section className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <header className="mb-8 text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900">
-            ⛓️ Blockchain Full-Stack Project Roadmap
+        <header className="mb-8">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">
+            🔗 Blockchain Projects Path — Beginner → Industry-Ready
           </h2>
-          <p className="mt-2 text-gray-600">
-            Step through beginner to advanced blockchain projects with latest tutorials (Hindi & English). 
-            Build, deploy, audit, and scale your own dApps and blockchain systems.
+          <p className="mt-2 text-slate-600 max-w-2xl">
+            Build these blockchain projects step by step to progress from wallet basics
+            to enterprise-grade Web3 SaaS applications.
           </p>
         </header>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (
             <article
               key={p.id}
-              className="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-transform"
+              className="group bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-transform transform hover:-translate-y-1"
               aria-labelledby={`${p.id}-title`}
             >
-              <span className="inline-block text-xs font-medium bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">
-                {p.level}
-              </span>
+              <div className="flex items-start justify-between">
+                <span className="inline-block text-xs font-medium bg-blue-50 text-indigo-700 px-2 py-1 rounded-full">
+                  {p.level}
+                </span>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate-400 hover:text-blue-600 transition"
+                  aria-label={`Open tutorial for ${p.title}`}
+                >
+                  Docs ▶
+                </a>
+              </div>
+
               <h3
                 id={`${p.id}-title`}
-                className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-indigo-600"
+                className="mt-4 text-lg font-semibold text-slate-900 group-hover:text-blue-600"
               >
                 {p.title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm">{p.description}</p>
-              <a
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
-              >
-                Watch Tutorial ▶
-              </a>
+
+              <p className="mt-3 text-sm text-slate-600">{p.description}</p>
+
+              <div className="mt-5 flex items-center justify-between">
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-blue-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                  {p.cta}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </a>
+
+                <span className="text-xs text-slate-400">~2–6 weeks</span>
+              </div>
             </article>
           ))}
         </div>
 
-        <footer className="mt-10 text-sm text-gray-500 text-center">
-          Follow the sequence, code along, and polish top 2–3 projects into portfolio-ready case studies.
+        <footer className="mt-10 text-sm text-slate-500">
+          Tip: Focus on smart contract security, gas optimization, and integration with Web3 frontends to mimic real-world blockchain projects.
         </footer>
       </div>
     </section>
