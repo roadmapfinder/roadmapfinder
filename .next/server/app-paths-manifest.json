@@ -1,5 +1,6 @@
 {
-  "/Courses/page": "app/Courses/page.js",
-  "/Docs/nest/page": "app/Docs/nest/page.js",
-  "/Roadmaps/Graphic/page": "app/Roadmaps/Graphic/page.js"
+  "/Roadmaps/Angular/page": "app/Roadmaps/Angular/page.js",
+  "/Roadmaps/Kotlin/page": "app/Roadmaps/Kotlin/page.js",
+  "/Roadmaps/Next/page": "app/Roadmaps/Next/page.js",
+  "/page": "app/page.js"
 }

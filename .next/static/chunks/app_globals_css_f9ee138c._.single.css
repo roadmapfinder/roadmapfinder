@@ -6529,6 +6529,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-orange-600:hover {
+      background-color: var(--color-orange-600);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-orange-700:hover {
       background-color: var(--color-orange-700);
     }
@@ -7060,6 +7066,10 @@
 
   .disabled\:bg-green-400:disabled {
     background-color: var(--color-green-400);
+  }
+
+  .disabled\:bg-orange-400:disabled {
+    background-color: var(--color-orange-400);
   }
 
   .disabled\:bg-red-300:disabled {

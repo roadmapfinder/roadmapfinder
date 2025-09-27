@@ -406,15 +406,7 @@ export const roadmapsData = [
     category: "trending",
     description: "User interface and experience design"
   },
-  {
-    id: "mobile",
-    title: "Mobile App Development",
-    icon: <Smartphone className="w-5 h-5 text-white" />,
-    link: "/Roadmaps/APP",
-    bgColor: "from-orange-500 to-red-500",
-    category: "trending",
-    description: "Cross-platform mobile development"
-  },
+
   {
     id: "cloud",
     title: "Cloud Computing",

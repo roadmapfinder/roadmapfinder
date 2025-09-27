@@ -216,13 +216,7 @@ const RoadmapPDFDocument = ({ phases }) => (
         </View>
       ))}
 
-      {/* Footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
-        <Text style={styles.footerText}>
-          You've completed the Product Designer Roadmap and are now ready to take on professional design challenges.
-        </Text>
-      </View>
+     
 
       {/* Page Number */}
       <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
