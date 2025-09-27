@@ -2,88 +2,54 @@ import React from "react";
 
 const projects = [
   {
-    id: "social-media-graphics",
+    id: "logo-brand-identity",
     level: "Beginner",
-    title: "Social Media Graphics",
+    title: "Logo & Brand Identity",
     description:
-      "Create engaging social media posts, banners, and thumbnails using Canva or Photoshop, focusing on typography, color schemes, and layout.",
+      "Design a logo and a basic brand identity system including typography and color palette, focusing on scalability and vector design.",
     tutorials: [
       {
-        title: "Graphic Design Full Course 2025 - Free Tutorial in Hindi | Canva Tutorial for Beginners",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-      {
-        title: "Canva FULL Course For Beginners 2025 [FREE] | How To Use Canva",
-        url: "https://www.youtube.com/watch?v=EI1yezMQEFg",
+       
+        url: "https://youtu.be/9jmOg0i5Jwo?si=IBxS774anmV74_LY",
       },
     ],
   },
   {
-    id: "basic-logo-design",
+    id: "business-stationery",
     level: "Beginner",
-    title: "Basic Logo Design",
+    title: "Business Stationery Kit",
     description:
-      "Design logos for fictional brands using Illustrator or Canva, learning vector shapes, symbols, and brand identity basics.",
+      "Design business cards, letterheads, and envelopes to learn about consistency across print materials.",
     tutorials: [
       {
-        title: "Adobe Illustrator Complete Course (7 Hours) in Hindi",
-        url: "https://www.youtube.com/watch?v=5_aSDG1Ppqs",
-      },
-      {
-        title: "Adobe Illustrator Complete Course in Urdu / Hindi",
-        url: "https://www.youtube.com/watch?v=OIsIrnnLywo",
+        
+        url: "https://youtu.be/HoWCgiwvtxk?si=TyE8QNEubkxFy2fz",
       },
     ],
   },
   {
-    id: "simple-poster-design",
+    id: "social-media-pack",
     level: "Beginner",
-    title: "Simple Poster Design",
+    title: "Social Media Campaign Pack",
     description:
-      "Design event or awareness posters focusing on layout, visual hierarchy, and typography using tools like InDesign or Canva.",
+      "Create Instagram carousels, YouTube thumbnails, and LinkedIn posts focusing on aspect ratios and engaging layouts.",
     tutorials: [
       {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
+      
+        url: "https://youtu.be/YZIT10mgQiQ?si=f_kgj3kgZfVqp0eS",
       },
     ],
   },
   {
-    id: "business-card-stationery",
-    level: "Beginner",
-    title: "Business Card & Stationery",
-    description:
-      "Create business cards and letterheads for fictional brands, focusing on branding, grid systems, and typography.",
-    tutorials: [
-      {
-        title: "Free Graphic Designing Full Course 2025 | Canva Free Tutorial",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
-  {
-    id: "full-brand-identity",
+    id: "poster-flyer",
     level: "Intermediate",
-    title: "Full Brand Identity",
+    title: "Poster & Flyer Design",
     description:
-      "Develop a complete brand identity for a startup or NGO, including logo, color scheme, typography, and brand guidelines.",
+      "Design an event poster and a promotional flyer, focusing on visual hierarchy, print layout, and typography.",
     tutorials: [
       {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
-  {
-    id: "brochure-flyer-design",
-    level: "Intermediate",
-    title: "Brochure / Flyer Design",
-    description:
-      "Design multi-page brochures or flyers, such as travel agency brochures or restaurant menus, using InDesign or Canva.",
-    tutorials: [
-      {
-        title: "Graphic Design Course",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
+        
+        url: "https://youtu.be/GaBFxYJiLSk?si=uSZwMRcmY9LVtXWP",
       },
     ],
   },
@@ -92,131 +58,68 @@ const projects = [
     level: "Intermediate",
     title: "Packaging Design",
     description:
-      "Create product packaging designs, such as chocolate boxes or perfume bottles, focusing on mockups and dieline understanding.",
+      "Create product packaging with dielines and 3D mockups, applying branding effectively on real-world objects.",
     tutorials: [
       {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
+        
+        url: "https://youtu.be/p9zce18Wxcw?si=1RrZrjvNJ2eCL6Va",
       },
     ],
   },
   {
-    id: "social-media-campaign",
+    id: "ui-ux-concept",
     level: "Intermediate",
-    title: "Social Media Campaign",
+    title: "UI/UX Design Concept",
     description:
-      "Develop a set of 5–10 posts for a campaign across platforms like Instagram, LinkedIn, or Twitter, ensuring post consistency and branding.",
+      "Design a mobile app or website mockup using Figma or Adobe XD, learning wireframes, usability, and responsive design.",
     tutorials: [
       {
-        title: "Free Graphic Designing Full Course 2025 | Canva Free Tutorial",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
+        url: "https://youtu.be/esbdyyEvkxw?si=R9B0dT8Gev4Tf_bh",
       },
     ],
   },
   {
-    id: "website-mobile-ui-ux",
+    id: "infographic-design",
+    level: "Intermediate",
+    title: "Infographic Design",
+    description:
+      "Create an infographic to present data and statistics, focusing on clarity, icons, and storytelling.",
+    tutorials: [
+      {
+        
+        url: "https://www.youtube.com/live/In4AcqMw6NE?si=dP08jes__PPtkwJO",
+      },
+    ],
+  },
+  {
+    id: "brochure-magazine",
     level: "Advanced",
-    title: "Website & Mobile UI/UX",
+    title: "Brochure / Magazine Layout",
     description:
-      "Redesign a website or create a mobile app interface, focusing on wireframes, prototypes, and responsive design using Figma or Adobe XD.",
+      "Design a multi-page brochure or magazine layout using InDesign, applying grid systems and editorial design.",
     tutorials: [
       {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
+     
+        url: "https://youtu.be/vM7Lf6paots?si=EqXVnRctajJ78tKv",
       },
     ],
   },
   {
-    id: "motion-graphics-animated-posts",
+    id: "ad-campaign",
     level: "Advanced",
-    title: "Motion Graphics & Animated Posts",
+    title: "Ad Campaign (Print + Digital)",
     description:
-      "Create animated social media posts or logo reveal animations using After Effects, focusing on typography animation and short video production.",
+      "Develop a consistent campaign across billboard, web banner, and social media ads, focusing on scalability.",
     tutorials: [
       {
-        title: "Free Graphic Designing Full Course 2025 | Canva Free Tutorial",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
+        
+        url: "https://youtu.be/4uqcF7d0hLM?si=2f1e1jZnVDb9gQ2y",
       },
     ],
-  },
-  {
-    id: "infographics-data-visualization",
-    level: "Advanced",
-    title: "Infographics & Data Visualization",
-    description:
-      "Design infographics or visualize data trends, focusing on hierarchy, icons, and visual storytelling using Illustrator or Canva.",
-    tutorials: [
-      {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
-  {
-    id: "illustration-projects",
-    level: "Advanced",
-    title: "Illustration Projects",
-    description:
-      "Create custom illustrations for posters or character designs for games or apps, focusing on digital illustration techniques using Procreate or Illustrator.",
-    tutorials: [
-      {
-        title: "Adobe Illustrator Complete Course (7 Hours) in Hindi",
-        url: "https://www.youtube.com/watch?v=5_aSDG1Ppqs",
-      },
-    ],
-  },
-  {
-    id: "full-branding-case-study",
-    level: "Professional",
-    title: "Full Branding Case Study",
-    description:
-      "Develop a comprehensive brand identity, including logo, website UI, social posts, stationery, and packaging, and present it as a case study.",
-    tutorials: [
-      {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
-  {
-    id: "cross-platform-campaign",
-    level: "Professional",
-    title: "Cross-Platform Campaign",
-    description:
-      "Launch a campaign with animated posts, a website landing page, and an app interface, demonstrating versatility in real-world workflow.",
-    tutorials: [
-      {
-        title: "Free Graphic Designing Full Course 2025 | Canva Free Tutorial",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
-  {
-    id: "freelance-client-simulation",
-    level: "Professional",
-    title: "Freelance/Client Simulation",
-    description:
-      "Take real or fictional client briefs and design brand identity, packaging, and marketing materials, simulating a freelance project.",
-    tutorials: [
-      {
-        title: "Graphic Design Full Course | Learn Graphic Design from Beginner to Advanced",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
-  {
-    id: "ai-enhanced-design-projects",
-    level: "Professional",
-    title: "AI-Enhanced Design Projects",
-    description:
-      "Generate design concepts using AI tools like Adobe Firefly, MidJourney, or DALL·E, and refine them in Illustrator or Photoshop.",
-    tutorials: [
-      {
-        title: "Free Graphic Designing Full Course 2025 | Canva Free Tutorial",
-        url: "https://www.youtube.com/watch?v=csV7zrrbvwQ",
-      },
-    ],
-  },
+  }
+ 
+  
+  
 ];
 
 export default function Projects() {
@@ -228,7 +131,8 @@ export default function Projects() {
             🎨 Graphic Design Project Roadmap: Beginner → Industry-Ready
           </h2>
           <p className="mt-2 text-gray-600">
-            A curated list of project ideas with tutorials to guide you from beginner to professional in graphic design.
+            A curated list of project ideas with tutorials to guide you from
+            beginner to professional in graphic design.
           </p>
         </header>
 
@@ -248,7 +152,9 @@ export default function Projects() {
               >
                 {project.title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm">{project.description}</p>
+              <p className="mt-2 text-gray-600 text-sm">
+                {project.description}
+              </p>
               <ul className="mt-4 space-y-2">
                 {project.tutorials.map((tutorial, index) => (
                   <li key={index}>
@@ -258,7 +164,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:underline"
                     >
-                      {tutorial.title}
+                        Explore Tutorial                  
                     </a>
                   </li>
                 ))}
@@ -268,7 +174,8 @@ export default function Projects() {
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          These tutorials have been verified and are relevant, up-to-date, and project-focused.
+          These tutorials have been verified and are relevant, up-to-date, and
+          project-focused.
         </footer>
       </div>
     </section>

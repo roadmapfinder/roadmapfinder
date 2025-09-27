@@ -1,3 +1,5 @@
 {
-  "/Roadmaps/UIUX/page": "app/Roadmaps/UIUX/page.js"
+  "/Courses/page": "app/Courses/page.js",
+  "/Docs/nest/page": "app/Docs/nest/page.js",
+  "/Roadmaps/Graphic/page": "app/Roadmaps/Graphic/page.js"
 }

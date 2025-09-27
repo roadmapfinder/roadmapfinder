@@ -933,13 +933,25 @@
       "id": 61,
       "category": "Frameworks & Libraries",
       "title": "Spring boot complete course",
-      "level": "Beginner to Intermediate",
+      "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "springboot",
       "videoId": "https://youtu.be/1993zSY5UBI?list=PLA3GkZPtsafacdBLdd3p1DyRd5FGfr3Ue",
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/springboot"
+    },
+    {
+      "id": 61,
+      "category": "Frameworks & Libraries",
+      "title": "Nest js complete course",
+      "level": "Beginner to Intermediate",
+      "rating": 4.9,
+      "image": "nest",
+      "videoId": "https://youtube.com/watch?v=KMg_Qg0WCds",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/nest"
     },
     {
       "id": 62,
