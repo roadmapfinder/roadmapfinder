@@ -1,106 +1,77 @@
+"use client";
 import React from "react";
 
-const projects = [
-  // ---------- BEGINNER IOS PROJECTS ----------
-  {
-    id: "ios-todo-app",
-    level: "iOS — Beginner",
-    title: "To-Do List App (SwiftUI & Combine)",
-    description:
-      "Building a dynamic to-do list app using SwiftUI and Combine. Learn State management, @State, @ObservedObject, and @Published.",
-    url: "https://www.youtube.com/playlist?list=PLb5R4QC2DtFuRFJ35uPMhpY90s0VMNR-i"
-  },
-  {
-    id: "ios-weather-app",
-    level: "iOS — Beginner",
-    title: "Weather App (SwiftUI & OpenWeatherMap API)",
-    description:
-      "Fetch real-time weather data using the OpenWeatherMap API with SwiftUI. Learn networking, JSON parsing, and SwiftUI views.",
-    url: "https://www.youtube.com/watch?v=HPQFYFkQbbA"
-  },
-  {
-    id: "ios-notes-app",
-    level: "iOS — Beginner",
-    title: "Notes App with CoreData",
-    description:
-      "Implement Core Data for data persistence in a notes app. Learn CRUD operations, Core Data setup, and data binding.",
-    url: "https://www.youtube.com/watch?v=wAy3S1MnKYY"
-  },
-  {
-    id: "ios-movie-app",
-    level: "iOS — Beginner",
-    title: "Movie/TV Show App (TMDb API & SwiftUI)",
-    description:
-      "Integrate the TMDb API to display movies and TV shows. Learn networking, JSON parsing, and SwiftUI UI design.",
-    url: "https://www.youtube.com/watch?v=cTNhMgNV53s"
-  },
-  {
-    id: "ios-calculator-app",
-    level: "iOS — Beginner",
-    title: "Calculator App (SwiftUI)",
-    description:
-      "Build a basic calculator using SwiftUI. Learn button handling, arithmetic operations, and state management.",
-    url: "https://www.youtube.com/watch?v=U9Z4gCQYCms"
-  },
-  {
-    id: "ios-quiz-app",
-    level: "iOS — Beginner",
-    title: "Quiz App (SwiftUI & Supabase)",
-    description:
-      "Create a quiz app with backend integration using Supabase. Learn networking, data fetching, and SwiftUI design.",
-    url: "https://www.youtube.com/watch?v=N2loWpIIIu4"
-  },
-  {
-    id: "ios-currency-converter",
-    level: "iOS — Beginner",
-    title: "Currency Converter App (SwiftUI & ExchangeRate API)",
-    description:
-      "Fetch real-time currency exchange rates using an API. Learn networking, JSON parsing, and SwiftUI UI design.",
-    url: "https://medium.com/@farazzafar/consuming-a-weather-api-swiftui-73db604e51fd"
-  },
-  {
-    id: "ios-chat-app",
-    level: "iOS — Beginner",
-    title: "Chat App (SwiftUI & Firebase)",
-    description:
-      "Implement real-time chat functionality using Firebase. Learn authentication, Firestore database, and real-time updates.",
-    url: "https://www.youtube.com/watch?v=BRbGVPSjP7I"
-  },
-
-  // ---------- ADVANCED IOS PROJECTS ----------
-  {
-    id: "ios-ar-interior",
-    level: "iOS — Advanced",
-    title: "AR-Based Interior Design App (ARKit + RealityKit)",
-    description:
-      "Visualize furniture in real-world spaces with AR. Learn ARKit, RealityKit, placing and scaling 3D objects.",
-    url: "https://www.youtube.com/watch?v=Ta72BYATzIY"
-  },
-  {
-    id: "ios-voice-assistant",
-    level: "iOS — Advanced",
-    title: "Voice-Controlled Personal Assistant App (Speech Recognition + SiriKit)",
-    description:
-      "Create a voice-controlled assistant with speech recognition and SiriKit integration. Learn to interpret commands and provide contextual responses.",
-    url: "https://www.youtube.com/watch?v=1whvTugenL4"
-  },
-  {
-    id: "ios-collaborative-whiteboard",
-    level: "iOS — Advanced",
-    title: "Real-Time Collaborative Whiteboard App (Multipeer Connectivity + SwiftUI)",
-    description:
-      "Build a real-time collaborative whiteboard. Learn peer-to-peer networking, real-time drawing sync, and SwiftUI integration.",
-    url: "https://www.youtube.com/watch?v=c9XxDjmLT24"
-  },
-  {
-    id: "ios-ai-code-generator",
-    level: "iOS — Advanced",
-    title: "AI-Powered Code Generator App (Cursor AI + Xcode Integration)",
-    description:
-      "Generate Swift code snippets using AI. Learn natural language prompts, AI integration, and testing generated code in Xcode.",
-    url: "https://www.youtube.com/watch?v=9YPebrSjskU"
-  },
-];
+const projects = {
+  beginner: [
+    {
+      id: "ios-todo-app",
+      title: "To-Do List App (SwiftUI & Combine)",
+      description:
+        "Dynamic to-do list app using SwiftUI and Combine. Learn state management with @State, @ObservedObject, and @Published.",
+      url: "https://youtu.be/K-4blUReYoU?si=1UJBU44D1nCjMYSL",
+    },
+    {
+      id: "ios-weather-app",
+      title: "Weather App (SwiftUI & OpenWeatherMap API)",
+      description:
+        "Fetch real-time weather data with URLSession and Codable. Build a clean SwiftUI interface.",
+      url: "https://youtu.be/X2W9MPjrIbk?si=ZT_LXuA7_HFSAWjO",
+    },
+    {
+      id: "ios-notes-app",
+      title: "Notes App with CoreData",
+      description:
+        "Create, edit, and delete notes with Core Data. Practice persistence and data binding.",
+      url: "https://youtu.be/rjHBINtpKA8?si=cpVswFpl9e3O82Ie",
+    },
+  ],
+  intermediate: [
+    {
+      id: "ios-expense-tracker",
+      title: "Expense Tracker (Charts + CoreData)",
+      description:
+        "Track expenses with Core Data or Realm. Use Swift Charts for data visualization.",
+      url: "https://youtu.be/Bu6fAlltatA?si=Ae-bFjVtW9jJhStc",
+    },
+    {
+      id: "ios-recipe-app",
+      title: "Recipe Finder App (API + Pagination)",
+      description:
+        "Consume a recipe API, implement pagination, caching, and build reusable SwiftUI components.",
+      url: "https://youtu.be/CdZrHGKdZWc?si=3qCTgAuMZMnBLHbd",
+    },
+    {
+      id: "ios-chat-app",
+      title: "Chat App",
+      description:
+        "Realtime chat with Firebase Firestore. Implement authentication and push notifications.",
+      url: "https://youtu.be/Zz9XQy8PRpQ?si=huDqkdxj4yrX9q2l",
+    },
+  ],
+  advanced: [
+    {
+      id: "ios-ecommerce",
+      title: "E-Commerce App Clone (MVVM + Payments)",
+      description:
+        "Product listing, cart, checkout with Stripe. MVVM architecture and async/await networking.",
+      url: "https://youtu.be/1hyHUWOjgkU?si=D82YhTt5urgkqAtX",
+    },
+    {
+      id: "ios-social-clone",
+      title: "Social Media Mini-Clone",
+      description:
+        "Upload images/videos to Firebase/AWS S3. Feed with likes, comments, and push notifications.",
+      url: "https://youtu.be/-pAQcPolruw?si=CgUfwFAblVaGJWBI",
+    },
+    {
+      id: "ios-fitness-tracker",
+      title: "Fitness Tracker (HealthKit + WatchOS)",
+      description:
+        "Track steps, calories, and heart rate. Build a companion Apple Watch app.",
+      url: "https://youtu.be/7vOF1kGnsmo?si=8mugNXMp8NORALKA",
+    },
+  ],
+};
 
 export default function Projects() {
   return (
@@ -111,41 +82,48 @@ export default function Projects() {
             🧑‍💻 iOS Project Roadmap
           </h2>
           <p className="mt-2 text-gray-600">
-            Beginner to advanced iOS projects with latest YouTube tutorials (Hindi & English, 2025).
+            Beginner → Intermediate → Advanced iOS projects with curated
+            tutorials (2025).
           </p>
         </header>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <article
-              key={p.id}
-              className="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-transform"
-              aria-labelledby={`${p.id}-title`}
-            >
-              <span className="inline-block text-xs font-medium bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">
-                {p.level}
-              </span>
-              <h3
-                id={`${p.id}-title`}
-                className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-indigo-600"
-              >
-                {p.title}
-              </h3>
-              <p className="mt-2 text-gray-600 text-sm">{p.description}</p>
-              <a
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
-              >
-                Watch Tutorial ▶
-              </a>
-            </article>
-          ))}
-        </div>
+        {Object.entries(projects).map(([level, list]) => (
+          <div key={level} className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 capitalize text-indigo-700">
+              {level} Projects
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {list.map((p) => (
+                <article
+                  key={p.id}
+                  className="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-transform"
+                  aria-labelledby={`${p.id}-title`}
+                >
+                  <h4
+                    id={`${p.id}-title`}
+                    className="mt-2 text-lg font-semibold text-gray-900 group-hover:text-indigo-600"
+                  >
+                    {p.title}
+                  </h4>
+                  <p className="mt-2 text-gray-600 text-sm">{p.description}</p>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Watch tutorial for ${p.title}`}
+                    className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
+                  >
+                    Watch Tutorial ▶
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          Start with beginner projects and scale up to advanced iOS apps 🚀
+          Start with beginner projects, then move to intermediate, and finally
+          advanced 🚀
         </footer>
       </div>
     </section>

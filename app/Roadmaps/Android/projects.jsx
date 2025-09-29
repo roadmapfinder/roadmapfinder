@@ -2,53 +2,92 @@
 import React from "react";
 
 const projects = [
+  // 🌱 Beginner
   {
     id: "phase1-notes-app",
     level: "Phase 1 — Beginner",
-    title: "Notes App (MVVM + Room + Jetpack Compose)",
+    title: "Notes App",
     description:
-      "Build a simple Notes app with CRUD operations using Room, MVVM, and Jetpack Compose. Covers offline storage, state management, and dark mode.",
-    url: "https://youtu.be/srp2d3_ofRU" // Notes App Compose MVVM Room
+      "Build a simple Notes app with CRUD operations using Room, ViewModel, LiveData, and RecyclerView. Learn persistence and state management.",
+    url: "https://youtu.be/Shh0N45S4hE?si=QCqfZ7WJMpnZatkZ" // Notes App Room + MVVM tutorial
   },
   {
     id: "phase1-weather-app",
-    level: "Phase 1 — Beginner–Intermediate",
-    title: "Weather Forecast App (Retrofit + Compose + Room)",
+    level: "Phase 1 — Beginner",
+    title: "Weather App",
     description:
-      "Create a weather app using OpenWeatherMap API, Retrofit, Coroutines, and Jetpack Compose. Add offline caching with Room for better UX.",
-    url: "https://www.youtube.com/watch?v=YbvumICc3Pk" // Weather App Retrofit Compose
+      "Create a weather app using OpenWeatherMap API, Retrofit, and Coroutines. Parse JSON, handle errors, and display data in a clean UI.",
+    url: "https://youtu.be/QFGKV8j2ulY?si=p-zBjd2KFWrCHf8N" // Weather App Retrofit tutorial
+  },
+  {
+    id: "phase1-quiz-app",
+    level: "Phase 1 — Beginner",
+    title: "Quiz App",
+    description:
+      "Multiple-choice quiz app with scoring and progress saving. Learn Jetpack Compose Navigation or ViewPager.",
+    url: "https://youtu.be/pXZR0QiwvrU?si=qAhE0ZCSP7IUsJQb" // Quiz App tutorial
+  },
+
+  // 🌿 Intermediate
+  {
+    id: "phase2-movie-explorer",
+    level: "Phase 2 — Intermediate",
+    title: "Movie Explorer",
+    description:
+      "Integrate TMDB API to build a movie explorer app. Learn Paging 3 for infinite scroll, offline caching with Room, and clean UI with Compose.",
+    url: "https://youtu.be/s57FYRFh_Os?si=Q5TulZfaFuPs0RHy" // Paging 3 + Compose tutorial
   },
   {
     id: "phase2-expense-tracker",
     level: "Phase 2 — Intermediate",
-    title: "Expense Tracker (Room + Hilt + Charts)",
+    title: "Expense Tracker",
     description:
-      "Track income/expenses with monthly charts. Learn DI with Hilt, Room persistence, Jetpack Compose UI, and MVVM clean patterns.",
-    url: "https://www.youtube.com/watch?v=xolI_2svC6w" // Expense Tracker Compose tutorial
+      "Track daily income and expenses. Use Room, Coroutines/Flow, Hilt for DI, and Compose UI with charts. Export data to CSV/Excel.",
+    url: "https://youtu.be/MHlWd0AOQuU?si=KoUlURWAAE339Qme" // Expense Tracker tutorial
   },
   {
-    id: "phase2-news-app",
+    id: "phase2-chat-app",
     level: "Phase 2 — Intermediate",
-    title: "News App (Paging 3 + Compose + Retrofit)",
+    title: "Chat App",
     description:
-      "Build a modern News app with infinite scroll, bookmarks, offline caching using Paging 3, Retrofit, Room, and Compose LazyColumn.",
-    url: "https://www.youtube.com/watch?v=QhwVe3RBfqw" // Paging 3 + Compose tutorial
+      "Simulated chat app using Firebase Realtime Database. Learn Google Sign-In authentication and push notifications with FCM.",
+    url: "https://youtu.be/OlfHlM3Lvf8?si=WdK8vSzqtkbKU_2z" // Firebase Chat tutorial
+  },
+
+  // 🌳 Advanced
+  {
+    id: "phase3-ecommerce-app",
+    level: "Phase 3 — Advanced",
+    title: "E-Commerce Clone",
+    description:
+      "Mini e-commerce app with product listing, shopping cart, login, and mock payment. Built with MVVM, Hilt, Retrofit, and Jetpack Compose.",
+    url: "https://youtu.be/4cbVZhohIkA?si=9iSRnPxhnRIiitzH" // E-commerce tutorial
   },
   {
-    id: "phase3-task-manager",
-    level: "Phase 3 — Intermediate",
-    title: "Task Manager with Notifications (WorkManager + DataStore)",
+    id: "phase3-fitness-tracker",
+    level: "Phase 3 — Advanced",
+    title: "Fitness Tracker",
     description:
-      "Implement a task scheduling app with reminders. Covers background tasks using WorkManager, AlarmManager, DataStore, and Compose notifications.",
-    url: "https://youtu.be/Cv4KKIllLhk" // Google Codelab WorkManager
+      "Steps counting, calories burned, and daily tracking with Google Fit API. Use Room for persistence, charts for visualization, and WorkManager for background tasks.",
+    url: "https://youtu.be/hg1_yiBvSBo?si=8v8Tczo6sLme9RCw" // Fitness Tracker tutorial
   },
   {
-    id: "phase3-auth-app",
-    level: "Phase 3 — Intermediate",
-    title: "Authentication App (Firebase Auth + Compose Navigation)",
+    id: "phase3-music-app",
+    level: "Phase 3 — Advanced",
+    title: "Music/Podcast Streaming App",
     description:
-      "Learn secure login flows with Firebase Authentication, Google Sign-In, Jetpack Compose Navigation, and Encrypted Storage for tokens.",
-    url: "https://www.youtube.com/watch?v=_yY7voDC1eM" // Firebase Auth Compose tutorial
+      "Stream music or podcasts using ExoPlayer. Add offline downloads with WorkManager, notifications with media controls, and Compose UI.",
+    url: "https://youtu.be/L9arbsw82Oc?si=3vq8BAJT3pb2At2N" // ExoPlayer tutorial
+  },
+
+  // 🏆 Capstone
+  {
+    id: "capstone-food-delivery",
+    level: "Phase 4 — Capstone",
+    title: "Food Delivery Clone (Firebase + Maps API)",
+    description:
+      "Clone of Swiggy/Zomato style app with restaurant listings, cart, order tracking, Google Maps integration, Firebase realtime updates, and clean architecture.",
+    url: "https://youtu.be/TwLilW0fH9c?si=sIDUAZrcV_vKzZIZ" // Food Delivery tutorial
   }
 ];
 
@@ -61,7 +100,7 @@ export default function Projects() {
             📱 Android Dev Project Roadmap
           </h2>
           <p className="mt-2 text-gray-600">
-            Step from beginner to advanced Android development projects using Jetpack Compose, Kotlin, and modern Android architecture (Hindi & English tutorials).
+            Build Android apps from beginner to industry-ready using Jetpack Compose, Kotlin, Firebase, and modern Android architecture.
           </p>
         </header>
 
@@ -95,8 +134,9 @@ export default function Projects() {
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          Build these apps step by step. Focus on architecture, state management, and clean coding. 
-          Deploy your top 2–3 as portfolio-ready projects.
+          Build these projects step by step. Focus on architecture, state
+          management, and clean coding. Showcase 2–3 polished apps in your
+          portfolio to land industry roles.
         </footer>
       </div>
     </section>

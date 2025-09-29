@@ -114,14 +114,7 @@ const Springboot = () => {
               <p className="text-gray-700 text-base md:text-lg mb-4">
                 Congratulations! You've completed the Springboot Engineer Mastery Roadmap and are ready to design scalable, robust systems.
               </p>
-              <div className="bg-white p-4 rounded-lg border border-blue-300 mt-4">
-                <h3 className="font-semibold text-blue-600 mb-2">🎯 Next Steps for Architectural Excellence</h3>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  {finalTips.map((tip, index) => (
-                    <li key={index}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
+              
             </div>
           </div>
         );

@@ -1,15 +1,6 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Angular/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/Kotlin/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/Roadmaps/Next/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/page": [
+    "[project]/app/Roadmaps/Rust/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ]
   },
