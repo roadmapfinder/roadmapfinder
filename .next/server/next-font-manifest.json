@@ -1,5 +1,15 @@
 {
-  "app": {},
+  "app": {
+    "[project]/app/Roadmaps/Data-Analysis/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Data-Science/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ]
+  },
   "appUsingSizeAdjust": false,
   "pages": {},
   "pagesUsingSizeAdjust": false

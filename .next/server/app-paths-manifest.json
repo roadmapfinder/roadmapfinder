@@ -1,1 +1,5 @@
-{}
+{
+  "/Roadmaps/Data-Analysis/page": "app/Roadmaps/Data-Analysis/page.js",
+  "/Roadmaps/Data-Science/page": "app/Roadmaps/Data-Science/page.js",
+  "/page": "app/page.js"
+}

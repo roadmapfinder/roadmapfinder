@@ -1,150 +1,84 @@
+// components/Projects.jsx
 import React from "react";
 
 const projects = [
-  // Phase 1: Beginner
+  // Beginner Projects
   {
     id: "phase1-static-website",
-    level: "Beginner",
-    title: "Static Website Hosting on AWS S3",
+    level: "Beginner (0–2 months)",
+    title: "Static Website Hosting",
     description:
-      "Learn to host a static website using AWS S3 and Route 53 in Hindi.",
-    url: "https://www.youtube.com/watch?v=YJnqXaGb2M8"
+      "Deploy a personal portfolio or resume website using AWS S3 + CloudFront, Azure Blob Storage, or GCP Storage + CDN. Add custom domain and HTTPS.",
+    url: "https://youtu.be/-l83oqcaTHg?si=QBicYxHaOoAnO-cl", // AWS S3 static hosting tutorial
   },
   {
-    id: "phase1-vm-deployment",
-    level: "Beginner",
-    title: "Simple VM Deployment",
+    id: "phase1-containerized-app",
+    level: "Beginner (0–2 months)",
+    title: "Containerized Application Deployment",
     description:
-      "Step-by-step guide to launching and configuring an EC2 instance.",
-    url: "https://www.youtube.com/watch?v=Zw0gw7mFORo"
+      "Build a simple Node.js or Python app, dockerize it, and deploy on AWS ECS, Azure Container Instances, or GCP Cloud Run.",
+    url: "https://youtu.be/DQJNtDm5qy0?si=kzBNYMteb0_eUVdI", // Docker + ECS tutorial
   },
   {
-    id: "phase1-serverless-function",
-    level: "Beginner",
-    title: "Simple Serverless Function",
+    id: "phase1-ci-cd",
+    level: "Beginner (0–2 months)",
+    title: "CI/CD Pipeline with GitHub Actions",
     description:
-      "Introduction to AWS Lambda and creating a basic function with triggers and API Gateway integration.",
-    url: "https://www.youtube.com/watch?v=NWzfgAw_DYA"
-  },
-
-  // Phase 2: Intermediate
-  {
-    id: "phase2-multi-tier-app",
-    level: "Intermediate",
-    title: "Multi-Tier Web Application",
-    description:
-      "Design and deploy a three-tier architecture on AWS (EC2 + RDS + S3 + ELB).",
-    url: "https://www.youtube.com/watch?v=ZhZXbrspvDA"
-  },
-  {
-    id: "phase2-docker-ecs",
-    level: "Intermediate",
-    title: "Dockerized Application Deployment",
-    description:
-      "Deploy a Docker container on AWS ECS using Fargate.",
-    url: "https://www.youtube.com/watch?v=kE9crVneLUk"
-  },
-  {
-    id: "phase2-terraform",
-    level: "Intermediate",
-    title: "Infrastructure as Code with Terraform",
-    description:
-      "Comprehensive guide to using Terraform with AWS.",
-    url: "https://www.youtube.com/watch?v=4JYtAf4M88Y"
-  },
-  {
-    id: "phase2-ci-cd",
-    level: "Intermediate",
-    title: "Simple CI/CD Pipeline",
-    description:
-      "Learn to set up CI/CD pipelines using GitHub Actions.",
-    url: "https://www.youtube.com/watch?v=je1u_ugTW6Y"
+      "Automate build and deployment of a web app to EC2, Azure VM, or GCP VM. Add unit tests and approval gates.",
+    url: "https://youtu.be/YLtlz88zrLg?si=JjCCHsfzr8yRwDrO", // GitHub Actions CI/CD tutorial
   },
 
-  // Phase 3: Advanced
+  // Intermediate Projects
   {
-    id: "phase3-kubernetes",
-    level: "Advanced",
-    title: "Kubernetes Cluster Deployment",
+    id: "phase2-serverless-api",
+    level: "Intermediate (2–6 months)",
+    title: "Serverless REST API",
     description:
-      "Deploy and manage a Kubernetes cluster on AWS EKS (Pods, Deployments, Services, Helm, Auto-scaling).",
-    url: "https://www.youtube.com/watch?v=_POQdMKSMgw"
+      "Create a REST API using AWS Lambda + API Gateway, Azure Functions, or GCP Cloud Functions. Store data in DynamoDB, Cosmos DB, or Firestore.",
+    url: "https://youtu.be/VvYADzRwJK8?si=OBzz738TikmZVoJO", // AWS Lambda API Gateway tutorial
   },
   {
-    id: "phase3-serverless-event",
-    level: "Advanced",
-    title: "Serverless Event-Driven Architecture",
+    id: "phase2-infra-as-code",
+    level: "Intermediate (2–6 months)",
+    title: "Infrastructure as Code",
     description:
-      "Series covering AWS Lambda functions, triggers, and event-driven design.",
-    url: "https://www.youtube.com/playlist?list=PLQk4f-b-y8hYwJXhWdJcQr3-5tBpS1Hsn"
-  },
-  // Phase 3: Advanced Projects
-  {
-    id: "phase3-monitoring-alerts",
-    level: "Advanced",
-    title: "Monitoring & Alerting Setup",
-    description:
-      "Learn how tech giants monitor their server resources using Prometheus & Grafana. Covers metrics collection, dashboards, and alerting rules.",
-    url: "https://www.youtube.com/watch?v=pGSkPutCKtQ"
+      "Provision VPC, subnets, EC2, S3, IAM roles using Terraform or AWS CDK. Keep infra reusable and version controlled.",
+    url: "https://youtu.be/EtEb40LE5zQ?si=MfOlyD1J9agBfxlZ", // Terraform tutorial
   },
   {
-    id: "phase3-iam-security",
-    level: "Advanced",
-    title: "Cloud Security & IAM Project",
+    id: "phase2-cloud-security",
+    level: "Intermediate (2–6 months)",
+    title: "Cloud Security Project",
     description:
-      "Understand AWS IAM to manage identities and permissions. Includes IAM roles/policies, encryption, key management, and audit logging.",
-    url: "https://www.youtube.com/watch?v=XFGnS2d9_SE"
-  },
-  {
-    id: "phase3-multi-region",
-    level: "Advanced",
-    title: "Multi-Region High Availability",
-    description:
-      "Learn best practices for architecting multi-region architectures on AWS. Covers load balancing, DNS failover, replication, and disaster recovery.",
-    url: "https://www.youtube.com/watch?v=CbkqQznZS9Y"
+      "Design a secure app environment with IAM roles, least privilege access, security groups, and encryption. Test with AWS Inspector or similar tools.",
+    url: "https://youtu.be/7Y2EF99vlr0?si=mPU5GeTc45mw5yko", // IAM & security best practices
   },
 
-  // Phase 4: Capstone Projects
+  // Advanced Projects
   {
-    id: "phase4-multi-cloud",
-    level: "Capstone",
+    id: "phase3-microservices-k8s",
+    level: "Advanced (6–12 months)",
+    title: "Scalable Microservices with Kubernetes",
+    description:
+      "Break a monolithic app into microservices. Deploy on Kubernetes (EKS/AKS/GKE) with autoscaling. Use Istio/Linkerd for service mesh.",
+    url: "https://youtu.be/xsIwYL-N4vI?si=OuiHsJldkr1IltHA", // Kubernetes crash course
+  },
+  {
+    id: "phase3-monitoring",
+    level: "Advanced (6–12 months)",
+    title: "Monitoring & Logging Setup",
+    description:
+      "Deploy an app and integrate CloudWatch, Azure Monitor, or GCP Ops Suite. Add Prometheus + Grafana dashboards for observability.",
+    url: "https://youtu.be/ddZjhv66o_o?si=DrjwldJ0kSRmEgEv", // Prometheus + Grafana tutorial
+  },
+  {
+    id: "phase3-multi-cloud",
+    level: "Advanced (6–12 months)",
     title: "Multi-Cloud Deployment",
     description:
-      "Deploy services on AWS + GCP using IaC and CI/CD pipelines. Focus on cloud interoperability and cost optimization.",
-    url: "https://www.youtube.com/watch?v=vP4Gyw1BjV0"
+      "Deploy the same app on AWS and Azure (or GCP). Configure load balancing and failover using Route 53, Azure Traffic Manager, or similar DNS tools.",
+    url: "https://youtu.be/9XBrZQdTcJo?si=blsR7zUt5ZH0ldaM", // Multi-cloud deployment
   },
-  {
-    id: "phase4-devops-automation",
-    level: "Capstone",
-    title: "End-to-End DevOps Automation",
-    description:
-      "Full CI/CD pipeline with Terraform, Kubernetes, serverless, and monitoring. Covers automated builds, deployment, and observability.",
-    url: "https://www.youtube.com/watch?v=vx6ND6YfZz4"
-  },
-  {
-    id: "phase4-cloud-data-pipeline",
-    level: "Capstone",
-    title: "Data Pipeline on Cloud",
-    description:
-      "Hands-on ETL pipeline using S3 → Lambda → DynamoDB/Redshift for serverless data processing and analytics.",
-    url: "https://www.youtube.com/watch?v=1nhy4kMwo8E"
-  },
-  {
-    id: "phase4-cost-optimization",
-    level: "Capstone",
-    title: "Cloud Cost Optimization Tool",
-    description:
-      "Learn to analyze cloud spend and implement cost-saving strategies using billing APIs and dashboards.",
-    url: "https://www.youtube.com/watch?v=Ka08OEr7Mls"
-  },
-  {
-    id: "phase4-disaster-recovery",
-    level: "Capstone",
-    title: "Disaster Recovery & Backup Solution",
-    description:
-      "Configure automated backups, replication, and failover across regions for high availability and business continuity.",
-    url: "https://www.youtube.com/watch?v=GAMUCIJR5as"
-  }
 ];
 
 export default function Projects() {
@@ -153,10 +87,10 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">
-            🛠 Cloud Engineering Project Roadmap
+            ☁️ Cloud Engineering Project Roadmap
           </h2>
           <p className="mt-2 text-gray-600">
-            Step through beginner to capstone-level Cloud Engineering projects with Hindi & English tutorials.
+            Step from beginner to advanced cloud projects with tutorials on AWS, Azure, and GCP. Gain industry-ready skills in DevOps, IaC, serverless, and Kubernetes.
           </p>
         </header>
 
@@ -190,7 +124,7 @@ export default function Projects() {
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          Follow the sequence, code along, and deploy these projects. Document and polish your top projects for portfolio showcase.
+          Build these projects step by step. Focus on cloud fundamentals, automation, DevOps, and security. Showcase your best projects in your portfolio to stand out in cloud roles.
         </footer>
       </div>
     </section>

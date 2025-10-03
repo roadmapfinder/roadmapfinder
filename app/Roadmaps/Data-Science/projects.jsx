@@ -3,171 +3,93 @@ import React from "react";
 const projects = [
   // Beginner Projects
   {
-    id: "project-titanic-survival",
-    level: "Beginner",
-    title: "Titanic Survival Prediction",
+    id: "phase1-eda-public-dataset",
+    level: "Beginner (0–2 months)",
+    title: "Exploratory Data Analysis (EDA) on a Public Dataset",
     description:
-      "Predict survival of passengers using the Titanic dataset. Skills: Data cleaning, EDA, logistic regression, decision trees.",
-    url: "https://www.youtube.com/watch?v=dhqH3kfFAzw",
-    instructor: "Data Science Tutorials",
-    language: "English",
+      "Understand, clean, and visualize data. Focus: Pandas, NumPy, Matplotlib, Seaborn. Why: EDA is the foundation of all data science work.",
+    url: "https://youtu.be/a2BDULHeb_8?si=s1xsyjXrBbOlU4WD", // Example dataset source
   },
   {
-    id: "project-sales-analysis",
-    level: "Beginner",
-    title: "Sales Data Analysis",
+    id: "phase1-predictive-regression",
+    level: "Beginner (0–2 months)",
+    title: "Predictive Modeling – Regression",
     description:
-      "Analyze sales data to find trends, best-selling products, and seasonality. Skills: Data aggregation, visualization, descriptive statistics.",
-    url: "https://www.youtube.com/watch?v=GgWYEhq2vmM",
-    instructor: "ExcelIsFun",
-    language: "English",
+      "Predict continuous outcomes. Focus: Linear regression, feature engineering, evaluation metrics. Why: Regression is essential for forecasting and business predictions.",
+    url: "https://youtu.be/Wqmtf9SA_kk?si=sUmHoGDVJRfiibK9", // Example tutorial/dataset
   },
   {
-    id: "project-customer-segmentation",
-    level: "Beginner",
-    title: "Customer Segmentation",
+    id: "phase1-classification-project",
+    level: "Beginner (0–2 months)",
+    title: "Classification Project",
     description:
-      "Cluster customers based on purchase history. Skills: K-Means clustering, PCA, visualization.",
-    url: "https://www.youtube.com/watch?v=4jv1pUrG0Zk",
-    instructor: "Edureka",
-    language: "English",
-  },
-  {
-    id: "project-stock-analysis",
-    level: "Beginner",
-    title: "Stock Market Analysis",
-    description:
-      "Analyze historical stock prices and trends. Skills: Time series analysis, moving averages, simple forecasting.",
-    url: "https://www.youtube.com/watch?v=eS_u98hCmho",
-    instructor: "Data Science Tutorials",
-    language: "English",
-  },
-  {
-    id: "project-survey-analysis",
-    level: "Beginner",
-    title: "Survey Data Analysis",
-    description:
-      "Analyze survey responses for customer satisfaction insights. Skills: Data cleaning, visualization, basic stats.",
-    url: "https://www.youtube.com/watch?v=TyrLN17MAXs",
-    instructor: "Data Science Tutorials",
-    language: "English",
+      "Classify items into categories. Focus: Logistic Regression, Decision Trees, Random Forest, evaluation metrics. Why: Widely used in banking, healthcare, and marketing.",
+    url: "https://youtu.be/0K4J_PTgysc?si=-efT3W78ESlBZzNc", // Titanic dataset tutorial
   },
 
   // Intermediate Projects
   {
-    id: "project-sentiment-analysis",
-    level: "Intermediate",
-    title: "Product Review Sentiment Analysis",
+    id: "phase2-customer-segmentation",
+    level: "Intermediate (2–6 months)",
+    title: "Customer Segmentation using Clustering",
     description:
-      "Analyze product reviews to detect sentiment. Skills: NLP, text preprocessing, classification models.",
-    url: "https://www.youtube.com/watch?v=QpzMWQvxXWk",
-    instructor: "Data Science Tutorials",
-    language: "English",
+      "Group similar customers for insights. Focus: K-Means, Hierarchical Clustering, PCA. Why: Helps target marketing and understand customer behavior.",
+    url: "https://youtu.be/-LGwdrajMZ0?si=G6COO_W9G5EITnU3", // Example dataset
   },
   {
-    id: "project-ecommerce-forecast",
-    level: "Intermediate",
-    title: "E-commerce Sales Forecasting",
+    id: "phase2-time-series-forecasting",
+    level: "Intermediate (2–6 months)",
+    title: "Time Series Forecasting",
     description:
-      "Forecast future sales using historical data. Skills: Time series forecasting (ARIMA, Prophet), visualization.",
-    url: "https://www.youtube.com/watch?v=faKy2fTPgdI",
-    instructor: "Data Science Tutorials",
-    language: "English",
+      "Predict future trends from past data. Focus: ARIMA, Prophet, LSTM, trend/seasonality analysis. Why: Crucial for finance, operations, and supply chain.",
+    url: "https://youtu.be/0KVsYgsaY5s?si=89UbRaA8G5ZyVYhh", // Example dataset
   },
   {
-    id: "project-employee-attrition",
-    level: "Intermediate",
-    title: "Employee Attrition Prediction",
+    id: "phase2-nlp-sentiment-analysis",
+    level: "Intermediate (2–6 months)",
+    title: "NLP – Sentiment Analysis",
     description:
-      "Predict which employees are likely to leave the company. Skills: Classification models, feature engineering, visualization.",
-    url: "https://www.youtube.com/watch?v=dhqH3kfFAzw",
-    instructor: "Data Science Tutorials",
-    language: "English",
-  },
-  {
-    id: "project-website-traffic",
-    level: "Intermediate",
-    title: "Website Traffic Analysis",
-    description:
-      "Analyze website traffic to understand user behavior and trends. Skills: Data aggregation, EDA, visualization.",
-    url: "https://www.youtube.com/watch?v=-WPXIPBTyEw",
-    instructor: "Analytics Mania",
-    language: "English",
-  },
-  {
-    id: "project-healthcare-analysis",
-    level: "Intermediate",
-    title: "Healthcare Data Analysis",
-    description:
-      "Analyze patient data for trends and insights. Skills: Data cleaning, statistics, visualization, predictive modeling.",
-    url: "https://www.youtube.com/watch?v=h1BWuz0mdcs",
-    instructor: "Data Science Tutorials",
-    language: "English",
+      "Analyze text to detect sentiment. Focus: Text preprocessing, TF-IDF, embeddings, classification models. Why: Used in social media analytics and customer feedback.",
+    url: "https://youtu.be/QpzMWQvxXWk?si=x8xX6vLSCR-HbJG2", // Example tutorial
   },
 
   // Advanced Projects
   {
-    id: "project-image-classification",
-    level: "Advanced",
-    title: "Image Classification with CNNs",
-    description:
-      "Build a model to classify images (e.g., CIFAR-10 or MNIST). Skills: Deep learning, convolutional neural networks, model evaluation.",
-    url: "https://www.youtube.com/watch?v=IJ50ew8wi-0",
-    instructor: "CodeBasics",
-    language: "English",
-  },
-  {
-    id: "project-chatbot",
-    level: "Advanced",
-    title: "Chatbot or Text Summarizer",
-    description:
-      "Build a chatbot or summarize large text documents. Skills: NLP, transformers, text preprocessing.",
-    url: "https://www.youtube.com/watch?v=s33KHjHIxWk",
-    instructor: "Tech With Tim",
-    language: "English",
-  },
-  {
-    id: "project-fraud-detection",
-    level: "Advanced",
-    title: "Fraud Detection System",
-    description:
-      "Detect fraudulent transactions in financial datasets. Skills: Classification, anomaly detection, feature engineering.",
-    url: "https://www.youtube.com/watch?v=lP7TOc1DnaI",
-    instructor: "Simplilearn",
-    language: "English",
-  },
-  {
-    id: "project-recommendation-system",
-    level: "Advanced",
+    id: "phase3-recommendation-system",
+    level: "Advanced (6–12 months)",
     title: "Recommendation System",
     description:
-      "Recommend movies/products to users based on history. Skills: Collaborative filtering, content-based filtering, matrix factorization.",
-    url: "https://www.youtube.com/watch?v=-LGwdrajMZ0",
-    instructor: "Edureka",
-    language: "English",
+      "Suggest products or content to users. Focus: Collaborative & content-based filtering, matrix factorization. Why: Drives engagement in e-commerce, streaming, and social media.",
+    url: "https://youtu.be/1xtrIEwY_zY?si=mdLajtJZvNd48KTp", // Example MovieLens dataset
   },
   {
-    id: "project-end-to-end-ml",
-    level: "Advanced",
-    title: "End-to-End ML Project Deployment",
+    id: "phase3-data-pipeline-etl",
+    level: "Advanced (6–12 months)",
+    title: "Data Pipeline & ETL Project",
     description:
-      "Collect data → Clean → Train model → Deploy as API/dashboard. Skills: ML modeling, Flask/FastAPI, Docker, Streamlit, cloud deployment.",
-    url: "https://www.youtube.com/watch?v=tiBeLLv5GJo",
-    instructor: "Data Science Tutorials",
-    language: "English",
+      "Automate extraction, transformation, and loading of data. Focus: Python, SQL, Airflow, Pandas. Why: Real-world data pipelines are required for production-ready systems.",
+    url: "https://youtu.be/vMgFadPxOLk?si=kai5Rw6vq8i7VPYZ", // ETL tutorial reference
+  },
+  {
+    id: "phase3-dashboard-visualization",
+    level: "Advanced (6–12 months)",
+    title: "Dashboard & Data Visualization Project",
+    description:
+      "Convert data into actionable insights with dashboards. Focus: Tableau, Power BI, Plotly/Dash. Why: Communicating insights effectively is crucial for decision-making.",
+    url: "https://youtu.be/tjIWRqqMDaw?si=w3cp8aQfBGALzQan", // Visualization tutorial
   },
 ];
 
-export default function DataAnalysisProjects() {
+export default function Projects() {
   return (
     <section className="bg-gray-50 py-12 min-h-screen">
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">
-            🛠 Data Science Project Ideas
+            📊 Data Science Project Roadmap
           </h2>
           <p className="mt-2 text-gray-600">
-            Beginner to Advanced projects with step-by-step tutorials to build practical Data Science skills.
+            Step from beginner to advanced Data Science projects with real-world datasets and tutorials.
           </p>
         </header>
 
@@ -188,23 +110,20 @@ export default function DataAnalysisProjects() {
                 {p.title}
               </h3>
               <p className="mt-2 text-gray-600 text-sm">{p.description}</p>
-              <p className="mt-2 text-gray-500 text-xs">
-                Instructor: {p.instructor} | Language: {p.language}
-              </p>
               <a
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
               >
-                Watch Tutorial ▶
+                Explore Dataset / Tutorial ▶
               </a>
             </article>
           ))}
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          Follow the tutorials, code along, and practice on your own datasets to strengthen your Data Science skills.
+          Build these projects step by step. Focus on Python, data analysis, machine learning, NLP, and visualization. Showcase your top projects in your portfolio.
         </footer>
       </div>
     </section>

@@ -8,7 +8,7 @@ const projects = [
     title: "CSV → Database ETL Pipeline",
     description:
       "Learn to transform CSV data before loading it into a database using Python, Pandas, and automate ETL with Airflow/Dagster.",
-    url: "https://www.youtube.com/watch?v=y20tLpSBZS4" // ETL Tutorial: Advanced CSV to Database Mapping
+    url: "https://youtu.be/MJXp-kWHzOE?si=srxkIrDjGsB-hdz4" // ETL Tutorial: Advanced CSV to Database Mapping
   },
   {
     id: "phase1-web-scraping",
@@ -16,7 +16,7 @@ const projects = [
     title: "Web Scraping Data Pipeline",
     description:
       "Scrape data from a public website and load it into PostgreSQL. Learn data cleaning, batch ingestion, and cloud storage integration.",
-    url: "https://www.youtube.com/watch?v=6lRynB8i94Y" // Build your first web scraping ETL Pipeline using Python
+    url: "https://youtu.be/vSgJ3bOyE0w?si=2GXd-3UnEVFL9Eqd" // Build your first web scraping ETL Pipeline using Python
   },
   {
     id: "phase1-log-processing",
@@ -24,7 +24,7 @@ const projects = [
     title: "Log Processing Pipeline",
     description:
       "Parse application logs (JSON/CSV), transform into structured format, and load into Elasticsearch or a data warehouse.",
-    url: "https://www.youtube.com/watch?v=9ILNzR95AzU" // Step by step guide to Pipeline Logging
+    url: "https://youtu.be/26dZFWuSaM8?si=AyoDmUYEoF3PQR4w" // Step by step guide to Pipeline Logging
   },
   {
     id: "phase2-twitter-kafka",
@@ -32,7 +32,7 @@ const projects = [
     title: "Real-Time Twitter/Kafka Stream",
     description:
       "Stream tweets using Twitter API and Apache Kafka, process with Spark Structured Streaming or Flink, and store results in Cassandra/Elastic/BigQuery.",
-    url: "https://www.youtube.com/watch?v=DROI7I2sbj8" // Real-Time Twitter Streaming with Apache Kafka & Python
+    url: "https://youtu.be/zUVGIjjtDa8?si=ww6pldkU_zT-h0BD" // Real-Time Twitter Streaming with Apache Kafka & Python
   },
   {
     id: "phase2-iot-pipeline",
@@ -40,7 +40,7 @@ const projects = [
     title: "IoT Sensor Data Pipeline",
     description:
       "Simulate IoT sensor readings, stream data to Kafka, process with Spark/Flink, and visualize metrics using Grafana.",
-    url: "https://www.youtube.com/watch?v=KLSfXCYLDMQ" // This AWS IoT Data Pipeline Runs Completely Serverless!
+    url: "https://youtu.be/IF-od3kM03A?si=rk9ETqD_ls2FJMYa" // This AWS IoT Data Pipeline Runs Completely Serverless!
   },
   {
     id: "phase2-data-warehouse-dbt",
@@ -48,7 +48,7 @@ const projects = [
     title: "Data Warehouse + dbt Project",
     description:
       "Ingest an e-commerce dataset, build star schema in Snowflake/BigQuery, transform with dbt, and create reports in Looker/Metabase.",
-    url: "https://www.youtube.com/watch?v=C6BNAfaeqXY" // dbt(Data Build Tool) crash course for beginners
+    url: "https://youtu.be/zZVQluYDwYY?si=-umi0C0mGKNw8eb_" // dbt(Data Build Tool) crash course for beginners
   },
   {
     id: "phase3-lakehouse",
@@ -56,7 +56,7 @@ const projects = [
     title: "Batch + Streaming Lakehouse with Delta/Iceberg/Hudi",
     description:
       "Build hybrid pipelines with batch ingestion from CSVs and real-time Kafka streams, storing data in Delta Lake or Apache Iceberg and querying with Spark SQL + Presto/Trino.",
-    url: "https://www.youtube.com/watch?v=iL4tub9GIu0" // DATABRICKS - DELTA LIVE TABLES - Medallion - Streaming
+    url: "https://youtu.be/LRqmFX6mOM0?si=Kq9-FqhdTypz682W" // DATABRICKS - DELTA LIVE TABLES - Medallion - Streaming
   },
   {
     id: "phase3-netflix-analytics",
@@ -64,7 +64,7 @@ const projects = [
     title: "End-to-End Data Platform (Mini Netflix Analytics)",
     description:
       "Collect user streaming events, process via Kafka → Spark/Flink → Delta Lake, transform with dbt, orchestrate with Airflow, and create dashboards for analytics.",
-    url: "https://www.youtube.com/watch?v=tjIWRqqMDaw" // Full Data Science Project: Netflix Data Analysis
+    url: "https://youtu.be/iGUqad1eNtQ?si=AnCQkhBU6P-shVa_" // Full Data Science Project: Netflix Data Analysis
   },
   {
     id: "phase3-data-quality-lineage",
@@ -72,7 +72,7 @@ const projects = [
     title: "Data Quality + Lineage System",
     description:
       "Validate incoming data with Great Expectations, integrate OpenLineage for metadata tracking, store validation results in a warehouse, and monitor data quality KPIs.",
-    url: "https://www.youtube.com/watch?v=YhvCS_UXkiI" // Building Scraping Pipelines With Apache Airflow
+    url: "https://youtu.be/uPsUjKLHLAg?si=nDKNTKpNCR4NxXCk" // Building Scraping Pipelines With Apache Airflow
   },
   {
     id: "phase3-cloud-data-pipeline",
@@ -80,16 +80,9 @@ const projects = [
     title: "Modern Cloud Data Engineering Project",
     description:
       "Build a cloud-native data pipeline: Kafka → dbt + BigQuery/Snowflake → Airflow/Dagster Cloud, with monitoring via DataDog and OpenLineage.",
-    url: "https://www.youtube.com/watch?v=OLXkGB7krGo" // Code along - build an ELT Pipeline in 1 Hour (dbt, Snowflake, Airflow)
+    url: "https://youtu.be/0GTZ-12hYtU?si=KNSqNih8jIt0IDfV" // Code along - build an ELT Pipeline in 1 Hour (dbt, Snowflake, Airflow)
   },
-  {
-    id: "phase4-capstone-youtube",
-    level: "Capstone",
-    title: "YouTube Trending Analytics Platform",
-    description:
-      "Scrape YouTube trending video data daily, store raw data in S3, process with Spark, transform with dbt, schedule with Airflow, and expose metrics via Grafana dashboard.",
-    url: "https://www.youtube.com/watch?v=l74gAP-qDms" // End to End Web Scraping and ML Data Pipeline Project Using Python
-  }
+
 ];
 
 export default function Projects() {

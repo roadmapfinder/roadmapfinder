@@ -1,7 +1,7 @@
 (globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
-  "static/chunks/app_Roadmaps_Data-Science_4f1c79bc._.js",
+  "static/chunks/app_Roadmaps_Data-Science_9476edbd._.js",
   "static/chunks/node_modules_brotli_f5b4e07f._.js",
   "static/chunks/node_modules_fontkit_dist_browser-module_mjs_a9dafd54._.js",
   "static/chunks/node_modules_pako_lib_6b9b1414._.js",
@@ -11,7 +11,7 @@
   "static/chunks/node_modules_yoga-layout_dist_066da2a1._.js",
   "static/chunks/node_modules_@react-pdf_layout_lib_index_582cd017.js",
   "static/chunks/node_modules_@react-pdf_reconciler_lib_bccb4d72._.js",
-  "static/chunks/node_modules_c2335c59._.js"
+  "static/chunks/node_modules_4d586c83._.js"
 ],
     source: "dynamic"
 });

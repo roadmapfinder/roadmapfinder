@@ -1,4 +1,4 @@
-// components/Docs.jsx
+
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
@@ -8,21 +8,21 @@ const docsList = [
     title: "Personal Home Network Security Audit",
     description:
       "Learn how to use Wireshark to capture and analyze network traffic, identifying potential security issues in your home network.",
-    url: "https://www.youtube.com/watch?v=qTaOZrDnMzQ",
+    url: "https://youtu.be/qTaOZrDnMzQ?si=vBe3U3l997QeZvSQ",
     citation: "Wireshark Tutorial",
   },
   {
     title: "Password Strength Checker Tool (Python)",
     description:
       "Step-by-step guide to building a password strength checker using Python.",
-    url: "https://www.youtube.com/watch?v=ueIb_EtFHhA",
+    url: "https://youtu.be/pbKZ-dmUBis?si=a6TSHVArstKfDWul",
     citation: "Python Password Strength Checker",
   },
   {
     title: "Basic Malware Analysis",
     description:
       "Understand the basics of malware analysis and how to safely analyze suspicious files.",
-    url: "https://www.youtube.com/watch?v=qA0YcYMRWyI",
+    url: "https://youtu.be/rmSIm3BKu3Y?si=429MZjoxmn8siVqo",
     citation: "Malware Analysis Full Course",
   },
 
@@ -31,21 +31,21 @@ const docsList = [
     title: "Vulnerable Web App Pentest (DVWA)",
     description:
       "Comprehensive guide to setting up and exploiting vulnerabilities in DVWA.",
-    url: "https://www.youtube.com/watch?v=yYhTYBRe5Bg",
+    url: "https://youtu.be/yE29bkem-yU?si=mStLceZRWcCgKlr3",
     citation: "DVWA Tutorial",
   },
   {
     title: "Network Sniffing & Packet Analysis",
     description:
       "Learn how to use Nmap for network discovery and security auditing.",
-    url: "https://www.youtube.com/watch?v=4t4kBkMsDbQ",
+    url: "https://youtu.be/4t4kBkMsDbQ?si=08dGqYlLJoGGNb0T",
     citation: "Nmap Tutorial",
   },
   {
     title: "Basic Firewall / IDS Setup",
     description:
       "Beginner's guide to configuring pfSense as a firewall and IDS.",
-    url: "https://www.youtube.com/watch?v=he3ENpMLMsc",
+    url: "https://youtu.be/he3ENpMLMsc?si=mO_FstzWz9n3wiZO",
     citation: "pfSense Tutorial",
   },
   {
@@ -61,8 +61,8 @@ const docsList = [
     title: "Metasploit Lab Exploitation",
     description:
       "Deep dive into using Metasploit for penetration testing.",
-    url: "https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBmwvjJoWhM4Lg5MceSbsja",
-    citation: "Metasploit Tutorial Playlist",
+    url: "https://youtu.be/K7y_-JtpZ7I?si=3HKEZVdZWm27tydQ",
+    citation: "Metasploit Tutorial ",
   },
 ];
 
