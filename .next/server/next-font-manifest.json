@@ -1,9 +1,5 @@
 {
-  "app": {
-    "[project]/app/Roadmaps/Rust/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ]
-  },
+  "app": {},
   "appUsingSizeAdjust": false,
   "pages": {},
   "pagesUsingSizeAdjust": false
