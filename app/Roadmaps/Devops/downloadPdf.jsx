@@ -216,13 +216,7 @@ const RoadmapPDFDocument = ({ phases }) => (
         </View>
       ))}
 
-      {/* Footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
-        <Text style={styles.footerText}>
-          You've completed the DevOps Engineer Roadmap and are now ready to take on professional design challenges.
-        </Text>
-      </View>
+ 
 
       {/* Page Number */}
       <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
@@ -252,7 +246,7 @@ export const downloadRoadmapPDF = async (phases) => {
 
     // Generate filename with current date
     const currentDate = new Date().toISOString().split('T')[0];
-    const filename = `BlockChain-Engineer-roadmap-${currentDate}.pdf`;
+    const filename = `DevOps-Engineer-roadmap-${currentDate}.pdf`;
 
     // Save the file
     saveAs(blob, filename);

@@ -1,3 +1,5 @@
 {
+  "/Roadmaps/Database/page": "app/Roadmaps/Database/page.js",
+  "/Roadmaps/Devops/page": "app/Roadmaps/Devops/page.js",
   "/page": "app/page.js"
 }

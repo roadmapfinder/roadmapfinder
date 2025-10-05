@@ -2,149 +2,116 @@
 import React from "react";
 
 const projects = [
+  // 🧩 Beginner Phase
   {
-    id: "project1-nginx-ansible",
-    level: "Beginner",
-    title: "Automate Nginx Web Server Setup with Bash/Ansible",
+    id: "phase1-linux-automation",
+    level: "Beginner (0–2 months)",
+    title: "Linux Server Setup & Automation",
     description:
-      "Use Ansible (or Bash) to automatically install and configure Nginx on Linux servers. Great automation and infra-as-code practice.",
-    url: "https://www.youtube.com/watch?v=Nw3XXNJDT8I"
+      "Install and manage Ubuntu Server on cloud or VM. Automate updates and backups using shell scripts or Ansible. Learn permissions, cron, users, and packages.",
+    url: "https://youtu.be/uR1_hlHxvhc?si=A2oHzsxslZAoze9I"
   },
   {
-    id: "project1b-nginx-ansible-infrafort",
-    level: "Beginner",
-    title: "InfraFort’s NGINX & Ansible Playbook for Beginners",
+    id: "phase1-github-ci",
+    level: "Beginner (0–2 months)",
+    title: "CI/CD with GitHub Actions",
     description:
-      "Beginner-friendly walkthrough by InfraFort automating NGINX setup using an Ansible playbook.",
-    url: "https://www.youtube.com/watch?v=NrObnKyjHGo"
+      "Create a GitHub Actions workflow to test and deploy a sample app. Learn YAML syntax, workflow triggers, and environment secrets.",
+    url: "https://youtu.be/YLtlz88zrLg?si=kwjT51tFFQcnOL5B"
   },
   {
-    id: "project2-github-actions",
-    level: "Beginner",
-    title: "CI/CD Pipeline with GitHub Actions (Tom Shaw)",
+    id: "phase1-dockerize-app",
+    level: "Beginner (0–2 months)",
+    title: "Dockerize a Web App",
     description:
-      "GitHub Actions CI/CD tutorial: building, testing, and deploying sample app workflows.",
-    url: "https://www.youtube.com/watch?v=YLtlz88zrLg"
+      "Containerize a Flask or Node.js app using Docker and docker-compose. Understand images, networking, and volume management.",
+    url: "https://youtu.be/dfTco9hmXEM?si=tFp0nMjKe8Zc4r1c"
+  },
+
+  // ⚙️ Intermediate Phase
+  {
+    id: "phase2-jenkins-pipeline",
+    level: "Intermediate (2–4 months)",
+    title: "CI/CD Pipeline with Jenkins",
+    description:
+      "Set up Jenkins to automate build, test, and deploy for your app. Learn webhooks, pipeline-as-code, and integration with Git.",
+    url: "https://youtu.be/rcZoPygiI8o?si=2Dea82tRzGuiqgwm"
   },
   {
-    id: "project2b-techworld-nana",
-    level: "Beginner",
-    title: "Mastering GitHub Actions by TechWorld with Nana",
+    id: "phase2-docker-nginx",
+    level: "Intermediate (2–4 months)",
+    title: "Docker + NGINX Reverse Proxy Setup",
     description:
-      "Deeper dive into GitHub Actions CI/CD pipelines, Docker integration and workflow design.",
-    url: "https://www.classcentral.com/course/youtube-github-actions-tutorial-basic-concepts-and-ci-cd-pipeline-with-docker-108868"
+      "Run multiple containers (frontend, backend, DB) behind NGINX. Configure routing, load balancing, and container networking.",
+    url: "https://youtu.be/ZmH1L1QeNHk?si=eZzQXElWILBO1f4G"
   },
   {
-    id: "project3-dockerize-app",
-    level: "Beginner",
-    title: "Containerize a Web App with Docker",
+    id: "phase2-monitoring-stack",
+    level: "Intermediate (2–4 months)",
+    title: "Monitoring Stack: Prometheus + Grafana",
     description:
-      "Step-by-step Docker tutorial to build and run a web application inside a container.",
-    url: "https://www.youtube.com/watch?v=b4wTi1DRkbk"
+      "Set up Prometheus to collect metrics and Grafana to visualize dashboards for containers or Kubernetes workloads.",
+    url: "https://youtu.be/ddZjhv66o_o?si=BBiFjFgQmZ6mmksz"
+  },
+
+  // ☁️ Cloud & IaC Phase
+  {
+    id: "phase3-terraform-aws",
+    level: "Intermediate (4–6 months)",
+    title: "Terraform Infrastructure Setup on AWS",
+    description:
+      "Provision AWS infrastructure using Terraform scripts (EC2, RDS, S3). Learn modules, state management, and variables.",
+    url: "https://youtu.be/NoKeG8iRnQw?si=AWSe6CrUKkWofjaI"
   },
   {
-    id: "project3b-dockerize-app-alt",
-    level: "Beginner",
-    title: "Docker Intro & Containerization from Scratch",
+    id: "phase3-ansible-config",
+    level: "Intermediate (4–6 months)",
+    title: "Server Configuration with Ansible",
     description:
-      "Beginner containerization guide (Docker from zero to hero style) for full-stack apps.",
-    url: "https://www.youtube.com/watch?v=Kxr68x1PZTY"
+      "Automate app deployments and server configuration using Ansible playbooks and roles. Manage multiple environments easily.",
+    url: "https://youtu.be/DBdOFvOAeFA?si=WmLJhBqy38BS0RJx"
   },
   {
-    id: "project4-k8s-minikube",
-    level: "Intermediate",
+    id: "phase3-cloud-cicd",
+    level: "Intermediate (4–6 months)",
+    title: "AWS CI/CD with CodePipeline or GitHub Actions",
+    description:
+      "Create cloud-native CI/CD pipeline to deploy apps to EC2/ECS. Learn secrets, IAM, and artifact management.",
+    url: "https://youtu.be/IUF-pfbYGvg?si=cQNlvJb6DV9ZzRWZ"
+  },
+
+  // 🚀 Advanced Phase
+  {
+    id: "phase4-k8s-minikube",
+    level: "Advanced (6–8 months)",
     title: "Kubernetes Deployment on Minikube",
     description:
-      "Deploy your Dockerized app to Minikube: pods, service, ingress, etc.",
-    url: "https://www.youtube.com/watch?v=FR7nWVvQJoM"
+      "Deploy microservices using Kubernetes pods, services, and ingress. Master kubectl, manifests, and autoscaling.",
+    url: "https://youtu.be/M64aA5Icuk4?si=pEirrE-FCs0rX4TZ"
   },
   {
-    id: "project4b-k8s-zero-to-hero",
-    level: "Intermediate",
-    title: "Kubernetes Zero to Hero Tutorial",
+    id: "phase4-helm-jenkins",
+    level: "Advanced (6–8 months)",
+    title: "CI/CD with Jenkins + Helm + Kubernetes",
     description:
-      "Comprehensive K8s intro showing deployments, services, config-maps on Minikube.",
-    url: "https://www.youtube.com/watch?v=j1T_PUOf_fc"
+      "Integrate Jenkins CI pipeline with Helm for automated app deployments on EKS or Minikube.",
+    url: "https://youtu.be/Ojb9Rh0BcvA?si=dCcZ4f7jo2Wb6kZr"
   },
   {
-    id: "project5-terraform-aws",
-    level: "Intermediate",
-    title: "Terraform Infrastructure Setup on AWS (2025)",
-    description:
-      "Use Terraform to provision EC2, S3, networking on AWS—full beginner-friendly guide.",
-    url: "https://www.youtube.com/watch?v=RiBSzAgt2Hw"
-  },
-  {
-    id: "project5b-terraform-course",
-    level: "Intermediate",
-    title: "Terraform Full Course 2025 (AWS & Azure)",
-    description:
-      "Hands-on Terraform crash course for AWS/Azure real world infrastructure projects.",
-    url: "https://www.youtube.com/playlist?list=PLGyKZJoyKdOfehoKuFC1PKTGzMtRwnGNd"
-  },
-  {
-    id: "project6-monitoring-stack",
-    level: "Intermediate",
-    title: "Monitoring Stack: Prometheus + Grafana on Kubernetes",
-    description:
-      "Learn to scrape metrics with Prometheus and visualize using Grafana dashboards on K8s.",
-    url: "https://www.youtube.com/watch?v=dzBGhlF4M1U"
-  },
-  {
-    id: "project6b-monitoring-operator",
-    level: "Intermediate",
-    title: "Prometheus & Grafana Operator Setup Tutorial",
-    description:
-      "Full series playlist for setting up Prometheus and Grafana operator via Helm on K8s.",
-    url: "https://www.youtube.com/playlist?list=PLVx1qovxj-anCTn6um3BDsoHnIr0O2tz3"
-  },
-  {
-    id: "project7-jenkins-helm-k8s",
-    level: "Advanced",
-    title: "CI/CD with Jenkins + Kubernetes + Helm",
-    description:
-      "Build Docker with Jenkins, push to registry, deploy to Kubernetes via Helm (Minikube/EKS).",
-    url: "https://www.youtube.com/watch?v=vWDi3PBpFng"
-  },
-  {
-    id: "project7b-jenkins-helm-setup",
-    level: "Advanced",
-    title: "Setting up Jenkins on Kubernetes using Helm",
-    description:
-      "Detailed deployment of Jenkins in Kubernetes environment using Helm charts.",
-    url: "https://www.youtube.com/watch?v=KKQWXtRmxcE"
-  },
-  {
-    id: "project8-argocd-gitops",
-    level: "Advanced",
+    id: "phase4-gitops-argocd",
+    level: "Advanced (6–8 months)",
     title: "GitOps with ArgoCD for Automated Deployments",
     description:
-      "Hands-on guide to declarative GitOps patterns with ArgoCD: sync, rollback, and Git-driven delivery.",
-    url: "https://www.youtube.com/watch?v=yj4O0wwkMQI"
+      "Implement declarative GitOps patterns with ArgoCD and Kustomize. Automate syncs and rollback strategies.",
+    url: "https://youtu.be/Kbvch_swZWA?si=mdqN0nQEdGTN2MLV"
   },
   {
-    id: "project8b-gitops-playlist",
-    level: "Advanced",
-    title: "GitOps Tutorial Playlist for Kubernetes",
+    id: "phase4-capstone-full",
+    level: "Advanced (6–8 months)",
+    title: "Full Cloud-Native DevOps System (Capstone)",
     description:
-      "Beginner playlist for GitOps on Kubernetes using ArgoCD/Kustomize/Helm.",
-    url: "https://www.youtube.com/playlist?list=PLdpzxOOAlwvKu7OZpgj1-MzJFqZ8RBp6f"
-  },
-  {
-    id: "project9-capstone-fullstack",
-    level: "Advanced",
-    title: "Full Cloud-Native DevOps System (Terraform + AWS + Jenkins + Monitoring)",
-    description:
-      "Capstone: Terraform + AWS provisioning, Jenkins CI/CD, deploy to EKS, monitor with Prometheus / Grafana, add security scanning.",
-    url: "https://www.youtube.com/watch?v=RiBSzAgt2Hw"
-  },
-  {
-    id: "project9b-eks-jenkins-helm",
-    level: "Advanced",
-    title: "Deploy NodeJS Helm Chart to AWS EKS using Jenkins",
-    description:
-      "Tutorial combining Helm with Jenkins CI pipeline to deploy apps to AWS EKS cluster.",
-    url: "https://www.youtube.com/watch?v=j5ryNaTMl9M"
+      "End-to-end DevOps pipeline: Terraform + AWS + Jenkins + Kubernetes + Monitoring. Add Trivy for image scanning and SonarQube for code quality.",
+    url: "https://youtu.be/kBWCsHEcWnc?si=N4pG6TZWFl4D8MS-"
   }
 ];
 
@@ -157,7 +124,7 @@ export default function Projects() {
             🚀 DevOps Project Roadmap (Beginner → Advanced)
           </h2>
           <p className="mt-2 text-gray-600">
-            Nine real-world DevOps projects with latest tutorial links (English/Hindi mixed content) ready to build your skills & portfolio.
+            Build these projects step-by-step to become industry-ready. Includes real-world CI/CD, Docker, Kubernetes, and Cloud automation projects.
           </p>
         </header>
 
@@ -191,7 +158,8 @@ export default function Projects() {
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          Follow the sequence, code along, and polish your top 2–3 projects into portfolio-ready case studies.
+          💡 Follow each phase in order — automate, containerize, deploy, and monitor.  
+          Convert your top 2–3 into detailed portfolio case studies.
         </footer>
       </div>
     </section>

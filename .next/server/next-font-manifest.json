@@ -1,5 +1,11 @@
 {
   "app": {
+    "[project]/app/Roadmaps/Database/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Devops/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
     "[project]/app/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ]

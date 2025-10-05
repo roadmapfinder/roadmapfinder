@@ -289,130 +289,99 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 const projects = [
+    // 🧩 Beginner Phase
     {
-        id: "project1-nginx-ansible",
-        level: "Beginner",
-        title: "Automate Nginx Web Server Setup with Bash/Ansible",
-        description: "Use Ansible (or Bash) to automatically install and configure Nginx on Linux servers. Great automation and infra-as-code practice.",
+        id: "phase1-linux-automation",
+        level: "Beginner (0–2 months)",
+        title: "Linux Server Setup & Automation",
+        description: "Install and manage Ubuntu Server on cloud or VM. Automate updates and backups using shell scripts or Ansible. Learn permissions, cron, users, and packages.",
         url: "https://www.youtube.com/watch?v=Nw3XXNJDT8I"
     },
     {
-        id: "project1b-nginx-ansible-infrafort",
-        level: "Beginner",
-        title: "InfraFort’s NGINX & Ansible Playbook for Beginners",
-        description: "Beginner-friendly walkthrough by InfraFort automating NGINX setup using an Ansible playbook.",
-        url: "https://www.youtube.com/watch?v=NrObnKyjHGo"
-    },
-    {
-        id: "project2-github-actions",
-        level: "Beginner",
-        title: "CI/CD Pipeline with GitHub Actions (Tom Shaw)",
-        description: "GitHub Actions CI/CD tutorial: building, testing, and deploying sample app workflows.",
+        id: "phase1-github-ci",
+        level: "Beginner (0–2 months)",
+        title: "CI/CD with GitHub Actions",
+        description: "Create a GitHub Actions workflow to test and deploy a sample app. Learn YAML syntax, workflow triggers, and environment secrets.",
         url: "https://www.youtube.com/watch?v=YLtlz88zrLg"
     },
     {
-        id: "project2b-techworld-nana",
-        level: "Beginner",
-        title: "Mastering GitHub Actions by TechWorld with Nana",
-        description: "Deeper dive into GitHub Actions CI/CD pipelines, Docker integration and workflow design.",
-        url: "https://www.classcentral.com/course/youtube-github-actions-tutorial-basic-concepts-and-ci-cd-pipeline-with-docker-108868"
-    },
-    {
-        id: "project3-dockerize-app",
-        level: "Beginner",
-        title: "Containerize a Web App with Docker",
-        description: "Step-by-step Docker tutorial to build and run a web application inside a container.",
+        id: "phase1-dockerize-app",
+        level: "Beginner (0–2 months)",
+        title: "Dockerize a Web App",
+        description: "Containerize a Flask or Node.js app using Docker and docker-compose. Understand images, networking, and volume management.",
         url: "https://www.youtube.com/watch?v=b4wTi1DRkbk"
     },
+    // ⚙️ Intermediate Phase
     {
-        id: "project3b-dockerize-app-alt",
-        level: "Beginner",
-        title: "Docker Intro & Containerization from Scratch",
-        description: "Beginner containerization guide (Docker from zero to hero style) for full-stack apps.",
-        url: "https://www.youtube.com/watch?v=Kxr68x1PZTY"
-    },
-    {
-        id: "project4-k8s-minikube",
-        level: "Intermediate",
-        title: "Kubernetes Deployment on Minikube",
-        description: "Deploy your Dockerized app to Minikube: pods, service, ingress, etc.",
-        url: "https://www.youtube.com/watch?v=FR7nWVvQJoM"
-    },
-    {
-        id: "project4b-k8s-zero-to-hero",
-        level: "Intermediate",
-        title: "Kubernetes Zero to Hero Tutorial",
-        description: "Comprehensive K8s intro showing deployments, services, config-maps on Minikube.",
-        url: "https://www.youtube.com/watch?v=j1T_PUOf_fc"
-    },
-    {
-        id: "project5-terraform-aws",
-        level: "Intermediate",
-        title: "Terraform Infrastructure Setup on AWS (2025)",
-        description: "Use Terraform to provision EC2, S3, networking on AWS—full beginner-friendly guide.",
-        url: "https://www.youtube.com/watch?v=RiBSzAgt2Hw"
-    },
-    {
-        id: "project5b-terraform-course",
-        level: "Intermediate",
-        title: "Terraform Full Course 2025 (AWS & Azure)",
-        description: "Hands-on Terraform crash course for AWS/Azure real world infrastructure projects.",
-        url: "https://www.youtube.com/playlist?list=PLGyKZJoyKdOfehoKuFC1PKTGzMtRwnGNd"
-    },
-    {
-        id: "project6-monitoring-stack",
-        level: "Intermediate",
-        title: "Monitoring Stack: Prometheus + Grafana on Kubernetes",
-        description: "Learn to scrape metrics with Prometheus and visualize using Grafana dashboards on K8s.",
-        url: "https://www.youtube.com/watch?v=dzBGhlF4M1U"
-    },
-    {
-        id: "project6b-monitoring-operator",
-        level: "Intermediate",
-        title: "Prometheus & Grafana Operator Setup Tutorial",
-        description: "Full series playlist for setting up Prometheus and Grafana operator via Helm on K8s.",
-        url: "https://www.youtube.com/playlist?list=PLVx1qovxj-anCTn6um3BDsoHnIr0O2tz3"
-    },
-    {
-        id: "project7-jenkins-helm-k8s",
-        level: "Advanced",
-        title: "CI/CD with Jenkins + Kubernetes + Helm",
-        description: "Build Docker with Jenkins, push to registry, deploy to Kubernetes via Helm (Minikube/EKS).",
+        id: "phase2-jenkins-pipeline",
+        level: "Intermediate (2–4 months)",
+        title: "CI/CD Pipeline with Jenkins",
+        description: "Set up Jenkins to automate build, test, and deploy for your app. Learn webhooks, pipeline-as-code, and integration with Git.",
         url: "https://www.youtube.com/watch?v=vWDi3PBpFng"
     },
     {
-        id: "project7b-jenkins-helm-setup",
-        level: "Advanced",
-        title: "Setting up Jenkins on Kubernetes using Helm",
-        description: "Detailed deployment of Jenkins in Kubernetes environment using Helm charts.",
+        id: "phase2-docker-nginx",
+        level: "Intermediate (2–4 months)",
+        title: "Docker + NGINX Reverse Proxy Setup",
+        description: "Run multiple containers (frontend, backend, DB) behind NGINX. Configure routing, load balancing, and container networking.",
         url: "https://www.youtube.com/watch?v=KKQWXtRmxcE"
     },
     {
-        id: "project8-argocd-gitops",
-        level: "Advanced",
-        title: "GitOps with ArgoCD for Automated Deployments",
-        description: "Hands-on guide to declarative GitOps patterns with ArgoCD: sync, rollback, and Git-driven delivery.",
-        url: "https://www.youtube.com/watch?v=yj4O0wwkMQI"
+        id: "phase2-monitoring-stack",
+        level: "Intermediate (2–4 months)",
+        title: "Monitoring Stack: Prometheus + Grafana",
+        description: "Set up Prometheus to collect metrics and Grafana to visualize dashboards for containers or Kubernetes workloads.",
+        url: "https://www.youtube.com/watch?v=dzBGhlF4M1U"
     },
+    // ☁️ Cloud & IaC Phase
     {
-        id: "project8b-gitops-playlist",
-        level: "Advanced",
-        title: "GitOps Tutorial Playlist for Kubernetes",
-        description: "Beginner playlist for GitOps on Kubernetes using ArgoCD/Kustomize/Helm.",
-        url: "https://www.youtube.com/playlist?list=PLdpzxOOAlwvKu7OZpgj1-MzJFqZ8RBp6f"
-    },
-    {
-        id: "project9-capstone-fullstack",
-        level: "Advanced",
-        title: "Full Cloud-Native DevOps System (Terraform + AWS + Jenkins + Monitoring)",
-        description: "Capstone: Terraform + AWS provisioning, Jenkins CI/CD, deploy to EKS, monitor with Prometheus / Grafana, add security scanning.",
+        id: "phase3-terraform-aws",
+        level: "Intermediate (4–6 months)",
+        title: "Terraform Infrastructure Setup on AWS",
+        description: "Provision AWS infrastructure using Terraform scripts (EC2, RDS, S3). Learn modules, state management, and variables.",
         url: "https://www.youtube.com/watch?v=RiBSzAgt2Hw"
     },
     {
-        id: "project9b-eks-jenkins-helm",
-        level: "Advanced",
-        title: "Deploy NodeJS Helm Chart to AWS EKS using Jenkins",
-        description: "Tutorial combining Helm with Jenkins CI pipeline to deploy apps to AWS EKS cluster.",
+        id: "phase3-ansible-config",
+        level: "Intermediate (4–6 months)",
+        title: "Server Configuration with Ansible",
+        description: "Automate app deployments and server configuration using Ansible playbooks and roles. Manage multiple environments easily.",
+        url: "https://www.youtube.com/watch?v=NrObnKyjHGo"
+    },
+    {
+        id: "phase3-cloud-cicd",
+        level: "Intermediate (4–6 months)",
+        title: "AWS CI/CD with CodePipeline or GitHub Actions",
+        description: "Create cloud-native CI/CD pipeline to deploy apps to EC2/ECS. Learn secrets, IAM, and artifact management.",
+        url: "https://www.youtube.com/watch?v=YLtlz88zrLg"
+    },
+    // 🚀 Advanced Phase
+    {
+        id: "phase4-k8s-minikube",
+        level: "Advanced (6–8 months)",
+        title: "Kubernetes Deployment on Minikube",
+        description: "Deploy microservices using Kubernetes pods, services, and ingress. Master kubectl, manifests, and autoscaling.",
+        url: "https://www.youtube.com/watch?v=FR7nWVvQJoM"
+    },
+    {
+        id: "phase4-helm-jenkins",
+        level: "Advanced (6–8 months)",
+        title: "CI/CD with Jenkins + Helm + Kubernetes",
+        description: "Integrate Jenkins CI pipeline with Helm for automated app deployments on EKS or Minikube.",
+        url: "https://www.youtube.com/watch?v=vWDi3PBpFng"
+    },
+    {
+        id: "phase4-gitops-argocd",
+        level: "Advanced (6–8 months)",
+        title: "GitOps with ArgoCD for Automated Deployments",
+        description: "Implement declarative GitOps patterns with ArgoCD and Kustomize. Automate syncs and rollback strategies.",
+        url: "https://www.youtube.com/watch?v=yj4O0wwkMQI"
+    },
+    {
+        id: "phase4-capstone-full",
+        level: "Advanced (6–8 months)",
+        title: "Full Cloud-Native DevOps System (Capstone)",
+        description: "End-to-end DevOps pipeline: Terraform + AWS + Jenkins + Kubernetes + Monitoring. Add Trivy for image scanning and SonarQube for code quality.",
         url: "https://www.youtube.com/watch?v=j5ryNaTMl9M"
     }
 ];
@@ -430,21 +399,21 @@ function Projects() {
                             children: "🚀 DevOps Project Roadmap (Beginner → Advanced)"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                            lineNumber: 156,
+                            lineNumber: 123,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-gray-600",
-                            children: "Nine real-world DevOps projects with latest tutorial links (English/Hindi mixed content) ready to build your skills & portfolio."
+                            children: "Build these projects step-by-step to become industry-ready. Includes real-world CI/CD, Docker, Kubernetes, and Cloud automation projects."
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                            lineNumber: 159,
+                            lineNumber: 126,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                    lineNumber: 155,
+                    lineNumber: 122,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -458,7 +427,7 @@ function Projects() {
                                     children: p.level
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                                    lineNumber: 171,
+                                    lineNumber: 138,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -467,7 +436,7 @@ function Projects() {
                                     children: p.title
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                                    lineNumber: 174,
+                                    lineNumber: 141,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -475,7 +444,7 @@ function Projects() {
                                     children: p.description
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                                    lineNumber: 180,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -486,37 +455,37 @@ function Projects() {
                                     children: "Watch Tutorial ▶"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                                    lineNumber: 181,
+                                    lineNumber: 148,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, p.id, true, {
                             fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                            lineNumber: 166,
+                            lineNumber: 133,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                    lineNumber: 164,
+                    lineNumber: 131,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
                     className: "mt-10 text-sm text-gray-500 text-center",
-                    children: "Follow the sequence, code along, and polish your top 2–3 projects into portfolio-ready case studies."
+                    children: "💡 Follow each phase in order — automate, containerize, deploy, and monitor. Convert your top 2–3 into detailed portfolio case studies."
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-                    lineNumber: 193,
+                    lineNumber: 160,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-            lineNumber: 154,
+            lineNumber: 121,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Devops/projects.jsx",
-        lineNumber: 153,
+        lineNumber: 120,
         columnNumber: 5
     }, this);
 }
@@ -1284,314 +1253,6 @@ const DevOpsRoadmap = ()=>{
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('roadmap');
     const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isDownloading, setIsDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const phases = [
-        {
-            id: 1,
-            title: "Foundations",
-            subtitle: "Beginner Level",
-            description: "Understand the fundamentals of OS, networking, and basic scripting",
-            color: "bg-gray-600",
-            sections: [
-                {
-                    title: "Computer Science & OS Basics",
-                    items: [
-                        "Linux fundamentals → File system, processes, permissions, services",
-                        "Package management → apt, yum, dnf for software installation",
-                        "System monitoring → top, htop, journalctl for system analysis",
-                        "Practice: Set up Linux VM and practice basic system administration"
-                    ]
-                },
-                {
-                    title: "Networking Basics",
-                    items: [
-                        "TCP/IP, UDP → Network protocols and packet transmission",
-                        "DNS, HTTP/HTTPS → Domain resolution and web protocols",
-                        "Ports & Firewalls → Network security and access control",
-                        "SSH basics → Secure remote server access and key management"
-                    ]
-                },
-                {
-                    title: "Scripting",
-                    items: [
-                        "Bash scripting → Automation, cron jobs, system tasks",
-                        "Python for automation → requests, subprocess, paramiko libraries",
-                        "File manipulation → Text processing, log analysis, data extraction",
-                        "Practice: Create automated backup and monitoring scripts"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 2,
-            title: "Version Control & Collaboration",
-            subtitle: "Beginner Level",
-            description: "Learn to manage code and collaborate with teams",
-            color: "bg-green-500",
-            sections: [
-                {
-                    title: "Git Fundamentals",
-                    items: [
-                        "Basic operations → clone, add, commit, push, pull workflows",
-                        "Branching strategies → Feature branches, git-flow, GitHub flow",
-                        "Merging & rebasing → Conflict resolution, history management",
-                        "Tags & releases → Version control, semantic versioning"
-                    ]
-                },
-                {
-                    title: "Collaboration Platforms",
-                    items: [
-                        "GitHub → Repository management, pull requests, issues",
-                        "GitLab → Integrated DevOps platform, merge requests",
-                        "Bitbucket → Atlassian ecosystem integration, code review",
-                        "Best practices → Commit messages, branch protection, workflows"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 3,
-            title: "CI/CD Basics",
-            subtitle: "Intermediate Level",
-            description: "Learn how DevOps automates builds and deployments",
-            color: "bg-blue-500",
-            sections: [
-                {
-                    title: "CI/CD Platforms",
-                    items: [
-                        "Jenkins → Pipeline as code, plugin ecosystem, distributed builds",
-                        "GitHub Actions → Workflow automation, marketplace actions, secrets",
-                        "GitLab CI → Integrated pipelines, runners, multi-stage deployments",
-                        "CircleCI → Cloud-native builds, parallelization, orbs"
-                    ]
-                },
-                {
-                    title: "Pipeline Design",
-                    items: [
-                        "Build stages → Compile, test, package, security scanning",
-                        "Testing automation → Unit tests, integration tests, quality gates",
-                        "Deployment strategies → Blue-green, canary, rolling deployments",
-                        "Pipeline optimization → Caching, parallelization, artifact management"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 4,
-            title: "Infrastructure as Code (IaC)",
-            subtitle: "Intermediate Level",
-            description: "Automate infrastructure provisioning and configuration",
-            color: "bg-purple-500",
-            sections: [
-                {
-                    title: "Terraform",
-                    items: [
-                        "Resource provisioning → Servers, networks, storage, cloud services",
-                        "State management → Remote state, locking, workspace organization",
-                        "Modules → Reusable infrastructure components, versioning",
-                        "Multi-cloud → AWS, Azure, GCP provider configurations"
-                    ]
-                },
-                {
-                    title: "Configuration Management",
-                    items: [
-                        "Ansible → Playbooks, roles, inventory management, idempotency",
-                        "Configuration drift → Detection, remediation, compliance checking",
-                        "Secrets management → Ansible Vault, encrypted variables",
-                        "Infrastructure testing → Molecule, Test Kitchen, validation"
-                    ]
-                },
-                {
-                    title: "Package Management",
-                    items: [
-                        "Helm → Kubernetes package manager, charts, templating",
-                        "Chart development → Values, templates, dependencies, hooks",
-                        "Repository management → Chart museums, private registries",
-                        "Release management → Upgrades, rollbacks, versioning strategies"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 5,
-            title: "Containers & Orchestration",
-            subtitle: "Advanced Level",
-            description: "Master containerization and orchestration platforms",
-            color: "bg-red-500",
-            sections: [
-                {
-                    title: "Docker Fundamentals",
-                    items: [
-                        "Container basics → Images, containers, Dockerfile optimization",
-                        "Networking → Bridge, host, overlay networks, port mapping",
-                        "Storage → Volumes, bind mounts, tmpfs, data persistence",
-                        "Multi-stage builds → Build optimization, security, layer caching"
-                    ]
-                },
-                {
-                    title: "Kubernetes Core",
-                    items: [
-                        "Workloads → Pods, Deployments, StatefulSets, DaemonSets, Jobs",
-                        "Services & Networking → ClusterIP, NodePort, LoadBalancer, Ingress",
-                        "Configuration → ConfigMaps, Secrets, environment variables",
-                        "Storage → PersistentVolumes, StorageClasses, dynamic provisioning"
-                    ]
-                },
-                {
-                    title: "Advanced Kubernetes",
-                    items: [
-                        "Custom Resources → CRDs, Operators, custom controllers",
-                        "Security → RBAC, Pod Security Standards, Network Policies",
-                        "Scaling → HPA, VPA, cluster autoscaling, resource management",
-                        "Troubleshooting → Debugging pods, log analysis, performance tuning"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 6,
-            title: "Cloud Platforms",
-            subtitle: "Advanced Level",
-            description: "Deploy and manage workloads in major cloud providers",
-            color: "bg-yellow-500",
-            sections: [
-                {
-                    title: "Amazon Web Services (AWS)",
-                    items: [
-                        "Compute → EC2, Lambda, ECS, EKS, Auto Scaling Groups",
-                        "Storage → S3, EBS, EFS, backup strategies, lifecycle policies",
-                        "Networking → VPC, subnets, security groups, load balancers",
-                        "Security → IAM, KMS, Secrets Manager, CloudTrail, GuardDuty"
-                    ]
-                },
-                {
-                    title: "Microsoft Azure",
-                    items: [
-                        "Compute → Virtual Machines, App Service, AKS, Azure Functions",
-                        "Storage → Blob Storage, File Shares, managed disks",
-                        "Networking → Virtual Networks, Azure Load Balancer, Application Gateway",
-                        "Security → Azure AD, Key Vault, Security Center, RBAC"
-                    ]
-                },
-                {
-                    title: "Google Cloud Platform (GCP)",
-                    items: [
-                        "Compute → Compute Engine, GKE, Cloud Run, Cloud Functions",
-                        "Storage → Cloud Storage, Persistent Disks, Cloud SQL",
-                        "Networking → VPC, Cloud Load Balancing, Cloud Armor",
-                        "Security → IAM, Cloud KMS, Security Command Center, Binary Authorization"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 7,
-            title: "Monitoring & Logging",
-            subtitle: "Advanced Level",
-            description: "Ensure reliability, visibility and incident response",
-            color: "bg-orange-500",
-            sections: [
-                {
-                    title: "Metrics & Monitoring",
-                    items: [
-                        "Prometheus → Time-series database, PromQL, alerting rules",
-                        "Grafana → Dashboards, visualizations, alerting, data sources",
-                        "Application metrics → Custom metrics, SLIs, SLOs, error budgets",
-                        "Infrastructure monitoring → Node exporter, cAdvisor, blackbox monitoring"
-                    ]
-                },
-                {
-                    title: "Logging & Analysis",
-                    items: [
-                        "ELK Stack → Elasticsearch, Logstash, Kibana log processing",
-                        "OpenSearch → Open-source alternative, log aggregation, search",
-                        "Log management → Structured logging, log rotation, retention policies",
-                        "Correlation → Metrics and logs correlation, root cause analysis"
-                    ]
-                },
-                {
-                    title: "Distributed Tracing",
-                    items: [
-                        "OpenTelemetry → Observability framework, auto-instrumentation",
-                        "Jaeger → Trace collection, storage, UI, performance analysis",
-                        "Distributed systems → Service dependencies, latency analysis",
-                        "APM integration → Application performance monitoring, error tracking"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 8,
-            title: "Security & Compliance",
-            subtitle: "Expert Level",
-            description: "Secure CI/CD pipelines and infrastructure",
-            color: "bg-indigo-500",
-            sections: [
-                {
-                    title: "Secrets Management",
-                    items: [
-                        "HashiCorp Vault → Dynamic secrets, encryption as a service",
-                        "Cloud KMS → AWS KMS, Azure Key Vault, GCP Cloud KMS",
-                        "Kubernetes secrets → Sealed Secrets, External Secrets Operator",
-                        "Secret rotation → Automated rotation, zero-downtime updates"
-                    ]
-                },
-                {
-                    title: "DevSecOps Tools",
-                    items: [
-                        "Container scanning → Trivy, Aqua Security, Twistlock vulnerability detection",
-                        "Code analysis → SonarQube, Snyk, CodeQL static analysis",
-                        "Infrastructure scanning → Checkov, tfsec, Terraform compliance",
-                        "Runtime security → Falco, OPA Gatekeeper, admission controllers"
-                    ]
-                },
-                {
-                    title: "Kubernetes Security",
-                    items: [
-                        "RBAC → Role-based access control, service accounts, permissions",
-                        "Pod Security → Pod Security Standards, security contexts, capabilities",
-                        "Network Security → Network Policies, service mesh, traffic encryption",
-                        "Image security → Image signing, admission webhooks, policy enforcement"
-                    ]
-                }
-            ]
-        },
-        {
-            id: 9,
-            title: "Advanced Topics",
-            subtitle: "Expert Level",
-            description: "Industry-ready advanced DevOps practices and technologies",
-            color: "bg-pink-500",
-            sections: [
-                {
-                    title: "GitOps",
-                    items: [
-                        "ArgoCD → Declarative continuous delivery, application synchronization",
-                        "FluxCD → GitOps operator, Helm integration, multi-tenancy",
-                        "GitOps workflows → Pull-based deployments, configuration drift detection",
-                        "Multi-cluster → Cross-cluster deployments, cluster bootstrapping"
-                    ]
-                },
-                {
-                    title: "Service Mesh",
-                    items: [
-                        "Istio → Traffic management, security policies, observability",
-                        "Linkerd → Lightweight service mesh, automatic mTLS",
-                        "Service communication → Load balancing, circuit breakers, retries",
-                        "Mesh federation → Multi-cluster service mesh, cross-cluster communication"
-                    ]
-                },
-                {
-                    title: "Serverless & SRE",
-                    items: [
-                        "AWS Lambda → Event-driven computing, serverless architectures",
-                        "Azure Functions → Serverless compute, triggers, bindings",
-                        "GCP Cloud Functions → HTTP triggers, Pub/Sub integration",
-                        "SRE principles → Error budgets, toil reduction, reliability engineering"
-                    ]
-                }
-            ]
-        }
-    ];
     // Handle PDF download with loading state
     const handlePDFDownload = async ()=>{
         setIsDownloading(true);
@@ -1613,13 +1274,13 @@ const DevOpsRoadmap = ()=>{
             case 'documentation':
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Devops$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                    lineNumber: 342,
+                    lineNumber: 35,
                     columnNumber: 16
                 }, this);
             case 'projects':
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Devops$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                    lineNumber: 344,
+                    lineNumber: 37,
                     columnNumber: 16
                 }, this);
             default:
@@ -1635,7 +1296,7 @@ const DevOpsRoadmap = ()=>{
                                             className: "absolute left-1/2 transform -translate-x-1/2 top-full h-8 md:h-12 w-0.5 md:w-1 bg-gray-300 z-10"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                            lineNumber: 354,
+                                            lineNumber: 47,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1654,7 +1315,7 @@ const DevOpsRoadmap = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                            lineNumber: 361,
+                                                            lineNumber: 54,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1662,7 +1323,7 @@ const DevOpsRoadmap = ()=>{
                                                             children: phase.subtitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                            lineNumber: 364,
+                                                            lineNumber: 57,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1670,13 +1331,13 @@ const DevOpsRoadmap = ()=>{
                                                             children: phase.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                            lineNumber: 365,
+                                                            lineNumber: 58,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 360,
+                                                    lineNumber: 53,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1691,7 +1352,7 @@ const DevOpsRoadmap = ()=>{
                                                                         children: section.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                                        lineNumber: 376,
+                                                                        lineNumber: 69,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1707,7 +1368,7 @@ const DevOpsRoadmap = ()=>{
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                                                        lineNumber: 382,
+                                                                                        lineNumber: 75,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     " ",
@@ -1715,28 +1376,28 @@ const DevOpsRoadmap = ()=>{
                                                                                 ]
                                                                             }, itemIndex, true, {
                                                                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                                                lineNumber: 381,
+                                                                                lineNumber: 74,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                                        lineNumber: 379,
+                                                                        lineNumber: 72,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, sectionIndex, true, {
                                                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                                lineNumber: 372,
+                                                                lineNumber: 65,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                        lineNumber: 370,
+                                                        lineNumber: 63,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 62,
                                                     columnNumber: 21
                                                 }, this),
                                                 index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1750,7 +1411,7 @@ const DevOpsRoadmap = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                            lineNumber: 394,
+                                                            lineNumber: 87,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
@@ -1758,7 +1419,7 @@ const DevOpsRoadmap = ()=>{
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                            lineNumber: 397,
+                                                            lineNumber: 90,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1769,30 +1430,30 @@ const DevOpsRoadmap = ()=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                            lineNumber: 398,
+                                                            lineNumber: 91,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 393,
+                                                    lineNumber: 86,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                            lineNumber: 358,
+                                            lineNumber: 51,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, phase.id, true, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 351,
+                                    lineNumber: 44,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                            lineNumber: 349,
+                            lineNumber: 42,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1803,7 +1464,7 @@ const DevOpsRoadmap = ()=>{
                                     children: "🚀 Congratulations! You're DevOps Industry Ready!"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 410,
+                                    lineNumber: 103,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1811,7 +1472,7 @@ const DevOpsRoadmap = ()=>{
                                     children: "You've completed the DevOps Development Roadmap and are now ready to build scalable infrastructure and lead DevOps initiatives."
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 413,
+                                    lineNumber: 106,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1822,7 +1483,7 @@ const DevOpsRoadmap = ()=>{
                                             children: "🏆 Final Tips to Become Industry-Ready"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                            lineNumber: 417,
+                                            lineNumber: 110,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1832,52 +1493,52 @@ const DevOpsRoadmap = ()=>{
                                                     children: "• Contribute to open-source DevOps tools (Kubernetes, Terraform, Ansible)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 419,
+                                                    lineNumber: 112,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "• Build comprehensive portfolio with CI/CD, IaC, and monitoring projects"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 420,
+                                                    lineNumber: 113,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "• Obtain cloud certifications (AWS, Azure, GCP) and Kubernetes certifications"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 421,
+                                                    lineNumber: 114,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "• Stay updated via DevOps communities, CNCF projects, and platform documentation"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                                    lineNumber: 422,
+                                                    lineNumber: 115,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                            lineNumber: 418,
+                                            lineNumber: 111,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 416,
+                                    lineNumber: 109,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                            lineNumber: 409,
+                            lineNumber: 102,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                    lineNumber: 347,
+                    lineNumber: 40,
                     columnNumber: 11
                 }, this);
         }
@@ -1898,7 +1559,7 @@ const DevOpsRoadmap = ()=>{
                                     size: 32
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 437,
+                                    lineNumber: 130,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1910,7 +1571,7 @@ const DevOpsRoadmap = ()=>{
                                             children: "Development Roadmap"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                            lineNumber: 439,
+                                            lineNumber: 132,
                                             columnNumber: 22
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1918,19 +1579,19 @@ const DevOpsRoadmap = ()=>{
                                             children: "(2025 Edition)"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                            lineNumber: 440,
+                                            lineNumber: 133,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 438,
+                                    lineNumber: 131,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                            lineNumber: 436,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1943,26 +1604,26 @@ const DevOpsRoadmap = ()=>{
                                     className: "animate-spin"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 451,
+                                    lineNumber: 144,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 453,
+                                    lineNumber: 146,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: isDownloading ? 'Generating PDF...' : 'Download PDF'
                                 }, void 0, false, {
                                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                    lineNumber: 455,
+                                    lineNumber: 148,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                            lineNumber: 445,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1972,24 +1633,24 @@ const DevOpsRoadmap = ()=>{
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 463,
+                                lineNumber: 156,
                                 columnNumber: 31
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 463,
+                                lineNumber: 156,
                                 columnNumber: 49
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                            lineNumber: 459,
+                            lineNumber: 152,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                    lineNumber: 435,
+                    lineNumber: 128,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2004,31 +1665,31 @@ const DevOpsRoadmap = ()=>{
                                 className: "animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 475,
+                                lineNumber: 168,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                 size: 18
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 477,
+                                lineNumber: 170,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: isDownloading ? 'Generating PDF...' : 'Download PDF'
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 479,
+                                lineNumber: 172,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                        lineNumber: 469,
+                        lineNumber: 162,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                    lineNumber: 468,
+                    lineNumber: 161,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2048,14 +1709,14 @@ const DevOpsRoadmap = ()=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                        lineNumber: 497,
+                                        lineNumber: 190,
                                         columnNumber: 15
                                     }, this),
                                     "Roadmap"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 486,
+                                lineNumber: 179,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2070,14 +1731,14 @@ const DevOpsRoadmap = ()=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                        lineNumber: 511,
+                                        lineNumber: 204,
                                         columnNumber: 15
                                     }, this),
                                     "Documentation"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 500,
+                                lineNumber: 193,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2092,37 +1753,37 @@ const DevOpsRoadmap = ()=>{
                                         className: "mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                        lineNumber: 525,
+                                        lineNumber: 218,
                                         columnNumber: 15
                                     }, this),
                                     "Projects"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                                lineNumber: 514,
+                                lineNumber: 207,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                        lineNumber: 485,
+                        lineNumber: 178,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-                    lineNumber: 484,
+                    lineNumber: 177,
                     columnNumber: 9
                 }, this),
                 renderContent()
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-            lineNumber: 433,
+            lineNumber: 126,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Devops/page.jsx",
-        lineNumber: 432,
+        lineNumber: 125,
         columnNumber: 5
     }, this);
 };

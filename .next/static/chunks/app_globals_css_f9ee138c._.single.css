@@ -1938,6 +1938,10 @@
     list-style-type: disc;
   }
 
+  .list-none {
+    list-style-type: none;
+  }
+
   .columns-2 {
     columns: 2;
   }
@@ -5925,6 +5929,14 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+
+  .group-open\:rotate-45:is(:where(.group):is([open], :popover-open, :open) *) {
+    rotate: 45deg;
+  }
+
+  .group-open\:rotate-180:is(:where(.group):is([open], :popover-open, :open) *) {
+    rotate: 180deg;
   }
 
   @media (hover: hover) {
