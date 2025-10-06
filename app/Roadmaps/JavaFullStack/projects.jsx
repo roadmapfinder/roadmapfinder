@@ -1,117 +1,94 @@
-// components/Projects.jsx
-import React from "react";
 
 const projects = [
   // ---------- BEGINNER PROJECTS ----------
   {
-    id: "java-todo-list",
-    level: "Java Fullstack — Beginner",
-    title: "Simple To-Do List",
+    id: "java-employee-system",
+    level: "Java — Beginner",
+    title: "Employee Management System",
     description:
-      "Learn to build a simple To-Do application using Java Spring Boot, covering CRUD operations and basic API integration.",
-    url: "https://www.youtube.com/watch?v=Ga5kRSu-W5Y"
+      "Build a CRUD-based employee management app using Spring Boot and MySQL. Learn REST APIs, data validation, and pagination. Great first fullstack backend project.",
+    url: "https://youtu.be/9Zvy8i73g-A?si=SmQhOaMEyNEX2rVF",
   },
   {
-    id: "java-student-management",
-    level: "Java Fullstack — Beginner",
-    title: "Student Management System",
+    id: "java-blogging-platform",
+    level: "Java — Beginner",
+    title: "Blogging Platform (Spring Boot + React)",
     description:
-      "Create a Student Management System using Spring Boot for the backend and React for the frontend.",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
-  },
-  {
-    id: "java-calculator-web",
-    level: "Java Fullstack — Beginner",
-    title: "Calculator App (Web Version)",
-    description:
-      "Foundational knowledge to build simple applications like a calculator using Java Full Stack.",
-    url: "https://www.youtube.com/watch?v=TnjNq2Q0Qi8"
-  },
-  {
-    id: "java-portfolio",
-    level: "Java Fullstack — Beginner",
-    title: "Personal Portfolio Website",
-    description:
-      "Learn to create a personal portfolio website, including backend integration for features like contact forms.",
-    url: "https://www.youtube.com/watch?v=Js4FlB0zTbg"
+      "Create a blogging system with user authentication, CRUD posts, and comments. Learn relational mapping, DTOs, and frontend integration with Axios.",
+    url: "https://youtu.be/EWd3_I4X32g?si=WPbJqPa19AQnak4J",
   },
 
   // ---------- INTERMEDIATE PROJECTS ----------
   {
-    id: "java-blog-platform",
-    level: "Java Fullstack — Intermediate",
-    title: "Blog Platform",
+    id: "java-job-portal",
+    level: "Java — Intermediate",
+    title: "Job Portal System",
     description:
-      "Build a blog platform focusing on user authentication and CRUD operations.",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
+      "Develop a job posting and application system with JWT authentication and role-based access (admin, recruiter, candidate). Add search, filters, and resume upload.",
+    url: "https://youtu.be/pvy2Xe38fr4?si=ES0Z6JJfuOYrjtM5",
   },
   {
-    id: "java-ecommerce-catalog",
-    level: "Java Fullstack — Intermediate",
-    title: "E-Commerce Product Catalog",
+    id: "java-ecommerce-app",
+    level: "Java — Intermediate",
+    title: "E-Commerce Web App",
     description:
-      "Understand product listing, filtering, and cart functionality using Spring Boot and React + Redux.",
-    url: "https://www.youtube.com/watch?v=SDZk34mh7wM"
+      "Build a complete e-commerce backend with Spring Boot, JWT, and PostgreSQL. Add user authentication, product catalog, cart, checkout, and Stripe integration.",
+    url: "https://youtu.be/APPoN1s2gTM?si=Ovd3McwO65KJXOSY",
   },
   {
-    id: "java-library-management",
-    level: "Java Fullstack — Intermediate",
-    title: "Library Management System",
+    id: "java-event-booking",
+    level: "Java — Intermediate",
+    title: "Event Booking System",
     description:
-      "Build a library management system focusing on entity relationships and UI forms.",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
-  },
-  {
-    id: "java-weather-app",
-    level: "Java Fullstack — Intermediate",
-    title: "Weather App",
-    description:
-      "Learn to build applications like a weather app, integrating external APIs for real-time data.",
-    url: "https://www.youtube.com/watch?v=Js4FlB0zTbg"
+      "Develop an event management app to create, list, and book events. Integrate payment gateway and email confirmations. Learn validation, transactions, and RESTful design.",
+    url: "https://youtu.be/BQXjF7tw_MQ?si=Do8gdUtH0PsfkKql",
   },
 
   // ---------- ADVANCED PROJECTS ----------
   {
-    id: "java-ecommerce-fullstack",
-    level: "Java Fullstack — Advanced",
-    title: "E-Commerce Fullstack Platform",
+    id: "java-lms",
+    level: "Java — Advanced",
+    title: "Learning Management System (LMS)",
     description:
-      "Build a full-stack e-commerce platform with microservices architecture, secure authentication, and deployment on AWS.",
-    url: "https://www.youtube.com/watch?v=fmX84zu-5gs"
+      "Create a full LMS where instructors upload courses and students enroll. Learn JWT, file uploads (S3), role-based dashboards, and video streaming integration.",
+    url: "https://youtu.be/KtDcPQkHU7o?si=sBcDUVdklw0v2WjN",
   },
   {
-    id: "java-social-media-app",
-    level: "Java Fullstack — Advanced",
-    title: "Social Media App (Mini Instagram/Facebook)",
+    id: "java-project-manager",
+    level: "Java — Advanced",
+    title: "Project Management Tool (Trello Clone)",
     description:
-      "Extend concepts from tutorials to build a social media application with posts, likes, and image uploads.",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
+      "Build a collaborative task board app with drag-and-drop UI. Implement real-time updates with WebSocket, notifications, and microservices for scalability.",
+    url: "https://youtu.be/Zr0E2VP24w8?si=FyxT0yQfkPe1RU-y",
   },
   {
-    id: "java-job-portal",
-    level: "Java Fullstack — Advanced",
-    title: "Job Portal Platform",
+    id: "java-chat-app",
+    level: "Java — Advanced",
+    title: "Chat Application (WebSocket + Spring Boot)",
     description:
-      "Create a job portal focusing on user profiles, CRUD operations, and file uploads (resumes).",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
+      "Create a real-time chat app using Spring Boot WebSocket and React. Implement user authentication, message persistence, and Redis for scalability.",
+    url: "https://youtu.be/sqYqyr6EpAU?si=Er2_O1psXVUEg29v",
   },
   {
-    id: "java-online-banking",
-    level: "Java Fullstack — Advanced",
-    title: "Online Banking System",
+    id: "java-url-shortener",
+    level: "Java — Advanced",
+    title: "URL Shortener & Analytics",
     description:
-      "Build an online banking system incorporating transaction handling and secure REST APIs.",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
+      "Develop a short-link generator with Spring Boot, MongoDB, and caching using Redis. Track analytics like clicks, devices, and referrers. Add frontend charts with Recharts.",
+    url: "https://youtu.be/YbSC1OsLp20?si=RM_2wnEYgy-nJOYN",
   },
+
+  // ---------- INDUSTRY-READY PROJECT ----------
   {
-    id: "java-inventory-management",
-    level: "Java Fullstack — Advanced",
-    title: "Inventory Management System",
+    id: "java-finance-tracker",
+    level: "Java — Industry Ready",
+    title: "Online Banking / Finance Tracker",
     description:
-      "Focus on backend and frontend integration for inventory management, including microservices and caching.",
-    url: "https://www.youtube.com/watch?v=wCICF9YSWNo"
-  }
+      "Build a cloud-ready finance app with Spring Boot microservices, Kafka for transactions, PostgreSQL, Docker, and React frontend. Add JWT, charts, and reporting.",
+    url: "https://youtu.be/ZOq1chI2jEc",
+  },
 ];
+
 
 export default function Projects() {
   return (
@@ -119,10 +96,12 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">
-            🧑‍💻 Java Full-Stack Project Roadmap
+            ☕ Java Fullstack Project Roadmap
           </h2>
           <p className="mt-2 text-gray-600">
-            From beginner CRUD apps to advanced microservices and fullstack platforms — each project includes latest YouTube tutorials (Hindi & English, 2025).
+            10 must-build projects to become an industry-ready Java Fullstack
+            Engineer — from Spring Boot REST APIs to microservices and real-world
+            fullstack apps.
           </p>
         </header>
 
@@ -133,12 +112,12 @@ export default function Projects() {
               className="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-transform"
               aria-labelledby={`${p.id}-title`}
             >
-              <span className="inline-block text-xs font-medium bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">
+              <span className="inline-block text-xs font-medium bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
                 {p.level}
               </span>
               <h3
                 id={`${p.id}-title`}
-                className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-indigo-600"
+                className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-yellow-700"
               >
                 {p.title}
               </h3>
@@ -147,16 +126,17 @@ export default function Projects() {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
+                className="mt-4 inline-block text-yellow-700 font-medium hover:underline"
               >
-                Watch Tutorial ▶
+                Learn More ▶
               </a>
             </article>
           ))}
         </div>
 
         <footer className="mt-10 text-sm text-gray-500 text-center">
-          Start small, master the foundations, and scale up to advanced full-stack applications 🚀
+          Build these 10 projects — master Java Fullstack development and
+          deploy production-grade apps 🚀
         </footer>
       </div>
     </section>

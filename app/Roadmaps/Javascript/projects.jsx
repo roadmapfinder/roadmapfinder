@@ -9,7 +9,7 @@ const projects = [
     title: "Digital Clock",
     description:
       "Build a real-time digital clock using DOM manipulation, setInterval(), and the Date object.",
-    url: "https://www.youtube.com/watch?v=dg_S8EV_TxQ"
+    url: "https://youtu.be/RDynd1km5Qk?si=bBDDplOqKcRM-5hP"
   },
   {
     id: "js-todo-list",
@@ -17,7 +17,7 @@ const projects = [
     title: "To-Do List App",
     description:
       "Create a task manager with add, edit, and delete functionalities using event handling and localStorage.",
-    url: "https://www.youtube.com/watch?v=dg_S8EV_TxQ"
+    url: "https://youtu.be/G0jO8kUrg-I?si=zpwK7TT0kyrKFMoD"
   },
   {
     id: "js-calculator",
@@ -33,7 +33,7 @@ const projects = [
     title: "Stopwatch",
     description:
       "Implement a stopwatch with start, stop, and reset features using setInterval() and DOM updates.",
-    url: "https://www.youtube.com/watch?v=AqVyPhVixzo"
+    url: "https://youtu.be/cO-qjCC_UYQ?si=4vsZGWKDXFCIUDqd"
   },
   {
     id: "js-note-taking-app",
@@ -41,7 +41,7 @@ const projects = [
     title: "Note-Taking App",
     description:
       "Create an app to add, edit, and delete notes with DOM manipulation, localStorage, and event listeners.",
-    url: "https://www.youtube.com/watch?v=gzoifHuIsrI"
+    url: "https://youtu.be/gzoifHuIsrI?si=fkbP-XOGOz3UEliX"
   },
 
   // ---------- INTERMEDIATE PROJECTS ----------
@@ -51,7 +51,7 @@ const projects = [
     title: "Weather App",
     description:
       "Fetch and display weather data using an API, covering Fetch API, JSON handling, and async programming.",
-    url: "https://www.youtube.com/playlist?list=PLB0Tybl0UNfaT1uq9anIjt_Ggo7mT6mMb"
+    url: "https://youtu.be/pFvWwFua6mw?si=D3escfBy7dPOmrS-"
   },
   {
     id: "js-ecommerce-website",
@@ -59,7 +59,7 @@ const projects = [
     title: "E-commerce Website",
     description:
       "Build a simple e-commerce site with product listings and a shopping cart using DOM manipulation and event handling.",
-    url: "https://www.youtube.com/watch?v=YwsOCN8woA8"
+    url: "https://youtu.be/bYvgvYWqMn0?si=Zans8jtCG8biMQKa"
   },
   {
     id: "js-mini-projects-collection",

@@ -7,7 +7,7 @@ import Projects from './projects';
 import FAQ from './faq';
 import { downloadRoadmapPDF } from './downloadPdf';
 
-const GenerativeAIRoadmap = () => {
+const GoRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -233,4 +233,4 @@ const GenerativeAIRoadmap = () => {
   );
 };
 
-export default GenerativeAIRoadmap;
+export default GoRoadmap;
