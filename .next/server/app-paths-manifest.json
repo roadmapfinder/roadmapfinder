@@ -1,6 +1,5 @@
 {
-  "/Roadmaps/Django/page": "app/Roadmaps/Django/page.js",
-  "/Roadmaps/Expressjs/page": "app/Roadmaps/Expressjs/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/Roadmaps/Git_Github/page": "app/Roadmaps/Git_Github/page.js",
+  "/Roadmaps/Go/page": "app/Roadmaps/Go/page.js",
   "/page": "app/page.js"
 }

@@ -1,12 +1,9 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Django/page": [
+    "[project]/app/Roadmaps/Git_Github/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Roadmaps/Expressjs/page": [
-      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
-    ],
-    "[project]/app/_not-found/page": [
+    "[project]/app/Roadmaps/Go/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
     "[project]/app/page": [

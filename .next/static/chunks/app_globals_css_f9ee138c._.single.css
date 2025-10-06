@@ -121,6 +121,7 @@
     --color-yellow-600: oklch(68.1% .162 75.834);
     --color-yellow-800: oklch(47.6% .114 61.907);
     --color-yellow-900: oklch(42.1% .095 57.708);
+    --color-lime-500: oklch(76.8% .233 130.85);
     --color-green-50: oklch(98.2% .018 155.826);
     --color-green-100: oklch(96.2% .044 156.743);
     --color-green-200: oklch(92.5% .084 155.995);
@@ -189,6 +190,7 @@
     --color-purple-700: oklch(49.6% .265 301.924);
     --color-purple-800: oklch(43.8% .218 303.724);
     --color-purple-900: oklch(38.1% .176 304.987);
+    --color-fuchsia-500: oklch(66.7% .295 322.15);
     --color-pink-50: oklch(97.1% .014 343.198);
     --color-pink-100: oklch(94.8% .028 342.258);
     --color-pink-200: oklch(89.9% .061 343.231);
@@ -2092,6 +2094,12 @@
     margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  :where(.space-y-10 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
   :where(.space-y-12 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
@@ -2856,6 +2864,10 @@
     background-color: var(--color-cyan-100);
   }
 
+  .bg-cyan-500 {
+    background-color: var(--color-cyan-500);
+  }
+
   .bg-emerald-50 {
     background-color: var(--color-emerald-50);
   }
@@ -2870,6 +2882,10 @@
 
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
+  }
+
+  .bg-fuchsia-500 {
+    background-color: var(--color-fuchsia-500);
   }
 
   .bg-gray-50 {
@@ -3022,6 +3038,10 @@
 
   .bg-indigo-600 {
     background-color: var(--color-indigo-600);
+  }
+
+  .bg-lime-500 {
+    background-color: var(--color-lime-500);
   }
 
   .bg-orange-50 {
@@ -3182,6 +3202,10 @@
     }
   }
 
+  .bg-rose-500 {
+    background-color: var(--color-rose-500);
+  }
+
   .bg-slate-50 {
     background-color: var(--color-slate-50);
   }
@@ -3200,6 +3224,10 @@
 
   .bg-transparent {
     background-color: #0000;
+  }
+
+  .bg-violet-500 {
+    background-color: var(--color-violet-500);
   }
 
   .bg-white {
@@ -5937,6 +5965,10 @@
 
   .group-open\:rotate-180:is(:where(.group):is([open], :popover-open, :open) *) {
     rotate: 180deg;
+  }
+
+  .group-open\:text-indigo-700:is(:where(.group):is([open], :popover-open, :open) *) {
+    color: var(--color-indigo-700);
   }
 
   @media (hover: hover) {
