@@ -1,1 +1,4 @@
-{}
+{
+  "/Roadmaps/Nodejs/page": "app/Roadmaps/Nodejs/page.js",
+  "/Roadmaps/Php/page": "app/Roadmaps/Php/page.js"
+}
