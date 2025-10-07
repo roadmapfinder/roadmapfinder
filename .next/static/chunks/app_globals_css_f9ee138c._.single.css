@@ -5312,6 +5312,10 @@
     color: var(--color-pink-600);
   }
 
+  .text-pink-800 {
+    color: var(--color-pink-800);
+  }
+
   .text-purple-100 {
     color: var(--color-purple-100);
   }
@@ -6282,6 +6286,12 @@
   @media (hover: hover) {
     .group-hover\:text-orange-600:is(:where(.group):hover *) {
       color: var(--color-orange-600);
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:text-pink-600:is(:where(.group):hover *) {
+      color: var(--color-pink-600);
     }
   }
 
