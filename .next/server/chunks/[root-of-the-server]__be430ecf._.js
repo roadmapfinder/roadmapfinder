@@ -73,8 +73,8 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
 /**
- * Enhance user query using AI to get better search terms
- */ async function enhanceQuery(userQuery, language) {
+ * Enhance search query using AI for better accuracy
+ */ async function enhanceSearchQuery(query, language) {
     try {
         const model = genAI.getGenerativeModel({
             model: 'gemini-1.5-flash',
@@ -83,39 +83,78 @@ const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
                 temperature: 0.3
             }
         });
-        const prompt = `User wants to learn: "${userQuery}"
+        const prompt = `Extract the core learning topic from this query: "${query}"
 
-Extract the core topic and return ONLY the best YouTube search query (3-6 words) that would find a comprehensive tutorial/course.
-Focus on: main topic + "complete course" or "full tutorial"
-Language preference: ${language}
+Return ONLY the essential search keywords (2-5 words) optimized for finding educational YouTube videos.
+Examples:
+- "I want to learn react js" → "react js tutorial"
+- "teach me python basics" → "python basics course"
+- "how to machine learning" → "machine learning tutorial"
 
-Return only the search query, nothing else.`;
+Query: "${query}"
+Keywords:`;
         const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const enhancedQuery = response.text().trim().replace(/['"]/g, '');
-        console.log(`📝 Enhanced query: "${userQuery}" → "${enhancedQuery}"`);
-        return enhancedQuery;
+        const enhanced = result.response.text().trim().replace(/['"]/g, '');
+        return enhanced || query;
     } catch (error) {
-        console.error('Query enhancement failed:', error);
-        return userQuery; // Fallback to original
+        console.error('Error enhancing query:', error);
+        return query;
     }
 }
 /**
- * Calculate video quality score
- */ function calculateVideoScore(video) {
+ * Calculate comprehensive video quality score
+ */ function calculateVideoScore(video, query) {
     const views = parseInt(video.viewCount || 0);
     const likes = parseInt(video.likeCount || 0);
     const duration = parseDuration(video.duration);
+    const title = video.title.toLowerCase();
+    const description = video.description.toLowerCase();
+    const queryLower = query.toLowerCase();
+    // Relevance scoring
+    const queryWords = queryLower.split(' ').filter((w)=>w.length > 2);
+    let relevanceScore = 0;
+    queryWords.forEach((word)=>{
+        if (title.includes(word)) relevanceScore += 3;
+        if (description.includes(word)) relevanceScore += 1;
+    });
+    // Check for course indicators
+    const courseKeywords = [
+        'complete',
+        'full',
+        'course',
+        'tutorial',
+        'beginner',
+        'guide',
+        'learn'
+    ];
+    const hasCourseKeywords = courseKeywords.some((kw)=>title.includes(kw));
+    const courseBonus = hasCourseKeywords ? 5 : 0;
+    // Engagement metrics
     const engagementRate = views > 0 ? likes / views : 0;
-    const viewScore = Math.log10(views + 1);
-    const engagementScore = engagementRate * 8000;
-    // Prefer comprehensive courses (30min-4hr)
-    const durationScore = duration >= 30 && duration <= 240 ? 2 : duration >= 10 && duration <= 360 ? 1 : 0.3;
-    // Recency preference
+    const viewScore = Math.log10(views + 1) * 2;
+    const engagementScore = engagementRate * 10000;
+    // Duration preference (20min-3hr optimal for courses)
+    let durationScore = 0;
+    if (duration >= 20 && duration <= 180) durationScore = 10;
+    else if (duration >= 10 && duration <= 240) durationScore = 5;
+    else if (duration >= 5 && duration <= 360) durationScore = 2;
+    // Recency bonus
     const publishDate = new Date(video.publishedAt);
     const monthsOld = (Date.now() - publishDate.getTime()) / (1000 * 60 * 60 * 24 * 30);
-    const recencyScore = monthsOld < 12 ? 1.5 : monthsOld < 24 ? 1 : 0.5;
-    return viewScore * 0.25 + engagementScore * 0.35 + durationScore * 0.25 + recencyScore * 0.15;
+    const recencyScore = monthsOld < 6 ? 8 : monthsOld < 12 ? 5 : monthsOld < 24 ? 3 : 1;
+    // Total score calculation
+    const totalScore = relevanceScore * 0.35 + viewScore * 0.20 + engagementScore * 0.15 + durationScore * 0.15 + recencyScore * 0.10 + courseBonus * 0.05;
+    return {
+        score: totalScore,
+        breakdown: {
+            relevance: relevanceScore,
+            views: viewScore,
+            engagement: engagementScore,
+            duration: durationScore,
+            recency: recencyScore,
+            courseBonus
+        }
+    };
 }
 /**
  * Parse ISO 8601 duration to minutes
@@ -128,27 +167,34 @@ Return only the search query, nothing else.`;
     return hours * 60 + minutes + seconds / 60;
 }
 /**
- * Search for THE BEST YouTube video
- */ async function searchBestVideo(query, language, preferLatest) {
+ * Search YouTube for the SINGLE best matching video
+ */ async function searchBestYouTubeVideo(query, language, preferLatest) {
     try {
-        let searchQuery = query;
+        // Enhance query for better accuracy
+        const enhancedQuery = await enhanceSearchQuery(query, language);
+        console.log(`🔍 Original: "${query}" → Enhanced: "${enhancedQuery}"`);
+        // Build precise search query
+        let searchQuery = enhancedQuery;
+        // Add language specificity
         if (language === 'hindi') {
             searchQuery += ' hindi';
         }
-        searchQuery += ' complete course tutorial full';
+        // Add course/tutorial keywords
+        searchQuery += ' complete tutorial';
+        // Search parameters
         const searchParams = new URLSearchParams({
             part: 'snippet',
             q: searchQuery,
             type: 'video',
             maxResults: 15,
             order: preferLatest ? 'date' : 'relevance',
-            videoDuration: 'long',
+            videoDuration: 'medium',
             videoDefinition: 'high',
             relevanceLanguage: language === 'hindi' ? 'hi' : 'en',
             key: YOUTUBE_API_KEY
         });
         const searchResponse = await fetch(`${YOUTUBE_SEARCH_URL}?${searchParams}`, {
-            signal: AbortSignal.timeout(5000)
+            signal: AbortSignal.timeout(8000)
         });
         if (!searchResponse.ok) {
             throw new Error('YouTube search failed');
@@ -157,6 +203,7 @@ Return only the search query, nothing else.`;
         if (!searchData.items || searchData.items.length === 0) {
             return null;
         }
+        // Get detailed video information
         const videoIds = searchData.items.map((item)=>item.id.videoId).join(',');
         const videoParams = new URLSearchParams({
             part: 'snippet,contentDetails,statistics',
@@ -164,14 +211,23 @@ Return only the search query, nothing else.`;
             key: YOUTUBE_API_KEY
         });
         const videoResponse = await fetch(`${YOUTUBE_VIDEOS_URL}?${videoParams}`, {
-            signal: AbortSignal.timeout(5000)
+            signal: AbortSignal.timeout(8000)
         });
         if (!videoResponse.ok) {
             throw new Error('Failed to fetch video details');
         }
         const videoData = await videoResponse.json();
-        // Process and find the BEST video
-        const videos = videoData.items.map((video)=>({
+        // Score and rank all videos
+        const rankedVideos = videoData.items.map((video)=>{
+            const scoreData = calculateVideoScore({
+                title: video.snippet.title,
+                description: video.snippet.description,
+                viewCount: video.statistics.viewCount,
+                likeCount: video.statistics.likeCount,
+                duration: video.contentDetails.duration,
+                publishedAt: video.snippet.publishedAt
+            }, query);
+            return {
                 id: video.id,
                 title: video.snippet.title,
                 description: video.snippet.description,
@@ -183,52 +239,93 @@ Return only the search query, nothing else.`;
                 likeCount: parseInt(video.statistics.likeCount || 0),
                 commentCount: parseInt(video.statistics.commentCount || 0),
                 url: `https://www.youtube.com/watch?v=${video.id}`,
-                qualityScore: calculateVideoScore({
-                    viewCount: video.statistics.viewCount,
-                    likeCount: video.statistics.likeCount,
-                    commentCount: video.statistics.commentCount,
-                    duration: video.contentDetails.duration,
-                    publishedAt: video.snippet.publishedAt
-                })
-            })).filter((video)=>{
+                qualityScore: scoreData.score,
+                scoreBreakdown: scoreData.breakdown
+            };
+        }).filter((video)=>{
             const duration = parseDuration(video.duration);
-            return video.viewCount > 5000 && duration >= 10 && video.qualityScore > 0.5;
+            // More lenient filtering
+            return video.viewCount > 500 && duration >= 5 && video.qualityScore > 1;
         }).sort((a, b)=>b.qualityScore - a.qualityScore);
-        return videos[0] || null; // Return ONLY the best one
+        console.log(`📊 Top 3 scores:`, rankedVideos.slice(0, 3).map((v)=>({
+                title: v.title.substring(0, 50),
+                score: v.qualityScore.toFixed(2)
+            })));
+        return {
+            video: rankedVideos[0] || null,
+            enhancedQuery
+        };
     } catch (error) {
         console.error('Error searching YouTube:', error);
         throw error;
     }
 }
 /**
- * Generate AI summary for single video
+ * Extract course content/outline from video
+ */ async function extractCourseContent(video, language) {
+    try {
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-1.5-pro',
+            generationConfig: {
+                maxOutputTokens: 1500,
+                temperature: 0.4
+            }
+        });
+        const prompt = `Analyze this YouTube course and extract its content structure:
+
+Title: "${video.title}"
+Channel: ${video.channelTitle}
+Description: ${video.description}
+
+Create a detailed course content breakdown in ${language === 'hindi' ? 'Hinglish (Hindi + English mix)' : 'English'}:
+
+1. **Course Overview** (2-3 sentences about what this course teaches)
+
+2. **What You'll Learn** (5-7 key learning outcomes as bullet points)
+
+3. **Course Topics** (Extract 8-12 main topics/modules from the description, formatted as numbered list with brief descriptions)
+
+4. **Prerequisites** (What students should know before starting, if any)
+
+5. **Best For** (Who is this course ideal for - beginners/intermediate/advanced)
+
+Format professionally with clear sections. Base everything on the actual video description.`;
+        const result = await model.generateContent(prompt);
+        return result.response.text();
+    } catch (error) {
+        console.error('Error extracting course content:', error);
+        return null;
+    }
+}
+/**
+ * Generate AI summary about the found resource
  */ async function generateAISummary(query, video, language) {
     try {
         const model = genAI.getGenerativeModel({
             model: 'gemini-1.5-flash',
             generationConfig: {
-                maxOutputTokens: 400,
+                maxOutputTokens: 300,
                 temperature: 0.7
             }
         });
-        const prompt = `Analyze this YouTube course for "${query}":
+        const duration = Math.round(parseDuration(video.duration));
+        const prompt = `You found this course for query "${query}":
 
-Title: "${video.title}"
+Title: ${video.title}
 Channel: ${video.channelTitle}
+Duration: ${duration} minutes
 Views: ${video.viewCount.toLocaleString()}
-Duration: ${Math.round(parseDuration(video.duration))} minutes
 
-Provide in ${language === 'hindi' ? 'Hinglish (mix of Hindi and English)' : 'English'}:
-1. Course overview (2-3 sentences)
-2. What you'll learn (3-4 key points)
-3. Who should take this (1 sentence)
+Write a brief, enthusiastic summary in ${language === 'hindi' ? 'Hinglish' : 'English'} (3-4 sentences):
+1. Why this is a great match for their query
+2. What makes this course valuable
+3. Quick encouragement to start learning
 
-Keep it concise and encouraging.`;
+Keep it conversational and motivating!`;
         const result = await model.generateContent(prompt);
-        const response = await result.response;
-        return response.text();
+        return result.response.text();
     } catch (error) {
-        console.error('Error generating AI summary:', error);
+        console.error('Error generating summary:', error);
         return null;
     }
 }
@@ -236,10 +333,10 @@ async function POST(request) {
     const startTime = Date.now();
     try {
         const body = await request.json();
-        const { query, language, preferLatest } = body;
+        const { query, language = 'english', preferLatest = false } = body;
         if (!query?.trim()) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'Query is required'
+                error: 'Please provide a search query'
             }, {
                 status: 400
             });
@@ -252,34 +349,40 @@ async function POST(request) {
             });
         }
         console.log(`🔍 Searching for: "${query}" (${language})`);
-        // Enhance query for better results
-        const enhancedQuery = await enhanceQuery(query, language);
-        // Find the BEST video
-        const bestVideo = await searchBestVideo(enhancedQuery, language, preferLatest);
-        if (!bestVideo) {
+        // Find the single best matching video
+        const result = await searchBestYouTubeVideo(query, language, preferLatest);
+        if (!result || !result.video) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 video: null,
-                aiSummary: `No suitable course found for "${query}". Try refining your search.`,
+                aiSummary: `Sorry, couldn't find a suitable course for "${query}". Try rephrasing your search with more specific keywords.`,
+                enhancedQuery: result?.enhancedQuery || query,
                 responseTime: `${Date.now() - startTime}ms`
             });
         }
-        console.log(`✅ Found best video in ${Date.now() - startTime}ms`);
-        // Generate AI summary
-        const aiSummary = await generateAISummary(query, bestVideo, language);
+        const video = result.video;
+        console.log(`✅ Best match: "${video.title}" (score: ${video.qualityScore.toFixed(2)})`);
+        // Generate course content and AI summary in parallel
+        const [courseContent, aiSummary] = await Promise.all([
+            extractCourseContent(video, language),
+            generateAISummary(query, video, language)
+        ]);
         const responseTime = Date.now() - startTime;
-        console.log(`⚡ Total response time: ${responseTime}ms`);
+        console.log(`⚡ Total time: ${responseTime}ms`);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             query,
-            enhancedQuery,
+            enhancedQuery: result.enhancedQuery,
             language,
-            video: bestVideo,
+            video: {
+                ...video,
+                courseContent
+            },
             aiSummary,
             responseTime: `${responseTime}ms`
         });
     } catch (error) {
         console.error('❌ API Error:', error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: error.message || 'Unexpected error occurred'
+            error: error.message || 'Search failed. Please try again.'
         }, {
             status: 500
         });
@@ -289,13 +392,6 @@ async function PUT(request) {
     try {
         const body = await request.json();
         const { videoId, title, description, channelTitle, language } = body;
-        if (!videoId) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'Video ID required'
-            }, {
-                status: 400
-            });
-        }
         const model = genAI.getGenerativeModel({
             model: 'gemini-1.5-pro',
             generationConfig: {
@@ -303,43 +399,46 @@ async function PUT(request) {
                 temperature: 0.4
             }
         });
-        const prompt = `Create comprehensive course documentation for: "${title}" by ${channelTitle}
+        const prompt = `Create comprehensive course documentation for:
 
-Video Description: ${description}
+Title: "${title}"
+Channel: ${channelTitle}
+Description: ${description}
 
-Create detailed, well-structured documentation in ${language === 'hindi' ? 'Hinglish (mix of Hindi and English)' : 'English'} with this EXACT structure:
+Generate detailed documentation in ${language === 'hindi' ? 'Hinglish (Hindi + English)' : 'English'} with this structure:
 
 ## Course Overview
-[2-3 paragraphs explaining what the course covers and who it's for]
+[2-3 detailed paragraphs about the course]
 
-## Course Structure
-[Analyze the description and create 6-10 main modules/lessons with:
-- Module number and title
-- 3-5 subtopics as bullet points]
+## Learning Objectives
+[8-10 specific things students will learn]
 
-## Key Learning Outcomes
-[5-7 specific things students will learn]
+## Course Curriculum
+[10-15 lessons/modules with:
+- Module name
+- 3-4 subtopics per module]
 
-## Prerequisites
-[What knowledge/tools are needed before starting]
+## Prerequisites & Requirements
+[What students need to know]
 
-## Course Information
-- **Instructor**: ${channelTitle}
-- **Platform**: YouTube
-- **Language**: ${language === 'hindi' ? 'Hindi/Hinglish' : 'English'}
-- **Level**: [Beginner/Intermediate/Advanced based on content]
+## Target Audience
+[Who should take this course]
 
-Use proper markdown formatting. Be specific and educational.`;
+## Key Takeaways
+[5-7 main benefits]
+
+## Meta Information
+**Instructor:** ${channelTitle}
+**Level:** [Beginner/Intermediate/Advanced]
+**Duration:** [Estimate based on description]
+
+Use proper markdown formatting. Be thorough and educational.`;
         const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const documentation = response.text();
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            videoId,
-            documentation,
-            generated: new Date().toISOString()
+            documentation: result.response.text()
         });
     } catch (error) {
-        console.error('❌ Documentation Error:', error);
+        console.error('Documentation error:', error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             error: 'Failed to generate documentation'
         }, {
@@ -350,7 +449,8 @@ Use proper markdown formatting. Be specific and educational.`;
 async function GET() {
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
         status: 'ok',
-        message: 'AI Resource Finder API v3.0',
+        message: 'AI Resource Finder API',
+        version: '3.0-accurate',
         endpoints: {
             search: 'POST /api/search-resources',
             documentation: 'PUT /api/search-resources'

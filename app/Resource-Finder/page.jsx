@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Search, BookOpen, Video, FileText, Globe, ExternalLink, Clock, ThumbsUp, Eye, Calendar, Loader2, X, Sparkles } from 'lucide-react';
+import { Search, BookOpen, Video, Globe, ExternalLink, Clock, ThumbsUp, Eye, Calendar, Loader2, Sparkles, CheckCircle } from 'lucide-react';
 
 export default function ResourceFinder() {
   const [courseQuery, setCourseQuery] = useState('');
@@ -9,9 +9,6 @@ export default function ResourceFinder() {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
-  const [documentationLoading, setDocumentationLoading] = useState(false);
-  const [documentation, setDocumentation] = useState(null);
-  const [showDocModal, setShowDocModal] = useState(false);
 
   const handleFetchCourse = async () => {
     if (!courseQuery.trim()) return;
@@ -19,7 +16,6 @@ export default function ResourceFinder() {
     setIsLoading(true);
     setError(null);
     setResult(null);
-    setDocumentation(null);
 
     try {
       const response = await fetch('/api/search-resources', {
@@ -56,42 +52,6 @@ export default function ResourceFinder() {
     }
   };
 
-  const handleGenerateDocumentation = async () => {
-    if (!result?.video) return;
-
-    setDocumentationLoading(true);
-
-    try {
-      const response = await fetch('/api/search-resources', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          videoId: result.video.id,
-          title: result.video.title,
-          description: result.video.description,
-          channelTitle: result.video.channelTitle,
-          language
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to generate documentation');
-      }
-
-      setDocumentation(data.documentation);
-      setShowDocModal(true);
-    } catch (err) {
-      setError('Failed to generate documentation: ' + err.message);
-      console.error('Documentation error:', err);
-    } finally {
-      setDocumentationLoading(false);
-    }
-  };
-
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleFetchCourse();
@@ -122,137 +82,15 @@ export default function ResourceFinder() {
     return num.toString();
   };
 
-  const DocumentationModal = () => {
-    if (!documentation) return null;
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    const parseDocumentation = (doc) => {
-      const sections = [];
-      const lines = doc.split('\n');
-      let currentSection = { title: '', content: [], type: 'main' };
-
-      lines.forEach(line => {
-        const trimmed = line.trim();
-        if (!trimmed) return;
-
-        if (trimmed.startsWith('## ')) {
-          if (currentSection.title) sections.push(currentSection);
-          currentSection = { title: trimmed.replace('## ', ''), content: [], type: 'main' };
-        }
-        else if (trimmed.startsWith('### ')) {
-          currentSection.content.push({ type: 'subheader', text: trimmed.replace('### ', '') });
-        }
-        else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-          currentSection.content.push({ type: 'bullet', text: trimmed.substring(2) });
-        }
-        else if (/^\d+\./.test(trimmed)) {
-          currentSection.content.push({ type: 'numbered', text: trimmed });
-        }
-        else if (trimmed.startsWith('**') && trimmed.includes('**:')) {
-          currentSection.content.push({ type: 'meta', text: trimmed });
-        }
-        else {
-          currentSection.content.push({ type: 'text', text: trimmed });
-        }
-      });
-
-      if (currentSection.title) sections.push(currentSection);
-      return sections;
-    };
-
-    const sections = parseDocumentation(documentation);
-
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto backdrop-blur-sm">
-        <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-4xl w-full my-4 sm:my-8 max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 p-4 sm:p-6 flex justify-between items-start sticky top-0 z-10">
-            <div className="flex-1 pr-4">
-              <div className="flex items-center gap-2 mb-2">
-                <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                <h2 className="text-lg sm:text-2xl font-bold text-white">Course Documentation</h2>
-              </div>
-              <p className="text-purple-100 text-xs sm:text-sm line-clamp-2">{result.video.title}</p>
-            </div>
-            <button 
-              onClick={() => setShowDocModal(false)}
-              className="text-white hover:bg-white hover:bg-opacity-20 rounded-full p-1.5 sm:p-2 transition-all flex-shrink-0"
-              aria-label="Close documentation"
-            >
-              <X className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-          </div>
-
-          {/* Content */}
-          <div className="p-4 sm:p-8 overflow-y-auto flex-1">
-            <article className="prose prose-sm sm:prose-lg max-w-none">
-              {sections.map((section, idx) => (
-                <div key={idx} className="mb-6 sm:mb-8">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b-2 border-gradient-to-r from-purple-500 to-blue-500">
-                    {section.title}
-                  </h2>
-
-                  <div className="space-y-3">
-                    {section.content.map((item, itemIdx) => {
-                      if (item.type === 'subheader') {
-                        return (
-                          <h3 key={itemIdx} className="text-lg sm:text-xl font-semibold text-gray-800 mt-4 sm:mt-6 mb-2">
-                            {item.text}
-                          </h3>
-                        );
-                      } else if (item.type === 'bullet') {
-                        return (
-                          <li key={itemIdx} className="text-gray-700 text-sm sm:text-base ml-4 sm:ml-6 mb-2 leading-relaxed">
-                            {item.text}
-                          </li>
-                        );
-                      } else if (item.type === 'numbered') {
-                        return (
-                          <p key={itemIdx} className="text-gray-700 text-sm sm:text-base mb-2 font-medium leading-relaxed">
-                            {item.text}
-                          </p>
-                        );
-                      } else if (item.type === 'meta') {
-                        return (
-                          <p key={itemIdx} className="text-gray-800 text-sm sm:text-base mb-2 leading-relaxed">
-                            <span dangerouslySetInnerHTML={{ __html: item.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
-                          </p>
-                        );
-                      } else {
-                        return (
-                          <p key={itemIdx} className="text-gray-700 text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
-                            {item.text}
-                          </p>
-                        );
-                      }
-                    })}
-                  </div>
-                </div>
-              ))}
-            </article>
-          </div>
-
-          {/* Footer */}
-          <div className="bg-gray-50 p-4 sm:p-6 border-t flex flex-col sm:flex-row gap-2 sm:gap-3 sticky bottom-0">
-            <a 
-              href={result.video.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 sm:py-3 bg-gradient-to-r from-red-600 to-red-500 text-white text-sm sm:text-base font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all"
-            >
-              <Video className="w-4 h-4" />
-              Watch Course
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            <button
-              onClick={() => setShowDocModal(false)}
-              className="px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-200 text-gray-700 text-sm sm:text-base font-medium rounded-lg hover:bg-gray-300 transition-all"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    );
+    if (diffDays < 30) return `${diffDays} days ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
   };
 
   return (
@@ -261,7 +99,7 @@ export default function ResourceFinder() {
         {/* Main Card */}
         <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden mb-6 sm:mb-8">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-4 sm:px-8 py-6 sm:py-10">
+          <div className="bg-blue-600 px-4 sm:px-8 py-6 sm:py-10">
             <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
               <Sparkles className="w-7 h-7 sm:w-10 sm:h-10 text-white flex-shrink-0" />
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white text-center">
@@ -412,6 +250,11 @@ export default function ResourceFinder() {
                 <div className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded font-semibold">
                   TOP PICK
                 </div>
+                {preferLatest && (
+                  <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded font-semibold">
+                    LATEST
+                  </div>
+                )}
               </div>
 
               <div className="p-4 sm:p-6">
@@ -438,67 +281,53 @@ export default function ResourceFinder() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Calendar className="w-4 h-4 text-purple-500" />
-                    <span className="font-medium">
-                      {new Date(result.video.publishedAt).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'short' 
-                      })}
-                    </span>
+                    <span className="font-medium">{formatDate(result.video.publishedAt)}</span>
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a 
-                    href={result.video.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white text-sm sm:text-base font-semibold rounded-lg hover:from-red-700 hover:to-red-600 transition-all shadow-lg hover:shadow-xl"
-                  >
-                    <Video className="w-4 h-4 sm:w-5 sm:h-5" />
-                    Watch on YouTube
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                {/* Course Content */}
+                {result.courseContent && result.courseContent.length > 0 && (
+                  <div className="mb-5">
+                    <h4 className="text-base sm:text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-indigo-600" />
+                      What You'll Learn
+                    </h4>
+                    <div className="space-y-3">
+                      {result.courseContent.map((content, index) => (
+                        <div key={index} className="flex items-start gap-3 group">
+                          <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed flex-1">
+                            {content}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
-                  <button
-                    onClick={handleGenerateDocumentation}
-                    disabled={documentationLoading}
-                    className="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {documentationLoading ? (
-                      <>
-                        <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
-                        <span>Generating...</span>
-                      </>
-                    ) : (
-                      <>
-                        <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span>Generate Docs</span>
-                      </>
-                    )}
-                  </button>
-                </div>
+                {/* Watch Button */}
+                <a 
+                  href={result.video.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white text-sm sm:text-base font-semibold rounded-lg hover:from-red-700 hover:to-red-600 transition-all shadow-lg hover:shadow-xl"
+                >
+                  <Video className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Watch on YouTube
+                  <ExternalLink className="w-4 h-4" />
+                </a>
 
                 {/* Description Preview */}
                 {result.video.description && (
                   <div className="mt-5 pt-5 border-t border-gray-200">
                     <h4 className="text-sm font-semibold text-gray-700 mb-2">About this course:</h4>
-                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-4 leading-relaxed">
                       {result.video.description}
                     </p>
                   </div>
                 )}
               </div>
             </div>
-
-            {/* Enhanced Query Info */}
-            {result.enhancedQuery && result.enhancedQuery !== result.query && (
-              <div className="bg-blue-50 rounded-lg p-3 sm:p-4 border border-blue-200">
-                <p className="text-xs sm:text-sm text-blue-800">
-                  <span className="font-semibold">AI Enhanced Search:</span> {result.enhancedQuery}
-                </p>
-              </div>
-            )}
           </div>
         )}
 
@@ -534,9 +363,6 @@ export default function ResourceFinder() {
           )}
         </div>
       </div>
-
-      {/* Documentation Modal */}
-      {showDocModal && <DocumentationModal />}
     </div>
   );
 }

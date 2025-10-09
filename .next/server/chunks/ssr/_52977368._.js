@@ -77,7 +77,7 @@ function ResourceFinder() {
         if (!result?.video) return;
         setDocumentationLoading(true);
         try {
-            const response = await fetch('/api/search-resources', {
+            const response = await fetch('/api/fetched-resources', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

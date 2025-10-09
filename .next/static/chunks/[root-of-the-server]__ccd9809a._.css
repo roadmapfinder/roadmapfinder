@@ -784,6 +784,10 @@
     bottom: calc(var(--spacing) * 20);
   }
 
+  .bottom-full {
+    bottom: 100%;
+  }
+
   .-left-2 {
     left: calc(var(--spacing) * -2);
   }
@@ -1000,6 +1004,10 @@
     margin-block: calc(var(--spacing) * 8);
   }
 
+  .my-12 {
+    margin-block: calc(var(--spacing) * 12);
+  }
+
   .mt-0 {
     margin-top: calc(var(--spacing) * 0);
   }
@@ -1196,6 +1204,13 @@
 
   .line-clamp-3 {
     -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
@@ -1404,6 +1419,10 @@
 
   .h-px {
     height: 1px;
+  }
+
+  .max-h-60 {
+    max-height: calc(var(--spacing) * 60);
   }
 
   .max-h-\[90vh\] {
@@ -1778,6 +1797,16 @@
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
 
+  .translate-y-1 {
+    --tw-translate-y: calc(var(--spacing) * 1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .translate-y-1\/2 {
+    --tw-translate-y: calc(1 / 2 * 100%);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
   .translate-y-2 {
     --tw-translate-y: calc(var(--spacing) * 2);
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -1870,6 +1899,10 @@
 
   .rotate-12 {
     rotate: 12deg;
+  }
+
+  .rotate-45 {
+    rotate: 45deg;
   }
 
   .rotate-90 {
@@ -2693,6 +2726,10 @@
 
   .border-red-600 {
     border-color: var(--color-red-600);
+  }
+
+  .border-slate-100 {
+    border-color: var(--color-slate-100);
   }
 
   .border-slate-200 {
@@ -6997,6 +7034,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:text-indigo-700:hover {
+      color: var(--color-indigo-700);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:text-indigo-800:hover {
       color: var(--color-indigo-800);
     }
@@ -9194,6 +9237,12 @@
   @media (prefers-color-scheme: dark) {
     .dark\:text-blue-400 {
       color: var(--color-blue-400);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .dark\:text-gray-100 {
+      color: var(--color-gray-100);
     }
   }
 
