@@ -1,1 +1,9 @@
-{}
+{
+  "/Courses/page": "app/Courses/page.js",
+  "/Docs/nodejs/page": "app/Docs/nodejs/page.js",
+  "/Docs/nodejs_backend/page": "app/Docs/nodejs_backend/page.js",
+  "/Resource-Finder/page": "app/Resource-Finder/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/fetched-resources/route": "app/api/fetched-resources/route.js",
+  "/page": "app/page.js"
+}

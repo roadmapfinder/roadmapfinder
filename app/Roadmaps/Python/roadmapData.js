@@ -1,4 +1,4 @@
-const phases = [
+export const phases = [
   {
     id: 0,
     title: "Setup & Foundations",
