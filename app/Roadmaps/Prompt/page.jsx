@@ -7,7 +7,7 @@ import Faq from './faq';
 import { downloadRoadmapPDF } from './downloadPdf';
 import { phases } from './roadmapData';
 
-const ProductDesigner = () => {
+const Prompt = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -106,7 +106,7 @@ const ProductDesigner = () => {
                 🏆 Final Tips to Become Industry-Ready
               </h2>
               <p className="text-gray-700 text-base md:text-lg mb-4">
-                Congratulations! You've completed the Product Designing Mastery Roadmap and are ready to design scalable, robust systems.
+                Congratulations! You've completed the Prompt Engineering Mastery Roadmap and are ready to design scalable, robust systems.
               </p>
             </div>
           </div>
@@ -122,7 +122,7 @@ const ProductDesigner = () => {
           <div className="flex items-center space-x-2 md:space-x-4">
             <Code className="text-blue-600" size={32} />
             <h1 className="text-xl md:text-3xl font-bold text-gray-900">
-              Product Designing <span className="text-blue-600">Mastery Roadmap</span>
+              Prompt Engineering <span className="text-blue-600">Mastery Roadmap</span>
               <span className="text-sm md:text-base font-normal text-gray-600 ml-2">(Beginner → Industry Ready)</span>
             </h1>
           </div>
@@ -235,4 +235,4 @@ const ProductDesigner = () => {
   );
 };
 
-export default ProductDesigner;
+export default Prompt;

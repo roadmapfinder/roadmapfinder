@@ -3983,24 +3983,6 @@ const Footer = ()=>{
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/Project-helper",
-                                            className: "text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 97,
-                                                    columnNumber: 17
-                                                }, this),
-                                                "Project-helper"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 93,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             href: "/Login",
                                             className: "text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-1 flex items-center group",
                                             children: [
@@ -4008,14 +3990,14 @@ const Footer = ()=>{
                                                     className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 105,
+                                                    lineNumber: 98,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Login"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 101,
+                                            lineNumber: 94,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -4046,12 +4028,12 @@ const Footer = ()=>{
                                 children: "© 2025 RoadmapFinder. All rights reserved."
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 117,
+                                lineNumber: 110,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 116,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4062,7 +4044,7 @@ const Footer = ()=>{
                                     children: "Theme"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 125,
+                                    lineNumber: 118,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4075,34 +4057,34 @@ const Footer = ()=>{
                                                 className: "w-2 h-2 bg-gray-400 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 129,
+                                                lineNumber: 122,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 128,
+                                            lineNumber: 121,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Footer/footer.jsx",
-                                        lineNumber: 127,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 126,
+                                    lineNumber: 119,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 124,
+                            lineNumber: 117,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 115,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4114,25 +4096,25 @@ const Footer = ()=>{
                                 className: "w-2 h-2 bg-green-500 rounded-full animate-pulse"
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 139,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "All systems operational"
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 140,
+                                lineNumber: 133,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Footer/footer.jsx",
-                        lineNumber: 138,
+                        lineNumber: 131,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 137,
+                    lineNumber: 130,
                     columnNumber: 9
                 }, this)
             ]

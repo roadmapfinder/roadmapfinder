@@ -241,7 +241,7 @@ const projects = [
         title: "CLI Task Manager",
         description: "Build a command-line task manager to add, list, and delete tasks using Node.js and TypeScript. Learn interfaces, enums, types, and file system operations with full type safety.",
         cta: "Explore project",
-        url: "https://youtu.be/R4AhvYORZRY?si=Yc0HuVJq5yZC2h8Y"
+        url: "https://youtu.be/ca0rBFs-dgU?si=aVVxfuaT0-PW5HCp"
     },
     {
         id: "ts-beginner-2",
@@ -249,7 +249,7 @@ const projects = [
         title: "Typed Weather App (API Integration)",
         description: "Fetch and display live weather data using OpenWeather API with TypeScript. Define types for API responses and handle errors using async/await and type guards.",
         cta: "Explore project",
-        url: "https://youtu.be/HlK3eP5Tdl8?si=srnOwvhnp8WAWkaO"
+        url: "https://youtu.be/7j-BxqUhsR4?si=RxApygn8BSM3mrzP"
     },
     {
         id: "ts-beginner-3",
@@ -257,7 +257,7 @@ const projects = [
         title: "TypeScript Playground / Snippet Runner",
         description: "Build a small in-browser or Node app that compiles TypeScript code snippets using the TypeScript compiler API. Understand compiler options and tsconfig deeply.",
         cta: "Explore project",
-        url: "https://youtu.be/VU7W0-tzYdA?si=5b_g6kQ7GVDXidw2"
+        url: "https://youtu.be/q-1Lc0FUruc?si=FpyaAptTqnKoMxyu"
     },
     // ---------- PHASE 2 — INTERMEDIATE ----------
     {
@@ -266,7 +266,7 @@ const projects = [
         title: "Next.js + TypeScript Portfolio",
         description: "Create a personal portfolio using Next.js, TypeScript, and Tailwind. Learn typed React components, getStaticProps, and API routes with strict type checks.",
         cta: "Explore project",
-        url: "https://youtu.be/btL6FsQLOe8?si=fQw5PvnF9Wprf_hG"
+        url: "https://youtu.be/TCpwcsz97wo?si=acxYFpL1-uREdR05"
     },
     {
         id: "ts-intermediate-2",
@@ -274,7 +274,7 @@ const projects = [
         title: "REST API with Express + Prisma",
         description: "Build a RESTful backend using Express and Prisma ORM with TypeScript. Implement CRUD operations, type-safe models, DTOs, and middleware validation.",
         cta: "Explore project",
-        url: "https://youtu.be/TzA5G6x0ZUI?si=RVZ1tJrKk2ARW4Dy"
+        url: "https://youtu.be/TzvPIUyh-AI?si=lSCvYTErYFCfikzn"
     },
     {
         id: "ts-intermediate-3",
@@ -282,7 +282,7 @@ const projects = [
         title: "Chat Application (Socket.io + TypeScript)",
         description: "Create a real-time chat app using Socket.io and TypeScript on both client and server. Share types across layers and learn event-driven architecture with strong typing.",
         cta: "Explore project",
-        url: "https://youtu.be/1BfCnjr_Vjg?si=hYZTiGpLJQvm5D1d"
+        url: "https://youtu.be/gCwHi-UFSdg?si=Pyj3D_nYzznA3Bua"
     },
     // ---------- PHASE 3 — ADVANCED ----------
     {
@@ -291,7 +291,7 @@ const projects = [
         title: "Full-stack App with tRPC + Next.js + Prisma",
         description: "End-to-end type-safe app using tRPC, Prisma, and Next.js. Learn how to share types, infer API responses, and ensure zero runtime type mismatch.",
         cta: "Explore project",
-        url: "https://youtu.be/Gv0a0skhR9I?si=yzsImIDdlFNg4T8Y"
+        url: "https://youtu.be/S3k82XXCrBo?si=kK6hhNcKPaFULuMs"
     },
     {
         id: "ts-advanced-2",
@@ -299,15 +299,15 @@ const projects = [
         title: "Internal NPM Library / SDK",
         description: "Develop and publish your own npm package written in TypeScript. Learn declaration files, bundling with tsup, versioning, and CI/CD for publishing.",
         cta: "Explore project",
-        url: "https://youtu.be/XDkTu7K_R5k?si=MIxKkUZiKliCpPbc"
+        url: "https://youtu.be/GVN9d1rFeCo?si=uNCDyA1cbWpYlfxr"
     },
     {
         id: "ts-advanced-3",
         level: "Phase 3 — Advanced (Enterprise-ready Projects)",
-        title: "Project Management Dashboard (Next.js + GraphQL)",
+        title: "Full stack Saas Scrape flow",
         description: "Build a Trello-like app using Next.js, TypeScript, GraphQL, and Prisma. Implement code generation, type-safe mutations, role-based access, and scalable folder structure.",
         cta: "Explore project",
-        url: "https://youtu.be/qJqAXjz-Rh4?si=Un8fZ1_lL2m01w3F"
+        url: "https://youtu.be/RkwbGuL-dzo?si=9vtvY8XMwDV9IJG6"
     }
 ];
 function ProjectCards() {
