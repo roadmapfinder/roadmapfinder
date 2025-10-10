@@ -58,9 +58,9 @@ const viewport = {
     initialScale: 1
 };
 const metadata = {
-    title: "RoadmapFinder -  Tech Skill Roadmaps & Best Learning Resources",
-    description: "Get industry-ready with RoadmapFinder: Step-by-step technology skill roadmaps, best YouTube courses, AI powered Career Guidance , AI Project helper, and trending tech blogs. Learn faster, smarter, and job-oriented.",
-    keywords: "technology skill roadmap, roadmapfinder, roadmaps , learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses,  tech tools blog, latest tech updates, RoadmapFinder learning path",
+    title: "RoadmapFinder - Tech Skill Roadmaps",
+    description: "Explore RoadmapFinder — your ultimate platform for Tech Skill Roadmaps, curated YouTube Best Courses, and AI Resource Finder. Learn web development, AI, and data science through structured learning paths and top-rated video resources.",
+    keywords: "Tech Skill Roadmaps, YouTube Best Courses, AI Resource Finder, roadmapfinder, learn programming, web development roadmap, data science roadmap, AI learning roadmap, best YouTube tech courses, trending developer resources, AI learning tools",
     applicationName: "RoadmapFinder",
     authors: [
         {
@@ -71,20 +71,34 @@ const metadata = {
     creator: "Sohel Khan",
     publisher: "RoadmapFinder",
     robots: "index, follow",
+    alternates: {
+        canonical: "https://roadmapfinder.tech"
+    },
     openGraph: {
-        title: "RoadmapFinder - Learn Tech Skills the Smarter Way",
-        description: "Master tech skills with structured roadmaps, top YouTube course filters, Career Guidance, AI Project helper and blogs on the latest tech trends. Build your career with confidence.",
+        title: "RoadmapFinder - Tech Skill Roadmaps, YouTube Best Courses & AI Resource Finder",
+        description: "Master tech skills with RoadmapFinder: Step-by-step Tech Skill Roadmaps, best YouTube courses, and AI Resource Finder to learn smarter and faster.",
         url: "https://roadmapfinder.tech",
         siteName: "RoadmapFinder",
         locale: "en_US",
-        type: "website"
+        type: "website",
+        images: [
+            {
+                url: "https://roadmapfinder.tech/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "RoadmapFinder - Tech Skill Roadmaps"
+            }
+        ]
     },
     twitter: {
         card: "summary_large_image",
-        title: "RoadmapFinder -  Tech Roadmaps & Learning Resources",
-        description: "Explore the best technology roadmaps, top YouTube learning resources, Career Guidance, AI project helper and tech blogs — all in one place. Start your skill journey today!",
+        title: "RoadmapFinder - Tech Skill Roadmaps",
+        description: "Discover structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to accelerate your learning journey with RoadmapFinder.",
         site: "@roadmapfinder",
-        creator: "Sohel Khan"
+        creator: "Sohel Khan",
+        images: [
+            "https://roadmapfinder.tech/og-image.png"
+        ]
     },
     metadataBase: new URL("https://roadmapfinder.tech")
 };
@@ -100,7 +114,7 @@ function RootLayout({ children }) {
                         content: "Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 58,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -109,7 +123,7 @@ function RootLayout({ children }) {
                         sizes: "32x32"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 63,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -118,7 +132,7 @@ function RootLayout({ children }) {
                         type: "image/svg+xml"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 64,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -126,7 +140,7 @@ function RootLayout({ children }) {
                         href: "/apple-touch-icon.png"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 65,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -134,7 +148,23 @@ function RootLayout({ children }) {
                         href: "/manifest.json"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 66,
+                        lineNumber: 77,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "alternate",
+                        href: "https://roadmapfinder.tech/RoadmapPage"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 80,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "alternate",
+                        href: "https://roadmapfinder.tech/Courses"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -146,12 +176,16 @@ function RootLayout({ children }) {
             "@type": "WebSite",
             "name": "RoadmapFinder",
             "url": "https://roadmapfinder.tech",
+            "description": "RoadmapFinder offers structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to help learners master web development, data science, and AI efficiently.",
+            "sameAs": [
+              "https://roadmapfinder.tech/RoadmapPage",
+              "https://roadmapfinder.tech/Courses"
+            ],
             "potentialAction": {
               "@type": "SearchAction",
               "target": "https://roadmapfinder.tech/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             },
-            "description": "Explore step-by-step technology skill roadmaps, best filtered YouTube courses, Career Guidance, AI project helper, and blogs on trending tech.",
             "publisher": {
               "@type": "Organization",
               "name": "RoadmapFinder Team",
@@ -160,19 +194,36 @@ function RootLayout({ children }) {
                 "@type": "ImageObject",
                 "url": "https://roadmapfinder.tech/roadmapfinder.svg"
               }
-            }
+            },
+            "mainEntity": [
+              {
+                "@type": "ItemList",
+                "name": "Tech Skill Roadmaps",
+                "url": "https://roadmapfinder.tech/RoadmapPage"
+              },
+              {
+                "@type": "ItemList",
+                "name": "YouTube Best Courses",
+                "url": "https://roadmapfinder.tech/Courses"
+              },
+              {
+                "@type": "Service",
+                "name": "AI Resource Finder",
+                "url": "https://roadmapfinder.tech"
+              }
+            ]
           }
         `
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 68,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.js",
-                lineNumber: 57,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -181,24 +232,24 @@ function RootLayout({ children }) {
                     children,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 99,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$speed$2d$insights$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SpeedInsights"], {}, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 100,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.js",
-                lineNumber: 97,
+                lineNumber: 134,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/layout.js",
-        lineNumber: 56,
+        lineNumber: 67,
         columnNumber: 5
     }, this);
 }

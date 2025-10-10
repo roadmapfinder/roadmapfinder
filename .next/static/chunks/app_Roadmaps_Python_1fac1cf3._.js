@@ -443,10 +443,14 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/Roadmaps/Python/roadmapData.js [app-client] (ecmascript)": (function(__turbopack_context__) {
+"[project]/app/Roadmaps/Python/roadmapData.js [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
 
-var { g: global, __dirname, k: __turbopack_refresh__, m: module, e: exports } = __turbopack_context__;
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
+__turbopack_context__.s({
+    "phases": (()=>phases)
+});
 const phases = [
     {
         id: 0,

@@ -700,6 +700,10 @@
     right: calc(var(--spacing) * 4);
   }
 
+  .right-5 {
+    right: calc(var(--spacing) * 5);
+  }
+
   .right-6 {
     right: calc(var(--spacing) * 6);
   }
@@ -1419,6 +1423,14 @@
 
   .h-px {
     height: 1px;
+  }
+
+  .max-h-0 {
+    max-height: calc(var(--spacing) * 0);
+  }
+
+  .max-h-20 {
+    max-height: calc(var(--spacing) * 20);
   }
 
   .max-h-60 {
@@ -4828,6 +4840,10 @@
     padding-inline: calc(var(--spacing) * 8);
   }
 
+  .px-14 {
+    padding-inline: calc(var(--spacing) * 14);
+  }
+
   .py-0 {
     padding-block: calc(var(--spacing) * 0);
   }
@@ -6064,8 +6080,22 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:-translate-x-1:is(:where(.group):hover *) {
+      --tw-translate-x: calc(var(--spacing) * -1);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:translate-x-1:is(:where(.group):hover *) {
       --tw-translate-x: calc(var(--spacing) * 1);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:translate-x-2:is(:where(.group):hover *) {
+      --tw-translate-x: calc(var(--spacing) * 2);
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
@@ -6114,6 +6144,12 @@
   @media (hover: hover) {
     .group-hover\:scale-\[1\.02\]:is(:where(.group):hover *) {
       scale: 1.02;
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:rotate-3:is(:where(.group):hover *) {
+      rotate: 3deg;
     }
   }
 
@@ -7090,6 +7126,13 @@
   @media (hover: hover) {
     .hover\:opacity-100:hover {
       opacity: 1;
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:shadow:hover {
+      --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
 
@@ -8165,6 +8208,13 @@
   }
 
   @media (width >= 40rem) {
+    .sm\:text-5xl {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+
+  @media (width >= 40rem) {
     .sm\:text-6xl {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
@@ -8512,6 +8562,12 @@
   @media (width >= 48rem) {
     .md\:p-10 {
       padding: calc(var(--spacing) * 10);
+    }
+  }
+
+  @media (width >= 48rem) {
+    .md\:p-12 {
+      padding: calc(var(--spacing) * 12);
     }
   }
 

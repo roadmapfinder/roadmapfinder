@@ -12,7 +12,6 @@ const sora = Sora({
   fallback: ["Arial", "sans-serif"],
 });
 
-// ✅ Proper viewport export for Next.js 13+
 export const viewport = {
   themeColor: "#ffffff",
   colorScheme: "light",
@@ -21,32 +20,44 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "RoadmapFinder -  Tech Skill Roadmaps & Best Learning Resources",
+  title: "RoadmapFinder - Tech Skill Roadmaps",
   description:
-    "Get industry-ready with RoadmapFinder: Step-by-step technology skill roadmaps, best YouTube courses, AI powered Career Guidance , AI Project helper, and trending tech blogs. Learn faster, smarter, and job-oriented.",
+    "Explore RoadmapFinder — your ultimate platform for Tech Skill Roadmaps, curated YouTube Best Courses, and AI Resource Finder. Learn web development, AI, and data science through structured learning paths and top-rated video resources.",
   keywords:
-    "technology skill roadmap, roadmapfinder, roadmaps , learn tech skills, web development roadmap, AI ML roadmap, data science roadmap, backend roadmap, frontend roadmap, top YouTube coding courses,  tech tools blog, latest tech updates, RoadmapFinder learning path",
+    "Tech Skill Roadmaps, YouTube Best Courses, AI Resource Finder, roadmapfinder, learn programming, web development roadmap, data science roadmap, AI learning roadmap, best YouTube tech courses, trending developer resources, AI learning tools",
   applicationName: "RoadmapFinder",
   authors: [{ name: "RoadmapFinder", url: "https://roadmapfinder.tech" }],
   creator: "Sohel Khan",
   publisher: "RoadmapFinder",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://roadmapfinder.tech",
+  },
   openGraph: {
-    title: "RoadmapFinder - Learn Tech Skills the Smarter Way",
+    title: "RoadmapFinder - Tech Skill Roadmaps, YouTube Best Courses & AI Resource Finder",
     description:
-      "Master tech skills with structured roadmaps, top YouTube course filters, Career Guidance, AI Project helper and blogs on the latest tech trends. Build your career with confidence.",
+      "Master tech skills with RoadmapFinder: Step-by-step Tech Skill Roadmaps, best YouTube courses, and AI Resource Finder to learn smarter and faster.",
     url: "https://roadmapfinder.tech",
     siteName: "RoadmapFinder",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://roadmapfinder.tech/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "RoadmapFinder - Tech Skill Roadmaps",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RoadmapFinder -  Tech Roadmaps & Learning Resources",
+    title: "RoadmapFinder - Tech Skill Roadmaps",
     description:
-      "Explore the best technology roadmaps, top YouTube learning resources, Career Guidance, AI project helper and tech blogs — all in one place. Start your skill journey today!",
+      "Discover structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to accelerate your learning journey with RoadmapFinder.",
     site: "@roadmapfinder",
     creator: "Sohel Khan",
+    images: ["https://roadmapfinder.tech/og-image.png"],
   },
   metadataBase: new URL("https://roadmapfinder.tech"),
 };
@@ -59,12 +70,17 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs"
         />
-        {/* Favicon - Multiple formats for better compatibility */}
+        {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/roadmapfinder.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        {/* JSON-LD Structured Data */}
+
+        {/* ✅ SEO Internal Links for Algorithm Boost */}
+        <link rel="alternate" href="https://roadmapfinder.tech/RoadmapPage" />
+        <link rel="alternate" href="https://roadmapfinder.tech/Courses" />
+
+        {/* ✅ Structured Data (JSON-LD for Google Rich Results) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -74,12 +90,16 @@ export default function RootLayout({ children }) {
             "@type": "WebSite",
             "name": "RoadmapFinder",
             "url": "https://roadmapfinder.tech",
+            "description": "RoadmapFinder offers structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to help learners master web development, data science, and AI efficiently.",
+            "sameAs": [
+              "https://roadmapfinder.tech/RoadmapPage",
+              "https://roadmapfinder.tech/Courses"
+            ],
             "potentialAction": {
               "@type": "SearchAction",
               "target": "https://roadmapfinder.tech/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             },
-            "description": "Explore step-by-step technology skill roadmaps, best filtered YouTube courses, Career Guidance, AI project helper, and blogs on trending tech.",
             "publisher": {
               "@type": "Organization",
               "name": "RoadmapFinder Team",
@@ -88,7 +108,24 @@ export default function RootLayout({ children }) {
                 "@type": "ImageObject",
                 "url": "https://roadmapfinder.tech/roadmapfinder.svg"
               }
-            }
+            },
+            "mainEntity": [
+              {
+                "@type": "ItemList",
+                "name": "Tech Skill Roadmaps",
+                "url": "https://roadmapfinder.tech/RoadmapPage"
+              },
+              {
+                "@type": "ItemList",
+                "name": "YouTube Best Courses",
+                "url": "https://roadmapfinder.tech/Courses"
+              },
+              {
+                "@type": "Service",
+                "name": "AI Resource Finder",
+                "url": "https://roadmapfinder.tech"
+              }
+            ]
           }
         `,
           }}

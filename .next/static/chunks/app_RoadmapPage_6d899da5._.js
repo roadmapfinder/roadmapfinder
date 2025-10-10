@@ -42,6 +42,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/box.js [app-client] (ecmascript) <export default as Box>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Square$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/square.js [app-client] (ecmascript) <export default as Square>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PenBox$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/square-pen.js [app-client] (ecmascript) <export default as PenBox>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-column.js [app-client] (ecmascript) <export default as BarChart3>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.js [app-client] (ecmascript) <export default as TrendingUp>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/palette.js [app-client] (ecmascript) <export default as Palette>");
 ;
 ;
 const roadmapsData = [
@@ -52,7 +55,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 39,
+            lineNumber: 42,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Aiml",
@@ -61,19 +64,34 @@ const roadmapsData = [
         description: "Machine Learning, Deep Learning, Neural Networks"
     },
     {
-        id: "web",
-        title: "Web Development",
+        id: "ai agents",
+        title: "AI Agents (No code)",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__["Brain"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 51,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/AI-Agent",
+        bgColor: "from-blue-700 to-blue-900",
+        category: "featured",
+        description: "No code AI agents and applications"
+    },
+    {
+        id: "mern",
+        title: "Mern Stack",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 48,
+            lineNumber: 60,
             columnNumber: 11
         }, this),
-        link: "/Roadmaps/Web",
+        link: "/Roadmaps/Mern",
         bgColor: "from-blue-600 to-blue-400",
         category: "featured",
-        description: "Full-stack web development fundamentals"
+        description: "Mern-stack web development fundamentals"
     },
     {
         id: "django",
@@ -82,7 +100,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 57,
+            lineNumber: 69,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Django",
@@ -97,7 +115,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 66,
+            lineNumber: 78,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/React",
@@ -112,7 +130,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 75,
+            lineNumber: 87,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Next",
@@ -127,7 +145,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 84,
+            lineNumber: 96,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Nestjs",
@@ -142,7 +160,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 93,
+            lineNumber: 105,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Reactnative",
@@ -151,19 +169,19 @@ const roadmapsData = [
         description: "Cross-platform mobile app development"
     },
     {
-        id: "softwareengineer",
-        title: "Software Engineer",
+        id: "software architect",
+        title: "Software Architect",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Square$3e$__["Square"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 102,
+            lineNumber: 114,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Software",
         bgColor: "from-blue-500 to-cyan-400",
         category: "featured",
-        description: "Cross-platform mobile app development"
+        description: "Software architecture fundamentals"
     },
     {
         id: "flutter",
@@ -172,7 +190,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 111,
+            lineNumber: 123,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Flutter",
@@ -182,12 +200,12 @@ const roadmapsData = [
     },
     {
         id: "fullstack",
-        title: "Full-Stack",
+        title: "Full-Stack Web Developer",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 120,
+            lineNumber: 132,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Full-Stack",
@@ -202,7 +220,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 129,
+            lineNumber: 141,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Frontend",
@@ -217,7 +235,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 138,
+            lineNumber: 150,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Mern",
@@ -232,7 +250,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 147,
+            lineNumber: 159,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Backend",
@@ -247,7 +265,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 156,
+            lineNumber: 168,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Nodejs",
@@ -262,7 +280,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 165,
+            lineNumber: 177,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Expressjs",
@@ -271,13 +289,28 @@ const roadmapsData = [
         description: "Server-side development and APIs"
     },
     {
+        id: "angular",
+        title: "Angular js",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Triangle$3e$__["Triangle"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 186,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Angular",
+        bgColor: "from-red-600 to-red-700",
+        category: "featured",
+        description: "Single page application development"
+    },
+    {
         id: "javascript",
         title: "JavaScript",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__["Code"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 174,
+            lineNumber: 195,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Javascript",
@@ -292,7 +325,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 183,
+            lineNumber: 204,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Typescript",
@@ -307,7 +340,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 192,
+            lineNumber: 213,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Python",
@@ -322,7 +355,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 201,
+            lineNumber: 222,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Java",
@@ -337,7 +370,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 210,
+            lineNumber: 231,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/JavaFullStack",
@@ -352,7 +385,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 219,
+            lineNumber: 240,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Rust",
@@ -361,13 +394,43 @@ const roadmapsData = [
         description: "Systems programming with Rust"
     },
     {
+        id: "ios",
+        title: "iOS Development",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 249,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Ios",
+        bgColor: "from-gray-700 to-gray-900",
+        category: "featured",
+        description: "Native iOS app development with Swift and UIKit"
+    },
+    {
+        id: "android",
+        title: "Android Development",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 258,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Android",
+        bgColor: "from-green-500 to-green-700",
+        category: "featured",
+        description: "Native Android app development with Kotlin and Java"
+    },
+    {
         id: "php",
         title: "PHP",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__["Code"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 228,
+            lineNumber: 267,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Php",
@@ -382,7 +445,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 237,
+            lineNumber: 276,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Sql",
@@ -397,7 +460,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 246,
+            lineNumber: 285,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Go",
@@ -412,7 +475,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 255,
+            lineNumber: 294,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Swift",
@@ -427,7 +490,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 264,
+            lineNumber: 303,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Cpp",
@@ -442,7 +505,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 273,
+            lineNumber: 312,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/C",
@@ -457,7 +520,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 282,
+            lineNumber: 321,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Kotlin",
@@ -466,13 +529,28 @@ const roadmapsData = [
         description: "Kotlin for Android development"
     },
     {
+        id: "spring",
+        title: "Spring",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$leaf$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Leaf$3e$__["Leaf"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 330,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Spring",
+        bgColor: "from-green-600 to-green-800",
+        category: "trending",
+        description: "Spring framework"
+    },
+    {
         id: "springboot",
         title: "Springboot",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$leaf$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Leaf$3e$__["Leaf"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 291,
+            lineNumber: 339,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Springboot",
@@ -482,18 +560,64 @@ const roadmapsData = [
     },
     {
         id: "data",
-        title: "Data Analysis & Science",
+        title: "Data Engineering",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 300,
+            lineNumber: 348,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Data",
         bgColor: "from-green-500 to-green-400",
         category: "trending",
-        description: "Data science and analytics"
+        description: "Data architecture and engineering"
+    },
+    // NEW ROADMAPS ADDED HERE
+    {
+        id: "data-science",
+        title: "Data Science",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__["BarChart3"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 358,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Data-Science",
+        bgColor: "from-violet-600 to-purple-700",
+        category: "trending",
+        description: "Statistical analysis, machine learning, and data insights"
+    },
+    {
+        id: "data-analysis",
+        title: "Data Analysis",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 367,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Data-Analysis",
+        bgColor: "from-emerald-500 to-teal-600",
+        category: "trending",
+        description: "Data visualization, statistical analysis, and business intelligence"
+    },
+    {
+        id: "product-designer",
+        title: "Product Designer",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__["Palette"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 376,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/ProductDesigner",
+        bgColor: "from-rose-500 to-pink-600",
+        category: "trending",
+        description: "User research, design thinking, and product strategy"
     },
     {
         id: "database",
@@ -502,7 +626,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 309,
+            lineNumber: 385,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Database",
@@ -517,7 +641,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 318,
+            lineNumber: 394,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Excel",
@@ -532,7 +656,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 327,
+            lineNumber: 403,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/UIUX",
@@ -541,28 +665,13 @@ const roadmapsData = [
         description: "User interface and experience design"
     },
     {
-        id: "mobile",
-        title: "Mobile App Development",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
-            className: "w-5 h-5 text-white"
-        }, void 0, false, {
-            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 336,
-            columnNumber: 11
-        }, this),
-        link: "/Roadmaps/APP",
-        bgColor: "from-orange-500 to-red-500",
-        category: "trending",
-        description: "Cross-platform mobile development"
-    },
-    {
         id: "cloud",
         title: "Cloud Computing",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Cloud$3e$__["Cloud"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 345,
+            lineNumber: 413,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Cloud",
@@ -571,13 +680,28 @@ const roadmapsData = [
         description: "Cloud platforms and services"
     },
     {
+        id: "networking",
+        title: "Networking",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 422,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Networking",
+        bgColor: "from-blue-500 to-cyan-600",
+        category: "trending",
+        description: "Network engineering fundamentals"
+    },
+    {
         id: "video",
         title: "Video Editing",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__["Video"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 354,
+            lineNumber: 431,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Video",
@@ -592,7 +716,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 363,
+            lineNumber: 440,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Graphic",
@@ -607,7 +731,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 372,
+            lineNumber: 449,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Blockchain",
@@ -622,7 +746,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 381,
+            lineNumber: 458,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/System",
@@ -631,13 +755,43 @@ const roadmapsData = [
         description: "Large-scale system architecture"
     },
     {
+        id: "Linux",
+        title: "linux",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$git$2d$branch$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__GitBranch$3e$__["GitBranch"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 467,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/Linux",
+        bgColor: "from-black to-gray-900",
+        category: "trending",
+        description: "Linux command line OS"
+    },
+    {
+        id: "OS",
+        title: "Operating System",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$terminal$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Terminal$3e$__["Terminal"], {
+            className: "w-5 h-5 text-white"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 476,
+            columnNumber: 11
+        }, this),
+        link: "/Roadmaps/OS",
+        bgColor: "from-gray-800 to-gray-900",
+        category: "trending",
+        description: "Operating system fundamentals"
+    },
+    {
         id: "devops",
         title: "DevOps",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__["Server"], {
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 390,
+            lineNumber: 485,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Devops",
@@ -652,7 +806,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 399,
+            lineNumber: 494,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/DSA",
@@ -667,7 +821,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 408,
+            lineNumber: 503,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/CyberSecurity",
@@ -682,7 +836,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 417,
+            lineNumber: 512,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Prompt",
@@ -697,7 +851,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 426,
+            lineNumber: 521,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/IOT",
@@ -712,7 +866,7 @@ const roadmapsData = [
             className: "w-5 h-5 text-white"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 435,
+            lineNumber: 530,
             columnNumber: 11
         }, this),
         link: "/Roadmaps/Game",
@@ -765,15 +919,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-left.js [app-client] (ecmascript) <export default as ChevronLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/search.js [app-client] (ecmascript) <export default as Search>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.js [app-client] (ecmascript) <export default as TrendingUp>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star.js [app-client] (ecmascript) <export default as Star>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/code.js [app-client] (ecmascript) <export default as Code>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/layers.js [app-client] (ecmascript) <export default as Layers>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/database.js [app-client] (ecmascript) <export default as Database>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/palette.js [app-client] (ecmascript) <export default as Palette>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/briefcase.js [app-client] (ecmascript) <export default as Briefcase>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-client] (ecmascript) <export default as Clock>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-client] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$funnel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Filter$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/funnel.js [app-client] (ecmascript) <export default as Filter>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/RoadmapPage/roadmapsData.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -782,951 +932,832 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-// Category definitions with better organization
-const categories = {
-    programming: {
-        title: "Programming Languages",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__["Code"], {
-            className: "w-5 h-5"
-        }, void 0, false, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 30,
-            columnNumber: 11
-        }, this),
-        color: "blue",
-        description: "Master core programming languages"
-    },
-    frameworks: {
-        title: "Frameworks & Libraries",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__["Layers"], {
-            className: "w-5 h-5"
-        }, void 0, false, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 36,
-            columnNumber: 11
-        }, this),
-        color: "indigo",
-        description: "Modern development frameworks"
-    },
-    databases: {
-        title: "Databases & Backend",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
-            className: "w-5 h-5"
-        }, void 0, false, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 42,
-            columnNumber: 11
-        }, this),
-        color: "green",
-        description: "Data management and server technologies"
-    },
-    design: {
-        title: "Design & Creative",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__["Palette"], {
-            className: "w-5 h-5"
-        }, void 0, false, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 48,
-            columnNumber: 11
-        }, this),
-        color: "purple",
-        description: "UI/UX and creative skills"
-    },
-    specialization: {
-        title: "Specialized Fields",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__["Briefcase"], {
-            className: "w-5 h-5"
-        }, void 0, false, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 54,
-            columnNumber: 11
-        }, this),
-        color: "orange",
-        description: "Specialized technology domains"
-    }
-};
-// Categorize roadmaps based on their content
-const categorizeRoadmap = (roadmap)=>{
-    const title = roadmap.title.toLowerCase();
-    const description = roadmap.description.toLowerCase();
-    // Programming Languages
-    if ([
-        'javascript',
-        'python',
-        'java',
-        'typescript',
-        'c++',
-        'c language',
-        'php',
-        'rust',
-        'go',
-        'swift',
-        'kotlin'
-    ].some((lang)=>title.includes(lang))) {
-        return 'programming';
-    }
-    // Frameworks & Libraries
-    if ([
-        'react',
-        'next.js',
-        'django',
-        'nest.js',
-        'flutter',
-        'springboot',
-        'express js'
-    ].some((fw)=>title.includes(fw))) {
-        return 'frameworks';
-    }
-    // Databases & Backend
-    if ([
-        'sql',
-        'database',
-        'backend',
-        'node js',
-        'server',
-        'devops',
-        'cloud'
-    ].some((db)=>title.includes(db) || description.includes(db))) {
-        return 'databases';
-    }
-    // Design & Creative
-    if ([
-        'ui/ux',
-        'graphic',
-        'video',
-        'design'
-    ].some((design)=>title.includes(design) || description.includes(design))) {
-        return 'design';
-    }
-    // Specialization (AI, Security, etc.)
-    return 'specialization';
-};
-// Add categories to roadmaps data
-const categorizedRoadmaps = __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["roadmapsData"].map((roadmap)=>({
-        ...roadmap,
-        category: categorizeRoadmap(roadmap)
-    }));
-// Difficulty and duration mapping (you can customize these)
-const getDifficultyInfo = (title)=>{
-    const beginnerTechs = [
-        'javascript',
-        'python',
-        'html',
-        'css',
-        'excel'
-    ];
-    const advancedTechs = [
-        'ai',
-        'system design',
-        'blockchain',
-        'cyber security',
-        'c++'
-    ];
-    if (beginnerTechs.some((tech)=>title.toLowerCase().includes(tech))) {
-        return {
-            difficulty: 'Beginner',
-            duration: '2-3 months'
-        };
-    }
-    if (advancedTechs.some((tech)=>title.toLowerCase().includes(tech))) {
-        return {
-            difficulty: 'Advanced',
-            duration: '6-8 months'
-        };
-    }
-    return {
-        difficulty: 'Intermediate',
-        duration: '3-5 months'
-    };
-};
 function TechRoadmap() {
     _s();
     const [searchQuery, setSearchQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("all");
-    const [filteredRoadmaps, setFilteredRoadmaps] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(categorizedRoadmaps);
+    const [filteredCategories, setFilteredCategories] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [hoveredCard, setHoveredCard] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    // Filter roadmaps based on search and category
+    const [isSearchFocused, setIsSearchFocused] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Initialize filtered categories with all categories
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "TechRoadmap.useEffect": ()=>{
-            let filtered = categorizedRoadmaps;
-            // Apply search filter
-            if (searchQuery.trim()) {
-                filtered = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["searchRoadmaps"])(searchQuery).map({
-                    "TechRoadmap.useEffect": (roadmap)=>({
-                            ...roadmap,
-                            category: categorizeRoadmap(roadmap)
-                        })
-                }["TechRoadmap.useEffect"]);
-            }
-            // Apply category filter
-            if (selectedCategory !== "all") {
-                filtered = filtered.filter({
-                    "TechRoadmap.useEffect": (roadmap)=>roadmap.category === selectedCategory
-                }["TechRoadmap.useEffect"]);
-            }
-            setFilteredRoadmaps(filtered);
+            setFilteredCategories(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["roadmapsData"]);
+        }
+    }["TechRoadmap.useEffect"], []);
+    // Filter categories based on search query
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "TechRoadmap.useEffect": ()=>{
+            const filtered = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["searchRoadmaps"])(searchQuery);
+            setFilteredCategories(filtered);
         }
     }["TechRoadmap.useEffect"], [
-        searchQuery,
-        selectedCategory
+        searchQuery
     ]);
     // Handle search tag click
     const handleTagClick = (tag)=>{
         setSearchQuery(tag);
     };
-    // Get roadmaps by category
-    const getRoadmapsByCategory = (categoryKey)=>{
-        return filteredRoadmaps.filter((roadmap)=>roadmap.category === categoryKey);
-    };
-    // Get featured roadmaps (first few from each category)
-    const getFeaturedRoadmaps = ()=>{
-        const featured = [];
-        Object.keys(categories).forEach((categoryKey)=>{
-            const categoryRoadmaps = getRoadmapsByCategory(categoryKey);
-            featured.push(...categoryRoadmaps.slice(0, 2));
-        });
-        return featured;
-    };
-    const featuredRoadmaps = searchQuery || selectedCategory !== "all" ? filteredRoadmaps : getFeaturedRoadmaps();
+    // Get featured and trending roadmaps
+    const featuredRoadmaps = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getFeaturedRoadmaps"])();
+    const trendingRoadmaps = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getTrendingRoadmaps"])();
+    // If search is active, show filtered results
+    const displayFeatured = searchQuery ? filteredCategories : featuredRoadmaps;
+    const displayTrending = searchQuery ? [] : trendingRoadmaps.filter((roadmap)=>!searchQuery || filteredCategories.includes(roadmap));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-gray-50",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-7xl mx-auto px-4 pt-6 pb-12",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mb-8",
+        className: "min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                className: "bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/80",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white rounded-2xl shadow-sm border border-gray-100 p-8",
+                        className: "flex items-center justify-between h-16",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center justify-between mb-6",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/",
-                                        className: "flex items-center text-gray-600 hover:text-blue-600 transition-colors",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
-                                                className: "w-5 h-5 mr-1"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 166,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-sm font-medium",
-                                                children: "Back to Home"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 167,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 165,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center space-x-2 text-sm text-gray-500",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
-                                                className: "w-4 h-4"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 170,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: [
-                                                    categorizedRoadmaps.length,
-                                                    " Learning Paths"
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 171,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 169,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/",
+                                passHref: true,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer group",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                                            className: "w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 62,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-semibold text-sm",
+                                            children: "Back to Home"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 63,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 61,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 164,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-center",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-4xl font-bold text-gray-900 mb-4",
-                                        children: "Tech Learning Roadmaps"
+                                className: "flex items-center space-x-3",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: "p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$funnel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Filter$3e$__["Filter"], {
+                                        className: "w-5 h-5 text-gray-600"
                                     }, void 0, false, {
                                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 176,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xl text-gray-600 max-w-2xl mx-auto",
-                                        children: "Discover structured learning paths for programming languages, frameworks, and specialized tech skills"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 179,
-                                        columnNumber: 15
+                                        lineNumber: 69,
+                                        columnNumber: 17
                                     }, this)
-                                ]
-                            }, void 0, true, {
+                                }, void 0, false, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 68,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 175,
+                                lineNumber: 67,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                        lineNumber: 162,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 161,
+                    lineNumber: 58,
                     columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mb-8",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white rounded-2xl shadow-sm border border-gray-100 p-6",
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                lineNumber: 57,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-12 text-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative mb-6",
+                                className: "inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "text",
-                                        placeholder: "Search roadmaps...",
-                                        value: searchQuery,
-                                        onChange: (e)=>setSearchQuery(e.target.value),
-                                        className: "w-full px-4 py-4 pl-12 pr-12 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-gray-50"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
+                                        className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 191,
-                                        columnNumber: 15
+                                        lineNumber: 80,
+                                        columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                        className: "w-5 h-5 text-gray-400 absolute left-4 top-4.5"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "Curated Learning Paths"
                                     }, void 0, false, {
                                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 198,
-                                        columnNumber: 15
-                                    }, this),
-                                    searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setSearchQuery(""),
-                                        className: "absolute right-4 top-4.5 text-gray-400 hover:text-gray-600",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                                            className: "w-5 h-5"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                            lineNumber: 204,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 200,
-                                        columnNumber: 17
+                                        lineNumber: 81,
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 190,
-                                columnNumber: 13
+                                lineNumber: 79,
+                                columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-wrap gap-3 mb-4",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setSelectedCategory("all"),
-                                        className: `px-4 py-2 rounded-lg text-sm font-medium transition-all ${selectedCategory === "all" ? "bg-blue-600 text-white shadow-md" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`,
-                                        children: "All Categories"
+                                    "Tech Learning",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent",
+                                        children: " Roadmaps"
                                     }, void 0, false, {
                                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 211,
-                                        columnNumber: 15
-                                    }, this),
-                                    Object.entries(categories).map(([key, category])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>setSelectedCategory(key),
-                                            className: `px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center space-x-2 ${selectedCategory === key ? "bg-blue-600 text-white shadow-md" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`,
-                                            children: [
-                                                category.icon,
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    children: category.title
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                    lineNumber: 232,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, key, true, {
-                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                            lineNumber: 222,
-                                            columnNumber: 17
-                                        }, this))
+                                        lineNumber: 86,
+                                        columnNumber: 13
+                                    }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 210,
+                                lineNumber: 84,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8",
+                                children: "Discover expertly curated learning paths for various tech domains and programming languages"
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 89,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "max-w-2xl mx-auto mb-6",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `relative transition-all duration-300 ${isSearchFocused ? 'transform scale-105' : ''}`,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: `absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur-xl opacity-20 transition-opacity duration-300 ${isSearchFocused ? 'opacity-30' : 'opacity-0'}`
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                lineNumber: 96,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "relative bg-white rounded-2xl shadow-lg border border-gray-200",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                                        className: "w-5 h-5 text-gray-400 absolute left-5 top-1/2 -translate-y-1/2 z-10"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                        lineNumber: 99,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        placeholder: "Search for roadmaps, technologies, or skills...",
+                                                        value: searchQuery,
+                                                        onChange: (e)=>setSearchQuery(e.target.value),
+                                                        onFocus: ()=>setIsSearchFocused(true),
+                                                        onBlur: ()=>setIsSearchFocused(false),
+                                                        className: "w-full px-14 py-4 rounded-2xl focus:outline-none text-gray-800 placeholder-gray-400 bg-transparent"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                        lineNumber: 100,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: ()=>setSearchQuery(""),
+                                                        className: "absolute right-5 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-100 rounded-full transition-colors duration-200",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                                            className: "w-5 h-5 text-gray-400 hover:text-gray-600"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                            lineNumber: 114,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                        lineNumber: 110,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                lineNumber: 98,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 95,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-wrap items-center justify-center gap-2 mt-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sm font-medium text-gray-500",
+                                                children: "Popular:"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                lineNumber: 122,
+                                                columnNumber: 15
+                                            }, this),
+                                            __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["popularTags"].map((tag)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>handleTagClick(tag),
+                                                    className: "px-4 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50 text-gray-700 hover:text-blue-700 transition-all duration-200 shadow-sm hover:shadow",
+                                                    children: tag
+                                                }, tag, false, {
+                                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                    lineNumber: 124,
+                                                    columnNumber: 17
+                                                }, this))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 121,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 94,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                        lineNumber: 78,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid grid-cols-2 md:grid-cols-4 gap-4 mb-12",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-3xl font-bold text-gray-900 mb-1",
+                                        children: [
+                                            __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["roadmapsData"].length,
+                                            "+"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 139,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-sm text-gray-600",
+                                        children: "Learning Paths"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 142,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 138,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-3xl font-bold text-gray-900 mb-1",
+                                        children: "50K+"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 145,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-sm text-gray-600",
+                                        children: "Active Learners"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 146,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 144,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-3xl font-bold text-gray-900 mb-1",
+                                        children: "100%"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 149,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-sm text-gray-600",
+                                        children: "Free Resources"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 150,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 148,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-3xl font-bold text-gray-900 mb-1",
+                                        children: "4.9★"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 153,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-sm text-gray-600",
+                                        children: "User Rating"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 154,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 152,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                        lineNumber: 137,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-16",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center justify-between mb-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center space-x-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "p-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                className: "w-5 h-5 text-white"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                lineNumber: 163,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 162,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                    className: "text-2xl font-bold text-gray-900",
+                                                    children: searchQuery ? `Search Results` : "Featured Paths"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                    lineNumber: 166,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: searchQuery ? `${displayFeatured.length} results found` : "Most popular learning roadmaps"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                    lineNumber: 169,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 165,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 161,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 160,
+                                columnNumber: 11
+                            }, this),
+                            displayFeatured.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+                                children: displayFeatured.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapCard, {
+                                        category: category,
+                                        hoveredCard: hoveredCard,
+                                        setHoveredCard: setHoveredCard
+                                    }, category.id, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 179,
+                                        columnNumber: 17
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 177,
+                                columnNumber: 13
+                            }, this) : null
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                        lineNumber: 159,
+                        columnNumber: 9
+                    }, this),
+                    displayTrending.length > 0 && !searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-16",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center justify-between mb-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center space-x-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "p-2 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
+                                                className: "w-5 h-5 text-white"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                lineNumber: 196,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 195,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                    className: "text-2xl font-bold text-gray-900",
+                                                    children: "Trending & Specialized"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                    lineNumber: 199,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-sm text-gray-600",
+                                                    children: "Emerging technologies and niche specializations"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                    lineNumber: 202,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 198,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 194,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 193,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-wrap gap-2",
+                                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+                                children: displayTrending.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapCard, {
+                                        category: category,
+                                        hoveredCard: hoveredCard,
+                                        setHoveredCard: setHoveredCard,
+                                        isTrending: true
+                                    }, category.id, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 211,
+                                        columnNumber: 17
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 209,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                        lineNumber: 192,
+                        columnNumber: 11
+                    }, this),
+                    searchQuery && displayFeatured.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center py-20",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "inline-flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                    className: "w-10 h-10 text-gray-400"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 227,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 226,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-2xl font-bold text-gray-900 mb-2",
+                                children: "No roadmaps found"
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 229,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-gray-600 mb-6 max-w-md mx-auto",
+                                children: [
+                                    "We couldn't find any roadmaps matching \"",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-semibold",
+                                        children: searchQuery
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 233,
+                                        columnNumber: 55
+                                    }, this),
+                                    '". Try different keywords or browse our popular tags.'
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 232,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>setSearchQuery(""),
+                                className: "inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 shadow-lg hover:shadow-xl",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-sm text-gray-500 flex items-center",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                className: "w-4 h-4 mr-1"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 240,
-                                                columnNumber: 17
-                                            }, this),
-                                            "Popular:"
-                                        ]
-                                    }, void 0, true, {
+                                        children: "Show All Roadmaps"
+                                    }, void 0, false, {
                                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
                                         lineNumber: 239,
                                         columnNumber: 15
                                     }, this),
-                                    __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmapsData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["popularTags"].map((tag)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            onClick: ()=>handleTagClick(tag),
-                                            className: "px-3 py-1 text-xs rounded-full bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors border border-blue-200",
-                                            children: tag
-                                        }, tag, false, {
-                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                            lineNumber: 244,
-                                            columnNumber: 17
-                                        }, this))
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                        className: "w-4 h-4"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                        lineNumber: 240,
+                                        columnNumber: 15
+                                    }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 238,
+                                lineNumber: 235,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                        lineNumber: 188,
+                        lineNumber: 225,
                         columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 187,
-                    columnNumber: 9
-                }, this),
-                searchQuery || selectedCategory !== "all" ? // Search/Filter Results
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mb-8",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center justify-between mb-6",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-2xl font-bold text-gray-900",
-                                children: [
-                                    searchQuery ? `Search Results` : categories[selectedCategory]?.title,
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-lg text-gray-500 ml-2",
-                                        children: [
-                                            "(",
-                                            filteredRoadmaps.length,
-                                            ")"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 263,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 261,
-                                columnNumber: 15
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 260,
-                            columnNumber: 13
-                        }, this),
-                        filteredRoadmaps.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
-                            children: filteredRoadmaps.map((roadmap)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapCard, {
-                                    roadmap: roadmap,
-                                    hoveredCard: hoveredCard,
-                                    setHoveredCard: setHoveredCard
-                                }, roadmap.id, false, {
-                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 270,
-                                    columnNumber: 19
-                                }, this))
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 268,
-                            columnNumber: 15
-                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NoResultsMessage, {
-                            onClear: ()=>{
-                                setSearchQuery("");
-                                setSelectedCategory("all");
-                            }
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 279,
-                            columnNumber: 15
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 259,
-                    columnNumber: 11
-                }, this) : // Category-wise Display
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mb-12",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center justify-between mb-6",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-2xl font-bold text-gray-900 flex items-center",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                className: "w-6 h-6 mr-2 text-yellow-500"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 289,
-                                                columnNumber: 19
-                                            }, this),
-                                            "Featured Roadmaps"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 288,
-                                        columnNumber: 17
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 287,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
-                                    children: featuredRoadmaps.slice(0, 6).map((roadmap)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapCard, {
-                                            roadmap: roadmap,
-                                            hoveredCard: hoveredCard,
-                                            setHoveredCard: setHoveredCard,
-                                            featured: true
-                                        }, roadmap.id, false, {
-                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                            lineNumber: 295,
-                                            columnNumber: 19
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 293,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 286,
-                            columnNumber: 13
-                        }, this),
-                        Object.entries(categories).map(([categoryKey, categoryInfo])=>{
-                            const categoryRoadmaps = getRoadmapsByCategory(categoryKey);
-                            if (categoryRoadmaps.length === 0) return null;
-                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-12",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center justify-between mb-6",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "p-2 rounded-lg bg-blue-50 mr-4",
-                                                        children: categoryInfo.icon
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                        lineNumber: 315,
-                                                        columnNumber: 23
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                                className: "text-2xl font-bold text-gray-900",
-                                                                children: categoryInfo.title
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                                lineNumber: 319,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-gray-600",
-                                                                children: categoryInfo.description
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                                lineNumber: 320,
-                                                                columnNumber: 25
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                        lineNumber: 318,
-                                                        columnNumber: 23
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 314,
-                                                columnNumber: 21
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setSelectedCategory(categoryKey),
-                                                className: "text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center",
-                                                children: [
-                                                    "View All ",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                        className: "w-4 h-4 ml-1"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                        lineNumber: 327,
-                                                        columnNumber: 32
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 323,
-                                                columnNumber: 21
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 313,
-                                        columnNumber: 19
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
-                                        children: categoryRoadmaps.slice(0, 6).map((roadmap)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapCard, {
-                                                roadmap: roadmap,
-                                                hoveredCard: hoveredCard,
-                                                setHoveredCard: setHoveredCard
-                                            }, roadmap.id, false, {
-                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                                lineNumber: 332,
-                                                columnNumber: 23
-                                            }, this))
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 330,
-                                        columnNumber: 19
-                                    }, this)
-                                ]
-                            }, categoryKey, true, {
-                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 312,
-                                columnNumber: 17
-                            }, this);
-                        })
-                    ]
-                }, void 0, true),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white text-center",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-2xl font-bold mb-2",
-                            children: "Stay Updated"
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 348,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-blue-100 mb-6 max-w-2xl mx-auto",
-                            children: "Get notified about new roadmaps, learning resources, and tech updates delivered to your inbox."
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 349,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col sm:flex-row gap-3 max-w-md mx-auto",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "email",
-                                    placeholder: "Enter your email",
-                                    className: "flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 353,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/Signup",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "bg-white text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap",
-                                        children: "Subscribe Now"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 359,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 358,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 352,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 347,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 159,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-        lineNumber: 158,
-        columnNumber: 5
-    }, this);
-}
-_s(TechRoadmap, "0SHimP/lqIkSaFda9eGRgWpL0+w=");
-_c = TechRoadmap;
-// Roadmap Card Component
-function RoadmapCard({ roadmap, hoveredCard, setHoveredCard, featured = false }) {
-    const { difficulty, duration } = getDifficultyInfo(roadmap.title);
-    const isHovered = hoveredCard === roadmap.id;
-    const difficultyColors = {
-        'Beginner': 'bg-green-100 text-green-800',
-        'Intermediate': 'bg-yellow-100 text-yellow-800',
-        'Advanced': 'bg-red-100 text-red-800'
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-        href: roadmap.link,
-        className: "block h-full",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: `bg-white rounded-xl border border-gray-100 hover:border-blue-200 p-6 h-full transition-all duration-300 hover:shadow-lg ${isHovered ? 'transform -translate-y-1' : ''} ${featured ? 'ring-2 ring-blue-100' : ''}`,
-            onMouseEnter: ()=>setHoveredCard(roadmap.id),
-            onMouseLeave: ()=>setHoveredCard(null),
-            children: [
-                featured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between mb-3",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full flex items-center",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                className: "w-3 h-3 mr-1"
-                            }, void 0, false, {
-                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 393,
-                                columnNumber: 15
-                            }, this),
-                            "Featured"
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                        lineNumber: 392,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 391,
-                    columnNumber: 11
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-start space-x-4 mb-4",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "p-3 rounded-lg bg-blue-50 text-blue-600 flex-shrink-0",
-                            children: roadmap.icon
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 400,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex-1 min-w-0",
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 shadow-xl mb-8",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "max-w-3xl mx-auto text-center text-white",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "font-bold text-gray-900 text-lg mb-1 truncate",
-                                    children: roadmap.title
+                                    className: "text-3xl font-bold mb-4",
+                                    children: "Stay Updated with New Roadmaps"
                                 }, void 0, false, {
                                     fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 404,
+                                    lineNumber: 248,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-gray-600 text-sm line-clamp-2",
-                                    children: roadmap.description
+                                    className: "text-blue-100 mb-8 text-lg",
+                                    children: "Get notified about new learning paths, resources, and exclusive content delivered to your inbox."
                                 }, void 0, false, {
                                     fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                    lineNumber: 405,
+                                    lineNumber: 251,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-col sm:flex-row gap-3 max-w-md mx-auto",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "email",
+                                            placeholder: "Enter your email address",
+                                            className: "flex-1 rounded-xl px-5 py-3 focus:outline-none focus:ring-4 focus:ring-blue-300 text-gray-900 placeholder-gray-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 255,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/Signup",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: "bg-white text-blue-600 font-semibold py-3 px-8 rounded-xl hover:bg-gray-50 transition-colors duration-200 shadow-lg hover:shadow-xl whitespace-nowrap",
+                                                children: "Subscribe Now"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                                lineNumber: 261,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                            lineNumber: 260,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 254,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-blue-200 text-sm mt-4",
+                                    children: "Join 50,000+ learners. No spam, unsubscribe anytime."
+                                }, void 0, false, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 266,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 403,
+                            lineNumber: 247,
                             columnNumber: 11
                         }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 399,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between text-xs text-gray-500 mb-4",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center space-x-3",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: `px-2 py-1 rounded-full text-xs font-medium ${difficultyColors[difficulty]}`,
-                                children: difficulty
-                            }, void 0, false, {
-                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 411,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                        className: "w-3 h-3 mr-1"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                        lineNumber: 415,
-                                        columnNumber: 15
-                                    }, this),
-                                    duration
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                                lineNumber: 414,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                    }, void 0, false, {
                         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                        lineNumber: 410,
-                        columnNumber: 11
+                        lineNumber: 246,
+                        columnNumber: 9
                     }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 409,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-blue-600 text-sm font-medium",
-                            children: "Start Learning"
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 422,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                            className: `w-4 h-4 text-blue-600 transition-transform ${isHovered ? 'translate-x-1' : ''}`
-                        }, void 0, false, {
-                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                            lineNumber: 423,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 421,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-            lineNumber: 383,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-        lineNumber: 382,
-        columnNumber: 5
-    }, this);
-}
-_c1 = RoadmapCard;
-// No Results Component
-function NoResultsMessage({ onClear }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "text-center py-16",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-gray-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                    className: "w-10 h-10 text-gray-400"
-                }, void 0, false, {
-                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                    lineNumber: 435,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                lineNumber: 434,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                className: "text-xl font-semibold text-gray-900 mb-2",
-                children: "No roadmaps found"
-            }, void 0, false, {
-                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                lineNumber: 437,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-gray-600 mb-6 max-w-md mx-auto",
-                children: "We couldn't find any roadmaps matching your search. Try different keywords or browse our categories."
-            }, void 0, false, {
-                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                lineNumber: 438,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: onClear,
-                className: "bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors",
-                children: "Show All Roadmaps"
-            }, void 0, false, {
-                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-                lineNumber: 441,
+                lineNumber: 76,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/RoadmapPage/roadmap.jsx",
-        lineNumber: 433,
+        lineNumber: 55,
         columnNumber: 5
     }, this);
 }
-_c2 = NoResultsMessage;
-var _c, _c1, _c2;
+_s(TechRoadmap, "QvHpCsMSjW9Xpz33Gdslv45PXz0=");
+_c = TechRoadmap;
+// Enhanced Roadmap Card Component
+function RoadmapCard({ category, hoveredCard, setHoveredCard, isTrending = false }) {
+    const isHovered = hoveredCard === category.id;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+        href: category.link,
+        passHref: true,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden",
+            onMouseEnter: ()=>setHoveredCard(category.id),
+            onMouseLeave: ()=>setHoveredCard(null),
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: `absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300`
+                }, void 0, false, {
+                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                    lineNumber: 288,
+                    columnNumber: 9
+                }, this),
+                isTrending && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute top-4 right-4 z-10",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center space-x-1 shadow-lg",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
+                                className: "w-3 h-3"
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 294,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "Trending"
+                            }, void 0, false, {
+                                fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                lineNumber: 295,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                        lineNumber: 293,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                    lineNumber: 292,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "relative z-10",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: `bg-gradient-to-br ${category.bgColor} rounded-xl w-14 h-14 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`,
+                            children: category.icon
+                        }, void 0, false, {
+                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                            lineNumber: 302,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                            className: "text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200",
+                            children: category.title
+                        }, void 0, false, {
+                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                            lineNumber: 307,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: `text-gray-600 text-sm mb-4 transition-all duration-300 ${isHovered ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0 overflow-hidden'}`,
+                            children: category.description
+                        }, void 0, false, {
+                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                            lineNumber: 312,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center space-x-2 text-blue-600 font-medium text-sm group-hover:translate-x-2 transition-transform duration-300",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "Explore roadmap"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 318,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                    className: "w-4 h-4"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                                    lineNumber: 319,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                            lineNumber: 317,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                    lineNumber: 300,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                }, void 0, false, {
+                    fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+                    lineNumber: 324,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+            lineNumber: 282,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/RoadmapPage/roadmap.jsx",
+        lineNumber: 281,
+        columnNumber: 5
+    }, this);
+}
+_c1 = RoadmapCard;
+var _c, _c1;
 __turbopack_context__.k.register(_c, "TechRoadmap");
 __turbopack_context__.k.register(_c1, "RoadmapCard");
-__turbopack_context__.k.register(_c2, "NoResultsMessage");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
