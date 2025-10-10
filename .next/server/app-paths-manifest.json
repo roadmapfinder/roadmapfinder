@@ -2,6 +2,5 @@
   "/Courses/page": "app/Courses/page.js",
   "/Resource-Finder/page": "app/Resource-Finder/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/api/search-resources/route": "app/api/search-resources/route.js",
   "/page": "app/page.js"
 }

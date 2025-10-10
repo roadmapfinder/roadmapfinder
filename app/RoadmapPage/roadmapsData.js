@@ -54,15 +54,7 @@ export const roadmapsData = [
     category: "featured",
     description: "No code AI agents and applications"
   },
-  {
-    id: "mern",
-    title: "Mern Stack",
-    icon: <Globe className="w-5 h-5 text-white" />,
-    link: "/Roadmaps/Mern",
-    bgColor: "from-blue-600 to-blue-400",
-    category: "featured",
-    description: "Mern-stack web development fundamentals"
-  },
+
   {
     id: "django",
     title: "Django",

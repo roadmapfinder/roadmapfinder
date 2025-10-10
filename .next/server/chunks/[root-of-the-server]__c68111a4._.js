@@ -67,159 +67,353 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$google$2f$generative$2d$ai$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@google/generative-ai/dist/index.mjs [app-route] (ecmascript)");
 ;
 ;
+// ==================== CONFIGURATION ====================
+const CONFIG = {
+    GEMINI_MODEL: 'gemini-2.0-flash-exp',
+    MAX_SEARCH_RESULTS: 30,
+    MIN_VIDEO_DURATION: 5,
+    SEARCH_TIMEOUT: 15000,
+    AI_TIMEOUT: 10000,
+    CACHE_TTL: 3600
+};
+const TECH_DOMAINS = {
+    programming: [
+        'javascript',
+        'python',
+        'java',
+        'c++',
+        'c#',
+        'go',
+        'rust',
+        'typescript',
+        'php',
+        'ruby',
+        'swift',
+        'kotlin'
+    ],
+    webDev: [
+        'react',
+        'vue',
+        'angular',
+        'next.js',
+        'node.js',
+        'express',
+        'nestjs',
+        'html',
+        'css',
+        'tailwind',
+        'bootstrap'
+    ],
+    mobile: [
+        'react native',
+        'flutter',
+        'android',
+        'ios',
+        'swift',
+        'kotlin',
+        'xamarin'
+    ],
+    backend: [
+        'django',
+        'flask',
+        'spring boot',
+        'laravel',
+        'fastapi',
+        'graphql',
+        'rest api',
+        'microservices'
+    ],
+    database: [
+        'mongodb',
+        'postgresql',
+        'mysql',
+        'redis',
+        'firebase',
+        'supabase',
+        'sql',
+        'nosql'
+    ],
+    devops: [
+        'docker',
+        'kubernetes',
+        'aws',
+        'azure',
+        'gcp',
+        'ci/cd',
+        'jenkins',
+        'terraform'
+    ],
+    design: [
+        'figma',
+        'adobe xd',
+        'ui/ux',
+        'user experience',
+        'user interface',
+        'design system',
+        'prototyping'
+    ],
+    dataScience: [
+        'machine learning',
+        'deep learning',
+        'tensorflow',
+        'pytorch',
+        'pandas',
+        'numpy',
+        'data analysis'
+    ],
+    other: [
+        'git',
+        'github',
+        'testing',
+        'agile',
+        'algorithms',
+        'data structures',
+        'system design'
+    ]
+};
+// Initialize AI
 const genAI = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$google$2f$generative$2d$ai$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__["GoogleGenerativeAI"](process.env.GEMINI_API_KEY);
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
+// ==================== UTILITY FUNCTIONS ====================
 /**
- * Deep query analysis to understand user intent
+ * Validates environment variables
+ */ function validateEnvironment() {
+    if (!YOUTUBE_API_KEY || !process.env.GEMINI_API_KEY) {
+        throw new Error('Missing required API keys: YOUTUBE_API_KEY or GEMINI_API_KEY');
+    }
+}
+/**
+ * Creates a timeout promise for API calls
+ */ function withTimeout(promise, timeoutMs, errorMessage = 'Operation timed out') {
+    return Promise.race([
+        promise,
+        new Promise((_, reject)=>setTimeout(()=>reject(new Error(errorMessage)), timeoutMs))
+    ]);
+}
+/**
+ * Retry logic with exponential backoff
+ */ async function retryWithBackoff(fn, maxRetries = 3, baseDelay = 1000) {
+    for(let i = 0; i < maxRetries; i++){
+        try {
+            return await fn();
+        } catch (error) {
+            if (i === maxRetries - 1) throw error;
+            const delay = baseDelay * Math.pow(2, i);
+            console.log(`⚠️ Retry ${i + 1}/${maxRetries} after ${delay}ms:`, error.message);
+            await new Promise((resolve)=>setTimeout(resolve, delay));
+        }
+    }
+}
+/**
+ * Parse ISO 8601 duration to minutes
+ */ function parseDuration(duration) {
+    const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+    if (!match) return 0;
+    const hours = parseInt(match[1] || 0);
+    const minutes = parseInt(match[2] || 0);
+    const seconds = parseInt(match[3] || 0);
+    return hours * 60 + minutes + seconds / 60;
+}
+/**
+ * Format duration for display
+ */ function formatDuration(minutes) {
+    const hours = Math.floor(minutes / 60);
+    const mins = Math.round(minutes % 60);
+    if (hours > 0) return `${hours}h ${mins}m`;
+    return `${mins}m`;
+}
+/**
+ * Sanitize user input
+ */ function sanitizeQuery(query) {
+    return query.trim().replace(/[<>{}]/g, '') // Remove potentially harmful characters
+    .substring(0, 200); // Limit length
+}
+/**
+ * Detect tech domain from query
+ */ function detectTechDomain(query) {
+    const lowerQuery = query.toLowerCase();
+    for (const [domain, keywords] of Object.entries(TECH_DOMAINS)){
+        if (keywords.some((keyword)=>lowerQuery.includes(keyword))) {
+            return domain;
+        }
+    }
+    return 'general';
+}
+// ==================== AI ANALYSIS ====================
+/**
+ * Deep query analysis with expert tech understanding
  */ async function analyzeQueryIntent(query, language, preferLatest) {
     try {
         const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash-exp',
+            model: CONFIG.GEMINI_MODEL,
             generationConfig: {
-                maxOutputTokens: 250,
-                temperature: 0.3
+                maxOutputTokens: 300,
+                temperature: 0.2
             }
         });
-        const prompt = `Analyze this learning query deeply and extract key information:
+        const techDomain = detectTechDomain(query);
+        const relevantTech = TECH_DOMAINS[techDomain]?.join(', ') || 'general technology';
+        const prompt = `You are an expert tech educator and course curator specializing in programming, software development, UI/UX design, and all tech domains.
 
+ANALYZE THIS LEARNING QUERY:
 User Query: "${query}"
-Language: ${language === 'hindi' ? 'Hindi/Hinglish' : 'English'}
-Latest Preference: ${preferLatest ? 'Yes - Recent content (2023-2025)' : 'No - Best quality regardless of date'}
+Language Preference: ${language === 'hindi' ? 'Hindi/Hinglish (Indian learners)' : 'English'}
+Recency Preference: ${preferLatest ? 'YES - Must prioritize 2023-2025 content' : 'NO - Quality matters more than date'}
+Detected Domain: ${techDomain}
+Related Technologies: ${relevantTech}
 
-Extract:
-1. Core Topic/Skill: What exactly they want to learn (programming language, software, concept, skill)
-2. Level: Beginner/Intermediate/Advanced (infer from query or assume beginner if unclear)
-3. Format Preference: Full course, tutorial series, crash course, or specific topic
-4. Key Technologies/Tools: Any specific versions, frameworks, or tools mentioned
-5. Context Clues: Any hints about their goal (job, project, exam, hobby)
+YOUR TASK - Extract precise learning intent:
 
-Then create 3 optimized YouTube search queries:
-- Primary: Most specific and comprehensive search
-- Secondary: Broader but still focused search
-- Fallback: General search with educational keywords
+1. CORE TOPIC/TECHNOLOGY:
+   - What EXACT technology, language, framework, or tool they want to learn
+   - Identify specific versions if mentioned (e.g., React 18, Python 3.12, Next.js 14)
+   - Recognize abbreviations and common variations
 
-Format your response as:
-TOPIC: [core topic]
-LEVEL: [level]
-FORMAT: [preferred format]
-TECH: [specific tech/version if any]
-PRIMARY: [best search query]
+2. SKILL LEVEL (be precise):
+   - Beginner: Complete newcomer, needs fundamentals
+   - Intermediate: Knows basics, wants to go deeper
+   - Advanced: Experienced, seeking mastery or specialization
+   - DEFAULT to Beginner if unclear
+
+3. LEARNING FORMAT:
+   - Full Course: Comprehensive A-Z coverage (preferred for most queries)
+   - Tutorial Series: Structured multi-part lessons
+   - Crash Course: Quick intensive overview
+   - Project-Based: Learn by building
+   - Specific Topic: Focused on one concept
+
+4. TECH STACK CONTEXT:
+   - Frontend/Backend/Full Stack/Mobile/Design/DevOps/Data Science
+   - Related technologies they might need
+   - Industry standards for this technology
+
+5. LEARNER CONTEXT (infer intelligently):
+   - Career switch? Job preparation? Academic? Hobby? Freelancing?
+   - Time sensitivity? Interview prep? Project deadline?
+
+GENERATE 3 STRATEGIC YOUTUBE SEARCH QUERIES:
+
+PRIMARY QUERY (Most Specific):
+- Target the EXACT technology + comprehensive format
+- Include year if preferLatest=true (2024, 2025)
+- Add language if hindi
+- Use professional educational keywords
+- Example: "React 18 complete course tutorial 2024" or "Next.js 14 full stack hindi"
+
+SECONDARY QUERY (Broader but Focused):
+- Remove year, keep technology specific
+- Add variations like "bootcamp", "masterclass", "zero to hero"
+- Example: "React complete tutorial" or "Next.js full course"
+
+FALLBACK QUERY (Safest):
+- Core technology + basic educational keywords
+- Guaranteed to return results
+- Example: "React tutorial" or "Next.js basics"
+
+CRITICAL RULES:
+- If query mentions "latest" or specific year → MUST include 2024/2025 in PRIMARY
+- For programming languages → include "complete course" or "full tutorial"
+- For frameworks → include framework name + "course" or "tutorial"
+- For UI/UX → include "UI UX design complete course"
+- For hindi → include "hindi" in ALL queries
+- Be very specific with technology names (React NOT javascript, Python NOT programming)
+
+FORMAT YOUR RESPONSE EXACTLY AS:
+TOPIC: [exact technology/skill name]
+LEVEL: [beginner/intermediate/advanced]
+FORMAT: [full course/tutorial series/crash course/project-based/specific topic]
+TECH_STACK: [frontend/backend/fullstack/mobile/design/devops/data/other]
+VERSION: [specific version if any, else "latest"]
+CONTEXT: [career/academic/project/hobby/interview]
+PRIMARY: [most specific search query]
 SECONDARY: [broader search query]
-FALLBACK: [general search query]
+FALLBACK: [safest search query]
 
-Make queries natural and effective for YouTube search algorithm.`;
-        const result = await model.generateContent(prompt);
+Be extremely precise and tech-savvy. Think like a senior developer recommending resources to a junior.`;
+        const result = await withTimeout(model.generateContent(prompt), CONFIG.AI_TIMEOUT, 'Query analysis timed out');
         const response = await result.response;
         const analysisText = response.text().trim();
-        // Parse the structured response
+        // Parse structured response
         const analysis = {
             topic: analysisText.match(/TOPIC:\s*(.+)/i)?.[1]?.trim() || query,
-            level: analysisText.match(/LEVEL:\s*(.+)/i)?.[1]?.trim() || 'beginner',
+            level: analysisText.match(/LEVEL:\s*(.+)/i)?.[1]?.trim()?.toLowerCase() || 'beginner',
             format: analysisText.match(/FORMAT:\s*(.+)/i)?.[1]?.trim() || 'full course',
-            tech: analysisText.match(/TECH:\s*(.+)/i)?.[1]?.trim() || 'general',
+            techStack: analysisText.match(/TECH_STACK:\s*(.+)/i)?.[1]?.trim() || 'general',
+            version: analysisText.match(/VERSION:\s*(.+)/i)?.[1]?.trim() || 'latest',
+            context: analysisText.match(/CONTEXT:\s*(.+)/i)?.[1]?.trim() || 'learning',
             primaryQuery: analysisText.match(/PRIMARY:\s*(.+)/i)?.[1]?.trim(),
             secondaryQuery: analysisText.match(/SECONDARY:\s*(.+)/i)?.[1]?.trim(),
             fallbackQuery: analysisText.match(/FALLBACK:\s*(.+)/i)?.[1]?.trim()
         };
-        console.log(`🧠 Query Analysis:
-   Topic: ${analysis.topic}
-   Level: ${analysis.level}
-   Format: ${analysis.format}
-   Tech: ${analysis.tech}`);
+        console.log(`🧠 AI Analysis:`);
+        console.log(`   Topic: ${analysis.topic}`);
+        console.log(`   Level: ${analysis.level}`);
+        console.log(`   Format: ${analysis.format}`);
+        console.log(`   Stack: ${analysis.techStack}`);
+        console.log(`   Version: ${analysis.version}`);
         return analysis;
     } catch (error) {
-        console.error('⚠️ Intent analysis failed:', error.message);
-        // Smart fallback with better defaults
+        console.error('⚠️ AI analysis failed:', error.message);
+        // Intelligent fallback with tech-aware defaults
         const cleanQuery = query.toLowerCase().trim();
+        const domain = detectTechDomain(query);
+        const yearSuffix = preferLatest ? '2024' : '';
+        const langSuffix = language === 'hindi' ? 'hindi' : '';
         return {
             topic: query,
             level: 'beginner',
             format: 'full course',
-            tech: 'general',
-            primaryQuery: `${cleanQuery} complete course tutorial ${language === 'hindi' ? 'hindi' : ''} ${preferLatest ? '2024' : ''}`.trim(),
-            secondaryQuery: `${cleanQuery} full tutorial ${language === 'hindi' ? 'hindi' : ''}`.trim(),
-            fallbackQuery: `${cleanQuery} ${language === 'hindi' ? 'hindi' : ''}`.trim()
+            techStack: domain,
+            version: 'latest',
+            context: 'learning',
+            primaryQuery: `${cleanQuery} complete course tutorial ${yearSuffix} ${langSuffix}`.trim(),
+            secondaryQuery: `${cleanQuery} full tutorial ${langSuffix}`.trim(),
+            fallbackQuery: `${cleanQuery} ${langSuffix}`.trim()
         };
     }
 }
-/**
- * Enhanced multi-strategy search with intelligent fallback
- */ async function searchYouTubeCourse(query, language, preferLatest) {
-    try {
-        // Deep analysis first
-        const analysis = await analyzeQueryIntent(query, language, preferLatest);
-        // Strategy 1: Use AI-analyzed primary query (most specific)
-        console.log(`🔍 Strategy 1: Primary search - "${analysis.primaryQuery}"`);
-        let results = await executeYouTubeSearch(analysis.primaryQuery, language, preferLatest, 'medium');
-        // Strategy 2: Secondary query (broader)
-        if (!results || results.length === 0) {
-            console.log(`🔍 Strategy 2: Secondary search - "${analysis.secondaryQuery}"`);
-            results = await executeYouTubeSearch(analysis.secondaryQuery, language, preferLatest, 'medium');
-        }
-        // Strategy 3: Fallback query (general)
-        if (!results || results.length === 0) {
-            console.log(`🔍 Strategy 3: Fallback search - "${analysis.fallbackQuery}"`);
-            results = await executeYouTubeSearch(analysis.fallbackQuery, language, preferLatest, 'any');
-        }
-        // Strategy 4: Last resort - simple topic search
-        if (!results || results.length === 0) {
-            console.log(`🔍 Strategy 4: Basic topic search`);
-            const basicQuery = `${analysis.topic} ${language === 'hindi' ? 'hindi' : ''}`.trim();
-            results = await executeYouTubeSearch(basicQuery, language, preferLatest, 'any');
-        }
-        if (!results || results.length === 0) {
-            console.log('❌ All search strategies exhausted');
-            return null;
-        }
-        // Process with context-aware ranking
-        const processedVideos = await processAndRankVideos(results, query, analysis, language, preferLatest);
-        if (!processedVideos || processedVideos.length === 0) {
-            console.log('❌ No valid videos after processing');
-            return null;
-        }
-        const topVideo = processedVideos[0];
-        console.log(`✅ Selected: "${topVideo.title}"`);
-        console.log(`   Quality Score: ${topVideo.qualityScore.toFixed(2)}`);
-        console.log(`   Teaching Score: ${topVideo.teachingScore.toFixed(2)}`);
-        console.log(`   Relevance Score: ${topVideo.relevanceScore.toFixed(2)}`);
-        return topVideo;
-    } catch (error) {
-        console.error('❌ Search error:', error);
-        throw error;
-    }
-}
+// ==================== YOUTUBE SEARCH ====================
 /**
  * Execute YouTube search with optimized parameters
  */ async function executeYouTubeSearch(searchQuery, language, preferLatest, videoDuration = 'medium') {
     try {
-        console.log(`   Searching: "${searchQuery}"`);
+        console.log(`   🔍 Searching: "${searchQuery}"`);
         const searchParams = new URLSearchParams({
             part: 'snippet',
             q: searchQuery,
             type: 'video',
-            maxResults: 30,
+            maxResults: CONFIG.MAX_SEARCH_RESULTS,
             order: preferLatest ? 'date' : 'relevance',
             videoDuration: videoDuration,
             videoDefinition: 'any',
+            videoCategoryId: '27',
             relevanceLanguage: language === 'hindi' ? 'hi' : 'en',
+            safeSearch: 'strict',
             key: YOUTUBE_API_KEY
         });
         const searchResponse = await fetch(`${YOUTUBE_SEARCH_URL}?${searchParams}`, {
-            signal: AbortSignal.timeout(12000)
+            signal: AbortSignal.timeout(CONFIG.SEARCH_TIMEOUT),
+            headers: {
+                'Accept': 'application/json'
+            }
         });
         if (!searchResponse.ok) {
-            const errorData = await searchResponse.json();
-            console.error('❌ YouTube Search Error:', errorData);
+            const errorData = await searchResponse.json().catch(()=>({}));
+            console.error('❌ YouTube API Error:', errorData);
+            if (searchResponse.status === 403) {
+                throw new Error('YouTube API quota exceeded or invalid API key');
+            }
             return null;
         }
         const searchData = await searchResponse.json();
-        console.log(`   Found ${searchData.items?.length || 0} videos`);
-        if (!searchData.items || searchData.items.length === 0) {
+        if (!searchData.items?.length) {
+            console.log('   ⚠️ No results found');
             return null;
         }
-        // Get detailed video information
+        console.log(`   ✓ Found ${searchData.items.length} videos`);
+        // Fetch detailed video information
         const videoIds = searchData.items.map((item)=>item.id.videoId).join(',');
         const videoParams = new URLSearchParams({
             part: 'snippet,contentDetails,statistics',
@@ -227,22 +421,100 @@ Make queries natural and effective for YouTube search algorithm.`;
             key: YOUTUBE_API_KEY
         });
         const videoResponse = await fetch(`${YOUTUBE_VIDEOS_URL}?${videoParams}`, {
-            signal: AbortSignal.timeout(12000)
+            signal: AbortSignal.timeout(CONFIG.SEARCH_TIMEOUT),
+            headers: {
+                'Accept': 'application/json'
+            }
         });
         if (!videoResponse.ok) {
-            console.error('❌ Video details fetch failed');
+            console.error('❌ Failed to fetch video details');
             return null;
         }
         const videoData = await videoResponse.json();
-        console.log(`   Retrieved details for ${videoData.items?.length || 0} videos`);
-        return videoData.items;
+        console.log(`   ✓ Retrieved details for ${videoData.items?.length || 0} videos`);
+        return videoData.items || null;
     } catch (error) {
-        console.error('⚠️ Search execution error:', error.message);
+        if (error.name === 'AbortError') {
+            console.error('⚠️ Search timeout exceeded');
+        } else {
+            console.error('⚠️ Search error:', error.message);
+        }
         return null;
     }
 }
 /**
- * Advanced video processing with comprehensive scoring
+ * Multi-strategy search with intelligent fallback
+ */ async function searchYouTubeCourse(query, language, preferLatest) {
+    console.log('\n🎯 Starting Multi-Strategy Search...');
+    // Get AI analysis
+    const analysis = await analyzeQueryIntent(query, language, preferLatest);
+    const strategies = [
+        {
+            name: 'Primary (AI-Optimized)',
+            query: analysis.primaryQuery,
+            duration: 'medium'
+        },
+        {
+            name: 'Secondary (Broad)',
+            query: analysis.secondaryQuery,
+            duration: 'medium'
+        },
+        {
+            name: 'Fallback (Safe)',
+            query: analysis.fallbackQuery,
+            duration: 'any'
+        },
+        {
+            name: 'Basic Topic',
+            query: `${analysis.topic} ${language === 'hindi' ? 'hindi' : ''}`.trim(),
+            duration: 'any'
+        }
+    ];
+    let allResults = [];
+    for (const [index, strategy] of strategies.entries()){
+        console.log(`\n📍 Strategy ${index + 1}/4: ${strategy.name}`);
+        const results = await executeYouTubeSearch(strategy.query, language, preferLatest, strategy.duration);
+        if (results?.length) {
+            allResults = [
+                ...allResults,
+                ...results
+            ];
+            console.log(`   ✓ Accumulated ${allResults.length} total videos`);
+            // If we have enough quality results, stop searching
+            if (allResults.length >= 20) {
+                console.log('   ℹ️ Sufficient results collected, stopping search');
+                break;
+            }
+        }
+    }
+    if (!allResults.length) {
+        console.log('\n❌ No results from any strategy');
+        return null;
+    }
+    // Remove duplicates
+    const uniqueResults = Array.from(new Map(allResults.map((item)=>[
+            item.id,
+            item
+        ])).values());
+    console.log(`\n📊 Processing ${uniqueResults.length} unique videos...`);
+    // Process and rank
+    const rankedVideos = await processAndRankVideos(uniqueResults, query, analysis, language, preferLatest);
+    if (!rankedVideos?.length) {
+        console.log('❌ No valid videos after processing');
+        return null;
+    }
+    const topVideo = rankedVideos[0];
+    console.log(`\n✅ BEST MATCH SELECTED:`);
+    console.log(`   Title: "${topVideo.title.substring(0, 80)}..."`);
+    console.log(`   Channel: ${topVideo.channelTitle}`);
+    console.log(`   Duration: ${formatDuration(parseDuration(topVideo.duration))}`);
+    console.log(`   Overall Score: ${topVideo.finalScore.toFixed(2)}/10`);
+    console.log(`   Relevance: ${topVideo.relevanceScore.toFixed(1)} | Teaching: ${topVideo.teachingScore.toFixed(1)} | Quality: ${topVideo.qualityScore.toFixed(1)}`);
+    return topVideo;
+}
+// ==================== VIDEO PROCESSING & RANKING ====================
+/**
+ * Process and rank videos with comprehensive scoring
  */ async function processAndRankVideos(videoItems, originalQuery, analysis, language, preferLatest) {
     // Format videos with complete data
     const videos = videoItems.map((video)=>({
@@ -258,483 +530,520 @@ Make queries natural and effective for YouTube search algorithm.`;
             commentCount: parseInt(video.statistics.commentCount || 0),
             url: `https://www.youtube.com/watch?v=${video.id}`
         }));
-    // Apply quality filters (lenient but effective)
+    // Apply quality filters
     let filteredVideos = videos.filter((video)=>{
         const duration = parseDuration(video.duration);
-        const hasViews = video.viewCount > 100; // Minimum engagement
-        const hasLikes = video.likeCount > 0;
-        const isReasonableLength = duration >= 5; // At least 5 minutes
-        return hasViews && hasLikes && isReasonableLength;
+        const hasMinViews = video.viewCount >= 100;
+        const hasEngagement = video.likeCount > 0;
+        const meetsMinDuration = duration >= CONFIG.MIN_VIDEO_DURATION;
+        const notTooLong = duration <= 1200; // Max 20 hours
+        return hasMinViews && hasEngagement && meetsMinDuration && notTooLong;
     });
-    console.log(`📊 After quality filter: ${filteredVideos.length}/${videos.length} videos`);
-    if (filteredVideos.length === 0) {
-        console.log('⚠️ Filters too strict, using top videos by views');
+    console.log(`   After filters: ${filteredVideos.length}/${videos.length} videos`);
+    if (!filteredVideos.length) {
+        // Relaxed fallback
         filteredVideos = videos.filter((v)=>parseDuration(v.duration) >= 3).sort((a, b)=>b.viewCount - a.viewCount).slice(0, 15);
+        console.log(`   Using relaxed criteria: ${filteredVideos.length} videos`);
     }
-    // Comprehensive scoring with parallel AI analysis
-    const scoredVideos = await Promise.all(filteredVideos.map(async (video)=>{
-        // Calculate all score dimensions
-        const [relevanceScore, teachingScore] = await Promise.all([
-            calculateRelevanceScore(video, originalQuery, analysis, language),
-            calculateTeachingQualityScore(video, analysis.level, language)
-        ]);
-        const qualityScore = calculateVideoQualityScore(video, preferLatest);
-        const engagementScore = calculateEngagementScore(video);
-        // Weighted final score
-        const finalScore = relevanceScore * 0.35 + // Most important: matches user intent
-        teachingScore * 0.30 + // Teaching quality
-        qualityScore * 0.20 + // Video quality metrics
-        engagementScore * 0.15 // Community engagement
-        ;
-        return {
-            ...video,
-            qualityScore: finalScore,
-            relevanceScore,
-            teachingScore,
-            videoQualityScore: qualityScore,
-            engagementScore
-        };
-    }));
+    // Score videos in parallel batches to avoid rate limits
+    const BATCH_SIZE = 5;
+    const scoredVideos = [];
+    for(let i = 0; i < filteredVideos.length; i += BATCH_SIZE){
+        const batch = filteredVideos.slice(i, i + BATCH_SIZE);
+        const batchResults = await Promise.all(batch.map(async (video)=>{
+            try {
+                const [relevanceScore, teachingScore] = await Promise.all([
+                    calculateRelevanceScore(video, originalQuery, analysis, language),
+                    calculateTeachingScore(video, analysis)
+                ]);
+                const qualityScore = calculateQualityScore(video, preferLatest);
+                const engagementScore = calculateEngagementScore(video);
+                // Weighted final score
+                const finalScore = relevanceScore * 0.40 + // Most critical
+                teachingScore * 0.30 + // Teaching quality
+                qualityScore * 0.20 + // Video quality
+                engagementScore * 0.10 // Community validation
+                ;
+                return {
+                    ...video,
+                    finalScore,
+                    relevanceScore,
+                    teachingScore,
+                    qualityScore,
+                    engagementScore
+                };
+            } catch (error) {
+                console.error(`⚠️ Error scoring video "${video.title}":`, error.message);
+                return null;
+            }
+        }));
+        scoredVideos.push(...batchResults.filter(Boolean));
+        // Small delay between batches
+        if (i + BATCH_SIZE < filteredVideos.length) {
+            await new Promise((resolve)=>setTimeout(resolve, 100));
+        }
+    }
     // Sort by final score
-    const rankedVideos = scoredVideos.sort((a, b)=>b.qualityScore - a.qualityScore);
-    console.log(`📊 Top 5 videos by comprehensive score:`);
+    const rankedVideos = scoredVideos.sort((a, b)=>b.finalScore - a.finalScore);
+    console.log(`\n   📊 Top 5 Ranked Results:`);
     rankedVideos.slice(0, 5).forEach((v, i)=>{
-        console.log(`   ${i + 1}. "${v.title.substring(0, 60)}..."`);
-        console.log(`      Overall: ${v.qualityScore.toFixed(2)} | Rel: ${v.relevanceScore.toFixed(1)} | Teach: ${v.teachingScore.toFixed(1)} | Qual: ${v.videoQualityScore.toFixed(1)}`);
+        console.log(`   ${i + 1}. Score: ${v.finalScore.toFixed(2)} | "${v.title.substring(0, 60)}..."`);
     });
     return rankedVideos;
 }
 /**
- * AI-powered relevance scoring with deep matching
+ * AI-powered relevance scoring
  */ async function calculateRelevanceScore(video, originalQuery, analysis, language) {
     try {
         const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash-exp',
+            model: CONFIG.GEMINI_MODEL,
             generationConfig: {
-                maxOutputTokens: 100,
+                maxOutputTokens: 50,
                 temperature: 0.1
             }
         });
-        const prompt = `Rate how well this video matches the learning goal (0-10 scale):
+        const duration = parseDuration(video.duration);
+        const prompt = `Rate video relevance for tech learning (0-10 scale):
 
-USER WANTS TO LEARN: "${originalQuery}"
-Extracted Topic: ${analysis.topic}
-Desired Level: ${analysis.level}
-Preferred Format: ${analysis.format}
-Specific Tech: ${analysis.tech}
+TARGET: "${originalQuery}"
+- Topic: ${analysis.topic}
+- Level: ${analysis.level}
+- Format: ${analysis.format}
+- Tech Stack: ${analysis.techStack}
+- Version: ${analysis.version}
 
-VIDEO DETAILS:
-Title: "${video.title}"
-Channel: "${video.channelTitle}"
-Description (first 300 chars): "${video.description.substring(0, 300)}"
-Duration: ${formatDuration(parseDuration(video.duration))}
-Language Context: ${language === 'hindi' ? 'Hindi/Hinglish' : 'English'}
+VIDEO:
+- Title: "${video.title}"
+- Channel: "${video.channelTitle}"
+- Duration: ${formatDuration(duration)}
+- Description: "${video.description.substring(0, 300)}"
 
-SCORING CRITERIA (0-10):
-- 10: Perfect match - exactly what user needs (comprehensive course on exact topic)
-- 8-9: Excellent match - covers topic thoroughly with right approach
-- 6-7: Good match - relevant but may miss some aspects
-- 4-5: Moderate match - related but not ideal
-- 2-3: Weak match - loosely related
-- 0-1: Poor match - wrong topic or format
+SCORING:
+10: Perfect - exact topic, right level, comprehensive
+8-9: Excellent - covers topic well, appropriate depth
+6-7: Good - relevant, minor gaps
+4-5: Moderate - related but not ideal
+0-3: Poor - wrong topic/level/format
 
-Consider:
-1. Does title/description clearly indicate it teaches the exact topic?
-2. Is it comprehensive enough (right duration/depth)?
-3. Does it match the user's implied skill level?
-4. Is the language appropriate?
-5. Does it appear to be a structured course/tutorial vs random video?
+PRIORITY FACTORS:
+1. Title explicitly mentions exact technology/framework
+2. Duration suggests comprehensive coverage (30min-10hrs ideal)
+3. Professional educational channel
+4. Clear course/tutorial structure indicators
+5. Matches skill level
+6. Language appropriate (${language === 'hindi' ? 'Hindi/Hinglish' : 'English'})
 
-Return ONLY a number between 0-10 (can use decimals like 8.5).`;
-        const result = await model.generateContent(prompt);
+Return ONLY a number 0-10 (decimals ok).`;
+        const result = await withTimeout(model.generateContent(prompt), CONFIG.AI_TIMEOUT, 'Relevance scoring timed out');
         const response = await result.response;
-        const scoreText = response.text().trim();
-        const score = parseFloat(scoreText);
-        return isNaN(score) ? 5 : Math.min(10, Math.max(0, score));
+        const score = parseFloat(response.text().trim());
+        return isNaN(score) ? 5 : Math.max(0, Math.min(10, score));
     } catch (error) {
-        // Enhanced fallback with semantic matching
+        // Smart fallback
         const titleLower = video.title.toLowerCase();
         const descLower = video.description.toLowerCase();
-        const queryLower = originalQuery.toLowerCase();
         const topicLower = analysis.topic.toLowerCase();
-        let matchScore = 0;
+        const queryLower = originalQuery.toLowerCase();
+        let score = 0;
         // Exact topic match
-        if (titleLower.includes(topicLower)) matchScore += 3;
-        if (descLower.includes(topicLower)) matchScore += 1;
-        // Query word matching
+        if (titleLower.includes(topicLower)) score += 4;
+        if (descLower.includes(topicLower)) score += 1;
+        // Query words
         const queryWords = queryLower.split(' ').filter((w)=>w.length > 3);
         queryWords.forEach((word)=>{
-            if (titleLower.includes(word)) matchScore += 1.5;
-            if (descLower.includes(word)) matchScore += 0.5;
+            if (titleLower.includes(word)) score += 1;
         });
-        // Format indicators
-        const formatWords = [
-            'course',
-            'tutorial',
+        // Course indicators
+        const courseKeywords = [
             'complete',
             'full',
-            'comprehensive',
-            'masterclass',
-            'bootcamp'
+            'course',
+            'tutorial',
+            'bootcamp',
+            'masterclass'
         ];
-        formatWords.forEach((word)=>{
-            if (titleLower.includes(word)) matchScore += 1;
-        });
-        // Level indicators
-        if (analysis.level === 'beginner' && (titleLower.includes('beginner') || titleLower.includes('basics'))) matchScore += 1;
-        if (analysis.level === 'advanced' && titleLower.includes('advanced')) matchScore += 1;
-        return Math.min(10, matchScore);
+        if (courseKeywords.some((kw)=>titleLower.includes(kw))) score += 2;
+        // Level match
+        if (titleLower.includes(analysis.level)) score += 1;
+        return Math.min(10, score);
     }
 }
 /**
- * Evaluate teaching quality and comprehensiveness
- */ async function calculateTeachingQualityScore(video, level, language) {
+ * Teaching quality score
+ */ async function calculateTeachingScore(video, analysis) {
     try {
         const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash-exp',
+            model: CONFIG.GEMINI_MODEL,
             generationConfig: {
-                maxOutputTokens: 80,
+                maxOutputTokens: 50,
                 temperature: 0.1
             }
         });
         const duration = parseDuration(video.duration);
-        const durationText = formatDuration(duration);
-        const prompt = `Rate the teaching quality potential of this video (0-10):
+        const prompt = `Rate teaching quality potential (0-10):
 
 Title: "${video.title}"
 Channel: "${video.channelTitle}"
-Duration: ${durationText}
-Target Level: ${level}
+Duration: ${formatDuration(duration)}
 Views: ${video.viewCount.toLocaleString()}
-Engagement: ${video.likeCount.toLocaleString()} likes, ${video.commentCount.toLocaleString()} comments
+Likes: ${video.likeCount.toLocaleString()}
+Target Level: ${analysis.level}
 
 Evaluate:
-1. Title clarity and professionalism
-2. Duration appropriateness (too short = superficial, too long = may be unfocused)
-3. Channel credibility (professional educational names vs random)
-4. Engagement metrics (high likes/comments = good teaching)
-5. Does it seem comprehensive or just a quick tip?
+1. Professional title clarity
+2. Duration appropriateness (30min-10hrs ideal for courses)
+3. Channel credibility (educational brands)
+4. High engagement (like ratio, comment count)
+5. Comprehensive vs superficial
 
-Scoring:
-- 9-10: Excellent teaching quality indicators (professional, comprehensive, highly engaged)
-- 7-8: Good teaching quality (clear, adequate depth, decent engagement)
-- 5-6: Moderate quality (basic but functional)
-- 3-4: Below average (unclear, too brief, low engagement)
-- 0-2: Poor quality indicators
+10: Excellent professional course
+7-9: Good quality tutorial
+4-6: Basic/moderate quality
+0-3: Poor indicators
 
 Return ONLY a number 0-10.`;
-        const result = await model.generateContent(prompt);
+        const result = await withTimeout(model.generateContent(prompt), CONFIG.AI_TIMEOUT, 'Teaching scoring timed out');
         const response = await result.response;
         const score = parseFloat(response.text().trim());
-        return isNaN(score) ? 5 : Math.min(10, Math.max(0, score));
+        return isNaN(score) ? 5 : Math.max(0, Math.min(10, score));
     } catch (error) {
-        // Heuristic-based fallback
+        // Fallback heuristic
         const duration = parseDuration(video.duration);
         let score = 5;
-        // Duration quality for courses
-        if (duration >= 60 && duration <= 600) score += 2; // 1-10 hours ideal
-        else if (duration >= 30) score += 1.5; // 30min+ good
-        else if (duration >= 15) score += 1; // 15min+ acceptable
-        else if (duration < 10) score -= 1; // Too short
-        // Channel credibility signals
+        // Duration sweet spot
+        if (duration >= 30 && duration <= 600) score += 2;
+        else if (duration >= 15) score += 1;
+        // Channel credibility
         const channelLower = video.channelTitle.toLowerCase();
-        const professionalWords = [
+        const professionalKeywords = [
             'academy',
-            'tutorial',
             'university',
-            'institute',
-            'learning',
-            'education',
+            'tutorial',
             'tech',
-            'code'
+            'code',
+            'dev'
         ];
-        if (professionalWords.some((word)=>channelLower.includes(word))) score += 1;
-        // Title quality
-        const titleLower = video.title.toLowerCase();
-        const qualityWords = [
-            'complete',
-            'comprehensive',
-            'full',
-            'master',
-            'ultimate',
-            'definitive'
-        ];
-        if (qualityWords.some((word)=>titleLower.includes(word))) score += 1;
+        if (professionalKeywords.some((kw)=>channelLower.includes(kw))) score += 2;
         // Engagement
-        const engagementRate = video.viewCount > 0 ? video.likeCount / video.viewCount : 0;
-        if (engagementRate > 0.03) score += 1; // 3%+ like rate is good
-        if (video.commentCount > 100) score += 0.5; // Active community
+        const likeRatio = video.viewCount > 0 ? video.likeCount / video.viewCount : 0;
+        if (likeRatio > 0.03) score += 1;
         return Math.min(10, Math.max(0, score));
     }
 }
 /**
- * Calculate video quality score based on metrics
- */ function calculateVideoQualityScore(video, preferLatest) {
-    const views = parseInt(video.viewCount || 0);
-    const likes = parseInt(video.likeCount || 0);
+ * Video quality metrics score
+ */ function calculateQualityScore(video, preferLatest) {
+    const views = video.viewCount;
+    const likes = video.likeCount;
     const duration = parseDuration(video.duration);
-    // View score (logarithmic to prevent mega-viral videos from dominating)
+    // Logarithmic view score
     const viewScore = Math.min(10, Math.log10(views + 1) * 1.5);
     // Engagement rate
-    const engagementRate = views > 0 ? likes / views : 0;
-    const engagementScore = Math.min(10, engagementRate * 200); // 5% = full score
-    // Duration appropriateness for courses
+    const likeRatio = views > 0 ? likes / views : 0;
+    const engagementScore = Math.min(10, likeRatio * 200);
+    // Duration score
     let durationScore;
-    if (duration >= 60 && duration <= 600) durationScore = 10; // 1-10 hours ideal
-    else if (duration >= 30) durationScore = 8; // 30min+ good
-    else if (duration >= 15) durationScore = 6; // 15min+ okay
-    else if (duration >= 10) durationScore = 4; // 10min+ minimal
-    else durationScore = 2; // Too short
+    if (duration >= 30 && duration <= 600) durationScore = 10;
+    else if (duration >= 15) durationScore = 7;
+    else if (duration >= 10) durationScore = 5;
+    else durationScore = 3;
     // Recency score
     const publishDate = new Date(video.publishedAt);
     const monthsOld = (Date.now() - publishDate.getTime()) / (1000 * 60 * 60 * 24 * 30);
     let recencyScore;
     if (preferLatest) {
-        // Strong preference for latest
-        if (monthsOld < 3) recencyScore = 10;
-        else if (monthsOld < 6) recencyScore = 8;
-        else if (monthsOld < 12) recencyScore = 6;
+        if (monthsOld < 6) recencyScore = 10;
+        else if (monthsOld < 12) recencyScore = 7;
         else if (monthsOld < 24) recencyScore = 4;
         else recencyScore = 2;
     } else {
-        // Moderate preference for recent, but quality matters more
         if (monthsOld < 12) recencyScore = 8;
-        else if (monthsOld < 24) recencyScore = 7;
         else if (monthsOld < 36) recencyScore = 6;
-        else recencyScore = 5;
+        else recencyScore = 4;
     }
-    // Weighted combination
-    if (preferLatest) {
-        return viewScore * 0.2 + engagementScore * 0.2 + durationScore * 0.3 + recencyScore * 0.3;
-    } else {
-        return viewScore * 0.3 + engagementScore * 0.3 + durationScore * 0.3 + recencyScore * 0.1;
-    }
+    return preferLatest ? viewScore * 0.2 + engagementScore * 0.2 + durationScore * 0.3 + recencyScore * 0.3 : viewScore * 0.3 + engagementScore * 0.3 + durationScore * 0.3 + recencyScore * 0.1;
 }
 /**
- * Calculate engagement score
+ * Engagement score
  */ function calculateEngagementScore(video) {
-    const views = parseInt(video.viewCount || 0);
-    const likes = parseInt(video.likeCount || 0);
-    const comments = parseInt(video.commentCount || 0);
-    if (views === 0) return 0;
-    const likeRate = likes / views;
-    const commentRate = comments / views;
-    // Normalize engagement metrics
-    const likeScore = Math.min(10, likeRate * 200); // 5% like rate = full score
-    const commentScore = Math.min(10, commentRate * 500); // 2% comment rate = full score
+    const { viewCount, likeCount, commentCount } = video;
+    if (viewCount === 0) return 0;
+    const likeRatio = likeCount / viewCount;
+    const commentRatio = commentCount / viewCount;
+    const likeScore = Math.min(10, likeRatio * 200);
+    const commentScore = Math.min(10, commentRatio * 500);
     return likeScore * 0.7 + commentScore * 0.3;
 }
+// ==================== CONTENT GENERATION ====================
 /**
- * Parse ISO 8601 duration to minutes
- */ function parseDuration(duration) {
-    const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-    if (!match) return 0;
-    const hours = parseInt(match[1] || 0);
-    const minutes = parseInt(match[2] || 0);
-    const seconds = parseInt(match[3] || 0);
-    return hours * 60 + minutes + seconds / 60;
-}
-/**
- * Format duration
- */ function formatDuration(minutes) {
-    const hours = Math.floor(minutes / 60);
-    const mins = Math.round(minutes % 60);
-    return hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
-}
-/**
- * Generate comprehensive course content outline
+ * Generate course content outline
  */ async function generateCourseContent(video, language, analysis) {
     try {
         const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash-exp',
+            model: CONFIG.GEMINI_MODEL,
             generationConfig: {
-                maxOutputTokens: 1200,
+                maxOutputTokens: 1500,
                 temperature: 0.6
             }
         });
-        const prompt = `Create a detailed, structured learning outline for this course.
+        const duration = parseDuration(video.duration);
+        const prompt = `Create a comprehensive course outline for tech learners.
 
-Course Information:
-- Title: "${video.title}"
-- Channel: "${video.channelTitle}"
-- Duration: ${formatDuration(parseDuration(video.duration))}
-- Description: ${video.description.substring(0, 700)}
+COURSE INFO:
+Title: "${video.title}"
+Channel: "${video.channelTitle}"
+Duration: ${formatDuration(duration)}
+Description: ${video.description.substring(0, 500)}
 
-User Context:
-- Learning Goal: ${analysis.topic}
-- Skill Level: ${analysis.level}
+USER CONTEXT:
+Topic: ${analysis.topic}
+Level: ${analysis.level}
+Tech Stack: ${analysis.techStack}
+Version: ${analysis.version}
 
-Create 12-18 specific learning modules/topics in ${language === 'hindi' ? 'Hinglish (natural mix of Hindi & English)' : 'English'}.
+Create 12-20 specific learning modules in ${language === 'hindi' ? 'Hinglish (Hindi + English mix)' : 'English'}.
 
-Requirements:
-1. Start with fundamentals/basics, progress to advanced
-2. Each module should be 1-2 sentences explaining WHAT will be learned
-3. Be specific and actionable (not vague like "Introduction")
-4. Use engaging action verbs: Learn, Master, Build, Understand, Create, Implement, Design, etc.
-5. Make it feel like a structured curriculum
-6. Include practical applications and real-world examples where relevant
-7. Coverage should feel comprehensive and complete
+REQUIREMENTS:
+1. Progress from fundamentals → intermediate → advanced
+2. Each module: 1-2 sentences explaining WHAT will be learned
+3. Be tech-specific and actionable (not vague)
+4. Use action verbs: Master, Build, Implement, Design, Optimize, Deploy
+5. Include hands-on projects and real-world applications
+6. Cover best practices and industry standards
+7. Make it feel like a complete professional curriculum
 
-Good examples:
-✓ "Master the fundamental syntax and data types including strings, numbers, lists, and dictionaries"
-✓ "Build your first interactive web application using modern frameworks and best practices"
-✓ "Understand advanced concepts like closures, promises, and async/await for efficient code"
+GOOD EXAMPLES:
+✓ "Master ${analysis.topic} fundamentals including syntax, data structures, and core concepts with practical examples"
+✓ "Build production-ready applications using modern best practices, design patterns, and scalable architecture"
+✓ "Implement advanced features like authentication, state management, and API integration for real-world projects"
 
-Bad examples:
+BAD EXAMPLES:
 ✗ "Introduction" (too vague)
 ✗ "Basics" (not specific)
-✗ "Learn programming" (not actionable)
+✗ "Overview" (not actionable)
 
-Format: Use bullet points with "-", no numbering. Each point should feel substantial.`;
-        const result = await model.generateContent(prompt);
+Format: Return ONLY bullet points starting with "-", no numbering, no extra text.`;
+        const result = await withTimeout(model.generateContent(prompt), CONFIG.AI_TIMEOUT, 'Content generation timed out');
         const content = (await result.response).text();
-        const points = content.split('\n').map((line)=>line.trim()).filter((line)=>line.length > 0).map((line)=>line.replace(/^[-*•]\s*|\d+\.\s*/g, '').trim()).filter((line)=>line.length > 30 && line.length < 300) // Ensure substantial points
-        .slice(0, 18);
-        return points.length >= 8 ? points : [
-            `Master the fundamentals of ${analysis.topic} from ground up`,
-            `Understand core concepts and principles with clear explanations`,
-            `Learn essential techniques and best practices used by professionals`,
-            `Practice with hands-on examples and real-world scenarios`,
-            `Build practical projects to solidify your understanding`,
-            `Explore advanced features and optimization strategies`,
-            `Develop problem-solving skills specific to ${analysis.topic}`,
-            `Apply your knowledge to create professional-grade solutions`
+        const points = content.split('\n').map((line)=>line.trim()).filter((line)=>line.length > 0).map((line)=>line.replace(/^[-*•]\s*|\d+\.\s*/g, '').trim()).filter((line)=>line.length > 30 && line.length < 350).slice(0, 20);
+        if (points.length >= 8) return points;
+        // Fallback content
+        return [
+            `Master the fundamentals of ${analysis.topic} with comprehensive coverage from basics to advanced concepts`,
+            `Understand core principles, syntax, and essential features with clear, practical explanations`,
+            `Learn industry-standard best practices and coding conventions used by professional developers`,
+            `Build real-world projects to apply your knowledge and develop practical problem-solving skills`,
+            `Implement advanced features and techniques to create production-ready applications`,
+            `Explore ecosystem tools, libraries, and frameworks that enhance ${analysis.topic} development`,
+            `Debug and optimize code for better performance, maintainability, and scalability`,
+            `Deploy applications using modern DevOps practices and cloud platforms`,
+            `Work with databases, APIs, and external services to build full-stack solutions`,
+            `Master testing strategies including unit tests, integration tests, and end-to-end testing`,
+            `Understand design patterns and architectural principles for writing clean, maintainable code`,
+            `Learn version control with Git and collaborative development workflows on GitHub`
         ];
     } catch (error) {
         console.error('⚠️ Content generation error:', error.message);
+        // Robust fallback
         return [
-            `Learn ${analysis.topic} from beginner to advanced level`,
-            `Master fundamental concepts and core principles`,
-            `Practice with real-world examples and exercises`,
-            `Build practical projects to reinforce learning`,
-            `Understand best practices and industry standards`,
-            `Develop professional-level skills`
+            `Learn ${analysis.topic} from beginner to professional level with comprehensive coverage`,
+            `Master fundamental concepts, syntax, and core principles with hands-on practice`,
+            `Build real-world projects to develop practical skills and portfolio-worthy applications`,
+            `Understand best practices, design patterns, and industry-standard development workflows`,
+            `Implement advanced features and optimize code for production environments`,
+            `Work with modern tools, libraries, and frameworks in the ${analysis.techStack} ecosystem`,
+            `Deploy and maintain applications using cloud platforms and DevOps practices`,
+            `Develop problem-solving abilities through coding challenges and real-world scenarios`
         ];
     }
 }
 /**
- * Generate intelligent, personalized course analysis
+ * Generate course analysis/recommendation
  */ async function generateCourseAnalysis(query, video, language, analysis) {
     try {
         const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash-exp',
+            model: CONFIG.GEMINI_MODEL,
             generationConfig: {
-                maxOutputTokens: 500,
+                maxOutputTokens: 600,
                 temperature: 0.7
             }
         });
-        const duration = Math.round(parseDuration(video.duration));
-        const hours = Math.floor(duration / 60);
-        const minutes = duration % 60;
-        const durationText = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-        const prompt = `Write a compelling, personalized course recommendation for someone wanting to learn "${query}".
+        const duration = parseDuration(video.duration);
+        const durationText = formatDuration(duration);
+        const prompt = `Write a compelling, personalized course recommendation for a tech learner.
 
-Course Details:
+USER QUERY: "${query}"
+
+COURSE DETAILS:
 - Title: ${video.title}
-- Instructor/Channel: ${video.channelTitle}
+- Instructor: ${video.channelTitle}
 - Duration: ${durationText}
 - Views: ${video.viewCount.toLocaleString()}
-- Engagement: ${video.likeCount.toLocaleString()} likes, ${video.commentCount.toLocaleString()} comments
-- Published: ${new Date(video.publishedAt).toLocaleDateString()}
+- Likes: ${video.likeCount.toLocaleString()}
+- Comments: ${video.commentCount.toLocaleString()}
+- Published: ${new Date(video.publishedAt).toLocaleDateString('en-US', {
+            month: 'short',
+            year: 'numeric'
+        })}
 
-User Context:
-- What they want: ${analysis.topic}
-- Skill level: ${analysis.level}
-- Preferred format: ${analysis.format}
+AI ANALYSIS:
+- Topic: ${analysis.topic}
+- Level: ${analysis.level}
+- Tech Stack: ${analysis.techStack}
+- Version: ${analysis.version}
+- Context: ${analysis.context}
 
-Write in ${language === 'hindi' ? 'Hinglish (natural, conversational mix of Hindi and English)' : 'English'}.
+Write in ${language === 'hindi' ? 'Hinglish (natural Hindi-English mix like "Ye course bahut comprehensive hai with hands-on projects")' : 'professional but friendly English'}.
 
 Create a 5-6 sentence recommendation that:
-1. Opens with why this course is perfect for their specific goal (be specific, not generic)
-2. Highlights the course's strongest qualities (credibility, comprehensiveness, teaching style)
-3. Mentions what makes it stand out (views, engagement, instructor reputation, etc.)
-4. Addresses their skill level appropriately
-5. Ends with an encouraging, motivating call-to-action
+1. Opens with why THIS specific course perfectly matches their learning goal
+2. Highlights unique strengths (instructor credibility, comprehensiveness, teaching style, recency)
+3. Uses social proof naturally (views/engagement show it's trusted)
+4. Addresses their skill level and what they'll achieve
+5. Mentions practical aspects (projects, hands-on learning, real-world skills)
+6. Ends with an encouraging call-to-action
 
-Tone: Friendly, encouraging, confident but not overselling. Sound like a helpful friend recommending a great resource.
+TONE: Confident, enthusiastic friend who's a tech expert. Be specific, not generic.
 
-DO NOT:
-- Use generic phrases like "great course" without context
-- Just list features without explaining value
-- Be overly salesy or use excessive exclamations
-- Make unsupported claims
+DON'T:
+- Use clichés like "great course" without context
+- Over-promise or exaggerate
+- Be overly salesy with excessive exclamations
+- Make vague claims
 
 DO:
 - Be specific about what they'll learn
-- Connect the course directly to their goal
-- Use social proof naturally (views/likes/comments)
-- Sound genuinely enthusiastic but authentic`;
-        const result = await model.generateContent(prompt);
+- Connect directly to their goal/career
+- Mention concrete numbers (duration, views, engagement)
+- Sound genuinely enthusiastic but authentic
+- Reference the technology stack and practical skills
+
+Example style (English): "This comprehensive ${durationText} course is exactly what you need to master ${analysis.topic}. ${video.channelTitle} breaks down complex concepts into digestible lessons, and with ${video.viewCount.toLocaleString()} views and ${video.likeCount.toLocaleString()} likes, it's a proven resource trusted by thousands of learners..."
+
+Example style (Hinglish): "Agar aap ${analysis.topic} seriously seekhna chahte ho, toh ye ${durationText} ka course perfect hai aapke liye. ${video.channelTitle} ne har concept ko bahut clearly explain kiya hai, aur ${video.viewCount.toLocaleString()} views aur ${video.likeCount.toLocaleString()} likes dekh kar pata chalta hai ki ye trusted resource hai..."
+
+Write the complete recommendation now:`;
+        const result = await withTimeout(model.generateContent(prompt), CONFIG.AI_TIMEOUT, 'Analysis generation timed out');
         const analysisText = (await result.response).text().trim();
-        return analysisText || `This comprehensive ${durationText} course by ${video.channelTitle} is perfect for mastering ${analysis.topic}. With ${video.viewCount.toLocaleString()} views and ${video.likeCount.toLocaleString()} likes, it's a proven resource that covers everything from basics to advanced concepts. The structured approach makes it ideal for ${analysis.level} learners. Start your learning journey today!`;
+        return analysisText || generateFallbackAnalysis(video, analysis, language, durationText);
     } catch (error) {
-        console.error('⚠️ Analysis error:', error.message);
-        const durationText = formatDuration(parseDuration(video.duration));
-        return language === 'hindi' ? `Ye ${durationText} ka course ${analysis.topic} seekhne ke liye perfect hai! ${video.channelTitle} ne isko bahut achhe se explain kiya hai aur ${video.viewCount.toLocaleString()} views aur ${video.likeCount.toLocaleString()} likes dikhaate hain ki ye ek trusted resource hai. ${analysis.level} level ke liye ideal. Aaj hi shuru karein!` : `This ${durationText} course is perfect for learning ${analysis.topic}. ${video.channelTitle} explains everything clearly, and with ${video.viewCount.toLocaleString()} views and ${video.likeCount.toLocaleString()} likes, it's a trusted resource. Ideal for ${analysis.level} level learners. Start today!`;
+        console.error('⚠️ Analysis generation error:', error.message);
+        return generateFallbackAnalysis(video, analysis, language, formatDuration(parseDuration(video.duration)));
     }
+}
+/**
+ * Fallback analysis generator
+ */ function generateFallbackAnalysis(video, analysis, language, durationText) {
+    if (language === 'hindi') {
+        return `Agar aap ${analysis.topic} master karna chahte ho, toh ye ${durationText} ka comprehensive course aapke liye perfect hai! ${video.channelTitle} ne is course mein ${analysis.level} level ke learners ko dhyan mein rakhte hue har concept ko detail se cover kiya hai. ${video.viewCount.toLocaleString()} views aur ${video.likeCount.toLocaleString()} likes clearly show karte hain ki ye ek trusted aur high-quality resource hai. Course mein theoretical knowledge ke saath-saath practical projects bhi include hain jo aapko real-world skills develop karne mein help karenge. ${analysis.techStack} ecosystem ke best practices aur industry standards bhi cover kiye gaye hain. Toh wait mat karo, aaj hi apni learning journey start karo aur apne career goals achieve karo!`;
+    }
+    return `If you're serious about mastering ${analysis.topic}, this ${durationText} comprehensive course is exactly what you need. ${video.channelTitle} has expertly designed this content for ${analysis.level} learners, covering everything from fundamentals to advanced concepts. With ${video.viewCount.toLocaleString()} views and ${video.likeCount.toLocaleString()} likes, it's clearly a trusted resource that delivers results. The course includes hands-on projects and real-world applications that will help you build practical skills employers are looking for. You'll also learn industry best practices and modern ${analysis.techStack} development workflows. Don't wait—start your learning journey today and take your skills to the next level!`;
 }
 async function POST(request) {
     const startTime = Date.now();
+    const requestId = `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     try {
+        // Validate environment
+        validateEnvironment();
+        // Parse and validate request
         const body = await request.json();
         const { query, language = 'english', preferLatest = false } = body;
+        // Validate input
         if (!query?.trim()) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'Query is required'
+                success: false,
+                error: 'Query parameter is required and cannot be empty'
             }, {
                 status: 400
             });
         }
-        if (!YOUTUBE_API_KEY || !process.env.GEMINI_API_KEY) {
+        if (![
+            'english',
+            'hindi'
+        ].includes(language.toLowerCase())) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'API keys not configured'
+                success: false,
+                error: 'Language must be either "english" or "hindi"'
             }, {
-                status: 500
+                status: 400
             });
         }
-        console.log(`\n🎯 === NEW REQUEST ===`);
-        console.log(`Query: "${query}"`);
-        console.log(`Language: ${language}`);
-        console.log(`Latest Preference: ${preferLatest}`);
-        console.log(`======================\n`);
-        const video = await searchYouTubeCourse(query, language, preferLatest);
+        const sanitizedQuery = sanitizeQuery(query);
+        if (sanitizedQuery.length < 2) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: 'Query is too short. Please provide a meaningful search term.'
+            }, {
+                status: 400
+            });
+        }
+        console.log(`\n${'='.repeat(60)}`);
+        console.log(`🚀 NEW REQUEST [${requestId}]`);
+        console.log(`${'='.repeat(60)}`);
+        console.log(`📝 Query: "${sanitizedQuery}"`);
+        console.log(`🌐 Language: ${language}`);
+        console.log(`📅 Prefer Latest: ${preferLatest}`);
+        console.log(`⏰ Timestamp: ${new Date().toISOString()}`);
+        console.log(`${'='.repeat(60)}\n`);
+        // Execute search with retry logic
+        const video = await retryWithBackoff(()=>searchYouTubeCourse(sanitizedQuery, language, preferLatest), 2, 2000 // 2 second base delay
+        );
+        // Handle no results
         if (!video) {
-            console.log('❌ No course found after exhaustive search');
+            console.log(`\n❌ NO RESULTS FOUND [${requestId}]`);
+            const noResultsMessage = language === 'hindi' ? `"${sanitizedQuery}" ke liye koi suitable course nahi mila. Kripya different keywords try karein, spelling check karein, ya thoda general search term use karein. Tech courses ke liye specific technology ka naam use karein (jaise "React", "Python", "Figma").` : `No suitable courses found for "${sanitizedQuery}". Please try different keywords, check spelling, or use more general search terms. For tech courses, use specific technology names (e.g., "React", "Python", "Figma").`;
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
                 video: null,
-                courseAnalysis: language === 'hindi' ? `"${query}" ke liye koi suitable course nahi mila. Kripya alag keywords try karein, spelling check karein, ya thoda general search term use karein.` : `No suitable courses found for "${query}". Please try different keywords, check spelling, or use more general search terms.`,
+                courseAnalysis: noResultsMessage,
                 courseContent: [],
-                responseTime: `${Date.now() - startTime}ms`,
+                metadata: {
+                    requestId,
+                    query: sanitizedQuery,
+                    language,
+                    preferLatest,
+                    responseTime: `${Date.now() - startTime}ms`,
+                    timestamp: new Date().toISOString()
+                },
                 suggestions: language === 'hindi' ? [
-                    'Keywords ko simplify karein (jaise "learn python basics" ki jagah "python tutorial")',
-                    'English terms try karein agar Hindi mein results nahi mil rahe',
-                    'General terms use karein (jaise "web development" ki jagah "html css")'
+                    'Keywords ko simplify karein (e.g., "React complete course" → "React tutorial")',
+                    'Specific technology ka exact naam use karein',
+                    'English terms try karein for better results',
+                    'General terms se start karein (e.g., "web development" → "HTML CSS")'
                 ] : [
-                    'Try simplifying your keywords',
-                    'Use more general terms',
-                    'Check spelling and try alternative phrasings',
-                    'Search for broader topics first'
+                    'Try simplifying your keywords (e.g., "React complete course" → "React tutorial")',
+                    'Use exact technology names',
+                    'Try broader search terms',
+                    'Check for typos or alternative spellings',
+                    'Search for fundamental topics first'
                 ]
             });
         }
-        // Analyze the query deeply first
-        const analysis = await analyzeQueryIntent(query, language, preferLatest);
-        // Generate analysis and content in parallel with context
+        // Analyze query for content generation
+        const analysis = await analyzeQueryIntent(sanitizedQuery, language, preferLatest);
+        // Generate analysis and content in parallel
         const [courseAnalysis, courseContent] = await Promise.all([
-            generateCourseAnalysis(query, video, language, analysis),
+            generateCourseAnalysis(sanitizedQuery, video, language, analysis),
             generateCourseContent(video, language, analysis)
         ]);
         const responseTime = Date.now() - startTime;
-        console.log(`\n⚡ === REQUEST COMPLETED ===`);
-        console.log(`Time: ${responseTime}ms`);
-        console.log(`Selected: "${video.title}"`);
-        console.log(`Channel: ${video.channelTitle}`);
-        console.log(`Quality Score: ${video.qualityScore.toFixed(2)}/10`);
-        console.log(`===========================\n`);
+        console.log(`\n${'='.repeat(60)}`);
+        console.log(`✅ REQUEST COMPLETED [${requestId}]`);
+        console.log(`${'='.repeat(60)}`);
+        console.log(`⏱️  Response Time: ${responseTime}ms`);
+        console.log(`🎥 Selected: "${video.title.substring(0, 60)}..."`);
+        console.log(`👤 Channel: ${video.channelTitle}`);
+        console.log(`⏳ Duration: ${formatDuration(parseDuration(video.duration))}`);
+        console.log(`📊 Score: ${video.finalScore.toFixed(2)}/10`);
+        console.log(`   - Relevance: ${video.relevanceScore.toFixed(1)}`);
+        console.log(`   - Teaching: ${video.teachingScore.toFixed(1)}`);
+        console.log(`   - Quality: ${video.qualityScore.toFixed(1)}`);
+        console.log(`   - Engagement: ${video.engagementScore.toFixed(1)}`);
+        console.log(`${'='.repeat(60)}\n`);
+        // Return success response
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,
-            query,
+            query: sanitizedQuery,
             language,
             preferLatest,
             video: {
@@ -750,68 +1059,152 @@ async function POST(request) {
                 likeCount: video.likeCount,
                 commentCount: video.commentCount,
                 url: video.url,
-                // Quality metrics for transparency
+                embedUrl: `https://www.youtube.com/embed/${video.id}`,
                 scores: {
-                    overall: parseFloat(video.qualityScore.toFixed(2)),
+                    overall: parseFloat(video.finalScore.toFixed(2)),
                     relevance: parseFloat(video.relevanceScore.toFixed(2)),
                     teaching: parseFloat(video.teachingScore.toFixed(2)),
-                    quality: parseFloat(video.videoQualityScore.toFixed(2)),
+                    quality: parseFloat(video.qualityScore.toFixed(2)),
                     engagement: parseFloat(video.engagementScore.toFixed(2))
                 }
             },
             courseAnalysis,
             courseContent,
             metadata: {
+                requestId,
                 analyzedTopic: analysis.topic,
                 detectedLevel: analysis.level,
                 preferredFormat: analysis.format,
+                techStack: analysis.techStack,
+                version: analysis.version,
                 responseTime: `${responseTime}ms`,
-                searchStrategiesUsed: video.searchStrategy || 'multi-strategy',
-                totalVideosAnalyzed: video.totalAnalyzed || 'N/A'
+                timestamp: new Date().toISOString(),
+                apiVersion: '7.0.0'
+            }
+        }, {
+            headers: {
+                'Cache-Control': `public, s-maxage=${CONFIG.CACHE_TTL}, stale-while-revalidate`,
+                'X-Request-ID': requestId
             }
         });
     } catch (error) {
-        console.error('❌ === API ERROR ===');
-        console.error('Error:', error);
-        console.error('Stack:', error.stack);
-        console.error('===================\n');
+        console.error(`\n${'='.repeat(60)}`);
+        console.error(`❌ API ERROR [${requestId}]`);
+        console.error(`${'='.repeat(60)}`);
+        console.error('Error Name:', error.name);
+        console.error('Error Message:', error.message);
+        console.error('Stack Trace:', error.stack);
+        console.error(`${'='.repeat(60)}\n`);
+        // Determine appropriate status code
+        let statusCode = 500;
+        let errorMessage = 'An unexpected error occurred while processing your request';
+        if (error.message.includes('API key') || error.message.includes('quota')) {
+            statusCode = 503;
+            errorMessage = 'Service temporarily unavailable. Please try again later.';
+        } else if (error.message.includes('timeout')) {
+            statusCode = 504;
+            errorMessage = 'Request timed out. Please try again.';
+        } else if (error.name === 'AbortError') {
+            statusCode = 504;
+            errorMessage = 'Request took too long and was cancelled.';
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: false,
-            error: error.message || 'Internal server error',
-            details: ("TURBOPACK compile-time truthy", 1) ? error.stack : ("TURBOPACK unreachable", undefined),
+            error: errorMessage,
+            details: ("TURBOPACK compile-time truthy", 1) ? {
+                message: error.message,
+                stack: error.stack,
+                name: error.name
+            } : ("TURBOPACK unreachable", undefined),
+            metadata: {
+                requestId,
+                timestamp: new Date().toISOString(),
+                responseTime: `${Date.now() - startTime}ms`
+            }
+        }, {
+            status: statusCode,
+            headers: {
+                'X-Request-ID': requestId
+            }
+        });
+    }
+}
+async function GET() {
+    try {
+        validateEnvironment();
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            status: 'operational',
+            service: 'AI-Powered Tech Course Finder API',
+            version: '7.0.0',
+            environment: ("TURBOPACK compile-time value", "development") || 'production',
+            timestamp: new Date().toISOString(),
+            uptime: process.uptime ? `${Math.floor(process.uptime())}s` : 'N/A',
+            features: [
+                '🧠 Advanced AI Query Analysis',
+                '🎯 Multi-Dimensional Relevance Scoring',
+                '👨‍🏫 Teaching Quality Evaluation',
+                '📊 Comprehensive Video Ranking',
+                '🔄 Intelligent Multi-Strategy Search',
+                '🎓 Context-Aware Content Generation',
+                '🌐 Bilingual Support (English/Hindi)',
+                '⚡ Production-Grade Error Handling',
+                '🔒 Input Validation & Sanitization',
+                '♻️ Retry Logic with Exponential Backoff',
+                '⏱️ Request Timeout Protection',
+                '📈 Performance Monitoring'
+            ],
+            endpoints: {
+                POST: {
+                    path: '/api/search-resources',
+                    description: 'Search for tech courses',
+                    parameters: {
+                        query: 'string (required) - Learning topic or technology',
+                        language: 'string (optional) - "english" or "hindi" (default: "english")',
+                        preferLatest: 'boolean (optional) - Prioritize recent content (default: false)'
+                    },
+                    example: {
+                        query: 'React 18 complete course',
+                        language: 'english',
+                        preferLatest: true
+                    }
+                },
+                GET: {
+                    path: '/api/search-resources',
+                    description: 'API health check and documentation'
+                }
+            },
+            techSupport: {
+                programming: TECH_DOMAINS.programming.slice(0, 10).join(', '),
+                webDev: TECH_DOMAINS.webDev.slice(0, 10).join(', '),
+                design: TECH_DOMAINS.design.join(', '),
+                moreCategories: 'Mobile, Backend, Database, DevOps, Data Science, and more'
+            },
+            scoring: {
+                relevance: '40% - How well video matches user intent and topic',
+                teaching: '30% - Teaching quality and comprehensiveness',
+                quality: '20% - Video metrics, production quality, engagement',
+                engagement: '10% - Community validation and feedback'
+            },
+            limits: {
+                maxQueryLength: 200,
+                searchTimeout: `${CONFIG.SEARCH_TIMEOUT}ms`,
+                aiTimeout: `${CONFIG.AI_TIMEOUT}ms`,
+                maxRetries: 3
+            }
+        }, {
+            headers: {
+                'Cache-Control': 'public, max-age=3600'
+            }
+        });
+    } catch (error) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            status: 'error',
+            error: 'Service configuration error',
             timestamp: new Date().toISOString()
         }, {
             status: 500
         });
     }
-}
-async function GET() {
-    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        status: 'operational',
-        service: 'YouTube Course Finder API',
-        version: '6.0.0',
-        timestamp: new Date().toISOString(),
-        features: [
-            '🧠 Deep query intent analysis',
-            '🎯 Multi-dimensional relevance scoring',
-            '👨‍🏫 Teaching quality evaluation',
-            '📊 Comprehensive video ranking',
-            '🔄 Intelligent multi-strategy search',
-            '🎓 Context-aware content generation',
-            '🌐 Bilingual support (English/Hindi)',
-            '⚡ Optimized performance'
-        ],
-        endpoints: {
-            POST: '/api/search-resources - Search for courses',
-            GET: '/api/search-resources - API status'
-        },
-        scoring: {
-            relevance: '35% - How well video matches user intent',
-            teaching: '30% - Quality and comprehensiveness of teaching',
-            quality: '20% - Video metrics and production quality',
-            engagement: '15% - Community engagement and feedback'
-        }
-    });
 }
 }}),
 

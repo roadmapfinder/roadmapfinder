@@ -267,17 +267,15 @@ export default function CoursePage() {
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex items-center justify-center mb-3">
             <YouTubeIcon size={40} className="text-white mr-3" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+            <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-white">
               Premium YouTube Courses
             </h1>
           </div>
-          <p className="text-lg md:text-xl text-gray-100 mb-3 font-medium">
-            Master Skills with Industry Experts • Hindi & English • Latest Content
+          <p className="text-medium md:text-xl text-gray-100 mb-3 font-medium">
+            Master Tech Skills with Industry Experts • Hindi & English • Latest Content
+          
           </p>
-          <p className="text-sm md:text-base text-gray-200 mb-6 max-w-2xl mx-auto">
-            Discover handpicked premium courses from top YouTube creators. Learn cutting-edge technologies 
-            in both Hindi and English with the most up-to-date content in the industry! 🚀
-          </p>
+        
 
           {/* Creator Images */}
           <div className="flex justify-center items-center space-x-3 mt-6">
