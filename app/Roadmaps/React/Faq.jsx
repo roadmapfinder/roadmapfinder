@@ -9,7 +9,8 @@ const faqs = [
   },
   {
     id: "react-faq-2",
-    question: "What is the difference between a class component and a functional component?",
+    question:
+      "What is the difference between a class component and a functional component?",
     answer:
       "Class components use ES6 classes and have lifecycle methods, while functional components are simpler and use hooks like useState and useEffect for state and lifecycle management. Functional components are now the recommended approach.",
   },
@@ -91,9 +92,7 @@ const FAQ = () => {
             </button>
 
             {activeId === faq.id && (
-              <p className="mt-3 text-gray-600 leading-relaxed">
-                {faq.answer}
-              </p>
+              <p className="mt-3 text-gray-600 leading-relaxed">{faq.answer}</p>
             )}
           </div>
         ))}

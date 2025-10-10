@@ -1,17 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Allow cross-origin requests for Replit environment
-  allowedDevOrigins: ['127.0.0.1', 'localhost'],
+
+  // Allow CORS for local and Replit environments
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
+        hostname: 'lh3.googleusercontent.com', // Google auth/profile images
       },
       {
         protocol: 'https',
-        hostname: 'firebasestorage.googleapis.com',
+        hostname: 'firebasestorage.googleapis.com', // Firebase storage
+      },
+      {
+        protocol: 'https',
+        hostname: '*.replit.dev', // Allow Replit-hosted images if used
       },
     ],
   },

@@ -67,198 +67,462 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$google$2f$generative$2d$ai$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@google/generative-ai/dist/index.mjs [app-route] (ecmascript)");
 ;
 ;
-// Initialize Gemini AI with 2.5 Flash
 const genAI = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$google$2f$generative$2d$ai$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__["GoogleGenerativeAI"](process.env.GEMINI_API_KEY);
-// YouTube API configuration
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
 /**
- * Intelligent query analysis using Gemini 2.5 Flash
- */ async function analyzeQueryWithAI(query, language, preferLatest) {
+ * Deep query analysis to understand user intent
+ */ async function analyzeQueryIntent(query, language, preferLatest) {
     try {
         const model = genAI.getGenerativeModel({
             model: 'gemini-2.0-flash-exp',
             generationConfig: {
-                maxOutputTokens: 150,
-                temperature: 0.2
+                maxOutputTokens: 250,
+                temperature: 0.3
             }
         });
-        const prompt = `You are an intelligent AI YouTube Course Finder designed to discover high-quality, complete learning resources for users.
+        const prompt = `Analyze this learning query deeply and extract key information:
 
-User Query: "${query}"  
-Preferred Language: ${language}  
-Preference: ${preferLatest ? 'Latest/Recent courses' : 'Best quality courses'}
+User Query: "${query}"
+Language: ${language === 'hindi' ? 'Hindi/Hinglish' : 'English'}
+Latest Preference: ${preferLatest ? 'Yes - Recent content (2023-2025)' : 'No - Best quality regardless of date'}
 
-Your primary goal:
-1. Generate the most precise YouTube search query for the requested course.
-2. Once videos are fetched (via YouTube API), analyze the metadata — including **title, description, and chapters (if available)** — to summarize what the course covers in a clear and structured **overview + documentation-style format**.
+Extract:
+1. Core Topic/Skill: What exactly they want to learn (programming language, software, concept, skill)
+2. Level: Beginner/Intermediate/Advanced (infer from query or assume beginner if unclear)
+3. Format Preference: Full course, tutorial series, crash course, or specific topic
+4. Key Technologies/Tools: Any specific versions, frameworks, or tools mentioned
+5. Context Clues: Any hints about their goal (job, project, exam, hobby)
 
------------------------------------------
-Guidelines for Search Query Generation:
------------------------------------------
-1. Identify the **core learning topic or skill** (e.g., “Python”, “Tally”, “Excel”, “React.js”, “Photoshop”).
-2. Add educational keywords such as:
-   - "complete course", "full tutorial", "step by step", "beginner to advanced", "masterclass", "in-depth guide"
-3. Ensure **language accuracy**:
-   - If ${language} = "Hindi", include "Hindi" or "हिंदी" in the query.
-   - If ${language} = "English", include "English".
-4. Apply the user’s content preference:
-   - If preferLatest = true → add "2023", "2024", or "2025" for recent uploads.
-   - Else → prioritize "comprehensive", "well-structured", and "long-duration" courses.
-5. Keep the final search query **4–10 words**.
-6. If no exact match exists (e.g., no Hindi or latest course), fallback gracefully:
-   - Fetch the **best available** alternative that still matches the topic closely (even in another language or older version).
-7. Return **only one optimized search query**, no explanations or extra text.
+Then create 3 optimized YouTube search queries:
+- Primary: Most specific and comprehensive search
+- Secondary: Broader but still focused search
+- Fallback: General search with educational keywords
 
------------------------------------------
-Guidelines for Course Overview Generation:
------------------------------------------
-After fetching YouTube API results, analyze the selected video metadata and produce a short structured documentation format with:
+Format your response as:
+TOPIC: [core topic]
+LEVEL: [level]
+FORMAT: [preferred format]
+TECH: [specific tech/version if any]
+PRIMARY: [best search query]
+SECONDARY: [broader search query]
+FALLBACK: [general search query]
 
-- **Course Title:**  
-  (Fetched from YouTube video title)
-  
-- **Language:**  
-  (Based on user preference or detected automatically)
-
-- **Duration:**  
-  (If available from YouTube API)
-
-- **Course Overview (2–3 lines):**  
-  Summarize what this course teaches and who it’s for.
-
-- **Key Modules or Topics Covered:**  
-  - List key concepts or chapters (based on video description or chapters metadata)
-  - Use bullet points for clarity
-
-- **Why This Course Is Useful:**  
-  2–3 bullet points about what makes this course valuable (e.g., hands-on examples, project-based, covers basics to advanced)
-
------------------------------------------
-Expected Output Format:
------------------------------------------
-{
-  "search_query": "optimized YouTube search query",
-  "course_overview": {
-    "title": "Fetched Course Title",
-    "language": "Hindi/English",
-    "duration": "e.g., 5 hours",
-    "overview": "Short summary of what the course teaches",
-    "modules": [
-      "Topic 1: Introduction",
-      "Topic 2: Core Concepts",
-      "Topic 3: Advanced Techniques",
-      ...
-    ],
-    "why_useful": [
-      "Covers from basics to expert level",
-      "Includes hands-on examples",
-      "Latest version explained"
-    ]
-  }
-}
-
------------------------------------------
-Goal:
------------------------------------------
-Always ensure the user receives:
-- The **most accurate course** for their topic and language
-- A **concise, well-structured overview** of what the course teaches
-- A **fallback suggestion** if the preferred course isn’t available
-`;
+Make queries natural and effective for YouTube search algorithm.`;
         const result = await model.generateContent(prompt);
         const response = await result.response;
-        const enhancedQuery = response.text().trim().replace(/['"]/g, '');
-        console.log(`🤖 AI Enhanced Query: "${query}" → "${enhancedQuery}"`);
-        return enhancedQuery;
+        const analysisText = response.text().trim();
+        // Parse the structured response
+        const analysis = {
+            topic: analysisText.match(/TOPIC:\s*(.+)/i)?.[1]?.trim() || query,
+            level: analysisText.match(/LEVEL:\s*(.+)/i)?.[1]?.trim() || 'beginner',
+            format: analysisText.match(/FORMAT:\s*(.+)/i)?.[1]?.trim() || 'full course',
+            tech: analysisText.match(/TECH:\s*(.+)/i)?.[1]?.trim() || 'general',
+            primaryQuery: analysisText.match(/PRIMARY:\s*(.+)/i)?.[1]?.trim(),
+            secondaryQuery: analysisText.match(/SECONDARY:\s*(.+)/i)?.[1]?.trim(),
+            fallbackQuery: analysisText.match(/FALLBACK:\s*(.+)/i)?.[1]?.trim()
+        };
+        console.log(`🧠 Query Analysis:
+   Topic: ${analysis.topic}
+   Level: ${analysis.level}
+   Format: ${analysis.format}
+   Tech: ${analysis.tech}`);
+        return analysis;
     } catch (error) {
-        console.error('AI query analysis error:', error);
-        // Fallback to manual enhancement
-        let fallbackQuery = query;
-        if (language === 'hindi') {
-            fallbackQuery += ' hindi tutorial';
-        } else {
-            fallbackQuery += ' english tutorial';
-        }
-        if (preferLatest) {
-            fallbackQuery += ' 2024';
-        }
-        return fallbackQuery;
+        console.error('⚠️ Intent analysis failed:', error.message);
+        // Smart fallback with better defaults
+        const cleanQuery = query.toLowerCase().trim();
+        return {
+            topic: query,
+            level: 'beginner',
+            format: 'full course',
+            tech: 'general',
+            primaryQuery: `${cleanQuery} complete course tutorial ${language === 'hindi' ? 'hindi' : ''} ${preferLatest ? '2024' : ''}`.trim(),
+            secondaryQuery: `${cleanQuery} full tutorial ${language === 'hindi' ? 'hindi' : ''}`.trim(),
+            fallbackQuery: `${cleanQuery} ${language === 'hindi' ? 'hindi' : ''}`.trim()
+        };
     }
 }
 /**
- * Validate if video is relevant to user query using AI
- */ async function validateVideoRelevance(video, originalQuery, language) {
+ * Enhanced multi-strategy search with intelligent fallback
+ */ async function searchYouTubeCourse(query, language, preferLatest) {
+    try {
+        // Deep analysis first
+        const analysis = await analyzeQueryIntent(query, language, preferLatest);
+        // Strategy 1: Use AI-analyzed primary query (most specific)
+        console.log(`🔍 Strategy 1: Primary search - "${analysis.primaryQuery}"`);
+        let results = await executeYouTubeSearch(analysis.primaryQuery, language, preferLatest, 'medium');
+        // Strategy 2: Secondary query (broader)
+        if (!results || results.length === 0) {
+            console.log(`🔍 Strategy 2: Secondary search - "${analysis.secondaryQuery}"`);
+            results = await executeYouTubeSearch(analysis.secondaryQuery, language, preferLatest, 'medium');
+        }
+        // Strategy 3: Fallback query (general)
+        if (!results || results.length === 0) {
+            console.log(`🔍 Strategy 3: Fallback search - "${analysis.fallbackQuery}"`);
+            results = await executeYouTubeSearch(analysis.fallbackQuery, language, preferLatest, 'any');
+        }
+        // Strategy 4: Last resort - simple topic search
+        if (!results || results.length === 0) {
+            console.log(`🔍 Strategy 4: Basic topic search`);
+            const basicQuery = `${analysis.topic} ${language === 'hindi' ? 'hindi' : ''}`.trim();
+            results = await executeYouTubeSearch(basicQuery, language, preferLatest, 'any');
+        }
+        if (!results || results.length === 0) {
+            console.log('❌ All search strategies exhausted');
+            return null;
+        }
+        // Process with context-aware ranking
+        const processedVideos = await processAndRankVideos(results, query, analysis, language, preferLatest);
+        if (!processedVideos || processedVideos.length === 0) {
+            console.log('❌ No valid videos after processing');
+            return null;
+        }
+        const topVideo = processedVideos[0];
+        console.log(`✅ Selected: "${topVideo.title}"`);
+        console.log(`   Quality Score: ${topVideo.qualityScore.toFixed(2)}`);
+        console.log(`   Teaching Score: ${topVideo.teachingScore.toFixed(2)}`);
+        console.log(`   Relevance Score: ${topVideo.relevanceScore.toFixed(2)}`);
+        return topVideo;
+    } catch (error) {
+        console.error('❌ Search error:', error);
+        throw error;
+    }
+}
+/**
+ * Execute YouTube search with optimized parameters
+ */ async function executeYouTubeSearch(searchQuery, language, preferLatest, videoDuration = 'medium') {
+    try {
+        console.log(`   Searching: "${searchQuery}"`);
+        const searchParams = new URLSearchParams({
+            part: 'snippet',
+            q: searchQuery,
+            type: 'video',
+            maxResults: 30,
+            order: preferLatest ? 'date' : 'relevance',
+            videoDuration: videoDuration,
+            videoDefinition: 'any',
+            relevanceLanguage: language === 'hindi' ? 'hi' : 'en',
+            key: YOUTUBE_API_KEY
+        });
+        const searchResponse = await fetch(`${YOUTUBE_SEARCH_URL}?${searchParams}`, {
+            signal: AbortSignal.timeout(12000)
+        });
+        if (!searchResponse.ok) {
+            const errorData = await searchResponse.json();
+            console.error('❌ YouTube Search Error:', errorData);
+            return null;
+        }
+        const searchData = await searchResponse.json();
+        console.log(`   Found ${searchData.items?.length || 0} videos`);
+        if (!searchData.items || searchData.items.length === 0) {
+            return null;
+        }
+        // Get detailed video information
+        const videoIds = searchData.items.map((item)=>item.id.videoId).join(',');
+        const videoParams = new URLSearchParams({
+            part: 'snippet,contentDetails,statistics',
+            id: videoIds,
+            key: YOUTUBE_API_KEY
+        });
+        const videoResponse = await fetch(`${YOUTUBE_VIDEOS_URL}?${videoParams}`, {
+            signal: AbortSignal.timeout(12000)
+        });
+        if (!videoResponse.ok) {
+            console.error('❌ Video details fetch failed');
+            return null;
+        }
+        const videoData = await videoResponse.json();
+        console.log(`   Retrieved details for ${videoData.items?.length || 0} videos`);
+        return videoData.items;
+    } catch (error) {
+        console.error('⚠️ Search execution error:', error.message);
+        return null;
+    }
+}
+/**
+ * Advanced video processing with comprehensive scoring
+ */ async function processAndRankVideos(videoItems, originalQuery, analysis, language, preferLatest) {
+    // Format videos with complete data
+    const videos = videoItems.map((video)=>({
+            id: video.id,
+            title: video.snippet.title,
+            description: video.snippet.description,
+            thumbnail: video.snippet.thumbnails.high?.url || video.snippet.thumbnails.medium?.url,
+            channelTitle: video.snippet.channelTitle,
+            publishedAt: video.snippet.publishedAt,
+            duration: video.contentDetails.duration,
+            viewCount: parseInt(video.statistics.viewCount || 0),
+            likeCount: parseInt(video.statistics.likeCount || 0),
+            commentCount: parseInt(video.statistics.commentCount || 0),
+            url: `https://www.youtube.com/watch?v=${video.id}`
+        }));
+    // Apply quality filters (lenient but effective)
+    let filteredVideos = videos.filter((video)=>{
+        const duration = parseDuration(video.duration);
+        const hasViews = video.viewCount > 100; // Minimum engagement
+        const hasLikes = video.likeCount > 0;
+        const isReasonableLength = duration >= 5; // At least 5 minutes
+        return hasViews && hasLikes && isReasonableLength;
+    });
+    console.log(`📊 After quality filter: ${filteredVideos.length}/${videos.length} videos`);
+    if (filteredVideos.length === 0) {
+        console.log('⚠️ Filters too strict, using top videos by views');
+        filteredVideos = videos.filter((v)=>parseDuration(v.duration) >= 3).sort((a, b)=>b.viewCount - a.viewCount).slice(0, 15);
+    }
+    // Comprehensive scoring with parallel AI analysis
+    const scoredVideos = await Promise.all(filteredVideos.map(async (video)=>{
+        // Calculate all score dimensions
+        const [relevanceScore, teachingScore] = await Promise.all([
+            calculateRelevanceScore(video, originalQuery, analysis, language),
+            calculateTeachingQualityScore(video, analysis.level, language)
+        ]);
+        const qualityScore = calculateVideoQualityScore(video, preferLatest);
+        const engagementScore = calculateEngagementScore(video);
+        // Weighted final score
+        const finalScore = relevanceScore * 0.35 + // Most important: matches user intent
+        teachingScore * 0.30 + // Teaching quality
+        qualityScore * 0.20 + // Video quality metrics
+        engagementScore * 0.15 // Community engagement
+        ;
+        return {
+            ...video,
+            qualityScore: finalScore,
+            relevanceScore,
+            teachingScore,
+            videoQualityScore: qualityScore,
+            engagementScore
+        };
+    }));
+    // Sort by final score
+    const rankedVideos = scoredVideos.sort((a, b)=>b.qualityScore - a.qualityScore);
+    console.log(`📊 Top 5 videos by comprehensive score:`);
+    rankedVideos.slice(0, 5).forEach((v, i)=>{
+        console.log(`   ${i + 1}. "${v.title.substring(0, 60)}..."`);
+        console.log(`      Overall: ${v.qualityScore.toFixed(2)} | Rel: ${v.relevanceScore.toFixed(1)} | Teach: ${v.teachingScore.toFixed(1)} | Qual: ${v.videoQualityScore.toFixed(1)}`);
+    });
+    return rankedVideos;
+}
+/**
+ * AI-powered relevance scoring with deep matching
+ */ async function calculateRelevanceScore(video, originalQuery, analysis, language) {
     try {
         const model = genAI.getGenerativeModel({
             model: 'gemini-2.0-flash-exp',
             generationConfig: {
-                maxOutputTokens: 50,
+                maxOutputTokens: 100,
                 temperature: 0.1
             }
         });
-        const prompt = `Is this YouTube video relevant for someone wanting to learn: "${originalQuery}"?
+        const prompt = `Rate how well this video matches the learning goal (0-10 scale):
 
-Video Title: ${video.title}
-Channel: ${video.channelTitle}
-Description: ${video.description.substring(0, 300)}
+USER WANTS TO LEARN: "${originalQuery}"
+Extracted Topic: ${analysis.topic}
+Desired Level: ${analysis.level}
+Preferred Format: ${analysis.format}
+Specific Tech: ${analysis.tech}
 
-Expected Language: ${language === 'hindi' ? 'Hindi/Hinglish' : 'English'}
+VIDEO DETAILS:
+Title: "${video.title}"
+Channel: "${video.channelTitle}"
+Description (first 300 chars): "${video.description.substring(0, 300)}"
+Duration: ${formatDuration(parseDuration(video.duration))}
+Language Context: ${language === 'hindi' ? 'Hindi/Hinglish' : 'English'}
 
-Answer with ONLY "YES" if highly relevant OR "NO" if not relevant.`;
+SCORING CRITERIA (0-10):
+- 10: Perfect match - exactly what user needs (comprehensive course on exact topic)
+- 8-9: Excellent match - covers topic thoroughly with right approach
+- 6-7: Good match - relevant but may miss some aspects
+- 4-5: Moderate match - related but not ideal
+- 2-3: Weak match - loosely related
+- 0-1: Poor match - wrong topic or format
+
+Consider:
+1. Does title/description clearly indicate it teaches the exact topic?
+2. Is it comprehensive enough (right duration/depth)?
+3. Does it match the user's implied skill level?
+4. Is the language appropriate?
+5. Does it appear to be a structured course/tutorial vs random video?
+
+Return ONLY a number between 0-10 (can use decimals like 8.5).`;
         const result = await model.generateContent(prompt);
         const response = await result.response;
-        const answer = response.text().trim().toUpperCase();
-        return answer.includes('YES');
+        const scoreText = response.text().trim();
+        const score = parseFloat(scoreText);
+        return isNaN(score) ? 5 : Math.min(10, Math.max(0, score));
     } catch (error) {
-        console.error('Video validation error:', error);
-        return true; // Default to true on error
+        // Enhanced fallback with semantic matching
+        const titleLower = video.title.toLowerCase();
+        const descLower = video.description.toLowerCase();
+        const queryLower = originalQuery.toLowerCase();
+        const topicLower = analysis.topic.toLowerCase();
+        let matchScore = 0;
+        // Exact topic match
+        if (titleLower.includes(topicLower)) matchScore += 3;
+        if (descLower.includes(topicLower)) matchScore += 1;
+        // Query word matching
+        const queryWords = queryLower.split(' ').filter((w)=>w.length > 3);
+        queryWords.forEach((word)=>{
+            if (titleLower.includes(word)) matchScore += 1.5;
+            if (descLower.includes(word)) matchScore += 0.5;
+        });
+        // Format indicators
+        const formatWords = [
+            'course',
+            'tutorial',
+            'complete',
+            'full',
+            'comprehensive',
+            'masterclass',
+            'bootcamp'
+        ];
+        formatWords.forEach((word)=>{
+            if (titleLower.includes(word)) matchScore += 1;
+        });
+        // Level indicators
+        if (analysis.level === 'beginner' && (titleLower.includes('beginner') || titleLower.includes('basics'))) matchScore += 1;
+        if (analysis.level === 'advanced' && titleLower.includes('advanced')) matchScore += 1;
+        return Math.min(10, matchScore);
     }
 }
 /**
- * Calculate video quality score
- */ function calculateVideoScore(video, preferLatest) {
+ * Evaluate teaching quality and comprehensiveness
+ */ async function calculateTeachingQualityScore(video, level, language) {
+    try {
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-2.0-flash-exp',
+            generationConfig: {
+                maxOutputTokens: 80,
+                temperature: 0.1
+            }
+        });
+        const duration = parseDuration(video.duration);
+        const durationText = formatDuration(duration);
+        const prompt = `Rate the teaching quality potential of this video (0-10):
+
+Title: "${video.title}"
+Channel: "${video.channelTitle}"
+Duration: ${durationText}
+Target Level: ${level}
+Views: ${video.viewCount.toLocaleString()}
+Engagement: ${video.likeCount.toLocaleString()} likes, ${video.commentCount.toLocaleString()} comments
+
+Evaluate:
+1. Title clarity and professionalism
+2. Duration appropriateness (too short = superficial, too long = may be unfocused)
+3. Channel credibility (professional educational names vs random)
+4. Engagement metrics (high likes/comments = good teaching)
+5. Does it seem comprehensive or just a quick tip?
+
+Scoring:
+- 9-10: Excellent teaching quality indicators (professional, comprehensive, highly engaged)
+- 7-8: Good teaching quality (clear, adequate depth, decent engagement)
+- 5-6: Moderate quality (basic but functional)
+- 3-4: Below average (unclear, too brief, low engagement)
+- 0-2: Poor quality indicators
+
+Return ONLY a number 0-10.`;
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const score = parseFloat(response.text().trim());
+        return isNaN(score) ? 5 : Math.min(10, Math.max(0, score));
+    } catch (error) {
+        // Heuristic-based fallback
+        const duration = parseDuration(video.duration);
+        let score = 5;
+        // Duration quality for courses
+        if (duration >= 60 && duration <= 600) score += 2; // 1-10 hours ideal
+        else if (duration >= 30) score += 1.5; // 30min+ good
+        else if (duration >= 15) score += 1; // 15min+ acceptable
+        else if (duration < 10) score -= 1; // Too short
+        // Channel credibility signals
+        const channelLower = video.channelTitle.toLowerCase();
+        const professionalWords = [
+            'academy',
+            'tutorial',
+            'university',
+            'institute',
+            'learning',
+            'education',
+            'tech',
+            'code'
+        ];
+        if (professionalWords.some((word)=>channelLower.includes(word))) score += 1;
+        // Title quality
+        const titleLower = video.title.toLowerCase();
+        const qualityWords = [
+            'complete',
+            'comprehensive',
+            'full',
+            'master',
+            'ultimate',
+            'definitive'
+        ];
+        if (qualityWords.some((word)=>titleLower.includes(word))) score += 1;
+        // Engagement
+        const engagementRate = video.viewCount > 0 ? video.likeCount / video.viewCount : 0;
+        if (engagementRate > 0.03) score += 1; // 3%+ like rate is good
+        if (video.commentCount > 100) score += 0.5; // Active community
+        return Math.min(10, Math.max(0, score));
+    }
+}
+/**
+ * Calculate video quality score based on metrics
+ */ function calculateVideoQualityScore(video, preferLatest) {
     const views = parseInt(video.viewCount || 0);
     const likes = parseInt(video.likeCount || 0);
     const duration = parseDuration(video.duration);
-    // Engagement metrics
+    // View score (logarithmic to prevent mega-viral videos from dominating)
+    const viewScore = Math.min(10, Math.log10(views + 1) * 1.5);
+    // Engagement rate
     const engagementRate = views > 0 ? likes / views : 0;
-    const viewScore = Math.log10(views + 1);
-    const engagementScore = engagementRate * 10000;
-    // Duration scoring - prefer comprehensive courses
+    const engagementScore = Math.min(10, engagementRate * 200); // 5% = full score
+    // Duration appropriateness for courses
     let durationScore;
-    if (duration >= 30 && duration <= 300) {
-        durationScore = 3; // 30min-5hr sweet spot
-    } else if (duration >= 15 && duration <= 420) {
-        durationScore = 2; // 15min-7hr acceptable
-    } else if (duration >= 10) {
-        durationScore = 1; // At least 10 minutes
-    } else {
-        durationScore = 0.3; // Too short
-    }
-    // Recency scoring
+    if (duration >= 60 && duration <= 600) durationScore = 10; // 1-10 hours ideal
+    else if (duration >= 30) durationScore = 8; // 30min+ good
+    else if (duration >= 15) durationScore = 6; // 15min+ okay
+    else if (duration >= 10) durationScore = 4; // 10min+ minimal
+    else durationScore = 2; // Too short
+    // Recency score
     const publishDate = new Date(video.publishedAt);
     const monthsOld = (Date.now() - publishDate.getTime()) / (1000 * 60 * 60 * 24 * 30);
     let recencyScore;
     if (preferLatest) {
-        // Strong preference for recent content
-        if (monthsOld < 3) recencyScore = 5;
-        else if (monthsOld < 6) recencyScore = 4;
-        else if (monthsOld < 12) recencyScore = 2;
-        else if (monthsOld < 24) recencyScore = 1;
-        else recencyScore = 0.2;
+        // Strong preference for latest
+        if (monthsOld < 3) recencyScore = 10;
+        else if (monthsOld < 6) recencyScore = 8;
+        else if (monthsOld < 12) recencyScore = 6;
+        else if (monthsOld < 24) recencyScore = 4;
+        else recencyScore = 2;
     } else {
-        // Balanced - not too old, not too new
-        if (monthsOld < 6) recencyScore = 2;
-        else if (monthsOld < 18) recencyScore = 2.5;
-        else if (monthsOld < 36) recencyScore = 1.5;
-        else recencyScore = 0.5;
+        // Moderate preference for recent, but quality matters more
+        if (monthsOld < 12) recencyScore = 8;
+        else if (monthsOld < 24) recencyScore = 7;
+        else if (monthsOld < 36) recencyScore = 6;
+        else recencyScore = 5;
     }
-    // Calculate final score
-    const baseScore = viewScore * 0.30 + engagementScore * 0.35 + durationScore * 0.35;
-    const finalScore = preferLatest ? baseScore * 0.4 + recencyScore * 0.6 : baseScore * 0.75 + recencyScore * 0.25;
-    return finalScore;
+    // Weighted combination
+    if (preferLatest) {
+        return viewScore * 0.2 + engagementScore * 0.2 + durationScore * 0.3 + recencyScore * 0.3;
+    } else {
+        return viewScore * 0.3 + engagementScore * 0.3 + durationScore * 0.3 + recencyScore * 0.1;
+    }
+}
+/**
+ * Calculate engagement score
+ */ function calculateEngagementScore(video) {
+    const views = parseInt(video.viewCount || 0);
+    const likes = parseInt(video.likeCount || 0);
+    const comments = parseInt(video.commentCount || 0);
+    if (views === 0) return 0;
+    const likeRate = likes / views;
+    const commentRate = comments / views;
+    // Normalize engagement metrics
+    const likeScore = Math.min(10, likeRate * 200); // 5% like rate = full score
+    const commentScore = Math.min(10, commentRate * 500); // 2% comment rate = full score
+    return likeScore * 0.7 + commentScore * 0.3;
 }
 /**
  * Parse ISO 8601 duration to minutes
@@ -271,142 +535,91 @@ Answer with ONLY "YES" if highly relevant OR "NO" if not relevant.`;
     return hours * 60 + minutes + seconds / 60;
 }
 /**
- * Search YouTube for relevant courses
- */ async function searchYouTubeCourse(query, language, preferLatest) {
-    try {
-        // Get AI-enhanced search query
-        const enhancedQuery = await analyzeQueryWithAI(query, language, preferLatest);
-        console.log(`🔍 Searching YouTube with: "${enhancedQuery}"`);
-        // Search parameters
-        const searchParams = new URLSearchParams({
-            part: 'snippet',
-            q: enhancedQuery,
-            type: 'video',
-            maxResults: 20,
-            order: preferLatest ? 'date' : 'relevance',
-            videoDuration: 'medium',
-            videoDefinition: 'high',
-            relevanceLanguage: language === 'hindi' ? 'hi' : 'en',
-            key: YOUTUBE_API_KEY
-        });
-        const searchResponse = await fetch(`${YOUTUBE_SEARCH_URL}?${searchParams}`, {
-            signal: AbortSignal.timeout(10000)
-        });
-        if (!searchResponse.ok) {
-            const errorData = await searchResponse.json();
-            throw new Error(`YouTube API Error: ${errorData.error?.message || 'Unknown error'}`);
-        }
-        const searchData = await searchResponse.json();
-        if (!searchData.items || searchData.items.length === 0) {
-            return null;
-        }
-        // Get video IDs
-        const videoIds = searchData.items.map((item)=>item.id.videoId).join(',');
-        // Fetch detailed video info
-        const videoParams = new URLSearchParams({
-            part: 'snippet,contentDetails,statistics',
-            id: videoIds,
-            key: YOUTUBE_API_KEY
-        });
-        const videoResponse = await fetch(`${YOUTUBE_VIDEOS_URL}?${videoParams}`, {
-            signal: AbortSignal.timeout(10000)
-        });
-        if (!videoResponse.ok) {
-            throw new Error('Failed to fetch video details');
-        }
-        const videoData = await videoResponse.json();
-        // Format videos
-        const videos = videoData.items.map((video)=>({
-                id: video.id,
-                title: video.snippet.title,
-                description: video.snippet.description,
-                thumbnail: video.snippet.thumbnails.high.url,
-                channelTitle: video.snippet.channelTitle,
-                publishedAt: video.snippet.publishedAt,
-                duration: video.contentDetails.duration,
-                viewCount: parseInt(video.statistics.viewCount || 0),
-                likeCount: parseInt(video.statistics.likeCount || 0),
-                commentCount: parseInt(video.statistics.commentCount || 0),
-                url: `https://www.youtube.com/watch?v=${video.id}`
-            }));
-        // Filter by basic criteria
-        const filteredVideos = videos.filter((video)=>{
-            const duration = parseDuration(video.duration);
-            return video.viewCount > 1000 && duration >= 8; // At least 8 minutes
-        });
-        if (filteredVideos.length === 0) {
-            return null;
-        }
-        // Validate top candidates with AI
-        console.log(`🤖 Validating ${Math.min(5, filteredVideos.length)} top candidates with AI...`);
-        const validationPromises = filteredVideos.slice(0, 5).map(async (video)=>{
-            const isRelevant = await validateVideoRelevance(video, query, language);
-            return {
-                video,
-                isRelevant
-            };
-        });
-        const validatedVideos = await Promise.all(validationPromises);
-        const relevantVideos = validatedVideos.filter((v)=>v.isRelevant).map((v)=>v.video);
-        // If no validated videos, fall back to all filtered videos
-        const videosToScore = relevantVideos.length > 0 ? relevantVideos : filteredVideos;
-        // Score and sort
-        const scoredVideos = videosToScore.map((video)=>({
-                ...video,
-                qualityScore: calculateVideoScore(video, preferLatest)
-            })).sort((a, b)=>b.qualityScore - a.qualityScore);
-        console.log(`✅ Found ${scoredVideos.length} relevant courses`);
-        return scoredVideos[0] || null;
-    } catch (error) {
-        console.error('Error searching YouTube:', error);
-        throw error;
-    }
+ * Format duration
+ */ function formatDuration(minutes) {
+    const hours = Math.floor(minutes / 60);
+    const mins = Math.round(minutes % 60);
+    return hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
 }
 /**
- * Generate course content outline using AI
- */ async function generateCourseContent(video, language) {
+ * Generate comprehensive course content outline
+ */ async function generateCourseContent(video, language, analysis) {
     try {
         const model = genAI.getGenerativeModel({
             model: 'gemini-2.0-flash-exp',
             generationConfig: {
-                maxOutputTokens: 1000,
+                maxOutputTokens: 1200,
                 temperature: 0.6
             }
         });
-        const prompt = `Analyze this educational course and create a detailed content outline:
+        const prompt = `Create a detailed, structured learning outline for this course.
 
-Title: "${video.title}"
-Channel: ${video.channelTitle}
-Description: ${video.description.substring(0, 600)}
+Course Information:
+- Title: "${video.title}"
+- Channel: "${video.channelTitle}"
+- Duration: ${formatDuration(parseDuration(video.duration))}
+- Description: ${video.description.substring(0, 700)}
 
-Create a comprehensive course outline in ${language === 'hindi' ? 'Hinglish (Hindi-English mix)' : 'English'}.
+User Context:
+- Learning Goal: ${analysis.topic}
+- Skill Level: ${analysis.level}
 
-List 10-15 specific topics/modules this course covers. Each point should:
-- Be specific and actionable
-- Show what skills/concepts students will learn
-- Progress from beginner to advanced
-- Be 1-2 sentences
+Create 12-18 specific learning modules/topics in ${language === 'hindi' ? 'Hinglish (natural mix of Hindi & English)' : 'English'}.
 
-Format: Return ONLY the bullet points, no numbering, no headers.`;
+Requirements:
+1. Start with fundamentals/basics, progress to advanced
+2. Each module should be 1-2 sentences explaining WHAT will be learned
+3. Be specific and actionable (not vague like "Introduction")
+4. Use engaging action verbs: Learn, Master, Build, Understand, Create, Implement, Design, etc.
+5. Make it feel like a structured curriculum
+6. Include practical applications and real-world examples where relevant
+7. Coverage should feel comprehensive and complete
+
+Good examples:
+✓ "Master the fundamental syntax and data types including strings, numbers, lists, and dictionaries"
+✓ "Build your first interactive web application using modern frameworks and best practices"
+✓ "Understand advanced concepts like closures, promises, and async/await for efficient code"
+
+Bad examples:
+✗ "Introduction" (too vague)
+✗ "Basics" (not specific)
+✗ "Learn programming" (not actionable)
+
+Format: Use bullet points with "-", no numbering. Each point should feel substantial.`;
         const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const content = response.text();
-        // Parse content into clean points
-        const points = content.split('\n').map((line)=>line.trim()).filter((line)=>line.length > 0).filter((line)=>line.startsWith('-') || line.startsWith('*') || line.startsWith('•') || /^\d+\./.test(line)).map((line)=>line.replace(/^[-*•]\s*/, '').replace(/^\d+\.\s*/, '').trim()).filter((line)=>line.length > 15 && line.length < 200);
-        return points.slice(0, 15);
+        const content = (await result.response).text();
+        const points = content.split('\n').map((line)=>line.trim()).filter((line)=>line.length > 0).map((line)=>line.replace(/^[-*•]\s*|\d+\.\s*/g, '').trim()).filter((line)=>line.length > 30 && line.length < 300) // Ensure substantial points
+        .slice(0, 18);
+        return points.length >= 8 ? points : [
+            `Master the fundamentals of ${analysis.topic} from ground up`,
+            `Understand core concepts and principles with clear explanations`,
+            `Learn essential techniques and best practices used by professionals`,
+            `Practice with hands-on examples and real-world scenarios`,
+            `Build practical projects to solidify your understanding`,
+            `Explore advanced features and optimization strategies`,
+            `Develop problem-solving skills specific to ${analysis.topic}`,
+            `Apply your knowledge to create professional-grade solutions`
+        ];
     } catch (error) {
-        console.error('Error generating course content:', error);
-        return [];
+        console.error('⚠️ Content generation error:', error.message);
+        return [
+            `Learn ${analysis.topic} from beginner to advanced level`,
+            `Master fundamental concepts and core principles`,
+            `Practice with real-world examples and exercises`,
+            `Build practical projects to reinforce learning`,
+            `Understand best practices and industry standards`,
+            `Develop professional-level skills`
+        ];
     }
 }
 /**
- * Generate AI course analysis
- */ async function generateCourseAnalysis(query, video, language) {
+ * Generate intelligent, personalized course analysis
+ */ async function generateCourseAnalysis(query, video, language, analysis) {
     try {
         const model = genAI.getGenerativeModel({
             model: 'gemini-2.0-flash-exp',
             generationConfig: {
-                maxOutputTokens: 400,
+                maxOutputTokens: 500,
                 temperature: 0.7
             }
         });
@@ -414,29 +627,50 @@ Format: Return ONLY the bullet points, no numbering, no headers.`;
         const hours = Math.floor(duration / 60);
         const minutes = duration % 60;
         const durationText = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-        const prompt = `Write a helpful course recommendation for someone wanting to learn: "${query}"
+        const prompt = `Write a compelling, personalized course recommendation for someone wanting to learn "${query}".
 
 Course Details:
 - Title: ${video.title}
-- Instructor: ${video.channelTitle}
+- Instructor/Channel: ${video.channelTitle}
 - Duration: ${durationText}
 - Views: ${video.viewCount.toLocaleString()}
-- Engagement: ${video.likeCount.toLocaleString()} likes
+- Engagement: ${video.likeCount.toLocaleString()} likes, ${video.commentCount.toLocaleString()} comments
+- Published: ${new Date(video.publishedAt).toLocaleDateString()}
 
-Write in ${language === 'hindi' ? 'Hinglish (conversational Hindi-English mix)' : 'clear English'}.
+User Context:
+- What they want: ${analysis.topic}
+- Skill level: ${analysis.level}
+- Preferred format: ${analysis.format}
 
-Include:
-1. Why this course matches their learning goal (2-3 sentences)
-2. What makes it a quality resource (1-2 sentences)
-3. Who it's best suited for (1 sentence)
+Write in ${language === 'hindi' ? 'Hinglish (natural, conversational mix of Hindi and English)' : 'English'}.
 
-Keep it friendly, encouraging, and concise. No headers or bullet points.`;
+Create a 5-6 sentence recommendation that:
+1. Opens with why this course is perfect for their specific goal (be specific, not generic)
+2. Highlights the course's strongest qualities (credibility, comprehensiveness, teaching style)
+3. Mentions what makes it stand out (views, engagement, instructor reputation, etc.)
+4. Addresses their skill level appropriately
+5. Ends with an encouraging, motivating call-to-action
+
+Tone: Friendly, encouraging, confident but not overselling. Sound like a helpful friend recommending a great resource.
+
+DO NOT:
+- Use generic phrases like "great course" without context
+- Just list features without explaining value
+- Be overly salesy or use excessive exclamations
+- Make unsupported claims
+
+DO:
+- Be specific about what they'll learn
+- Connect the course directly to their goal
+- Use social proof naturally (views/likes/comments)
+- Sound genuinely enthusiastic but authentic`;
         const result = await model.generateContent(prompt);
-        const response = await result.response;
-        return response.text().trim();
+        const analysisText = (await result.response).text().trim();
+        return analysisText || `This comprehensive ${durationText} course by ${video.channelTitle} is perfect for mastering ${analysis.topic}. With ${video.viewCount.toLocaleString()} views and ${video.likeCount.toLocaleString()} likes, it's a proven resource that covers everything from basics to advanced concepts. The structured approach makes it ideal for ${analysis.level} learners. Start your learning journey today!`;
     } catch (error) {
-        console.error('Error generating course analysis:', error);
-        return null;
+        console.error('⚠️ Analysis error:', error.message);
+        const durationText = formatDuration(parseDuration(video.duration));
+        return language === 'hindi' ? `Ye ${durationText} ka course ${analysis.topic} seekhne ke liye perfect hai! ${video.channelTitle} ne isko bahut achhe se explain kiya hai aur ${video.viewCount.toLocaleString()} views aur ${video.likeCount.toLocaleString()} likes dikhaate hain ki ye ek trusted resource hai. ${analysis.level} level ke liye ideal. Aaj hi shuru karein!` : `This ${durationText} course is perfect for learning ${analysis.topic}. ${video.channelTitle} explains everything clearly, and with ${video.viewCount.toLocaleString()} views and ${video.likeCount.toLocaleString()} likes, it's a trusted resource. Ideal for ${analysis.level} level learners. Start today!`;
     }
 }
 async function POST(request) {
@@ -444,7 +678,6 @@ async function POST(request) {
     try {
         const body = await request.json();
         const { query, language = 'english', preferLatest = false } = body;
-        // Validation
         if (!query?.trim()) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: 'Query is required'
@@ -459,71 +692,124 @@ async function POST(request) {
                 status: 500
             });
         }
-        console.log(`\n🎯 Search Request: "${query}" | Language: ${language} | Latest: ${preferLatest}`);
-        // Search for the best matching course
+        console.log(`\n🎯 === NEW REQUEST ===`);
+        console.log(`Query: "${query}"`);
+        console.log(`Language: ${language}`);
+        console.log(`Latest Preference: ${preferLatest}`);
+        console.log(`======================\n`);
         const video = await searchYouTubeCourse(query, language, preferLatest);
         if (!video) {
+            console.log('❌ No course found after exhaustive search');
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
                 video: null,
-                courseAnalysis: language === 'hindi' ? `"${query}" ke liye koi suitable course nahi mila. Kripya different keywords try karein.` : `No suitable courses found for "${query}". Try different keywords or check your spelling.`,
+                courseAnalysis: language === 'hindi' ? `"${query}" ke liye koi suitable course nahi mila. Kripya alag keywords try karein, spelling check karein, ya thoda general search term use karein.` : `No suitable courses found for "${query}". Please try different keywords, check spelling, or use more general search terms.`,
                 courseContent: [],
-                responseTime: `${Date.now() - startTime}ms`
+                responseTime: `${Date.now() - startTime}ms`,
+                suggestions: language === 'hindi' ? [
+                    'Keywords ko simplify karein (jaise "learn python basics" ki jagah "python tutorial")',
+                    'English terms try karein agar Hindi mein results nahi mil rahe',
+                    'General terms use karein (jaise "web development" ki jagah "html css")'
+                ] : [
+                    'Try simplifying your keywords',
+                    'Use more general terms',
+                    'Check spelling and try alternative phrasings',
+                    'Search for broader topics first'
+                ]
             });
         }
-        console.log(`✅ Selected Course: "${video.title}" by ${video.channelTitle}`);
-        // Generate course analysis and content in parallel
+        // Analyze the query deeply first
+        const analysis = await analyzeQueryIntent(query, language, preferLatest);
+        // Generate analysis and content in parallel with context
         const [courseAnalysis, courseContent] = await Promise.all([
-            generateCourseAnalysis(query, video, language),
-            generateCourseContent(video, language)
+            generateCourseAnalysis(query, video, language, analysis),
+            generateCourseContent(video, language, analysis)
         ]);
         const responseTime = Date.now() - startTime;
-        console.log(`⚡ Total response time: ${responseTime}ms\n`);
+        console.log(`\n⚡ === REQUEST COMPLETED ===`);
+        console.log(`Time: ${responseTime}ms`);
+        console.log(`Selected: "${video.title}"`);
+        console.log(`Channel: ${video.channelTitle}`);
+        console.log(`Quality Score: ${video.qualityScore.toFixed(2)}/10`);
+        console.log(`===========================\n`);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            success: true,
             query,
             language,
             preferLatest,
             video: {
-                ...video,
-                durationFormatted: formatDuration(parseDuration(video.duration))
+                id: video.id,
+                title: video.title,
+                description: video.description,
+                thumbnail: video.thumbnail,
+                channelTitle: video.channelTitle,
+                publishedAt: video.publishedAt,
+                duration: video.duration,
+                durationFormatted: formatDuration(parseDuration(video.duration)),
+                viewCount: video.viewCount,
+                likeCount: video.likeCount,
+                commentCount: video.commentCount,
+                url: video.url,
+                // Quality metrics for transparency
+                scores: {
+                    overall: parseFloat(video.qualityScore.toFixed(2)),
+                    relevance: parseFloat(video.relevanceScore.toFixed(2)),
+                    teaching: parseFloat(video.teachingScore.toFixed(2)),
+                    quality: parseFloat(video.videoQualityScore.toFixed(2)),
+                    engagement: parseFloat(video.engagementScore.toFixed(2))
+                }
             },
             courseAnalysis,
             courseContent,
-            responseTime: `${responseTime}ms`
+            metadata: {
+                analyzedTopic: analysis.topic,
+                detectedLevel: analysis.level,
+                preferredFormat: analysis.format,
+                responseTime: `${responseTime}ms`,
+                searchStrategiesUsed: video.searchStrategy || 'multi-strategy',
+                totalVideosAnalyzed: video.totalAnalyzed || 'N/A'
+            }
         });
     } catch (error) {
-        console.error('❌ API Error:', error);
-        if (error.message.includes('YouTube API')) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'YouTube API error. Check your API key and quota.'
-            }, {
-                status: 500
-            });
-        }
+        console.error('❌ === API ERROR ===');
+        console.error('Error:', error);
+        console.error('Stack:', error.stack);
+        console.error('===================\n');
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: error.message || 'Unexpected error occurred'
+            success: false,
+            error: error.message || 'Internal server error',
+            details: ("TURBOPACK compile-time truthy", 1) ? error.stack : ("TURBOPACK unreachable", undefined),
+            timestamp: new Date().toISOString()
         }, {
             status: 500
         });
     }
 }
-/**
- * Format duration for display
- */ function formatDuration(minutes) {
-    const hours = Math.floor(minutes / 60);
-    const mins = Math.round(minutes % 60);
-    if (hours > 0) {
-        return `${hours}h ${mins}m`;
-    }
-    return `${mins}m`;
-}
 async function GET() {
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        status: 'ok',
-        message: 'Intelligent YouTube Course Finder API',
-        version: '4.0-ai-enhanced',
-        model: 'gemini-2.0-flash-exp',
+        status: 'operational',
+        service: 'YouTube Course Finder API',
+        version: '6.0.0',
+        timestamp: new Date().toISOString(),
+        features: [
+            '🧠 Deep query intent analysis',
+            '🎯 Multi-dimensional relevance scoring',
+            '👨‍🏫 Teaching quality evaluation',
+            '📊 Comprehensive video ranking',
+            '🔄 Intelligent multi-strategy search',
+            '🎓 Context-aware content generation',
+            '🌐 Bilingual support (English/Hindi)',
+            '⚡ Optimized performance'
+        ],
         endpoints: {
-            search: 'POST /api/search-resources'
+            POST: '/api/search-resources - Search for courses',
+            GET: '/api/search-resources - API status'
+        },
+        scoring: {
+            relevance: '35% - How well video matches user intent',
+            teaching: '30% - Quality and comprehensiveness of teaching',
+            quality: '20% - Video metrics and production quality',
+            engagement: '15% - Community engagement and feedback'
         }
     });
 }
