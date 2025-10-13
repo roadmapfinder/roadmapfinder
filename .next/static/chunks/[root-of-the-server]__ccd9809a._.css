@@ -6194,12 +6194,6 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:border-cyan-500:is(:where(.group):hover *) {
-      border-color: var(--color-cyan-500);
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:border-green-500:is(:where(.group):hover *) {
       border-color: var(--color-green-500);
     }
@@ -6208,12 +6202,6 @@
   @media (hover: hover) {
     .group-hover\:border-indigo-500:is(:where(.group):hover *) {
       border-color: var(--color-indigo-500);
-    }
-  }
-
-  @media (hover: hover) {
-    .group-hover\:border-orange-500:is(:where(.group):hover *) {
-      border-color: var(--color-orange-500);
     }
   }
 
@@ -6260,12 +6248,6 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:bg-cyan-500:is(:where(.group):hover *) {
-      background-color: var(--color-cyan-500);
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:bg-gray-200:is(:where(.group):hover *) {
       background-color: var(--color-gray-200);
     }
@@ -6280,12 +6262,6 @@
   @media (hover: hover) {
     .group-hover\:bg-indigo-500:is(:where(.group):hover *) {
       background-color: var(--color-indigo-500);
-    }
-  }
-
-  @media (hover: hover) {
-    .group-hover\:bg-orange-500:is(:where(.group):hover *) {
-      background-color: var(--color-orange-500);
     }
   }
 
@@ -7283,6 +7259,11 @@
     .focus\:ring-white\/25:focus {
       --tw-ring-color: color-mix(in oklab, var(--color-white) 25%, transparent);
     }
+  }
+
+  .focus\:ring-offset-1:focus {
+    --tw-ring-offset-width: 1px;
+    --tw-ring-offset-shadow: var(--tw-ring-inset, ) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   }
 
   .focus\:ring-offset-2:focus {
