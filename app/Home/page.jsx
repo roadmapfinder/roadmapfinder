@@ -137,14 +137,7 @@ export default function HomePage() {
       protected: true,
       feature: "Courses",
     },
-    {
-      name: "Career Guidance",
-      icon: <Brain size={24} className="mr-3" />,
-      href: "/CareerGuidance",
-      protected: true,
-      feature: "Career Guidance",
-    },
-   
+  
     {
       name: "Blogs",
       icon: <Newspaper size={24} className="mr-3" />,

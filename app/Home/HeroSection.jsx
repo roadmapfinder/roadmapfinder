@@ -233,15 +233,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
             <BookOpen size={18} />
             Courses
           </button>
-          <button
-            onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
-            disabled={!handleProtectedAction}
-            className="flex-1 min-w-[180px] bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Get AI-powered career guidance"
-          >
-            <Brain size={18} />
-            Career Guidance
-          </button>
+
         </div>
 
         {/* Desktop Layout (1024px and above) */}
@@ -263,15 +255,7 @@ const HeroSection = ({ user, handleProtectedAction, username }) => {
           >
             Youtube Courses
           </button>
-          <button
-            onClick={() => handleProtectedAction && handleProtectedAction("/CareerGuidance")}
-            disabled={!handleProtectedAction}
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-            aria-label="Get AI-powered career guidance"
-          >
-            <Brain size={20} />
-            Career Guidance
-          </button>
+         
         </div>
       </section>
 

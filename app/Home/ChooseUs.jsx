@@ -20,8 +20,8 @@ const ChooseUs = () => {
     },
     {
       step: "3",
-      title: "AI project helper",
-      description: "Access premium AI powered project helper for builting project with complete map , tool to use , docs and Resources.",
+      title: "AI Resource Finder",
+      description: "Access premium AI powered Resource Finder finds best youtube latest resources for your search query.",
       icon: <Zap size={24} className="text-emerald-600" />,
       color: "emerald"
     }
@@ -57,9 +57,9 @@ const ChooseUs = () => {
   const benefits = [
     "Expert-curated learning paths",
     "Industry-relevant Courses", 
-    "Official Docs and Influencer Notes",
-    "Career guidance & mentorship",
-    "Recommend Tools used by mostly Industry",
+    "Official Tech blogs",
+    "AI Powered Resource Finder",
+    "Recommend Best Projects , Documenatation with Roadmaps",
     "Regular updates with latest trends"
   ];
 
