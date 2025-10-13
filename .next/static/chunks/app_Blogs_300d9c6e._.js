@@ -4,7 +4,7 @@
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("[{\"id\":\"1\",\"title\":\"Private AI: Run Advanced AI Models Offline on Android\",\"thumbnail\":\"./thumbnails/jira.png\",\"content\":\"Private AI transforms your Android device into a powerful, secure AI companion by running advanced language models directly on your phone without requiring internet connectivity. This groundbreaking approach ensures complete data privacy while providing offline functionality that's perfect for users concerned about data security. The app supports multiple AI models and can handle complex conversations, writing tasks, and problem-solving entirely offline. For beginners and intermediate users, this tool represents a significant shift toward personal AI ownership, eliminating concerns about data being sent to external servers. The offline capability makes it particularly valuable for users with limited internet access or those working in secure environments where data privacy is paramount.\",\"toolUrl\":\"https://play.google.com/store/apps/details?id=us.valkon.privateai\",\"category\":\"AI\",\"tags\":[\"AI\",\"Privacy\",\"Offline\",\"Android\",\"Security\"],\"createdAt\":\"2025-06-03T00:00:00.000Z\",\"rating\":4.6,\"popularity\":88},{\"id\":\"2\",\"title\":\"OpenAI Operator: Your AI Browser Assistant for Task Automation\",\"thumbnail\":\"/images/blog/openai-operator.jpg\",\"content\":\"OpenAI Operator revolutionizes web automation by serving as an AI agent that can perform tasks directly in web browsers on your behalf. Using its own browser interface, Operator can look at webpages, interact with them by typing, clicking, and scrolling, effectively automating repetitive online tasks. Currently available to Pro users in the US, this tool excels at booking travel accommodations, making restaurant reservations, online shopping, and filling out forms. For beginners, Operator eliminates the need to learn complex automation scripts - simply describe what you want done in natural language. The tool is designed with safety in mind, asking users to take over for tasks requiring payment details, login credentials, or CAPTCHA solving. This represents a major step toward autonomous web browsing and task completion.\",\"toolUrl\":\"https://openai.com/index/introducing-operator/\",\"category\":\"AI\",\"tags\":[\"AI\",\"Automation\",\"Browser\",\"Task Management\",\"OpenAI\"],\"createdAt\":\"2025-06-02T00:00:00.000Z\",\"rating\":4.7,\"popularity\":92},{\"id\":\"3\",\"title\":\"Runway ML: Beginner-Friendly AI Video and Image Editing\",\"thumbnail\":\"/images/blog/runway-ml.jpg\",\"content\":\"Runway ML democratizes AI-powered content creation by providing intuitive tools for video and image editing that require no technical expertise. This platform combines cutting-edge machine learning with user-friendly interfaces, enabling creators to generate videos from text prompts, remove backgrounds with precision, and apply complex visual effects with simple clicks. The platform's strength lies in its accessibility - complex AI operations that once required programming knowledge are now available through drag-and-drop interfaces. For beginners entering the world of AI-assisted creativity, Runway ML offers extensive tutorials and templates that make professional-quality content creation achievable. The tool supports various formats and integrates seamlessly with popular creative workflows, making it an ideal stepping stone for those looking to incorporate AI into their creative projects without overwhelming technical complexity.\",\"toolUrl\":\"https://runwayml.com\",\"category\":\"AI\",\"tags\":[\"AI\",\"Video Editing\",\"Image Generation\",\"Creative Tools\",\"Beginner-Friendly\"],\"createdAt\":\"2025-06-01T00:00:00.000Z\",\"rating\":4.5,\"popularity\":89},{\"id\":\"4\",\"title\":\"Firebase Studio: Cloud IDE with Gemini AI Assistant\",\"thumbnail\":\"/images/blog/firebase-studio.jpg\",\"content\":\"Firebase Studio represents the next evolution in cloud-based development environments by integrating Google's Gemini AI directly into the development workflow. This powerful IDE combines the reliability of Firebase's backend services with intelligent AI assistance that can help write code, debug issues, and suggest optimizations in real-time. The platform excels at full-stack development, offering seamless integration with Google Cloud services while providing AI-powered code completion, error detection, and architectural recommendations. For new learners, Firebase Studio eliminates the complexity of setting up development environments while providing intelligent guidance throughout the coding process. The AI assistant can explain complex concepts, suggest best practices, and even help with project planning, making it an invaluable learning companion for developers at any skill level.\",\"toolUrl\":\"https://firebase.google.com/products/studio\",\"category\":\"Development\",\"tags\":[\"IDE\",\"Cloud Development\",\"AI Assistant\",\"Firebase\",\"Full-Stack\"],\"createdAt\":\"2025-05-31T00:00:00.000Z\",\"rating\":4.8,\"popularity\":91},{\"id\":\"5\",\"title\":\"koderAI: Multi-Agent AI Coding Assistant\",\"thumbnail\":\"/images/blog/koder-ai.jpg\",\"content\":\"koderAI transforms software development through its innovative multi-agent approach, where specialized AI agents collaborate to handle different aspects of coding projects. Unlike single AI assistants, koderAI deploys multiple specialized agents that can work simultaneously on architecture design, code implementation, testing, and documentation. This collaborative AI approach mimics how development teams work, with each agent bringing expertise in specific domains like frontend development, backend systems, or database design. For beginners and intermediate developers, this tool provides an unprecedented learning experience by showing how different aspects of software development interconnect. The platform's ability to break down complex projects into manageable tasks, assign them to appropriate AI agents, and coordinate their work provides valuable insights into professional development practices while significantly accelerating the learning curve.\",\"toolUrl\":\"https://koder.ai\",\"category\":\"Development\",\"tags\":[\"AI Coding\",\"Multi-Agent\",\"Collaboration\",\"Learning\",\"Development\"],\"createdAt\":\"2025-05-30T00:00:00.000Z\",\"rating\":4.6,\"popularity\":87},{\"id\":\"6\",\"title\":\"Lumen AI: Natural Language Data Analytics Tool\",\"thumbnail\":\"/images/blog/lumen-ai.jpg\",\"content\":\"Lumen AI revolutionizes data analytics by allowing users to interact with complex datasets using natural language queries instead of requiring SQL or programming knowledge. This powerful tool can interpret questions like 'Show me sales trends for the last quarter' and automatically generate appropriate visualizations, statistical analyses, and insights. The platform supports various data sources including spreadsheets, databases, and cloud storage, making it accessible to users across different technical backgrounds. For beginners in data analysis, Lumen AI serves as both a powerful analytical tool and an educational platform, showing how different types of questions translate into analytical approaches. The tool's ability to explain its reasoning and suggest follow-up questions helps users develop analytical thinking skills while providing immediate value through actionable insights from their data.\",\"toolUrl\":\"https://lumen.ai\",\"category\":\"Development\",\"tags\":[\"Data Analytics\",\"Natural Language\",\"Business Intelligence\",\"Visualization\",\"AI\"],\"createdAt\":\"2025-05-29T00:00:00.000Z\",\"rating\":4.7,\"popularity\":85},{\"id\":\"7\",\"title\":\"Foxit Smart Redact Server: AI-Powered Document Security\",\"thumbnail\":\"/images/blog/foxit-redact.jpg\",\"content\":\"Foxit Smart Redact Server addresses critical document security and compliance needs through AI-powered automatic redaction of sensitive information. This enterprise-grade solution can intelligently identify and redact personal identifiable information (PII), financial data, legal content, and other sensitive information across large document repositories. The AI engine continuously learns and adapts to recognize new patterns and data types, ensuring comprehensive protection against data breaches and compliance violations. For organizations dealing with legal documents, financial records, or customer data, this tool simplifies the complex process of document sanitization that traditionally required manual review. The automated approach not only reduces human error but also scales to handle thousands of documents efficiently, making compliance with regulations like GDPR, HIPAA, and SOX more manageable for businesses of all sizes.\",\"toolUrl\":\"https://www.foxit.com/smart-redact-server/\",\"category\":\"Deployment\",\"tags\":[\"Document Security\",\"AI Redaction\",\"Compliance\",\"Enterprise\",\"Privacy\"],\"createdAt\":\"2025-05-28T00:00:00.000Z\",\"rating\":4.5,\"popularity\":78}]"));}}),
+__turbopack_context__.v(JSON.parse("[{\"id\":\"1\",\"title\":\"Private AI: Run Advanced AI Models Offline on Android\",\"thumbnail\":\"/Blogs/thumbnails/jira.png\",\"content\":\"Private AI transforms your Android device into a powerful, secure AI companion by running advanced language models directly on your phone without requiring internet connectivity. This groundbreaking approach ensures complete data privacy while providing offline functionality that's perfect for users concerned about data security. The app supports multiple AI models and can handle complex conversations, writing tasks, and problem-solving entirely offline. For beginners and intermediate users, this tool represents a significant shift toward personal AI ownership, eliminating concerns about data being sent to external servers. The offline capability makes it particularly valuable for users with limited internet access or those working in secure environments where data privacy is paramount.\",\"toolUrl\":\"https://play.google.com/store/apps/details?id=us.valkon.privateai\",\"category\":\"AI\",\"tags\":[\"AI\",\"Privacy\",\"Offline\",\"Android\",\"Security\"],\"createdAt\":\"2025-06-03T00:00:00.000Z\",\"rating\":4.6,\"popularity\":88},{\"id\":\"2\",\"title\":\"OpenAI Operator: Your AI Browser Assistant for Task Automation\",\"thumbnail\":\"/Blogs/thumbnails/openRouter.png\",\"content\":\"OpenAI Operator revolutionizes web automation by serving as an AI agent that can perform tasks directly in web browsers on your behalf. Using its own browser interface, Operator can look at webpages, interact with them by typing, clicking, and scrolling, effectively automating repetitive online tasks. Currently available to Pro users in the US, this tool excels at booking travel accommodations, making restaurant reservations, online shopping, and filling out forms. For beginners, Operator eliminates the need to learn complex automation scripts - simply describe what you want done in natural language. The tool is designed with safety in mind, asking users to take over for tasks requiring payment details, login credentials, or CAPTCHA solving. This represents a major step toward autonomous web browsing and task completion.\",\"toolUrl\":\"https://openai.com/index/introducing-operator/\",\"category\":\"AI\",\"tags\":[\"AI\",\"Automation\",\"Browser\",\"Task Management\",\"OpenAI\"],\"createdAt\":\"2025-06-02T00:00:00.000Z\",\"rating\":4.7,\"popularity\":92},{\"id\":\"3\",\"title\":\"Runway ML: Beginner-Friendly AI Video and Image Editing\",\"thumbnail\":\"/Blogs/thumbnails/notion.png\",\"content\":\"Runway ML democratizes AI-powered content creation by providing intuitive tools for video and image editing that require no technical expertise. This platform combines cutting-edge machine learning with user-friendly interfaces, enabling creators to generate videos from text prompts, remove backgrounds with precision, and apply complex visual effects with simple clicks. The platform's strength lies in its accessibility - complex AI operations that once required programming knowledge are now available through drag-and-drop interfaces. For beginners entering the world of AI-assisted creativity, Runway ML offers extensive tutorials and templates that make professional-quality content creation achievable. The tool supports various formats and integrates seamlessly with popular creative workflows, making it an ideal stepping stone for those looking to incorporate AI into their creative projects without overwhelming technical complexity.\",\"toolUrl\":\"https://runwayml.com\",\"category\":\"AI\",\"tags\":[\"AI\",\"Video Editing\",\"Image Generation\",\"Creative Tools\",\"Beginner-Friendly\"],\"createdAt\":\"2025-06-01T00:00:00.000Z\",\"rating\":4.5,\"popularity\":89},{\"id\":\"4\",\"title\":\"Firebase Studio: Cloud IDE with Gemini AI Assistant\",\"thumbnail\":\"/Blogs/thumbnails/jira.png\",\"content\":\"Firebase Studio represents the next evolution in cloud-based development environments by integrating Google's Gemini AI directly into the development workflow. This powerful IDE combines the reliability of Firebase's backend services with intelligent AI assistance that can help write code, debug issues, and suggest optimizations in real-time. The platform excels at full-stack development, offering seamless integration with Google Cloud services while providing AI-powered code completion, error detection, and architectural recommendations. For new learners, Firebase Studio eliminates the complexity of setting up development environments while providing intelligent guidance throughout the coding process. The AI assistant can explain complex concepts, suggest best practices, and even help with project planning, making it an invaluable learning companion for developers at any skill level.\",\"toolUrl\":\"https://firebase.google.com/products/studio\",\"category\":\"Development\",\"tags\":[\"IDE\",\"Cloud Development\",\"AI Assistant\",\"Firebase\",\"Full-Stack\"],\"createdAt\":\"2025-05-31T00:00:00.000Z\",\"rating\":4.8,\"popularity\":91},{\"id\":\"5\",\"title\":\"koderAI: Multi-Agent AI Coding Assistant\",\"thumbnail\":\"/Blogs/thumbnails/openRouter.png\",\"content\":\"koderAI transforms software development through its innovative multi-agent approach, where specialized AI agents collaborate to handle different aspects of coding projects. Unlike single AI assistants, koderAI deploys multiple specialized agents that can work simultaneously on architecture design, code implementation, testing, and documentation. This collaborative AI approach mimics how development teams work, with each agent bringing expertise in specific domains like frontend development, backend systems, or database design. For beginners and intermediate developers, this tool provides an unprecedented learning experience by showing how different aspects of software development interconnect. The platform's ability to break down complex projects into manageable tasks, assign them to appropriate AI agents, and coordinate their work provides valuable insights into professional development practices while significantly accelerating the learning curve.\",\"toolUrl\":\"https://koder.ai\",\"category\":\"Development\",\"tags\":[\"AI Coding\",\"Multi-Agent\",\"Collaboration\",\"Learning\",\"Development\"],\"createdAt\":\"2025-05-30T00:00:00.000Z\",\"rating\":4.6,\"popularity\":87},{\"id\":\"6\",\"title\":\"Lumen AI: Natural Language Data Analytics Tool\",\"thumbnail\":\"/Blogs/thumbnails/notion.png\",\"content\":\"Lumen AI revolutionizes data analytics by allowing users to interact with complex datasets using natural language queries instead of requiring SQL or programming knowledge. This powerful tool can interpret questions like 'Show me sales trends for the last quarter' and automatically generate appropriate visualizations, statistical analyses, and insights. The platform supports various data sources including spreadsheets, databases, and cloud storage, making it accessible to users across different technical backgrounds. For beginners in data analysis, Lumen AI serves as both a powerful analytical tool and an educational platform, showing how different types of questions translate into analytical approaches. The tool's ability to explain its reasoning and suggest follow-up questions helps users develop analytical thinking skills while providing immediate value through actionable insights from their data.\",\"toolUrl\":\"https://lumen.ai\",\"category\":\"Development\",\"tags\":[\"Data Analytics\",\"Natural Language\",\"Business Intelligence\",\"Visualization\",\"AI\"],\"createdAt\":\"2025-05-29T00:00:00.000Z\",\"rating\":4.7,\"popularity\":85},{\"id\":\"7\",\"title\":\"Foxit Smart Redact Server: AI-Powered Document Security\",\"thumbnail\":\"/Blogs/thumbnails/jira.png\",\"content\":\"Foxit Smart Redact Server addresses critical document security and compliance needs through AI-powered automatic redaction of sensitive information. This enterprise-grade solution can intelligently identify and redact personal identifiable information (PII), financial data, legal content, and other sensitive information across large document repositories. The AI engine continuously learns and adapts to recognize new patterns and data types, ensuring comprehensive protection against data breaches and compliance violations. For organizations dealing with legal documents, financial records, or customer data, this tool simplifies the complex process of document sanitization that traditionally required manual review. The automated approach not only reduces human error but also scales to handle thousands of documents efficiently, making compliance with regulations like GDPR, HIPAA, and SOX more manageable for businesses of all sizes.\",\"toolUrl\":\"https://www.foxit.com/smart-redact-server/\",\"category\":\"Deployment\",\"tags\":[\"Document Security\",\"AI Redaction\",\"Compliance\",\"Enterprise\",\"Privacy\"],\"createdAt\":\"2025-05-28T00:00:00.000Z\",\"rating\":4.5,\"popularity\":78}]"));}}),
 "[project]/app/Blogs/blogs.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -211,6 +211,40 @@ const BlogImage = ({ src, alt, ...props })=>{
     _s();
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    // Validate src before rendering
+    if (!src || typeof src !== 'string' || src.trim() === '') {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "w-full h-full flex items-center justify-center bg-gray-200",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center p-4",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                        className: "w-8 h-8 text-gray-400 mx-auto mb-2"
+                    }, void 0, false, {
+                        fileName: "[project]/app/Blogs/blogs.jsx",
+                        lineNumber: 128,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-sm text-gray-500",
+                        children: "Image unavailable"
+                    }, void 0, false, {
+                        fileName: "[project]/app/Blogs/blogs.jsx",
+                        lineNumber: 129,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/Blogs/blogs.jsx",
+                lineNumber: 127,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/app/Blogs/blogs.jsx",
+            lineNumber: 126,
+            columnNumber: 7
+        }, this);
+    }
     if (error) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full h-full flex items-center justify-center bg-gray-200",
@@ -221,7 +255,7 @@ const BlogImage = ({ src, alt, ...props })=>{
                         className: "w-8 h-8 text-gray-400 mx-auto mb-2"
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 127,
+                        lineNumber: 139,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -229,18 +263,18 @@ const BlogImage = ({ src, alt, ...props })=>{
                         children: "Image unavailable"
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 128,
+                        lineNumber: 140,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Blogs/blogs.jsx",
-                lineNumber: 126,
+                lineNumber: 138,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/Blogs/blogs.jsx",
-            lineNumber: 125,
+            lineNumber: 137,
             columnNumber: 7
         }, this);
     }
@@ -252,12 +286,12 @@ const BlogImage = ({ src, alt, ...props })=>{
                     className: "w-8 h-8 text-gray-400 animate-spin"
                 }, void 0, false, {
                     fileName: "[project]/app/Blogs/blogs.jsx",
-                    lineNumber: 138,
+                    lineNumber: 150,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Blogs/blogs.jsx",
-                lineNumber: 137,
+                lineNumber: 149,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -268,7 +302,7 @@ const BlogImage = ({ src, alt, ...props })=>{
                 ...props
             }, void 0, false, {
                 fileName: "[project]/app/Blogs/blogs.jsx",
-                lineNumber: 141,
+                lineNumber: 153,
                 columnNumber: 7
             }, this)
         ]
@@ -558,7 +592,7 @@ const Blog = ()=>{
                         className: "w-16 h-16 text-red-500 mx-auto mb-4"
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 386,
+                        lineNumber: 398,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -566,7 +600,7 @@ const Blog = ()=>{
                         children: "Error Loading Blogs"
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 387,
+                        lineNumber: 399,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -574,7 +608,7 @@ const Blog = ()=>{
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 388,
+                        lineNumber: 400,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -583,18 +617,18 @@ const Blog = ()=>{
                         children: "Retry"
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 389,
+                        lineNumber: 401,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Blogs/blogs.jsx",
-                lineNumber: 385,
+                lineNumber: 397,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/Blogs/blogs.jsx",
-            lineNumber: 384,
+            lineNumber: 396,
             columnNumber: 7
         }, this);
     }
@@ -609,7 +643,7 @@ const Blog = ()=>{
                     }
                 }, void 0, false, {
                     fileName: "[project]/app/Blogs/blogs.jsx",
-                    lineNumber: 404,
+                    lineNumber: 416,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
@@ -627,7 +661,7 @@ const Blog = ()=>{
                                         children: "Tech Blog"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 418,
+                                        lineNumber: 430,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -635,13 +669,13 @@ const Blog = ()=>{
                                         children: "Insights, tutorials, and industry news"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 419,
+                                        lineNumber: 431,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 417,
+                                lineNumber: 429,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -653,7 +687,7 @@ const Blog = ()=>{
                                         children: "Search articles"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 426,
+                                        lineNumber: 438,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -664,7 +698,7 @@ const Blog = ()=>{
                                                 "aria-hidden": "true"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 430,
+                                                lineNumber: 442,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -677,19 +711,19 @@ const Blog = ()=>{
                                                 "aria-label": "Search articles"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 431,
+                                                lineNumber: 443,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 429,
+                                        lineNumber: 441,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 425,
+                                lineNumber: 437,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -701,7 +735,7 @@ const Blog = ()=>{
                                         children: "Categories"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 445,
+                                        lineNumber: 457,
                                         columnNumber: 15
                                     }, this),
                                     categoriesWithCounts.map((category)=>{
@@ -721,7 +755,7 @@ const Blog = ()=>{
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                            lineNumber: 465,
+                                                            lineNumber: 477,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -729,13 +763,13 @@ const Blog = ()=>{
                                                             children: category.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                            lineNumber: 466,
+                                                            lineNumber: 478,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                    lineNumber: 464,
+                                                    lineNumber: 476,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -744,20 +778,20 @@ const Blog = ()=>{
                                                     children: category.count
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                    lineNumber: 468,
+                                                    lineNumber: 480,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, category.id, true, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 453,
+                                            lineNumber: 465,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 444,
+                                lineNumber: 456,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -768,7 +802,7 @@ const Blog = ()=>{
                                         children: "Blog Statistics"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 485,
+                                        lineNumber: 497,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -782,62 +816,12 @@ const Blog = ()=>{
                                                         children: "Total Articles"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 490,
+                                                        lineNumber: 502,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-sm font-bold text-gray-900",
                                                         children: blogs.length
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 491,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 489,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center justify-between",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-xs text-gray-600",
-                                                        children: "Categories"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 496,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm font-bold text-gray-900",
-                                                        children: categories.length - 1
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 497,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 495,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center justify-between",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-xs text-gray-600",
-                                                        children: "New This Week"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 502,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm font-bold text-blue-600",
-                                                        children: blogs.filter((blog)=>isNewBlog(blog.createdAt)).length
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Blogs/blogs.jsx",
                                                         lineNumber: 503,
@@ -848,28 +832,78 @@ const Blog = ()=>{
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
                                                 lineNumber: 501,
                                                 columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs text-gray-600",
+                                                        children: "Categories"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Blogs/blogs.jsx",
+                                                        lineNumber: 508,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-sm font-bold text-gray-900",
+                                                        children: categories.length - 1
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Blogs/blogs.jsx",
+                                                        lineNumber: 509,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/Blogs/blogs.jsx",
+                                                lineNumber: 507,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs text-gray-600",
+                                                        children: "New This Week"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Blogs/blogs.jsx",
+                                                        lineNumber: 514,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-sm font-bold text-blue-600",
+                                                        children: blogs.filter((blog)=>isNewBlog(blog.createdAt)).length
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/Blogs/blogs.jsx",
+                                                        lineNumber: 515,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/Blogs/blogs.jsx",
+                                                lineNumber: 513,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 488,
+                                        lineNumber: 500,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 484,
+                                lineNumber: 496,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 415,
+                        lineNumber: 427,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Blogs/blogs.jsx",
-                    lineNumber: 410,
+                    lineNumber: 422,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -884,12 +918,12 @@ const Blog = ()=>{
                                         children: "Tech Blog"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 516,
+                                        lineNumber: 528,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 515,
+                                    lineNumber: 527,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -904,25 +938,25 @@ const Blog = ()=>{
                                         "aria-hidden": "true"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 527,
+                                        lineNumber: 539,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                         className: "w-6 h-6 text-gray-600",
                                         "aria-hidden": "true"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 529,
+                                        lineNumber: 541,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 518,
+                                    lineNumber: 530,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Blogs/blogs.jsx",
-                            lineNumber: 514,
+                            lineNumber: 526,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -934,7 +968,7 @@ const Blog = ()=>{
                                     children: "Search articles"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 536,
+                                    lineNumber: 548,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -945,7 +979,7 @@ const Blog = ()=>{
                                             "aria-hidden": "true"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 540,
+                                            lineNumber: 552,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -958,25 +992,25 @@ const Blog = ()=>{
                                             "aria-label": "Search articles"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 541,
+                                            lineNumber: 553,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 539,
+                                    lineNumber: 551,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Blogs/blogs.jsx",
-                            lineNumber: 535,
+                            lineNumber: 547,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Blogs/blogs.jsx",
-                    lineNumber: 513,
+                    lineNumber: 525,
                     columnNumber: 9
                 }, this),
                 isMobileMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1002,7 +1036,7 @@ const Blog = ()=>{
                                             children: "Categories"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 572,
+                                            lineNumber: 584,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1014,18 +1048,18 @@ const Blog = ()=>{
                                                 "aria-hidden": "true"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 578,
+                                                lineNumber: 590,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 573,
+                                            lineNumber: 585,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 571,
+                                    lineNumber: 583,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1048,7 +1082,7 @@ const Blog = ()=>{
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                            lineNumber: 600,
+                                                            lineNumber: 612,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1056,13 +1090,13 @@ const Blog = ()=>{
                                                             children: category.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                            lineNumber: 601,
+                                                            lineNumber: 613,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                    lineNumber: 599,
+                                                    lineNumber: 611,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1071,35 +1105,35 @@ const Blog = ()=>{
                                                     children: category.count
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                    lineNumber: 603,
+                                                    lineNumber: 615,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, category.id, true, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 588,
+                                            lineNumber: 600,
                                             columnNumber: 23
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 582,
+                                    lineNumber: 594,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Blogs/blogs.jsx",
-                            lineNumber: 570,
+                            lineNumber: 582,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 561,
+                        lineNumber: 573,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Blogs/blogs.jsx",
-                    lineNumber: 556,
+                    lineNumber: 568,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1119,7 +1153,7 @@ const Blog = ()=>{
                                                 children: currentCategory?.name || "All Articles"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 629,
+                                                lineNumber: 641,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1133,23 +1167,23 @@ const Blog = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 632,
+                                                lineNumber: 644,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 628,
+                                        lineNumber: 640,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                    lineNumber: 627,
+                                    lineNumber: 639,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 626,
+                                lineNumber: 638,
                                 columnNumber: 13
                             }, this),
                             isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1159,7 +1193,7 @@ const Blog = ()=>{
                                         className: "w-12 h-12 text-blue-600 animate-spin mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 643,
+                                        lineNumber: 655,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1167,13 +1201,13 @@ const Blog = ()=>{
                                         children: "Loading articles..."
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 644,
+                                        lineNumber: 656,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 642,
+                                lineNumber: 654,
                                 columnNumber: 15
                             }, this) : filteredBlogs.length === 0 ? /* Empty State */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-center py-16",
@@ -1185,12 +1219,12 @@ const Blog = ()=>{
                                             "aria-hidden": "true"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                            lineNumber: 650,
+                                            lineNumber: 662,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 649,
+                                        lineNumber: 661,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1198,7 +1232,7 @@ const Blog = ()=>{
                                         children: "No articles found"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 652,
+                                        lineNumber: 664,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1206,7 +1240,7 @@ const Blog = ()=>{
                                         children: "Try adjusting your search or browse different categories."
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 655,
+                                        lineNumber: 667,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1215,13 +1249,13 @@ const Blog = ()=>{
                                         children: "Clear filters"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 658,
+                                        lineNumber: 670,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                lineNumber: 648,
+                                lineNumber: 660,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
@@ -1246,7 +1280,7 @@ const Blog = ()=>{
                                                                 priority: false
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 681,
+                                                                lineNumber: 693,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1260,14 +1294,14 @@ const Blog = ()=>{
                                                                                 "aria-hidden": "true"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 694,
+                                                                                lineNumber: 706,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             "New"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 693,
+                                                                        lineNumber: 705,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     blog.rating && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1278,26 +1312,26 @@ const Blog = ()=>{
                                                                                 "aria-hidden": "true"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 700,
+                                                                                lineNumber: 712,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             blog.rating
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 699,
+                                                                        lineNumber: 711,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 691,
+                                                                lineNumber: 703,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 680,
+                                                        lineNumber: 692,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1309,7 +1343,7 @@ const Blog = ()=>{
                                                                 children: blog.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 710,
+                                                                lineNumber: 722,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1323,7 +1357,7 @@ const Blog = ()=>{
                                                                                 "aria-hidden": "true"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 720,
+                                                                                lineNumber: 732,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("time", {
@@ -1331,13 +1365,13 @@ const Blog = ()=>{
                                                                                 children: formatDate(blog.createdAt)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 721,
+                                                                                lineNumber: 733,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 719,
+                                                                        lineNumber: 731,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     blog.popularity > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1348,7 +1382,7 @@ const Blog = ()=>{
                                                                                 "aria-hidden": "true"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 727,
+                                                                                lineNumber: 739,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1359,19 +1393,19 @@ const Blog = ()=>{
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 728,
+                                                                                lineNumber: 740,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 726,
+                                                                        lineNumber: 738,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 718,
+                                                                lineNumber: 730,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1379,7 +1413,7 @@ const Blog = ()=>{
                                                                 children: isExpanded ? blog.content : getPreviewText(blog.content)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 736,
+                                                                lineNumber: 748,
                                                                 columnNumber: 27
                                                             }, this),
                                                             blog.tags && blog.tags.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1395,14 +1429,14 @@ const Blog = ()=>{
                                                                                     "aria-hidden": "true"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                    lineNumber: 752,
+                                                                                    lineNumber: 764,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 tag
                                                                             ]
                                                                         }, index, true, {
                                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                            lineNumber: 746,
+                                                                            lineNumber: 758,
                                                                             columnNumber: 33
                                                                         }, this)),
                                                                     blog.tags.length > MAX_VISIBLE_TAGS && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1413,13 +1447,13 @@ const Blog = ()=>{
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 757,
+                                                                        lineNumber: 769,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 744,
+                                                                lineNumber: 756,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1437,7 +1471,7 @@ const Blog = ()=>{
                                                                                     "aria-hidden": "true"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                    lineNumber: 774,
+                                                                                    lineNumber: 786,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 "Show Less"
@@ -1449,7 +1483,7 @@ const Blog = ()=>{
                                                                                     "aria-hidden": "true"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                    lineNumber: 779,
+                                                                                    lineNumber: 791,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 "Read More"
@@ -1457,7 +1491,7 @@ const Blog = ()=>{
                                                                         }, void 0, true)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 766,
+                                                                        lineNumber: 778,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1473,37 +1507,37 @@ const Blog = ()=>{
                                                                                 "aria-hidden": "true"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                                lineNumber: 793,
+                                                                                lineNumber: 805,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                        lineNumber: 785,
+                                                                        lineNumber: 797,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                                lineNumber: 765,
+                                                                lineNumber: 777,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                                        lineNumber: 708,
+                                                        lineNumber: 720,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, blog.id, true, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 674,
+                                                lineNumber: 686,
                                                 columnNumber: 23
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 668,
+                                        lineNumber: 680,
                                         columnNumber: 17
                                     }, this),
                                     totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1519,7 +1553,7 @@ const Blog = ()=>{
                                                 children: "Previous"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 805,
+                                                lineNumber: 817,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1537,7 +1571,7 @@ const Blog = ()=>{
                                                             children: page
                                                         }, page, false, {
                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                            lineNumber: 823,
+                                                            lineNumber: 835,
                                                             columnNumber: 29
                                                         }, this);
                                                     } else if (page === currentPage - 2 || page === currentPage + 2) {
@@ -1547,7 +1581,7 @@ const Blog = ()=>{
                                                             children: "..."
                                                         }, page, false, {
                                                             fileName: "[project]/app/Blogs/blogs.jsx",
-                                                            lineNumber: 842,
+                                                            lineNumber: 854,
                                                             columnNumber: 29
                                                         }, this);
                                                     }
@@ -1555,7 +1589,7 @@ const Blog = ()=>{
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 814,
+                                                lineNumber: 826,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1566,13 +1600,13 @@ const Blog = ()=>{
                                                 children: "Next"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Blogs/blogs.jsx",
-                                                lineNumber: 851,
+                                                lineNumber: 863,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 804,
+                                        lineNumber: 816,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1591,7 +1625,7 @@ const Blog = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Blogs/blogs.jsx",
-                                        lineNumber: 863,
+                                        lineNumber: 875,
                                         columnNumber: 17
                                     }, this)
                                 ]
@@ -1599,23 +1633,23 @@ const Blog = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Blogs/blogs.jsx",
-                        lineNumber: 624,
+                        lineNumber: 636,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Blogs/blogs.jsx",
-                    lineNumber: 623,
+                    lineNumber: 635,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Blogs/blogs.jsx",
-            lineNumber: 402,
+            lineNumber: 414,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Blogs/blogs.jsx",
-        lineNumber: 401,
+        lineNumber: 413,
         columnNumber: 5
     }, this);
 };
