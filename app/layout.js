@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs"
         />
+      
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/roadmapfinder.svg" type="image/svg+xml" />
@@ -79,6 +80,8 @@ export default function RootLayout({ children }) {
         {/* ✅ SEO Internal Links for Algorithm Boost */}
         <link rel="alternate" href="https://roadmapfinder.tech/RoadmapPage" />
         <link rel="alternate" href="https://roadmapfinder.tech/Courses" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
+           crossorigin="anonymous"></script>
 
         {/* ✅ Structured Data (JSON-LD for Google Rich Results) */}
         <script

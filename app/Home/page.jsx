@@ -33,6 +33,7 @@ import {
   Shield,
   Clock,
   Lightbulb,
+  Contact
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -151,6 +152,13 @@ export default function HomePage() {
       href: "/Profile",
       protected: true,
       feature: "Profile",
+    },
+    {
+      name: "Contact Us",
+      icon: <Contact size={24} className="mr-3" />,
+      href: "/ContactUs",
+      protected: true,
+      feature: "Contact Us",
     },
     {
       name: "Logout",
