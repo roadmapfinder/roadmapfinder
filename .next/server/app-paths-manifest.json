@@ -1,10 +1,5 @@
 {
-  "/Blogs/page": "app/Blogs/page.js",
-  "/Courses/page": "app/Courses/page.js",
-  "/Docs/sigma/page": "app/Docs/sigma/page.js",
-  "/Resource-Finder/page": "app/Resource-Finder/page.js",
-  "/Roadmaps/Prompt/page": "app/Roadmaps/Prompt/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/search-resources/route": "app/api/search-resources/route.js",
+  "/Roadmaps/Nodejs/page": "app/Roadmaps/Nodejs/page.js",
+  "/Roadmaps/OS/page": "app/Roadmaps/OS/page.js",
   "/page": "app/page.js"
 }

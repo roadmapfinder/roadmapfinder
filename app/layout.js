@@ -82,7 +82,8 @@ export default function RootLayout({ children }) {
         <link rel="alternate" href="https://roadmapfinder.tech/Courses" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
            crossorigin="anonymous"></script>
-
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
+           crossorigin="anonymous"></script>
         {/* ✅ Structured Data (JSON-LD for Google Rich Results) */}
         <script
           type="application/ld+json"
