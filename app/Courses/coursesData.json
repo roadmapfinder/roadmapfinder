@@ -630,6 +630,18 @@
       "docs": "/Docs/data_design"
     },
     {
+      "id": 97,
+      "category": "AI & ML",
+      "title": "AIML Foundation Course",
+      "level": "Beginner",
+      "rating": 4.9,
+      "image": "aibasics",
+      "videoId": "https://youtu.be/D1eL1EnxXXQ?si=KLrXYYwFfULStybu",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/ai_basics"
+    },
+    {
       "id": 39,
       "category": "AI & ML",
       "title": "Deep Learning Complete Course",

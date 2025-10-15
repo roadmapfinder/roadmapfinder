@@ -1,5 +1,11 @@
 {
-  "/Roadmaps/Nodejs/page": "app/Roadmaps/Nodejs/page.js",
-  "/Roadmaps/OS/page": "app/Roadmaps/OS/page.js",
+  "/Courses/page": "app/Courses/page.js",
+  "/Docs/ai_basics/page": "app/Docs/ai_basics/page.js",
+  "/Docs/deeplearning/page": "app/Docs/deeplearning/page.js",
+  "/Resource-Finder/page": "app/Resource-Finder/page.js",
+  "/Roadmaps/Backend/page": "app/Roadmaps/Backend/page.js",
+  "/Roadmaps/Frontend/page": "app/Roadmaps/Frontend/page.js",
+  "/Roadmaps/Reactnative/page": "app/Roadmaps/Reactnative/page.js",
+  "/api/search-resources/route": "app/api/search-resources/route.js",
   "/page": "app/page.js"
 }

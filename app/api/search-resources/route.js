@@ -136,70 +136,47 @@ async function analyzeQueryIntent(query, language, preferLatest) {
 
     const prompt = `You are an expert tech educator and course curator specializing in programming, software development, UI/UX design, and all tech domains.
 
-ANALYZE THIS LEARNING QUERY:
-User Query: "${query}"
-Language Preference: ${language === 'hindi' ? 'Hindi/Hinglish (Indian learners)' : 'English'}
-Recency Preference: ${preferLatest ? 'YES - Must prioritize 2023-2025 content' : 'NO - Quality matters more than date'}
-Detected Domain: ${techDomain}
-Related Technologies: ${relevantTech}
+INPUTS (these variables are provided):
+- query: the raw user query string (e.g. "react 18 full stack course in hindi latest")
+- language: "hindi" or "english"
+- preferLatest: boolean (true if user prefers 2023-2025 resources)
+- techDomain: detected domain (e.g. "Web Development", "Data Science")
+- relevantTech: comma-separated list of related technologies (may be empty)
 
-YOUR TASK - Extract precise learning intent:
+TASK:
+Parse the user's raw 'query' and produce a compact, precise learning-intent analysis in the exact output format shown below.
 
-1. CORE TOPIC/TECHNOLOGY:
-   - What EXACT technology, language, framework, or tool they want to learn
-   - Identify specific versions if mentioned (e.g., React 18, Python 3.12, Next.js 14)
-   - Recognize abbreviations and common variations
+Parsing rules & heuristics (mandatory):
+1. Normalize and extract exact technology names (match common variants: e.g., "react", "reactjs" → "React"; "next", "nextjs" → "Next.js"). If a version appears (digits with dot or integer, e.g., 18, 14, 3.12), capture it as VERSION. If no version given, set VERSION to "latest".
+2. If preferLatest is true or the query contains words like "latest", "2024", "2025", include the year (2024 or 2025 as appropriate) in PRIMARY search query.
+3. Detect language preference: if language == "hindi" or query contains "hindi"/"हिंदी", include "hindi" in all generated YouTube search queries.
+4. Determine LEVEL:
+   - If query contains "beginner", "for beginners", "zero to hero", "100 days", "basics" → Beginner
+   - If includes "intermediate", "deep dive", "advanced concepts", "build", "projects" → Intermediate
+   - If includes "advanced", "masterclass", "architecture", "scaling", "performance" → Advanced
+   - Else default → Beginner
+5. Determine FORMAT:
+   - If query contains "course", "complete course", "full course", "bootcamp" → Full Course
+   - If contains "series", "part 1", "part 2", "playlist" → Tutorial Series
+   - If contains "crash", "quick", "short" → Crash Course
+   - If contains "build", "project", "project-based", "app" → Project-Based
+   - If mentions a single concept (e.g., "hooks", "routing", "state management") → Specific Topic
+   - If ambiguous choose Full Course.
+6. TECH_STACK context:
+   - Infer from techDomain and relevantTech. Map to one of: frontend/backend/fullstack/mobile/design/devops/data/other.
+   - List immediate related technologies the learner will likely need (e.g., for Next.js → React, Node.js, Vercel).
+7. LEARNER CONTEXT inference:
+   - If query mentions "job", "interview", "resume", "placement" → interview/career switch
+   - If mentions "college", "semester", "exam" → academic
+   - If mentions "portfolio", "build", "project" → project/freelance
+   - Else give a best guess (career/project/hobby). Prefer career if unclear.
+8. Generate three YouTube search queries (PRIMARY, SECONDARY, FALLBACK) following these constraints:
+   - PRIMARY: Most specific. Include technology name, "complete course" or "full tutorial" for languages, include year (2024/2025) if preferLatest==true or query asked for "latest". Include "hindi" for Hindi preference. Add words like "zero to hero", "bootcamp", or "masterclass" only if they match inferred LEVEL/FORMAT.
+   - SECONDARY: Broader but still focused; no year.
+   - FALLBACK: Minimal safe query (guaranteed results), general tutorial + tech name. Include "hindi" if required.
+9. All output must follow EXACT format below (no extra text, no commentary, no markdown — only the lines specified). Use precise names (e.g., "React", "Next.js", "Python", not "javascript" as a replacement when the user asked React).
 
-2. SKILL LEVEL (be precise):
-   - Beginner: Complete newcomer, needs fundamentals
-   - Intermediate: Knows basics, wants to go deeper
-   - Advanced: Experienced, seeking mastery or specialization
-   - DEFAULT to Beginner if unclear
-
-3. LEARNING FORMAT:
-   - Full Course: Comprehensive A-Z coverage (preferred for most queries)
-   - Tutorial Series: Structured multi-part lessons
-   - Crash Course: Quick intensive overview
-   - Project-Based: Learn by building
-   - Specific Topic: Focused on one concept
-
-4. TECH STACK CONTEXT:
-   - Frontend/Backend/Full Stack/Mobile/Design/DevOps/Data Science
-   - Related technologies they might need
-   - Industry standards for this technology
-
-5. LEARNER CONTEXT (infer intelligently):
-   - Career switch? Job preparation? Academic? Hobby? Freelancing?
-   - Time sensitivity? Interview prep? Project deadline?
-
-GENERATE 3 STRATEGIC YOUTUBE SEARCH QUERIES:
-
-PRIMARY QUERY (Most Specific):
-- Target the EXACT technology + comprehensive format
-- Include year if preferLatest=true (2024, 2025)
-- Add language if hindi
-- Use professional educational keywords
-- Example: "React 18 complete course tutorial 2024" or "Next.js 14 full stack hindi"
-
-SECONDARY QUERY (Broader but Focused):
-- Remove year, keep technology specific
-- Add variations like "bootcamp", "masterclass", "zero to hero"
-- Example: "React complete tutorial" or "Next.js full course"
-
-FALLBACK QUERY (Safest):
-- Core technology + basic educational keywords
-- Guaranteed to return results
-- Example: "React tutorial" or "Next.js basics"
-
-CRITICAL RULES:
-- If query mentions "latest" or specific year → MUST include 2024/2025 in PRIMARY
-- For programming languages → include "complete course" or "full tutorial"
-- For frameworks → include framework name + "course" or "tutorial"
-- For UI/UX → include "UI UX design complete course"
-- For hindi → include "hindi" in ALL queries
-- Be very specific with technology names (React NOT javascript, Python NOT programming)
-
-FORMAT YOUR RESPONSE EXACTLY AS:
+OUTPUT FORMAT (produce exactly these lines):
 TOPIC: [exact technology/skill name]
 LEVEL: [beginner/intermediate/advanced]
 FORMAT: [full course/tutorial series/crash course/project-based/specific topic]
@@ -210,7 +187,8 @@ PRIMARY: [most specific search query]
 SECONDARY: [broader search query]
 FALLBACK: [safest search query]
 
-Be extremely precise and tech-savvy. Think like a senior developer recommending resources to a junior.`;
+End.
+`;
 
     const result = await withTimeout(
       model.generateContent(prompt),
