@@ -703,8 +703,11 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
+// components/RoadmapPdf.jsx
 __turbopack_context__.s({
     "PDFDownloadButton": (()=>PDFDownloadButton),
+    "RoadmapPDFDocument": (()=>RoadmapPDFDocument),
+    "default": (()=>__TURBOPACK__default__export__),
     "downloadAdvancedRoadmapPDF": (()=>downloadAdvancedRoadmapPDF),
     "downloadRoadmapPDF": (()=>downloadRoadmapPDF)
 });
@@ -718,202 +721,328 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$file$2d$save
 ;
 ;
 ;
-// Define styles for the PDF
-const styles = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["StyleSheet"].create({
-    page: {
-        flexDirection: 'column',
-        backgroundColor: '#f8fafc',
-        padding: 30,
-        fontFamily: 'Helvetica'
+/**
+ * Responsive PDF generator for AIML Engineer Roadmap
+ *
+ * Key ideas:
+ * - Map page size/orientation to a width in points and compute a scale factor.
+ * - If width is wide enough -> two-column layout. Otherwise -> single column.
+ * - Expose options: pageSize, orientation, includeWatermark, compact (mobile-friendly)
+ *
+ * Usage:
+ * - <PDFDownloadButton phases={phases} />
+ * - await downloadRoadmapPDF(phases);
+ */ // Map known page sizes (points). These values match react-pdf default sizes.
+const PAGE_DIMENSIONS = {
+    A4: {
+        portrait: {
+            w: 595.28,
+            h: 841.89
+        },
+        landscape: {
+            w: 841.89,
+            h: 595.28
+        }
     },
-    header: {
-        marginBottom: 30,
-        textAlign: 'center',
-        paddingBottom: 20,
-        borderBottomWidth: 2,
-        borderBottomColor: '#3b82f6'
+    LETTER: {
+        portrait: {
+            w: 612,
+            h: 792
+        },
+        landscape: {
+            w: 792,
+            h: 612
+        }
     },
-    title: {
-        fontSize: 32,
-        fontWeight: 'bold',
-        color: '#1f2937',
-        marginBottom: 8
-    },
-    subtitle: {
-        fontSize: 16,
-        color: '#6b7280',
-        fontWeight: 'normal'
-    },
-    phaseContainer: {
-        marginBottom: 25,
-        backgroundColor: '#ffffff',
-        borderRadius: 8,
-        padding: 20,
-        borderWidth: 1,
-        borderColor: '#e5e7eb'
-    },
-    phaseHeader: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 15
-    },
-    phaseNumber: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        backgroundColor: '#3b82f6',
-        color: '#ffffff',
-        fontSize: 18,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        lineHeight: 40,
-        marginRight: 15
-    },
-    phaseTitleContainer: {
-        flex: 1
-    },
-    phaseTitle: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#1f2937',
-        marginBottom: 2
-    },
-    phaseSubtitle: {
-        fontSize: 12,
-        color: '#6b7280',
-        marginBottom: 2
-    },
-    phaseDescription: {
-        fontSize: 14,
-        color: '#374151',
-        fontWeight: 'normal'
-    },
-    sectionsContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 15
-    },
-    section: {
-        flex: '1 1 45%',
-        backgroundColor: '#f8fafc',
-        borderRadius: 6,
-        padding: 15,
-        borderLeftWidth: 4,
-        borderLeftColor: '#3b82f6',
-        marginBottom: 10
-    },
-    sectionTitle: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: '#3b82f6',
-        marginBottom: 10
-    },
-    itemsList: {
-        gap: 6
-    },
-    item: {
-        fontSize: 11,
-        color: '#374151',
-        lineHeight: 1.4,
-        paddingLeft: 12,
-        marginBottom: 4
-    },
-    itemNumber: {
-        fontWeight: 'bold',
-        color: '#1f2937'
-    },
-    phaseConnector: {
-        alignSelf: 'center',
-        marginVertical: 15,
-        paddingVertical: 8,
-        paddingHorizontal: 20,
-        backgroundColor: '#f3f4f6',
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: '#d1d5db'
-    },
-    connectorText: {
-        fontSize: 12,
-        color: '#6b7280',
-        textAlign: 'center',
-        fontWeight: 'bold'
-    },
-    footer: {
-        marginTop: 30,
-        padding: 20,
-        backgroundColor: '#ecfdf5',
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: '#10b981',
-        textAlign: 'center'
-    },
-    footerTitle: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#065f46',
-        marginBottom: 8
-    },
-    footerText: {
-        fontSize: 14,
-        color: '#047857',
-        lineHeight: 1.5
-    },
-    pageNumber: {
-        position: 'absolute',
-        fontSize: 10,
-        bottom: 20,
-        right: 30,
-        color: '#6b7280'
-    },
-    watermark: {
-        position: 'absolute',
-        top: 50,
-        right: 30,
-        fontSize: 8,
-        color: '#d1d5db',
-        opacity: 0.5
+    A5: {
+        portrait: {
+            w: 419.53,
+            h: 595.28
+        },
+        landscape: {
+            w: 595.28,
+            h: 419.53
+        }
     }
-});
-// PDF Document Component
-const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Document"], {
+};
+// Default colors (easy to reuse)
+const COLOR = {
+    bg: "#f8fafc",
+    paper: "#ffffff",
+    primary: "#0ea5e9",
+    muted: "#6b7280",
+    text: "#111827",
+    accent: "#10b981",
+    border: "#e6eef2",
+    soft: "#f1f5f9"
+};
+// Utility: get page width (points)
+const getPageWidth = (pageSize = "A4", orientation = "portrait")=>{
+    const key = pageSize?.toUpperCase() in PAGE_DIMENSIONS ? pageSize.toUpperCase() : "A4";
+    const dir = orientation === "landscape" ? "landscape" : "portrait";
+    return PAGE_DIMENSIONS[key][dir].w;
+};
+// Create styles dynamically based on page width and compact flag
+const createStyles = (pageWidth, compact = false)=>{
+    // scale relative to A4 width (595pt)
+    const baseScale = pageWidth / 595.28;
+    const twoColumn = pageWidth >= 540 && !compact; // threshold: ~540pt
+    const gutter = 12 * baseScale;
+    const cardPadding = compact ? 10 * baseScale : 16 * baseScale;
+    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["StyleSheet"].create({
+        page: {
+            flexDirection: "column",
+            backgroundColor: COLOR.bg,
+            padding: 28 * baseScale,
+            fontFamily: "Helvetica",
+            fontSize: 11 * baseScale,
+            color: COLOR.text
+        },
+        header: {
+            marginBottom: 18 * baseScale,
+            paddingBottom: 10 * baseScale,
+            borderBottomWidth: 1,
+            borderBottomColor: COLOR.soft,
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 12 * baseScale
+        },
+        logoCircle: {
+            width: 56 * baseScale,
+            height: 56 * baseScale,
+            borderRadius: 28 * baseScale,
+            backgroundColor: COLOR.primary,
+            color: "white",
+            textAlign: "center",
+            lineHeight: `${56 * baseScale}pt`,
+            fontWeight: "bold",
+            fontSize: 18 * baseScale,
+            marginRight: 8 * baseScale
+        },
+        headerText: {
+            flex: 1
+        },
+        title: {
+            fontSize: 20 * baseScale,
+            fontWeight: "bold",
+            color: COLOR.text,
+            marginBottom: 2 * baseScale
+        },
+        subtitle: {
+            fontSize: 10.5 * baseScale,
+            color: COLOR.muted
+        },
+        watermark: {
+            position: "absolute",
+            top: 40 * baseScale,
+            right: 30 * baseScale,
+            fontSize: 8 * baseScale,
+            color: "#cbd5e1",
+            opacity: 0.35
+        },
+        phaseContainer: {
+            marginBottom: 18 * baseScale,
+            backgroundColor: COLOR.paper,
+            borderRadius: 8 * baseScale,
+            padding: cardPadding,
+            borderWidth: 1,
+            borderColor: COLOR.border
+        },
+        phaseHeader: {
+            flexDirection: "row",
+            alignItems: "flex-start",
+            marginBottom: 10 * baseScale,
+            gap: 10 * baseScale
+        },
+        phaseBadge: {
+            width: 40 * baseScale,
+            height: 40 * baseScale,
+            borderRadius: 8 * baseScale,
+            backgroundColor: COLOR.primary,
+            color: "#fff",
+            textAlign: "center",
+            lineHeight: `${40 * baseScale}pt`,
+            fontWeight: "700",
+            fontSize: 14 * baseScale,
+            flexShrink: 0
+        },
+        phaseTitleContainer: {
+            flex: 1
+        },
+        phaseTitle: {
+            fontSize: 14 * baseScale,
+            fontWeight: "700",
+            color: COLOR.text,
+            marginBottom: 2 * baseScale
+        },
+        phaseSubtitle: {
+            fontSize: 9.5 * baseScale,
+            color: COLOR.muted,
+            marginBottom: 6 * baseScale
+        },
+        phaseDescription: {
+            fontSize: 10.5 * baseScale,
+            color: COLOR.text,
+            lineHeight: 1.3 * baseScale
+        },
+        sectionsContainer: {
+            flexDirection: twoColumn ? "row" : "column",
+            flexWrap: "wrap",
+            gap: gutter,
+            marginTop: 8 * baseScale
+        },
+        section: {
+            // two-column: ~48% each, single-col: full width
+            width: twoColumn ? `48%` : "100%",
+            backgroundColor: "#fbfdff",
+            borderRadius: 6 * baseScale,
+            padding: 12 * baseScale,
+            borderLeftWidth: 3 * baseScale,
+            borderLeftColor: COLOR.primary,
+            marginBottom: 8 * baseScale
+        },
+        sectionTitle: {
+            fontSize: 11 * baseScale,
+            fontWeight: "700",
+            color: COLOR.primary,
+            marginBottom: 6 * baseScale
+        },
+        itemsList: {
+            marginTop: 4 * baseScale
+        },
+        itemRow: {
+            flexDirection: "row",
+            alignItems: "flex-start",
+            marginBottom: 6 * baseScale
+        },
+        itemNumber: {
+            width: 18 * baseScale,
+            fontSize: 9.5 * baseScale,
+            fontWeight: "700",
+            color: COLOR.text,
+            marginRight: 6 * baseScale
+        },
+        itemText: {
+            fontSize: 10 * baseScale,
+            color: COLOR.text,
+            lineHeight: 1.25 * baseScale,
+            flex: 1
+        },
+        connector: {
+            alignSelf: "center",
+            marginVertical: 12 * baseScale,
+            paddingVertical: 6 * baseScale,
+            paddingHorizontal: 14 * baseScale,
+            backgroundColor: COLOR.soft,
+            borderRadius: 18 * baseScale,
+            borderWidth: 1,
+            borderColor: "#e6eef2"
+        },
+        connectorText: {
+            fontSize: 9 * baseScale,
+            color: COLOR.muted,
+            textAlign: "center",
+            fontWeight: "700"
+        },
+        footer: {
+            marginTop: 14 * baseScale,
+            padding: 12 * baseScale,
+            backgroundColor: "#f0fdf4",
+            borderRadius: 8 * baseScale,
+            borderWidth: 1,
+            borderColor: "#bbf7d0"
+        },
+        footerTitle: {
+            fontSize: 12 * baseScale,
+            fontWeight: "700",
+            color: COLOR.accent,
+            marginBottom: 6 * baseScale
+        },
+        footerText: {
+            fontSize: 10 * baseScale,
+            color: COLOR.accent,
+            lineHeight: 1.3 * baseScale
+        },
+        pageNumber: {
+            position: "absolute",
+            fontSize: 9 * baseScale,
+            bottom: 18 * baseScale,
+            right: 28 * baseScale,
+            color: COLOR.muted
+        }
+    });
+};
+// Convert tailwind-like key to color
+const getPhaseColor = (tailwindColor)=>{
+    const colorMap = {
+        "bg-blue-500": "#3b82f6",
+        "bg-purple-500": "#8b5cf6",
+        "bg-green-500": "#10b981",
+        "bg-orange-500": "#f59e0b",
+        "bg-red-500": "#ef4444"
+    };
+    return colorMap[tailwindColor] || "#3b82f6";
+};
+const RoadmapPDFDocument = ({ phases = [], options = {
+    pageSize: "A4",
+    orientation: "portrait",
+    includeWatermark: true,
+    compact: false,
+    customTitle: "AIML Engineer Roadmap",
+    customSubtitle: "Your Complete Journey from Beginner to Professional"
+} })=>{
+    const { pageSize, orientation, includeWatermark, compact, customTitle, customSubtitle } = options;
+    const pageWidth = getPageWidth(pageSize, orientation);
+    const styles = createStyles(pageWidth, compact);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Document"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Page"], {
-            size: "A4",
+            size: pageSize,
+            orientation: orientation,
             style: styles.page,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                     style: styles.header,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                            style: styles.title,
-                            children: "AIML Engineer Roadmap"
+                            style: styles.logoCircle,
+                            children: "AI"
                         }, void 0, false, {
                             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 168,
-                            columnNumber: 9
+                            lineNumber: 285,
+                            columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                            style: styles.subtitle,
-                            children: "Your Complete Journey from Beginner to Professional"
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                            style: styles.headerText,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                    style: styles.title,
+                                    children: customTitle
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                                    lineNumber: 287,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                    style: styles.subtitle,
+                                    children: customSubtitle
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                                    lineNumber: 288,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 169,
-                            columnNumber: 9
+                            lineNumber: 286,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                    lineNumber: 167,
-                    columnNumber: 7
+                    lineNumber: 284,
+                    columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                    style: styles.watermark,
-                    children: "AIML-EngineerRoadmap.com"
-                }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                    lineNumber: 173,
-                    columnNumber: 7
-                }, this),
-                phases.map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                phases.map((phase, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                         wrap: false,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
@@ -924,7 +1053,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                                 style: [
-                                                    styles.phaseNumber,
+                                                    styles.phaseBadge,
                                                     {
                                                         backgroundColor: getPhaseColor(phase.color)
                                                     }
@@ -932,8 +1061,8 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                 children: phase.id
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 181,
-                                                columnNumber: 15
+                                                lineNumber: 297,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                                                 style: styles.phaseTitleContainer,
@@ -943,40 +1072,40 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         children: phase.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 185,
-                                                        columnNumber: 17
+                                                        lineNumber: 307,
+                                                        columnNumber: 19
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                                    phase.subtitle && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                                         style: styles.phaseSubtitle,
                                                         children: phase.subtitle
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 186,
-                                                        columnNumber: 17
+                                                        lineNumber: 309,
+                                                        columnNumber: 21
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                                    phase.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                                         style: styles.phaseDescription,
                                                         children: phase.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 187,
-                                                        columnNumber: 17
+                                                        lineNumber: 312,
+                                                        columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 184,
-                                                columnNumber: 15
+                                                lineNumber: 306,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                        lineNumber: 180,
-                                        columnNumber: 13
+                                        lineNumber: 296,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                                         style: styles.sectionsContainer,
-                                        children: phase.sections.map((section, sectionIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                                        children: phase.sections?.map((section, sidx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                                                 style: styles.section,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
@@ -984,13 +1113,13 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         children: section.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 195,
-                                                        columnNumber: 19
+                                                        lineNumber: 323,
+                                                        columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
                                                         style: styles.itemsList,
-                                                        children: section.items.map((item, itemIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                style: styles.item,
+                                                        children: section.items?.map((item, itemIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                                                                style: styles.itemRow,
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                                                         style: styles.itemNumber,
@@ -1000,386 +1129,196 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                        lineNumber: 199,
-                                                                        columnNumber: 25
+                                                                        lineNumber: 327,
+                                                                        columnNumber: 27
                                                                     }, this),
-                                                                    " ",
-                                                                    item
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                                                        style: styles.itemText,
+                                                                        children: item
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                                                                        lineNumber: 330,
+                                                                        columnNumber: 27
+                                                                    }, this)
                                                                 ]
                                                             }, itemIndex, true, {
                                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 198,
-                                                                columnNumber: 23
+                                                                lineNumber: 326,
+                                                                columnNumber: 25
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 196,
-                                                        columnNumber: 19
+                                                        lineNumber: 324,
+                                                        columnNumber: 21
                                                     }, this)
                                                 ]
-                                            }, sectionIndex, true, {
+                                            }, sidx, true, {
                                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 194,
-                                                columnNumber: 17
+                                                lineNumber: 322,
+                                                columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                        lineNumber: 192,
-                                        columnNumber: 13
+                                        lineNumber: 320,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                lineNumber: 178,
-                                columnNumber: 11
+                                lineNumber: 295,
+                                columnNumber: 13
                             }, this),
-                            index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                style: styles.phaseConnector,
+                            idx < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                                style: styles.connector,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                     style: styles.connectorText,
                                     children: [
                                         "↓ Next: Phase ",
-                                        phase.id + 1
+                                        phases[idx + 1].id || idx + 2
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 211,
-                                    columnNumber: 15
+                                    lineNumber: 344,
+                                    columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                lineNumber: 210,
+                                lineNumber: 343,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, phase.id || idx, true, {
+                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                        lineNumber: 294,
+                        columnNumber: 11
+                    }, this)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                    style: {
+                        marginTop: 8
+                    },
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
+                        style: styles.footer,
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                style: styles.footerTitle,
+                                children: "🎉 Congratulations!"
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                                lineNumber: 355,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
+                                style: styles.footerText,
+                                children: "You've completed the roadmap — use this as your living plan. Update, iterate, and build projects to level up."
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                                lineNumber: 356,
                                 columnNumber: 13
                             }, this)
                         ]
-                    }, phase.id, true, {
+                    }, void 0, true, {
                         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                        lineNumber: 177,
-                        columnNumber: 9
-                    }, this)),
+                        lineNumber: 354,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
+                    lineNumber: 353,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                     style: styles.pageNumber,
                     render: ({ pageNumber, totalPages })=>`${pageNumber} / ${totalPages}`,
                     fixed: true
                 }, void 0, false, {
                     fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                    lineNumber: 222,
-                    columnNumber: 7
+                    lineNumber: 364,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-            lineNumber: 165,
-            columnNumber: 5
+            lineNumber: 282,
+            columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-        lineNumber: 164,
-        columnNumber: 3
+        lineNumber: 281,
+        columnNumber: 5
     }, this);
-_c = RoadmapPDFDocument;
-// Helper function to convert Tailwind colors to hex
-const getPhaseColor = (tailwindColor)=>{
-    const colorMap = {
-        'bg-blue-500': '#3b82f6',
-        'bg-purple-500': '#8b5cf6',
-        'bg-green-500': '#10b981',
-        'bg-orange-500': '#f59e0b',
-        'bg-red-500': '#ef4444'
-    };
-    return colorMap[tailwindColor] || '#3b82f6';
 };
-const downloadRoadmapPDF = async (phases)=>{
+_c = RoadmapPDFDocument;
+const downloadRoadmapPDF = async (phases, options = {})=>{
+    const merged = {
+        pageSize: "A4",
+        orientation: "portrait",
+        includeWatermark: true,
+        compact: false,
+        customTitle: "AIML Engineer Roadmap",
+        customSubtitle: "Your Complete Journey from Beginner to Professional",
+        ...options
+    };
     try {
-        // Create the PDF blob
         const blob = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["pdf"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapPDFDocument, {
-            phases: phases
+            phases: phases,
+            options: merged
         }, void 0, false, {
             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-            lineNumber: 245,
+            lineNumber: 387,
             columnNumber: 28
         }, this)).toBlob();
-        // Generate filename with current date
-        const currentDate = new Date().toISOString().split('T')[0];
-        const filename = `AIML-Engineer-roadmap-${currentDate}.pdf`;
-        // Save the file
+        const currentDate = new Date().toISOString().split("T")[0];
+        const filename = `${merged.customTitle.toLowerCase().replace(/\s+/g, "-")}-${currentDate}.pdf`;
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$file$2d$saver$2f$dist$2f$FileSaver$2e$min$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["saveAs"])(blob, filename);
         return {
             success: true,
             filename
         };
-    } catch (error) {
-        console.error('Error generating PDF:', error);
+    } catch (err) {
+        console.error("Error generating PDF:", err);
         return {
             success: false,
-            error: error.message
+            error: err.message
         };
     }
 };
-const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PDFDownloadLink"], {
+const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
+    return await downloadRoadmapPDF(phases, options);
+};
+const PDFDownloadButton = ({ phases, options = {}, className = "", children = "Download PDF" })=>{
+    const merged = {
+        pageSize: "A4",
+        orientation: "portrait",
+        includeWatermark: true,
+        compact: false,
+        customTitle: "AIML Engineer Roadmap",
+        customSubtitle: "Your Complete Journey from Beginner to Professional",
+        ...options
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PDFDownloadLink"], {
         document: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapPDFDocument, {
-            phases: phases
+            phases: phases,
+            options: merged
         }, void 0, false, {
             fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-            lineNumber: 264,
-            columnNumber: 15
+            lineNumber: 422,
+            columnNumber: 17
         }, void 0),
-        fileName: `AIML-Engineer-roadmap-${new Date().toISOString().split('T')[0]}.pdf`,
+        fileName: `${merged.customTitle.toLowerCase().replace(/\s+/g, "-")}-${new Date().toISOString().split("T")[0]}.pdf`,
         className: className,
-        children: ({ blob, url, loading, error })=>{
-            if (loading) return 'Generating PDF...';
-            if (error) return 'Error generating PDF';
+        children: ({ loading, error })=>{
+            if (loading) return "Generating PDF…";
+            if (error) return "Error generating PDF";
             return children;
         }
     }, void 0, false, {
         fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-        lineNumber: 263,
-        columnNumber: 3
+        lineNumber: 421,
+        columnNumber: 5
     }, this);
-_c1 = PDFDownloadButton;
-const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
-    const { includeWatermark = true, customTitle = "AIML Engineer Roadmap", customSubtitle = "Your Complete Journey from Beginner to Professional", pageSize = "A4", orientation = "portrait" } = options;
-    try {
-        const AdvancedPDFDocument = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Document"], {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Page"], {
-                    size: pageSize,
-                    orientation: orientation,
-                    style: styles.page,
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                            style: styles.header,
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                    style: styles.title,
-                                    children: customTitle
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 292,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                    style: styles.subtitle,
-                                    children: customSubtitle
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 293,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 291,
-                            columnNumber: 11
-                        }, this),
-                        phases.map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                wrap: false,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                        style: styles.phaseContainer,
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                                style: styles.phaseHeader,
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                        style: [
-                                                            styles.phaseNumber,
-                                                            {
-                                                                backgroundColor: getPhaseColor(phase.color)
-                                                            }
-                                                        ],
-                                                        children: phase.id
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 303,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                                        style: styles.phaseTitleContainer,
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                style: styles.phaseTitle,
-                                                                children: phase.title
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 307,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                style: styles.phaseSubtitle,
-                                                                children: phase.subtitle
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 308,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                style: styles.phaseDescription,
-                                                                children: phase.description
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 309,
-                                                                columnNumber: 21
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 306,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 302,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                                style: styles.sectionsContainer,
-                                                children: phase.sections.map((section, sectionIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                                        style: styles.section,
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                style: styles.sectionTitle,
-                                                                children: section.title
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 316,
-                                                                columnNumber: 23
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                                                style: styles.itemsList,
-                                                                children: section.items.map((item, itemIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                        style: styles.item,
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                                                                style: styles.itemNumber,
-                                                                                children: [
-                                                                                    itemIndex + 1,
-                                                                                    "."
-                                                                                ]
-                                                                            }, void 0, true, {
-                                                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                                lineNumber: 320,
-                                                                                columnNumber: 29
-                                                                            }, this),
-                                                                            " ",
-                                                                            item
-                                                                        ]
-                                                                    }, itemIndex, true, {
-                                                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                        lineNumber: 319,
-                                                                        columnNumber: 27
-                                                                    }, this))
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                                lineNumber: 317,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        ]
-                                                    }, sectionIndex, true, {
-                                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                        lineNumber: 315,
-                                                        columnNumber: 21
-                                                    }, this))
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                                lineNumber: 313,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                        lineNumber: 301,
-                                        columnNumber: 15
-                                    }, this),
-                                    index < phases.length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                                        style: styles.phaseConnector,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                            style: styles.connectorText,
-                                            children: [
-                                                "↓ Next: Phase ",
-                                                phase.id + 1
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                            lineNumber: 331,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                        lineNumber: 330,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, phase.id, true, {
-                                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                lineNumber: 300,
-                                columnNumber: 13
-                            }, this)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["View"], {
-                            style: styles.footer,
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                    style: styles.footerTitle,
-                                    children: "🎉 Congratulations!"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 340,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                                    style: styles.footerText,
-                                    children: "You've completed AIML  Engineer Roadmap and are now ready to take on professional  challenges."
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                                    lineNumber: 341,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 339,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
-                            style: styles.pageNumber,
-                            render: ({ pageNumber, totalPages })=>`${pageNumber} / ${totalPages}`,
-                            fixed: true
-                        }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                            lineNumber: 346,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                    lineNumber: 289,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-                lineNumber: 288,
-                columnNumber: 7
-            }, this);
-        const blob = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["pdf"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AdvancedPDFDocument, {}, void 0, false, {
-            fileName: "[project]/app/Roadmaps/Aiml/downloadPdf.jsx",
-            lineNumber: 353,
-            columnNumber: 28
-        }, this)).toBlob();
-        const currentDate = new Date().toISOString().split('T')[0];
-        const filename = `${customTitle.toLowerCase().replace(/\s+/g, '-')}-${currentDate}.pdf`;
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$file$2d$saver$2f$dist$2f$FileSaver$2e$min$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["saveAs"])(blob, filename);
-        return {
-            success: true,
-            filename
-        };
-    } catch (error) {
-        console.error('Error generating advanced PDF:', error);
-        return {
-            success: false,
-            error: error.message
-        };
-    }
 };
+_c1 = PDFDownloadButton;
+const __TURBOPACK__default__export__ = RoadmapPDFDocument;
 var _c, _c1;
 __turbopack_context__.k.register(_c, "RoadmapPDFDocument");
 __turbopack_context__.k.register(_c1, "PDFDownloadButton");

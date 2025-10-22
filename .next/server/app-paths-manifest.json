@@ -1,5 +1,7 @@
 {
-  "/Roadmaps/Frontend/page": "app/Roadmaps/Frontend/page.js",
-  "/Roadmaps/Product-Manager/page": "app/Roadmaps/Product-Manager/page.js",
+  "/Home/page": "app/Home/page.js",
+  "/Signup/page": "app/Signup/page.js",
+  "/ai-roadmap-generator/page": "app/ai-roadmap-generator/page.js",
+  "/api/generate-roadmap/route": "app/api/generate-roadmap/route.js",
   "/page": "app/page.js"
 }

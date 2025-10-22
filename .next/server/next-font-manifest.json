@@ -1,9 +1,12 @@
 {
   "app": {
-    "[project]/app/Roadmaps/Frontend/page": [
+    "[project]/app/Home/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Roadmaps/Product-Manager/page": [
+    "[project]/app/Signup/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/ai-roadmap-generator/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
     "[project]/app/page": [
