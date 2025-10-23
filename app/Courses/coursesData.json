@@ -80,6 +80,19 @@
       
     },
     {
+      "id": 98,
+      "category": "Web Development",
+      "title": "Java Full-Stack Development Course",
+      "level": "Beginner to advance",
+      "rating": 4.7,
+      "image": "javaf",
+      "videoId": "https://youtube.com/watch?v=c2TAUJqGiJ0",
+      "badge": "HOT",
+      "language": "Hindi",
+      "docs": "/Docs/javaFullStack"
+
+    },
+    {
       "id": 5,
       "category": "App Development",
       "title": "React Native Mobile Apps",

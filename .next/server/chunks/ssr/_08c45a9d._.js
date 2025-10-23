@@ -27,8 +27,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 function ResourceFinder() {
-    const [courseQuery, setCourseQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const [language, setLanguage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('hindi');
+    const [courseQuery, setCourseQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [language, setLanguage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("hindi");
     const [preferLatest, setPreferLatest] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [result, setResult] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -39,10 +39,10 @@ function ResourceFinder() {
         setError(null);
         setResult(null);
         try {
-            const response = await fetch('/api/search-resources', {
-                method: 'POST',
+            const response = await fetch("/api/search-resources", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     query: courseQuery,
@@ -52,42 +52,42 @@ function ResourceFinder() {
             });
             const data = await response.json();
             if (!response.ok) {
-                throw new Error(data.error || 'Failed to fetch resource');
+                throw new Error(data.error || "Failed to fetch resource");
             }
             setResult(data);
             setTimeout(()=>{
-                document.getElementById('result-section')?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                document.getElementById("result-section")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
                 });
             }, 100);
         } catch (err) {
             setError(err.message);
-            console.error('Error fetching resource:', err);
+            console.error("Error fetching resource:", err);
         } finally{
             setIsLoading(false);
         }
     };
     const handleKeyPress = (e)=>{
-        if (e.key === 'Enter') {
+        if (e.key === "Enter") {
             handleFetchCourse();
         }
     };
     const formatDuration = (duration)=>{
-        if (!duration) return 'N/A';
+        if (!duration) return "N/A";
         const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
         if (!match) return duration;
-        const hours = (match[1] || '').replace('H', '');
-        const minutes = (match[2] || '').replace('M', '');
-        const seconds = (match[3] || '').replace('S', '');
-        let result = '';
+        const hours = (match[1] || "").replace("H", "");
+        const minutes = (match[2] || "").replace("M", "");
+        const seconds = (match[3] || "").replace("S", "");
+        let result = "";
         if (hours) result += `${hours}h `;
         if (minutes) result += `${minutes}m `;
         if (seconds && !hours) result += `${seconds}s`;
-        return result.trim() || 'N/A';
+        return result.trim() || "N/A";
     };
     const formatNumber = (num)=>{
-        if (!num) return '0';
+        if (!num) return "0";
         if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
         if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
         return num.toString();
@@ -119,7 +119,7 @@ function ResourceFinder() {
                                             className: "w-7 h-7 sm:w-10 sm:h-10 text-white flex-shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 104,
+                                            lineNumber: 117,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -127,13 +127,13 @@ function ResourceFinder() {
                                             children: "AI Resource Finder"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 105,
+                                            lineNumber: 118,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 103,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -141,13 +141,13 @@ function ResourceFinder() {
                                     children: "Find the perfect YouTube course, powered by AI"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 109,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 102,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -161,7 +161,7 @@ function ResourceFinder() {
                                             children: "What would you like to learn?"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 118,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -171,7 +171,7 @@ function ResourceFinder() {
                                                     className: "absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 122,
+                                                    lineNumber: 135,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -183,19 +183,19 @@ function ResourceFinder() {
                                                     className: "w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-700 placeholder-gray-400 transition-all text-sm sm:text-base"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 123,
+                                                    lineNumber: 136,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 121,
+                                            lineNumber: 134,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 117,
+                                    lineNumber: 130,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -208,49 +208,24 @@ function ResourceFinder() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Course Language"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 136,
+                                            lineNumber: 149,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "grid grid-cols-2 gap-2 sm:gap-4",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>setLanguage('hindi'),
-                                                    className: `relative flex items-center justify-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl font-medium transition-all ${language === 'hindi' ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105' : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200'}`,
+                                                    onClick: ()=>setLanguage("hindi"),
+                                                    className: `relative flex items-center justify-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl font-medium transition-all ${language === "hindi" ? "bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105" : "bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200"}`,
                                                     children: [
-                                                        language === 'hindi' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute top-2 right-2 w-2 h-2 bg-white rounded-full"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 150,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-xs sm:text-base",
-                                                            children: "हिंदी Hindi"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 152,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 141,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>setLanguage('english'),
-                                                    className: `relative flex items-center justify-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl font-medium transition-all ${language === 'english' ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105' : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200'}`,
-                                                    children: [
-                                                        language === 'english' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        language === "hindi" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute top-2 right-2 w-2 h-2 bg-white rounded-full"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
@@ -259,7 +234,7 @@ function ResourceFinder() {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "text-xs sm:text-base",
-                                                            children: "English"
+                                                            children: "हिंदी Hindi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
                                                             lineNumber: 165,
@@ -270,17 +245,42 @@ function ResourceFinder() {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
                                                     lineNumber: 154,
                                                     columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>setLanguage("english"),
+                                                    className: `relative flex items-center justify-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl font-medium transition-all ${language === "english" ? "bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105" : "bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200"}`,
+                                                    children: [
+                                                        language === "english" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "absolute top-2 right-2 w-2 h-2 bg-white rounded-full"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Resource-Finder/page.jsx",
+                                                            lineNumber: 176,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-xs sm:text-base",
+                                                            children: "English"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Resource-Finder/page.jsx",
+                                                            lineNumber: 178,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Resource-Finder/page.jsx",
+                                                    lineNumber: 167,
+                                                    columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 140,
+                                            lineNumber: 153,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 135,
+                                    lineNumber: 148,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -293,14 +293,14 @@ function ResourceFinder() {
                                             className: "w-4 h-4 sm:w-5 sm:h-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 172,
+                                            lineNumber: 185,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
                                             className: "w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 transition-colors"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 178,
+                                            lineNumber: 191,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -308,13 +308,13 @@ function ResourceFinder() {
                                             children: "Prefer Latest Videos"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 179,
+                                            lineNumber: 192,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 171,
+                                    lineNumber: 184,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -327,14 +327,14 @@ function ResourceFinder() {
                                                 className: "w-4 h-4 sm:w-5 sm:h-5 animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                lineNumber: 190,
+                                                lineNumber: 205,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Finding Best Resource..."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                lineNumber: 191,
+                                                lineNumber: 206,
                                                 columnNumber: 19
                                             }, this)
                                         ]
@@ -344,21 +344,21 @@ function ResourceFinder() {
                                                 className: "w-4 h-4 sm:w-5 sm:h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                lineNumber: 195,
+                                                lineNumber: 210,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Find Best Resource"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                lineNumber: 196,
+                                                lineNumber: 211,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 183,
+                                    lineNumber: 198,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -366,19 +366,19 @@ function ResourceFinder() {
                                     children: "Press Enter or click to find the best course"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 201,
+                                    lineNumber: 216,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 115,
+                            lineNumber: 128,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                    lineNumber: 100,
+                    lineNumber: 113,
                     columnNumber: 9
                 }, this),
                 error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -388,7 +388,7 @@ function ResourceFinder() {
                             className: "w-2 h-2 bg-red-500 rounded-full animate-pulse"
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 210,
+                            lineNumber: 225,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -396,13 +396,13 @@ function ResourceFinder() {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 211,
+                            lineNumber: 226,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                    lineNumber: 209,
+                    lineNumber: 224,
                     columnNumber: 11
                 }, this),
                 result && result.video && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -419,14 +419,14 @@ function ResourceFinder() {
                                             className: "w-5 h-5 sm:w-6 sm:h-6 text-purple-600"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 222,
+                                            lineNumber: 237,
                                             columnNumber: 19
                                         }, this),
                                         "AI Course Analysis"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 221,
+                                    lineNumber: 236,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -434,13 +434,13 @@ function ResourceFinder() {
                                     children: result.aiSummary
                                 }, void 0, false, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 225,
+                                    lineNumber: 240,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 220,
+                            lineNumber: 235,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -455,7 +455,7 @@ function ResourceFinder() {
                                                 className: "w-5 h-5 text-yellow-300"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                lineNumber: 235,
+                                                lineNumber: 250,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -463,18 +463,18 @@ function ResourceFinder() {
                                                 children: "Best Match for You"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                lineNumber: 236,
+                                                lineNumber: 251,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/Resource-Finder/page.jsx",
-                                        lineNumber: 234,
+                                        lineNumber: 249,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 233,
+                                    lineNumber: 248,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -486,7 +486,7 @@ function ResourceFinder() {
                                             className: "w-full h-48 sm:h-64 object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 241,
+                                            lineNumber: 258,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -496,14 +496,14 @@ function ResourceFinder() {
                                                     className: "w-3 h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 264,
                                                     columnNumber: 19
                                                 }, this),
                                                 formatDuration(result.video.duration)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 246,
+                                            lineNumber: 263,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -511,7 +511,7 @@ function ResourceFinder() {
                                             children: "TOP PICK"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 250,
+                                            lineNumber: 267,
                                             columnNumber: 17
                                         }, this),
                                         preferLatest && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -519,13 +519,13 @@ function ResourceFinder() {
                                             children: "LATEST"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 254,
+                                            lineNumber: 271,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 240,
+                                    lineNumber: 257,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -536,7 +536,7 @@ function ResourceFinder() {
                                             children: result.video.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 261,
+                                            lineNumber: 278,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -546,14 +546,14 @@ function ResourceFinder() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 266,
+                                                    lineNumber: 283,
                                                     columnNumber: 19
                                                 }, this),
                                                 result.video.channelTitle
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 265,
+                                            lineNumber: 282,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -566,7 +566,7 @@ function ResourceFinder() {
                                                             className: "w-4 h-4 text-blue-500"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 273,
+                                                            lineNumber: 290,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -574,7 +574,7 @@ function ResourceFinder() {
                                                             children: formatNumber(result.video.viewCount)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 274,
+                                                            lineNumber: 291,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -582,13 +582,13 @@ function ResourceFinder() {
                                                             children: "views"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 275,
+                                                            lineNumber: 294,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 272,
+                                                    lineNumber: 289,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -598,7 +598,7 @@ function ResourceFinder() {
                                                             className: "w-4 h-4 text-green-500"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 278,
+                                                            lineNumber: 297,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -606,7 +606,7 @@ function ResourceFinder() {
                                                             children: formatNumber(result.video.likeCount)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 279,
+                                                            lineNumber: 298,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -614,13 +614,13 @@ function ResourceFinder() {
                                                             children: "likes"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 280,
+                                                            lineNumber: 301,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 277,
+                                                    lineNumber: 296,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -630,7 +630,7 @@ function ResourceFinder() {
                                                             className: "w-4 h-4 text-purple-500"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 283,
+                                                            lineNumber: 304,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -638,19 +638,19 @@ function ResourceFinder() {
                                                             children: formatDate(result.video.publishedAt)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 284,
+                                                            lineNumber: 305,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 282,
+                                                    lineNumber: 303,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 271,
+                                            lineNumber: 288,
                                             columnNumber: 17
                                         }, this),
                                         result.courseContent && result.courseContent.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -663,14 +663,14 @@ function ResourceFinder() {
                                                             className: "w-5 h-5 text-indigo-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 292,
+                                                            lineNumber: 315,
                                                             columnNumber: 23
                                                         }, this),
                                                         "What You'll Learn"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 291,
+                                                    lineNumber: 314,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -682,7 +682,7 @@ function ResourceFinder() {
                                                                     className: "w-5 h-5 text-green-500 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                                    lineNumber: 298,
+                                                                    lineNumber: 324,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -690,24 +690,24 @@ function ResourceFinder() {
                                                                     children: content
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                                    lineNumber: 299,
+                                                                    lineNumber: 325,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, index, true, {
                                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                            lineNumber: 297,
+                                                            lineNumber: 320,
                                                             columnNumber: 25
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 295,
+                                                    lineNumber: 318,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 290,
+                                            lineNumber: 313,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -720,7 +720,7 @@ function ResourceFinder() {
                                                     className: "w-4 h-4 sm:w-5 sm:h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 315,
+                                                    lineNumber: 341,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Watch on YouTube",
@@ -728,13 +728,13 @@ function ResourceFinder() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 317,
+                                                    lineNumber: 343,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 309,
+                                            lineNumber: 335,
                                             columnNumber: 17
                                         }, this),
                                         result.video.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -745,7 +745,7 @@ function ResourceFinder() {
                                                     children: "About this course:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 349,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -753,31 +753,31 @@ function ResourceFinder() {
                                                     children: result.video.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                                    lineNumber: 324,
+                                                    lineNumber: 352,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                                            lineNumber: 322,
+                                            lineNumber: 348,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                                    lineNumber: 260,
+                                    lineNumber: 277,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 232,
+                            lineNumber: 247,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                    lineNumber: 217,
+                    lineNumber: 232,
                     columnNumber: 11
                 }, this),
                 result && !result.video && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -789,12 +789,12 @@ function ResourceFinder() {
                                 className: "w-8 h-8 text-yellow-600"
                             }, void 0, false, {
                                 fileName: "[project]/app/Resource-Finder/page.jsx",
-                                lineNumber: 338,
+                                lineNumber: 366,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 337,
+                            lineNumber: 365,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -802,7 +802,7 @@ function ResourceFinder() {
                             children: "No Course Found"
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 340,
+                            lineNumber: 368,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -810,25 +810,25 @@ function ResourceFinder() {
                             children: result.aiSummary
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 341,
+                            lineNumber: 371,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             onClick: ()=>{
                                 setResult(null);
-                                setCourseQuery('');
+                                setCourseQuery("");
                             },
                             className: "px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all",
                             children: "Try Another Search"
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 342,
+                            lineNumber: 374,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                    lineNumber: 336,
+                    lineNumber: 364,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -839,7 +839,7 @@ function ResourceFinder() {
                             children: "Powered by AI • Finds the best YouTube resource for you"
                         }, void 0, false, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 356,
+                            lineNumber: 388,
                             columnNumber: 11
                         }, this),
                         result?.responseTime && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -850,24 +850,24 @@ function ResourceFinder() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Resource-Finder/page.jsx",
-                            lineNumber: 360,
+                            lineNumber: 392,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Resource-Finder/page.jsx",
-                    lineNumber: 355,
+                    lineNumber: 387,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/Resource-Finder/page.jsx",
-            lineNumber: 98,
+            lineNumber: 111,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/Resource-Finder/page.jsx",
-        lineNumber: 97,
+        lineNumber: 110,
         columnNumber: 5
     }, this);
 }

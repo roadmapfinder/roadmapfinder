@@ -623,7 +623,7 @@ async function GET() {
     });
 }
 const runtime = 'nodejs'; // or 'edge' for edge runtime
-const dynamic = 'force-dynamic'; // Disable caching for this route
+const dynamic = 'force-dynamic'; // Disable caching for thi
 }}),
 
 };

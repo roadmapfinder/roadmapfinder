@@ -1,10 +1,23 @@
-"use client"
-import React, { useState } from 'react';
-import { Search, BookOpen, Video, Globe, ExternalLink, Clock, ThumbsUp, Eye, Calendar, Loader2, Sparkles, CheckCircle } from 'lucide-react';
+"use client";
+import React, { useState } from "react";
+import {
+  Search,
+  BookOpen,
+  Video,
+  Globe,
+  ExternalLink,
+  Clock,
+  ThumbsUp,
+  Eye,
+  Calendar,
+  Loader2,
+  Sparkles,
+  CheckCircle,
+} from "lucide-react";
 
 export default function ResourceFinder() {
-  const [courseQuery, setCourseQuery] = useState('');
-  const [language, setLanguage] = useState('hindi');
+  const [courseQuery, setCourseQuery] = useState("");
+  const [language, setLanguage] = useState("hindi");
   const [preferLatest, setPreferLatest] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -18,65 +31,65 @@ export default function ResourceFinder() {
     setResult(null);
 
     try {
-      const response = await fetch('/api/search-resources', {
-        method: 'POST',
+      const response = await fetch("/api/search-resources", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           query: courseQuery,
           language,
-          preferLatest
+          preferLatest,
         }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to fetch resource');
+        throw new Error(data.error || "Failed to fetch resource");
       }
 
       setResult(data);
 
       setTimeout(() => {
-        document.getElementById('result-section')?.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start' 
+        document.getElementById("result-section")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
       }, 100);
     } catch (err) {
       setError(err.message);
-      console.error('Error fetching resource:', err);
+      console.error("Error fetching resource:", err);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleFetchCourse();
     }
   };
 
   const formatDuration = (duration) => {
-    if (!duration) return 'N/A';
+    if (!duration) return "N/A";
     const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
     if (!match) return duration;
 
-    const hours = (match[1] || '').replace('H', '');
-    const minutes = (match[2] || '').replace('M', '');
-    const seconds = (match[3] || '').replace('S', '');
+    const hours = (match[1] || "").replace("H", "");
+    const minutes = (match[2] || "").replace("M", "");
+    const seconds = (match[3] || "").replace("S", "");
 
-    let result = '';
+    let result = "";
     if (hours) result += `${hours}h `;
     if (minutes) result += `${minutes}m `;
     if (seconds && !hours) result += `${seconds}s`;
 
-    return result.trim() || 'N/A';
+    return result.trim() || "N/A";
   };
 
   const formatNumber = (num) => {
-    if (!num) return '0';
+    if (!num) return "0";
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
     if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
     return num.toString();
@@ -139,27 +152,27 @@ export default function ResourceFinder() {
               </label>
               <div className="grid grid-cols-2 gap-2 sm:gap-4">
                 <button
-                  onClick={() => setLanguage('hindi')}
+                  onClick={() => setLanguage("hindi")}
                   className={`relative flex items-center justify-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl font-medium transition-all ${
-                    language === 'hindi'
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105'
-                      : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200'
+                    language === "hindi"
+                      ? "bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105"
+                      : "bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200"
                   }`}
                 >
-                  {language === 'hindi' && (
+                  {language === "hindi" && (
                     <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full"></div>
                   )}
                   <span className="text-xs sm:text-base">हिंदी Hindi</span>
                 </button>
                 <button
-                  onClick={() => setLanguage('english')}
+                  onClick={() => setLanguage("english")}
                   className={`relative flex items-center justify-center gap-2 px-3 sm:px-4 py-3 sm:py-4 rounded-xl font-medium transition-all ${
-                    language === 'english'
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105'
-                      : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200'
+                    language === "english"
+                      ? "bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105"
+                      : "bg-gray-50 text-gray-600 hover:bg-gray-100 border-2 border-gray-200"
                   }`}
                 >
-                  {language === 'english' && (
+                  {language === "english" && (
                     <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full"></div>
                   )}
                   <span className="text-xs sm:text-base">English</span>
@@ -176,7 +189,9 @@ export default function ResourceFinder() {
                 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer"
               />
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-500 transition-colors" />
-              <span className="text-gray-700 font-medium text-xs sm:text-base">Prefer Latest Videos</span>
+              <span className="text-gray-700 font-medium text-xs sm:text-base">
+                Prefer Latest Videos
+              </span>
             </label>
 
             {/* Search Button */}
@@ -233,13 +248,15 @@ export default function ResourceFinder() {
               <div className="bg-gradient-to-r from-blue-500 to-indigo-500 px-4 py-3">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-yellow-300" />
-                  <h2 className="text-white font-bold text-sm sm:text-base">Best Match for You</h2>
+                  <h2 className="text-white font-bold text-sm sm:text-base">
+                    Best Match for You
+                  </h2>
                 </div>
               </div>
 
               <div className="relative">
-                <img 
-                  src={result.video.thumbnail} 
+                <img
+                  src={result.video.thumbnail}
                   alt={result.video.title}
                   className="w-full h-48 sm:h-64 object-cover"
                 />
@@ -271,17 +288,23 @@ export default function ResourceFinder() {
                 <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600 mb-5 pb-5 border-b border-gray-200">
                   <div className="flex items-center gap-1.5">
                     <Eye className="w-4 h-4 text-blue-500" />
-                    <span className="font-medium">{formatNumber(result.video.viewCount)}</span>
+                    <span className="font-medium">
+                      {formatNumber(result.video.viewCount)}
+                    </span>
                     <span className="text-gray-500">views</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <ThumbsUp className="w-4 h-4 text-green-500" />
-                    <span className="font-medium">{formatNumber(result.video.likeCount)}</span>
+                    <span className="font-medium">
+                      {formatNumber(result.video.likeCount)}
+                    </span>
                     <span className="text-gray-500">likes</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Calendar className="w-4 h-4 text-purple-500" />
-                    <span className="font-medium">{formatDate(result.video.publishedAt)}</span>
+                    <span className="font-medium">
+                      {formatDate(result.video.publishedAt)}
+                    </span>
                   </div>
                 </div>
 
@@ -294,7 +317,10 @@ export default function ResourceFinder() {
                     </h4>
                     <div className="space-y-3">
                       {result.courseContent.map((content, index) => (
-                        <div key={index} className="flex items-start gap-3 group">
+                        <div
+                          key={index}
+                          className="flex items-start gap-3 group"
+                        >
                           <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                           <p className="text-gray-700 text-sm sm:text-base leading-relaxed flex-1">
                             {content}
@@ -306,9 +332,9 @@ export default function ResourceFinder() {
                 )}
 
                 {/* Watch Button */}
-                <a 
-                  href={result.video.url} 
-                  target="_blank" 
+                <a
+                  href={result.video.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white text-sm sm:text-base font-semibold rounded-lg hover:from-red-700 hover:to-red-600 transition-all shadow-lg hover:shadow-xl"
                 >
@@ -320,7 +346,9 @@ export default function ResourceFinder() {
                 {/* Description Preview */}
                 {result.video.description && (
                   <div className="mt-5 pt-5 border-t border-gray-200">
-                    <h4 className="text-sm font-semibold text-gray-700 mb-2">About this course:</h4>
+                    <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                      About this course:
+                    </h4>
                     <p className="text-xs sm:text-sm text-gray-600 line-clamp-4 leading-relaxed">
                       {result.video.description}
                     </p>
@@ -337,12 +365,16 @@ export default function ResourceFinder() {
             <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Search className="w-8 h-8 text-yellow-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">No Course Found</h3>
-            <p className="text-gray-600 text-sm sm:text-base mb-4">{result.aiSummary}</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              No Course Found
+            </h3>
+            <p className="text-gray-600 text-sm sm:text-base mb-4">
+              {result.aiSummary}
+            </p>
             <button
               onClick={() => {
                 setResult(null);
-                setCourseQuery('');
+                setCourseQuery("");
               }}
               className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
             >

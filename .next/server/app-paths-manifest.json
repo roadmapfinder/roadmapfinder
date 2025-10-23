@@ -1,7 +1,7 @@
 {
-  "/Home/page": "app/Home/page.js",
-  "/Signup/page": "app/Signup/page.js",
+  "/Resource-Finder/page": "app/Resource-Finder/page.js",
   "/ai-roadmap-generator/page": "app/ai-roadmap-generator/page.js",
   "/api/generate-roadmap/route": "app/api/generate-roadmap/route.js",
+  "/api/search-resources/route": "app/api/search-resources/route.js",
   "/page": "app/page.js"
 }
