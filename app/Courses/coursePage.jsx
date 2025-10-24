@@ -125,7 +125,7 @@ import n8nh from './CoursesImage/n8nh.jpg'
 import software from "./CoursesImage/software.jpg"
 import nest from "./CoursesImage/nest.jpg"
 import aibasics from "./CoursesImage/aibasics.jpg"
-import javaf from "./CoursesImage/javaf.jpg"
+import javaf from "./CoursesImage/javaF.jpg"
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
