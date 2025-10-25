@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import { Brain, Download, Map, FileText, FolderOpen, HelpCircle, ChevronDown, Menu, X, Loader2 } from 'lucide-react';
+import { Brain, Download, Map, FileText, FolderOpen, HelpCircle, ChevronDown, Menu, X, Loader2, Bot, Sparkles } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import Docs from './docs';
 import Projects from './projects';
 import Faq from './Faq';
@@ -11,6 +12,8 @@ const AIMLMasteryRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [isBotHovered, setIsBotHovered] = useState(false);
+  const router = useRouter();
 
   // Handle PDF download with loading state
   const handlePDFDownload = async () => {
@@ -27,6 +30,11 @@ const AIMLMasteryRoadmap = () => {
     } finally {
       setIsDownloading(false);
     }
+  };
+
+  // Handle AI Bot button click
+  const handleAIBotClick = () => {
+    router.push('/ai-roadmap-generator');
   };
 
   const renderContent = () => {
@@ -289,6 +297,43 @@ const AIMLMasteryRoadmap = () => {
 
         {/* Content */}
         {renderContent()}
+      </div>
+
+      {/* AI Bot Floating Button - Fixed Bottom Right */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={handleAIBotClick}
+          onMouseEnter={() => setIsBotHovered(true)}
+          onMouseLeave={() => setIsBotHovered(false)}
+          className="relative group"
+          aria-label="AI Roadmap Generator"
+        >
+          {/* NEW Badge */}
+          <div className="absolute -top-2 -right-2 bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg animate-pulse z-10">
+            NEW
+          </div>
+
+          {/* Main Button */}
+          <div className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full p-4 md:p-5 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-purple-500/50">
+            <Bot size={28} className="md:w-8 md:h-8" />
+          </div>
+
+          {/* Sparkle Effect */}
+          <div className="absolute top-0 right-0 -mt-1 -mr-1">
+            <Sparkles size={16} className="text-yellow-400 animate-pulse" />
+          </div>
+
+          {/* Tooltip on Hover */}
+          {isBotHovered && (
+            <div className="absolute bottom-full right-0 mb-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg whitespace-nowrap shadow-xl">
+              AI Roadmap Generator
+              <div className="absolute top-full right-6 -mt-1 border-8 border-transparent border-t-gray-900"></div>
+            </div>
+          )}
+
+          {/* Pulse Ring Animation */}
+          <div className="absolute inset-0 rounded-full bg-purple-400 animate-ping opacity-20"></div>
+        </button>
       </div>
     </div>
   );

@@ -1,3 +1,8 @@
 {
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
+  "/Roadmaps/Android/page": "app/Roadmaps/Android/page.js",
+  "/ai-roadmap-generator/page": "app/ai-roadmap-generator/page.js",
+  "/api/generate-roadmap/route": "app/api/generate-roadmap/route.js",
   "/page": "app/page.js"
 }

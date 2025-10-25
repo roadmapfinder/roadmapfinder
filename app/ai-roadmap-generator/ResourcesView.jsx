@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { Youtube, BookOpen, Users, Wrench, FileText, GraduationCap, ExternalLink } from 'lucide-react';
 

@@ -33,7 +33,8 @@ import {
   Shield,
   Clock,
   Lightbulb,
-  Contact
+  Contact,
+  Bot
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -130,6 +131,13 @@ export default function HomePage() {
       href: "/RoadmapPage",
       protected: true,
       feature: "Roadmaps",
+    },
+    {
+      name: " AI Roadmaps",
+      icon: <Bot size={24} className="mr-3" />,
+      href: "/ai-roadmap-generator",
+      protected: true,
+      feature: "AI Powered Roadmaps",
     },
     {
       name: "Courses",

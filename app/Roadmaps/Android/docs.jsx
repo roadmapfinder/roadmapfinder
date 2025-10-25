@@ -1,8 +1,6 @@
-// components/AndroidDocs.jsx
 import React from "react";
-import { ExternalLink } from "lucide-react";
 
-const docsList = [
+ const docsList = [
   {
     title: "Jetpack Compose Documentation",
     description:
