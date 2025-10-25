@@ -1,6 +1,7 @@
 import React from "react";
+import { ExternalLink } from "lucide-react"; 
 
- const docsList = [
+const docsList = [
   {
     title: "Jetpack Compose Documentation",
     description:
@@ -77,7 +78,6 @@ export default function AndroidDocs() {
   return (
     <section className="px-6 py-12 bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           📘 Android Documentation Resources
         </h1>
@@ -87,7 +87,6 @@ export default function AndroidDocs() {
           sample apps.
         </p>
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {docsList.map((doc) => (
             <a
@@ -107,9 +106,7 @@ export default function AndroidDocs() {
                   aria-hidden="true"
                 />
               </div>
-
               <p className="mt-3 text-sm text-gray-600">{doc.description}</p>
-
               <p className="mt-4 text-xs text-indigo-600 font-medium">
                 {doc.citation}
               </p>

@@ -1,12 +1,13 @@
 (globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([typeof document === "object" ? document.currentScript : undefined, {
 
-"[project]/app/Roadmaps/Android/docs.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Roadmaps/Angular/docs.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
+// components/Docs.jsx
 __turbopack_context__.s({
-    "default": (()=>AndroidDocs)
+    "default": (()=>Docs)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -16,67 +17,49 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 const docsList = [
     {
-        title: "Jetpack Compose Documentation",
-        description: "Google’s official guide to building UI with Jetpack Compose — state, modifiers, theming, performance, and more.",
-        url: "https://developer.android.com/develop/ui/compose/documentation",
-        citation: "Android Developers"
+        title: "Angular (Core) Documentation",
+        description: "The primary source for everything Angular — guides, tutorials, API reference, and examples.",
+        url: "https://angular.io/docs",
+        citation: "Angular Docs"
     },
     {
-        title: "Guide to App Architecture",
-        description: "Best practices for structuring Android apps with ViewModel, repositories, data layers, and recommended patterns.",
-        url: "https://developer.android.com/topic/architecture",
-        citation: "Android Developers"
+        title: "Angular Architecture Guide",
+        description: "Understand how Angular apps are structured: modules, components, services, and dependency injection.",
+        url: "https://angular.io/guide/architecture",
+        citation: "Angular Architecture"
     },
     {
-        title: "Dependency Injection with Hilt",
-        description: "Official docs on using Hilt for dependency injection — Gradle setup, scopes, lifecycle-aware injection.",
-        url: "https://developer.android.com/training/dependency-injection/hilt-android",
-        citation: "Android Developers"
+        title: "Angular Components",
+        description: "Learn about component anatomy, lifecycle hooks, template syntax, and best practices.",
+        url: "https://angular.io/guide/components",
+        citation: "Angular Components"
     },
     {
-        title: "Architecting Your Compose UI",
-        description: "Learn how to apply unidirectional data flow (UDF) and connect ViewModels with composables in Compose.",
-        url: "https://developer.android.com/develop/ui/compose/architecture",
-        citation: "Android Developers"
+        title: "Angular Signals",
+        description: "Reactive primitives in Angular — signals, computed values, and effects for state management.",
+        url: "https://angular.io/guide/signals",
+        citation: "Angular Signals"
     },
     {
-        title: "Kotlin for Android Overview",
-        description: "The official Kotlin guide for Android — why Kotlin is preferred, Android Studio integration, and modern patterns.",
-        url: "https://kotlinlang.org/docs/android-overview.html",
-        citation: "Kotlin"
+        title: "Angular Releases & Versions",
+        description: "Stay updated with Angular’s release cycles, support windows, and migration guides.",
+        url: "https://angular.dev/reference/releases",
+        citation: "Angular Release Info"
     },
     {
-        title: "Jetpack Compose Clean Architecture (Best Practices)",
-        description: "A detailed article on structuring Compose apps with clean layering: UI → Domain → Data, ViewModels, and use-cases.",
-        url: "https://medium.com/%40ignatiah.x/jetpack-compose-clean-architecture-best-practices-for-scalable-projects-5238026ab207",
-        citation: "Medium"
+        title: "NgRx Documentation",
+        description: "Official docs for NgRx state management — store, actions, reducers, effects, and selectors.",
+        url: "https://ngrx.io/",
+        citation: "NgRx Docs"
     },
     {
-        title: "Clean Architecture Patterns in Android",
-        description: "Insights on modularization, reactive programming, and maintainability with Clean Architecture principles.",
-        url: "https://moldstud.com/articles/p-master-clean-architecture-patterns-for-building-successful-android-apps",
-        citation: "MoldStud"
-    },
-    {
-        title: "NowInAndroid (Sample App by Google)",
-        description: "A reference project demonstrating modern Android tech: Jetpack Compose, Hilt, Paging, and MVI/MVVM.",
-        url: "https://github.com/android/nowinandroid",
-        citation: "Google Open Source"
-    },
-    {
-        title: "Android Clean Architecture Movie App",
-        description: "Kotlin + Compose + offline-first + Clean Architecture + unit tests + pagination — great project reference.",
-        url: "https://aliasadi.github.io/Android-Clean-Architecture/",
-        citation: "Community"
-    },
-    {
-        title: "WeatherApp (Clean Architecture Example)",
-        description: "Jetpack Compose + MVVM + Kotlin Flow + Retrofit + Hilt + offline caching + unit tests.",
-        url: "https://github.com/aliahmedbd/WeatherApp-Android-Clean-Architecture-Jetpack-Compose-Kotlin-Hilt-Flow",
-        citation: "GitHub"
+        title: "NgRx Signals / SignalStore",
+        description: "Learn how to integrate Angular Signals with NgRx for modern reactive state management.",
+        url: "https://ngrx.io/guide/signals",
+        citation: "NgRx Signals Guide"
     }
 ];
-function AndroidDocs() {
+function Docs() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "px-6 py-12 bg-gray-50 min-h-screen",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -84,18 +67,18 @@ function AndroidDocs() {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                     className: "text-3xl font-bold text-gray-900 mb-6",
-                    children: "📘 Android Documentation Resources"
+                    children: "📘 Angular Documentation Resources"
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                    lineNumber: 81,
+                    fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-gray-600 mb-10",
-                    children: "Official and community resources every Android learner should know — Jetpack Compose, Kotlin, Hilt, Clean Architecture, and real-world sample apps."
+                    children: "Official Angular and NgRx documentation every learner should follow — from core concepts and components to signals, state management, and version updates."
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                    lineNumber: 84,
+                    fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                    lineNumber: 65,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -113,8 +96,8 @@ function AndroidDocs() {
                                             className: "text-lg font-semibold text-gray-900 group-hover:text-blue-600",
                                             children: doc.title
                                         }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                                            lineNumber: 100,
+                                            fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                                            lineNumber: 82,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
@@ -122,149 +105,117 @@ function AndroidDocs() {
                                             className: "text-gray-400 group-hover:text-blue-600",
                                             "aria-hidden": "true"
                                         }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                                            lineNumber: 103,
+                                            fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                                            lineNumber: 85,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                                    lineNumber: 99,
+                                    fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                                    lineNumber: 81,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-3 text-sm text-gray-600",
                                     children: doc.description
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                                    lineNumber: 109,
+                                    fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-4 text-xs text-indigo-600 font-medium",
                                     children: doc.citation
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                                    lineNumber: 110,
+                                    fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, doc.title, true, {
-                            fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                            lineNumber: 92,
+                            fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                            lineNumber: 74,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-                    lineNumber: 90,
+                    fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+                    lineNumber: 72,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
-            fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-            lineNumber: 80,
+            fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+            lineNumber: 60,
             columnNumber: 7
         }, this)
     }, void 0, false, {
-        fileName: "[project]/app/Roadmaps/Android/docs.jsx",
-        lineNumber: 79,
+        fileName: "[project]/app/Roadmaps/Angular/docs.jsx",
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }
-_c = AndroidDocs;
+_c = Docs;
 var _c;
-__turbopack_context__.k.register(_c, "AndroidDocs");
+__turbopack_context__.k.register(_c, "Docs");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/Roadmaps/Android/projects.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Roadmaps/Angular/projects.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
+// components/Projects.jsx
 __turbopack_context__.s({
     "default": (()=>Projects)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-"use client";
 ;
 ;
 const projects = [
-    // 🌱 Beginner
     {
-        id: "phase1-notes-app",
+        id: "phase1-portfolio",
         level: "Phase 1 — Beginner",
-        title: "Notes App",
-        description: "Build a simple Notes app with CRUD operations using Room, ViewModel, LiveData, and RecyclerView. Learn persistence and state management.",
-        url: "https://youtu.be/Shh0N45S4hE?si=QCqfZ7WJMpnZatkZ" // Notes App Room + MVVM tutorial
+        title: "Personal Portfolio Website",
+        description: "Learn Angular components, routing, styling, and data binding. Build Home, About, Projects, Contact pages with responsive design and basic animations. Implement contact form using Reactive Forms.",
+        url: "https://youtu.be/GJHjl2D9C2M?si=nQ6KN9P-hcMeEanj"
     },
     {
-        id: "phase1-weather-app",
-        level: "Phase 1 — Beginner",
-        title: "Weather App",
-        description: "Create a weather app using OpenWeatherMap API, Retrofit, and Coroutines. Parse JSON, handle errors, and display data in a clean UI.",
-        url: "https://youtu.be/QFGKV8j2ulY?si=p-zBjd2KFWrCHf8N" // Weather App Retrofit tutorial
-    },
-    {
-        id: "phase1-quiz-app",
-        level: "Phase 1 — Beginner",
-        title: "Quiz App",
-        description: "Multiple-choice quiz app with scoring and progress saving. Learn Jetpack Compose Navigation or ViewPager.",
-        url: "https://youtu.be/pXZR0QiwvrU?si=qAhE0ZCSP7IUsJQb" // Quiz App tutorial
-    },
-    // 🌿 Intermediate
-    {
-        id: "phase2-movie-explorer",
+        id: "phase2-todo",
         level: "Phase 2 — Intermediate",
-        title: "Movie Explorer",
-        description: "Integrate TMDB API to build a movie explorer app. Learn Paging 3 for infinite scroll, offline caching with Room, and clean UI with Compose.",
-        url: "https://youtu.be/s57FYRFh_Os?si=Q5TulZfaFuPs0RHy" // Paging 3 + Compose tutorial
+        title: "To-Do / Task Management App",
+        description: "Create, edit, delete, and mark tasks as done. Implement filtering by status and persistent storage using localStorage or IndexedDB. Optional: connect to a REST API.",
+        url: "https://youtu.be/uyTC0Skvvls?si=DwCFijPtZiV8fXvg"
     },
     {
-        id: "phase2-expense-tracker",
-        level: "Phase 2 — Intermediate",
-        title: "Expense Tracker",
-        description: "Track daily income and expenses. Use Room, Coroutines/Flow, Hilt for DI, and Compose UI with charts. Export data to CSV/Excel.",
-        url: "https://youtu.be/MHlWd0AOQuU?si=KoUlURWAAE339Qme" // Expense Tracker tutorial
+        id: "phase2-ecommerce",
+        level: "Phase 2 — Intermediate → Advanced",
+        title: "E-Commerce Store",
+        description: "Build product catalog with search & filter, add-to-cart, checkout simulation, and API integration. Implement user authentication (JWT or Firebase Auth).",
+        url: "https://youtu.be/ryQHyOzQ9fA?si=oYAWUnxokw8LaRvu"
     },
     {
-        id: "phase2-chat-app",
-        level: "Phase 2 — Intermediate",
-        title: "Chat App",
-        description: "Simulated chat app using Firebase Realtime Database. Learn Google Sign-In authentication and push notifications with FCM.",
-        url: "https://youtu.be/OlfHlM3Lvf8?si=WdK8vSzqtkbKU_2z" // Firebase Chat tutorial
-    },
-    // 🌳 Advanced
-    {
-        id: "phase3-ecommerce-app",
+        id: "phase3-blog",
         level: "Phase 3 — Advanced",
-        title: "E-Commerce Clone",
-        description: "Mini e-commerce app with product listing, shopping cart, login, and mock payment. Built with MVVM, Hilt, Retrofit, and Jetpack Compose.",
-        url: "https://youtu.be/4cbVZhohIkA?si=9iSRnPxhnRIiitzH" // E-commerce tutorial
+        title: "Blog / Content Management System",
+        description: "Develop CRUD for posts, categories, and comments. Integrate rich text editor, role-based access, and backend API (NestJS / Firebase). Learn NgRx for state management and lazy-loaded modules.",
+        url: "https://youtu.be/Rpe8s4-qFFI?si=WZCKqNlcdlPDZ7NS"
     },
     {
-        id: "phase3-fitness-tracker",
+        id: "phase3-chat",
         level: "Phase 3 — Advanced",
-        title: "Fitness Tracker",
-        description: "Steps counting, calories burned, and daily tracking with Google Fit API. Use Room for persistence, charts for visualization, and WorkManager for background tasks.",
-        url: "https://youtu.be/hg1_yiBvSBo?si=8v8Tczo6sLme9RCw" // Fitness Tracker tutorial
+        title: "Real-Time Chat Application",
+        description: "Build one-on-one and group chat with online/offline status, notifications, and message history. Optional: WebRTC video/audio chat. Learn RxJS, NgRx, and reactive programming.",
+        url: "https://youtu.be/Dg7bZUFopUo?si=qZVCOaTZIFfEtbF9"
     },
     {
-        id: "phase3-music-app",
-        level: "Phase 3 — Advanced",
-        title: "Music/Podcast Streaming App",
-        description: "Stream music or podcasts using ExoPlayer. Add offline downloads with WorkManager, notifications with media controls, and Compose UI.",
-        url: "https://youtu.be/L9arbsw82Oc?si=3vq8BAJT3pb2At2N" // ExoPlayer tutorial
-    },
-    // 🏆 Capstone
-    {
-        id: "capstone-food-delivery",
-        level: "Phase 4 — Capstone",
-        title: "Food Delivery Clone (Firebase + Maps API)",
-        description: "Clone of Swiggy/Zomato style app with restaurant listings, cart, order tracking, Google Maps integration, Firebase realtime updates, and clean architecture.",
-        url: "https://youtu.be/TwLilW0fH9c?si=sIDUAZrcV_vKzZIZ" // Food Delivery tutorial
+        id: "phase4-dashboard",
+        level: "Phase 4 — Industry-Ready",
+        title: "Enterprise Dashboard / SaaS Application",
+        description: "Simulate real-world enterprise app with role-based dashboards, analytics charts, CRUD for multiple modules, lazy-loaded feature modules. Implement PWA, offline support, Angular Universal / SSR, and CI/CD deployment.",
+        url: "https://youtu.be/s7bKr_-GLtM?si=Va0tfjXkI1c08eZE"
     }
 ];
 function Projects() {
@@ -278,24 +229,24 @@ function Projects() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-3xl font-extrabold text-gray-900",
-                            children: "📱 Android Dev Project Roadmap"
+                            children: "⚡ Angular Project Roadmap"
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                            lineNumber: 99,
+                            fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-gray-600",
-                            children: "Build Android apps from beginner to industry-ready using Jetpack Compose, Kotlin, Firebase, and modern Android architecture."
+                            children: "Step through beginner to industry-ready Angular projects. Build, code along, and deploy to strengthen your portfolio."
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                            lineNumber: 102,
+                            fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                    lineNumber: 98,
+                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                    lineNumber: 59,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -308,8 +259,8 @@ function Projects() {
                                     className: "inline-block text-xs font-medium bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full",
                                     children: p.level
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                                    lineNumber: 114,
+                                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                                    lineNumber: 75,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -317,16 +268,16 @@ function Projects() {
                                     className: "mt-4 text-lg font-semibold text-gray-900 group-hover:text-indigo-600",
                                     children: p.title
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                                    lineNumber: 117,
+                                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                                    lineNumber: 78,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-2 text-gray-600 text-sm",
                                     children: p.description
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                                    lineNumber: 123,
+                                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                                    lineNumber: 84,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -334,40 +285,40 @@ function Projects() {
                                     target: "_blank",
                                     rel: "noopener noreferrer",
                                     className: "mt-4 inline-block text-indigo-600 font-medium hover:underline",
-                                    children: "Watch Tutorial ▶"
+                                    children: "Explore Project ▶"
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                                    lineNumber: 124,
+                                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                                    lineNumber: 85,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, p.id, true, {
-                            fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                            lineNumber: 109,
+                            fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                            lineNumber: 70,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                    lineNumber: 107,
+                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
                     className: "mt-10 text-sm text-gray-500 text-center",
-                    children: "Build these projects step by step. Focus on architecture, state management, and clean coding. Showcase 2–3 polished apps in your portfolio to land industry roles."
+                    children: "Follow the sequence, implement features step by step, and showcase your top projects in a polished portfolio."
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-                    lineNumber: 136,
+                    fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+                    lineNumber: 97,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
-            fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-            lineNumber: 97,
+            fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+            lineNumber: 58,
             columnNumber: 7
         }, this)
     }, void 0, false, {
-        fileName: "[project]/app/Roadmaps/Android/projects.jsx",
-        lineNumber: 96,
+        fileName: "[project]/app/Roadmaps/Angular/projects.jsx",
+        lineNumber: 57,
         columnNumber: 5
     }, this);
 }
@@ -378,7 +329,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/Roadmaps/Android/faq.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Roadmaps/Angular/faq.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
@@ -391,177 +342,166 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDown>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-up.js [app-client] (ecmascript) <export default as ChevronUp>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$help$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-help.js [app-client] (ecmascript) <export default as HelpCircle>");
 ;
 var _s = __turbopack_context__.k.signature();
-"use client";
 ;
 ;
 const faqData = [
     {
         id: 1,
-        question: "What prerequisites do I need before starting this Android roadmap?",
-        answer: "You should know basic Kotlin (variables, functions, classes, coroutines), Git/GitHub, and core Android Studio setup. Prior programming experience in Java helps, but it’s not required."
+        question: "What is Angular and why should I learn it?",
+        answer: "Angular is a TypeScript-based framework for building scalable, modular, and maintainable web applications. Learning Angular helps you develop enterprise-ready apps with features like dependency injection, reactive programming, and strong typing."
     },
     {
         id: 2,
-        question: "Should I learn XML UI first or directly start with Jetpack Compose?",
-        answer: "You can start directly with Jetpack Compose since it’s the modern UI toolkit. XML is still used in legacy apps, but Compose is industry standard for new projects."
+        question: "Should I learn JavaScript and TypeScript before Angular?",
+        answer: "Yes. A solid understanding of JavaScript is essential, and since Angular is built with TypeScript, learning it first makes it easier to work with Angular features like types, interfaces, classes, and decorators."
     },
     {
         id: 3,
-        question: "How long will it take to complete this roadmap?",
-        answer: "If you dedicate 10–12 hours weekly, it may take 6–8 months to cover Beginner → Capstone. The exact timeline depends on your practice speed and consistency."
+        question: "What are the core concepts I need to master in Angular?",
+        answer: "You should focus on Components, Modules, Services, Directives, Pipes, Routing, Forms (Template-driven & Reactive), HTTPClient for APIs, RxJS for reactive programming, and state management (NgRx or Signals)."
     },
     {
         id: 4,
-        question: "Do I need to build all projects in this roadmap?",
-        answer: "You don’t need every project for your portfolio. Build at least 6–8 diverse apps covering local DB, API integration, Firebase, background tasks, and Compose UI. Pick 2–3 polished ones to showcase."
+        question: "What is the difference between Template-driven and Reactive Forms?",
+        answer: "Template-driven forms are easier to use for simple forms and are defined in the template. Reactive forms are more powerful, scalable, and defined in the component class, offering better control and dynamic validation."
     },
     {
         id: 5,
-        question: "Which architecture pattern should I follow?",
-        answer: "Start with MVVM for beginner and intermediate projects. For advanced and capstone projects, follow Clean Architecture with modularization and Hilt/Dagger for dependency injection."
+        question: "When should I use NgRx or Angular Signals?",
+        answer: "Use NgRx or Signals for state management in medium to large applications where multiple components share complex state. Signals provide a simpler reactive model, whereas NgRx follows Redux principles for predictable state changes."
     },
     {
         id: 6,
-        question: "How important is Firebase in Android development?",
-        answer: "Firebase is widely used for authentication, database, storage, analytics, and push notifications. Most startups and many production apps use Firebase services, so you should practice at least 2–3 projects with it."
+        question: "How do I make Angular applications production-ready?",
+        answer: "Focus on optimizing performance, lazy-loading modules, server-side rendering (Angular Universal), PWA support, unit & E2E testing, security best practices, and deploying using CI/CD pipelines to platforms like AWS, Azure, or Firebase."
     },
     {
         id: 7,
-        question: "Do I need backend knowledge for these projects?",
-        answer: "Most projects use public APIs or Firebase, so backend isn’t mandatory. However, knowing basics of REST APIs, JSON, and authentication helps you collaborate better with backend teams."
+        question: "Should I learn Angular Material or Tailwind CSS?",
+        answer: "Angular Material helps quickly build consistent UI components with ready-to-use material design. Tailwind CSS is more flexible for custom designs. Ideally, learn both to handle different project requirements."
     },
     {
         id: 8,
-        question: "When should I start learning testing (Unit/UI tests)?",
-        answer: "Start adding tests once you reach intermediate projects. For industry readiness, practice JUnit, Mockito, and Espresso tests in your advanced/capstone apps."
+        question: "How do I debug and test Angular applications?",
+        answer: "Use Angular DevTools for debugging, write unit tests using Jasmine/Karma, and end-to-end tests using Cypress or Protractor. Testing ensures your app is stable and maintainable in production."
     },
     {
         id: 9,
-        question: "Should I publish these apps on the Play Store?",
-        answer: "Publishing at least 1–2 apps on the Play Store is a huge plus. It shows employers you can handle release signing, Play Console setup, and production deployment."
+        question: "What are the best practices for Angular folder structure?",
+        answer: "Organize your app using feature modules, shared modules, and core modules. Keep components, services, models, and routing organized per feature for scalability and maintainability."
     },
     {
         id: 10,
-        question: "Will this roadmap make me industry-ready?",
-        answer: "Yes. By the end, you’ll cover UI/UX with Compose, APIs, Room DB, Firebase, background tasks, Clean Architecture, DI, and testing. These are the exact skills companies expect in Android engineers."
+        question: "How can I become an industry-ready Angular developer?",
+        answer: "Build real-world projects covering CRUD apps, e-commerce, dashboards, and chat apps. Master routing, forms, HTTP, state management, RxJS, testing, and deployment. Document your work and showcase it in a portfolio."
     }
 ];
 function FAQ() {
     _s();
-    const [openFAQ, setOpenFAQ] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const toggleFAQ = (id)=>{
-        setOpenFAQ(openFAQ === id ? null : id);
+    const [openIndex, setOpenIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const toggleFAQ = (index)=>{
+        setOpenIndex(openIndex === index ? null : index);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "bg-white py-12",
+        className: "px-6 py-12 bg-gray-50 min-h-screen",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-4xl mx-auto px-6",
+            className: "max-w-4xl mx-auto",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
                     className: "mb-8 text-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-3xl font-extrabold text-gray-900 flex items-center justify-center gap-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$help$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__["HelpCircle"], {
-                                    className: "w-7 h-7 text-indigo-600"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                                    lineNumber: 81,
-                                    columnNumber: 13
-                                }, this),
-                                "Android Roadmap FAQ"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                            lineNumber: 80,
+                            className: "text-3xl font-extrabold text-gray-900",
+                            children: "❓ Angular Roadmap FAQ"
+                        }, void 0, false, {
+                            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-gray-600",
-                            children: "Common questions learners ask while following the Android project roadmap."
+                            children: "Common questions learners ask while progressing from beginner to industry-ready Angular developer."
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                            lineNumber: 84,
+                            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                    lineNumber: 79,
+                    fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                    lineNumber: 78,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "space-y-4",
-                    children: faqData.map((faq)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "border border-gray-200 rounded-xl shadow-sm",
+                    children: faqData.map((faq, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>toggleFAQ(faq.id),
-                                    className: "w-full flex justify-between items-center p-4 text-left",
+                                    onClick: ()=>toggleFAQ(index),
+                                    className: "flex justify-between w-full text-left focus:outline-none",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "font-medium text-gray-900",
                                             children: faq.question
                                         }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                                            lineNumber: 99,
+                                            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                                            lineNumber: 98,
                                             columnNumber: 17
                                         }, this),
-                                        openFAQ === faq.id ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__["ChevronUp"], {
-                                            className: "w-5 h-5 text-indigo-600"
+                                        openIndex === index ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__["ChevronUp"], {
+                                            className: "text-gray-500"
                                         }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                                            lineNumber: 103,
+                                            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                                            lineNumber: 100,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
-                                            className: "w-5 h-5 text-gray-500"
+                                            className: "text-gray-500"
                                         }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                                            lineNumber: 105,
+                                            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                                            lineNumber: 102,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                                    lineNumber: 95,
+                                    fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, this),
-                                openFAQ === faq.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-4 pt-0 text-gray-600 text-sm",
+                                openIndex === index && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-2 text-gray-600 text-sm",
                                     children: faq.answer
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                                    lineNumber: 109,
+                                    fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                                    lineNumber: 106,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, faq.id, true, {
-                            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                            lineNumber: 91,
+                            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                            lineNumber: 90,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-                    lineNumber: 89,
+                    fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+                    lineNumber: 88,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
-            fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-            lineNumber: 78,
+            fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+            lineNumber: 77,
             columnNumber: 7
         }, this)
     }, void 0, false, {
-        fileName: "[project]/app/Roadmaps/Android/faq.jsx",
-        lineNumber: 77,
+        fileName: "[project]/app/Roadmaps/Angular/faq.jsx",
+        lineNumber: 76,
         columnNumber: 5
     }, this);
 }
-_s(FAQ, "d+ViTGxsUZSITU7uQz5WZ9Fcob0=");
+_s(FAQ, "7z1SfW1ag/kVV/D8SOtFgmPOJ8o=");
 _c = FAQ;
 var _c;
 __turbopack_context__.k.register(_c, "FAQ");
@@ -569,7 +509,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/Roadmaps/Android/downloadPdf.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Roadmaps/Angular/downloadPdf.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
@@ -756,9 +696,9 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                             style: styles.title,
-                            children: "Android Developer Roadmap"
+                            children: "Angluar Developer Roadmap"
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                             lineNumber: 168,
                             columnNumber: 9
                         }, this),
@@ -766,21 +706,21 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                             style: styles.subtitle,
                             children: "Your Complete Journey from Beginner to Professional"
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                             lineNumber: 169,
                             columnNumber: 9
                         }, this)
                     ]
                 }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                     lineNumber: 167,
                     columnNumber: 7
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                     style: styles.watermark,
-                    children: "Android-Roadmap.com"
+                    children: "AIML-EngineerRoadmap.com"
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                     lineNumber: 173,
                     columnNumber: 7
                 }, this),
@@ -802,7 +742,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                 ],
                                                 children: phase.id
                                             }, void 0, false, {
-                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                 lineNumber: 181,
                                                 columnNumber: 15
                                             }, this),
@@ -813,7 +753,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         style: styles.phaseTitle,
                                                         children: phase.title
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 185,
                                                         columnNumber: 17
                                                     }, this),
@@ -821,7 +761,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         style: styles.phaseSubtitle,
                                                         children: phase.subtitle
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 186,
                                                         columnNumber: 17
                                                     }, this),
@@ -829,19 +769,19 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         style: styles.phaseDescription,
                                                         children: phase.description
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 187,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
-                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                 lineNumber: 184,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
-                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                         lineNumber: 180,
                                         columnNumber: 13
                                     }, this),
@@ -854,7 +794,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                         style: styles.sectionTitle,
                                                         children: section.title
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 195,
                                                         columnNumber: 19
                                                     }, this),
@@ -870,7 +810,7 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                                             "."
                                                                         ]
                                                                     }, void 0, true, {
-                                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                         lineNumber: 199,
                                                                         columnNumber: 25
                                                                     }, this),
@@ -878,29 +818,29 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                                                     item
                                                                 ]
                                                             }, itemIndex, true, {
-                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                 lineNumber: 198,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 196,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, sectionIndex, true, {
-                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                 lineNumber: 194,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                         lineNumber: 192,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
-                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                 lineNumber: 178,
                                 columnNumber: 11
                             }, this),
@@ -913,18 +853,18 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                                         phase.id + 1
                                     ]
                                 }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                     lineNumber: 211,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                 lineNumber: 210,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, phase.id, true, {
-                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                         lineNumber: 177,
                         columnNumber: 9
                     }, this)),
@@ -933,18 +873,18 @@ const RoadmapPDFDocument = ({ phases })=>/*#__PURE__*/ (0, __TURBOPACK__imported
                     render: ({ pageNumber, totalPages })=>`${pageNumber} / ${totalPages}`,
                     fixed: true
                 }, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                     lineNumber: 222,
                     columnNumber: 7
                 }, this)
             ]
         }, void 0, true, {
-            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
             lineNumber: 165,
             columnNumber: 5
         }, this)
     }, void 0, false, {
-        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
         lineNumber: 164,
         columnNumber: 3
     }, this);
@@ -966,13 +906,13 @@ const downloadRoadmapPDF = async (phases)=>{
         const blob = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["pdf"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapPDFDocument, {
             phases: phases
         }, void 0, false, {
-            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
             lineNumber: 245,
             columnNumber: 28
         }, this)).toBlob();
         // Generate filename with current date
         const currentDate = new Date().toISOString().split('T')[0];
-        const filename = `Android-Developer-roadmap-${currentDate}.pdf`;
+        const filename = `Angluar-DeveloperEngineer-roadmap-${currentDate}.pdf`;
         // Save the file
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$file$2d$saver$2f$dist$2f$FileSaver$2e$min$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["saveAs"])(blob, filename);
         return {
@@ -991,11 +931,11 @@ const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }
         document: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapPDFDocument, {
             phases: phases
         }, void 0, false, {
-            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
             lineNumber: 264,
             columnNumber: 15
         }, void 0),
-        fileName: `Android-Developer-roadmap-${new Date().toISOString().split('T')[0]}.pdf`,
+        fileName: `Angluar-Developerroadmap-${new Date().toISOString().split('T')[0]}.pdf`,
         className: className,
         children: ({ blob, url, loading, error })=>{
             if (loading) return 'Generating PDF...';
@@ -1003,13 +943,13 @@ const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }
             return children;
         }
     }, void 0, false, {
-        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
         lineNumber: 263,
         columnNumber: 3
     }, this);
 _c1 = PDFDownloadButton;
 const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
-    const { includeWatermark = true, customTitle = "Android Developer Roadmap", customSubtitle = "Your Complete Journey from Beginner to Professional", pageSize = "A4", orientation = "portrait" } = options;
+    const { includeWatermark = true, customTitle = "Angluar DeveloperRoadmap", customSubtitle = "Your Complete Journey from Beginner to Professional", pageSize = "A4", orientation = "portrait" } = options;
     try {
         const AdvancedPDFDocument = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Document"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Page"], {
@@ -1024,7 +964,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     style: styles.title,
                                     children: customTitle
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                     lineNumber: 292,
                                     columnNumber: 13
                                 }, this),
@@ -1032,13 +972,13 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     style: styles.subtitle,
                                     children: customSubtitle
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                     lineNumber: 293,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                             lineNumber: 291,
                             columnNumber: 11
                         }, this),
@@ -1060,7 +1000,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                         ],
                                                         children: phase.id
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 303,
                                                         columnNumber: 19
                                                     }, this),
@@ -1071,7 +1011,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 style: styles.phaseTitle,
                                                                 children: phase.title
                                                             }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                 lineNumber: 307,
                                                                 columnNumber: 21
                                                             }, this),
@@ -1079,7 +1019,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 style: styles.phaseSubtitle,
                                                                 children: phase.subtitle
                                                             }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                 lineNumber: 308,
                                                                 columnNumber: 21
                                                             }, this),
@@ -1087,19 +1027,19 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 style: styles.phaseDescription,
                                                                 children: phase.description
                                                             }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                 lineNumber: 309,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 306,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
-                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                 lineNumber: 302,
                                                 columnNumber: 17
                                             }, this),
@@ -1112,7 +1052,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                 style: styles.sectionTitle,
                                                                 children: section.title
                                                             }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                 lineNumber: 316,
                                                                 columnNumber: 23
                                                             }, this),
@@ -1128,7 +1068,7 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                                     "."
                                                                                 ]
                                                                             }, void 0, true, {
-                                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                                 lineNumber: 320,
                                                                                 columnNumber: 29
                                                                             }, this),
@@ -1136,29 +1076,29 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                                             item
                                                                         ]
                                                                     }, itemIndex, true, {
-                                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                         lineNumber: 319,
                                                                         columnNumber: 27
                                                                     }, this))
                                                             }, void 0, false, {
-                                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                                 lineNumber: 317,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, sectionIndex, true, {
-                                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                         lineNumber: 315,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
-                                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                                 lineNumber: 313,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
-                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                         lineNumber: 301,
                                         columnNumber: 15
                                     }, this),
@@ -1171,18 +1111,18 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                                 phase.id + 1
                                             ]
                                         }, void 0, true, {
-                                            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                             lineNumber: 331,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                        fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                         lineNumber: 330,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, phase.id, true, {
-                                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                 lineNumber: 300,
                                 columnNumber: 13
                             }, this)),
@@ -1193,21 +1133,21 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                                     style: styles.footerTitle,
                                     children: "🎉 Congratulations!"
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                     lineNumber: 340,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$primitives$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Text"], {
                                     style: styles.footerText,
-                                    children: "You've completed Android Developer Roadmap and are now ready to take on professional  challenges."
+                                    children: "You've completed Angluar Developer Roadmap and are now ready to take on professional  challenges."
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                                     lineNumber: 341,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                             lineNumber: 339,
                             columnNumber: 11
                         }, this),
@@ -1216,23 +1156,23 @@ const downloadAdvancedRoadmapPDF = async (phases, options = {})=>{
                             render: ({ pageNumber, totalPages })=>`${pageNumber} / ${totalPages}`,
                             fixed: true
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                             lineNumber: 346,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                    fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                     lineNumber: 289,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+                fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
                 lineNumber: 288,
                 columnNumber: 7
             }, this);
         const blob = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$pdf$2f$renderer$2f$lib$2f$react$2d$pdf$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["pdf"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AdvancedPDFDocument, {}, void 0, false, {
-            fileName: "[project]/app/Roadmaps/Android/downloadPdf.jsx",
+            fileName: "[project]/app/Roadmaps/Angular/downloadPdf.jsx",
             lineNumber: 353,
             columnNumber: 28
         }, this)).toBlob();
@@ -1258,303 +1198,282 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/Roadmaps/Android/roadmapData.js [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Roadmaps/Angular/roadmapData.js [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
-// Android Development Roadmap data structured similarly to AI/ML format
+// Angular Mastery Roadmap data structured according to the Angular roadmap content
 __turbopack_context__.s({
     "phases": (()=>phases)
 });
 const phases = [
     {
         id: 1,
-        title: "Foundations",
-        subtitle: "Beginner Level",
-        description: "Build strong programming, Android ecosystem, and core tools knowledge.",
-        color: "bg-green-500",
+        title: "Prerequisites",
+        subtitle: "Before Angular",
+        description: "Build strong web development fundamentals before diving into Angular.",
+        color: "bg-blue-500",
         sections: [
             {
-                title: "💻 Programming Fundamentals",
+                title: "📘 HTML5 & CSS3 Fundamentals",
                 items: [
-                    "Kotlin → Variables, data types, loops, functions, OOP, collections, null safety",
-                    "Language choice: Kotlin (official Android language, Google-first choice)",
-                    "Concepts: Object-Oriented Programming principles",
-                    "Resources: Kotlin Docs (kotlinlang.org), Kotlin for Android Developers course"
+                    "Semantic HTML tags, forms, and accessibility principles",
+                    "CSS3 Flexbox and Grid layouts for responsive design",
+                    "CSS animations and transitions",
+                    "Responsive web design patterns and media queries"
                 ]
             },
             {
-                title: "🛠️ Core Tools Setup",
+                title: "💻 JavaScript (ES6+) Essentials",
                 items: [
-                    "Install Android Studio (latest stable version)",
-                    "Learn Gradle basics (build system fundamentals)",
-                    "Setup Emulator and practice with physical devices",
-                    "Version control with Git and GitHub"
+                    "Variables, scopes, functions, and arrow functions",
+                    "DOM manipulation and event handling",
+                    "Arrays, Objects, Spread operator, Destructuring",
+                    "Async JavaScript: Promises, async/await, fetch API"
                 ]
             },
             {
-                title: "📱 Android Basics",
+                title: "🔧 TypeScript Core Concepts",
                 items: [
-                    "Activity & Fragment lifecycle understanding",
-                    "Views, Layouts (ConstraintLayout, LinearLayout)",
-                    "Event handling (buttons, text input, touch events)",
-                    "Intents (explicit & implicit navigation)",
-                    "Basic resource handling (strings, drawables, themes)"
+                    "Classes, Interfaces, and Generics",
+                    "Types vs Interfaces understanding",
+                    "Decorators (crucial for Angular development)",
+                    "Type annotations and type inference"
                 ]
             },
             {
                 title: "🎯 Foundation Projects",
                 items: [
-                    "✅ Calculator App with basic UI interactions",
-                    "✅ Quiz App with multiple activities",
-                    "✅ Unit Converter with input validation",
-                    "Practice building simple interactive apps"
+                    "✅ Static Portfolio Website (HTML/CSS)",
+                    "✅ To-Do App with Vanilla JS + LocalStorage",
+                    "✅ Refactor To-Do App with TypeScript",
+                    "Practice projects with DOM manipulation"
                 ]
             }
         ]
     },
     {
         id: 2,
-        title: "Modern Android Development",
-        subtitle: "Intermediate Level",
-        description: "Master modern UI development and key Android APIs.",
-        color: "bg-orange-500",
+        title: "Angular Fundamentals",
+        subtitle: "Beginner Level",
+        description: "Learn Angular basics and core concepts.",
+        color: "bg-green-500",
         sections: [
             {
-                title: "🎨 Jetpack Compose (UI Framework)",
+                title: "⚙️ Environment Setup",
                 items: [
-                    "Composables, State & Recomposition concepts",
-                    "Layouts (Column, Row, Box, LazyColumn)",
-                    "Material3 Components and design system",
-                    "Theming & Dark Mode implementation",
-                    "Navigation with Navigation Compose"
+                    "Install Angular CLI (npm install -g @angular/cli)",
+                    "Angular workspace and project structure understanding",
+                    "CLI commands for scaffolding and development",
+                    "Development server setup and configuration"
                 ]
             },
             {
-                title: "🏗️ App Architecture Basics",
+                title: "🧩 Core Angular Concepts",
                 items: [
-                    "MVVM (Model–View–ViewModel) pattern",
-                    "ViewModel, LiveData, StateFlow fundamentals",
-                    "Repository pattern for data management",
-                    "Separation of concerns and clean code practices"
+                    "Components (decorators, templates, styles)",
+                    "Data Binding (interpolation, property, event, two-way)",
+                    "Directives (*ngIf, *ngFor, [ngClass], [ngStyle])",
+                    "Pipes (built-in and custom pipe creation)"
                 ]
             },
             {
-                title: "⚡ Core Android APIs",
+                title: "🔄 Services & Dependency Injection",
                 items: [
-                    "RecyclerView (if not using Compose lists)",
-                    "SharedPreferences & DataStore for local storage",
-                    "Room Database (SQLite wrapper)",
-                    "Permissions (runtime permission handling)",
-                    "Services & Broadcast Receivers (basics)"
+                    "Creating and using Angular services",
+                    "Dependency Injection principles and implementation",
+                    "Singleton services and providedIn configuration",
+                    "Service communication patterns"
                 ]
             },
             {
-                title: "🚀 Modern Development Projects",
+                title: "📦 Modules & Routing",
                 items: [
-                    "✅ To-Do List App (Room + Compose UI)",
-                    "✅ Notes App with MVVM architecture",
-                    "✅ Weather App (API integration + Compose UI)",
-                    "Build apps with modern architecture patterns"
+                    "AppModule, feature modules, shared modules",
+                    "Router basics and navigation",
+                    "Lazy loading implementation",
+                    "Child routes and Guards (CanActivate, CanDeactivate)"
+                ]
+            },
+            {
+                title: "🚀 Beginner Projects",
+                items: [
+                    "✅ Personal Portfolio with Angular routing",
+                    "✅ Recipe Book App (components, services, routing)",
+                    "✅ Notes App with CRUD operations",
+                    "Component interaction and data flow practice"
                 ]
             }
         ]
     },
     {
         id: 3,
-        title: "Intermediate Android",
-        subtitle: "Advanced Level",
-        description: "Build scalable apps with networking, dependency injection, and testing.",
-        color: "bg-blue-500",
+        title: "Intermediate Angular",
+        subtitle: "Intermediate Level",
+        description: "Master forms, HTTP, and reactive programming with RxJS.",
+        color: "bg-purple-500",
         sections: [
             {
-                title: "🌐 Networking & Async Operations",
+                title: "📝 Angular Forms Mastery",
                 items: [
-                    "Retrofit + OkHttp for API communication",
-                    "Coroutines for asynchronous tasks",
-                    "Handling JSON with Moshi/Gson parsers",
-                    "Error handling and network state management"
+                    "Template-driven vs Reactive Forms comparison",
+                    "Form validation (synchronous and asynchronous validators)",
+                    "Custom validators and cross-field validation",
+                    "Dynamic form generation and form arrays"
                 ]
             },
             {
-                title: "💉 Dependency Injection",
+                title: "🌐 HTTP & API Integration",
                 items: [
-                    "Hilt (recommended DI framework)",
-                    "Understanding Scopes (Activity, Fragment, ViewModel)",
-                    "Providing and injecting dependencies",
-                    "Module organization and best practices"
+                    "HttpClientModule for REST API calls",
+                    "HTTP Interceptors for auth tokens and error handling",
+                    "Error handling strategies and retry mechanisms",
+                    "Request/response transformation and caching"
                 ]
             },
             {
-                title: "💾 Advanced Storage & Features",
+                title: "🔄 State Management & RxJS",
                 items: [
-                    "Room + Flow for reactive database operations",
-                    "Offline caching strategies and sync",
-                    "WorkManager for background tasks",
-                    "Paging 3 for infinite lists and large datasets"
+                    "Component state vs Service state management",
+                    "RxJS fundamentals: Observables, Subjects, BehaviorSubjects",
+                    "Reactive programming patterns in Angular",
+                    "Memory leak prevention and subscription management"
                 ]
             },
             {
-                title: "🧪 Testing & Navigation",
+                title: "🎨 Styling & UI Libraries",
                 items: [
-                    "Unit Testing with JUnit, Mockito",
-                    "Espresso for UI automated tests",
-                    "Compose UI testing framework",
-                    "Navigation Graph + Deep Links implementation"
+                    "Angular Material integration and theming",
+                    "TailwindCSS setup and configuration with Angular",
+                    "Component styling strategies and ViewEncapsulation",
+                    "Responsive design implementation"
                 ]
             },
             {
-                title: "🎯 Intermediate Projects",
+                title: "📈 Intermediate Projects",
                 items: [
-                    "✅ News App (API + Paging 3 + Hilt architecture)",
-                    "✅ Chat App (Firebase Realtime Database/Firestore)",
-                    "✅ Expense Tracker with data visualization graphs",
-                    "Complex apps with professional architecture"
+                    "✅ Blog App with API integration",
+                    "✅ Weather Dashboard (API + Angular Material)",
+                    "✅ Authentication System (JWT + Interceptor)",
+                    "Real-world CRUD applications"
                 ]
             }
         ]
     },
     {
         id: 4,
-        title: "Advanced Android Engineering",
+        title: "Advanced Angular",
         subtitle: "Advanced Level",
-        description: "Become industry-ready with performance, scalability, and best practices.",
-        color: "bg-purple-500",
+        description: "Master advanced RxJS, state management, and testing.",
+        color: "bg-orange-500",
         sections: [
             {
-                title: "⚡ Performance Optimization",
+                title: "⚡ Advanced RxJS Operators",
                 items: [
-                    "Memory leaks detection (LeakCanary)",
-                    "Profiling (CPU, memory, network)",
-                    "Optimize recomposition in Jetpack Compose",
-                    "App startup time and battery optimization"
+                    "Complex operators: map, mergeMap, switchMap, concatMap",
+                    "Error handling with catchError and retry strategies",
+                    "Subjects, ReplaySubjects, and AsyncSubjects",
+                    "Custom operators and advanced stream composition"
                 ]
             },
             {
-                title: "📷 Advanced System APIs",
+                title: "🏪 NgRx & Modern State Management",
                 items: [
-                    "CameraX for camera functionality",
-                    "Media APIs for audio/video processing",
-                    "Bluetooth & NFC integration basics",
-                    "Location services & Google Maps SDK"
+                    "NgRx Store, Actions, Reducers, and Effects",
+                    "State management best practices and patterns",
+                    "Angular Signals (Angular 17+) for reactivity",
+                    "Component Store and local state management"
                 ]
             },
             {
-                title: "🔒 Security & Privacy",
+                title: "🚀 Performance Optimization",
                 items: [
-                    "Encrypted SharedPreferences & Room database",
-                    "Secure API keys (local.properties + NDK)",
-                    "Biometrics API (fingerprint, face unlock)",
-                    "Data protection and privacy compliance"
+                    "OnPush Change Detection strategy implementation",
+                    "Lazy loading modules and components",
+                    "Preloading strategies and route optimization",
+                    "Bundle analysis and tree shaking"
                 ]
             },
             {
-                title: "🚀 App Distribution & CI/CD",
+                title: "🧪 Testing Strategies",
                 items: [
-                    "Play Store publishing and optimization",
-                    "App Bundles (AAB) and dynamic delivery",
-                    "Internal Testing & Staged Rollouts",
-                    "GitHub Actions/GitLab CI for automation"
+                    "Unit Testing with Jasmine, Karma, and Jest",
+                    "Component testing and service testing patterns",
+                    "Integration testing approaches",
+                    "E2E Testing (Cypress/Playwright migration from Protractor)"
+                ]
+            },
+            {
+                title: "📁 Monorepo & Architecture",
+                items: [
+                    "Nx Workspace setup for large-scale Angular applications",
+                    "Micro-frontend architecture patterns",
+                    "Shared libraries and workspace organization",
+                    "Build optimization and CI/CD integration"
                 ]
             },
             {
                 title: "🎯 Advanced Projects",
                 items: [
-                    "✅ Fitness Tracker (sensors + Google Fit integration)",
-                    "✅ E-commerce App (Cart, Payment Gateway, Firebase Auth)",
-                    "✅ Full-featured Social Media Clone (Posts, Likes, Notifications)",
-                    "Production-quality applications"
+                    "✅ E-Commerce App (cart, checkout, JWT auth)",
+                    "✅ Project Management Tool (Trello clone)",
+                    "✅ Chat App (WebSockets + RxJS)",
+                    "Complex enterprise-level applications"
                 ]
             }
         ]
     },
     {
         id: 5,
-        title: "Industry-Ready",
-        subtitle: "Professional Level",
-        description: "Work as a professional Android Engineer with advanced skills.",
+        title: "Industry-Ready Angular Developer",
+        subtitle: "Expert Level",
+        description: "Master enterprise architecture, SSR, PWA, and deployment.",
         color: "bg-red-500",
         sections: [
             {
-                title: "📚 Master Jetpack Libraries",
+                title: "🏗️ Architecture & Best Practices",
                 items: [
-                    "Compose Multiplatform (KMP) for cross-platform",
-                    "Advanced WorkManager, Paging 3, Navigation",
-                    "DataStore, App Startup, Benchmarking",
-                    "Glance for Android widgets development"
+                    "Scalable folder structure and code organization",
+                    "Shared modules and core modules architecture",
+                    "Smart vs Dumb components pattern",
+                    "Design patterns implementation in Angular"
                 ]
             },
             {
-                title: "🏛️ Advanced Architecture Topics",
+                title: "🌐 Enterprise-Grade Features",
                 items: [
-                    "Modularization (multi-module projects)",
-                    "Clean Architecture (Use Cases, Repository, Entities)",
-                    "Design Patterns (Factory, Singleton, Observer)",
-                    "Reactive Programming (Kotlin Flow, RxJava)"
+                    "Angular Universal (SSR) for SEO optimization",
+                    "Progressive Web Apps (PWA) with @angular/pwa",
+                    "Micro-frontends with Module Federation",
+                    "Service Workers and caching strategies"
                 ]
             },
             {
-                title: "🌍 Cross-Platform Knowledge",
+                title: "🚀 DevOps & Deployment",
                 items: [
-                    "Kotlin Multiplatform (KMP) for iOS & Desktop",
-                    "Flutter/React Native basics for versatility",
-                    "Understanding of cross-platform trade-offs",
-                    "Platform-specific optimizations"
+                    "CI/CD pipelines (GitHub Actions, GitLab CI)",
+                    "Docker containerization for Angular apps",
+                    "Deployment strategies (Vercel, Netlify, AWS Amplify)",
+                    "Environment configuration and build optimization"
                 ]
             },
             {
-                title: "📐 System Design for Mobile",
+                title: "🌍 Production Concerns",
                 items: [
-                    "Scaling apps for millions of users",
-                    "Offline-first architecture approach",
-                    "API design & backend integration",
-                    "Mobile-specific system design patterns"
-                ]
-            }
-        ]
-    },
-    {
-        id: 6,
-        title: "Professional Mastery",
-        subtitle: "Expert Level",
-        description: "Lead Android development teams and architect complex systems.",
-        color: "bg-indigo-500",
-        sections: [
-            {
-                title: "👨‍💼 Leadership & Advanced Skills",
-                items: [
-                    "Interview Preparation & DSA in Kotlin",
-                    "System design case studies (mobile-specific)",
-                    "Code review and mentoring practices",
-                    "Technical documentation and knowledge sharing"
+                    "Internationalization (i18n) implementation",
+                    "Accessibility (ARIA roles and WCAG compliance)",
+                    "Security (XSS, CSRF prevention, Route Guards)",
+                    "Performance monitoring and error tracking"
                 ]
             },
             {
-                title: "📱 Industry Portfolio Requirements",
+                title: "📊 Industry Projects",
                 items: [
-                    "3+ polished apps published on Play Store",
-                    "GitHub portfolio with clean, documented code",
-                    "UI-rich, API-powered, offline-ready applications",
-                    "Demonstration of scalable architecture patterns"
-                ]
-            },
-            {
-                title: "🔧 Technical Expertise Stack",
-                items: [
-                    "Jetpack Compose + MVVM + Hilt mastery",
-                    "Coroutines + Retrofit + Room proficiency",
-                    "CI/CD pipeline setup and maintenance",
-                    "Clean Architecture & comprehensive testing"
-                ]
-            },
-            {
-                title: "🎯 Final Deliverables",
-                items: [
-                    "Ability to build secure, scalable, optimized apps",
-                    "Knowledge of latest Android development trends",
-                    "Experience with app performance monitoring",
-                    "Understanding of Play Store policies and optimization"
+                    "✅ SaaS Dashboard (multi-tenant, role-based access)",
+                    "✅ Full-Stack Angular + NestJS App (LMS)",
+                    "✅ Enterprise-scale ERP System (modular, monorepo)",
+                    "Production-ready applications with full DevOps"
                 ]
             }
         ]
@@ -1564,7 +1483,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/app/Roadmaps/Android/page.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/app/Roadmaps/Angular/page.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
@@ -1574,7 +1493,7 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/brain.js [app-client] (ecmascript) <export default as Brain>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/code.js [app-client] (ecmascript) <export default as Code>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/download.js [app-client] (ecmascript) <export default as Download>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map.js [app-client] (ecmascript) <export default as Map>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/file-text.js [app-client] (ecmascript) <export default as FileText>");
@@ -1584,14 +1503,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/bot.js [app-client] (ecmascript) <export default as Bot>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-client] (ecmascript) <export default as Sparkles>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Android/docs.jsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Android/projects.jsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$faq$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Android/faq.jsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$downloadPdf$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Android/downloadPdf.jsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Android/roadmapData.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Angular/docs.jsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Angular/projects.jsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$faq$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Angular/faq.jsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$downloadPdf$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Angular/downloadPdf.jsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/Roadmaps/Angular/roadmapData.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -1602,19 +1518,16 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
-const AndroidMasteryRoadmap = ()=>{
+const AngularMasteryRoadmap = ()=>{
     _s();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('roadmap');
     const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isDownloading, setIsDownloading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [isBotHovered, setIsBotHovered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     // Handle PDF download with loading state
     const handlePDFDownload = async ()=>{
         setIsDownloading(true);
         try {
-            const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$downloadPdf$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["downloadRoadmapPDF"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"]);
+            const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$downloadPdf$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["downloadRoadmapPDF"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"]);
             if (result.success) {
                 console.log(`PDF downloaded successfully: ${result.filename}`);
             } else {
@@ -1626,28 +1539,24 @@ const AndroidMasteryRoadmap = ()=>{
             setIsDownloading(false);
         }
     };
-    // Handle AI Bot button click
-    const handleAIBotClick = ()=>{
-        router.push('/ai-roadmap-generator');
-    };
     const renderContent = ()=>{
         switch(activeTab){
             case 'documentation':
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                    lineNumber: 42,
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$docs$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 35,
                     columnNumber: 16
                 }, this);
             case 'projects':
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                    lineNumber: 44,
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 37,
                     columnNumber: 16
                 }, this);
             case 'faq':
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$faq$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                    lineNumber: 46,
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$faq$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 39,
                     columnNumber: 16
                 }, this);
             default:
@@ -1656,14 +1565,14 @@ const AndroidMasteryRoadmap = ()=>{
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex flex-col space-y-8 md:space-y-12",
-                            children: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"].map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"].map((phase, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative",
                                     children: [
-                                        index < __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"].length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        index < __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"].length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute left-1/2 transform -translate-x-1/2 top-full h-8 md:h-12 w-0.5 md:w-1 bg-gray-300 z-10"
                                         }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                            lineNumber: 56,
+                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                            lineNumber: 49,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1681,30 +1590,30 @@ const AndroidMasteryRoadmap = ()=>{
                                                                 phase.title
                                                             ]
                                                         }, void 0, true, {
-                                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                            lineNumber: 63,
+                                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                            lineNumber: 56,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-gray-600 text-xs md:text-sm",
                                                             children: phase.subtitle
                                                         }, void 0, false, {
-                                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                            lineNumber: 66,
+                                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                            lineNumber: 59,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-gray-800 font-medium mt-1 text-sm md:text-base",
                                                             children: phase.description
                                                         }, void 0, false, {
-                                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                            lineNumber: 67,
+                                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                            lineNumber: 60,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
-                                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                    lineNumber: 62,
+                                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                    lineNumber: 55,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1718,8 +1627,8 @@ const AndroidMasteryRoadmap = ()=>{
                                                                         className: "text-blue-600 font-semibold text-base md:text-lg mb-3 md:mb-4",
                                                                         children: section.title
                                                                     }, void 0, false, {
-                                                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                                        lineNumber: 78,
+                                                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                                        lineNumber: 71,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1734,40 +1643,40 @@ const AndroidMasteryRoadmap = ()=>{
                                                                                             "."
                                                                                         ]
                                                                                     }, void 0, true, {
-                                                                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                                                        lineNumber: 84,
+                                                                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                                                        lineNumber: 77,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     " ",
                                                                                     item
                                                                                 ]
                                                                             }, itemIndex, true, {
-                                                                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                                                lineNumber: 83,
+                                                                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                                                lineNumber: 76,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, void 0, false, {
-                                                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                                        lineNumber: 81,
+                                                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                                        lineNumber: 74,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, sectionIndex, true, {
-                                                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                                lineNumber: 74,
+                                                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                                lineNumber: 67,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
-                                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                        lineNumber: 72,
+                                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                        lineNumber: 65,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
-                                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                    lineNumber: 71,
+                                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                    lineNumber: 64,
                                                     columnNumber: 21
                                                 }, this),
-                                                index < __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Android$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"].length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                index < __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Roadmaps$2f$Angular$2f$roadmapData$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["phases"].length - 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "mt-6 md:mt-8 flex items-center space-x-2 md:space-x-4",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1777,16 +1686,16 @@ const AndroidMasteryRoadmap = ()=>{
                                                                 phase.id
                                                             ]
                                                         }, void 0, true, {
-                                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                            lineNumber: 96,
+                                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                            lineNumber: 89,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                             className: "text-gray-400",
                                                             size: 20
                                                         }, void 0, false, {
-                                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                            lineNumber: 99,
+                                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                            lineNumber: 92,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1796,31 +1705,31 @@ const AndroidMasteryRoadmap = ()=>{
                                                                 phase.id + 1
                                                             ]
                                                         }, void 0, true, {
-                                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                            lineNumber: 100,
+                                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                            lineNumber: 93,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
-                                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                    lineNumber: 95,
+                                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                                    lineNumber: 88,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
-                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                            lineNumber: 60,
+                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                            lineNumber: 53,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, phase.id, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 53,
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 46,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 51,
+                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                            lineNumber: 44,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1830,395 +1739,307 @@ const AndroidMasteryRoadmap = ()=>{
                                     className: "text-xl md:text-2xl font-bold text-gray-900 mb-4",
                                     children: "🏆 Final Tips to Become Industry-Ready"
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 114,
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 107,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-gray-700 text-base md:text-lg mb-4",
-                                    children: "Congratulations! You've completed the Android Mastery Roadmap and are ready to tackle real-world AI challenges."
+                                    children: "Congratulations! You've completed the Angular Mastery Roadmap and are ready to build enterprise-scale applications."
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 117,
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 110,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 113,
+                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                            lineNumber: 106,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                    lineNumber: 49,
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 42,
                     columnNumber: 11
                 }, this);
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-gray-50",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center justify-between mb-6 md:mb-8",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center space-x-2 md:space-x-4",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__["Brain"], {
-                                        className: "text-blue-600",
-                                        size: 32
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                        lineNumber: 133,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-xl md:text-3xl font-bold text-gray-900",
-                                        children: [
-                                            "Andropid Developer ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-blue-600",
-                                                children: "Mastery Roadmap"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                lineNumber: 135,
-                                                columnNumber: 34
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-sm md:text-base font-normal text-gray-600 ml-2",
-                                                children: "(2025 Edition)"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                                lineNumber: 136,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                        lineNumber: 134,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                lineNumber: 132,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: handlePDFDownload,
-                                disabled: isDownloading,
-                                className: "hidden md:flex bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg items-center space-x-2 transition-colors",
-                                children: [
-                                    isDownloading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                        size: 18,
-                                        className: "animate-spin"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                        lineNumber: 147,
-                                        columnNumber: 15
-                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
-                                        size: 18
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                        lineNumber: 149,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: isDownloading ? 'Generating PDF...' : 'Download PDF'
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                        lineNumber: 151,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                lineNumber: 141,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>setMobileMenuOpen(!mobileMenuOpen),
-                                className: "md:hidden bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition-colors",
-                                children: mobileMenuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                                    size: 20
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex items-center justify-between mb-6 md:mb-8",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center space-x-2 md:space-x-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__["Code"], {
+                                    className: "text-red-600",
+                                    size: 32
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 159,
-                                    columnNumber: 31
-                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
-                                    size: 20
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 159,
-                                    columnNumber: 49
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 126,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-xl md:text-3xl font-bold text-gray-900",
+                                    children: [
+                                        "Angular ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-red-600",
+                                            children: "Mastery Roadmap"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                            lineNumber: 128,
+                                            columnNumber: 23
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-sm md:text-base font-normal text-gray-600 ml-2",
+                                            children: "(Beginner → Industry Ready)"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                            lineNumber: 129,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 127,
+                                    columnNumber: 13
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                lineNumber: 155,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                        lineNumber: 131,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "md:hidden mb-4",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                            lineNumber: 125,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             onClick: handlePDFDownload,
                             disabled: isDownloading,
-                            className: "w-full bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors",
+                            className: "hidden md:flex bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg items-center space-x-2 transition-colors",
                             children: [
                                 isDownloading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
                                     size: 18,
                                     className: "animate-spin"
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 171,
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 140,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                     size: 18
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 173,
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: isDownloading ? 'Generating PDF...' : 'Download PDF'
                                 }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 175,
+                                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 165,
+                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                            lineNumber: 134,
                             columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                        lineNumber: 164,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${mobileMenuOpen ? 'block' : 'hidden'} md:block mb-6 md:mb-8`,
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-1 bg-white p-1 rounded-lg shadow-sm w-full md:w-fit",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>{
-                                        setActiveTab('roadmap');
-                                        setMobileMenuOpen(false);
-                                    },
-                                    className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'roadmap' ? 'bg-blue-600 text-white' : 'text-gray-600 hover:text-gray-900'}`,
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__["Map"], {
-                                            size: 18,
-                                            className: "mr-2"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                            lineNumber: 193,
-                                            columnNumber: 15
-                                        }, this),
-                                        "Roadmap"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 182,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>{
-                                        setActiveTab('documentation');
-                                        setMobileMenuOpen(false);
-                                    },
-                                    className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'documentation' ? 'bg-blue-500 text-white' : 'text-gray-600 hover:text-gray-900'}`,
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
-                                            size: 18,
-                                            className: "mr-2"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                            lineNumber: 207,
-                                            columnNumber: 15
-                                        }, this),
-                                        "Documentation"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 196,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>{
-                                        setActiveTab('projects');
-                                        setMobileMenuOpen(false);
-                                    },
-                                    className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'projects' ? 'bg-blue-500 text-white' : 'text-gray-600 hover:text-gray-900'}`,
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderOpen$3e$__["FolderOpen"], {
-                                            size: 18,
-                                            className: "mr-2"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                            lineNumber: 221,
-                                            columnNumber: 15
-                                        }, this),
-                                        "Projects"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 210,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>{
-                                        setActiveTab('faq');
-                                        setMobileMenuOpen(false);
-                                    },
-                                    className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'faq' ? 'bg-blue-500 text-white' : 'text-gray-600 hover:text-gray-900'}`,
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$help$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__["HelpCircle"], {
-                                            size: 18,
-                                            className: "mr-2"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                            lineNumber: 235,
-                                            columnNumber: 15
-                                        }, this),
-                                        "FAQ"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 224,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 181,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                        lineNumber: 180,
-                        columnNumber: 9
-                    }, this),
-                    renderContent()
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                lineNumber: 129,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "fixed bottom-6 right-6 z-50",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                    onClick: handleAIBotClick,
-                    onMouseEnter: ()=>setIsBotHovered(true),
-                    onMouseLeave: ()=>setIsBotHovered(false),
-                    className: "relative group",
-                    "aria-label": "AI Roadmap Generator",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute -top-2 -right-2 bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg animate-pulse z-10",
-                            children: "NEW"
-                        }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 254,
-                            columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full p-4 md:p-5 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-purple-500/50",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__["Bot"], {
-                                size: 28,
-                                className: "md:w-8 md:h-8"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setMobileMenuOpen(!mobileMenuOpen),
+                            className: "md:hidden bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors",
+                            children: mobileMenuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                size: 20
                             }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                lineNumber: 260,
-                                columnNumber: 15
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 152,
+                                columnNumber: 31
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
+                                size: 20
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 152,
+                                columnNumber: 49
                             }, this)
                         }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 259,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute top-0 right-0 -mt-1 -mr-1",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
-                                size: 16,
-                                className: "text-yellow-400 animate-pulse"
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                lineNumber: 265,
-                                columnNumber: 15
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 264,
-                            columnNumber: 13
-                        }, this),
-                        isBotHovered && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute bottom-full right-0 mb-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg whitespace-nowrap shadow-xl",
-                            children: [
-                                "AI Roadmap Generator",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute top-full right-6 -mt-1 border-8 border-transparent border-t-gray-900"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                                    lineNumber: 272,
-                                    columnNumber: 17
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 270,
-                            columnNumber: 15
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute inset-0 rounded-full bg-purple-400 animate-ping opacity-20"
-                        }, void 0, false, {
-                            fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                            lineNumber: 277,
-                            columnNumber: 13
+                            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                            lineNumber: 148,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
-                    fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                    lineNumber: 246,
-                    columnNumber: 11
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/Android/page.jsx",
-                lineNumber: 245,
-                columnNumber: 9
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/app/Roadmaps/Android/page.jsx",
-        lineNumber: 128,
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 124,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "md:hidden mb-4",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: handlePDFDownload,
+                        disabled: isDownloading,
+                        className: "w-full bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors",
+                        children: [
+                            isDownloading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                size: 18,
+                                className: "animate-spin"
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 164,
+                                columnNumber: 15
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
+                                size: 18
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 166,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: isDownloading ? 'Generating PDF...' : 'Download PDF'
+                            }, void 0, false, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 168,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                        lineNumber: 158,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 157,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: `${mobileMenuOpen ? 'block' : 'hidden'} md:block mb-6 md:mb-8`,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-1 bg-white p-1 rounded-lg shadow-sm w-full md:w-fit",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    setActiveTab('roadmap');
+                                    setMobileMenuOpen(false);
+                                },
+                                className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'roadmap' ? 'bg-red-600 text-white' : 'text-gray-600 hover:text-gray-900'}`,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__["Map"], {
+                                        size: 18,
+                                        className: "mr-2"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                        lineNumber: 186,
+                                        columnNumber: 15
+                                    }, this),
+                                    "Roadmap"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 175,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    setActiveTab('documentation');
+                                    setMobileMenuOpen(false);
+                                },
+                                className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'documentation' ? 'bg-red-500 text-white' : 'text-gray-600 hover:text-gray-900'}`,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
+                                        size: 18,
+                                        className: "mr-2"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                        lineNumber: 200,
+                                        columnNumber: 15
+                                    }, this),
+                                    "Documentation"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 189,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    setActiveTab('projects');
+                                    setMobileMenuOpen(false);
+                                },
+                                className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'projects' ? 'bg-red-500 text-white' : 'text-gray-600 hover:text-gray-900'}`,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderOpen$3e$__["FolderOpen"], {
+                                        size: 18,
+                                        className: "mr-2"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                        lineNumber: 214,
+                                        columnNumber: 15
+                                    }, this),
+                                    "Projects"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 203,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>{
+                                    setActiveTab('faq');
+                                    setMobileMenuOpen(false);
+                                },
+                                className: `px-4 md:px-6 py-3 md:py-2 rounded-md font-medium transition-colors flex items-center justify-center md:justify-start ${activeTab === 'faq' ? 'bg-red-500 text-white' : 'text-gray-600 hover:text-gray-900'}`,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$help$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__["HelpCircle"], {
+                                        size: 18,
+                                        className: "mr-2"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                        lineNumber: 228,
+                                        columnNumber: 15
+                                    }, this),
+                                    "FAQ"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                                lineNumber: 217,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                        lineNumber: 174,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+                    lineNumber: 173,
+                    columnNumber: 9
+                }, this),
+                renderContent()
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+            lineNumber: 122,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/Roadmaps/Angular/page.jsx",
+        lineNumber: 121,
         columnNumber: 5
     }, this);
 };
-_s(AndroidMasteryRoadmap, "1sNX/u/FSHqMrWUhpl/OZOfPcfo=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
-_c = AndroidMasteryRoadmap;
-const __TURBOPACK__default__export__ = AndroidMasteryRoadmap;
+_s(AngularMasteryRoadmap, "0HA4EeIJlOOJC7wNk0pgM7ZTfQQ=");
+_c = AngularMasteryRoadmap;
+const __TURBOPACK__default__export__ = AngularMasteryRoadmap;
 var _c;
-__turbopack_context__.k.register(_c, "AndroidMasteryRoadmap");
+__turbopack_context__.k.register(_c, "AngularMasteryRoadmap");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
 }]);
 
-//# sourceMappingURL=app_Roadmaps_Android_b506a8d4._.js.map
+//# sourceMappingURL=app_Roadmaps_Angular_3f88aac4._.js.map

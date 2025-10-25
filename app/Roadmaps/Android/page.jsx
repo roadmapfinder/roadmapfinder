@@ -132,7 +132,7 @@ const AndroidMasteryRoadmap = () => {
           <div className="flex items-center space-x-2 md:space-x-4">
             <Brain className="text-blue-600" size={32} />
             <h1 className="text-xl md:text-3xl font-bold text-gray-900">
-              Andropid Developer <span className="text-blue-600">Mastery Roadmap</span>
+              Android Developer <span className="text-blue-600">Mastery Roadmap</span>
               <span className="text-sm md:text-base font-normal text-gray-600 ml-2">(2025 Edition)</span>
             </h1>
           </div>
