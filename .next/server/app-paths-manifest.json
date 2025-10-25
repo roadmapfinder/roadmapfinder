@@ -1,4 +1,5 @@
 {
+  "/AboutUs/page": "app/AboutUs/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
   "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
   "/Roadmaps/Android/page": "app/Roadmaps/Android/page.js",

@@ -34,7 +34,8 @@ import {
   Clock,
   Lightbulb,
   Contact,
-  Bot
+  Bot,
+  Info
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -154,6 +155,13 @@ export default function HomePage() {
       protected: true,
       feature: "Blogs",
     },
+      {
+        name: "About Us",
+        icon: <Info size={24} className="mr-3" />,
+        href: "/AboutUs",
+        protected: true,
+        feature: "About Us",
+      },
     {
       name: "Profile",
       icon: <User size={24} className="mr-3" />,
