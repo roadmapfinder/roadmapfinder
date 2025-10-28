@@ -1,105 +1,44 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BookOpen, GraduationCap, Settings, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-// Import a default placeholder image to use when no user image is available
-import defaultUserImage from "../Images/user.jpg"; // Make sure this path is correct
-import { auth } from "../lib/firebase";
-import { onAuthStateChanged, updateProfile, updateEmail } from "firebase/auth";
+import defaultUserImage from "../Images/user.jpg";
 
 export default function ProfilePage() {
-  // Initialize state with null values to properly handle loading states
   const [profileData, setProfileData] = useState({
-    name: "",
-    email: "",
-    avatarUrl: null, // Start with null instead of assuming an image exists
+    name: "John Doe",
+    email: "john.doe@example.com",
+    avatarUrl: null,
   });
 
   const [isEditing, setIsEditing] = useState(false);
-  const [newName, setNewName] = useState("");
-  const [newEmail, setNewEmail] = useState("");
+  const [newName, setNewName] = useState("John Doe");
+  const [newEmail, setNewEmail] = useState("john.doe@example.com");
   const [newAvatar, setNewAvatar] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
-
-  // Fetch user data from Firebase Auth when component mounts
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setProfileData({
-          name: currentUser.displayName || "User",
-          email: currentUser.email || "",
-          avatarUrl: currentUser.photoURL || null, // Set to null if no photo URL
-        });
-        setNewName(currentUser.displayName || "User");
-        setNewEmail(currentUser.email || "");
-      } else {
-        // Handle case when user is not logged in
-        console.log("No user is signed in");
-        // Set some default values when not logged in
-        setProfileData({
-          name: "Guest User",
-          email: "Not logged in",
-          avatarUrl: null,
-        });
-      }
-      setLoading(false);
-    });
-
-    // Cleanup subscription on unmount
-    return () => unsubscribe();
-  }, []);
 
   // Handle file selection for avatar change
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      // Create a local URL for preview only
       const imageUrl = URL.createObjectURL(file);
       setNewAvatar({
-        file: file, // Store the actual file for later upload
-        previewUrl: imageUrl, // URL for preview
+        file: file,
+        previewUrl: imageUrl,
       });
-      setImageError(false); // Reset error state when new image is selected
+      setImageError(false);
     }
   };
 
   // Handle save button click
-  const handleSave = async () => {
-    try {
-      const currentUser = auth.currentUser;
-      if (currentUser) {
-        // Update profile info in Firebase
-        if (newName !== profileData.name) {
-          await updateProfile(currentUser, {
-            displayName: newName,
-          });
-        }
-
-        if (newEmail !== profileData.email) {
-          await updateEmail(currentUser, newEmail);
-        }
-
-        // For avatar update, you would need Firebase Storage
-        // This is a simplified version just updating the state
-        // In a real implementation, you would upload the image to Firebase Storage
-        // and then update the photoURL property of the user profile
-
-        // For now, we'll just update the local state
-        setProfileData({
-          ...profileData,
-          name: newName,
-          email: newEmail,
-          ...(newAvatar && { avatarUrl: newAvatar.previewUrl }),
-        });
-      }
-      setIsEditing(false);
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      // You might want to show an error message to the user
-      alert("Failed to update profile: " + error.message);
-    }
+  const handleSave = () => {
+    setProfileData({
+      name: newName,
+      email: newEmail,
+      avatarUrl: newAvatar ? newAvatar.previewUrl : profileData.avatarUrl,
+    });
+    setIsEditing(false);
   };
 
   // Handle cancel button click
@@ -113,19 +52,9 @@ export default function ProfilePage() {
   // Handle image loading error
   const handleImageError = () => {
     setImageError(true);
-    console.error("Failed to load profile image");
   };
 
-  // Display loading state
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-2xl font-bold text-gray-700">Loading...</div>
-      </div>
-    );
-  }
-
-  // Determine which image source to use, with fallback to default image if there's an error
+  // Determine which image source to use
   const displayImageSrc = imageError 
     ? defaultUserImage 
     : (isEditing && newAvatar 
@@ -152,7 +81,7 @@ export default function ProfilePage() {
       </div>
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 w-full max-w-md mx-auto shadow-lg font-sora relative">
-          {/* Edit Button - Positioned outside the main container */}
+          {/* Edit Button */}
           {!isEditing && (
             <button
               onClick={() => setIsEditing(true)}
