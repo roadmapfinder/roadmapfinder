@@ -1,12 +1,42 @@
 {
   "app": {
+    "[project]/app/AboutUs/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Blogs/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
     "[project]/app/Courses/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/Resource-Finder/page": [
+    "[project]/app/RoadmapPage/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
-    "[project]/app/RoadmapPage/page": [
+    "[project]/app/Roadmaps/AI-Agent/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Aiml/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Django/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Excel/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Nestjs/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Next/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/React/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Reactnative/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/ai-roadmap-generator/page": [
       "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
     ],
     "[project]/app/page": [
