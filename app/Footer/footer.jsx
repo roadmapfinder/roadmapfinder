@@ -13,21 +13,22 @@ const ThreadsIcon = ({ size = 20, className = "" }) => (
     fill="currentColor"
     className={className}
   >
-    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.001v-.002C1.5 8.584 2.35 5.73 3.995 3.681 5.851 1.376 8.604.195 12.186.17h.014c3.581.024 6.334 1.205 8.184 3.509C21.65 5.73 22.5 8.584 22.5 12.001v.002c0 3.417-.85 6.271-2.495 8.32-1.856 2.304-4.609 3.485-8.186 3.509h-.014z"/>
-    <path d="M16.999 9.5c0 2.5-1.5 3.5-3.5 3.5s-3.5-1-3.5-3.5S11.499 6 13.499 6s3.5 1.5 3.5 3.5zm-2 0c0-1.381-.672-2.5-1.5-2.5S12 8.119 12 9.5s.672 2.5 1.5 2.5 1.5-1.119 1.5-2.5z"/>
-    <path d="M12 16c-2.5 0-4.5-1.5-4.5-4s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4-4.5 4zm0-7.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
+    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.001v-.002C1.5 8.584 2.35 5.73 3.995 3.681 5.851 1.376 8.604.195 12.186.17h.014c3.581.024 6.334 1.205 8.184 3.509C21.65 5.73 22.5 8.584 22.5 12.001v.002c0 3.417-.85 6.271-2.495 8.32-1.856 2.304-4.609 3.485-8.186 3.509h-.014z" />
+    <path d="M16.999 9.5c0 2.5-1.5 3.5-3.5 3.5s-3.5-1-3.5-3.5S11.499 6 13.499 6s3.5 1.5 3.5 3.5zm-2 0c0-1.381-.672-2.5-1.5-2.5S12 8.119 12 9.5s.672 2.5 1.5 2.5 1.5-1.119 1.5-2.5z" />
+    <path d="M12 16c-2.5 0-4.5-1.5-4.5-4s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4-4.5 4zm0-7.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z" />
   </svg>
 );
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-br from-white via-white to-blue-50 rounded-3xl shadow-xl border border-gray-100/50 px-6 py-10 sm:py-12 my-6 font-sora transition-all duration-300
-      lg:ml-[16rem] xl:ml-[18rem] lg:w-[calc(100%-16rem)] xl:w-[calc(100%-18rem)]">
+    <footer
+      className="w-full bg-gradient-to-br from-white via-white to-blue-50 rounded-3xl shadow-xl border border-gray-100/50 
+      px-6 py-10 sm:py-12 my-6 font-sora transition-all duration-300 
+      lg:ml-[16rem] xl:ml-[18rem] lg:w-[calc(100%-16rem)] xl:w-[calc(100%-18rem)]"
+    >
       <div className="max-w-7xl mx-auto flex flex-col space-y-12">
-
         {/* Top Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Logo + Description */}
           <div className="flex flex-col space-y-6 lg:col-span-6">
             <Link href="/" className="flex items-center group">
@@ -41,13 +42,15 @@ const Footer = () => {
                   priority
                 />
               </div>
-              <span className="text-blue-600 text-2xl font-bold ml-3 group-hover:text-blue-600 transition-colors">
+              <span className="text-blue-600 text-2xl font-bold ml-3 group-hover:text-blue-700 transition-colors">
                 RoadmapFinder
               </span>
             </Link>
 
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-md">
-              Navigate your learning journey with expertly curated roadmaps and resources designed for modern developers.
+              Navigate your learning journey with expertly curated roadmaps and
+              AI-powered resources designed for modern developers — helping you
+              go from beginner to industry ready.
             </p>
 
             {/* Social Links */}
@@ -56,19 +59,28 @@ const Footer = () => {
                 href="https://x.com/kevinowns140058?t=4hcXrsQjo3AkTfOyuo5jEQ&s=09"
                 className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-50 border border-gray-100 hover:border-blue-200 transition-all duration-300"
               >
-                <Twitter size={20} className="text-gray-600 hover:text-blue-600" />
+                <Twitter
+                  size={20}
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/sohel-khan-266498352"
                 className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-50 border border-gray-100 hover:border-blue-200 transition-all duration-300"
               >
-                <Linkedin size={20} className="text-gray-600 hover:text-blue-600" />
+                <Linkedin
+                  size={20}
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                />
               </Link>
               <Link
                 href="https://www.threads.net/@roadmapfinder"
                 className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-gray-50 border border-gray-100 hover:border-gray-200 transition-all duration-300"
               >
-                <ThreadsIcon size={20} className="text-gray-600 hover:text-gray-800" />
+                <ThreadsIcon
+                  size={20}
+                  className="text-gray-600 hover:text-gray-800 transition-colors"
+                />
               </Link>
             </div>
           </div>
@@ -83,7 +95,7 @@ const Footer = () => {
               {[
                 { name: "Roadmaps", href: "/RoadmapPage" },
                 { name: "Courses", href: "/Courses" },
-                { name: "Login", href: "/Login" },
+                { name: "About Us", href: "/AboutUs" },
                 { name: "Privacy Policy", href: "/Privacy_Policy" },
                 { name: "Contact Us", href: "/ContactUs" },
               ].map((link) => (
@@ -101,12 +113,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 pt-6 border-t border-gray-200/70">
-          <p className="text-gray-600 text-sm font-medium text-center lg:text-left">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-6 border-t border-gray-200/70">
+          <p className="text-gray-600 text-sm font-medium text-center sm:text-left">
             © {new Date().getFullYear()} RoadmapFinder. All rights reserved.
           </p>
 
-          {/* Theme Toggle (Visual Only) */}
+          {/* Visual Theme Toggle */}
           <div className="flex items-center space-x-3">
             <span className="text-gray-600 text-sm font-medium">Theme</span>
             <div className="relative">

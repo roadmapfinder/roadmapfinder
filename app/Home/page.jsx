@@ -39,8 +39,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { onAuthStateChanged } from "../lib/auth";
-import { auth } from "../lib/firebase";
+
 import Link from "next/link";
 
 import RoadmapTrending from "./RoadmapTrending";
@@ -59,18 +58,8 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState("popular");
   const router = useRouter();
 
-  // Firebase auth state listener
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-      if (currentUser) {
-        setUsername(currentUser.displayName || currentUser.email || "User");
-      }
-    });
 
-    return () => unsubscribe();
-  }, []);
+
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -84,19 +73,7 @@ export default function HomePage() {
 
   // Direct signup navigation handler
   const handleSignupClick = () => {
-    router.push("/Signup");
-  };
-
-  // Simplified protected action handler - direct redirect to signup if not authenticated
-  const handleProtectedAction = (href, featureName) => {
-    if (!user) {
-      // Store the intended destination for post-login redirect (optional)
-      sessionStorage.setItem('redirectAfterLogin', href);
-      router.push("/Signup");
-      return;
-    }
-    // User is authenticated, proceed to the intended route
-    router.push(href);
+    router.push("/RoadmapPage");
   };
 
   // Close mobile menu when screen gets larger
@@ -130,71 +107,41 @@ export default function HomePage() {
       name: "Roadmaps",
       icon: <Map size={24} className="mr-3" />,
       href: "/RoadmapPage",
-      protected: true,
-      feature: "Roadmaps",
     },
     {
       name: " AI Roadmaps",
       icon: <Bot size={24} className="mr-3" />,
       href: "/ai-roadmap-generator",
-      protected: true,
-      feature: "AI Powered Roadmaps",
     },
     {
       name: "Courses",
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
-      protected: true,
-      feature: "Courses",
     },
-  
     {
       name: "Blogs",
       icon: <Newspaper size={24} className="mr-3" />,
       href: "/Blogs",
-      protected: true,
-      feature: "Blogs",
     },
-      {
-        name: "About Us",
-        icon: <Info size={24} className="mr-3" />,
-        href: "/AboutUs",
-        protected: true,
-        feature: "About Us",
-      },
+    {
+      name: "About Us",
+      icon: <Info size={24} className="mr-3" />,
+      href: "/AboutUs",
+    },
     {
       name: "Profile",
       icon: <User size={24} className="mr-3" />,
       href: "/Profile",
-      protected: true,
-      feature: "Profile",
     },
     {
       name: "Contact Us",
       icon: <Contact size={24} className="mr-3" />,
       href: "/ContactUs",
-      protected: true,
-      feature: "Contact Us",
     },
-    {
-      name: "Logout",
-      icon: <LogOut size={24} className="mr-3" />,
-      href: "/Logout",
-      protected: true,
-      feature: "Logout",
-    },
+  
   ];
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <div className="min-h-screen bg-gray-50 font-['Sora']">
@@ -233,73 +180,32 @@ export default function HomePage() {
             <div className="p-5 flex-grow overflow-y-auto">
               <nav className="space-y-2">
                 {navItems.map((item, index) => (
-                  <div key={index}>
-                    {item.protected && !user ? (
-                      <button
-                        onClick={() =>
-                          handleProtectedAction(item.href, item.feature)
-                        }
-                        className={`flex items-center w-full ${
-                          item.href === "/"
-                            ? "text-blue-600 font-semibold bg-blue-50"
-                            : "text-gray-600"
-                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group relative`}
-                      >
-                        <div
-                          className={`${isSidebarCollapsed ? "mx-auto" : ""} relative`}
-                        >
-                          {item.icon}
-                          {!user && item.protected && (
-                            <Lock
-                              size={12}
-                              className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500"
-                            />
-                          )}
-                        </div>
-                        {!isSidebarCollapsed && (
-                          <>
-                            <span className="flex-1 text-left">
-                              {item.name}
-                            </span>
-                            {item.isNew && (
-                              <span className="bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                                New
-                              </span>
-                            )}
-                          </>
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className={`flex items-center relative ${
+                      item.href === "/"
+                        ? "text-blue-600 font-semibold bg-blue-50"
+                        : "text-gray-600"
+                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                  >
+                    <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                      {item.icon}
+                    </div>
+                    {!isSidebarCollapsed && (
+                      <>
+                        <span>{item.name}</span>
+                        {item.isNew && (
+                          <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                            New
+                          </span>
                         )}
-                        {isSidebarCollapsed && item.isNew && (
-                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                        )}
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={`flex items-center relative ${
-                          item.href === "/"
-                            ? "text-blue-600 font-semibold bg-blue-50"
-                            : "text-gray-600"
-                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
-                      >
-                        <div className={isSidebarCollapsed ? "mx-auto" : ""}>
-                          {item.icon}
-                        </div>
-                        {!isSidebarCollapsed && (
-                          <>
-                            <span>{item.name}</span>
-                            {item.isNew && (
-                              <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                                New
-                              </span>
-                            )}
-                          </>
-                        )}
-                        {isSidebarCollapsed && item.isNew && (
-                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                        )}
-                      </Link>
+                      </>
                     )}
-                  </div>
+                    {isSidebarCollapsed && item.isNew && (
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    )}
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -333,55 +239,24 @@ export default function HomePage() {
           <div className="p-5 overflow-y-auto h-full pb-20">
             <nav className="space-y-2">
               {navItems.map((item, index) => (
-                <div key={index}>
-                  {item.protected && !user ? (
-                    <button
-                      onClick={() => {
-                        toggleMobileMenu();
-                        handleProtectedAction(item.href, item.feature);
-                      }}
-                      className={`flex items-center w-full ${
-                        item.href === "/"
-                          ? "text-blue-600 font-semibold bg-blue-50"
-                          : "text-gray-600"
-                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50 group relative`}
-                    >
-                      <div className="relative">
-                        {item.icon}
-                        {!user && item.protected && (
-                          <Lock
-                            size={12}
-                            className="absolute -top-1 -right-1 text-gray-400 group-hover:text-blue-500"
-                          />
-                        )}
-                      </div>
-                      <span className="flex-1 text-left">{item.name}</span>
-                      {item.isNew && (
-                        <span className="bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                          New
-                        </span>
-                      )}
-                    </button>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={`flex items-center relative ${
-                        item.href === "/"
-                          ? "text-blue-600 font-semibold bg-blue-50"
-                          : "text-gray-600"
-                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
-                      onClick={toggleMobileMenu}
-                    >
-                      {item.icon}
-                      <span>{item.name}</span>
-                      {item.isNew && (
-                        <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                          New
-                        </span>
-                      )}
-                    </Link>
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={`flex items-center relative ${
+                    item.href === "/"
+                      ? "text-blue-600 font-semibold bg-blue-50"
+                      : "text-gray-600"
+                  } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                  onClick={toggleMobileMenu}
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                  {item.isNew && (
+                    <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                      New
+                    </span>
                   )}
-                </div>
+                </Link>
               ))}
             </nav>
           </div>
@@ -463,7 +338,6 @@ export default function HomePage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
               <HeroSection
                 user={user}
-                handleProtectedAction={handleProtectedAction}
                 username={username}
               />
             </div>
@@ -472,10 +346,9 @@ export default function HomePage() {
             <div className="w-full">
               <RoadmapTrending
                 user={user}
-                handleProtectedAction={handleProtectedAction}
               />
 
-              <Features handleProtectedAction={handleProtectedAction} />
+              <Features />
               <ChooseUs />
             </div>
           </div>

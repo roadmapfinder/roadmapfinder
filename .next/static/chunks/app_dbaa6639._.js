@@ -1052,185 +1052,157 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
     }["HeroSection.useEffect"], []);
     // Validation for props to prevent runtime errors
     const isUserAuthenticated = user && username;
-    const safeUsername = username?.trim() || 'User';
+    const safeUsername = username?.trim() || "User";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-6bbc618fe535106" + " " + "px-3 xs:px-4 sm:px-6 lg:px-8",
+        className: "jsx-b0b99e1ac2a11c92" + " " + "px-3 xs:px-4 sm:px-6 lg:px-8",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "jsx-6bbc618fe535106" + " " + `mb-6 xs:mb-8 lg:mb-12 transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`,
+                className: "jsx-b0b99e1ac2a11c92" + " " + `mb-6 xs:mb-8 lg:mb-12 transform transition-all duration-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-6bbc618fe535106" + " " + "bg-white rounded-xl xs:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300",
+                    className: "jsx-b0b99e1ac2a11c92" + " " + "bg-white rounded-xl xs:rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "jsx-6bbc618fe535106" + " " + "block lg:hidden",
+                            className: "jsx-b0b99e1ac2a11c92" + " " + "block lg:hidden",
                             children: [
                                 isUserAuthenticated && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-6bbc618fe535106" + " " + "bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100 px-4 xs:px-6 py-3 xs:py-4",
+                                    className: "jsx-b0b99e1ac2a11c92" + " " + "bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100 px-4 xs:px-6 py-3 xs:py-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-2 text-blue-700",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-2 text-blue-700",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "w-2 h-2 bg-green-500 rounded-full animate-pulse"
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "w-2 h-2 bg-green-500 rounded-full animate-pulse"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 36,
+                                                    lineNumber: 42,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "text-sm xs:text-base font-medium",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "text-sm xs:text-base font-medium",
                                                     children: [
-                                                        "Welcome back, ",
+                                                        "Welcome back,",
+                                                        " ",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "font-semibold",
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "font-semibold",
                                                             children: safeUsername
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 38,
-                                                            columnNumber: 35
+                                                            lineNumber: 45,
+                                                            columnNumber: 21
                                                         }, this),
                                                         "!"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 37,
+                                                    lineNumber: 43,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 35,
+                                            lineNumber: 41,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "jsx-6bbc618fe535106" + " " + "text-xs xs:text-sm text-blue-600 mt-1",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "text-xs xs:text-sm text-blue-600 mt-1",
                                             children: "Ready to continue your learning journey?"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 41,
+                                            lineNumber: 48,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                    lineNumber: 34,
+                                    lineNumber: 40,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-6bbc618fe535106" + " " + "p-4 xs:p-6 sm:p-8 text-center flex flex-col justify-center",
+                                    className: "jsx-b0b99e1ac2a11c92" + " " + "p-4 xs:p-6 sm:p-8 text-center flex flex-col justify-center",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "inline-flex items-center gap-1.5 xs:gap-2 bg-green-50 text-green-700 px-2.5 xs:px-3 py-1 rounded-full text-xs font-medium mb-3 xs:mb-4 border border-green-200 self-center",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "inline-flex items-center gap-1.5 xs:gap-2 bg-green-50 text-green-700 px-2.5 xs:px-3 py-1 rounded-full text-xs font-medium mb-3 xs:mb-4 border border-green-200 self-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
                                                     size: 10,
                                                     className: "xs:w-3 xs:h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 51,
+                                                    lineNumber: 58,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "text-xs xs:text-xs",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "text-xs xs:text-xs",
                                                     children: "100% Free Platform"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 52,
+                                                    lineNumber: 59,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 50,
+                                            lineNumber: 57,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "mb-4 xs:mb-6",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                className: "jsx-6bbc618fe535106" + " " + "text-2xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight",
-                                                children: [
-                                                    "Find Your Perfect",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-6bbc618fe535106" + " " + "block text-blue-600 mt-1 xs:mt-2",
-                                                        children: "Career Roadmap"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/Home/HeroSection.jsx",
-                                                        lineNumber: 59,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/Home/HeroSection.jsx",
-                                                lineNumber: 57,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "mb-4 xs:mb-6",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "text-2xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight",
+                                                    children: [
+                                                        "Learn Tech skill with - ",
+                                                        " ",
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "text-blue-600",
+                                                            children: "AI Powered Roadmaps"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/Home/HeroSection.jsx",
+                                                            lineNumber: 66,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/Home/HeroSection.jsx",
+                                                    lineNumber: 64,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed mt-3 max-w-xs xs:max-w-sm sm:max-w-md mx-auto px-2 xs:px-0",
+                                                    children: "RoadmapFinder shows you the right learning path, real trends, and beginner-friendly resources"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/Home/HeroSection.jsx",
+                                                    lineNumber: 68,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 56,
+                                            lineNumber: 63,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "mb-4 xs:mb-6",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "jsx-6bbc618fe535106" + " " + "text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed max-w-xs xs:max-w-sm sm:max-w-md mx-auto px-2 xs:px-0",
-                                                children: "Get expert-curated learning paths, courses, and AI-powered career guidance - completely free"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/Home/HeroSection.jsx",
-                                                lineNumber: 65,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 64,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "mb-6 xs:mb-8",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "mb-6 xs:mb-8",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-6bbc618fe535106" + " " + "flex items-center justify-center gap-3 xs:gap-4 sm:gap-6 text-xs xs:text-sm text-gray-500 flex-wrap",
+                                                className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center justify-center gap-3 xs:gap-4 sm:gap-6 text-xs xs:text-sm text-gray-500 flex-wrap",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-1 xs:gap-1.5",
+                                                        className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-1 xs:gap-1.5",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
                                                                 size: 14,
                                                                 className: "xs:w-4 xs:h-4 text-blue-500 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                lineNumber: 74,
-                                                                columnNumber: 21
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "jsx-6bbc618fe535106" + " " + "whitespace-nowrap",
-                                                                children: "10K+ Users"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                lineNumber: 75,
-                                                                columnNumber: 21
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/Home/HeroSection.jsx",
-                                                        lineNumber: 73,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-1 xs:gap-1.5",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                                size: 14,
-                                                                className: "xs:w-4 xs:h-4 text-yellow-500 fill-current flex-shrink-0"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Home/HeroSection.jsx",
                                                                 lineNumber: 78,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "jsx-6bbc618fe535106" + " " + "whitespace-nowrap",
-                                                                children: "4.8 Rating"
+                                                                className: "jsx-b0b99e1ac2a11c92" + " " + "whitespace-nowrap",
+                                                                children: "10K+ Users"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                lineNumber: 79,
+                                                                lineNumber: 82,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
@@ -1240,451 +1212,426 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-1 xs:gap-1.5",
+                                                        className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-1 xs:gap-1.5",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                                size: 14,
+                                                                className: "xs:w-4 xs:h-4 text-yellow-500 fill-current flex-shrink-0"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/Home/HeroSection.jsx",
+                                                                lineNumber: 85,
+                                                                columnNumber: 21
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "jsx-b0b99e1ac2a11c92" + " " + "whitespace-nowrap",
+                                                                children: "4.8 Rating"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/Home/HeroSection.jsx",
+                                                                lineNumber: 89,
+                                                                columnNumber: 21
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/Home/HeroSection.jsx",
+                                                        lineNumber: 84,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-1 xs:gap-1.5",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
                                                                 size: 14,
                                                                 className: "xs:w-4 xs:h-4 text-purple-500 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                lineNumber: 82,
+                                                                lineNumber: 92,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "jsx-6bbc618fe535106" + " " + "whitespace-nowrap",
+                                                                className: "jsx-b0b99e1ac2a11c92" + " " + "whitespace-nowrap",
                                                                 children: "Expert Verified"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                lineNumber: 83,
+                                                                lineNumber: 96,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Home/HeroSection.jsx",
-                                                        lineNumber: 81,
+                                                        lineNumber: 91,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                lineNumber: 72,
+                                                lineNumber: 76,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 71,
+                                            lineNumber: 75,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "block xs:hidden space-y-2.5",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "block xs:hidden space-y-2.5",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>handleProtectedAction && handleProtectedAction("/RoadmapPage"),
                                                     disabled: !handleProtectedAction,
                                                     "aria-label": "Start your career roadmap journey",
-                                                    className: "jsx-6bbc618fe535106" + " " + "w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-lg text-sm font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-lg text-sm font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 96,
+                                                            lineNumber: 111,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-6bbc618fe535106",
+                                                            className: "jsx-b0b99e1ac2a11c92",
                                                             children: "Start Roadmap"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 97,
+                                                            lineNumber: 112,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 103,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>handleProtectedAction && handleProtectedAction("/Courses"),
                                                     disabled: !handleProtectedAction,
                                                     "aria-label": "Browse available courses",
-                                                    className: "jsx-6bbc618fe535106" + " " + "w-full bg-white text-blue-600 text-center py-2.5 px-3 rounded-lg text-sm font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "w-full bg-white text-blue-600 text-center py-2.5 px-3 rounded-lg text-sm font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__["BookOpen"], {
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 106,
+                                                            lineNumber: 123,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-6bbc618fe535106",
+                                                            className: "jsx-b0b99e1ac2a11c92",
                                                             children: "Youtube Courses"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 107,
+                                                            lineNumber: 124,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 115,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 89,
+                                            lineNumber: 102,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                    lineNumber: 48,
+                                    lineNumber: 55,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Home/HeroSection.jsx",
-                            lineNumber: 31,
+                            lineNumber: 37,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "jsx-6bbc618fe535106" + " " + "hidden lg:flex min-h-[400px]",
+                            className: "jsx-b0b99e1ac2a11c92" + " " + "hidden lg:flex min-h-[400px]",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-6bbc618fe535106" + " " + "lg:w-1/2 p-8 xl:p-10 flex flex-col justify-center relative overflow-hidden",
+                                    className: "jsx-b0b99e1ac2a11c92" + " " + "lg:w-1/2 p-8 xl:p-10 flex flex-col justify-center relative overflow-hidden",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-xl opacity-60"
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-xl opacity-60"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 117,
+                                            lineNumber: 133,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-pink-100 to-yellow-100 rounded-full blur-xl opacity-60"
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-pink-100 to-yellow-100 rounded-full blur-xl opacity-60"
                                         }, void 0, false, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 118,
+                                            lineNumber: 134,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "relative z-10",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "relative z-10",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-medium mb-4 border border-green-200",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-medium mb-4 border border-green-200",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
                                                             size: 14
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 122,
+                                                            lineNumber: 138,
                                                             columnNumber: 19
                                                         }, this),
                                                         "100% Free Platform"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 137,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "text-2xl xl:text-4xl font-bold text-gray-900 mb-7 mt-3  transition-colors duration-300",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "text-2xl xl:text-4xl font-bold text-gray-900 mb-7 mt-3 transition-colors duration-300",
                                                     children: [
-                                                        "Start Your Tech Journey with",
+                                                        "Learn Tech skill with - ",
+                                                        " ",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent",
-                                                            children: " Clarity"
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent",
+                                                            children: "AI-Powered Roadmaps"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 128,
+                                                            lineNumber: 145,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 143,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "text-medium xl:text-medium text-gray-600 mb-8 transition-colors duration-300 ",
-                                                    children: "Get beginner-friendly roadmaps, curated Hindi & English tutorials, and AI guidance"
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "text-medium xl:text-medium text-gray-600 mb-8 transition-colors duration-300",
+                                                    children: "RoadmapFinder shows you the right learning path, real trends, and beginner-friendly resources."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 131,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this),
                                                 isUserAuthenticated && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-4 py-3 rounded-lg text-sm mb-6 border border-blue-200 shadow-sm",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-4 py-3 rounded-lg text-sm mb-6 border border-blue-200 shadow-sm",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-2",
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "jsx-6bbc618fe535106" + " " + "w-2 h-2 bg-green-500 rounded-full animate-pulse"
+                                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "w-2 h-2 bg-green-500 rounded-full animate-pulse"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 159,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-6bbc618fe535106" + " " + "font-medium",
+                                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "font-medium",
                                                                     children: [
-                                                                        "Welcome back, ",
+                                                                        "Welcome back,",
+                                                                        " ",
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "jsx-6bbc618fe535106" + " " + "font-semibold",
+                                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "font-semibold",
                                                                             children: safeUsername
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                            lineNumber: 141,
-                                                                            columnNumber: 67
+                                                                            lineNumber: 162,
+                                                                            columnNumber: 25
                                                                         }, this),
                                                                         "!"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 141,
+                                                                    lineNumber: 160,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 158,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "text-blue-600 text-xs mt-1",
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "text-blue-600 text-xs mt-1",
                                                             children: "Ready to continue your journey?"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 143,
+                                                            lineNumber: 165,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 138,
+                                                    lineNumber: 157,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-6 mb-8 text-sm text-gray-500",
+                                                    className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-6 mb-8 text-sm text-gray-500",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-2",
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
                                                                     size: 18,
                                                                     className: "text-blue-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 150,
+                                                                    lineNumber: 174,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-6bbc618fe535106",
+                                                                    className: "jsx-b0b99e1ac2a11c92",
                                                                     children: "10,000+ Users"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 151,
+                                                                    lineNumber: 175,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 149,
+                                                            lineNumber: 173,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-2",
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
                                                                     size: 18,
                                                                     className: "text-yellow-500 fill-current"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 154,
+                                                                    lineNumber: 178,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-6bbc618fe535106",
+                                                                    className: "jsx-b0b99e1ac2a11c92",
                                                                     children: "4.8 Rating"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 155,
+                                                                    lineNumber: 179,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 177,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-6bbc618fe535106" + " " + "flex items-center gap-2",
+                                                            className: "jsx-b0b99e1ac2a11c92" + " " + "flex items-center gap-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
                                                                     size: 18,
                                                                     className: "text-purple-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 158,
+                                                                    lineNumber: 182,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-6bbc618fe535106",
+                                                                    className: "jsx-b0b99e1ac2a11c92",
                                                                     children: "Expert Verified"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                                    lineNumber: 159,
+                                                                    lineNumber: 183,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                                            lineNumber: 157,
+                                                            lineNumber: 181,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                                    lineNumber: 148,
+                                                    lineNumber: 172,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 120,
+                                            lineNumber: 136,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                    lineNumber: 115,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-6bbc618fe535106" + " " + "lg:w-1/2 relative flex items-center justify-center p-6 xl:p-8 group",
+                                    className: "jsx-b0b99e1ac2a11c92" + " " + "lg:w-1/2 relative flex items-center justify-center p-6 xl:p-8 group",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "absolute inset-0 flex items-center justify-center opacity-30",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "absolute inset-0 flex items-center justify-center opacity-30",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-6bbc618fe535106" + " " + "w-72 xl:w-80 h-72 xl:h-80 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full animate-pulse"
+                                                className: "jsx-b0b99e1ac2a11c92" + " " + "w-72 xl:w-80 h-72 xl:h-80 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full animate-pulse"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                lineNumber: 168,
+                                                lineNumber: 191,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 167,
+                                            lineNumber: 190,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-6bbc618fe535106" + " " + "relative z-10",
+                                            className: "jsx-b0b99e1ac2a11c92" + " " + "relative z-10",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$Images$2f$roadmap$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$Images$2f$roadmap$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
                                                 alt: "Interactive career roadmap illustration showing learning paths",
                                                 width: 500,
                                                 height: 600,
                                                 className: "object-contain rounded-xl group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl max-w-full",
-                                                priority: true,
-                                                placeholder: "blur",
-                                                blurDataURL: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli2hG5epgqiRDAzuBdtnX9ddDzgBD1X/xAAbEQACAwADAQAAAAAAAAAAAAABAgADBCURE//aAAwDAQACEQMRAD8A6pf6MlmPo6/mCeZCcIa8bOhHDhZBHHPyJJsJqkMYOm6fOGVF9IQwSevuJNVVqUOcM3xNqj2MNNpDWcGJWgfSqxDc5DmnPqw2/wA="
+                                                priority: true
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                                lineNumber: 172,
+                                                lineNumber: 195,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Home/HeroSection.jsx",
-                                            lineNumber: 171,
+                                            lineNumber: 194,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/Home/HeroSection.jsx",
-                                    lineNumber: 165,
+                                    lineNumber: 189,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Home/HeroSection.jsx",
-                            lineNumber: 114,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Home/HeroSection.jsx",
-                    lineNumber: 28,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Home/HeroSection.jsx",
-                lineNumber: 23,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "jsx-6bbc618fe535106" + " " + `transform transition-all duration-500 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`,
+                className: "jsx-b0b99e1ac2a11c92" + " " + `transform transition-all duration-500 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-6bbc618fe535106" + " " + "hidden xs:block sm:hidden space-y-3",
+                        className: "jsx-b0b99e1ac2a11c92" + " " + "hidden xs:block sm:hidden space-y-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>handleProtectedAction && handleProtectedAction("/RoadmapPage"),
                                 disabled: !handleProtectedAction,
-                                "aria-label": "Start your roadmap journey",
-                                className: "jsx-6bbc618fe535106" + " " + "w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-6 rounded-xl text-base font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                        size: 18
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Home/HeroSection.jsx",
-                                        lineNumber: 201,
-                                        columnNumber: 13
-                                    }, this),
-                                    "Start Your Roadmap Journey"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Home/HeroSection.jsx",
-                                lineNumber: 195,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>handleProtectedAction && handleProtectedAction("/Courses"),
-                                disabled: !handleProtectedAction,
-                                "aria-label": "Browse available courses",
-                                className: "jsx-6bbc618fe535106" + " " + "w-full bg-white text-blue-600 text-center py-3 px-4 rounded-xl text-sm font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__["BookOpen"], {
-                                        size: 16
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/Home/HeroSection.jsx",
-                                        lineNumber: 211,
-                                        columnNumber: 13
-                                    }, this),
-                                    "Youtube Courses"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/Home/HeroSection.jsx",
-                                lineNumber: 205,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/Home/HeroSection.jsx",
-                        lineNumber: 194,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-6bbc618fe535106" + " " + "hidden sm:flex lg:hidden gap-3 flex-wrap",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>handleProtectedAction && handleProtectedAction("/RoadmapPage"),
-                                disabled: !handleProtectedAction,
-                                "aria-label": "Explore career roadmaps",
-                                className: "jsx-6bbc618fe535106" + " " + "flex-1 min-w-[200px] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
+                                className: "jsx-b0b99e1ac2a11c92" + " " + "w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-6 rounded-xl text-base font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                         size: 18
@@ -1693,47 +1640,92 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
                                         lineNumber: 224,
                                         columnNumber: 13
                                     }, this),
-                                    "Roadmap"
+                                    "Start Your Roadmap Journey"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                lineNumber: 218,
+                                lineNumber: 217,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>handleProtectedAction && handleProtectedAction("/Courses"),
                                 disabled: !handleProtectedAction,
-                                "aria-label": "Browse available courses",
-                                className: "jsx-6bbc618fe535106" + " " + "flex-1 min-w-[150px] bg-white text-blue-600 text-center py-3 px-5 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
+                                className: "jsx-b0b99e1ac2a11c92" + " " + "w-full bg-white text-blue-600 text-center py-3 px-4 rounded-xl text-sm font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__["BookOpen"], {
+                                        size: 16
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Home/HeroSection.jsx",
+                                        lineNumber: 235,
+                                        columnNumber: 13
+                                    }, this),
+                                    "Youtube Courses"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Home/HeroSection.jsx",
+                                lineNumber: 228,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/Home/HeroSection.jsx",
+                        lineNumber: 216,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "jsx-b0b99e1ac2a11c92" + " " + "hidden sm:flex lg:hidden gap-3 flex-wrap",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>handleProtectedAction && handleProtectedAction("/RoadmapPage"),
+                                disabled: !handleProtectedAction,
+                                className: "jsx-b0b99e1ac2a11c92" + " " + "flex-1 min-w-[200px] bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-5 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                        size: 18
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Home/HeroSection.jsx",
+                                        lineNumber: 249,
+                                        columnNumber: 13
+                                    }, this),
+                                    "Roadmap"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/Home/HeroSection.jsx",
+                                lineNumber: 242,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>handleProtectedAction && handleProtectedAction("/Courses"),
+                                disabled: !handleProtectedAction,
+                                className: "jsx-b0b99e1ac2a11c92" + " " + "flex-1 min-w-[150px] bg-white text-blue-600 text-center py-3 px-5 rounded-xl text-lg font-semibold border border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__["BookOpen"], {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/app/Home/HeroSection.jsx",
-                                        lineNumber: 233,
+                                        lineNumber: 260,
                                         columnNumber: 13
                                     }, this),
                                     "Courses"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                lineNumber: 227,
+                                lineNumber: 253,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Home/HeroSection.jsx",
-                        lineNumber: 217,
+                        lineNumber: 241,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-6bbc618fe535106" + " " + "hidden lg:flex gap-6 justify-center flex-wrap",
+                        className: "jsx-b0b99e1ac2a11c92" + " " + "hidden lg:flex gap-6 justify-center flex-wrap",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>handleProtectedAction && handleProtectedAction("/RoadmapPage"),
                                 disabled: !handleProtectedAction,
-                                "aria-label": "Explore career roadmaps",
-                                className: "jsx-6bbc618fe535106" + " " + "bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px] group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
+                                className: "jsx-b0b99e1ac2a11c92" + " " + "bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-8 rounded-xl text-lg font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-105 hover:shadow-xl min-w-[180px] group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
                                 children: [
                                     "Explore Roadmaps",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
@@ -1741,46 +1733,45 @@ const HeroSection = ({ user, handleProtectedAction, username })=>{
                                         className: "group-hover:translate-x-1 transition-transform duration-300"
                                     }, void 0, false, {
                                         fileName: "[project]/app/Home/HeroSection.jsx",
-                                        lineNumber: 248,
+                                        lineNumber: 275,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                lineNumber: 241,
+                                lineNumber: 267,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>handleProtectedAction && handleProtectedAction("/Courses"),
                                 disabled: !handleProtectedAction,
-                                "aria-label": "Browse available courses",
-                                className: "jsx-6bbc618fe535106" + " " + "bg-white text-blue-600 text-center py-4 px-8 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
+                                className: "jsx-b0b99e1ac2a11c92" + " " + "bg-white text-blue-600 text-center py-4 px-8 rounded-xl text-lg font-bold border border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100",
                                 children: "Youtube Courses"
                             }, void 0, false, {
                                 fileName: "[project]/app/Home/HeroSection.jsx",
-                                lineNumber: 250,
+                                lineNumber: 281,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Home/HeroSection.jsx",
-                        lineNumber: 240,
+                        lineNumber: 266,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/Home/HeroSection.jsx",
-                lineNumber: 189,
+                lineNumber: 210,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "6bbc618fe535106",
-                children: ".animate-pulse.jsx-6bbc618fe535106{animation:2s cubic-bezier(.4,0,.6,1) infinite pulse}@keyframes pulse{0%,to{opacity:1}50%{opacity:.8}}@media (width<=374px){.text-xl.jsx-6bbc618fe535106{font-size:1.75rem;line-height:1.2}.text-base.jsx-6bbc618fe535106{font-size:.875rem}.text-sm.jsx-6bbc618fe535106{font-size:.8125rem}.text-xs.jsx-6bbc618fe535106{font-size:.75rem}}@media (width<=320px){.text-xl.jsx-6bbc618fe535106{font-size:1.125rem}.text-sm.jsx-6bbc618fe535106{font-size:.75rem}.px-3.jsx-6bbc618fe535106{padding-left:.5rem;padding-right:.5rem}}@media (width<=1023px){button.jsx-6bbc618fe535106{min-height:44px}.px-3.jsx-6bbc618fe535106{padding-left:max(.75rem,env(safe-area-inset-left));padding-right:max(.75rem,env(safe-area-inset-right))}}.leading-tight.jsx-6bbc618fe535106{line-height:1.1}.min-w-0.jsx-6bbc618fe535106{min-width:0}.active\\\\.jsx-6bbc618fe535106:scale-95:active{transform:scale(.95)}button.jsx-6bbc618fe535106:focus-visible{outline-offset:2px;outline:2px solid #3b82f6}@media (prefers-reduced-motion:reduce){.jsx-6bbc618fe535106{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}"
+                id: "b0b99e1ac2a11c92",
+                children: ".animate-pulse.jsx-b0b99e1ac2a11c92{animation:2s cubic-bezier(.4,0,.6,1) infinite pulse}@keyframes pulse{0%,to{opacity:1}50%{opacity:.8}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/Home/HeroSection.jsx",
-        lineNumber: 20,
+        lineNumber: 28,
         columnNumber: 5
     }, this);
 };
@@ -3943,7 +3934,9 @@ const Footer = ()=>{
                                         },
                                         {
                                             name: "Contact Us",
-                                            href: "/ContactUs"
+                                            href: "/ContactUs",
+                                            name: "About Us",
+                                            href: "/AboutUs"
                                         }
                                     ].map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             href: link.href,
@@ -3953,14 +3946,14 @@ const Footer = ()=>{
                                                     className: "w-2 h-2 bg-gray-300 rounded-full mr-3 group-hover:bg-blue-600 transition-colors"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/Footer/footer.jsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 97,
                                                     columnNumber: 19
                                                 }, this),
                                                 link.name
                                             ]
                                         }, link.href, true, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 90,
+                                            lineNumber: 92,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
@@ -3992,7 +3985,7 @@ const Footer = ()=>{
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 105,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4003,7 +3996,7 @@ const Footer = ()=>{
                                     children: "Theme"
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 111,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4016,34 +4009,34 @@ const Footer = ()=>{
                                                 className: "w-2 h-2 bg-gray-400 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Footer/footer.jsx",
-                                                lineNumber: 115,
+                                                lineNumber: 117,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Footer/footer.jsx",
-                                            lineNumber: 114,
+                                            lineNumber: 116,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Footer/footer.jsx",
-                                        lineNumber: 113,
+                                        lineNumber: 115,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/Footer/footer.jsx",
-                                    lineNumber: 112,
+                                    lineNumber: 114,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/Footer/footer.jsx",
-                            lineNumber: 110,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 104,
+                    lineNumber: 106,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4055,25 +4048,25 @@ const Footer = ()=>{
                                 className: "w-2 h-2 bg-green-500 rounded-full animate-pulse"
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 125,
+                                lineNumber: 127,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "All systems operational"
                             }, void 0, false, {
                                 fileName: "[project]/app/Footer/footer.jsx",
-                                lineNumber: 126,
+                                lineNumber: 128,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Footer/footer.jsx",
-                        lineNumber: 124,
+                        lineNumber: 126,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Footer/footer.jsx",
-                    lineNumber: 123,
+                    lineNumber: 125,
                     columnNumber: 9
                 }, this)
             ]

@@ -2,20 +2,15 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { onAuthStateChanged } from '../lib/auth';
-import { auth } from '../lib/firebase';
 
 export default function NotificationPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [notifications, setNotifications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState(null);
-  const [authChecked, setAuthChecked] = useState(false);
-  const [authError, setAuthError] = useState(null);
 
   const router = useRouter();
 
-  // Default notifications data - only shown to authenticated users
+  // Default notifications data
   const defaultNotifications = useMemo(() => [
     {
       id: 1,
@@ -37,7 +32,6 @@ export default function NotificationPage() {
       read: false,
       createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     },
-
     {
       id: 5,
       type: 'course',
@@ -55,74 +49,16 @@ export default function NotificationPage() {
     { id: 'all', label: 'All', count: 0 },
     { id: 'courses', label: 'Courses', count: 0 },
     { id: 'roadmaps', label: 'Roadmaps', count: 0 },
-     { id: 'blogs', label: 'Blogs', count: 0 },
-
+    { id: 'blogs', label: 'Blogs', count: 0 },
   ], []);
 
-  // Enhanced authentication state management
+  // Load notifications on mount
   useEffect(() => {
-    let mounted = true;
-
-    const unsubscribe = onAuthStateChanged(
-      auth,
-      (currentUser) => {
-        if (!mounted) return;
-
-        console.log('Auth state changed:', currentUser ? 'User logged in' : 'User logged out');
-
-        setUser(currentUser);
-        setAuthChecked(true);
-        setAuthError(null);
-
-        // Load notifications only for authenticated users
-        if (currentUser) {
-          setNotifications(defaultNotifications);
-          console.log('Notifications loaded for authenticated user');
-        } else {
-          setNotifications([]);
-          console.log('Notifications cleared - user not authenticated');
-        }
-
-        setIsLoading(false);
-      },
-      (error) => {
-        if (!mounted) return;
-
-        console.error('Authentication error:', error);
-        setAuthError(error.message);
-        setUser(null);
-        setNotifications([]);
-        setAuthChecked(true);
-        setIsLoading(false);
-      }
-    );
-
-    // Cleanup function
-    return () => {
-      mounted = false;
-      if (unsubscribe) {
-        unsubscribe();
-      }
-    };
+    setNotifications(defaultNotifications);
+    setIsLoading(false);
   }, [defaultNotifications]);
 
-  // Navigation handlers with error handling
-  const handleSignup = useCallback(() => {
-    try {
-      router.push('/Signup');
-    } catch (error) {
-      console.error('Navigation error to signup:', error);
-    }
-  }, [router]);
-
-  const handleLogin = useCallback(() => {
-    try {
-      router.push('/Login');
-    } catch (error) {
-      console.error('Navigation error to login:', error);
-    }
-  }, [router]);
-
+  // Navigation handlers
   const handleHome = useCallback(() => {
     try {
       router.push('/Home');
@@ -133,11 +69,6 @@ export default function NotificationPage() {
 
   // Enhanced notification click handler
   const handleNotificationClick = useCallback((notification) => {
-    if (!user) {
-      console.warn('Notification clicked but user not authenticated');
-      return;
-    }
-
     const routeMap = {
       course: '/Courses',
       roadmap: '/RoadmapPage',
@@ -164,17 +95,15 @@ export default function NotificationPage() {
     } catch (error) {
       console.error('Error handling notification click:', error);
     }
-  }, [router, user]);
+  }, [router]);
 
   // Mark all notifications as read
   const handleMarkAllAsRead = useCallback(() => {
-    if (!user) return;
-
     setNotifications(prevNotifications => 
       prevNotifications.map(notification => ({ ...notification, read: true }))
     );
     console.log('All notifications marked as read');
-  }, [user]);
+  }, []);
 
   // Enhanced timestamp formatting
   const formatTimestamp = useCallback((dateStr) => {
@@ -232,124 +161,21 @@ export default function NotificationPage() {
     return { unreadCount: unread, tabCounts: counts };
   }, [notifications]);
 
-  // User authentication status check
-  const isUserAuthenticated = useMemo(() => {
-    return authChecked && user !== null;
-  }, [authChecked, user]);
-
-  const isUserNotAuthenticated = useMemo(() => {
-    return authChecked && user === null;
-  }, [authChecked, user]);
-
-  // Loading state - show while checking authentication
-  if (isLoading || !authChecked) {
+  // Loading state
+  if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <div className="flex flex-col items-center space-y-4">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 border-3 border-indigo-600 rounded-full animate-spin border-t-transparent"></div>
-            <span className="text-indigo-700 font-medium text-lg">Checking authentication...</span>
-          </div>
-          {authError && (
-            <div className="text-red-600 text-sm text-center max-w-md">
-              Authentication error: {authError}
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  // NOT AUTHENTICATED - Show signup/login prompt
-  if (isUserNotAuthenticated) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <header className="sticky top-0 z-10 bg-white shadow-sm">
-            <div className="px-4 py-4 border-b flex justify-between items-center">
-              <h1 className="text-xl font-bold text-gray-800">Notifications</h1>
-              <div className="flex items-center space-x-2">
-                <button 
-                  onClick={handleLogin}
-                  className="px-4 py-2 text-sm text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded-md transition-all duration-200"
-                >
-                  Sign In
-                </button>
-                <button 
-                  onClick={handleSignup}
-                  className="px-4 py-2 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-sm"
-                >
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </header>
-
-          {/* Authentication Required Prompt */}
-          <div className="flex flex-col items-center justify-center py-20 text-center px-4">
-            <div className="text-6xl mb-6 animate-bounce">🔔</div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Stay in the Loop!</h2>
-            <p className="text-gray-600 text-lg mb-2 max-w-2xl leading-relaxed">
-              Get instant notifications about new courses, roadmaps, tools, and documentation updates.
-            </p>
-            <p className="text-gray-500 text-base mb-8 max-w-md">
-              Join our community to never miss important updates!
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button 
-                onClick={handleSignup}
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
-              >
-                🚀 Get Started - It's Free!
-              </button>
-              <button 
-                onClick={handleLogin}
-                className="px-8 py-4 bg-white text-indigo-600 border-2 border-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transform hover:scale-105 transition-all duration-200 shadow-sm"
-              >
-                📱 Already Have Account?
-              </button>
-            </div>
-
-            {/* Feature highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mt-12">
-              <div className="text-center p-4">
-                <div className="text-2xl mb-2">📚</div>
-                <h3 className="font-semibold text-gray-800 mb-1">Course Updates</h3>
-                <p className="text-sm text-gray-600">New modules and lessons</p>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-2xl mb-2">🗺️</div>
-                <h3 className="font-semibold text-gray-800 mb-1">Roadmap Changes</h3>
-                <p className="text-sm text-gray-600">Updated learning paths</p>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-2xl mb-2">🛠️</div>
-                <h3 className="font-semibold text-gray-800 mb-1">New Tools</h3>
-                <p className="text-sm text-gray-600">Latest development resources</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Home Button */}
-          <div className="fixed bottom-6 right-6">
-            <button 
-              onClick={handleHome}
-              className="p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hover:scale-110 transition-all duration-200 group"
-              aria-label="Go to Home"
-            >
-              <svg className="h-6 w-6 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-            </button>
+            <span className="text-indigo-700 font-medium text-lg">Loading notifications...</span>
           </div>
         </div>
       </div>
     );
   }
 
-  // AUTHENTICATED - Show notifications interface
+  // Main notifications interface
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto pb-20">
@@ -359,7 +185,7 @@ export default function NotificationPage() {
             <div>
               <h1 className="text-xl font-bold text-gray-800">Notifications</h1>
               <p className="text-sm text-gray-500">
-                Welcome back, {user.displayName || user.email?.split('@')[0] || 'User'}! 👋
+                Stay updated with your latest activities 👋
               </p>
             </div>
             <div className="flex items-center space-x-3">
