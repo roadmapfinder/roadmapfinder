@@ -409,6 +409,15 @@ export const roadmapsData = [
     description: "Cloud platforms and services"
   },
   {
+    id: "aws",
+    title: "AWS",
+    icon: <Cloud className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/AWS",
+    bgColor: "from-yellow-400 to-yellow-300",
+    category: "trending",
+    description: "Amazon Web and services"
+  },
+  {
     id: "networking",
     title: "Networking",
     icon: <Globe className="w-5 h-5 text-white" />,
