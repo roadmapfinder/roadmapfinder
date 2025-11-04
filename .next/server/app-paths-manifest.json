@@ -1,16 +1,1 @@
-{
-  "/AboutUs/page": "app/AboutUs/page.js",
-  "/Blogs/page": "app/Blogs/page.js",
-  "/Courses/page": "app/Courses/page.js",
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/AI-Agent/page": "app/Roadmaps/AI-Agent/page.js",
-  "/Roadmaps/Aiml/page": "app/Roadmaps/Aiml/page.js",
-  "/Roadmaps/Django/page": "app/Roadmaps/Django/page.js",
-  "/Roadmaps/Excel/page": "app/Roadmaps/Excel/page.js",
-  "/Roadmaps/Nestjs/page": "app/Roadmaps/Nestjs/page.js",
-  "/Roadmaps/Next/page": "app/Roadmaps/Next/page.js",
-  "/Roadmaps/React/page": "app/Roadmaps/React/page.js",
-  "/Roadmaps/Reactnative/page": "app/Roadmaps/Reactnative/page.js",
-  "/ai-roadmap-generator/page": "app/ai-roadmap-generator/page.js",
-  "/page": "app/page.js"
-}
+{}
