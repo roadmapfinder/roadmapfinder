@@ -1,5 +1,3 @@
-// app/layout.js
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -21,11 +19,11 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "RoadmapFinder - Tech Skill Roadmaps",
+  title: "RoadmapFinder - Learn Web Development, UI/UX, AI ML & Backend Roadmaps",
   description:
-    "Explore RoadmapFinder — your ultimate platform for Tech Skill Roadmaps, curated YouTube Best Courses, and AI Resource Finder. Learn web development, AI, and data science through structured learning paths and top-rated video resources.",
+    "Explore structured roadmaps for Web Development, UI/UX Design, Backend, and AI ML at RoadmapFinder. Discover curated YouTube courses and learning paths to master tech skills efficiently.",
   keywords:
-    "Tech Skill Roadmaps, YouTube Best Courses, AI Resource Finder, roadmapfinder, learn programming, web development roadmap, data science roadmap, AI learning roadmap, best YouTube tech courses, trending developer resources, AI learning tools",
+    "web development roadmap, UIUX roadmap, backend roadmap, AI ML roadmap, full stack developer roadmap, learn programming, tech skills guide, roadmapfinder, ai learning roadmap, best YouTube tech courses",
   applicationName: "RoadmapFinder",
   authors: [{ name: "RoadmapFinder", url: "https://roadmapfinder.tech" }],
   creator: "Sohel Khan",
@@ -35,9 +33,9 @@ export const metadata = {
     canonical: "https://roadmapfinder.tech",
   },
   openGraph: {
-    title: "RoadmapFinder - Tech Skill Roadmaps, YouTube Best Courses & AI Resource Finder",
+    title: "RoadmapFinder - Web Development, UI/UX, AI ML & Backend Roadmaps",
     description:
-      "Master tech skills with RoadmapFinder: Step-by-step Tech Skill Roadmaps, best YouTube courses, and AI Resource Finder to learn smarter and faster.",
+      "Master Web Development, UI/UX Design, AI ML, and Backend Engineering through expert-curated roadmaps and YouTube learning paths on RoadmapFinder.",
     url: "https://roadmapfinder.tech",
     siteName: "RoadmapFinder",
     locale: "en_US",
@@ -53,9 +51,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RoadmapFinder - Tech Skill Roadmaps",
+    title: "RoadmapFinder - Learn Web Development, UI/UX, AI ML & Backend",
     description:
-      "Discover structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to accelerate your learning journey with RoadmapFinder.",
+      "Explore expert-curated roadmaps for Web Development, UI/UX, Backend, and AI ML. Learn step-by-step with YouTube’s best courses on RoadmapFinder.",
     site: "@roadmapfinder",
     creator: "Sohel Khan",
     images: ["https://roadmapfinder.tech/og-image.png"],
@@ -67,77 +65,84 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={sora.variable}>
       <head>
-        <meta
-          name="google-site-verification"
-          content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs"
-        />
-      
-        {/* Favicons */}
+        {/* ✅ Verification & Author */}
+        <meta name="google-site-verification" content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs" />
+        <meta name="author" content="Sohel Khan" />
+        <link rel="canonical" href="https://roadmapfinder.tech" />
+        <link rel="sitemap" type="application/xml" href="https://roadmapfinder.tech/sitemap.xml" />
+        <link rel="robots" href="https://roadmapfinder.tech/robots.txt" />
+
+        {/* ✅ Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/roadmapfinder.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* ✅ SEO Internal Links for Algorithm Boost */}
-        <link rel="alternate" href="https://roadmapfinder.tech/RoadmapPage" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Courses" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
-           crossorigin="anonymous"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
-           crossorigin="anonymous"></script>
-        {/* ✅ Structured Data (JSON-LD for Google Rich Results) */}
+        {/* ✅ SEO Internal Links */}
+        <link rel="alternate" href="https://roadmapfinder.tech/Full-Stack" title="Web Development Roadmap" />
+        <link rel="alternate" href="https://roadmapfinder.tech/UIUX" title="UI UX Design Roadmap" />
+        <link rel="alternate" href="https://roadmapfinder.tech/Aiml" title="AI ML Roadmap" />
+        <link rel="alternate" href="https://roadmapfinder.tech/Backend" title="Backend Roadmap" />
+
+        {/* ✅ AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
+          crossOrigin="anonymous"
+        ></script>
+
+        {/* ✅ Structured Data (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "RoadmapFinder",
-            "url": "https://roadmapfinder.tech",
-            "description": "RoadmapFinder offers structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to help learners master web development, data science, and AI efficiently.",
-            "sameAs": [
-              "https://roadmapfinder.tech/RoadmapPage",
-              "https://roadmapfinder.tech/Courses"
-            ],
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://roadmapfinder.tech/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "RoadmapFinder Team",
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "RoadmapFinder",
               "url": "https://roadmapfinder.tech",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://roadmapfinder.tech/roadmapfinder.svg"
-              }
-            },
-            "mainEntity": [
-              {
-                "@type": "ItemList",
-                "name": "Tech Skill Roadmaps",
-                "url": "https://roadmapfinder.tech/RoadmapPage"
+              "description": "RoadmapFinder offers structured roadmaps for Web Development, UI/UX Design, Backend, and AI ML — including curated YouTube courses and AI tools.",
+              "sameAs": [
+                "https://roadmapfinder.tech/Full-Stack",
+                "https://roadmapfinder.tech/UIUX",
+                "https://roadmapfinder.tech/Aiml",
+                "https://roadmapfinder.tech/Backend"
+              ],
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://roadmapfinder.tech/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
               },
-              {
-                "@type": "ItemList",
-                "name": "YouTube Best Courses",
-                "url": "https://roadmapfinder.tech/Courses"
-              },
-              {
-                "@type": "Service",
-                "name": "AI Resource Finder",
-                "url": "https://roadmapfinder.tech"
-              }
-            ]
-          }
-        `,
+              "mainEntity": [
+                {
+                  "@type": "ItemList",
+                  "name": "Web Development Roadmap",
+                  "url": "https://roadmapfinder.tech/Full-Stack"
+                },
+                {
+                  "@type": "ItemList",
+                  "name": "UI/UX Design Roadmap",
+                  "url": "https://roadmapfinder.tech/UIUX"
+                },
+                {
+                  "@type": "ItemList",
+                  "name": "AI & Machine Learning Roadmap",
+                  "url": "https://roadmapfinder.tech/Aiml"
+                },
+                {
+                  "@type": "ItemList",
+                  "name": "Backend Development Roadmap",
+                  "url": "https://roadmapfinder.tech/Backend"
+                }
+              ]
+            }
+          `,
           }}
         />
       </head>
+
       <body className={`${sora.className} bg-[#F9FAFB] text-gray-900`}>
-        {children}
+        <main>{children}</main>
         <Analytics />
         <SpeedInsights />
       </body>
