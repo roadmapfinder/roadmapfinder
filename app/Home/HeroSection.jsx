@@ -69,7 +69,7 @@ const HeroSection = ({ user, username }) => {
               {/* Headline + Subheadline */}
               <div className="mb-4 xs:mb-6">
                 <h1 className="text-2xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                  Learn Tech skill with -{" "}
+                  Learn Tech skills with -{" "}
                   <span className="text-blue-600">AI Powered Roadmaps</span>
                 </h1>
                 <p className="text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed mt-3 max-w-xs xs:max-w-sm sm:max-w-md mx-auto px-2 xs:px-0">
@@ -142,7 +142,7 @@ const HeroSection = ({ user, username }) => {
 
                 {/* Headline + Subheadline (Desktop) */}
                 <h2 className="text-2xl xl:text-4xl font-bold text-gray-900 mb-7 mt-3 transition-colors duration-300">
-                  Learn Tech skill with -{" "}
+                  Learn Tech skills with -{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                     AI-Powered Roadmaps
                   </span>
