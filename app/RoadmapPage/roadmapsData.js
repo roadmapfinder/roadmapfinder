@@ -54,6 +54,7 @@ export const roadmapsData = [
     category: "featured",
     description: "No code AI agents and applications"
   },
+  
 
   {
     id: "django",

@@ -36,7 +36,6 @@ const __TURBOPACK__default__export__ = fontData;
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-// app/layout.js
 __turbopack_context__.s({
     "default": (()=>RootLayout),
     "metadata": (()=>metadata),
@@ -58,9 +57,9 @@ const viewport = {
     initialScale: 1
 };
 const metadata = {
-    title: "RoadmapFinder - Tech Skill Roadmaps",
-    description: "Explore RoadmapFinder — your ultimate platform for Tech Skill Roadmaps, curated YouTube Best Courses, and AI Resource Finder. Learn web development, AI, and data science through structured learning paths and top-rated video resources.",
-    keywords: "Tech Skill Roadmaps, YouTube Best Courses, AI Resource Finder, roadmapfinder, learn programming, web development roadmap, data science roadmap, AI learning roadmap, best YouTube tech courses, trending developer resources, AI learning tools",
+    title: "RoadmapFinder - Learn Web Development, UI/UX, AI ML & Backend Roadmaps",
+    description: "Explore structured roadmaps for Web Development, UI/UX Design, Backend, and AI ML at RoadmapFinder. Discover curated YouTube courses and learning paths to master tech skills efficiently.",
+    keywords: "web development roadmap, UIUX roadmap, backend roadmap, AI ML roadmap, full stack developer roadmap, learn programming, tech skills guide, roadmapfinder, ai learning roadmap, best YouTube tech courses",
     applicationName: "RoadmapFinder",
     authors: [
         {
@@ -75,8 +74,8 @@ const metadata = {
         canonical: "https://roadmapfinder.tech"
     },
     openGraph: {
-        title: "RoadmapFinder - Tech Skill Roadmaps, YouTube Best Courses & AI Resource Finder",
-        description: "Master tech skills with RoadmapFinder: Step-by-step Tech Skill Roadmaps, best YouTube courses, and AI Resource Finder to learn smarter and faster.",
+        title: "RoadmapFinder - Web Development, UI/UX, AI ML & Backend Roadmaps",
+        description: "Master Web Development, UI/UX Design, AI ML, and Backend Engineering through expert-curated roadmaps and YouTube learning paths on RoadmapFinder.",
         url: "https://roadmapfinder.tech",
         siteName: "RoadmapFinder",
         locale: "en_US",
@@ -92,8 +91,8 @@ const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "RoadmapFinder - Tech Skill Roadmaps",
-        description: "Discover structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to accelerate your learning journey with RoadmapFinder.",
+        title: "RoadmapFinder - Learn Web Development, UI/UX, AI ML & Backend",
+        description: "Explore expert-curated roadmaps for Web Development, UI/UX, Backend, and AI ML. Learn step-by-step with YouTube’s best courses on RoadmapFinder.",
         site: "@roadmapfinder",
         creator: "Sohel Khan",
         images: [
@@ -114,7 +113,40 @@ function RootLayout({ children }) {
                         content: "Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
+                        lineNumber: 69,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "author",
+                        content: "Sohel Khan"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
                         lineNumber: 70,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: "https://roadmapfinder.tech"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 71,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "sitemap",
+                        type: "application/xml",
+                        href: "https://roadmapfinder.tech/sitemap.xml"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 72,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "robots",
+                        href: "https://roadmapfinder.tech/robots.txt"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 73,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
@@ -153,7 +185,8 @@ function RootLayout({ children }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
-                        href: "https://roadmapfinder.tech/RoadmapPage"
+                        href: "https://roadmapfinder.tech/Full-Stack",
+                        title: "Web Development Roadmap"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
                         lineNumber: 82,
@@ -161,113 +194,127 @@ function RootLayout({ children }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
-                        href: "https://roadmapfinder.tech/Courses"
+                        href: "https://roadmapfinder.tech/UIUX",
+                        title: "UI UX Design Roadmap"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
                         lineNumber: 83,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
-                        async: true,
-                        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318",
-                        crossorigin: "anonymous"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "alternate",
+                        href: "https://roadmapfinder.tech/Aiml",
+                        title: "AI ML Roadmap"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
                         lineNumber: 84,
                         columnNumber: 9
                     }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "alternate",
+                        href: "https://roadmapfinder.tech/Backend",
+                        title: "Backend Roadmap"
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 85,
+                        columnNumber: 9
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         async: true,
                         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318",
-                        crossorigin: "anonymous"
+                        crossOrigin: "anonymous"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 86,
+                        lineNumber: 88,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
                         dangerouslySetInnerHTML: {
                             __html: `
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "RoadmapFinder",
-            "url": "https://roadmapfinder.tech",
-            "description": "RoadmapFinder offers structured Tech Skill Roadmaps, curated YouTube Best Courses, and an AI Resource Finder to help learners master web development, data science, and AI efficiently.",
-            "sameAs": [
-              "https://roadmapfinder.tech/RoadmapPage",
-              "https://roadmapfinder.tech/Courses"
-            ],
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://roadmapfinder.tech/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "RoadmapFinder Team",
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "RoadmapFinder",
               "url": "https://roadmapfinder.tech",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://roadmapfinder.tech/roadmapfinder.svg"
-              }
-            },
-            "mainEntity": [
-              {
-                "@type": "ItemList",
-                "name": "Tech Skill Roadmaps",
-                "url": "https://roadmapfinder.tech/RoadmapPage"
+              "description": "RoadmapFinder offers structured roadmaps for Web Development, UI/UX Design, Backend, and AI ML — including curated YouTube courses and AI tools.",
+              "sameAs": [
+                "https://roadmapfinder.tech/Full-Stack",
+                "https://roadmapfinder.tech/UIUX",
+                "https://roadmapfinder.tech/Aiml",
+                "https://roadmapfinder.tech/Backend"
+              ],
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://roadmapfinder.tech/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
               },
-              {
-                "@type": "ItemList",
-                "name": "YouTube Best Courses",
-                "url": "https://roadmapfinder.tech/Courses"
-              },
-              {
-                "@type": "Service",
-                "name": "AI Resource Finder",
-                "url": "https://roadmapfinder.tech"
-              }
-            ]
-          }
-        `
+              "mainEntity": [
+                {
+                  "@type": "ItemList",
+                  "name": "Web Development Roadmap",
+                  "url": "https://roadmapfinder.tech/Full-Stack"
+                },
+                {
+                  "@type": "ItemList",
+                  "name": "UI/UX Design Roadmap",
+                  "url": "https://roadmapfinder.tech/UIUX"
+                },
+                {
+                  "@type": "ItemList",
+                  "name": "AI & Machine Learning Roadmap",
+                  "url": "https://roadmapfinder.tech/Aiml"
+                },
+                {
+                  "@type": "ItemList",
+                  "name": "Backend Development Roadmap",
+                  "url": "https://roadmapfinder.tech/Backend"
+                }
+              ]
+            }
+          `
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 89,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.js",
-                lineNumber: 69,
+                lineNumber: 67,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
                 className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$sora_35fc7b10$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].className} bg-[#F9FAFB] text-gray-900`,
                 children: [
-                    children,
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+                        children: children
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.js",
+                        lineNumber: 145,
+                        columnNumber: 9
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 141,
+                        lineNumber: 146,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$speed$2d$insights$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SpeedInsights"], {}, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 142,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.js",
-                lineNumber: 139,
+                lineNumber: 144,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/layout.js",
-        lineNumber: 68,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
