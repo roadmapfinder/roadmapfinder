@@ -28,7 +28,8 @@ import {
   PenBox,
   BarChart3,
   TrendingUp,
-   Palette 
+   Palette,
+  Tool
   
   
 } from "lucide-react";
@@ -54,7 +55,15 @@ export const roadmapsData = [
     category: "featured",
     description: "No code AI agents and applications"
   },
-  
+  {
+    id: "api development",
+    title: "Api Developer",
+    icon: <Tool className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Api",
+    bgColor: "from-red-500 to-red-700",
+    category: "featured",
+    description: "api development and applications"
+  },
 
   {
     id: "django",
