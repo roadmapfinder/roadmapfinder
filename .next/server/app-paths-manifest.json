@@ -1,7 +1,5 @@
 {
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Api/page": "app/Roadmaps/Api/page.js",
-  "/Roadmaps/System/page": "app/Roadmaps/System/page.js",
-  "/ai-roadmap-generator/page": "app/ai-roadmap-generator/page.js",
+  "/Roadmaps/Shopify/page": "app/Roadmaps/Shopify/page.js",
   "/page": "app/page.js"
 }

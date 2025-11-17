@@ -29,7 +29,9 @@ import {
   BarChart3,
   TrendingUp,
    Palette,
-  PenToolIcon
+  PenToolIcon,
+  LayoutDashboard,
+  Store
   
   
 } from "lucide-react";
@@ -63,6 +65,25 @@ export const roadmapsData = [
     bgColor: "from-red-500 to-red-700",
     category: "featured",
     description: "api development and applications"
+  },
+  {
+    id: "wordpress",
+    title: "Wordpress Developer",
+    icon: <LayoutDashboard className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Wordpress",
+    bgColor: "from-blue-500 to-blue-700",
+    category: "featured",
+    description: "Wordpress development and applications"
+  },
+
+  {
+    id: "shopify",
+    title: "Shopify Developer",
+    icon: <Store className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Shopify",
+    bgColor: "from-green-600 to-green-800",
+    category: "featured",
+    description: "Shopify development and applications"
   },
 
   {

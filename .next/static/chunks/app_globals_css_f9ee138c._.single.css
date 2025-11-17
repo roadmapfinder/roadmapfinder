@@ -2761,6 +2761,10 @@
     background-color: var(--color-slate-300);
   }
 
+  .bg-slate-500 {
+    background-color: var(--color-slate-500);
+  }
+
   .bg-slate-700 {
     background-color: var(--color-slate-700);
   }
@@ -4043,6 +4047,10 @@
 
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
   }
 
   .py-16 {
