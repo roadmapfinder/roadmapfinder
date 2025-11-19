@@ -165,12 +165,11 @@ const RoadmapPDFDocument = ({ phases }) => (
     <Page size="A4" style={styles.page}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.title}>Java Developer Roadmap</Text>
+        <Text style={styles.title}>Nest js Developer Roadmap</Text>
         <Text style={styles.subtitle}>Your Complete Journey from Beginner to Professional</Text>
       </View>
 
-      {/* Watermark */}
-      <Text style={styles.watermark}>Java-Roadmap.com</Text>
+     
 
       {/* Phases */}
       {phases.map((phase, index) => (
@@ -246,7 +245,7 @@ export const downloadRoadmapPDF = async (phases) => {
 
     // Generate filename with current date
     const currentDate = new Date().toISOString().split('T')[0];
-    const filename = `Java-Developer-roadmap-${currentDate}.pdf`;
+    const filename = `Nestjs-Developer-roadmap-${currentDate}.pdf`;
 
     // Save the file
     saveAs(blob, filename);
@@ -262,7 +261,7 @@ export const downloadRoadmapPDF = async (phases) => {
 export const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }) => (
   <PDFDownloadLink
     document={<RoadmapPDFDocument phases={phases} />}
-    fileName={`Java-roadmap-${new Date().toISOString().split('T')[0]}.pdf`}
+    fileName={`Nestjs-roadmap-${new Date().toISOString().split('T')[0]}.pdf`}
     className={className}
   >
     {({ blob, url, loading, error }) => {
@@ -277,7 +276,7 @@ export const PDFDownloadButton = ({ phases, className = "", children = "Download
 export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
   const {
     includeWatermark = true,
-    customTitle = "Java Developer Roadmap",
+    customTitle = "Nest js Developer Roadmap",
     customSubtitle = "Your Complete Journey from Beginner to Professional",
     pageSize = "A4",
     orientation = "portrait"
@@ -339,7 +338,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
           <View style={styles.footer}>
             <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
             <Text style={styles.footerText}>
-              You've completed the Java Developer Roadmap and are now ready to take on professional  challenges.
+              You've completed the Nest js Developer Roadmap and are now ready to take on professional  challenges.
             </Text>
           </View>
 

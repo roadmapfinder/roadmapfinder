@@ -591,8 +591,8 @@ export async function POST(request) {
             { role: "system", content: SYSTEM_PROMPT },
             { role: "user", content: `Roadmap for: ${query}` }
           ],
-          temperature: 0.7,
-          max_tokens: 5000, // Reduced for speed
+          temperature: 0,
+          max_tokens: 50000, // Reduced for speed
           top_p: 0.9
         }),
         signal: controller.signal

@@ -69,7 +69,7 @@ const TrendingRoadmapsHome = ()=>{
                 lineNumber: 47,
                 columnNumber: 13
             }, this),
-            link: "/Roadmaps/Web",
+            link: "/Roadmaps/Full-Stack",
             bgColor: "bg-blue-600",
             description: "Complete web development journey",
             difficulty: "Beginner",

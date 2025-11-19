@@ -106,7 +106,7 @@ const JavaRoadmap = () => {
                 🎉 Congratulations! You're a java Developer
               </h2>
               <p className="text-gray-700 text-base md:text-lg">
-                You've mastered the complet java Go Lang Roadmap and are now ready to build scalable, high-performance applications.
+                You've mastered the complet java  Roadmap and are now ready to build scalable, high-performance applications.
               </p>
             </div>
           </div>
