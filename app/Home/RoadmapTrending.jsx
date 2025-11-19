@@ -45,7 +45,7 @@ const TrendingRoadmapsHome = () => {
       id: "web",
       title: "Full Stack Web Dev",
       icon: <Globe className="w-6 h-6" />,
-      link: "/Roadmaps/Web",
+      link: "/Roadmaps/Full-Stack",
       bgColor: "bg-blue-600",
       description: "Complete web development journey",
       difficulty: "Beginner",
