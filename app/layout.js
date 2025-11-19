@@ -1,5 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
 import { Sora } from "next/font/google";
 
@@ -63,89 +64,91 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={sora.variable}>
-      <head>
-        {/* ✅ Verification & Author */}
-        <meta name="google-site-verification" content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs" />
-        <meta name="author" content="Sohel Khan" />
-        <link rel="canonical" href="https://roadmapfinder.tech" />
-        <link rel="sitemap" type="application/xml" href="https://roadmapfinder.tech/sitemap.xml" />
-        <link rel="robots" href="https://roadmapfinder.tech/robots.txt" />
+    <ClerkProvider>
+      <html lang="en" className={sora.variable}>
+        <head>
+          {/* ✅ Verification & Author */}
+          <meta name="google-site-verification" content="Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs" />
+          <meta name="author" content="Sohel Khan" />
+          <link rel="canonical" href="https://roadmapfinder.tech" />
+          <link rel="sitemap" type="application/xml" href="https://roadmapfinder.tech/sitemap.xml" />
+          <link rel="robots" href="https://roadmapfinder.tech/robots.txt" />
 
-        {/* ✅ Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/roadmapfinder.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+          {/* ✅ Favicons */}
+          <link rel="icon" href="/favicon.ico" sizes="32x32" />
+          <link rel="icon" href="/roadmapfinder.svg" type="image/svg+xml" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+          <link rel="manifest" href="/manifest.json" />
 
-        {/* ✅ SEO Internal Links */}
-        <link rel="alternate" href="https://roadmapfinder.tech/Full-Stack" title="Web Development Roadmap" />
-        <link rel="alternate" href="https://roadmapfinder.tech/UIUX" title="UI UX Design Roadmap" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Aiml" title="AI ML Roadmap" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Backend" title="Backend Roadmap" />
+          {/* ✅ SEO Internal Links */}
+          <link rel="alternate" href="https://roadmapfinder.tech/Full-Stack" title="Web Development Roadmap" />
+          <link rel="alternate" href="https://roadmapfinder.tech/UIUX" title="UI UX Design Roadmap" />
+          <link rel="alternate" href="https://roadmapfinder.tech/Aiml" title="AI ML Roadmap" />
+          <link rel="alternate" href="https://roadmapfinder.tech/Backend" title="Backend Roadmap" />
 
-        {/* ✅ AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
-          crossOrigin="anonymous"
-        ></script>
+          {/* ✅ AdSense */}
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
+            crossOrigin="anonymous"
+          ></script>
 
-        {/* ✅ Structured Data (JSON-LD) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: `
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "RoadmapFinder",
-              "url": "https://roadmapfinder.tech",
-              "description": "RoadmapFinder offers structured roadmaps for Web Development, UI/UX Design, Backend, and AI ML — including curated YouTube courses and AI tools.",
-              "sameAs": [
-                "https://roadmapfinder.tech/Full-Stack",
-                "https://roadmapfinder.tech/UIUX",
-                "https://roadmapfinder.tech/Aiml",
-                "https://roadmapfinder.tech/Backend"
-              ],
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://roadmapfinder.tech/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              },
-              "mainEntity": [
-                {
-                  "@type": "ItemList",
-                  "name": "Web Development Roadmap",
-                  "url": "https://roadmapfinder.tech/Full-Stack"
+          {/* ✅ Structured Data (JSON-LD) */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "RoadmapFinder",
+                "url": "https://roadmapfinder.tech",
+                "description": "RoadmapFinder offers structured roadmaps for Web Development, UI/UX Design, Backend, and AI ML — including curated YouTube courses and AI tools.",
+                "sameAs": [
+                  "https://roadmapfinder.tech/Full-Stack",
+                  "https://roadmapfinder.tech/UIUX",
+                  "https://roadmapfinder.tech/Aiml",
+                  "https://roadmapfinder.tech/Backend"
+                ],
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://roadmapfinder.tech/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
                 },
-                {
-                  "@type": "ItemList",
-                  "name": "UI/UX Design Roadmap",
-                  "url": "https://roadmapfinder.tech/UIUX"
-                },
-                {
-                  "@type": "ItemList",
-                  "name": "AI & Machine Learning Roadmap",
-                  "url": "https://roadmapfinder.tech/Aiml"
-                },
-                {
-                  "@type": "ItemList",
-                  "name": "Backend Development Roadmap",
-                  "url": "https://roadmapfinder.tech/Backend"
-                }
-              ]
-            }
-          `,
-          }}
-        />
-      </head>
+                "mainEntity": [
+                  {
+                    "@type": "ItemList",
+                    "name": "Web Development Roadmap",
+                    "url": "https://roadmapfinder.tech/Full-Stack"
+                  },
+                  {
+                    "@type": "ItemList",
+                    "name": "UI/UX Design Roadmap",
+                    "url": "https://roadmapfinder.tech/UIUX"
+                  },
+                  {
+                    "@type": "ItemList",
+                    "name": "AI & Machine Learning Roadmap",
+                    "url": "https://roadmapfinder.tech/Aiml"
+                  },
+                  {
+                    "@type": "ItemList",
+                    "name": "Backend Development Roadmap",
+                    "url": "https://roadmapfinder.tech/Backend"
+                  }
+                ]
+              }
+            `,
+            }}
+          />
+        </head>
 
-      <body className={`${sora.className} bg-[#F9FAFB] text-gray-900`}>
-        <main>{children}</main>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+        <body className={`${sora.className} bg-[#F9FAFB] text-gray-900`}>
+          <main>{children}</main>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
