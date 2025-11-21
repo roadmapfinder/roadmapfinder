@@ -1133,6 +1133,11 @@
     display: table-row-group;
   }
 
+  .size-1 {
+    width: calc(var(--spacing) * 1);
+    height: calc(var(--spacing) * 1);
+  }
+
   .h-0 {
     height: calc(var(--spacing) * 0);
   }

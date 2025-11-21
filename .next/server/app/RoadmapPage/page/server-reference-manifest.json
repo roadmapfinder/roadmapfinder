@@ -1,4 +1,82 @@
 {
-  "node": {},
+  "node": {
+    "7f3c22b8ca8d14c3f0bef7d6b3958bd6f2fbd1eccb": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "rsc"
+      }
+    },
+    "7fca5acbe49d1b8b0d153c6cb1570f337fe77d87e8": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "rsc"
+      }
+    },
+    "7f0c788b3945186ad9fcaa54e324bb718486179b06": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "action-browser"
+      }
+    },
+    "7f2587e729c80f3a1fe4f2ddb08f56a511c2c33b95": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "action-browser"
+      }
+    },
+    "7f5e2e35d2efc0fb0263e51f90f4c4e8b4729d6d55": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "action-browser"
+      }
+    },
+    "7fe4de9bd588ceae9f614704647d3d5620f75ab696": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "action-browser"
+      }
+    },
+    "7f7240f6ef3c8ddce110b6aa31fc93b01608073684": {
+      "workers": {
+        "app/RoadmapPage/page": {
+          "moduleId": "[project]/.next-internal/server/app/RoadmapPage/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/RoadmapPage/page": "action-browser"
+      }
+    }
+  },
   "edge": {}
 }
