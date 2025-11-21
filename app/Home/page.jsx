@@ -49,16 +49,24 @@ import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
 
+// Import Clerk hooks
+import { useUser } from "@clerk/nextjs";
+
 export default function HomePage() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { user: clerkUser, isLoaded } = useUser(); // Use Clerk's user hook
+
   const [username, setUsername] = useState("User");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState("popular");
   const router = useRouter();
 
-
+  // Set username from Clerk if available
+  useEffect(() => {
+    if (isLoaded && clerkUser) {
+      setUsername(clerkUser.username || clerkUser.firstName || "User");
+    }
+  }, [isLoaded, clerkUser]);
 
 
   // Toggle mobile menu
@@ -138,7 +146,7 @@ export default function HomePage() {
       icon: <Contact size={24} className="mr-3" />,
       href: "/ContactUs",
     },
-  
+
   ];
 
 
@@ -272,7 +280,7 @@ export default function HomePage() {
           <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
             <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-3 items-center">
-              {user ? (
+              {clerkUser ? (
                 <button className="text-gray-800 p-2">
                   <Link href="/Notification">
                     <Bell size={20} />
@@ -297,13 +305,13 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
               <p className="text-gray-500">
-                {user
+                {clerkUser
                   ? `Welcome back, ${username}`
                   : "Welcome to RoadmapFinder"}
               </p>
             </div>
             <div className="flex items-center gap-4">
-              {user ? (
+              {clerkUser ? (
                 <>
                   <button className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
                     <Link href="/Notification">
@@ -313,7 +321,17 @@ export default function HomePage() {
                   </button>
                   <div className="flex items-center gap-3 bg-white py-2 px-4 rounded-full shadow-sm">
                     <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
-                      <User size={16} className="text-blue-600" />
+                      {clerkUser.imageUrl ? (
+                        <Image
+                          src={clerkUser.imageUrl}
+                          alt="User Profile"
+                          width={32}
+                          height={32}
+                          className="rounded-full"
+                        />
+                      ) : (
+                        <User size={16} className="text-blue-600" />
+                      )}
                     </div>
                     <span className="text-gray-800 font-medium">
                       {username}
@@ -336,16 +354,13 @@ export default function HomePage() {
           <div className="w-full">
             {/* Hero Section Container */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
-              <HeroSection
-                user={user}
-                username={username}
-              />
+              <HeroSection />
             </div>
 
             {/* Additional Content Sections */}
             <div className="w-full">
               <RoadmapTrending
-                user={user}
+                user={clerkUser}
               />
 
               <Features />

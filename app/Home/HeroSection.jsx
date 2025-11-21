@@ -11,22 +11,22 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useUser } from '@clerk/nextjs';
 import roadmap from "../Images/roadmap.png";
+import defaultUserImage from "../Images/user.jpg";
 
-const HeroSection = ({ user, username }) => {
+const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
+  const { user, isLoaded, isSignedIn } = useUser();
 
   useEffect(() => {
-    // Trigger entrance animation
     setIsVisible(true);
   }, []);
 
-  // Validation for props to prevent runtime errors
-  const isUserAuthenticated = user && username;
-  const safeUsername = username?.trim() || "User";
+  const safeUsername = user?.firstName || user?.fullName || "User";
+  const userImage = user?.imageUrl || defaultUserImage;
 
-  // Direct navigation without protection
   const handleNavigation = (path) => {
     router.push(path);
   };
@@ -43,18 +43,31 @@ const HeroSection = ({ user, username }) => {
           {/* Mobile Layout */}
           <div className="block lg:hidden">
             {/* Welcome Message */}
-            {isUserAuthenticated && (
+            {isSignedIn && (
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100 px-4 xs:px-6 py-3 xs:py-4">
-                <div className="flex items-center gap-2 text-blue-700">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm xs:text-base font-medium">
-                    Welcome back,{" "}
-                    <span className="font-semibold">{safeUsername}</span>!
-                  </span>
+                <div className="flex items-center gap-3 text-blue-700">
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-blue-300">
+                    <Image
+                      src={userImage}
+                      alt={safeUsername}
+                      fill
+                      sizes="32px"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm xs:text-base font-medium">
+                        Welcome back,{" "}
+                        <span className="font-semibold">{safeUsername}</span>!
+                      </span>
+                    </div>
+                    <p className="text-xs xs:text-sm text-blue-600">
+                      Ready to continue your learning journey?
+                    </p>
+                  </div>
                 </div>
-                <p className="text-xs xs:text-sm text-blue-600 mt-1">
-                  Ready to continue your learning journey?
-                </p>
               </div>
             )}
 
@@ -112,8 +125,19 @@ const HeroSection = ({ user, username }) => {
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-3 px-4 rounded-lg text-sm font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95"
                   aria-label="Start your career roadmap journey"
                 >
-                  <ChevronRight size={16} />
-                  <span>Start Roadmap</span>
+                  {isSignedIn && (
+                    <div className="relative w-5 h-5 rounded-full overflow-hidden border border-white">
+                      <Image
+                        src={userImage}
+                        alt={safeUsername}
+                        fill
+                        sizes="20px"
+                        style={{ objectFit: "cover" }}
+                      />
+                    </div>
+                  )}
+                  {!isSignedIn && <ChevronRight size={16} />}
+                  <span>{isSignedIn ? 'Continue Learning' : 'Start Roadmap'}</span>
                 </button>
 
                 <button
@@ -154,18 +178,31 @@ const HeroSection = ({ user, username }) => {
                 </p>
 
                 {/* Welcome Message */}
-                {isUserAuthenticated && (
+                {isSignedIn && (
                   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-4 py-3 rounded-lg text-sm mb-6 border border-blue-200 shadow-sm">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="font-medium">
-                        Welcome back,{" "}
-                        <span className="font-semibold">{safeUsername}</span>!
-                      </span>
+                    <div className="flex items-center gap-3">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-300">
+                        <Image
+                          src={userImage}
+                          alt={safeUsername}
+                          fill
+                          sizes="40px"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="font-medium">
+                            Welcome back,{" "}
+                            <span className="font-semibold">{safeUsername}</span>!
+                          </span>
+                        </div>
+                        <p className="text-blue-600 text-xs mt-1">
+                          Ready to continue your journey?
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-blue-600 text-xs mt-1">
-                      Ready to continue your journey?
-                    </p>
                   </div>
                 )}
 
