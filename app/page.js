@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Home from "./Home/home";
 import Splash from "./Splash/page";
-import Footer from "./Footer/page";
+
 
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
         }`}
       >
         <Home />
-        <Footer />
+ 
       </div>
     </>
   );

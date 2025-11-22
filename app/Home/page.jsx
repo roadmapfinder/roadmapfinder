@@ -48,6 +48,7 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
+import Footer from "../Footer/footer";
 
 // Import Clerk hooks
 import { useUser, useClerk, SignOutButton } from "@clerk/nextjs";
@@ -400,6 +401,9 @@ export default function HomePage() {
               <ChooseUs />
             </div>
           </div>
+
+          {/* Footer - Aligned with sidebar */}
+          <Footer isSidebarCollapsed={isSidebarCollapsed} />
         </main>
       </div>
     </div>
