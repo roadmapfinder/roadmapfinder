@@ -1,7 +1,7 @@
 
 "use client";
-import { useState } from "react";
-import { BookOpen, GraduationCap, Settings, Mail } from "lucide-react";
+import { useState, useEffect } from "react";
+import { BookOpen, GraduationCap, Settings, Mail, Download, FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useUser } from '@clerk/nextjs';
@@ -13,6 +13,7 @@ export default function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState("");
   const [imageError, setImageError] = useState(false);
+  const [downloadedRoadmaps, setDownloadedRoadmaps] = useState([]);
 
   if (!isLoaded) {
     return (
@@ -53,6 +54,28 @@ export default function ProfilePage() {
   };
 
   const displayImageSrc = imageError ? defaultUserImage : userImage;
+
+  // Load downloaded roadmaps from localStorage
+  useEffect(() => {
+    if (user) {
+      const savedRoadmaps = localStorage.getItem(`downloaded_roadmaps_${user.id}`);
+      if (savedRoadmaps) {
+        try {
+          setDownloadedRoadmaps(JSON.parse(savedRoadmaps));
+        } catch (e) {
+          console.error('Error loading roadmaps:', e);
+        }
+      }
+    }
+  }, [user]);
+
+  const deleteRoadmap = (roadmapId) => {
+    const updatedRoadmaps = downloadedRoadmaps.filter(r => r.id !== roadmapId);
+    setDownloadedRoadmaps(updatedRoadmaps);
+    if (user) {
+      localStorage.setItem(`downloaded_roadmaps_${user.id}`, JSON.stringify(updatedRoadmaps));
+    }
+  };
 
   return (
     <>
@@ -187,6 +210,65 @@ export default function ProfilePage() {
           <div className="border-b-2 border-gray-100 my-4 sm:my-6"></div>
 
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
+            {/* Downloaded Roadmaps Section */}
+            <div className="mb-6">
+              <div className="flex items-center mb-4">
+                <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5">
+                  <Download className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700">Downloaded Roadmaps</h3>
+              </div>
+              
+              {downloadedRoadmaps.length === 0 ? (
+                <div className="bg-gray-50 p-6 rounded-xl text-center">
+                  <FileText className="w-12 h-12 text-gray-300 mx-auto mb-2" />
+                  <p className="text-gray-500 text-sm">No roadmaps downloaded yet</p>
+                  <Link href="/RoadmapPage" className="text-blue-600 text-sm mt-2 inline-block hover:underline">
+                    Browse Roadmaps
+                  </Link>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {downloadedRoadmaps.map((roadmap) => (
+                    <div key={roadmap.id} className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow">
+                      <div className="flex items-center flex-1">
+                        <FileText className="w-8 h-8 text-blue-600 mr-3" />
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm sm:text-base">{roadmap.roadmapName}</h4>
+                          <p className="text-xs text-gray-500">
+                            Downloaded on {new Date(roadmap.downloadedAt).toLocaleDateString()}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            // Re-download the same roadmap
+                            window.location.href = `/Roadmaps/${roadmap.roadmapType}`;
+                          }}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          title="View Roadmap"
+                        >
+                          <BookOpen className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => deleteRoadmap(roadmap.id)}
+                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          title="Delete"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="border-b-2 border-gray-100 my-4 sm:my-6"></div>
+
             <Link href="/RoadmapPage" className="block">
               <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
                 <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">

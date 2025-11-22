@@ -371,27 +371,32 @@ export const RoadmapPDFDocument = ({
   );
 };
 
-// Simple download helper (default options for A4)
-export const downloadRoadmapPDF = async (phases, options = {}) => {
-  const merged = {
-    pageSize: "A4",
-    orientation: "portrait",
-    includeWatermark: true,
-    compact: false,
-    customTitle: "AIML Engineer Roadmap",
-    customSubtitle: "Your Complete Journey from Beginner to Professional",
-    ...options,
-  };
-
+// Main download function
+export const downloadRoadmapPDF = async (phases, options = {}, userId = null) => {
   try {
-    const blob = await pdf(<RoadmapPDFDocument phases={phases} options={merged} />).toBlob();
-    const currentDate = new Date().toISOString().split("T")[0];
-    const filename = `${merged.customTitle.toLowerCase().replace(/\s+/g, "-")}-${currentDate}.pdf`;
+    // Create the PDF blob
+    const blob = await pdf(<RoadmapPDFDocument phases={phases} options={options} />).toBlob();
+
+    // Generate filename with current date
+    const currentDate = new Date().toISOString().split('T')[0];
+    const filename = `${options.customTitle?.toLowerCase().replace(/\s+/g, "-") || "roadmap"}-${currentDate}.pdf`;
+
+    // Save the file
     saveAs(blob, filename);
+
+    // Save to profile if user is logged in
+    if (userId) {
+      // This is a placeholder for the actual API call or function to save metadata
+      // You would typically send the filename, roadmap title, and userId to a backend endpoint
+      // For example: await fetch('/api/save-roadmap', { method: 'POST', body: JSON.stringify({ userId, filename, title: options.customTitle }) });
+      console.log(`Saving roadmap metadata for user ${userId}: ${filename}`);
+      // savePdfToProfile('AIML Engineer Roadmap', 'Aiml', filename, userId); // Assuming savePdfToProfile is defined elsewhere
+    }
+
     return { success: true, filename };
-  } catch (err) {
-    console.error("Error generating PDF:", err);
-    return { success: false, error: err.message };
+  } catch (error) {
+    console.error('Error generating PDF:', error);
+    return { success: false, error: error.message };
   }
 };
 
@@ -406,6 +411,7 @@ export const PDFDownloadButton = ({
   options = {},
   className = "",
   children = "Download PDF",
+  userId = null, // Added userId prop to pass down
 }) => {
   const merged = {
     pageSize: "A4",
@@ -424,6 +430,16 @@ export const PDFDownloadButton = ({
         .toISOString()
         .split("T")[0]}.pdf`}
       className={className}
+      onClick={() => {
+        // Trigger the save to profile logic when the download link is clicked
+        if (userId) {
+          // Assuming downloadRoadmapPDF can be called here with userId
+          // Note: This might require adjustments depending on how PDFDownloadLink handles clicks and async operations
+          // A more robust solution might involve a separate button click handler
+          console.log("Initiating download and profile save...");
+          // downloadRoadmapPDF(phases, merged, userId); // This might not be the ideal place, consider a dedicated handler
+        }
+      }}
     >
       {({ loading, error }) => {
         if (loading) return "Generating PDF…";
