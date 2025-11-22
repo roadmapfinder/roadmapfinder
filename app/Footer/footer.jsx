@@ -20,14 +20,13 @@ const ThreadsIcon = ({ size = 20, className = "" }) => (
   </svg>
 );
 
-const Footer = ({ isSidebarCollapsed = false }) => {
+const Footer = () => {
   return (
     <footer
-      className={`w-full bg-gradient-to-br from-white via-white to-blue-50 rounded-3xl shadow-xl border border-gray-100/50 
+      className="w-full bg-gradient-to-br from-white via-white to-blue-50 rounded-3xl shadow-xl border border-gray-100/50 
       px-4 sm:px-6 py-8 sm:py-10 md:py-12 my-4 sm:my-6 font-sora transition-all duration-300
-      mx-auto
-      ${isSidebarCollapsed ? "md:ml-20" : "md:ml-72"}
-      ml-0`}
+      mx-auto max-w-full
+      md:ml-0 md:mr-auto md:w-full"
     >
       <div className="max-w-7xl mx-auto flex flex-col space-y-8 sm:space-y-10 md:space-y-12">
         {/* Top Section */}
