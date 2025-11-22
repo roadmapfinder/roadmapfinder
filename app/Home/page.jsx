@@ -50,7 +50,7 @@ import Features from "./Features";
 import ChooseUs from "./ChooseUs";
 
 // Import Clerk hooks
-import { useUser } from "@clerk/nextjs";
+import { useUser, useClerk, SignOutButton } from "@clerk/nextjs";
 
 export default function HomePage() {
   const { user: clerkUser, isLoaded } = useUser(); // Use Clerk's user hook
@@ -217,6 +217,24 @@ export default function HomePage() {
                 ))}
               </nav>
             </div>
+
+            {/* Logout Section */}
+            {clerkUser && (
+              <div className="p-5 border-t border-gray-200">
+                <SignOutButton>
+                  <button
+                    className={`flex items-center w-full text-red-600 hover:text-red-700 transition-colors py-3 px-3 rounded-lg hover:bg-red-50 ${
+                      isSidebarCollapsed ? "justify-center" : ""
+                    }`}
+                  >
+                    <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                      <LogOut size={24} className="mr-3" />
+                    </div>
+                    {!isSidebarCollapsed && <span className="font-medium">Logout</span>}
+                  </button>
+                </SignOutButton>
+              </div>
+            )}
           </div>
         </aside>
 
@@ -267,6 +285,21 @@ export default function HomePage() {
                 </Link>
               ))}
             </nav>
+
+            {/* Mobile Logout Button */}
+            {clerkUser && (
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <SignOutButton>
+                  <button
+                    className="flex items-center w-full text-red-600 hover:text-red-700 transition-colors py-3 px-3 rounded-lg hover:bg-red-50"
+                    onClick={toggleMobileMenu}
+                  >
+                    <LogOut size={24} className="mr-3" />
+                    <span className="font-medium">Logout</span>
+                  </button>
+                </SignOutButton>
+              </div>
+            )}
           </div>
         </div>
 
