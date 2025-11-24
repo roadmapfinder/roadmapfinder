@@ -354,7 +354,7 @@ function calculateVideoScore(video, preferLatest, language, query) {
   return baseScore * premiumBoost * courseQualityBoost;
 }
 
-async function analyzeWithAI(videos, query, language) {
+async function analyzeWithAI(videos, query, language, preferLatest) {
   const model = genAI.getGenerativeModel({ 
     model: "gemini-2.0-flash-exp",
     generationConfig: {
@@ -564,7 +564,7 @@ export async function POST(request) {
 
     scoredVideos.sort((a, b) => b.score - a.score);
 
-    const aiAnalysis = await analyzeWithAI(scoredVideos, query, language);
+    const aiAnalysis = await analyzeWithAI(scoredVideos, query, language, preferLatest);
 
     const bestVideoIndex = Math.min(
       Math.max(aiAnalysis.bestVideoRank - 1, 0),
