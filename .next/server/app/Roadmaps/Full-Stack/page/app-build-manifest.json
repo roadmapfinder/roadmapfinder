@@ -1,7 +1,8 @@
 {
   "pages": {
     "/Roadmaps/Full-Stack/page": [
-      "static/chunks/node_modules_659f1a1f._.js",
+      "static/chunks/node_modules_@clerk_nextjs_dist_esm_app-router_1d75b643._.js",
+      "static/chunks/node_modules_43408e24._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
       "static/chunks/app_Roadmaps_Full-Stack_629bc7fe._.js",
@@ -15,7 +16,7 @@
       "static/chunks/node_modules_@react-pdf_layout_lib_index_582cd017.js",
       "static/chunks/node_modules_@react-pdf_reconciler_lib_bccb4d72._.js",
       "static/chunks/node_modules_da035d22._.js",
-      "static/chunks/app_Roadmaps_Full-Stack_page_jsx_5ee60de8._.js",
+      "static/chunks/app_Roadmaps_Full-Stack_page_jsx_61d940db._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",

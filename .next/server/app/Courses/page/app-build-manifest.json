@@ -1,13 +1,13 @@
 {
   "pages": {
     "/Courses/page": [
-      "static/chunks/node_modules_@clerk_nextjs_dist_esm_app-router_35b61712._.js",
-      "static/chunks/node_modules_92156d58._.js",
+      "static/chunks/node_modules_@clerk_nextjs_dist_esm_app-router_17486d5b._.js",
+      "static/chunks/node_modules_ea48a928._.js",
       "static/chunks/[root-of-the-server]__ccd9809a._.css",
       "static/chunks/app_layout_c0237562.js",
       "static/chunks/app_28738066._.js",
       "static/chunks/node_modules_8c3db5bc._.js",
-      "static/chunks/app_Courses_page_jsx_88c92e9e._.js",
+      "static/chunks/app_Courses_page_jsx_cae5feeb._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
       "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
       "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",

@@ -1,5 +1,18 @@
 {
-  "app": {},
+  "app": {
+    "[project]/app/Resource-Finder/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Context/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/Roadmaps/Full-Stack/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ],
+    "[project]/app/_not-found/page": [
+      "static/media/xMQbuFFYT72XzQUpDqW1KX4.p.58140a9c.woff2"
+    ]
+  },
   "appUsingSizeAdjust": false,
   "pages": {},
   "pagesUsingSizeAdjust": false

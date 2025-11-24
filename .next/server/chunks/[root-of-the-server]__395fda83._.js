@@ -277,14 +277,14 @@ function checkRateLimit(identifier) {
     rateLimitMap.set(identifier, recentRequests);
     return true;
 }
-function validateInput(query, language, preferLatest1) {
+function validateInput(query, language, preferLatest) {
     if (!query || typeof query !== "string") throw new Error("Query is required and must be a string");
     if (query.length > 200) throw new Error("Query too long (max 200 characters)");
     if (![
         "hindi",
         "english"
     ].includes(language)) throw new Error("Language must be 'hindi' or 'english'");
-    if (typeof preferLatest1 !== "boolean") throw new Error("preferLatest must be a boolean");
+    if (typeof preferLatest !== "boolean") throw new Error("preferLatest must be a boolean");
 }
 // Parse ISO 8601 duration to minutes
 function parseDuration(duration) {
@@ -351,7 +351,7 @@ function getRelevantChannels(query, language) {
     }) : channels.filter((c)=>c.courseQuality === "excellent" || c.courseQuality === "high");
 }
 // Search premium channels with course focus
-async function searchPremiumChannels(query, language, preferLatest1, apiKey) {
+async function searchPremiumChannels(query, language, preferLatest, apiKey) {
     const relevantChannels = getRelevantChannels(query, language);
     const searchQuery = buildCourseQuery(query, language);
     const relevanceLanguage = language === "hindi" ? "hi" : "en";
@@ -365,11 +365,11 @@ async function searchPremiumChannels(query, language, preferLatest1, apiKey) {
         searchUrl.searchParams.append("videoDuration", "long");
         searchUrl.searchParams.append("videoDefinition", "high");
         searchUrl.searchParams.append("relevanceLanguage", relevanceLanguage);
-        searchUrl.searchParams.append("order", preferLatest1 ? "date" : "relevance");
+        searchUrl.searchParams.append("order", preferLatest ? "date" : "relevance");
         searchUrl.searchParams.append("maxResults", "5");
         searchUrl.searchParams.append("key", apiKey);
         // Add date filter for latest videos
-        if (preferLatest1) {
+        if (preferLatest) {
             const oneYearAgo = new Date();
             oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
             searchUrl.searchParams.append("publishedAfter", oneYearAgo.toISOString());
@@ -394,7 +394,7 @@ async function searchPremiumChannels(query, language, preferLatest1, apiKey) {
     return await fetchVideoDetails(allItems, apiKey);
 }
 // General search with course focus
-async function searchGeneralVideos(query, language, preferLatest1, apiKey) {
+async function searchGeneralVideos(query, language, preferLatest, apiKey) {
     const searchQuery = buildCourseQuery(query, language);
     const relevanceLanguage = language === "hindi" ? "hi" : "en";
     const searchUrl = new URL("https://www.googleapis.com/youtube/v3/search");
@@ -404,11 +404,11 @@ async function searchGeneralVideos(query, language, preferLatest1, apiKey) {
     searchUrl.searchParams.append("videoDuration", "long");
     searchUrl.searchParams.append("videoDefinition", "high");
     searchUrl.searchParams.append("relevanceLanguage", relevanceLanguage);
-    searchUrl.searchParams.append("order", preferLatest1 ? "date" : "relevance");
+    searchUrl.searchParams.append("order", preferLatest ? "date" : "relevance");
     searchUrl.searchParams.append("maxResults", "15");
     searchUrl.searchParams.append("key", apiKey);
     // Add date filter for latest videos
-    if (preferLatest1) {
+    if (preferLatest) {
         const oneYearAgo = new Date();
         oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
         searchUrl.searchParams.append("publishedAfter", oneYearAgo.toISOString());
@@ -453,13 +453,13 @@ async function fetchVideoDetails(items, apiKey) {
             url: `https://www.youtube.com/watch?v=${video.id}`
         }));
 }
-async function fetchYouTubeVideos(query, language, preferLatest1) {
+async function fetchYouTubeVideos(query, language, preferLatest) {
     const apiKey = process.env.YOUTUBE_API_KEY;
     if (!apiKey) throw new Error("YouTube API key not configured");
     let allVideos = [];
     // Premium channels first
     try {
-        const premiumVideos = await searchPremiumChannels(query, language, preferLatest1, apiKey);
+        const premiumVideos = await searchPremiumChannels(query, language, preferLatest, apiKey);
         allVideos.push(...premiumVideos);
     } catch (error) {
         console.error("Premium channel search error:", error);
@@ -467,7 +467,7 @@ async function fetchYouTubeVideos(query, language, preferLatest1) {
     // General search if needed
     if (allVideos.length < 8) {
         try {
-            const generalVideos = await searchGeneralVideos(query, language, preferLatest1, apiKey);
+            const generalVideos = await searchGeneralVideos(query, language, preferLatest, apiKey);
             allVideos.push(...generalVideos);
         } catch (error) {
             console.error("General search error:", error);
@@ -485,7 +485,7 @@ function getPremiumChannelInfo(channelName, language) {
     const channels = PREMIUM_CHANNELS[language] || [];
     return channels.find((channel)=>channelName.toLowerCase().includes(channel.name.toLowerCase()));
 }
-function calculateVideoScore(video, preferLatest1, language, query) {
+function calculateVideoScore(video, preferLatest, language, query) {
     const views = video.viewCount || 0;
     const likes = video.likeCount || 0;
     const comments = video.commentCount || 0;
@@ -513,7 +513,7 @@ function calculateVideoScore(video, preferLatest1, language, query) {
     const likeRatio = views > 0 ? likes / views : 0;
     // Recency score
     let recencyScore = 0;
-    if (preferLatest1) {
+    if (preferLatest) {
         const publishDate = new Date(video.publishedAt);
         const now = new Date();
         const daysDiff = (now - publishDate) / (1000 * 60 * 60 * 24);
@@ -532,7 +532,7 @@ function calculateVideoScore(video, preferLatest1, language, query) {
     const baseScore = popularityScore * 0.20 + engagementRate * 1000 * 0.20 + likeRatio * 100 * 0.15 + recencyScore * 0.15 + durationScore * 0.30;
     return baseScore * premiumBoost * courseQualityBoost;
 }
-async function analyzeWithAI(videos, query, language) {
+async function analyzeWithAI(videos, query, language, preferLatest) {
     const model = genAI.getGenerativeModel({
         model: "gemini-2.0-flash-exp",
         generationConfig: {
@@ -701,9 +701,9 @@ async function POST(request) {
             });
         }
         const body = await request.json();
-        const { query, language = "hindi", preferLatest: preferLatest1 = false } = body;
-        validateInput(query, language, preferLatest1);
-        const videos = await fetchYouTubeVideos(query, language, preferLatest1);
+        const { query, language = "hindi", preferLatest = false } = body;
+        validateInput(query, language, preferLatest);
+        const videos = await fetchYouTubeVideos(query, language, preferLatest);
         if (videos.length === 0) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 video: null,
@@ -716,13 +716,13 @@ async function POST(request) {
             const courseAnalysis = detectCourseQuality(video);
             return {
                 ...video,
-                score: calculateVideoScore(video, preferLatest1, language, query),
+                score: calculateVideoScore(video, preferLatest, language, query),
                 isPremium: isPremiumChannel(video.channelTitle, language),
                 courseQuality: courseAnalysis
             };
         });
         scoredVideos.sort((a, b)=>b.score - a.score);
-        const aiAnalysis = await analyzeWithAI(scoredVideos, query, language);
+        const aiAnalysis = await analyzeWithAI(scoredVideos, query, language, preferLatest);
         const bestVideoIndex = Math.min(Math.max(aiAnalysis.bestVideoRank - 1, 0), scoredVideos.length - 1);
         const bestVideo = scoredVideos[bestVideoIndex];
         const { score, courseQuality, ...cleanVideo } = bestVideo;
