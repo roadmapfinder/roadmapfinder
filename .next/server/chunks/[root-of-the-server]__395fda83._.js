@@ -277,14 +277,14 @@ function checkRateLimit(identifier) {
     rateLimitMap.set(identifier, recentRequests);
     return true;
 }
-function validateInput(query, language, preferLatest) {
+function validateInput(query, language, preferLatest1) {
     if (!query || typeof query !== "string") throw new Error("Query is required and must be a string");
     if (query.length > 200) throw new Error("Query too long (max 200 characters)");
     if (![
         "hindi",
         "english"
     ].includes(language)) throw new Error("Language must be 'hindi' or 'english'");
-    if (typeof preferLatest !== "boolean") throw new Error("preferLatest must be a boolean");
+    if (typeof preferLatest1 !== "boolean") throw new Error("preferLatest must be a boolean");
 }
 // Parse ISO 8601 duration to minutes
 function parseDuration(duration) {
@@ -351,7 +351,7 @@ function getRelevantChannels(query, language) {
     }) : channels.filter((c)=>c.courseQuality === "excellent" || c.courseQuality === "high");
 }
 // Search premium channels with course focus
-async function searchPremiumChannels(query, language, preferLatest, apiKey) {
+async function searchPremiumChannels(query, language, preferLatest1, apiKey) {
     const relevantChannels = getRelevantChannels(query, language);
     const searchQuery = buildCourseQuery(query, language);
     const relevanceLanguage = language === "hindi" ? "hi" : "en";
@@ -362,12 +362,18 @@ async function searchPremiumChannels(query, language, preferLatest, apiKey) {
         searchUrl.searchParams.append("part", "snippet");
         searchUrl.searchParams.append("q", channelQuery);
         searchUrl.searchParams.append("type", "video");
-        searchUrl.searchParams.append("videoDuration", "long"); // Prefer longer videos
+        searchUrl.searchParams.append("videoDuration", "long");
         searchUrl.searchParams.append("videoDefinition", "high");
         searchUrl.searchParams.append("relevanceLanguage", relevanceLanguage);
-        searchUrl.searchParams.append("order", preferLatest ? "date" : "relevance");
+        searchUrl.searchParams.append("order", preferLatest1 ? "date" : "relevance");
         searchUrl.searchParams.append("maxResults", "5");
         searchUrl.searchParams.append("key", apiKey);
+        // Add date filter for latest videos
+        if (preferLatest1) {
+            const oneYearAgo = new Date();
+            oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+            searchUrl.searchParams.append("publishedAfter", oneYearAgo.toISOString());
+        }
         try {
             const response = await fetch(searchUrl.toString(), {
                 next: {
@@ -388,19 +394,25 @@ async function searchPremiumChannels(query, language, preferLatest, apiKey) {
     return await fetchVideoDetails(allItems, apiKey);
 }
 // General search with course focus
-async function searchGeneralVideos(query, language, preferLatest, apiKey) {
+async function searchGeneralVideos(query, language, preferLatest1, apiKey) {
     const searchQuery = buildCourseQuery(query, language);
     const relevanceLanguage = language === "hindi" ? "hi" : "en";
     const searchUrl = new URL("https://www.googleapis.com/youtube/v3/search");
     searchUrl.searchParams.append("part", "snippet");
     searchUrl.searchParams.append("q", searchQuery);
     searchUrl.searchParams.append("type", "video");
-    searchUrl.searchParams.append("videoDuration", "long"); // Courses are typically longer
+    searchUrl.searchParams.append("videoDuration", "long");
     searchUrl.searchParams.append("videoDefinition", "high");
     searchUrl.searchParams.append("relevanceLanguage", relevanceLanguage);
-    searchUrl.searchParams.append("order", preferLatest ? "date" : "relevance");
+    searchUrl.searchParams.append("order", preferLatest1 ? "date" : "relevance");
     searchUrl.searchParams.append("maxResults", "15");
     searchUrl.searchParams.append("key", apiKey);
+    // Add date filter for latest videos
+    if (preferLatest1) {
+        const oneYearAgo = new Date();
+        oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+        searchUrl.searchParams.append("publishedAfter", oneYearAgo.toISOString());
+    }
     const response = await fetch(searchUrl.toString(), {
         next: {
             revalidate: 3600
@@ -441,13 +453,13 @@ async function fetchVideoDetails(items, apiKey) {
             url: `https://www.youtube.com/watch?v=${video.id}`
         }));
 }
-async function fetchYouTubeVideos(query, language, preferLatest) {
+async function fetchYouTubeVideos(query, language, preferLatest1) {
     const apiKey = process.env.YOUTUBE_API_KEY;
     if (!apiKey) throw new Error("YouTube API key not configured");
     let allVideos = [];
     // Premium channels first
     try {
-        const premiumVideos = await searchPremiumChannels(query, language, preferLatest, apiKey);
+        const premiumVideos = await searchPremiumChannels(query, language, preferLatest1, apiKey);
         allVideos.push(...premiumVideos);
     } catch (error) {
         console.error("Premium channel search error:", error);
@@ -455,7 +467,7 @@ async function fetchYouTubeVideos(query, language, preferLatest) {
     // General search if needed
     if (allVideos.length < 8) {
         try {
-            const generalVideos = await searchGeneralVideos(query, language, preferLatest, apiKey);
+            const generalVideos = await searchGeneralVideos(query, language, preferLatest1, apiKey);
             allVideos.push(...generalVideos);
         } catch (error) {
             console.error("General search error:", error);
@@ -473,7 +485,7 @@ function getPremiumChannelInfo(channelName, language) {
     const channels = PREMIUM_CHANNELS[language] || [];
     return channels.find((channel)=>channelName.toLowerCase().includes(channel.name.toLowerCase()));
 }
-function calculateVideoScore(video, preferLatest, language, query) {
+function calculateVideoScore(video, preferLatest1, language, query) {
     const views = video.viewCount || 0;
     const likes = video.likeCount || 0;
     const comments = video.commentCount || 0;
@@ -501,7 +513,7 @@ function calculateVideoScore(video, preferLatest, language, query) {
     const likeRatio = views > 0 ? likes / views : 0;
     // Recency score
     let recencyScore = 0;
-    if (preferLatest) {
+    if (preferLatest1) {
         const publishDate = new Date(video.publishedAt);
         const now = new Date();
         const daysDiff = (now - publishDate) / (1000 * 60 * 60 * 24);
@@ -554,48 +566,64 @@ async function analyzeWithAI(videos, query, language) {
 
 **CRITICAL REQUIREMENT**: The user is searching for a COMPLETE, COMPREHENSIVE COURSE on "${query}", NOT short tutorials or quick tips.
 
+**USER PREFERENCES:**
+- Query: "${query}"
+- Language Preference: ${language === "hindi" ? "Hindi" : "English"} (STRICTLY ENFORCE - videos MUST be in this language)
+- Latest Content: ${preferLatest ? "YES - User wants the most recent/updated content from the last year" : "NO - Relevance and quality are more important than recency"}
+
 **PREMIUM CHANNELS (${language.toUpperCase()}):**
 ${channelList}
-
-**User Query:** "${query}"
-**Language:** ${language === "hindi" ? "Hindi" : "English"}
 
 **Available Videos (with course analysis):**
 ${JSON.stringify(videoSummaries, null, 2)}
 
 **SELECTION CRITERIA (STRICTLY PRIORITIZED):**
 
-1. **COMPLETE COURSE REQUIREMENT (MANDATORY - 40% weight)**:
+1. **LANGUAGE MATCH (MANDATORY - FILTER OUT NON-MATCHING):**
+   - ${language === "hindi" ? "Video MUST be in Hindi - reject if English or other language" : "Video MUST be in English - reject if Hindi or other language"}
+   - Check title, channel name, and description for language indicators
+   - Hindi channels: Chai aur Code, Code Step By Step, Coder's Gyan, Apna College, CodeWithHarry, etc.
+   - English channels: freeCodeCamp, Traversy Media, Net Ninja, Programming with Mosh, etc.
+
+2. **LATEST CONTENT PREFERENCE (${preferLatest ? "HIGH PRIORITY - 25% weight" : "LOW PRIORITY - 5% weight"}):**
+   ${preferLatest ? "- STRONGLY prefer videos from the last 6-12 months\n   - Recent content shows latest best practices and updates\n   - publishedAt date is CRITICAL in selection" : "- Quality and completeness matter more than recency\n   - Older but comprehensive courses are acceptable"}
+
+3. **COMPLETE COURSE REQUIREMENT (MANDATORY - 35% weight)**:
    - MUST be a full/complete course, NOT snippets or quick tutorials
    - Look for: "complete course", "full tutorial", "bootcamp", "zero to hero", "A to Z"
    - Duration: Prefer 60+ minutes (courses are typically 1-5+ hours)
    - Check description for chapters/timestamps/comprehensive content structure
    - isLikelyCourse: true is STRONGLY preferred
 
-2. **Premium Channel Priority (30% weight)**:
+4. **Premium Channel Priority (20% weight)**:
    - Premium channels with "excellent" quality get highest priority
    - If channel specialty matches query topic, give extra weight
    - Trust established educators over random creators
 
-3. **Content Relevance (20% weight)**:
+5. **Content Relevance (15% weight)**:
    - Does the course content EXACTLY match what user asked for?
    - MongoDB query → should teach MongoDB specifically, not general databases
    - React query → should be React-focused, not general JavaScript
 
-4. **Teaching Quality Indicators (10% weight)**:
+6. **Teaching Quality Indicators (5% weight)**:
    - Structured description with clear learning outcomes
    - Good engagement (views, likes)
-   - Recent enough to be relevant (but quality > recency)
 
 **YOUR TASKS:**
 
-1. **Identify Best COMPLETE Course**: Select the video that is the most comprehensive, complete course matching "${query}". Give HEAVY preference to videos marked isLikelyCourse: true and premium channels.
+1. **VALIDATE LANGUAGE MATCH**: First, verify that the selected video is in ${language === "hindi" ? "Hindi" : "English"}. If NO videos match the language, set confidence to 0.
 
-2. **Extract Detailed Course Syllabus**: From the description, extract 7-10 SPECIFIC topics/modules covered. Be detailed - not generic points like "basics" but actual concepts like "MongoDB aggregation pipeline", "CRUD operations", etc.
+2. **Identify Best COMPLETE Course**: Select the video that:
+   - Matches the ${language === "hindi" ? "Hindi" : "English"} language requirement
+   - ${preferLatest ? "Is from the last 6-12 months (check publishedAt)" : "Has the best quality and completeness"}
+   - Is the most comprehensive, complete course matching "${query}"
+   - Give HEAVY preference to videos marked isLikelyCourse: true and premium channels
 
-3. **Write Compelling Summary**: Explain in 2-3 sentences WHY this is the perfect COMPLETE course, mention the channel's credibility if premium, and highlight comprehensiveness.
+3. **Extract Detailed Course Syllabus**: From the description, extract 7-10 SPECIFIC topics/modules covered. Be detailed - not generic points like "basics" but actual concepts like "MongoDB aggregation pipeline", "CRUD operations", etc.
 
-4. **Assess Completeness**: Rate how "complete" this course is (0-100).
+4. **Write Compelling Summary**: Explain in 2-3 sentences WHY this is the perfect COMPLETE course, mention the channel's credibility if premium, language match, ${preferLatest ? "and recent publication date" : ""}.
+
+5. **Assess Completeness**: Rate how "complete" this course is (0-100).
 
 **RESPOND ONLY WITH THIS JSON (no markdown, no code blocks):**
 {
@@ -631,8 +659,15 @@ ${JSON.stringify(videoSummaries, null, 2)}
     } catch (error) {
         console.error("AI Analysis Error:", error);
         // Intelligent fallback: prefer complete courses from premium channels
-        const courseVideos = videos.filter((v)=>detectCourseQuality(v).isLikelyCourse);
-        const premiumCourses = courseVideos.filter((v)=>isPremiumChannel(v.channelTitle, language));
+        let courseVideos = videos.filter((v)=>detectCourseQuality(v).isLikelyCourse);
+        let premiumCourses = courseVideos.filter((v)=>isPremiumChannel(v.channelTitle, language));
+        // Apply latest filter if needed
+        if (preferLatest && premiumCourses.length > 0) {
+            const sixMonthsAgo = new Date();
+            sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+            const recentPremium = premiumCourses.filter((v)=>new Date(v.publishedAt) > sixMonthsAgo);
+            if (recentPremium.length > 0) premiumCourses = recentPremium;
+        }
         const bestVideo = premiumCourses[0] || courseVideos[0] || videos[0];
         const bestIndex = videos.findIndex((v)=>v.id === bestVideo.id);
         return {
@@ -646,11 +681,11 @@ ${JSON.stringify(videoSummaries, null, 2)}
                 "Advanced techniques and optimization",
                 "Hands-on exercises and assignments"
             ],
-            summary: `This comprehensive ${language} course covers ${query} from basics to advanced concepts with practical examples from a trusted educational source.`,
+            summary: `This comprehensive ${language} course covers ${query} from basics to advanced concepts with practical examples from a trusted educational source${preferLatest ? ", with recent and updated content" : ""}.`,
             confidence: premiumCourses.length > 0 ? 80 : 70,
             completenessScore: courseVideos.length > 0 ? 85 : 65,
             isPremiumChannel: isPremiumChannel(bestVideo.channelTitle, language),
-            reasoning: "Selected based on course indicators and channel reputation"
+            reasoning: `Selected based on course indicators, ${language} language match, channel reputation${preferLatest ? ", and recent publication" : ""}`
         };
     }
 }
@@ -666,9 +701,9 @@ async function POST(request) {
             });
         }
         const body = await request.json();
-        const { query, language = "hindi", preferLatest = false } = body;
-        validateInput(query, language, preferLatest);
-        const videos = await fetchYouTubeVideos(query, language, preferLatest);
+        const { query, language = "hindi", preferLatest: preferLatest1 = false } = body;
+        validateInput(query, language, preferLatest1);
+        const videos = await fetchYouTubeVideos(query, language, preferLatest1);
         if (videos.length === 0) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 video: null,
@@ -681,7 +716,7 @@ async function POST(request) {
             const courseAnalysis = detectCourseQuality(video);
             return {
                 ...video,
-                score: calculateVideoScore(video, preferLatest, language, query),
+                score: calculateVideoScore(video, preferLatest1, language, query),
                 isPremium: isPremiumChannel(video.channelTitle, language),
                 courseQuality: courseAnalysis
             };
