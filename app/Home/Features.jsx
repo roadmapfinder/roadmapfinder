@@ -16,8 +16,8 @@ const AnimatedStatsComponent = () => {
   // Target values
   const targets = {
     courses: 100,
-    roadmaps: 50,
-    blogs: 30
+    roadmaps: 200,
+    blogs: 50
   };
 
   // Intersection Observer to trigger animation when component comes into view
