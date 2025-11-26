@@ -7589,6 +7589,12 @@
   }
 
   @media (width >= 64rem) {
+    .lg\:px-20 {
+      padding-inline: calc(var(--spacing) * 20);
+    }
+  }
+
+  @media (width >= 64rem) {
     .lg\:py-20 {
       padding-block: calc(var(--spacing) * 20);
     }
