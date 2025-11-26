@@ -1,17 +1,17 @@
-import { 
-  Brain, 
-  Globe, 
-  Database, 
-  Layout, 
-  Smartphone, 
-  Cloud, 
-  Video, 
-  Paintbrush, 
-  Blocks, 
-  Settings, 
-  LayoutGrid, 
-  Server, 
-  Shield, 
+import {
+  Brain,
+  Globe,
+  Database,
+  Layout,
+  Smartphone,
+  Cloud,
+  Video,
+  Paintbrush,
+  Blocks,
+  Settings,
+  LayoutGrid,
+  Server,
+  Shield,
   Code,
   FileCode,
   Terminal,
@@ -28,11 +28,10 @@ import {
   PenBox,
   BarChart3,
   TrendingUp,
-   Palette,
+  Palette,
   PenToolIcon,
   LayoutDashboard,
   Store
-  
   
 } from "lucide-react";
 import { Prompt } from "next/font/google";
@@ -46,8 +45,9 @@ export const roadmapsData = [
     link: "/Roadmaps/Aiml",
     bgColor: "from-blue-500 to-indigo-600",
     category: "featured",
-    description: "Machine Learning, Deep Learning, Neural Networks"
+    description: "Machine Learning, Deep Learning, Neural Networks",
   },
+  
   {
     id: "ai agents",
     title: "AI Agents (No code)",
@@ -55,7 +55,16 @@ export const roadmapsData = [
     link: "/Roadmaps/AI-Agent",
     bgColor: "from-blue-700 to-blue-900",
     category: "featured",
-    description: "No code AI agents and applications"
+    description: "No code AI agents and applications",
+  },
+  {
+    id: "langchain",
+    title: "Langchain",
+    icon: <Store className="w-5 h-5 text-white" />,
+    link: "/Roadmaps/Langchain",
+    bgColor: "from-red-500 to-red-600",
+    category: "featured",
+    description: "Langchain Framework and applications",
   },
   {
     id: "api development",
@@ -64,7 +73,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Api",
     bgColor: "from-red-500 to-red-700",
     category: "featured",
-    description: "api development and applications"
+    description: "api development and applications",
   },
   {
     id: "wordpress",
@@ -73,7 +82,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Wordpress",
     bgColor: "from-blue-500 to-blue-700",
     category: "featured",
-    description: "Wordpress development and applications"
+    description: "Wordpress development and applications",
   },
 
   {
@@ -83,7 +92,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Shopify",
     bgColor: "from-green-600 to-green-800",
     category: "featured",
-    description: "Shopify development and applications"
+    description: "Shopify development and applications",
   },
 
   {
@@ -93,7 +102,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Django",
     bgColor: "from-green-800 to-green-900",
     category: "featured",
-    description: "Backend development with python"
+    description: "Backend development with python",
   },
   {
     id: "react",
@@ -102,7 +111,7 @@ export const roadmapsData = [
     link: "/Roadmaps/React",
     bgColor: "from-blue-600 to-blue-400",
     category: "featured",
-    description: "React.js library for building user interfaces"
+    description: "React.js library for building user interfaces",
   },
   {
     id: "nextjs",
@@ -111,7 +120,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Next",
     bgColor: "from-gray-800 to-black",
     category: "featured",
-    description: "Full-stack React framework"
+    description: "Full-stack React framework",
   },
   {
     id: "nestjs",
@@ -120,7 +129,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Nestjs",
     bgColor: "from-pink-600 to-pink-700",
     category: "featured",
-    description: "Enterprise standard for node.js backend"
+    description: "Enterprise standard for node.js backend",
   },
   {
     id: "reactnative",
@@ -129,7 +138,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Reactnative",
     bgColor: "from-blue-500 to-cyan-400",
     category: "featured",
-    description: "Cross-platform mobile app development"
+    description: "Cross-platform mobile app development",
   },
   {
     id: "software architect",
@@ -138,7 +147,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Software",
     bgColor: "from-blue-500 to-cyan-400",
     category: "featured",
-    description: "Software architecture fundamentals"
+    description: "Software architecture fundamentals",
   },
   {
     id: "flutter",
@@ -147,7 +156,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Flutter",
     bgColor: "from-blue-500 to-blue-700",
     category: "featured",
-    description: "Cross-platform mobile app development"
+    description: "Cross-platform mobile app development",
   },
   {
     id: "fullstack",
@@ -156,7 +165,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Full-Stack",
     bgColor: "from-blue-500 to-blue-700",
     category: "featured",
-    description: "Full-Stack Web development"
+    description: "Full-Stack Web development",
   },
   {
     id: "frontend",
@@ -165,7 +174,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Frontend",
     bgColor: "from-blue-500 to-cyan-400",
     category: "featured",
-    description: "Frontend development specialization"
+    description: "Frontend development specialization",
   },
   {
     id: "mern",
@@ -174,7 +183,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Mern",
     bgColor: "from-blue-600 to-cyan-500",
     category: "featured",
-    description: "Mern stack development specialization"
+    description: "Mern stack development specialization",
   },
   {
     id: "backend",
@@ -183,7 +192,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Backend",
     bgColor: "from-green-600 to-emerald-700",
     category: "featured",
-    description: "Server-side development and APIs"
+    description: "Server-side development and APIs",
   },
   {
     id: "nodejs",
@@ -192,7 +201,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Nodejs",
     bgColor: "from-green-400 to-emerald-500",
     category: "featured",
-    description: "Server-side development and APIs"
+    description: "Server-side development and APIs",
   },
   {
     id: "express js",
@@ -201,7 +210,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Expressjs",
     bgColor: "from-green-400 to-emerald-500",
     category: "featured",
-    description: "Server-side development and APIs"
+    description: "Server-side development and APIs",
   },
   {
     id: "angular",
@@ -210,7 +219,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Angular",
     bgColor: "from-red-600 to-red-700",
     category: "featured",
-    description: "Single page application development"
+    description: "Single page application development",
   },
   {
     id: "javascript",
@@ -219,7 +228,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Javascript",
     bgColor: "from-yellow-400 to-yellow-600",
     category: "featured",
-    description: "Modern JavaScript programming"
+    description: "Modern JavaScript programming",
   },
   {
     id: "typescript",
@@ -228,7 +237,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Typescript",
     bgColor: "from-blue-400 to-blue-600",
     category: "featured",
-    description: "Modern Typescript programming"
+    description: "Modern Typescript programming",
   },
   {
     id: "python",
@@ -237,7 +246,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Python",
     bgColor: "from-blue-500 to-green-500",
     category: "trending",
-    description: "Python programming language"
+    description: "Python programming language",
   },
   {
     id: "java",
@@ -246,7 +255,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Java",
     bgColor: "from-orange-500 to-red-600",
     category: "trending",
-    description: "Java programming language"
+    description: "Java programming language",
   },
   {
     id: "java full-stack",
@@ -255,7 +264,7 @@ export const roadmapsData = [
     link: "/Roadmaps/JavaFullStack",
     bgColor: "from-orange-400 to-red-300",
     category: "trending",
-    description: "Java Full-Stack Development"
+    description: "Java Full-Stack Development",
   },
   {
     id: "rust",
@@ -264,7 +273,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Rust",
     bgColor: "from-orange-600 to-red-700",
     category: "trending",
-    description: "Systems programming with Rust"
+    description: "Systems programming with Rust",
   },
   {
     id: "ios",
@@ -273,7 +282,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Ios",
     bgColor: "from-gray-700 to-gray-900",
     category: "featured",
-    description: "Native iOS app development with Swift and UIKit"
+    description: "Native iOS app development with Swift and UIKit",
   },
   {
     id: "android",
@@ -282,7 +291,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Android",
     bgColor: "from-green-500 to-green-700",
     category: "featured",
-    description: "Native Android app development with Kotlin and Java"
+    description: "Native Android app development with Kotlin and Java",
   },
   {
     id: "php",
@@ -291,7 +300,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Php",
     bgColor: "from-purple-600 to-blue-600",
     category: "trending",
-    description: "PHP web development"
+    description: "PHP web development",
   },
   {
     id: "sql",
@@ -300,7 +309,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Sql",
     bgColor: "from-blue-700 to-indigo-800",
     category: "trending",
-    description: "Database management and queries"
+    description: "Database management and queries",
   },
   {
     id: "golang",
@@ -309,7 +318,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Go",
     bgColor: "from-cyan-500 to-blue-500",
     category: "trending",
-    description: "Go programming language"
+    description: "Go programming language",
   },
   {
     id: "swift",
@@ -318,7 +327,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Swift",
     bgColor: "from-orange-400 to-red-500",
     category: "trending",
-    description: "iOS and macOS development"
+    description: "iOS and macOS development",
   },
   {
     id: "cpp",
@@ -327,7 +336,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Cpp",
     bgColor: "from-blue-800 to-indigo-900",
     category: "trending",
-    description: "C++ programming language"
+    description: "C++ programming language",
   },
   {
     id: "C",
@@ -336,7 +345,7 @@ export const roadmapsData = [
     link: "/Roadmaps/C",
     bgColor: "from-blue-800 to-indigo-900",
     category: "trending",
-    description: "C programming fundamentals"
+    description: "C programming fundamentals",
   },
   {
     id: "kotlin",
@@ -345,7 +354,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Kotlin",
     bgColor: "from-purple-500 to-pink-600",
     category: "trending",
-    description: "Kotlin for Android development"
+    description: "Kotlin for Android development",
   },
   {
     id: "spring",
@@ -354,7 +363,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Spring",
     bgColor: "from-green-600 to-green-800",
     category: "trending",
-    description: "Spring framework"
+    description: "Spring framework",
   },
   {
     id: "springboot",
@@ -363,7 +372,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Springboot",
     bgColor: "from-green-500 to-green-600",
     category: "trending",
-    description: "Spring Boot framework"
+    description: "Spring Boot framework",
   },
   {
     id: "data",
@@ -372,7 +381,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Data",
     bgColor: "from-green-500 to-green-400",
     category: "trending",
-    description: "Data architecture and engineering"
+    description: "Data architecture and engineering",
   },
   // NEW ROADMAPS ADDED HERE
   {
@@ -382,7 +391,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Data-Science",
     bgColor: "from-violet-600 to-purple-700",
     category: "trending",
-    description: "Statistical analysis, machine learning, and data insights"
+    description: "Statistical analysis, machine learning, and data insights",
   },
   {
     id: "data-analysis",
@@ -391,7 +400,8 @@ export const roadmapsData = [
     link: "/Roadmaps/Data-Analysis",
     bgColor: "from-emerald-500 to-teal-600",
     category: "trending",
-    description: "Data visualization, statistical analysis, and business intelligence"
+    description:
+      "Data visualization, statistical analysis, and business intelligence",
   },
   {
     id: "product-designer",
@@ -400,7 +410,7 @@ export const roadmapsData = [
     link: "/Roadmaps/ProductDesigner",
     bgColor: "from-rose-500 to-pink-600",
     category: "trending",
-    description: "User research, design thinking, and product strategy"
+    description: "User research, design thinking, and product strategy",
   },
   {
     id: "database",
@@ -409,7 +419,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Database",
     bgColor: "from-green-600 to-green-700",
     category: "trending",
-    description: "Database in depth "
+    description: "Database in depth ",
   },
   {
     id: "excel",
@@ -418,7 +428,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Excel",
     bgColor: "from-green-500 to-green-400",
     category: "trending",
-    description: "Excel expert course"
+    description: "Excel expert course",
   },
   {
     id: "uiux",
@@ -427,7 +437,7 @@ export const roadmapsData = [
     link: "/Roadmaps/UIUX",
     bgColor: "from-purple-500 to-pink-500",
     category: "trending",
-    description: "User interface and experience design"
+    description: "User interface and experience design",
   },
 
   {
@@ -437,7 +447,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Cloud",
     bgColor: "from-blue-400 to-cyan-300",
     category: "trending",
-    description: "Cloud platforms and services"
+    description: "Cloud platforms and services",
   },
   {
     id: "aws",
@@ -446,7 +456,7 @@ export const roadmapsData = [
     link: "/Roadmaps/AWS",
     bgColor: "from-yellow-400 to-yellow-300",
     category: "trending",
-    description: "Amazon Web and services"
+    description: "Amazon Web and services",
   },
   {
     id: "networking",
@@ -455,7 +465,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Networking",
     bgColor: "from-blue-500 to-cyan-600",
     category: "trending",
-    description: "Network engineering fundamentals"
+    description: "Network engineering fundamentals",
   },
   {
     id: "video",
@@ -464,7 +474,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Video",
     bgColor: "from-red-500 to-pink-500",
     category: "trending",
-    description: "Video editing and production"
+    description: "Video editing and production",
   },
   {
     id: "graphic",
@@ -473,7 +483,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Graphic",
     bgColor: "from-yellow-400 to-amber-500",
     category: "trending",
-    description: "Visual design and graphics"
+    description: "Visual design and graphics",
   },
   {
     id: "blockchain",
@@ -482,7 +492,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Blockchain",
     bgColor: "from-blue-700 to-indigo-800",
     category: "trending",
-    description: "Blockchain and cryptocurrency development"
+    description: "Blockchain and cryptocurrency development",
   },
   {
     id: "system",
@@ -491,7 +501,7 @@ export const roadmapsData = [
     link: "/Roadmaps/System",
     bgColor: "from-emerald-500 to-teal-600",
     category: "trending",
-    description: "Large-scale system architecture"
+    description: "Large-scale system architecture",
   },
   {
     id: "Linux",
@@ -500,7 +510,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Linux",
     bgColor: "from-black to-gray-900",
     category: "trending",
-    description: "Linux command line OS"
+    description: "Linux command line OS",
   },
   {
     id: "OS",
@@ -509,7 +519,7 @@ export const roadmapsData = [
     link: "/Roadmaps/OS",
     bgColor: "from-gray-800 to-gray-900",
     category: "trending",
-    description: "Operating system fundamentals"
+    description: "Operating system fundamentals",
   },
   {
     id: "devops",
@@ -518,7 +528,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Devops",
     bgColor: "from-gray-700 to-gray-900",
     category: "trending",
-    description: "DevOps practices and tools"
+    description: "DevOps practices and tools",
   },
   {
     id: "dsa",
@@ -527,7 +537,7 @@ export const roadmapsData = [
     link: "/Roadmaps/DSA",
     bgColor: "from-gray-700 to-gray-900",
     category: "trending",
-    description: "Data Structures and Algorithms"
+    description: "Data Structures and Algorithms",
   },
   {
     id: "cybersecurity",
@@ -536,7 +546,7 @@ export const roadmapsData = [
     link: "/Roadmaps/CyberSecurity",
     bgColor: "from-red-600 to-red-800",
     category: "trending",
-    description: "Cybersecurity and information security"
+    description: "Cybersecurity and information security",
   },
   {
     id: "prompt engineering",
@@ -545,7 +555,7 @@ export const roadmapsData = [
     link: "/Roadmaps/Prompt",
     bgColor: "from-red-600 to-red-800",
     category: "trending",
-    description: "Prompt Engineering and applications"
+    description: "Prompt Engineering and applications",
   },
   {
     id: "Internet of Things",
@@ -554,7 +564,7 @@ export const roadmapsData = [
     link: "/Roadmaps/IOT",
     bgColor: "from-red-600 to-red-800",
     category: "trending",
-    description: "IOT development and applications"
+    description: "IOT development and applications",
   },
   {
     id: "game development",
@@ -563,44 +573,45 @@ export const roadmapsData = [
     link: "/Roadmaps/Game",
     bgColor: "from-blue-600 to-blue-900",
     category: "trending",
-    description: "Game Development and applications"
+    description: "Game Development and applications",
   },
 ];
 
 // Popular search tags
 export const popularTags = [
-  "AI", 
-  "Web", 
-  "JavaScript", 
-  "Python", 
-  "Java", 
-  "React", 
-  "Next.js", 
-  "Backend"
+  "AI",
+  "Web",
+  "JavaScript",
+  "Python",
+  "Java",
+  "React",
+  "Next.js",
+  "Backend",
 ];
 
 // Utility functions for roadmaps
 export const getRoadmapsByCategory = (category) => {
-  return roadmapsData.filter(roadmap => roadmap.category === category);
+  return roadmapsData.filter((roadmap) => roadmap.category === category);
 };
 
 export const getFeaturedRoadmaps = () => {
-  return roadmapsData.filter(roadmap => roadmap.category === "featured");
+  return roadmapsData.filter((roadmap) => roadmap.category === "featured");
 };
 
 export const getTrendingRoadmaps = () => {
-  return roadmapsData.filter(roadmap => roadmap.category === "trending");
+  return roadmapsData.filter((roadmap) => roadmap.category === "trending");
 };
 
 export const searchRoadmaps = (query) => {
   if (!query.trim()) return roadmapsData;
 
-  return roadmapsData.filter(roadmap =>
-    roadmap.title.toLowerCase().includes(query.toLowerCase()) ||
-    roadmap.description.toLowerCase().includes(query.toLowerCase())
+  return roadmapsData.filter(
+    (roadmap) =>
+      roadmap.title.toLowerCase().includes(query.toLowerCase()) ||
+      roadmap.description.toLowerCase().includes(query.toLowerCase()),
   );
 };
 
 export const getRoadmapById = (id) => {
-  return roadmapsData.find(roadmap => roadmap.id === id);
+  return roadmapsData.find((roadmap) => roadmap.id === id);
 };

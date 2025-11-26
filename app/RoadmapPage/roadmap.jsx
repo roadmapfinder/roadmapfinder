@@ -73,7 +73,7 @@ function enhancedSearch(query, categories) {
 
     // Boost score if all terms are found
     const allTermsFound = searchTerms.every(term => searchableText.includes(term));
-    if (allTermsFound) score += 25;
+    if (allTermsFound) score += 26;
 
     return { category, score };
   });
