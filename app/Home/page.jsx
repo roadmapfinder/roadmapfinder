@@ -153,7 +153,7 @@ export default function HomePage() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 font-['Sora']">
+    <div className="min-h-screen bg-white font-['Sora']">
       {/* Layout Container */}
       <div className="flex">
         {/* Desktop Sidebar - Hidden on mobile */}

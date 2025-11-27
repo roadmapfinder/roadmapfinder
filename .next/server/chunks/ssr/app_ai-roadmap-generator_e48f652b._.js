@@ -2239,6 +2239,7 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$clerk$2f$shared$2f$dist$2f$runtime$2f$react$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@clerk/shared/dist/runtime/react/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Brain$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/brain.js [app-ssr] (ecmascript) <export default as Brain>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-ssr] (ecmascript) <export default as Loader2>");
@@ -2256,12 +2257,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ai$2d$roadmap$2d$gene
 ;
 ;
 ;
+;
 const AIRoadmapGenerator = ()=>{
+    const { user, isLoaded } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$clerk$2f$shared$2f$dist$2f$runtime$2f$react$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useUser"])();
     const [query, setQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [isGenerating, setIsGenerating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [roadmap, setRoadmap] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('roadmap');
+    const [requestCount, setRequestCount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isLoadingCount, setIsLoadingCount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    // Load request count from localStorage when component mounts
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (isLoaded && user) {
+            const userEmail = user.primaryEmailAddress?.emailAddress;
+            if (userEmail) {
+                const storageKey = `roadmap_requests_${userEmail}`;
+                const stored = localStorage.getItem(storageKey);
+                const count = stored ? parseInt(stored, 10) : 0;
+                setRequestCount(count);
+            }
+            setIsLoadingCount(false);
+        }
+    }, [
+        isLoaded,
+        user
+    ]);
     const generateRoadmap = async ()=>{
         if (!query.trim()) {
             setError('Please enter a learning goal or career path');
@@ -2269,6 +2290,16 @@ const AIRoadmapGenerator = ()=>{
         }
         if (query.length > 2000) {
             setError('Query is too long. Maximum 2000 characters.');
+            return;
+        }
+        // Check if user is authenticated
+        if (!user) {
+            setError('Please sign in to generate roadmaps.');
+            return;
+        }
+        // Check rate limit
+        if (requestCount >= 2) {
+            setError('You have reached your limit of 2 roadmap generations. Please try again later or contact support.');
             return;
         }
         setIsGenerating(true);
@@ -2290,6 +2321,14 @@ const AIRoadmapGenerator = ()=>{
             const data = await response.json();
             setRoadmap(data);
             setActiveTab('roadmap');
+            // Increment request count and save to localStorage
+            const userEmail = user.primaryEmailAddress?.emailAddress;
+            if (userEmail) {
+                const newCount = requestCount + 1;
+                setRequestCount(newCount);
+                const storageKey = `roadmap_requests_${userEmail}`;
+                localStorage.setItem(storageKey, newCount.toString());
+            }
         } catch (err) {
             setError(err.message || 'Something went wrong. Please try again.');
             console.error('Error generating roadmap:', err);
@@ -2344,12 +2383,12 @@ const AIRoadmapGenerator = ()=>{
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 81,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 119,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2358,18 +2397,18 @@ const AIRoadmapGenerator = ()=>{
                                         children: "AI Roadmap Generator"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 84,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                    lineNumber: 83,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                            lineNumber: 79,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, this),
                         roadmap && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2378,13 +2417,13 @@ const AIRoadmapGenerator = ()=>{
                             children: "New Roadmap"
                         }, void 0, false, {
                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                            lineNumber: 91,
+                            lineNumber: 130,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                    lineNumber: 78,
+                    lineNumber: 117,
                     columnNumber: 9
                 }, this),
                 !roadmap && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2393,35 +2432,62 @@ const AIRoadmapGenerator = ()=>{
                         className: "bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-10",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-3 mb-6",
+                                className: "flex items-center justify-between mb-6",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
-                                            className: "text-slate-700",
-                                            size: 20
-                                        }, void 0, false, {
+                                        className: "flex items-center gap-3",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
+                                                    className: "text-slate-700",
+                                                    size: 20
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                    lineNumber: 146,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                lineNumber: 145,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                className: "text-2xl font-semibold text-slate-900",
+                                                children: "What do you want to learn?"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                lineNumber: 148,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                        lineNumber: 144,
+                                        columnNumber: 17
+                                    }, this),
+                                    isLoaded && user && !isLoadingCount && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-sm",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: `font-semibold ${requestCount >= 2 ? 'text-red-600' : 'text-slate-700'}`,
+                                            children: [
+                                                requestCount,
+                                                "/2 requests used"
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 106,
-                                            columnNumber: 19
+                                            lineNumber: 154,
+                                            columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 105,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-2xl font-semibold text-slate-900",
-                                        children: "What do you want to learn?"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 108,
-                                        columnNumber: 17
+                                        lineNumber: 153,
+                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 104,
+                                lineNumber: 143,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2429,9 +2495,104 @@ const AIRoadmapGenerator = ()=>{
                                 children: "Describe your learning goal, career path, or skill you want to master. Our AI will create a personalized roadmap with projects and resources."
                             }, void 0, false, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 113,
+                                lineNumber: 161,
                                 columnNumber: 15
                             }, this),
+                            !isLoaded || isLoadingCount ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center justify-center py-8",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                    className: "animate-spin text-slate-400",
+                                    size: 32
+                                }, void 0, false, {
+                                    fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                    lineNumber: 168,
+                                    columnNumber: 19
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                lineNumber: 167,
+                                columnNumber: 17
+                            }, this) : !user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                                        className: "text-amber-600 flex-shrink-0 mt-0.5",
+                                        size: 18
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                        lineNumber: 172,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-amber-900 font-medium text-sm",
+                                                children: "Authentication Required"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                lineNumber: 174,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-amber-700 text-sm mt-0.5",
+                                                children: "Please sign in to generate roadmaps."
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                lineNumber: 175,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                        lineNumber: 173,
+                                        columnNumber: 19
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                lineNumber: 171,
+                                columnNumber: 17
+                            }, this) : requestCount >= 2 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                                        className: "text-red-600 flex-shrink-0 mt-0.5",
+                                        size: 18
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                        lineNumber: 180,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-red-900 font-medium text-sm",
+                                                children: "Limit Reached"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                lineNumber: 182,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-red-700 text-sm mt-0.5",
+                                                children: "You have used all 2 roadmap generations for your account. Please contact support for more requests."
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                                lineNumber: 183,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                        lineNumber: 181,
+                                        columnNumber: 19
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/ai-roadmap-generator/page.jsx",
+                                lineNumber: 179,
+                                columnNumber: 17
+                            }, this) : null,
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-4",
                                 children: [
@@ -2445,7 +2606,7 @@ const AIRoadmapGenerator = ()=>{
                                         disabled: isGenerating
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 119,
+                                        lineNumber: 189,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2457,18 +2618,18 @@ const AIRoadmapGenerator = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 130,
+                                            lineNumber: 200,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 129,
+                                        lineNumber: 199,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 118,
+                                lineNumber: 188,
                                 columnNumber: 15
                             }, this),
                             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2479,7 +2640,7 @@ const AIRoadmapGenerator = ()=>{
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 136,
+                                        lineNumber: 206,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2489,7 +2650,7 @@ const AIRoadmapGenerator = ()=>{
                                                 children: "Error"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 138,
+                                                lineNumber: 208,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2497,24 +2658,24 @@ const AIRoadmapGenerator = ()=>{
                                                 children: error
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 139,
+                                                lineNumber: 209,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 137,
+                                        lineNumber: 207,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 135,
+                                lineNumber: 205,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: generateRoadmap,
-                                disabled: isGenerating || !query.trim(),
+                                disabled: isGenerating || !query.trim() || !user || requestCount >= 2 || isLoadingCount,
                                 className: "w-full mt-8 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-xl transition-all shadow-lg shadow-slate-900/10 flex items-center justify-center gap-3",
                                 children: isGenerating ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                     children: [
@@ -2523,14 +2684,14 @@ const AIRoadmapGenerator = ()=>{
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 151,
+                                            lineNumber: 221,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Generating Your Roadmap..."
                                         }, void 0, false, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 152,
+                                            lineNumber: 222,
                                             columnNumber: 21
                                         }, this)
                                     ]
@@ -2540,21 +2701,24 @@ const AIRoadmapGenerator = ()=>{
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 156,
+                                            lineNumber: 226,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "Generate AI Roadmap"
-                                        }, void 0, false, {
+                                            children: [
+                                                "Generate AI Roadmap ",
+                                                user && !isLoadingCount && `(${2 - requestCount} left)`
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 157,
+                                            lineNumber: 227,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 144,
+                                lineNumber: 214,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2565,7 +2729,7 @@ const AIRoadmapGenerator = ()=>{
                                         children: "💡 Pro Tips"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 163,
+                                        lineNumber: 233,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2575,51 +2739,51 @@ const AIRoadmapGenerator = ()=>{
                                                 children: "• Be specific about your current skill level"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 165,
+                                                lineNumber: 235,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "• Mention any preferred technologies or frameworks"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 166,
+                                                lineNumber: 236,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "• Include your career goals or target role"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 167,
+                                                lineNumber: 237,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "• You'll get a complete roadmap with projects and curated resources"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 168,
+                                                lineNumber: 238,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 164,
+                                        lineNumber: 234,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 162,
+                                lineNumber: 232,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                        lineNumber: 103,
+                        lineNumber: 142,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                    lineNumber: 102,
+                    lineNumber: 141,
                     columnNumber: 11
                 }, this),
                 roadmap && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2637,12 +2801,12 @@ const AIRoadmapGenerator = ()=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                            lineNumber: 182,
+                                            lineNumber: 252,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 181,
+                                        lineNumber: 251,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2652,7 +2816,7 @@ const AIRoadmapGenerator = ()=>{
                                                 children: "Your Learning Goal"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 185,
+                                                lineNumber: 255,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2660,24 +2824,24 @@ const AIRoadmapGenerator = ()=>{
                                                 children: query
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 186,
+                                                lineNumber: 256,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 184,
+                                        lineNumber: 254,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 180,
+                                lineNumber: 250,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                            lineNumber: 179,
+                            lineNumber: 249,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2694,25 +2858,25 @@ const AIRoadmapGenerator = ()=>{
                                                 size: 18
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                                lineNumber: 206,
+                                                lineNumber: 276,
                                                 columnNumber: 23
                                             }, this),
                                             tab.label
                                         ]
                                     }, tab.id, true, {
                                         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                        lineNumber: 197,
+                                        lineNumber: 267,
                                         columnNumber: 21
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                lineNumber: 193,
+                                lineNumber: 263,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                            lineNumber: 192,
+                            lineNumber: 262,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2722,44 +2886,44 @@ const AIRoadmapGenerator = ()=>{
                                     roadmap: roadmap
                                 }, void 0, false, {
                                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                    lineNumber: 216,
+                                    lineNumber: 286,
                                     columnNumber: 43
                                 }, this),
                                 activeTab === 'projects' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ai$2d$roadmap$2d$generator$2f$ProjectsView$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     projects: roadmap.projects
                                 }, void 0, false, {
                                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                    lineNumber: 217,
+                                    lineNumber: 287,
                                     columnNumber: 44
                                 }, this),
                                 activeTab === 'resources' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$ai$2d$roadmap$2d$generator$2f$ResourcesView$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     resources: roadmap.resources
                                 }, void 0, false, {
                                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                                    lineNumber: 218,
+                                    lineNumber: 288,
                                     columnNumber: 45
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                            lineNumber: 215,
+                            lineNumber: 285,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-                    lineNumber: 177,
+                    lineNumber: 247,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-            lineNumber: 76,
+            lineNumber: 115,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/ai-roadmap-generator/page.jsx",
-        lineNumber: 75,
+        lineNumber: 114,
         columnNumber: 5
     }, this);
 };

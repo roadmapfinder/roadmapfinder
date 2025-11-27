@@ -2411,6 +2411,10 @@
     background-color: #f9fafb;
   }
 
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+
   .bg-amber-500 {
     background-color: var(--color-amber-500);
   }
@@ -4343,6 +4347,14 @@
 
   .text-amber-600 {
     color: var(--color-amber-600);
+  }
+
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+
+  .text-amber-900 {
+    color: var(--color-amber-900);
   }
 
   .text-black {

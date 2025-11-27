@@ -59,7 +59,7 @@ module.exports = mod;
 var { g: global, __dirname } = __turbopack_context__;
 {
 // app/api/generate-roadmap/route.js
-// Ultra-optimized version with streaming, aggressive caching, and parallel processing
+// Ultra-optimized version with GROQ API, streaming, aggressive caching, and parallel processing
 __turbopack_context__.s({
     "GET": (()=>GET),
     "POST": (()=>POST),
@@ -162,7 +162,7 @@ function checkRateLimit(ip) {
 // ============================================================================
 // ULTRA-COMPRESSED SYSTEM PROMPT - 60% smaller for faster processing
 // ============================================================================
-const SYSTEM_PROMPT = `You are an AI Roadmap Generator expert that creates detailed, production-level structured learning roadmaps for 2025. Your roadmaps are COMPREHENSIVE and IN-DEPTH, covering every step from absolute beginner to industry-ready professional.
+const SYSTEM_PROMPT = `You are an AI Roadmap Generator expert that creates detailed, production-level structured learning roadmaps for 2026. Your roadmaps are COMPREHENSIVE and IN-DEPTH, covering every step from absolute beginner to industry-ready professional.
 
 CRITICAL: You MUST respond with ONLY valid JSON. No markdown, no code blocks, no explanations - just pure JSON.
 
@@ -540,6 +540,33 @@ QUALITY CHECKLIST:
 ✓ Is the timeline realistic (18-24 months)?
 ✓ Are resources comprehensive and up-to-date?`;
 // ============================================================================
+// GROQ MODEL SELECTOR - Choose best model based on query complexity
+// ============================================================================
+function selectGroqModel(query) {
+    const queryLength = query.length;
+    const complexKeywords = [
+        'advanced',
+        'expert',
+        'comprehensive',
+        'detailed',
+        'full-stack',
+        'complete'
+    ];
+    const isComplex = complexKeywords.some((keyword)=>query.toLowerCase().includes(keyword));
+    // Model selection based on query complexity and requirements
+    // All models are FREE with high rate limits on GROQ
+    if (queryLength > 500 || isComplex) {
+        // Best for complex, detailed roadmaps - Highest quality
+        return "llama-3.3-70b-versatile"; // 70B parameters, best reasoning
+    } else if (queryLength > 200) {
+        // Balanced performance for medium queries
+        return "llama-3.1-70b-versatile"; // Great balance of speed and quality
+    } else {
+        // Fast for simple queries
+        return "llama-3.1-8b-instant"; // Fastest, still excellent quality
+    }
+}
+// ============================================================================
 // FASTER JSON EXTRACTION
 // ============================================================================
 function extractJSON(content) {
@@ -602,17 +629,20 @@ async function POST(request) {
     try {
         // 1. Parallel validation
         const [apiKey, body] = await Promise.all([
-            Promise.resolve(process.env.OPENROUTER_API_KEY),
+            Promise.resolve(process.env.GROQ_API_KEY),
             request.json().catch(()=>null)
         ]);
-        if (!apiKey) return errorResponse("API not configured", 500);
+        if (!apiKey) {
+            console.error("❌ GROQ_API_KEY not found in environment variables");
+            return errorResponse("API not configured - Please set GROQ_API_KEY in .env.local", 500);
+        }
         if (!body?.query) return errorResponse("Query required", 400);
         const query = body.query.trim();
-        if (query.length > 2000) return errorResponse("Query too long", 400);
+        if (query.length > 2000) return errorResponse("Query too long (max 2000 characters)", 400);
         // 2. Rate limit (fast)
         const ip = getClientIp(request);
         if (!checkRateLimit(ip)) {
-            return errorResponse("Rate limit exceeded", 429);
+            return errorResponse("Rate limit exceeded. Please try again in a minute.", 429);
         }
         // 3. CACHE CHECK - Instant return
         const cached = getCachedRoadmap(query);
@@ -627,20 +657,20 @@ async function POST(request) {
                 }
             });
         }
-        // 4. OPTIMIZED API CALL
-        console.log("🚀 Calling AI...");
+        // 4. SELECT OPTIMAL GROQ MODEL
+        const selectedModel = selectGroqModel(query);
+        console.log(`🚀 Using GROQ model: ${selectedModel} for query: "${query.substring(0, 50)}..."`);
+        // 5. OPTIMIZED GROQ API CALL
         const controller = new AbortController();
-        const timeout = setTimeout(()=>controller.abort(), 45000); // 45s max
-        const aiResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        const timeout = setTimeout(()=>controller.abort(), 60000); // 60s max for complex roadmaps
+        const aiResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${apiKey}`,
-                "Content-Type": "application/json",
-                "HTTP-Referer": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-                "X-Title": "AI Roadmap Generator"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "openai/gpt-3.5-turbo",
+                model: selectedModel,
                 messages: [
                     {
                         role: "system",
@@ -648,43 +678,49 @@ async function POST(request) {
                     },
                     {
                         role: "user",
-                        content: `Roadmap for: ${query}`
+                        content: `Generate a comprehensive learning roadmap for: ${query}`
                     }
                 ],
-                temperature: 0.7,
-                max_tokens: 5000,
-                top_p: 0.9
+                temperature: 0.3,
+                max_tokens: 8000,
+                top_p: 0.95,
+                stream: false // Set to true if you want streaming responses
             }),
             signal: controller.signal
         }).finally(()=>clearTimeout(timeout));
         if (!aiResponse.ok) {
-            const error = await aiResponse.json().catch(()=>({}));
-            console.error(`API Error ${aiResponse.status}:`, error);
+            const errorText = await aiResponse.text().catch(()=>"Unknown error");
+            console.error(`GROQ API Error ${aiResponse.status}:`, errorText);
             const errors = {
-                401: "Authentication failed",
-                402: "Insufficient credits",
-                429: "Rate limited",
-                503: "Service unavailable"
+                401: "Invalid GROQ API key",
+                429: "GROQ rate limit reached - please try again in a moment",
+                500: "GROQ service error",
+                503: "GROQ service temporarily unavailable"
             };
-            return errorResponse(errors[aiResponse.status] || "AI error", aiResponse.status);
+            return errorResponse(errors[aiResponse.status] || `GROQ API error: ${errorText}`, aiResponse.status);
         }
-        // 5. FAST PARSING
+        // 6. FAST PARSING
         const data = await aiResponse.json();
         const content = data.choices?.[0]?.message?.content;
-        if (!content) return errorResponse("Empty response", 500);
+        if (!content) {
+            console.error("Empty response from GROQ API");
+            return errorResponse("Empty response from AI", 500);
+        }
         let roadmap;
         try {
             roadmap = extractJSON(content);
         } catch (e) {
-            console.error("Parse error:", e);
-            return errorResponse("Invalid AI response", 500);
+            console.error("JSON Parse error:", e.message);
+            console.error("Content received:", content.substring(0, 500));
+            return errorResponse("Invalid JSON response from AI - please try again", 500);
         }
-        // 6. QUICK VALIDATION
+        // 7. QUICK VALIDATION
         const validation = validateRoadmap(roadmap);
         if (!validation.valid) {
-            return errorResponse(validation.error, 500);
+            console.error("Validation failed:", validation.error);
+            return errorResponse(`Invalid roadmap structure: ${validation.error}`, 500);
         }
-        // 7. BUILD RESPONSE
+        // 8. BUILD RESPONSE
         const result = {
             success: true,
             phases: roadmap.phases || [],
@@ -695,7 +731,9 @@ async function POST(request) {
                 documentation: roadmap.resources?.documentation || [],
                 books: roadmap.resources?.books || [],
                 communities: roadmap.resources?.communities || [],
-                tools: roadmap.resources?.tools || []
+                tools: roadmap.resources?.tools || [],
+                podcasts: roadmap.resources?.podcasts || [],
+                newsletters: roadmap.resources?.newsletters || []
             },
             learningPathData: {
                 coreFrameworks: roadmap.learningPathData?.coreFrameworks || [],
@@ -705,35 +743,64 @@ async function POST(request) {
                 practiceWebsites: roadmap.learningPathData?.practiceWebsites || []
             },
             timelineData: roadmap.timelineData || [],
+            careerPreparation: roadmap.careerPreparation || {},
+            industryInsights: roadmap.industryInsights || {},
             finalTips: roadmap.finalTips || [],
             metadata: {
                 generatedAt: new Date().toISOString(),
                 responseTime: `${Date.now() - startTime}ms`,
-                model: "gpt-3.5-turbo",
-                cached: false
+                model: selectedModel,
+                provider: "GROQ",
+                cached: false,
+                queryLength: query.length
             }
         };
-        // 8. CACHE ASYNCHRONOUSLY (non-blocking)
+        // 9. CACHE ASYNCHRONOUSLY (non-blocking)
         setImmediate(()=>cacheRoadmap(query, result));
-        console.log(`✅ Generated: ${Date.now() - startTime}ms`);
+        console.log(`✅ Roadmap generated successfully in ${Date.now() - startTime}ms using ${selectedModel}`);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(result, {
             headers: {
                 "Content-Type": "application/json",
                 "Cache-Control": "private, max-age=86400",
-                "X-Response-Time": `${Date.now() - startTime}ms`
+                "X-Response-Time": `${Date.now() - startTime}ms`,
+                "X-Model-Used": selectedModel,
+                "X-Provider": "GROQ"
             }
         });
     } catch (error) {
-        console.error("Error:", error);
-        return errorResponse("Internal error", 500);
+        console.error("Unhandled error:", error);
+        // Better error messages for common issues
+        if (error.name === 'AbortError') {
+            return errorResponse("Request timeout - the roadmap generation took too long. Please try again.", 408);
+        }
+        return errorResponse(`Internal server error: ${error.message}`, 500);
     }
 }
 async function GET() {
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        error: "Use POST method",
-        usage: 'POST { "query": "your goal" }'
+        error: "Method not allowed",
+        message: "Use POST method to generate roadmaps",
+        usage: {
+            method: "POST",
+            endpoint: "/api/generate-roadmap",
+            body: {
+                query: "your learning goal (e.g., 'I want to become a full-stack developer')"
+            },
+            example: {
+                query: "I want to become a React developer"
+            }
+        },
+        provider: "GROQ",
+        models: {
+            complex: "llama-3.3-70b-versatile",
+            balanced: "llama-3.1-70b-versatile",
+            fast: "llama-3.1-8b-instant"
+        }
     }, {
-        status: 405
+        status: 405,
+        headers: {
+            "Allow": "POST"
+        }
     });
 }
 const runtime = "nodejs";
