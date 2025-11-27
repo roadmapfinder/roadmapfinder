@@ -1,16 +1,34 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useUser } from '@clerk/nextjs';
 import { Brain, Sparkles, Loader2, AlertCircle, Target, Rocket, BookOpen, ChevronRight } from 'lucide-react';
 import RoadmapView from './RoadmapView';
 import ProjectsView from './ProjectsView';
 import ResourcesView from './ResourcesView';
 
 const AIRoadmapGenerator = () => {
+  const { user, isLoaded } = useUser();
   const [query, setQuery] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [roadmap, setRoadmap] = useState(null);
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState('roadmap');
+  const [requestCount, setRequestCount] = useState(0);
+  const [isLoadingCount, setIsLoadingCount] = useState(true);
+
+  // Load request count from localStorage when component mounts
+  useEffect(() => {
+    if (isLoaded && user) {
+      const userEmail = user.primaryEmailAddress?.emailAddress;
+      if (userEmail) {
+        const storageKey = `roadmap_requests_${userEmail}`;
+        const stored = localStorage.getItem(storageKey);
+        const count = stored ? parseInt(stored, 10) : 0;
+        setRequestCount(count);
+      }
+      setIsLoadingCount(false);
+    }
+  }, [isLoaded, user]);
 
   const generateRoadmap = async () => {
     if (!query.trim()) {
@@ -20,6 +38,18 @@ const AIRoadmapGenerator = () => {
 
     if (query.length > 2000) {
       setError('Query is too long. Maximum 2000 characters.');
+      return;
+    }
+
+    // Check if user is authenticated
+    if (!user) {
+      setError('Please sign in to generate roadmaps.');
+      return;
+    }
+
+    // Check rate limit
+    if (requestCount >= 2) {
+      setError('You have reached your limit of 2 roadmap generations. Please try again later or contact support.');
       return;
     }
 
@@ -43,6 +73,15 @@ const AIRoadmapGenerator = () => {
       const data = await response.json();
       setRoadmap(data);
       setActiveTab('roadmap');
+
+      // Increment request count and save to localStorage
+      const userEmail = user.primaryEmailAddress?.emailAddress;
+      if (userEmail) {
+        const newCount = requestCount + 1;
+        setRequestCount(newCount);
+        const storageKey = `roadmap_requests_${userEmail}`;
+        localStorage.setItem(storageKey, newCount.toString());
+      }
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.');
       console.error('Error generating roadmap:', err);
@@ -101,19 +140,50 @@ const AIRoadmapGenerator = () => {
         {!roadmap && (
           <div className="max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
-                  <Sparkles className="text-slate-700" size={20} />
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Sparkles className="text-slate-700" size={20} />
+                  </div>
+                  <h2 className="text-2xl font-semibold text-slate-900">
+                    What do you want to learn?
+                  </h2>
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-900">
-                  What do you want to learn?
-                </h2>
+                {isLoaded && user && !isLoadingCount && (
+                  <div className="text-sm">
+                    <span className={`font-semibold ${requestCount >= 2 ? 'text-red-600' : 'text-slate-700'}`}>
+                      {requestCount}/2 requests used
+                    </span>
+                  </div>
+                )}
               </div>
 
               <p className="text-slate-600 mb-8 leading-relaxed">
                 Describe your learning goal, career path, or skill you want to master. 
                 Our AI will create a personalized roadmap with projects and resources.
               </p>
+
+              {!isLoaded || isLoadingCount ? (
+                <div className="flex items-center justify-center py-8">
+                  <Loader2 className="animate-spin text-slate-400" size={32} />
+                </div>
+              ) : !user ? (
+                <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3">
+                  <AlertCircle className="text-amber-600 flex-shrink-0 mt-0.5" size={18} />
+                  <div>
+                    <p className="text-amber-900 font-medium text-sm">Authentication Required</p>
+                    <p className="text-amber-700 text-sm mt-0.5">Please sign in to generate roadmaps.</p>
+                  </div>
+                </div>
+              ) : requestCount >= 2 ? (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+                  <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={18} />
+                  <div>
+                    <p className="text-red-900 font-medium text-sm">Limit Reached</p>
+                    <p className="text-red-700 text-sm mt-0.5">You have used all 2 roadmap generations for your account. Please contact support for more requests.</p>
+                  </div>
+                </div>
+              ) : null}
 
               <div className="space-y-4">
                 <textarea
@@ -143,7 +213,7 @@ const AIRoadmapGenerator = () => {
 
               <button
                 onClick={generateRoadmap}
-                disabled={isGenerating || !query.trim()}
+                disabled={isGenerating || !query.trim() || !user || requestCount >= 2 || isLoadingCount}
                 className="w-full mt-8 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-xl transition-all shadow-lg shadow-slate-900/10 flex items-center justify-center gap-3"
               >
                 {isGenerating ? (
@@ -154,7 +224,7 @@ const AIRoadmapGenerator = () => {
                 ) : (
                   <>
                     <Sparkles size={20} />
-                    <span>Generate AI Roadmap</span>
+                    <span>Generate AI Roadmap {user && !isLoadingCount && `(${2 - requestCount} left)`}</span>
                   </>
                 )}
               </button>
