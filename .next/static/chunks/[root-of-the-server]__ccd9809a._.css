@@ -3962,10 +3962,6 @@
     padding: calc(var(--spacing) * 3);
   }
 
-  .p-3\.5 {
-    padding: calc(var(--spacing) * 3.5);
-  }
-
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -5367,12 +5363,6 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:text-gray-800:is(:where(.group):hover *) {
-      color: var(--color-gray-800);
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:text-green-600:is(:where(.group):hover *) {
       color: var(--color-green-600);
     }
@@ -5671,12 +5661,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-gray-800:hover {
-      background-color: var(--color-gray-800);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-green-600:hover {
       background-color: var(--color-green-600);
     }
@@ -5685,12 +5669,6 @@
   @media (hover: hover) {
     .hover\:bg-green-700:hover {
       background-color: var(--color-green-700);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-indigo-50:hover {
-      background-color: var(--color-indigo-50);
     }
   }
 
@@ -5781,13 +5759,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:from-emerald-600:hover {
-      --tw-gradient-from: var(--color-emerald-600);
-      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:from-gray-300:hover {
       --tw-gradient-from: var(--color-gray-300);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -5797,13 +5768,6 @@
   @media (hover: hover) {
     .hover\:from-gray-600:hover {
       --tw-gradient-from: var(--color-gray-600);
-      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:from-indigo-700:hover {
-      --tw-gradient-from: var(--color-indigo-700);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
   }
@@ -5945,13 +5909,6 @@
   @media (hover: hover) {
     .hover\:to-red-700:hover {
       --tw-gradient-to: var(--color-red-700);
-      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:to-teal-700:hover {
-      --tw-gradient-to: var(--color-teal-700);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
   }
@@ -7386,12 +7343,6 @@
   }
 
   @media (width >= 64rem) {
-    .lg\:mt-0 {
-      margin-top: calc(var(--spacing) * 0);
-    }
-  }
-
-  @media (width >= 64rem) {
     .lg\:mt-8 {
       margin-top: calc(var(--spacing) * 8);
     }
@@ -7412,12 +7363,6 @@
   @media (width >= 64rem) {
     .lg\:ml-72 {
       margin-left: calc(var(--spacing) * 72);
-    }
-  }
-
-  @media (width >= 64rem) {
-    .lg\:ml-74 {
-      margin-left: calc(var(--spacing) * 74);
     }
   }
 
@@ -7526,22 +7471,6 @@
   @media (width >= 64rem) {
     .lg\:gap-12 {
       gap: calc(var(--spacing) * 12);
-    }
-  }
-
-  @media (width >= 64rem) {
-    :where(.lg\:space-y-0 > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-
-  @media (width >= 64rem) {
-    :where(.lg\:space-x-6 > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
 
