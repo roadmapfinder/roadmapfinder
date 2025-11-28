@@ -18,6 +18,7 @@ import {
   getTrendingRoadmaps, 
   searchRoadmaps 
 } from "./roadmapsData";
+import { useRouter } from "next/navigation";
 
 // Custom hook for debounced search
 function useDebounce(value, delay) {
