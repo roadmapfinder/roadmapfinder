@@ -9,8 +9,6 @@ import {
   Globe,
   FileText,
   Play,
-  Bot,
-  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -175,7 +173,6 @@ export default function CoursePage() {
   const [activeTab, setActiveTab] = useState("All");
   const [windowWidth, setWindowWidth] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [showAITooltip, setShowAITooltip] = useState(false);
   const scrollContainerRefs = useRef({});
 
   // Handle window resize for responsiveness
@@ -235,11 +232,6 @@ export default function CoursePage() {
     if (docsPath) {
       window.location.href = docsPath;
     }
-  }, []);
-
-  // Function to handle AI bot click
-  const handleAIBotClick = useCallback(() => {
-    window.location.href = "/Resource-Finder";
   }, []);
 
   const filteredCourses = useMemo(() => {
@@ -334,28 +326,6 @@ export default function CoursePage() {
             {tab}
           </button>
         ))}
-      </div>
-
-      {/* AI Bot Button - Fixed position */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <div className="relative">
-          {showAITooltip && (
-            <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
-              Ask AI for Course Recommendations
-              <div className="absolute bottom-0 right-4 transform translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>
-            </div>
-          )}
-          <button
-            onClick={handleAIBotClick}
-            onMouseEnter={() => setShowAITooltip(true)}
-            onMouseLeave={() => setShowAITooltip(false)}
-            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-purple-700 hover:to-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group"
-            aria-label="AI Course Finder"
-          >
-            <Bot size={28} className="group-hover:rotate-12 transition-transform" />
-            <Sparkles size={16} className="absolute -top-1 -right-1 text-yellow-300 animate-pulse" />
-          </button>
-        </div>
       </div>
 
       {/* No results message */}

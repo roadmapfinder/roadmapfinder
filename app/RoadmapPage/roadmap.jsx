@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useMemo, useCallback, memo } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { 
   ChevronLeft, 
   Search, 
@@ -10,8 +9,7 @@ import {
   Star,
   ArrowRight,
   Filter,
-  Loader2,
-  Sparkles
+  Loader2
 } from "lucide-react";
 import { 
   roadmapsData, 
@@ -231,11 +229,6 @@ export default function TechRoadmap() {
     }
   }, [handleClearSearch]);
 
-  // Handle AI Generator navigation
-  const handleAIGeneratorClick = useCallback(() => {
-    router.push('/ai-roadmap-generator');
-  }, [router]);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Navigation Bar */}
@@ -256,34 +249,12 @@ export default function TechRoadmap() {
               </div>
             </Link>
 
-            <div className="flex items-center space-x-3">
-              {/* AI Generator Button - Desktop */}
-              <button
-                onClick={handleAIGeneratorClick}
-                className="hidden sm:flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                aria-label="Generate custom roadmap with AI"
-              >
-                <Sparkles className="w-4 h-4" aria-hidden="true" />
-                <span>AI Generator</span>
-              </button>
-
-              {/* AI Generator Button - Mobile (same as desktop style, just smaller text) */}
-              <button
-                onClick={handleAIGeneratorClick}
-                className="sm:hidden flex items-center space-x-1.5 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                aria-label="Generate custom roadmap with AI"
-              >
-                <Sparkles className="w-4 h-4" aria-hidden="true" />
-                <span>AI Generator</span>
-              </button>
-
-              <button 
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                aria-label="Open filters"
-              >
-                <Filter className="w-5 h-5 text-gray-600" aria-hidden="true" />
-              </button>
-            </div>
+            <button 
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+              aria-label="Open filters"
+            >
+              <Filter className="w-5 h-5 text-gray-600" aria-hidden="true" />
+            </button>
           </div>
         </div>
       </nav>
@@ -299,45 +270,6 @@ export default function TechRoadmap() {
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-6">
             Discover expertly curated learning paths for various tech domains and programming languages
           </p>
-
-          {/* AI Generator CTA Banner - Hidden on mobile, visible on tablet and desktop */}
-          <div className="hidden md:block max-w-3xl mx-auto mb-8">
-            <button
-              onClick={handleAIGeneratorClick}
-              className="group relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              {/* Animated background effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" aria-hidden="true" />
-
-              {/* Sparkle effects */}
-              <div className="absolute top-4 right-4 text-yellow-300 opacity-70 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
-                <Sparkles className="w-6 h-6 animate-pulse" />
-              </div>
-              <div className="absolute bottom-4 left-4 text-yellow-200 opacity-50 group-hover:opacity-80 transition-opacity duration-300" aria-hidden="true">
-                <Sparkles className="w-5 h-5 animate-pulse" style={{ animationDelay: '0.5s' }} />
-              </div>
-
-              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-                <div className="flex items-center space-x-3">
-                  <div className="p-3 bg-white/20 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    <Sparkles className="w-6 h-6 text-white" aria-hidden="true" />
-                  </div>
-                  <div className="text-left">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
-                      Create Your Custom Roadmap
-                    </h3>
-                    <p className="text-sm text-blue-100">
-                      Let AI design a personalized learning path just for you
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2 text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  <span className="hidden sm:inline">Try Now</span>
-                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </div>
-              </div>
-            </button>
-          </div>
 
           {/* Search Bar - Enhanced */}
           <div className="max-w-2xl mx-auto mb-6">
@@ -497,22 +429,13 @@ export default function TechRoadmap() {
             <p className="text-gray-600 mb-6 max-w-md mx-auto">
               We couldn't find any roadmaps matching "<span className="font-semibold">{debouncedSearchQuery}</span>". Try different keywords or browse our popular tags.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={handleClearSearch}
-                className="inline-flex items-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-              >
-                <span>Show All Roadmaps</span>
-                <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </button>
-              <button
-                onClick={handleAIGeneratorClick}
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                <Sparkles className="w-4 h-4" aria-hidden="true" />
-                <span>Try AI Generator</span>
-              </button>
-            </div>
+            <button
+              onClick={handleClearSearch}
+              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              <span>Show All Roadmaps</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </button>
           </div>
         )}
       </main>

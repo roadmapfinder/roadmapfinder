@@ -34,7 +34,6 @@ import {
   Clock,
   Lightbulb,
   Contact,
-  Bot,
   Info
 } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -116,11 +115,6 @@ export default function HomePage() {
       name: "Roadmaps",
       icon: <Map size={24} className="mr-3" />,
       href: "/RoadmapPage",
-    },
-    {
-      name: " AI Roadmaps",
-      icon: <Bot size={24} className="mr-3" />,
-      href: "/ai-roadmap-generator",
     },
     {
       name: "Courses",
