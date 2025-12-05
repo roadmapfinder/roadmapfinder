@@ -1,34 +1,130 @@
-
+// app/api/ai-roadmap/route.js
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
 
-// Initialize Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// ============================================
+// CUSTOM ERROR CLASSES
+// ============================================
+class APIError extends Error {
+  constructor(statusCode, message, isOperational = true) {
+    super(message);
+    this.statusCode = statusCode;
+    this.isOperational = isOperational;
+    Object.setPrototypeOf(this, APIError.prototype);
+  }
+}
 
-export async function POST(request) {
-  try {
-    const { topic, level, duration } = await request.json();
+class ValidationError extends APIError {
+  constructor(message) {
+    super(400, message);
+  }
+}
 
-    // Validate input
-    if (!topic || topic.trim().length === 0) {
-      return NextResponse.json(
-        { error: "Topic is required" },
-        { status: 400 }
-      );
+class ExternalAPIError extends APIError {
+  constructor(message) {
+    super(502, message);
+  }
+}
+
+// ============================================
+// VALIDATION
+// ============================================
+function validateInput(data) {
+  if (!data.topic || typeof data.topic !== "string") {
+    throw new ValidationError("Topic is required and must be a string");
+  }
+
+  if (data.topic.trim().length === 0) {
+    throw new ValidationError("Topic cannot be empty");
+  }
+
+  if (data.topic.length > 200) {
+    throw new ValidationError("Topic must be less than 200 characters");
+  }
+
+  if (data.level && typeof data.level !== "string") {
+    throw new ValidationError("Level must be a string");
+  }
+
+  if (data.duration && typeof data.duration !== "string") {
+    throw new ValidationError("Duration must be a string");
+  }
+}
+
+// ============================================
+// GEMINI INITIALIZATION
+// ============================================
+function initializeGemini() {
+  // ✅ FIXED: Removed .local - this was the main bug!
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey) {
+    throw new APIError(
+      500,
+      "GEMINI_API_KEY is not configured in environment variables"
+    );
+  }
+
+  return new GoogleGenerativeAI(apiKey);
+}
+
+// ============================================
+// JSON CLEANING UTILITY
+// ============================================
+function cleanJSONResponse(text) {
+  let cleaned = text.trim();
+
+  // Remove markdown code blocks
+  if (cleaned.startsWith("```json")) {
+    cleaned = cleaned.replace(/```json\n?/g, "").replace(/```\n?$/g, "");
+  } else if (cleaned.startsWith("```")) {
+    cleaned = cleaned.replace(/```\n?/g, "");
+  }
+
+  // Remove any leading/trailing whitespace again
+  cleaned = cleaned.trim();
+
+  return cleaned;
+}
+
+// ============================================
+// ROADMAP VALIDATION
+// ============================================
+function validateRoadmapStructure(data) {
+  if (!data || typeof data !== "object") {
+    throw new ExternalAPIError("Invalid response format from AI");
+  }
+
+  if (!data.title || typeof data.title !== "string") {
+    throw new ExternalAPIError("Roadmap missing valid title");
+  }
+
+  if (!Array.isArray(data.phases)) {
+    throw new ExternalAPIError("Roadmap missing phases array");
+  }
+
+  if (data.phases.length === 0) {
+    throw new ExternalAPIError("Roadmap has no phases");
+  }
+
+  // Validate phase structure
+  for (const phase of data.phases) {
+    if (typeof phase.id !== "number") {
+      throw new ExternalAPIError("Phase missing valid id");
     }
+    if (!Array.isArray(phase.sections)) {
+      throw new ExternalAPIError("Phase missing sections array");
+    }
+  }
 
-    // Use Gemini 1.5 Pro for best results
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-pro",
-      generationConfig: {
-        temperature: 0.7,
-        topP: 0.95,
-        topK: 40,
-        maxOutputTokens: 8192,
-      },
-    });
+  return true;
+}
 
-    const prompt = `You are an expert tech career advisor and curriculum designer. Generate a comprehensive, industry-ready learning roadmap for "${topic}".
+// ============================================
+// PROMPT GENERATOR
+// ============================================
+function generatePrompt(topic, level, duration) {
+  return `You are an expert tech career advisor and curriculum designer. Generate a comprehensive, industry-ready learning roadmap for "${topic}".
 
 CRITICAL REQUIREMENTS:
 1. The roadmap must be structured from beginner to industry/expert level
@@ -101,61 +197,131 @@ PROJECTS SECTION EXAMPLE:
 }
 
 Now generate the complete roadmap for "${topic}". Return ONLY valid JSON, nothing else.`;
+}
 
+// ============================================
+// MAIN API HANDLER
+// ============================================
+export async function POST(request) {
+  try {
+    // Parse request body
+    const body = await request.json();
+
+    // Validate input
+    validateInput(body);
+
+    const { topic, level, duration } = body;
+
+    // Initialize Gemini
+    const genAI = initializeGemini();
+
+    // Configure model
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.0-flash-exp",
+      generationConfig: {
+        temperature: 0.7,
+        topP: 0.95,
+        topK: 40,
+        maxOutputTokens: 8192,
+      },
+    });
+
+    // Generate prompt
+    const prompt = generatePrompt(topic, level, duration);
+
+    // Call Gemini API
     const result = await model.generateContent(prompt);
     const response = await result.response;
     let text = response.text();
 
-    // Clean the response to extract JSON
-    text = text.trim();
-    
-    // Remove markdown code blocks if present
-    if (text.startsWith("```json")) {
-      text = text.replace(/```json\n?/g, "").replace(/```\n?/g, "");
-    } else if (text.startsWith("```")) {
-      text = text.replace(/```\n?/g, "");
-    }
+    // Clean the response
+    const cleanedText = cleanJSONResponse(text);
 
     // Parse JSON
     let roadmapData;
     try {
-      roadmapData = JSON.parse(text);
+      roadmapData = JSON.parse(cleanedText);
     } catch (parseError) {
       console.error("JSON Parse Error:", parseError);
-      console.error("Raw text:", text);
-      return NextResponse.json(
-        { error: "Failed to parse AI response. Please try again." },
-        { status: 500 }
+      console.error("Cleaned text:", cleanedText.substring(0, 500));
+      throw new ExternalAPIError(
+        "AI returned invalid JSON format. Please try again."
       );
     }
 
-    // Validate structure
-    if (!roadmapData.phases || !Array.isArray(roadmapData.phases)) {
-      return NextResponse.json(
-        { error: "Invalid roadmap structure received" },
-        { status: 500 }
-      );
-    }
+    // Validate roadmap structure
+    validateRoadmapStructure(roadmapData);
 
-    return NextResponse.json({
-      success: true,
-      roadmap: roadmapData,
-      generatedAt: new Date().toISOString(),
-    });
-
+    // Return success response
+    return NextResponse.json(
+      {
+        success: true,
+        roadmap: roadmapData,
+        generatedAt: new Date().toISOString(),
+      },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("API Error:", error);
-    
+
+    // Handle known errors
+    if (error instanceof APIError) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: error.message,
+        },
+        { status: error.statusCode }
+      );
+    }
+
+    // Handle JSON parsing errors from request
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid JSON in request body",
+        },
+        { status: 400 }
+      );
+    }
+
+    // Handle Gemini API errors
     if (error.message?.includes("API key")) {
       return NextResponse.json(
-        { error: "API configuration error. Please check your Gemini API key." },
+        {
+          success: false,
+          error: "API configuration error. Check your GEMINI_API_KEY.",
+        },
         { status: 500 }
       );
     }
 
+    // Generic error handler
     return NextResponse.json(
-      { error: "Failed to generate roadmap. Please try again." },
+      {
+        success: false,
+        error: "An unexpected error occurred. Please try again.",
+        ...(process.env.NODE_ENV === "development" && {
+          details: error.message,
+        }),
+      },
       { status: 500 }
     );
   }
+}
+
+// ============================================
+// OPTIONAL: GET HANDLER FOR HEALTH CHECK
+// ============================================
+export async function GET() {
+  return NextResponse.json(
+    {
+      status: "healthy",
+      endpoint: "/api/ai-roadmap",
+      method: "POST",
+      timestamp: new Date().toISOString(),
+    },
+    { status: 200 }
+  );
 }

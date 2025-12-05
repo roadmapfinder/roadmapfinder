@@ -43,6 +43,12 @@ const Chat = ({ onRoadmapGenerated }) => {
         }),
       });
 
+      // Check if response is HTML (error page) instead of JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Server returned an error. Please check your API route configuration.');
+      }
+
       const data = await response.json();
 
       if (!response.ok) {
