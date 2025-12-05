@@ -52,6 +52,9 @@ const Chat = ({ onRoadmapGenerated }) => {
       const data = await response.json();
 
       if (!response.ok) {
+        if (response.status === 429) {
+          throw new Error('API quota exceeded. Please wait a minute and try again, or check your Gemini API key quota.');
+        }
         throw new Error(data.error || 'Failed to generate roadmap');
       }
 

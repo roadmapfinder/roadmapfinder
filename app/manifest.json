@@ -1,0 +1,17 @@
+
+{
+  "name": "AI Roadmap Generator",
+  "short_name": "Roadmap Gen",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "description": "Generate personalized learning roadmaps with AI",
+  "icons": [
+    {
+      "src": "/roadmapfinder.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
