@@ -332,12 +332,12 @@
     {
       "id": 22,
       "category": "Programming",
-      "title": "Javascript Complete Course",
+      "title": "Javascript Complete Course from Scratch to Advance",
       "level": "Beginner to Advance",
       "rating": 4.8,
-      "image": "js",
-      "videoId": "https://youtu.be/Hr5iLG7sUa0?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37",
-      "badge": "HOT",
+      "image": "Js",
+      "videoId": "https://youtu.be/VGUwYrAVIJ4?si=RFywAEi533UFr7xv",
+      "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/javascript"
     },
@@ -1044,8 +1044,8 @@
       "title": "Typescript complete course",
       "level": "Beginner to Advanced",
       "rating": 4.9,
-      "image": "ts",
-      "videoId": "https://youtu.be/lVzb6pmel_E?si=_Qo8Pq0tmERvK2C0",
+      "image": "Ts",
+      "videoId": "https://youtu.be/COFQ-wrn9P4?si=r3MVlp4ZSXiAjspH",
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/typescript"

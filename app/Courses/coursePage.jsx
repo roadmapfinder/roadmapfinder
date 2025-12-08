@@ -124,6 +124,8 @@ import software from "./CoursesImage/software.jpg"
 import nest from "./CoursesImage/nest.jpg"
 import aibasics from "./CoursesImage/aibasics.jpg"
 import javaf from "./CoursesImage/javaF.jpg"
+import Js from "./CoursesImage/Js.jpg"
+import Ts from "./CoursesImage/Ts.jpg"
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -163,7 +165,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js
 };
 
 // Creator images array
