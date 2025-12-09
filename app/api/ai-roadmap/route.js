@@ -201,8 +201,7 @@ Generate a detailed, actionable roadmap that would make someone job-ready in thi
           temperature: 0.7,
           topK: 40,
           topP: 0.95,
-          maxOutputTokens: 8192,
-          responseMimeType: "application/json"
+          maxOutputTokens: 8192
         },
         safetySettings: [
           {
