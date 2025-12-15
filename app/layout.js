@@ -74,7 +74,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+ 
       <html lang="en" className={sora.variable}>
         <head>
           {/* Enhanced Meta Tags for Better Indexing */}
@@ -493,6 +493,6 @@ export default function RootLayout({ children }) {
           <SpeedInsights />
         </body>
       </html>
-    </ClerkProvider>
+   
   );
 }

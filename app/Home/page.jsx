@@ -53,7 +53,7 @@ import Footer from "../Footer/footer";
 import { useUser, useClerk, SignOutButton } from "@clerk/nextjs";
 
 export default function HomePage() {
-  const { user: clerkUser, isLoaded } = useUser(); // Use Clerk's user hook
+  // Use Clerk's user hook
 
   const [username, setUsername] = useState("User");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -62,11 +62,6 @@ export default function HomePage() {
   const router = useRouter();
 
   // Set username from Clerk if available
-  useEffect(() => {
-    if (isLoaded && clerkUser) {
-      setUsername(clerkUser.username || clerkUser.firstName || "User");
-    }
-  }, [isLoaded, clerkUser]);
 
 
   // Toggle mobile menu
@@ -214,22 +209,7 @@ export default function HomePage() {
             </div>
 
             {/* Logout Section */}
-            {clerkUser && (
-              <div className="p-5 border-t border-gray-200">
-                <SignOutButton>
-                  <button
-                    className={`flex items-center w-full text-red-600 hover:text-red-700 transition-colors py-3 px-3 rounded-lg hover:bg-red-50 ${
-                      isSidebarCollapsed ? "justify-center" : ""
-                    }`}
-                  >
-                    <div className={isSidebarCollapsed ? "mx-auto" : ""}>
-                      <LogOut size={24} className="mr-3" />
-                    </div>
-                    {!isSidebarCollapsed && <span className="font-medium">Logout</span>}
-                  </button>
-                </SignOutButton>
-              </div>
-            )}
+          
           </div>
         </aside>
 
@@ -281,20 +261,9 @@ export default function HomePage() {
               ))}
             </nav>
 
-            {/* Mobile Logout Button */}
-            {clerkUser && (
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <SignOutButton>
-                  <button
-                    className="flex items-center w-full text-red-600 hover:text-red-700 transition-colors py-3 px-3 rounded-lg hover:bg-red-50"
-                    onClick={toggleMobileMenu}
-                  >
-                    <LogOut size={24} className="mr-3" />
-                    <span className="font-medium">Logout</span>
-                  </button>
-                </SignOutButton>
-              </div>
-            )}
+       
+            
+   
           </div>
         </div>
 
@@ -308,20 +277,13 @@ export default function HomePage() {
           <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
             <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-3 items-center">
-              {clerkUser ? (
+              
                 <button className="text-gray-800 p-2">
                   <Link href="/Notification">
                     <Bell size={20} />
                   </Link>
                 </button>
-              ) : (
-                <button
-                  onClick={handleSignupClick}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all"
-                >
-                  Get Started
-                </button>
-              )}
+            
               <button className="text-gray-800 p-2" onClick={toggleMobileMenu}>
                 <Menu size={24} />
               </button>
@@ -332,14 +294,10 @@ export default function HomePage() {
           <header className="hidden md:flex justify-between items-center p-8 bg-gray-50">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
-              <p className="text-gray-500">
-                {clerkUser
-                  ? `Welcome back, ${username}`
-                  : "Welcome to RoadmapFinder"}
-              </p>
+            
             </div>
             <div className="flex items-center gap-4">
-              {clerkUser ? (
+           
                 <>
                   <button className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
                     <Link href="/Notification">
@@ -349,24 +307,12 @@ export default function HomePage() {
                   </button>
                   <div className="flex items-center gap-3 bg-white py-2 px-4 rounded-full shadow-sm">
                     <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
-                      {clerkUser.imageUrl ? (
-                        <Image
-                          src={clerkUser.imageUrl}
-                          alt="User Profile"
-                          width={32}
-                          height={32}
-                          className="rounded-full"
-                        />
-                      ) : (
-                        <User size={16} className="text-blue-600" />
-                      )}
+                     
                     </div>
-                    <span className="text-gray-800 font-medium">
-                      {username}
-                    </span>
+                  
                   </div>
                 </>
-              ) : (
+            
                 <button
                   onClick={handleSignupClick}
                   className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
@@ -374,7 +320,7 @@ export default function HomePage() {
                   <Rocket size={18} />
                   Start Your Journey
                 </button>
-              )}
+       
             </div>
           </header>
 
@@ -387,9 +333,7 @@ export default function HomePage() {
 
             {/* Additional Content Sections */}
             <div className="w-full">
-              <RoadmapTrending
-                user={clerkUser}
-              />
+              <RoadmapTrending />
 
               <Features />
               <ChooseUs />
