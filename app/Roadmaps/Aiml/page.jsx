@@ -6,25 +6,20 @@ import Projects from './projects';
 import Faq from './Faq';
 import { downloadRoadmapPDF } from './downloadPdf';
 import { phases, capstoneProjects, resources, timeline, finalTips } from './roadmapData';
-import { useUser } from '@clerk/nextjs';
+
 
 const AIMLMasteryRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
-  const { user } = useUser();
+
 
   // Handle PDF download with loading state
   const handlePDFDownload = async () => {
-    if (!user) {
-      console.error('User not logged in. Cannot save roadmap.');
-      // Optionally redirect to login or show a message
-      return;
-    }
     setIsDownloading(true);
     try {
-      // Pass userId to the download function
-      const result = await downloadRoadmapPDF(phases, user.id);
+      // Pass a generic user identifier or remove userId requirement
+      const result = await downloadRoadmapPDF(phases);
       if (result.success) {
         console.log(`PDF downloaded successfully: ${result.filename}`);
       } else {
@@ -197,7 +192,7 @@ const AIMLMasteryRoadmap = () => {
           {/* Desktop Download Button */}
           <button 
             onClick={handlePDFDownload}
-            disabled={isDownloading || !user} // Disable if not logged in
+            disabled={isDownloading}
             className="hidden md:flex bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg items-center space-x-2 transition-colors"
           >
             {isDownloading ? (
@@ -221,7 +216,7 @@ const AIMLMasteryRoadmap = () => {
         <div className="md:hidden mb-4">
           <button 
             onClick={handlePDFDownload}
-            disabled={isDownloading || !user} // Disable if not logged in
+            disabled={isDownloading}
             className="w-full bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
           >
             {isDownloading ? (
