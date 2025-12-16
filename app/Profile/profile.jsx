@@ -1,21 +1,56 @@
-
 "use client";
 import { useState, useEffect } from "react";
-import { BookOpen, GraduationCap, Settings, Mail, Download, FileText } from "lucide-react";
+import { BookOpen, GraduationCap, Mail, Download, FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useUser } from '@clerk/nextjs';
 import defaultUserImage from "../Images/user.jpg";
 
 export default function ProfilePage() {
-  const { user, isLoaded } = useUser();
-  
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState("");
   const [imageError, setImageError] = useState(false);
   const [downloadedRoadmaps, setDownloadedRoadmaps] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (!isLoaded) {
+  // User data state
+  const [userData, setUserData] = useState({
+    fullName: "User",
+    email: "user@example.com",
+    imageUrl: defaultUserImage
+  });
+
+  // Load user data from localStorage on mount
+  useEffect(() => {
+    const loadUserData = () => {
+      try {
+        const savedUserData = localStorage.getItem('user_profile');
+        if (savedUserData) {
+          const parsed = JSON.parse(savedUserData);
+          setUserData(parsed);
+        }
+      } catch (e) {
+        console.error('Error loading user data:', e);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadUserData();
+  }, []);
+
+  // Load downloaded roadmaps from localStorage
+  useEffect(() => {
+    const savedRoadmaps = localStorage.getItem('downloaded_roadmaps');
+    if (savedRoadmaps) {
+      try {
+        setDownloadedRoadmaps(JSON.parse(savedRoadmaps));
+      } catch (e) {
+        console.error('Error loading roadmaps:', e);
+      }
+    }
+  }, []);
+
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="animate-pulse">
@@ -25,18 +60,20 @@ export default function ProfilePage() {
     );
   }
 
-  const userName = user?.fullName || user?.firstName || "User";
-  const userEmail = user?.primaryEmailAddress?.emailAddress || "user@example.com";
-  const userImage = user?.imageUrl || defaultUserImage;
+  const userName = userData.fullName || "User";
+  const userEmail = userData.email || "user@example.com";
+  const userImage = userData.imageUrl || defaultUserImage;
   const displayName = isEditing ? newName : userName;
 
-  const handleSave = async () => {
-    if (newName.trim() && user) {
+  const handleSave = () => {
+    if (newName.trim()) {
       try {
-        await user.update({
-          firstName: newName.split(' ')[0],
-          lastName: newName.split(' ').slice(1).join(' ') || '',
-        });
+        const updatedUserData = {
+          ...userData,
+          fullName: newName
+        };
+        setUserData(updatedUserData);
+        localStorage.setItem('user_profile', JSON.stringify(updatedUserData));
         setIsEditing(false);
       } catch (error) {
         console.error('Error updating profile:', error);
@@ -55,26 +92,10 @@ export default function ProfilePage() {
 
   const displayImageSrc = imageError ? defaultUserImage : userImage;
 
-  // Load downloaded roadmaps from localStorage
-  useEffect(() => {
-    if (user) {
-      const savedRoadmaps = localStorage.getItem(`downloaded_roadmaps_${user.id}`);
-      if (savedRoadmaps) {
-        try {
-          setDownloadedRoadmaps(JSON.parse(savedRoadmaps));
-        } catch (e) {
-          console.error('Error loading roadmaps:', e);
-        }
-      }
-    }
-  }, [user]);
-
   const deleteRoadmap = (roadmapId) => {
     const updatedRoadmaps = downloadedRoadmaps.filter(r => r.id !== roadmapId);
     setDownloadedRoadmaps(updatedRoadmaps);
-    if (user) {
-      localStorage.setItem(`downloaded_roadmaps_${user.id}`, JSON.stringify(updatedRoadmaps));
-    }
+    localStorage.setItem('downloaded_roadmaps', JSON.stringify(updatedRoadmaps));
   };
 
   return (
@@ -218,7 +239,7 @@ export default function ProfilePage() {
                 </div>
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700">Downloaded Roadmaps</h3>
               </div>
-              
+
               {downloadedRoadmaps.length === 0 ? (
                 <div className="bg-gray-50 p-6 rounded-xl text-center">
                   <FileText className="w-12 h-12 text-gray-300 mx-auto mb-2" />
@@ -284,15 +305,6 @@ export default function ProfilePage() {
                   <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
                 <span>Courses</span>
-              </button>
-            </Link>
-
-            <Link href="/sign-in" className="block">
-              <button className="flex items-center w-full text-lg sm:text-xl md:text-2xl font-bold text-gray-700 hover:text-blue-600 transition-colors group">
-                <div className="bg-blue-50 p-2 sm:p-3 rounded-xl mr-3 sm:mr-5 group-hover:bg-blue-100 transition-colors">
-                  <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-                </div>
-                <span>Logout</span>
               </button>
             </Link>
           </div>
