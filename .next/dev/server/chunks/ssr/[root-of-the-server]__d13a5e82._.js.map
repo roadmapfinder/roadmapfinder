@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 9, "column": 0}, "map": {"version":3,"sources":["turbopack:///[next]/internal/font/google/sora_e8a69026.module.css [app-rsc] (css module)"],"sourcesContent":["__turbopack_context__.v({\n  \"className\": \"sora_e8a69026-module__Iqb4zW__className\",\n  \"variable\": \"sora_e8a69026-module__Iqb4zW__variable\",\n});\n"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","ignoreList":[0]}},
-    {"offset": {"line": 17, "column": 0}, "map": {"version":3,"sources":["turbopack:///[next]/internal/font/google/sora_e8a69026.js"],"sourcesContent":["import cssModule from \"@vercel/turbopack-next/internal/font/google/cssmodule.module.css?{%22path%22:%22layout.js%22,%22import%22:%22Sora%22,%22arguments%22:[{%22subsets%22:[%22latin%22],%22weight%22:[%22300%22,%22400%22,%22500%22,%22600%22,%22700%22],%22variable%22:%22--font-sora%22,%22display%22:%22swap%22,%22fallback%22:[%22Arial%22,%22sans-serif%22]}],%22variableName%22:%22sora%22}\";\nconst fontData = {\n    className: cssModule.className,\n    style: {\n        fontFamily: \"'Sora', Arial, sans-serif\",\n        fontStyle: \"normal\",\n\n    },\n};\n\nif (cssModule.variable != null) {\n    fontData.variable = cssModule.variable;\n}\n\nexport default fontData;\n"],"names":[],"mappings":";;;;AAAA;;AACA,MAAM,WAAW;IACb,WAAW,+JAAS,CAAC,SAAS;IAC9B,OAAO;QACH,YAAY;QACZ,WAAW;IAEf;AACJ;AAEA,IAAI,+JAAS,CAAC,QAAQ,IAAI,MAAM;IAC5B,SAAS,QAAQ,GAAG,+JAAS,CAAC,QAAQ;AAC1C;uCAEe","ignoreList":[0]}}]
-}
