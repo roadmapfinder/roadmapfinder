@@ -63,6 +63,12 @@ import cybersecurityIcon from "./roadmaps-icons/cybers.png";
 import promptEngineeringIcon from "./roadmaps-icons/prompt.png";
 import iotIcon from "./roadmaps-icons/iot.png";
 import gameDevIcon from "./roadmaps-icons/gamer.png";
+import genAiIcon from "./roadmaps-icons/ai.png";
+import gitIcon from "./roadmaps-icons/GitHub.png";
+import tailwindIcon from "./roadmaps-icons/Tailwind CSS.png";
+import productManagerIcon from "./roadmaps-icons/app.png";
+import pernIcon from "./roadmaps-icons/pern.png";
+import contextIcon from "./roadmaps-icons/system.png";
 
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
@@ -578,6 +584,54 @@ export const roadmapsData = [
     link: "/Roadmaps/Game",
     category: "trending",
     description: "Game Development and applications",
+  },
+  {
+    id: "genai",
+    title: "Generative AI",
+    icon: <RoadmapIcon src={genAiIcon} alt="Generative AI" />,
+    link: "/Roadmaps/GenAi",
+    category: "trending",
+    description: "Generative AI models and applications",
+  },
+  {
+    id: "git",
+    title: "Git & GitHub",
+    icon: <RoadmapIcon src={gitIcon} alt="Git" />,
+    link: "/Roadmaps/Git_Github",
+    category: "trending",
+    description: "Version control and collaboration",
+  },
+  {
+    id: "tailwind",
+    title: "Tailwind CSS",
+    icon: <RoadmapIcon src={tailwindIcon} alt="Tailwind CSS" />,
+    link: "/Roadmaps/Tailwind",
+    category: "trending",
+    description: "Utility-first CSS framework",
+  },
+  {
+    id: "product-manager",
+    title: "Product Manager",
+    icon: <RoadmapIcon src={productManagerIcon} alt="Product Manager" />,
+    link: "/Roadmaps/Product-Manager",
+    category: "trending",
+    description: "Product management fundamentals",
+  },
+  {
+    id: "pern",
+    title: "PERN Stack",
+    icon: <RoadmapIcon src={pernIcon} alt="PERN Stack" />,
+    link: "/Roadmaps/pern",
+    category: "trending",
+    description: "PostgreSQL, Express, React, Node.js stack",
+  },
+  {
+    id: "context",
+    title: "Context API",
+    icon: <RoadmapIcon src={contextIcon} alt="Context API" />,
+    link: "/Roadmaps/Context",
+    category: "trending",
+    description: "React Context API for state management",
   },
 ];
 
