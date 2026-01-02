@@ -127,7 +127,7 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
         <div className="relative z-10">
           {/* Icon */}
           <div 
-            className={`bg-gradient-to-br ${category.bgColor} rounded-xl w-14 h-14 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
+            className="w-full h-32 flex items-center justify-center mb-4 group-hover:scale-105 transition-all duration-300"
             aria-hidden="true"
           >
             {category.icon}

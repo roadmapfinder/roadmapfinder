@@ -1510,12 +1510,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadma
 ;
 ;
 // Helper component to render icons consistently
-const RoadmapIcon = ({ src, alt })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-        src: src,
-        alt: alt,
-        width: 20,
-        height: 20,
-        className: "w-5 h-5"
+const RoadmapIcon = ({ src, alt })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "w-full h-full flex items-center justify-center",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            src: src,
+            alt: alt,
+            width: 200,
+            height: 200,
+            className: "w-full h-full object-contain"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 70,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/RoadmapPage/roadmapsData.js",
         lineNumber: 69,
@@ -1541,11 +1548,10 @@ const roadmapsData = [
             alt: "AI & ML"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 95,
+            lineNumber: 97,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Aiml",
-        bgColor: "from-blue-500 to-indigo-600",
         category: "featured",
         description: "Machine Learning, Deep Learning, Neural Networks"
     },
@@ -1557,11 +1563,10 @@ const roadmapsData = [
             alt: "AI Agents"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 104,
+            lineNumber: 105,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/AI-Agent",
-        bgColor: "from-blue-700 to-blue-900",
         category: "featured",
         description: "No code AI agents and applications"
     },
@@ -1577,7 +1582,6 @@ const roadmapsData = [
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Langchain",
-        bgColor: "from-red-500 to-red-600",
         category: "featured",
         description: "Langchain Framework and applications"
     },
@@ -1589,11 +1593,10 @@ const roadmapsData = [
             alt: "API Development"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 122,
+            lineNumber: 121,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Api",
-        bgColor: "from-red-500 to-red-700",
         category: "featured",
         description: "api development and applications"
     },
@@ -1605,11 +1608,10 @@ const roadmapsData = [
             alt: "WordPress"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 131,
+            lineNumber: 129,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Wordpress",
-        bgColor: "from-blue-500 to-blue-700",
         category: "featured",
         description: "Wordpress development and applications"
     },
@@ -1621,11 +1623,10 @@ const roadmapsData = [
             alt: "Shopify"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 140,
+            lineNumber: 137,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Shopify",
-        bgColor: "from-green-600 to-green-800",
         category: "featured",
         description: "Shopify development and applications"
     },
@@ -1637,11 +1638,10 @@ const roadmapsData = [
             alt: "Django"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 149,
+            lineNumber: 145,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Django",
-        bgColor: "from-green-800 to-green-900",
         category: "featured",
         description: "Backend development with python"
     },
@@ -1653,11 +1653,10 @@ const roadmapsData = [
             alt: "React"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 158,
+            lineNumber: 153,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/React",
-        bgColor: "from-blue-600 to-blue-400",
         category: "featured",
         description: "React.js library for building user interfaces"
     },
@@ -1669,11 +1668,10 @@ const roadmapsData = [
             alt: "Next.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 167,
+            lineNumber: 161,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Next",
-        bgColor: "from-gray-800 to-black",
         category: "featured",
         description: "Full-stack React framework"
     },
@@ -1685,11 +1683,10 @@ const roadmapsData = [
             alt: "Nest.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 176,
+            lineNumber: 169,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Nestjs",
-        bgColor: "from-pink-600 to-pink-700",
         category: "featured",
         description: "Enterprise standard for node.js backend"
     },
@@ -1701,11 +1698,10 @@ const roadmapsData = [
             alt: "React Native"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 185,
+            lineNumber: 177,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Reactnative",
-        bgColor: "from-blue-500 to-cyan-400",
         category: "featured",
         description: "Cross-platform mobile app development"
     },
@@ -1717,11 +1713,10 @@ const roadmapsData = [
             alt: "Software Architect"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 194,
+            lineNumber: 185,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Software",
-        bgColor: "from-blue-500 to-cyan-400",
         category: "featured",
         description: "Software architecture fundamentals"
     },
@@ -1733,11 +1728,10 @@ const roadmapsData = [
             alt: "Flutter"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 203,
+            lineNumber: 193,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Flutter",
-        bgColor: "from-blue-500 to-blue-700",
         category: "featured",
         description: "Cross-platform mobile app development"
     },
@@ -1749,11 +1743,10 @@ const roadmapsData = [
             alt: "Full-Stack"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 212,
+            lineNumber: 201,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Full-Stack",
-        bgColor: "from-blue-500 to-blue-700",
         category: "featured",
         description: "Full-Stack Web development"
     },
@@ -1765,11 +1758,10 @@ const roadmapsData = [
             alt: "Frontend"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 221,
+            lineNumber: 209,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Frontend",
-        bgColor: "from-blue-500 to-cyan-400",
         category: "featured",
         description: "Frontend development specialization"
     },
@@ -1781,11 +1773,10 @@ const roadmapsData = [
             alt: "MERN Stack"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 230,
+            lineNumber: 217,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Mern",
-        bgColor: "from-blue-600 to-cyan-500",
         category: "featured",
         description: "Mern stack development specialization"
     },
@@ -1797,11 +1788,10 @@ const roadmapsData = [
             alt: "Backend"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 239,
+            lineNumber: 225,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Backend",
-        bgColor: "from-green-600 to-emerald-700",
         category: "featured",
         description: "Server-side development and APIs"
     },
@@ -1813,11 +1803,10 @@ const roadmapsData = [
             alt: "Node.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 248,
+            lineNumber: 233,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Nodejs",
-        bgColor: "from-green-400 to-emerald-500",
         category: "featured",
         description: "Server-side development and APIs"
     },
@@ -1829,11 +1818,10 @@ const roadmapsData = [
             alt: "Express.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 257,
+            lineNumber: 241,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Expressjs",
-        bgColor: "from-green-400 to-emerald-500",
         category: "featured",
         description: "Server-side development and APIs"
     },
@@ -1845,11 +1833,10 @@ const roadmapsData = [
             alt: "MongoDB"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 266,
+            lineNumber: 249,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/MongoDB",
-        bgColor: "from-green-600 to-green-500",
         category: "featured",
         description: "Cloud Database"
     },
@@ -1861,11 +1848,10 @@ const roadmapsData = [
             alt: "Angular"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 275,
+            lineNumber: 257,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Angular",
-        bgColor: "from-red-600 to-red-700",
         category: "featured",
         description: "Single page application development"
     },
@@ -1877,11 +1863,10 @@ const roadmapsData = [
             alt: "JavaScript"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 284,
+            lineNumber: 265,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Javascript",
-        bgColor: "from-yellow-400 to-yellow-600",
         category: "featured",
         description: "Modern JavaScript programming"
     },
@@ -1893,11 +1878,10 @@ const roadmapsData = [
             alt: "TypeScript"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 293,
+            lineNumber: 273,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Typescript",
-        bgColor: "from-blue-400 to-blue-600",
         category: "featured",
         description: "Modern Typescript programming"
     },
@@ -1909,11 +1893,10 @@ const roadmapsData = [
             alt: "Python"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 302,
+            lineNumber: 281,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Python",
-        bgColor: "from-blue-500 to-green-500",
         category: "trending",
         description: "Python programming language"
     },
@@ -1925,11 +1908,10 @@ const roadmapsData = [
             alt: "Java"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 311,
+            lineNumber: 289,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Java",
-        bgColor: "from-orange-500 to-red-600",
         category: "trending",
         description: "Java programming language"
     },
@@ -1941,11 +1923,10 @@ const roadmapsData = [
             alt: "Java Full-Stack"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 320,
+            lineNumber: 297,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/JavaFullStack",
-        bgColor: "from-orange-400 to-red-300",
         category: "trending",
         description: "Java Full-Stack Development"
     },
@@ -1957,11 +1938,10 @@ const roadmapsData = [
             alt: "Rust"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 329,
+            lineNumber: 305,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Rust",
-        bgColor: "from-orange-600 to-red-700",
         category: "trending",
         description: "Systems programming with Rust"
     },
@@ -1973,11 +1953,10 @@ const roadmapsData = [
             alt: "iOS"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 338,
+            lineNumber: 313,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Ios",
-        bgColor: "from-gray-700 to-gray-900",
         category: "featured",
         description: "Native iOS app development with Swift and UIKit"
     },
@@ -1989,11 +1968,10 @@ const roadmapsData = [
             alt: "Android"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 347,
+            lineNumber: 321,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Android",
-        bgColor: "from-green-500 to-green-700",
         category: "featured",
         description: "Native Android app development with Kotlin and Java"
     },
@@ -2005,11 +1983,10 @@ const roadmapsData = [
             alt: "PHP"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 356,
+            lineNumber: 329,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Php",
-        bgColor: "from-purple-600 to-blue-600",
         category: "trending",
         description: "PHP web development"
     },
@@ -2021,11 +1998,10 @@ const roadmapsData = [
             alt: "SQL"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 365,
+            lineNumber: 337,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Sql",
-        bgColor: "from-blue-700 to-indigo-800",
         category: "trending",
         description: "Database management and queries"
     },
@@ -2037,11 +2013,10 @@ const roadmapsData = [
             alt: "PostgreSQL"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 374,
+            lineNumber: 345,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Postgre-Sql",
-        bgColor: "from-blue-800 to-blue-900",
         category: "trending",
         description: "Database management and queries"
     },
@@ -2053,11 +2028,10 @@ const roadmapsData = [
             alt: "Go"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 383,
+            lineNumber: 353,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Go",
-        bgColor: "from-cyan-500 to-blue-500",
         category: "trending",
         description: "Go programming language"
     },
@@ -2069,11 +2043,10 @@ const roadmapsData = [
             alt: "Swift"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 392,
+            lineNumber: 361,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Swift",
-        bgColor: "from-orange-400 to-red-500",
         category: "trending",
         description: "iOS and macOS development"
     },
@@ -2085,11 +2058,10 @@ const roadmapsData = [
             alt: "C++"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 401,
+            lineNumber: 369,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Cpp",
-        bgColor: "from-blue-800 to-indigo-900",
         category: "trending",
         description: "C++ programming language"
     },
@@ -2101,11 +2073,10 @@ const roadmapsData = [
             alt: "C"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 410,
+            lineNumber: 377,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/C",
-        bgColor: "from-blue-800 to-indigo-900",
         category: "trending",
         description: "C programming fundamentals"
     },
@@ -2117,11 +2088,10 @@ const roadmapsData = [
             alt: "Kotlin"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 419,
+            lineNumber: 385,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Kotlin",
-        bgColor: "from-purple-500 to-pink-600",
         category: "trending",
         description: "Kotlin for Android development"
     },
@@ -2133,11 +2103,10 @@ const roadmapsData = [
             alt: "Spring"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 428,
+            lineNumber: 393,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Spring",
-        bgColor: "from-green-600 to-green-800",
         category: "trending",
         description: "Spring framework"
     },
@@ -2149,11 +2118,10 @@ const roadmapsData = [
             alt: "Spring Boot"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 437,
+            lineNumber: 401,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Springboot",
-        bgColor: "from-green-500 to-green-600",
         category: "trending",
         description: "Spring Boot framework"
     },
@@ -2165,11 +2133,10 @@ const roadmapsData = [
             alt: "Data Engineering"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 446,
+            lineNumber: 409,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Data",
-        bgColor: "from-green-500 to-green-400",
         category: "trending",
         description: "Data architecture and engineering"
     },
@@ -2181,11 +2148,10 @@ const roadmapsData = [
             alt: "Data Science"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 455,
+            lineNumber: 417,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Data-Science",
-        bgColor: "from-violet-600 to-purple-700",
         category: "trending",
         description: "Statistical analysis, machine learning, and data insights"
     },
@@ -2197,11 +2163,10 @@ const roadmapsData = [
             alt: "Data Analysis"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 464,
+            lineNumber: 425,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Data-Analysis",
-        bgColor: "from-emerald-500 to-teal-600",
         category: "trending",
         description: "Data visualization, statistical analysis, and business intelligence"
     },
@@ -2213,11 +2178,10 @@ const roadmapsData = [
             alt: "Product Designer"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 473,
+            lineNumber: 433,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/ProductDesigner",
-        bgColor: "from-rose-500 to-pink-600",
         category: "trending",
         description: "User research, design thinking, and product strategy"
     },
@@ -2229,11 +2193,10 @@ const roadmapsData = [
             alt: "Database"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 482,
+            lineNumber: 441,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Database",
-        bgColor: "from-green-600 to-green-700",
         category: "trending",
         description: "Database in depth"
     },
@@ -2245,11 +2208,10 @@ const roadmapsData = [
             alt: "Excel"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 491,
+            lineNumber: 449,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Excel",
-        bgColor: "from-green-500 to-green-400",
         category: "trending",
         description: "Excel expert course"
     },
@@ -2261,11 +2223,10 @@ const roadmapsData = [
             alt: "UI/UX"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 500,
+            lineNumber: 457,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/UIUX",
-        bgColor: "from-purple-500 to-pink-500",
         category: "trending",
         description: "User interface and experience design"
     },
@@ -2277,11 +2238,10 @@ const roadmapsData = [
             alt: "Cloud"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 509,
+            lineNumber: 465,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Cloud",
-        bgColor: "from-blue-400 to-cyan-300",
         category: "trending",
         description: "Cloud platforms and services"
     },
@@ -2293,11 +2253,10 @@ const roadmapsData = [
             alt: "AWS"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 518,
+            lineNumber: 473,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/AWS",
-        bgColor: "from-yellow-400 to-yellow-300",
         category: "trending",
         description: "Amazon Web and services"
     },
@@ -2309,11 +2268,10 @@ const roadmapsData = [
             alt: "Networking"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 527,
+            lineNumber: 481,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Networking",
-        bgColor: "from-blue-500 to-cyan-600",
         category: "trending",
         description: "Network engineering fundamentals"
     },
@@ -2325,11 +2283,10 @@ const roadmapsData = [
             alt: "Video Editing"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 536,
+            lineNumber: 489,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Video",
-        bgColor: "from-red-500 to-pink-500",
         category: "trending",
         description: "Video editing and production"
     },
@@ -2341,11 +2298,10 @@ const roadmapsData = [
             alt: "Graphic Design"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 545,
+            lineNumber: 497,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Graphic",
-        bgColor: "from-yellow-400 to-amber-500",
         category: "trending",
         description: "Visual design and graphics"
     },
@@ -2357,11 +2313,10 @@ const roadmapsData = [
             alt: "Blockchain"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 554,
+            lineNumber: 505,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Blockchain",
-        bgColor: "from-blue-700 to-indigo-800",
         category: "trending",
         description: "Blockchain and cryptocurrency development"
     },
@@ -2373,11 +2328,10 @@ const roadmapsData = [
             alt: "System Design"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 563,
+            lineNumber: 513,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/System",
-        bgColor: "from-emerald-500 to-teal-600",
         category: "trending",
         description: "Large-scale system architecture"
     },
@@ -2389,11 +2343,10 @@ const roadmapsData = [
             alt: "Linux"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 572,
+            lineNumber: 521,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Linux",
-        bgColor: "from-black to-gray-900",
         category: "trending",
         description: "Linux command line OS"
     },
@@ -2405,11 +2358,10 @@ const roadmapsData = [
             alt: "Operating System"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 581,
+            lineNumber: 529,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/OS",
-        bgColor: "from-gray-800 to-gray-900",
         category: "trending",
         description: "Operating system fundamentals"
     },
@@ -2421,11 +2373,10 @@ const roadmapsData = [
             alt: "DevOps"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 590,
+            lineNumber: 537,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Devops",
-        bgColor: "from-gray-700 to-gray-900",
         category: "trending",
         description: "DevOps practices and tools"
     },
@@ -2437,11 +2388,10 @@ const roadmapsData = [
             alt: "DSA"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 599,
+            lineNumber: 545,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/DSA",
-        bgColor: "from-gray-700 to-gray-900",
         category: "trending",
         description: "Data Structures and Algorithms"
     },
@@ -2453,11 +2403,10 @@ const roadmapsData = [
             alt: "Cybersecurity"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 608,
+            lineNumber: 553,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/CyberSecurity",
-        bgColor: "from-red-600 to-red-800",
         category: "trending",
         description: "Cybersecurity and information security"
     },
@@ -2469,11 +2418,10 @@ const roadmapsData = [
             alt: "Prompt Engineering"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 617,
+            lineNumber: 561,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Prompt",
-        bgColor: "from-red-600 to-red-800",
         category: "trending",
         description: "Prompt Engineering and applications"
     },
@@ -2485,11 +2433,10 @@ const roadmapsData = [
             alt: "IoT"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 626,
+            lineNumber: 569,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/IOT",
-        bgColor: "from-red-600 to-red-800",
         category: "trending",
         description: "IOT development and applications"
     },
@@ -2501,11 +2448,10 @@ const roadmapsData = [
             alt: "Game Development"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 635,
+            lineNumber: 577,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Game",
-        bgColor: "from-blue-600 to-blue-900",
         category: "trending",
         description: "Game Development and applications"
     }
@@ -2691,7 +2637,7 @@ const RoadmapCard = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project
                     className: "relative z-10",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: `bg-gradient-to-br ${category.bgColor} rounded-xl w-14 h-14 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`,
+                            className: "w-full h-32 flex items-center justify-center mb-4 group-hover:scale-105 transition-all duration-300",
                             "aria-hidden": "true",
                             children: category.icon
                         }, void 0, false, {
