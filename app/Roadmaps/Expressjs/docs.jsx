@@ -1,4 +1,5 @@
 // components/Docs.jsx
+"use client"
 import React from "react";
 import { ExternalLink } from "lucide-react";
 

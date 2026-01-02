@@ -1,5 +1,6 @@
 {
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/pern/page": "app/Roadmaps/pern/page.js",
+  "/Roadmaps/Electron/page": "app/Roadmaps/Electron/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

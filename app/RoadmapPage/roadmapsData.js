@@ -69,7 +69,7 @@ import tailwindIcon from "./roadmaps-icons/Tailwind CSS.png";
 import productManagerIcon from "./roadmaps-icons/app.png";
 import pernIcon from "./roadmaps-icons/pern.png";
 import contextIcon from "./roadmaps-icons/system.png";
-
+import electron from "./roadmaps-icons/Electron.png"
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -248,6 +248,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Expressjs",
     category: "featured",
     description: "Server-side development and APIs",
+  },
+  {
+    id: "Electron js",
+    title: "Electron js",
+    icon: <RoadmapIcon src={electron} alt="Electron.js" />,
+    link: "/Roadmaps/Electron",
+    category: "featured",
+    description: "Desktop app development",
   },
   {
     id: "mongodb",

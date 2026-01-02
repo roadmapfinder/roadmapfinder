@@ -47,7 +47,7 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
-import Footer from "../Footer/footer";
+
 
 // Import Clerk hooks
 import { useUser, useClerk, SignOutButton } from "@clerk/nextjs";
@@ -116,26 +116,8 @@ export default function HomePage() {
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
     },
-    {
-      name: "Blogs",
-      icon: <Newspaper size={24} className="mr-3" />,
-      href: "/Blogs",
-    },
-    {
-      name: "About Us",
-      icon: <Info size={24} className="mr-3" />,
-      href: "/AboutUs",
-    },
-    {
-      name: "Profile",
-      icon: <User size={24} className="mr-3" />,
-      href: "/Profile",
-    },
-    {
-      name: "Contact Us",
-      icon: <Contact size={24} className="mr-3" />,
-      href: "/ContactUs",
-    },
+   
+ 
 
   ];
 
@@ -341,7 +323,7 @@ export default function HomePage() {
           </div>
 
           {/* Footer - Aligned with sidebar */}
-          <Footer isSidebarCollapsed={isSidebarCollapsed} />
+          {/* <Footer isSidebarCollapsed={isSidebarCollapsed} /> */}
         </main>
       </div>
     </div>
