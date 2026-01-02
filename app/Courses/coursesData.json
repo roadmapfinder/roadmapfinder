@@ -645,11 +645,11 @@
     {
       "id": 97,
       "category": "AI & ML",
-      "title": "AIML Foundation Course",
-      "level": "Beginner",
+      "title": "AI crash course ",
+      "level": "Beginner to Advance",
       "rating": 4.9,
       "image": "aibasics",
-      "videoId": "https://youtu.be/D1eL1EnxXXQ?si=KLrXYYwFfULStybu",
+      "videoId": "https://youtu.be/UqA7bxp7VBk?si=eBMvT39SbcpXdaaq",
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/ai_basics"

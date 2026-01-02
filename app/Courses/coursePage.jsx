@@ -122,7 +122,7 @@ import n8n from './CoursesImage/n8n.jpg'
 import n8nh from './CoursesImage/n8nh.jpg'
 import software from "./CoursesImage/software.jpg"
 import nest from "./CoursesImage/nest.jpg"
-import aibasics from "./CoursesImage/aibasics.jpg"
+import aibasics from "./CoursesImage/ai_basic.jpg"
 import javaf from "./CoursesImage/javaF.jpg"
 import Js from "./CoursesImage/Js.jpg"
 import Ts from "./CoursesImage/Ts.jpg"
