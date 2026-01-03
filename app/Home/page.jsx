@@ -47,6 +47,7 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
+import Footer from "../Footer/page";
 
 
 // Import Clerk hooks
@@ -322,8 +323,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Footer - Aligned with sidebar */}
-          {/* <Footer isSidebarCollapsed={isSidebarCollapsed} /> */}
+          <Footer isSidebarCollapsed={isSidebarCollapsed} />
         </main>
       </div>
     </div>
