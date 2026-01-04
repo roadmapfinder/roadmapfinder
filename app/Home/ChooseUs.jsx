@@ -20,8 +20,8 @@ const ChooseUs = () => {
     },
     {
       step: "3",
-      title: "AI Resource Finder",
-      description: "Access premium AI powered Resource Finder finds best youtube latest resources for your search query.",
+      title: "AI Roadmap Generator",
+      description: "Access premium AI Roadmap Generator for your personalized learning",
       icon: <Zap size={24} className="text-emerald-600" />,
       color: "emerald"
     }
@@ -58,7 +58,7 @@ const ChooseUs = () => {
     "Expert-curated learning paths",
     "Industry-relevant Courses", 
     "Official Tech blogs",
-    "AI Powered Resource Finder",
+    "AI Powered Roadmap Generator",
     "Recommend Best Projects , Documenatation with Roadmaps",
     "Regular updates with latest trends"
   ];

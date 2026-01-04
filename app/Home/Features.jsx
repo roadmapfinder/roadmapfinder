@@ -15,7 +15,7 @@ const AnimatedStatsComponent = () => {
 
   // Target values
   const targets = {
-    courses: 100,
+    courses: 150,
     roadmaps: 200,
     blogs: 50
   };
