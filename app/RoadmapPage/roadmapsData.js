@@ -6,7 +6,7 @@ import aimlIcon from "./roadmaps-icons/ai.png";
 import aiAgentIcon from "./roadmaps-icons/ai-agent.png";
 import langchainIcon from "./roadmaps-icons/langchain.svg";
 import apiIcon from "./roadmaps-icons/api.png";
-import wordpressIcon from "./roadmaps-icons/wordpress.png";
+import wordpressIcon from "./roadmaps-icons/wordpres.png";
 import shopifyIcon from "./roadmaps-icons/shopify.png";
 import djangoIcon from "./roadmaps-icons/Django.png";
 import reactIcon from "./roadmaps-icons/React.png";
@@ -204,12 +204,12 @@ export const roadmapsData = [
     description: "Cross-platform mobile app development",
   },
   {
-    id: "software architect",
-    title: "Software Architect",
+    id: "software engineer",
+    title: "Software Engineer",
     icon: <RoadmapIcon src={softwareArchitectIcon} alt="Software Architect" />,
     link: "/Roadmaps/Software",
     category: "featured",
-    description: "Software architecture fundamentals",
+    description: "Software architect and building applications",
   },
   {
     id: "flutter",

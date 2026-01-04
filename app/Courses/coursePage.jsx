@@ -44,7 +44,7 @@ import web3 from "./CoursesImage/web3.jpg";
 import block from "./CoursesImage/block.jpg";
 import dsajava from "./CoursesImage/dsajava.jpg";
 import cppdsa from "./CoursesImage/cppdsa.jpg";
-import dsapy from "./CoursesImage/dsapy.jpg";
+import dsapy from "./CoursesImage/dsap.jpg";
 import dsajs from "./CoursesImage/dsajs.jpg";
 import dbms from "./CoursesImage/dbms.jpg";
 import mongo from "./CoursesImage/mongo.jpg";
