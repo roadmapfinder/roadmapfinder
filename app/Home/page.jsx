@@ -47,18 +47,17 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
-import Footer from "../Footer/page";
 
 
-// Import Clerk hooks
-import { useUser, useClerk, SignOutButton } from "@clerk/nextjs";
+
+
 
 export default function HomePage() {
   // Use Clerk's user hook
 
   const [username, setUsername] = useState("User");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [isSidebarCollapsed, setSidebarCollapsed] = useState(true);
   const [activeTab, setActiveTab] = useState("popular");
   const router = useRouter();
 
@@ -276,24 +275,19 @@ export default function HomePage() {
           {/* Desktop Header - Only visible on desktop */}
           <header className="hidden md:flex justify-between items-center p-8 bg-gray-50">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Welcome, User</h2>
             
             </div>
             <div className="flex items-center gap-4">
            
                 <>
-                  <button className="p-2 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
+                  <button className="p-3 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
                     <Link href="/Notification">
                       <Bell size={22} className="text-gray-700" />
                     </Link>
                     <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                   </button>
-                  <div className="flex items-center gap-3 bg-white py-2 px-4 rounded-full shadow-sm">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
-                     
-                    </div>
                   
-                  </div>
                 </>
             
                 <button
@@ -323,7 +317,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <Footer isSidebarCollapsed={isSidebarCollapsed} />
+          
         </main>
       </div>
     </div>

@@ -188,9 +188,7 @@ const HeroSection = () => {
             </div>
 
             <div className="lg:w-1/2 relative flex items-center justify-center p-6 xl:p-8 group">
-              <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                <div className="w-72 xl:w-80 h-72 xl:h-80 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full animate-pulse"></div>
-              </div>
+             
 
               <div className="relative z-10">
                 <Image

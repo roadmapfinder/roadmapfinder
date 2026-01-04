@@ -69,7 +69,10 @@ import tailwindIcon from "./roadmaps-icons/Tailwind CSS.png";
 import productManagerIcon from "./roadmaps-icons/app.png";
 import pernIcon from "./roadmaps-icons/pern.png";
 import contextIcon from "./roadmaps-icons/system.png";
-import electron from "./roadmaps-icons/Electron.png"
+import electron from "./roadmaps-icons/Electron.png";
+import css from "./roadmaps-icons/Css.png";
+import html from "./roadmaps-icons/html.png";
+
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -104,6 +107,21 @@ export const roadmapsData = [
     link: "/Roadmaps/Aiml",
     category: "featured",
     description: "Machine Learning, Deep Learning, Neural Networks",
+  },
+  {
+    id: "html",
+    title: "Html5",
+    icon: <RoadmapIcon src={html} alt="AI & ML" />,
+    link: "/Roadmaps/Html",
+    category: "featured",
+    description: "Building Web Structure",
+  },  {
+    id: "css",
+    title: "Css",
+    icon: <RoadmapIcon src={css} alt="AI & ML" />,
+    link: "/Roadmaps/Css",
+    category: "featured",
+    description: "Building modern web interfaces and UI",
   },
   {
     id: "ai agents",
