@@ -16,8 +16,8 @@ export default function NotificationPage() {
       id: 1,
       type: 'course',
       icon: '📘',
-      title: 'System design course',
-      message: 'New module available: "In english system design indepth course"',
+      title: 'Python in dsa course',
+      message: 'New module available: "In hindi dsa course"',
       timestamp: '2 hours ago',
       read: false,
       createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()
@@ -26,8 +26,8 @@ export default function NotificationPage() {
       id: 2,
       type: 'roadmap',
       icon: '🧭',
-      title: 'Database engineering roadmap',
-      message: 'Your roadmap has been updated with new Database engineering',
+      title: 'NumPy mastery roadmap',
+      message: 'Your roadmap has been updated with new Numpy',
       timestamp: '1 day ago',
       read: false,
       createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()

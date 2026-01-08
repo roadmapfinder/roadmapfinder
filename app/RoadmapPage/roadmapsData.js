@@ -72,6 +72,7 @@ import contextIcon from "./roadmaps-icons/system.png";
 import electron from "./roadmaps-icons/Electron.png";
 import css from "./roadmaps-icons/Css.png";
 import html from "./roadmaps-icons/html.png";
+import numpy from "./roadmaps-icons/NumPy.png";
 
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
@@ -459,6 +460,15 @@ export const roadmapsData = [
     category: "trending",
     description: "Data visualization, statistical analysis, and business intelligence",
   },
+  {
+    id: "numpy",
+    title: "Numpy",
+    icon: <RoadmapIcon src={numpy} alt="NumPy" />,
+    link: "/Roadmaps/Numpy",
+    category: "trending",
+    description: "Complex number handling , Data handling",
+  },
+  
   {
     id: "product-designer",
     title: "Product Designer",

@@ -1,24 +1,9 @@
 {
   "app": {
-    "[project]/app/Courses/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/Docs/angular/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/Docs/dsa_python/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/Docs/javascript/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/Docs/nodejs/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
     "[project]/app/RoadmapPage/page": [
       "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
     ],
-    "[project]/app/Roadmaps/Software/page": [
+    "[project]/app/Roadmaps/Numpy/page": [
       "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
     ],
     "[project]/app/page": [

@@ -1,10 +1,5 @@
 {
-  "/Courses/page": "app/Courses/page.js",
-  "/Docs/angular/page": "app/Docs/angular/page.js",
-  "/Docs/dsa_python/page": "app/Docs/dsa_python/page.js",
-  "/Docs/javascript/page": "app/Docs/javascript/page.js",
-  "/Docs/nodejs/page": "app/Docs/nodejs/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Software/page": "app/Roadmaps/Software/page.js",
+  "/Roadmaps/Numpy/page": "app/Roadmaps/Numpy/page.js",
   "/page": "app/page.js"
 }
