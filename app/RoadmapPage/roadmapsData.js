@@ -73,6 +73,7 @@ import electron from "./roadmaps-icons/Electron.png";
 import css from "./roadmaps-icons/Css.png";
 import html from "./roadmaps-icons/html.png";
 import numpy from "./roadmaps-icons/NumPy.png";
+import docker from "./roadmaps-icons/Docker.png"
 
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
@@ -516,6 +517,14 @@ export const roadmapsData = [
     link: "/Roadmaps/AWS",
     category: "trending",
     description: "Amazon Web and services",
+  },
+  {
+    id: "docker",
+    title: "Docker",
+    icon: <RoadmapIcon src={docker} alt="AWS" />,
+    link: "/Roadmaps/Docker",
+    category: "trending",
+    description: "Docker image and Containerization",
   },
   {
     id: "networking",
