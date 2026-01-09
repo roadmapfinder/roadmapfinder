@@ -74,7 +74,7 @@ import css from "./roadmaps-icons/Css.png";
 import html from "./roadmaps-icons/html.png";
 import numpy from "./roadmaps-icons/NumPy.png";
 import docker from "./roadmaps-icons/Docker.png"
-
+import kubernetes from "./roadmaps-icons/Kubernetes.png"
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -521,10 +521,18 @@ export const roadmapsData = [
   {
     id: "docker",
     title: "Docker",
-    icon: <RoadmapIcon src={docker} alt="AWS" />,
+    icon: <RoadmapIcon src={docker} alt="docker" />,
     link: "/Roadmaps/Docker",
     category: "trending",
     description: "Docker image and Containerization",
+  },
+  {
+    id: "kubernetes",
+    title: "Kubernetes",
+    icon: <RoadmapIcon src={kubernetes} alt="kubernetes" />,
+    link: "/Roadmaps/Kubernetes",
+    category: "trending",
+    description: "Container Orchestration",
   },
   {
     id: "networking",
