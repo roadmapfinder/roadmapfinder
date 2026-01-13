@@ -74,7 +74,8 @@ import css from "./roadmaps-icons/Css.png";
 import html from "./roadmaps-icons/html.png";
 import numpy from "./roadmaps-icons/NumPy.png";
 import docker from "./roadmaps-icons/Docker.png"
-import kubernetes from "./roadmaps-icons/Kubernetes.png"
+import kubernetes from "./roadmaps-icons/Pandas.png"
+import pandas from "./roadmaps-icons/Pandas.png"
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -468,6 +469,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Numpy",
     category: "trending",
     description: "Complex number handling , Data handling",
+  },
+  {
+    id: "pandas",
+    title: "Pandas",
+    icon: <RoadmapIcon src={pandas} alt="Pandas" />,
+    link: "/Roadmaps/Pandas",
+    category: "trending",
+    description: "Flexible data manipulation and analysis",
   },
   
   {
