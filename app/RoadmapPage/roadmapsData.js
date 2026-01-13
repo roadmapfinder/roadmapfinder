@@ -474,7 +474,7 @@ export const roadmapsData = [
     id: "pandas",
     title: "Pandas",
     icon: <RoadmapIcon src={pandas} alt="Pandas" />,
-    link: "/Roadmaps/Pandas",
+    link: "/Roadmaps/Pandaas",
     category: "trending",
     description: "Flexible data manipulation and analysis",
   },
