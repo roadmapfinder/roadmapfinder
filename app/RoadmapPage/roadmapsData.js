@@ -76,6 +76,7 @@ import numpy from "./roadmaps-icons/NumPy.png";
 import docker from "./roadmaps-icons/Docker.png"
 import kubernetes from "./roadmaps-icons/Pandas.png"
 import pandas from "./roadmaps-icons/Pandas.png"
+import solidity from "./roadmaps-icons/Solidity.png"
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -567,6 +568,15 @@ export const roadmapsData = [
     category: "trending",
     description: "Visual design and graphics",
   },
+  {
+    id: "solidity",
+    title: "Solidity",
+    icon: <RoadmapIcon src={solidity} alt="Blockchain" />,
+    link: "/Roadmaps/Solidity",
+    category: "trending",
+    description: "Smart Contractors & Development",
+  },
+  
   {
     id: "blockchain",
     title: "Blockchain Development",
