@@ -234,7 +234,7 @@ export default function TechRoadmap() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 transition-colors duration-300">
       {/* Navigation Bar */}
       <nav 
-        className="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 dark:border-gray-800"
+        className="border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 dark:border-gray-800"
         role="navigation"
         aria-label="Main navigation"
       >
