@@ -103,14 +103,14 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
       aria-label={`Explore ${category.title} roadmap`}
     >
       <div
-        className="group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
+        className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         role="article"
       >
         {/* Gradient overlay on hover */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           aria-hidden="true"
         />
 
@@ -134,13 +134,13 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
           </div>
 
           {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
             {category.title}
           </h3>
 
           {/* Description */}
           <p 
-            className={`text-gray-600 text-sm mb-4 transition-all duration-300 ${
+            className={`text-gray-600 dark:text-gray-400 text-sm mb-4 transition-all duration-300 ${
               isHovered ? 'opacity-100 max-h-20' : 'opacity-70 max-h-12'
             } line-clamp-2`}
           >
@@ -148,7 +148,7 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
           </p>
 
           {/* CTA */}
-          <div className="flex items-center space-x-2 text-blue-600 font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
+          <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
             <span>Explore roadmap</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </div>
@@ -231,17 +231,17 @@ export default function TechRoadmap() {
   }, [handleClearSearch]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 transition-colors duration-300">
       {/* Navigation Bar */}
       <nav 
-        className="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/80"
+        className="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 dark:border-gray-800"
         role="navigation"
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" passHref aria-label="Go back to home page">
-              <div className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer group">
+              <div className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-200 cursor-pointer group">
                 <ChevronLeft 
                   className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" 
                   aria-hidden="true"
@@ -251,10 +251,10 @@ export default function TechRoadmap() {
             </Link>
 
             <button 
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
               aria-label="Open filters"
             >
-              <Filter className="w-5 h-5 text-gray-600" aria-hidden="true" />
+              <Filter className="w-5 h-5 text-gray-600 dark:text-gray-400" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -263,12 +263,12 @@ export default function TechRoadmap() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section */}
         <header className="mb-6 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
             Tech Learning
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Roadmaps</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
             Discover expertly curated learning paths for various tech domains and programming languages
           </p>
 
@@ -280,7 +280,7 @@ export default function TechRoadmap() {
                 aria-hidden="true"
               />
 
-              <div className="relative bg-white rounded-2xl shadow-lg border border-gray-200">
+              <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
                 <label htmlFor="roadmap-search" className="sr-only">
                   Search for roadmaps, technologies, or skills
                 </label>
@@ -303,7 +303,7 @@ export default function TechRoadmap() {
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => setIsSearchFocused(false)}
                   onKeyDown={handleKeyDown}
-                  className="w-full px-14 py-4 rounded-2xl focus:outline-none text-gray-800 placeholder-gray-400 bg-transparent focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="w-full px-14 py-4 rounded-2xl focus:outline-none text-gray-800 dark:text-gray-100 placeholder-gray-400 bg-transparent focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   aria-describedby="search-description"
                 />
                 <span id="search-description" className="sr-only">
@@ -312,10 +312,10 @@ export default function TechRoadmap() {
                 {searchQuery && (
                   <button
                     onClick={handleClearSearch}
-                    className="absolute right-5 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                    className="absolute right-5 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors duration-200"
                     aria-label="Clear search"
                   >
-                    <X className="w-5 h-5 text-gray-400 hover:text-gray-600" aria-hidden="true" />
+                    <X className="w-5 h-5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" aria-hidden="true" />
                   </button>
                 )}
               </div>
@@ -327,12 +327,12 @@ export default function TechRoadmap() {
               role="group"
               aria-label="Popular search tags"
             >
-              <span className="text-sm font-medium text-gray-500">Popular:</span>
+              <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Popular:</span>
               {popularTags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => handleTagClick(tag)}
-                  className="px-4 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50 text-gray-700 hover:text-blue-700 transition-all duration-200 shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="px-4 py-1.5 text-sm rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition-all duration-200 shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   aria-label={`Search for ${tag}`}
                 >
                   {tag}
@@ -350,10 +350,10 @@ export default function TechRoadmap() {
                 <Star className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                   {debouncedSearchQuery ? `Search Results` : "Featured Paths"}
                 </h2>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   {debouncedSearchQuery 
                     ? `${displayFeatured.length} result${displayFeatured.length !== 1 ? 's' : ''} found` 
                     : "Most popular learning roadmaps"
@@ -390,10 +390,10 @@ export default function TechRoadmap() {
                   <TrendingUp className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                     Trending & Specialized
                   </h2>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Emerging technologies and niche specializations
                   </p>
                 </div>
@@ -421,13 +421,13 @@ export default function TechRoadmap() {
         {/* No Results */}
         {debouncedSearchQuery && displayFeatured.length === 0 && !isSearching && (
           <div className="text-center py-20" role="status" aria-live="polite">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 dark:bg-gray-800 rounded-full mb-6">
               <Search className="w-10 h-10 text-gray-400" aria-hidden="true" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
               No roadmaps found
             </h3>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
               We couldn't find any roadmaps matching "<span className="font-semibold">{debouncedSearchQuery}</span>". Try different keywords or browse our popular tags.
             </p>
             <button
