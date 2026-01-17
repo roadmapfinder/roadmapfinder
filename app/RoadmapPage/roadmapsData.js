@@ -74,7 +74,7 @@ import css from "./roadmaps-icons/Css.png";
 import html from "./roadmaps-icons/html.png";
 import numpy from "./roadmaps-icons/NumPy.png";
 import docker from "./roadmaps-icons/Docker.png"
-import kubernetes from "./roadmaps-icons/Pandas.png"
+import kubernetes from "./roadmaps-icons/Kubernetes.png"
 import pandas from "./roadmaps-icons/Pandas.png"
 import solidity from "./roadmaps-icons/Solidity.png"
 // Helper component to render icons consistently
