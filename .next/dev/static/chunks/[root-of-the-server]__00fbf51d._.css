@@ -649,10 +649,6 @@
     pointer-events: none;
   }
 
-  .invisible {
-    visibility: hidden;
-  }
-
   .visible {
     visibility: visible;
   }
@@ -1295,6 +1291,10 @@
     max-height: calc(var(--spacing) * 40);
   }
 
+  .max-h-96 {
+    max-height: calc(var(--spacing) * 96);
+  }
+
   .min-h-\[44px\] {
     min-height: 44px;
   }
@@ -1493,10 +1493,6 @@
 
   .flex-shrink-0 {
     flex-shrink: 0;
-  }
-
-  .shrink {
-    flex-shrink: 1;
   }
 
   .flex-grow, .grow {
@@ -4189,10 +4185,6 @@
     font-variant-numeric: var(--tw-ordinal, ) var(--tw-slashed-zero, ) var(--tw-numeric-figure, ) var(--tw-numeric-spacing, ) var(--tw-numeric-fraction, );
   }
 
-  .line-through {
-    text-decoration-line: line-through;
-  }
-
   .underline {
     text-decoration-line: underline;
   }
@@ -4269,11 +4261,6 @@
 
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, #0000001a), 0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .ring {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
@@ -4485,11 +4472,6 @@
 
   .grayscale {
     --tw-grayscale: grayscale(100%);
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
-  }
-
-  .invert {
-    --tw-invert: invert(100%);
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
@@ -5281,6 +5263,10 @@
 
   .focus-visible\:ring-blue-500:focus-visible {
     --tw-ring-color: var(--color-blue-500);
+  }
+
+  .focus-visible\:ring-indigo-300:focus-visible {
+    --tw-ring-color: var(--color-indigo-300);
   }
 
   .focus-visible\:ring-indigo-500:focus-visible {

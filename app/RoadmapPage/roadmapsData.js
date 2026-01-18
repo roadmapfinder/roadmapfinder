@@ -77,6 +77,11 @@ import docker from "./roadmaps-icons/Docker.png"
 import kubernetes from "./roadmaps-icons/Kubernetes.png"
 import pandas from "./roadmaps-icons/Pandas.png"
 import solidity from "./roadmaps-icons/Solidity.png"
+import flask from "./roadmaps-icons/flask.png"
+import fastapi from "./roadmaps-icons/fastapi.png"
+import vue from "./roadmaps-icons/Vue.png"
+
+
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -174,6 +179,22 @@ export const roadmapsData = [
     link: "/Roadmaps/Django",
     category: "featured",
     description: "Backend development with python",
+  },
+  {
+    id: "flask",
+    title: "Flask",
+    icon: <RoadmapIcon src={flask} alt="flask" />,
+    link: "/Roadmaps/Flask",
+    category: "featured",
+    description: "ligtweight web application using python",
+  },
+  {
+    id: "fastapi",
+    title: "Fast Api",
+    icon: <RoadmapIcon src={fastapi} alt="fastapi" />,
+    link: "/Roadmaps/Fastapi",
+    category: "featured",
+    description: "Scalable web application using python",
   },
   {
     id: "react",
@@ -292,6 +313,14 @@ export const roadmapsData = [
     title: "Angular js",
     icon: <RoadmapIcon src={angularIcon} alt="Angular" />,
     link: "/Roadmaps/Angular",
+    category: "featured",
+    description: "Single page application development",
+  },
+  {
+    id: "vue",
+    title: "Vue js",
+    icon: <RoadmapIcon src={vue} alt="Vue" />,
+    link: "/Roadmaps/Vue",
     category: "featured",
     description: "Single page application development",
   },
