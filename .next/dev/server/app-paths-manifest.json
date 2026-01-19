@@ -1,1 +1,5 @@
-{}
+{
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/Vue/page": "app/Roadmaps/Vue/page.js",
+  "/page": "app/page.js"
+}
