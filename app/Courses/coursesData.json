@@ -354,6 +354,18 @@
       "docs": "/Docs/solidity"
     },
     {
+      "id": 23,
+      "category": "Blockchain",
+      "title": "Solidity Complete Course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "solidity",
+      "videoId": "https://youtu.be/AYpftDFiIgk?si=E9zA0GtZGinBi3yX",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/solid"
+    },
+    {
       "id": 24,
       "category": "Blockchain",
       "title": "Web3 Complete Course",
@@ -991,6 +1003,30 @@
       "docs": "/Docs/django"
     },
     {
+      "id": 62,
+      "category": "Frameworks & Libraries",
+      "title": "FastApi complete course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "fastapi",
+      "videoId": "https://youtu.be/Lu8lXXlstvM?si=aMrZ1KvkhnI5k-t_",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/fastapi"
+    },
+    {
+      "id": 62,
+      "category": "Frameworks & Libraries",
+      "title": "Flask crash course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "flask",
+      "videoId": "https://youtu.be/QZfaRHzWM0k?si=oKUCZCDnzyb4aHDC",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/flask"
+    },
+    {
       "id": 63,
       "category": "Frameworks & Libraries",
       "title": "Laravel complete php backend course",
@@ -1025,6 +1061,18 @@
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/angular"
+    },
+    {
+      "id": 63,
+      "category": "Frameworks & Libraries",
+      "title": "Vue.js complete Course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "vue",
+      "videoId": "https://youtu.be/8pn9KEuXG28?si=5LGSggBJgr6LxAWn",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/vue"
     },
     {
       "id": 64,
