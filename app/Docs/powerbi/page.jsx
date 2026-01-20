@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 
-const PowerBIWsCubeTech = () => {
+const PowerBIAccountsExpert = () => {
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white">
       <article className="prose prose-lg max-w-none">
 
         {/* Title */}
         <h1 className="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-yellow-500 pb-4">
-          Power BI Complete Course — WsCube Tech
+          Power BI Complete Course — Accounts Expert
         </h1>
 
         {/* Description */}
@@ -16,11 +16,11 @@ const PowerBIWsCubeTech = () => {
           Description
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          An intensive <strong>Hindi-language Power BI Bootcamp</strong> designed
-          for complete BI skill-building—from data ingestion to advanced
-          visualizations—with strong <strong>career and placement support</strong>.
-          Delivered by <em>industry practitioners</em> and experienced mentors, the
-          course emphasizes real-time BI projects and hands-on mastery.
+          A professionally structured <strong>Power BI course by Accounts Expert</strong>,
+          specially designed for <strong>accounting, finance, and business analysis
+          professionals</strong>. The course teaches how to transform accounting
+          and financial data into interactive dashboards using Power BI with
+          practical business examples.
         </p>
 
         {/* Learning Format */}
@@ -28,9 +28,10 @@ const PowerBIWsCubeTech = () => {
           Learning Format
         </h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li>24+ hours of live training sessions</li>
-          <li>Mentorship, live doubt-clearing, and cohort-based learning</li>
-          <li>Certification and project portfolio development</li>
+          <li>Hindi-language step-by-step video lectures</li>
+          <li>Practical demonstrations with accounting datasets</li>
+          <li>Concept-based explanation with real business scenarios</li>
+          <li>Suitable for beginners to intermediate learners</li>
         </ul>
 
         {/* Modules */}
@@ -38,13 +39,19 @@ const PowerBIWsCubeTech = () => {
           Modules Covered
         </h2>
         <ol className="list-decimal list-inside text-gray-700 space-y-2 mb-6">
-          <li>Power BI Introduction & Ecosystem</li>
-          <li>Power BI Desktop Setup & Data Importing</li>
-          <li>Data Cleaning & Transformation (Power Query)</li>
-          <li>Data Modeling & DAX Fundamentals</li>
-          <li>Basic Report Visualizations</li>
-          <li>Advanced Dashboard Features</li>
-          <li>Final Project + Career Prep ("Last Mile Prep")</li>
+          <li>Introduction to Power BI for Accountants</li>
+          <li>Power BI Desktop Installation & Interface</li>
+          <li>Importing Accounting Data from Excel & CSV</li>
+          <li>Power Query – Data Cleaning & Formatting</li>
+          <li>Handling Ledger, Trial Balance & Financial Tables</li>
+          <li>Data Modeling & Table Relationships</li>
+          <li>DAX Basics for Financial Calculations</li>
+          <li>Profit, Loss, Sales & Expense Measures</li>
+          <li>Financial Report Visualizations</li>
+          <li>Slicers, Filters & Interactive Reports</li>
+          <li>Dashboard Creation for Management Reporting</li>
+          <li>Power BI Service Publishing (Overview)</li>
+          <li>Business & Accounting Dashboard Project</li>
         </ol>
 
         {/* Learning Approach */}
@@ -52,9 +59,10 @@ const PowerBIWsCubeTech = () => {
           Learning Approach
         </h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li>Participate in structured live sessions and ask questions in real time.</li>
-          <li>Follow along with practical assignments and build visual dashboards.</li>
-          <li>Consolidate learning by creating a final BI report and portfolio.</li>
+          <li>Accounting-focused explanation of Power BI concepts.</li>
+          <li>Real financial examples instead of technical-only datasets.</li>
+          <li>Step-by-step dashboard building for business reporting.</li>
+          <li>Simple language for non-technical learners.</li>
         </ul>
 
         {/* Outcomes */}
@@ -62,9 +70,10 @@ const PowerBIWsCubeTech = () => {
           Outcomes
         </h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li>Master the Power BI toolset—from data preparation to analysis.</li>
-          <li>Build an industry-ready BI portfolio tailored for hiring.</li>
-          <li>Earn certification and benefit from placement-linked support.</li>
+          <li>Ability to analyze financial data using Power BI.</li>
+          <li>Create professional accounting dashboards.</li>
+          <li>Understand DAX for financial reporting.</li>
+          <li>Improve reporting and decision-making skills.</li>
         </ul>
 
         {/* Final Note */}
@@ -72,30 +81,29 @@ const PowerBIWsCubeTech = () => {
           Final Note
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          This course is a robust, all-in-one learning path for{" "}
-          <strong>Power BI mastery</strong>—not just tools training but a{" "}
-          <em>career accelerator</em>. With live mentorship, practical BI projects,
-          and structured job preparation, learners are guided from foundational
-          skills to professional readiness.
+          This Power BI course by <strong>Accounts Expert</strong> is ideal for
+          accountants, commerce students, finance professionals, and business
+          owners who want to upgrade their reporting skills using modern BI
+          tools without deep technical background.
         </p>
 
         {/* Meta Info */}
         <hr className="my-8 border-gray-300" />
         <div className="text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
           <p className="mb-1">
-            <strong>Platform:</strong> WsCube Tech
+            <strong>Channel:</strong> Accounts Expert
           </p>
           <p className="mb-1">
-            <strong>Mode:</strong> Live, cohort-based online classes
+            <strong>Language:</strong> Hindi
           </p>
           <p className="mb-1">
-            <strong>Duration:</strong> 24+ hours
+            <strong>Focus:</strong> Power BI for Accounting & Finance
           </p>
           <p className="mb-1">
-            <strong>Support:</strong> Doubt-clearing, one-on-one mentorship, placement assistance
+            <strong>Level:</strong> Beginner to Intermediate
           </p>
           <p>
-            <strong>Certification:</strong> Industry-recognized, with portfolio-building projects
+            <strong>Outcome:</strong> Financial dashboard & reporting skills
           </p>
         </div>
       </article>
@@ -103,4 +111,4 @@ const PowerBIWsCubeTech = () => {
   );
 };
 
-export default PowerBIWsCubeTech;
+export default PowerBIAccountsExpert;

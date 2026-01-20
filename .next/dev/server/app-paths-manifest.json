@@ -1,10 +1,8 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/Docs/fastapi/page": "app/Docs/fastapi/page.js",
-  "/Docs/flask/page": "app/Docs/flask/page.js",
-  "/Docs/solid/page": "app/Docs/solid/page.js",
-  "/Docs/vue/page": "app/Docs/vue/page.js",
+  "/Docs/powerbi/page": "app/Docs/powerbi/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/Powerbi/page": "app/Roadmaps/Powerbi/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

@@ -80,6 +80,7 @@ import solidity from "./roadmaps-icons/Solidity.png"
 import flask from "./roadmaps-icons/flask.png"
 import fastapi from "./roadmaps-icons/fastapi.png"
 import vue from "./roadmaps-icons/Vue.png"
+import powerbi from "./roadmaps-icons/powerbi.png"
 
 
 // Helper component to render icons consistently
@@ -493,12 +494,21 @@ export const roadmapsData = [
     description: "Data visualization, statistical analysis, and business intelligence",
   },
   {
+    id: "powerbi",
+    title: "Power BI",
+    icon: <RoadmapIcon src={powerbi} alt="NumPy" />,
+    link: "/Roadmaps/Powerbi",
+    category: "trending",
+    description: "Complex number handling , Data handling",
+  },
+  
+  {
     id: "numpy",
     title: "Numpy",
     icon: <RoadmapIcon src={numpy} alt="NumPy" />,
     link: "/Roadmaps/Numpy",
     category: "trending",
-    description: "Complex number handling , Data handling",
+    description: "Business Analytics and data visualization",
   },
   {
     id: "pandas",
