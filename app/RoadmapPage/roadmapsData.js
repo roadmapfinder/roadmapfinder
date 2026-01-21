@@ -81,6 +81,7 @@ import flask from "./roadmaps-icons/flask.png"
 import fastapi from "./roadmaps-icons/fastapi.png"
 import vue from "./roadmaps-icons/Vue.png"
 import powerbi from "./roadmaps-icons/powerbi.png"
+import testing from "./roadmaps-icons/testing.png"
 
 
 // Helper component to render icons consistently
@@ -687,6 +688,14 @@ export const roadmapsData = [
     link: "/Roadmaps/IOT",
     category: "trending",
     description: "IOT development and applications",
+  },
+  {
+    id: "Software Testing",
+    title: "Software Testing",
+    icon: <RoadmapIcon src={testing} alt="testing" />,
+    link: "/Roadmaps/Software-Testing",
+    category: "trending",
+    description: "Testing of API & Software",
   },
   {
     id: "game development",

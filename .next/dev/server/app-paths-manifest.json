@@ -1,8 +1,5 @@
 {
-  "/Courses/page": "app/Courses/page.js",
-  "/Docs/powerbi/page": "app/Docs/powerbi/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Powerbi/page": "app/Roadmaps/Powerbi/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/Roadmaps/Software-Tester/page": "app/Roadmaps/Software-Tester/page.js",
   "/page": "app/page.js"
 }

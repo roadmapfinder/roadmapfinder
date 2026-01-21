@@ -338,7 +338,7 @@ export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
           <View style={styles.footer}>
             <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
             <Text style={styles.footerText}>
-              You've completed Numpy developer Roadmap and are now ready to take on professional  challenges.
+              You've completed Solidity developer Roadmap and are now ready to take on professional  challenges.
             </Text>
           </View>
 

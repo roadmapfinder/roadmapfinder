@@ -1293,6 +1293,18 @@
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/software"
+    },
+    {
+      "id": 97,
+      "category": "Software Testing",
+      "title": "Complete Software Testing course in with Projects",
+      "level": "Beginner to Advanced",
+      "rating": 4.7,
+      "image": "testing",
+      "videoId": "https://youtube.com/watch?v=P31bOYX1lZE",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/testing"
     }
     
 
