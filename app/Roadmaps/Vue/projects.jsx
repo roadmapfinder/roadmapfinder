@@ -11,7 +11,7 @@ const projects = [
     description:
       "Build a simple counter application using Vue 3 Composition API to understand reactivity, ref, events, and template binding.",
     url: "https://youtu.be/khlc7FlkXV8?si=hbJXa2zWknTxZOi1",
-    channel: "Vue Mastery",
+    
   },
   {
     id: "vue-todo-app",
@@ -19,8 +19,8 @@ const projects = [
     title: "Todo List App",
     description:
       "Create a todo list app with add, edit, delete, filter, and local storage persistence using Vue 3.",
-    url: "https://youtu.be/wy9q22isx3U",
-    channel: "Traversy Media",
+    url: "https://youtu.be/qhjxAP1hFuI?si=eqqPghXQfivyU4q7",
+   
   },
 
   // Phase 2 — Intermediate
@@ -30,8 +30,8 @@ const projects = [
     title: "Blog Platform Frontend",
     description:
       "Develop a blog frontend with Vue Router, API integration, pagination, dynamic routing, and loading states.",
-    url: "https://youtu.be/9Whz5eK7TnY",
-    channel: "Codevolution",
+    url: "https://youtu.be/6ZoiO4McyPA?si=jl8NOll2v3Ds2MUs",
+    
   },
   {
     id: "vue-ecommerce",
@@ -39,8 +39,9 @@ const projects = [
     title: "E-Commerce Store UI",
     description:
       "Build a modern e-commerce UI using Vue 3, Pinia store, product filters, cart system, and checkout UI.",
-    url: "https://youtu.be/z6hQqgvGI4Y",
-    channel: "Academind",
+    url: "https://youtu.be/ja9evUOJ57M?si=2Jqae2KnY5j-KwAz",
+
+    
   },
 
   // Phase 3 — Advanced
@@ -50,8 +51,8 @@ const projects = [
     title: "Admin Dashboard Panel",
     description:
       "Create an enterprise admin dashboard with charts, role-based routes, layout system, and responsive tables.",
-    url: "https://youtu.be/dYw1Z0Yx4Yw",
-    channel: "Vue School",
+    url: "https://youtu.be/5dhiDC_Ikig?si=v2aUbeuF7_IFbl4m",
+    
   },
   {
     id: "vue-saas-app",
@@ -59,8 +60,8 @@ const projects = [
     title: "SaaS App (Industry Ready)",
     description:
       "Build a full SaaS application using Vue + Nuxt with authentication, SSR, SEO, dashboard, and subscription UI.",
-    url: "https://youtu.be/9rR0jH5kH4E",
-    channel: "Nuxt Labs",
+    url: "https://youtu.be/e8IoJecZIBk?si=6UIodmg146EmnDvz",
+    
   },
 ];
 
@@ -99,9 +100,7 @@ export default function Projects() {
                 {p.description}
               </p>
 
-              <p className="mt-1 text-gray-500 text-xs">
-                Reference: {p.channel}
-              </p>
+             
 
               <a
                 href={p.url}

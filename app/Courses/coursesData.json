@@ -594,6 +594,18 @@
       "docs": "/Docs/pyspark"
     },
     {
+      "id": 80,
+      "category": "Data Analysis & Science",
+      "title": "PyTorch complete crash course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "pytorch",
+      "videoId": "https://youtu.be/UqA7bxp7VBk?si=sJ0uGjMJc8sSmzJ0",
+      "badge": "New",
+      "language": "Hindi",
+      "docs": "/Docs/pytorch"
+    },
+    {
       "id": 35,
       "category": "Data Analysis & Science",
       "title": "Data Science Complete Course",

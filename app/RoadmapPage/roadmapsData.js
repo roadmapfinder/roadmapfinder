@@ -82,6 +82,11 @@ import fastapi from "./roadmaps-icons/fastapi.png"
 import vue from "./roadmaps-icons/Vue.png"
 import powerbi from "./roadmaps-icons/powerbi.png"
 import testing from "./roadmaps-icons/testing.png"
+import matplotlib from "./roadmaps-icons/Matplotlib.png"
+import tensorflow from "./roadmaps-icons/TensorFlow.png"
+import pytorch from "./roadmaps-icons/PyTorch.png"
+import spark from "./roadmaps-icons/spark.png"
+
 
 
 // Helper component to render icons consistently
@@ -519,6 +524,39 @@ export const roadmapsData = [
     category: "trending",
     description: "Flexible data manipulation and analysis",
   },
+  {
+    id: "matplotlib",
+    title: "Matplotlib",
+    icon: <RoadmapIcon src={matplotlib} alt="matplotlib" />,
+    link: "/Roadmaps/Matplotlib",
+    category: "trending",
+    description: "Creating high-quality, static, animated, and interactive data visualizations",
+  },
+  {
+    id: "tensorflow",
+    title: "TensorFlow",
+    icon: <RoadmapIcon src={tensorflow} alt="Tensorflow" />,
+    link: "/Roadmaps/Tensorflow",
+    category: "trending",
+    description: "Build, train, and deploy a wide range of artificial intelligence models",
+  },
+  {
+    id: "pyspark",
+    title: "PySpark",
+    icon: <RoadmapIcon src={spark} alt="pyspark" />,
+    link: "/Roadmaps/Pyspark",
+    category: "trending",
+    description: "Processng and analyze massive datasets",
+  },
+  {
+    id: "pytorch",
+    title: "PyTorch",
+    icon: <RoadmapIcon src={pytorch} alt="pytorch" />,
+    link: "/Roadmaps/Pytorch",
+    category: "trending",
+    description: "Deep learning research and production-grade AI systems",
+  },
+
   
   {
     id: "product-designer",
