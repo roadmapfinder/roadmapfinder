@@ -452,19 +452,8 @@ export default function CoursePage() {
                           </span>
                         </div>
 
-                        {/* Documentation button */}
-                        {course.docs && (
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              redirectToDocs(course.docs);
-                            }}
-                            className="absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all group"
-                            title="View Documentation"
-                          >
-                            <FileText size={16} className="text-gray-700 group-hover:text-blue-600" />
-                          </button>
-                        )}
+                       
+                       
                       </div>
 
                       <div className="p-3">

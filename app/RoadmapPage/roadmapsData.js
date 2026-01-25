@@ -86,6 +86,9 @@ import matplotlib from "./roadmaps-icons/Matplotlib.png"
 import tensorflow from "./roadmaps-icons/TensorFlow.png"
 import pytorch from "./roadmaps-icons/PyTorch.png"
 import spark from "./roadmaps-icons/spark.png"
+import photoshop from "./roadmaps-icons/photoshop.png"
+import illustrator from "./roadmaps-icons/illustrator.png"
+import canva from "./roadmaps-icons/Canva.png"
 
 
 
@@ -639,6 +642,30 @@ export const roadmapsData = [
     description: "Video editing and production",
   },
   {
+    id: "canva",
+    title: "Canva",
+    icon: <RoadmapIcon src={canva} alt="canva" />,
+    link: "/Roadmaps/Canva",
+    category: "trending",
+    description: "create a wide range of visual content, such as social media graphics, presentations and posters without needing advanced design knowledge.",
+  },
+  {
+    id: "photoshop",
+    title: "Photoshop",
+    icon: <RoadmapIcon src={photoshop} alt="photoshop" />,
+    link: "/Roadmaps/Photoshop",
+    category: "trending",
+    description: "For photo editing and manipulation",
+  },
+  {
+    id: "illustrator",
+    title: "Illustrator",
+    icon: <RoadmapIcon src={illustrator} alt="illustrator" />,
+    link: "/Roadmaps/Illustrator",
+    category: "trending",
+    description: "Creating scalable vector graphics like logos, icons, illustrations, and typography",
+  },
+  {
     id: "graphic",
     title: "Graphic Design",
     icon: <RoadmapIcon src={graphicIcon} alt="Graphic Design" />,
@@ -646,6 +673,7 @@ export const roadmapsData = [
     category: "trending",
     description: "Visual design and graphics",
   },
+  
   {
     id: "solidity",
     title: "Solidity",

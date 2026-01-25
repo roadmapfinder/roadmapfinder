@@ -245,7 +245,7 @@ export const downloadRoadmapPDF = async (phases) => {
 
     // Generate filename with current date
     const currentDate = new Date().toISOString().split('T')[0];
-    const filename = `Numpy Developer-roadmap-${currentDate}.pdf`;
+    const filename = `Pandaas-Developer-roadmap-${currentDate}.pdf`;
 
     // Save the file
     saveAs(blob, filename);

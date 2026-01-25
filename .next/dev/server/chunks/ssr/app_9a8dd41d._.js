@@ -3505,26 +3505,6 @@ function CoursePage() {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
                                                                 lineNumber: 448,
                                                                 columnNumber: 25
-                                                            }, this),
-                                                            course.docs && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                onClick: (e)=>{
-                                                                    e.stopPropagation();
-                                                                    redirectToDocs(course.docs);
-                                                                },
-                                                                className: "absolute top-2 left-2 p-1.5 bg-white bg-opacity-90 rounded-full shadow hover:bg-opacity-100 transition-all group",
-                                                                title: "View Documentation",
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
-                                                                    size: 16,
-                                                                    className: "text-gray-700 group-hover:text-blue-600"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                    lineNumber: 465,
-                                                                    columnNumber: 29
-                                                                }, this)
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 457,
-                                                                columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
@@ -3540,7 +3520,7 @@ function CoursePage() {
                                                                 children: course.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 471,
+                                                                lineNumber: 460,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3551,7 +3531,7 @@ function CoursePage() {
                                                                         children: course.level
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 476,
+                                                                        lineNumber: 465,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3562,7 +3542,7 @@ function CoursePage() {
                                                                                 className: "text-yellow-400 fill-yellow-400 mr-1"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                                lineNumber: 480,
+                                                                                lineNumber: 469,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3570,19 +3550,19 @@ function CoursePage() {
                                                                                 children: course.rating
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                                lineNumber: 481,
+                                                                                lineNumber: 470,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 479,
+                                                                        lineNumber: 468,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 475,
+                                                                lineNumber: 464,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3597,20 +3577,20 @@ function CoursePage() {
                                                                                 className: "mr-2"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                                lineNumber: 491,
+                                                                                lineNumber: 480,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: "Watch Now"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                                lineNumber: 492,
+                                                                                lineNumber: 481,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 487,
+                                                                        lineNumber: 476,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     course.docs && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3621,24 +3601,24 @@ function CoursePage() {
                                                                             size: 14
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                            lineNumber: 502,
+                                                                            lineNumber: 491,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                        lineNumber: 497,
+                                                                        lineNumber: 486,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                                lineNumber: 486,
+                                                                lineNumber: 475,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                                        lineNumber: 470,
+                                                        lineNumber: 459,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
@@ -3662,17 +3642,17 @@ function CoursePage() {
                                                 size: windowWidth < 640 ? 16 : 20
                                             }, void 0, false, {
                                                 fileName: "[project]/app/Courses/coursePage.jsx",
-                                                lineNumber: 518,
+                                                lineNumber: 507,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/Courses/coursePage.jsx",
-                                            lineNumber: 513,
+                                            lineNumber: 502,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/Courses/coursePage.jsx",
-                                        lineNumber: 512,
+                                        lineNumber: 501,
                                         columnNumber: 19
                                     }, this)
                                 ]

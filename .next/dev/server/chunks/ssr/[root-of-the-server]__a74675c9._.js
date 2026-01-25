@@ -55,10 +55,10 @@ const viewport = {
     initialScale: 1
 };
 const metadata = {
-    title: "RoadmapFinder - Best Roadmap Generator for Programming, Web Dev, App Development & Tech Skills 2025",
-    description: "Find the best roadmap for programming, web development, app development, UI/UX design, backend, AI ML, data science, DevOps, and more. AI-powered roadmap generator with curated YouTube courses in Hindi & English. Free tech learning paths for beginners to advanced developers.",
-    keywords: "roadmap finder, programming roadmap, web development roadmap, app development roadmap, full stack developer roadmap, frontend roadmap, backend roadmap, mobile app development roadmap, UIUX roadmap, AI ML roadmap, data science roadmap, DevOps roadmap, software engineer roadmap, coding roadmap, learn programming, tech career roadmap, developer roadmap 2025, react roadmap, nodejs roadmap, python roadmap, java roadmap, javascript roadmap, roadmap generator, free roadmap, best programming roadmap, how to become developer, tech skills roadmap, YouTube courses Hindi, YouTube courses English, roadmapfinder, learning path, career guidance tech",
-    applicationName: "RoadmapFinder",
+    title: "AI Roadmap Generator - Free Industry-Ready Tech Skills Roadmaps with YouTube Resources 2025",
+    description: "Open-source AI roadmap generator for industry-ready tech skills. Get comprehensive roadmaps for web development, AI ML, programming, app development with curated YouTube courses in Hindi & English, official docs, projects & FAQs. Free learning platform for developers.",
+    keywords: "AI roadmap generator, tech skills roadmap, industry ready roadmap, programming roadmap, web development roadmap, AI ML roadmap, app development roadmap, open source roadmap, YouTube courses Hindi, YouTube courses English, free tech roadmap, developer roadmap, full stack roadmap, backend roadmap, frontend roadmap, mobile app roadmap, data science roadmap, DevOps roadmap, official documentation, tech projects, coding roadmap 2025, learn programming free, tech career path, roadmap with projects, roadmap with FAQ",
+    applicationName: "AI Roadmap Generator",
     authors: [
         {
             name: "Sohel Khan",
@@ -66,16 +66,16 @@ const metadata = {
         }
     ],
     creator: "Sohel Khan",
-    publisher: "RoadmapFinder",
+    publisher: "AI Roadmap Generator",
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     alternates: {
         canonical: "https://roadmapfinder.tech"
     },
     openGraph: {
-        title: "RoadmapFinder - Best Programming & Web Development Roadmap Generator 2025",
-        description: "Discover the best roadmap for programming, web dev, app development & 50+ tech skills. AI-powered roadmap generator with free courses in Hindi & English. Start your tech journey today!",
+        title: "AI Roadmap Generator - Industry-Ready Tech Skills Roadmaps with Free Resources",
+        description: "Open-source platform for industry-ready tech roadmaps. AI-powered roadmap generator with YouTube courses (Hindi & English), official docs, projects & FAQs. Free learning paths for web dev, AI ML, programming & more.",
         url: "https://roadmapfinder.tech",
-        siteName: "RoadmapFinder",
+        siteName: "AI Roadmap Generator",
         locale: "en_US",
         type: "website",
         images: [
@@ -83,14 +83,14 @@ const metadata = {
                 url: "https://roadmapfinder.tech/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "RoadmapFinder - AI-Powered Programming & Development Roadmaps"
+                alt: "AI Roadmap Generator - Industry-Ready Tech Skills Roadmaps"
             }
         ]
     },
     twitter: {
         card: "summary_large_image",
-        title: "RoadmapFinder - Programming Roadmap Generator & Free Courses",
-        description: "Best roadmap for web dev, app development, AI ML & more. AI-powered roadmap generator with curated YouTube courses. Learn programming in Hindi & English.",
+        title: "AI Roadmap Generator - Free Industry-Ready Tech Roadmaps & Resources",
+        description: "Open-source AI roadmap generator with industry-ready tech skills, YouTube courses in Hindi & English, official docs, projects & FAQs. Learn web dev, AI ML, programming & more.",
         site: "@roadmapfinder",
         creator: "@sohelkhan_dev",
         images: [
@@ -121,88 +121,88 @@ function RootLayout({ children }) {
                         content: "Sohel Khan"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 81,
-                        columnNumber: 11
+                        lineNumber: 80,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "language",
                         content: "English, Hindi"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 82,
-                        columnNumber: 11
+                        lineNumber: 81,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "distribution",
                         content: "global"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 83,
-                        columnNumber: 11
+                        lineNumber: 82,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "rating",
                         content: "general"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 84,
-                        columnNumber: 11
+                        lineNumber: 83,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "target",
                         content: "programmers, developers, students, tech learners, career switchers"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 85,
-                        columnNumber: 11
+                        lineNumber: 84,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "coverage",
                         content: "Worldwide"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 86,
-                        columnNumber: 11
+                        lineNumber: 85,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "HandheldFriendly",
                         content: "True"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 87,
-                        columnNumber: 11
+                        lineNumber: 86,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "MobileOptimized",
                         content: "320"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 88,
-                        columnNumber: 11
+                        lineNumber: 87,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "geo.region",
                         content: "IN"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 91,
-                        columnNumber: 11
+                        lineNumber: 90,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "geo.placename",
                         content: "India"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 92,
-                        columnNumber: 11
+                        lineNumber: 91,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "canonical",
                         href: "https://roadmapfinder.tech"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 95,
-                        columnNumber: 11
+                        lineNumber: 94,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "sitemap",
@@ -210,16 +210,16 @@ function RootLayout({ children }) {
                         href: "https://roadmapfinder.tech/sitemap.xml"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 96,
-                        columnNumber: 11
+                        lineNumber: 95,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "robots",
                         href: "https://roadmapfinder.tech/robots.txt"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 97,
-                        columnNumber: 11
+                        lineNumber: 96,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "icon",
@@ -227,8 +227,8 @@ function RootLayout({ children }) {
                         sizes: "32x32"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 100,
-                        columnNumber: 11
+                        lineNumber: 99,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "icon",
@@ -236,104 +236,104 @@ function RootLayout({ children }) {
                         type: "image/svg+xml"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 101,
-                        columnNumber: 11
+                        lineNumber: 100,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "apple-touch-icon",
                         href: "/apple-touch-icon.png"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 102,
-                        columnNumber: 11
+                        lineNumber: 101,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "manifest",
                         href: "/manifest.json"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 103,
-                        columnNumber: 11
+                        lineNumber: 102,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/Full-Stack",
-                        title: "Full Stack Web Development Roadmap - Frontend & Backend"
+                        title: "Full Stack Web Development Roadmap - Industry-Ready with Projects & Resources"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 106,
-                        columnNumber: 11
+                        lineNumber: 105,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/UIUX",
-                        title: "UI/UX Design Roadmap - Complete Guide to Product Design"
+                        title: "UI/UX Design Roadmap - Complete Guide with Official Docs & Projects"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 107,
-                        columnNumber: 11
+                        lineNumber: 106,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/Aiml",
-                        title: "AI & Machine Learning Roadmap - Deep Learning & Data Science"
+                        title: "AI & Machine Learning Roadmap - Industry Skills with Projects & FAQs"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 108,
-                        columnNumber: 11
+                        lineNumber: 107,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/Backend",
-                        title: "Backend Development Roadmap - Server, Database & APIs"
+                        title: "Backend Development Roadmap - Production-Ready Skills & Resources"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 109,
-                        columnNumber: 11
+                        lineNumber: 108,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/Frontend",
-                        title: "Frontend Development Roadmap - React, Vue, Angular"
+                        title: "Frontend Development Roadmap - Modern Web Dev with Projects"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 110,
-                        columnNumber: 11
+                        lineNumber: 109,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/Mobile-App",
-                        title: "Mobile App Development Roadmap - iOS & Android"
+                        title: "Mobile App Development Roadmap - iOS & Android with Official Docs"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 111,
-                        columnNumber: 11
+                        lineNumber: 110,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/DevOps",
-                        title: "DevOps Roadmap - CI/CD, Docker, Kubernetes"
+                        title: "DevOps Roadmap - Industry-Ready CI/CD, Docker, Kubernetes"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 112,
-                        columnNumber: 11
+                        lineNumber: 111,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "alternate",
                         href: "https://roadmapfinder.tech/Data-Science",
-                        title: "Data Science Roadmap - Analytics & Machine Learning"
+                        title: "Data Science Roadmap - Complete Path with Projects & Resources"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 113,
-                        columnNumber: 11
+                        lineNumber: 112,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "dns-prefetch",
                         href: "https://pagead2.googlesyndication.com"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 116,
-                        columnNumber: 11
+                        lineNumber: 115,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "preconnect",
@@ -341,24 +341,24 @@ function RootLayout({ children }) {
                         crossOrigin: "anonymous"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 117,
-                        columnNumber: 11
+                        lineNumber: 116,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "dns-prefetch",
                         href: "https://www.google-analytics.com"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 118,
-                        columnNumber: 11
+                        lineNumber: 117,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "preconnect",
                         href: "https://fonts.googleapis.com"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 119,
-                        columnNumber: 11
+                        lineNumber: 118,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "preconnect",
@@ -366,8 +366,8 @@ function RootLayout({ children }) {
                         crossOrigin: "anonymous"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 120,
-                        columnNumber: 11
+                        lineNumber: 119,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         async: true,
@@ -375,8 +375,8 @@ function RootLayout({ children }) {
                         crossOrigin: "anonymous"
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 123,
-                        columnNumber: 11
+                        lineNumber: 122,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
@@ -384,15 +384,15 @@ function RootLayout({ children }) {
                             __html: JSON.stringify({
                                 "@context": "https://schema.org",
                                 "@type": "WebApplication",
-                                "name": "RoadmapFinder - Programming & Development Roadmap Generator",
+                                "name": "AI Roadmap Generator - Industry-Ready Tech Skills Platform",
                                 "alternateName": [
-                                    "Roadmap Finder",
-                                    "Programming Roadmap",
-                                    "Developer Roadmap"
+                                    "AI Roadmap Generator",
+                                    "Tech Skills Roadmap",
+                                    "Open Source Learning Platform"
                                 ],
                                 "applicationCategory": "EducationalApplication",
                                 "url": "https://roadmapfinder.tech",
-                                "description": "AI-powered roadmap generator for programming, web development, app development, and 50+ tech skills. Find the best learning path with curated YouTube courses in Hindi and English. Free roadmaps for beginners to advanced developers.",
+                                "description": "Open-source AI roadmap generator providing industry-ready tech skills roadmaps with curated YouTube courses in Hindi and English, official documentation, real-world projects, and comprehensive FAQs. Free platform for web development, AI ML, programming, app development and 50+ tech skills.",
                                 "operatingSystem": "Web Browser, iOS, Android",
                                 "browserRequirements": "Requires JavaScript. Modern browser recommended.",
                                 "offers": {
@@ -409,14 +409,19 @@ function RootLayout({ children }) {
                                     "worstRating": "1"
                                 },
                                 "featureList": [
-                                    "AI-Powered Roadmap Generation",
-                                    "Programming Roadmaps (Python, Java, JavaScript, C++)",
+                                    "AI-Powered Industry-Ready Roadmap Generation",
+                                    "Curated YouTube Courses in Hindi & English",
+                                    "Official Documentation Links",
+                                    "Real-World Projects to Build",
+                                    "Comprehensive FAQ Sections",
                                     "Web Development Roadmaps (Full Stack, Frontend, Backend)",
+                                    "AI & Machine Learning Roadmaps",
+                                    "Programming Language Roadmaps (Python, Java, JavaScript, C++)",
                                     "Mobile App Development Roadmaps (React Native, Flutter, iOS, Android)",
                                     "UI/UX Design Learning Paths",
-                                    "Data Science & AI ML Roadmaps",
+                                    "Data Science & Analytics Roadmaps",
                                     "DevOps & Cloud Computing Roadmaps",
-                                    "Curated YouTube Courses in Hindi & English",
+                                    "Open Source Platform",
                                     "Personalized Learning Recommendations",
                                     "Career Guidance for Developers",
                                     "Free Learning Resources"
@@ -437,7 +442,7 @@ function RootLayout({ children }) {
                                 },
                                 "publisher": {
                                     "@type": "Organization",
-                                    "name": "RoadmapFinder",
+                                    "name": "AI Roadmap Generator",
                                     "url": "https://roadmapfinder.tech",
                                     "logo": {
                                         "@type": "ImageObject",
@@ -456,8 +461,8 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 130,
-                        columnNumber: 11
+                        lineNumber: 129,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
@@ -465,8 +470,8 @@ function RootLayout({ children }) {
                             __html: JSON.stringify({
                                 "@context": "https://schema.org",
                                 "@type": "ItemList",
-                                "name": "Programming & Development Roadmaps",
-                                "description": "Comprehensive list of tech learning roadmaps",
+                                "name": "Industry-Ready Tech Skills Roadmaps",
+                                "description": "Comprehensive industry-ready learning roadmaps with YouTube resources, official docs, projects & FAQs",
                                 "itemListElement": [
                                     {
                                         "@type": "ListItem",
@@ -474,11 +479,11 @@ function RootLayout({ children }) {
                                         "item": {
                                             "@type": "Course",
                                             "name": "Full Stack Web Development Roadmap",
-                                            "description": "Complete roadmap for becoming a full stack developer. Learn frontend (HTML, CSS, JavaScript, React) and backend (Node.js, databases, APIs) with curated courses.",
+                                            "description": "Industry-ready full stack developer roadmap with frontend (HTML, CSS, JavaScript, React) and backend (Node.js, databases, APIs). Includes curated YouTube courses in Hindi & English, official documentation, real-world projects to build, and comprehensive FAQs.",
                                             "url": "https://roadmapfinder.tech/Full-Stack",
                                             "provider": {
                                                 "@type": "Organization",
-                                                "name": "RoadmapFinder"
+                                                "name": "AI Roadmap Generator"
                                             },
                                             "educationalLevel": "Beginner to Advanced",
                                             "teaches": "Web Development, Frontend, Backend, JavaScript, React, Node.js"
@@ -490,11 +495,11 @@ function RootLayout({ children }) {
                                         "item": {
                                             "@type": "Course",
                                             "name": "UI/UX Design Roadmap",
-                                            "description": "Complete UI/UX design learning path covering design principles, Figma, user research, prototyping, and product design with Hindi & English resources.",
+                                            "description": "Industry-ready UI/UX design path covering design principles, Figma, user research, prototyping. Features YouTube resources in Hindi & English, official design docs, portfolio projects, and design FAQs.",
                                             "url": "https://roadmapfinder.tech/UIUX",
                                             "provider": {
                                                 "@type": "Organization",
-                                                "name": "RoadmapFinder"
+                                                "name": "AI Roadmap Generator"
                                             },
                                             "educationalLevel": "Beginner to Advanced",
                                             "teaches": "UI Design, UX Design, Figma, User Research, Prototyping"
@@ -506,11 +511,11 @@ function RootLayout({ children }) {
                                         "item": {
                                             "@type": "Course",
                                             "name": "AI & Machine Learning Roadmap",
-                                            "description": "Comprehensive AI and machine learning roadmap covering Python, deep learning, neural networks, NLP, and data science with practical projects.",
+                                            "description": "Comprehensive AI ML roadmap with Python, deep learning, neural networks, NLP. Includes YouTube tutorials (Hindi & English), official ML docs, hands-on projects, and AI/ML FAQs for industry readiness.",
                                             "url": "https://roadmapfinder.tech/Aiml",
                                             "provider": {
                                                 "@type": "Organization",
-                                                "name": "RoadmapFinder"
+                                                "name": "AI Roadmap Generator"
                                             },
                                             "educationalLevel": "Intermediate to Advanced",
                                             "teaches": "Artificial Intelligence, Machine Learning, Deep Learning, Python, Data Science"
@@ -522,11 +527,11 @@ function RootLayout({ children }) {
                                         "item": {
                                             "@type": "Course",
                                             "name": "Backend Development Roadmap",
-                                            "description": "Complete backend development guide covering server-side programming, databases (SQL, NoSQL), REST APIs, authentication, and deployment.",
+                                            "description": "Production-ready backend development guide with server programming, databases (SQL, NoSQL), REST APIs, authentication. Features YouTube courses in both languages, official backend docs, real-world projects, and backend FAQs.",
                                             "url": "https://roadmapfinder.tech/Backend",
                                             "provider": {
                                                 "@type": "Organization",
-                                                "name": "RoadmapFinder"
+                                                "name": "AI Roadmap Generator"
                                             },
                                             "educationalLevel": "Beginner to Advanced",
                                             "teaches": "Backend Development, APIs, Databases, Node.js, Python, Server Management"
@@ -538,11 +543,11 @@ function RootLayout({ children }) {
                                         "item": {
                                             "@type": "Course",
                                             "name": "Mobile App Development Roadmap",
-                                            "description": "Learn mobile app development for iOS and Android. Covers React Native, Flutter, Swift, Kotlin with practical app building projects.",
+                                            "description": "Industry-ready mobile app development for iOS and Android. Covers React Native, Flutter, Swift, Kotlin with YouTube tutorials (Hindi & English), official mobile docs, app projects to build, and mobile dev FAQs.",
                                             "url": "https://roadmapfinder.tech/Mobile-App",
                                             "provider": {
                                                 "@type": "Organization",
-                                                "name": "RoadmapFinder"
+                                                "name": "AI Roadmap Generator"
                                             },
                                             "educationalLevel": "Beginner to Advanced",
                                             "teaches": "Mobile Development, React Native, Flutter, iOS, Android"
@@ -553,8 +558,8 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 199,
-                        columnNumber: 11
+                        lineNumber: 203,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
@@ -562,8 +567,8 @@ function RootLayout({ children }) {
                             __html: JSON.stringify({
                                 "@context": "https://schema.org",
                                 "@type": "Organization",
-                                "name": "RoadmapFinder",
-                                "alternateName": "Roadmap Finder",
+                                "name": "AI Roadmap Generator",
+                                "alternateName": "Open Source Tech Learning Platform",
                                 "url": "https://roadmapfinder.tech",
                                 "logo": {
                                     "@type": "ImageObject",
@@ -571,7 +576,7 @@ function RootLayout({ children }) {
                                     "width": 250,
                                     "height": 250
                                 },
-                                "description": "AI-powered platform for generating personalized programming and tech learning roadmaps with free courses",
+                                "description": "Open-source AI-powered platform generating industry-ready tech skills roadmaps with YouTube courses (Hindi & English), official documentation, real-world projects, and comprehensive FAQs",
                                 "foundingDate": "2024",
                                 "founder": {
                                     "@type": "Person",
@@ -594,8 +599,8 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 294,
-                        columnNumber: 11
+                        lineNumber: 298,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
@@ -606,58 +611,66 @@ function RootLayout({ children }) {
                                 "mainEntity": [
                                     {
                                         "@type": "Question",
-                                        "name": "What is RoadmapFinder?",
+                                        "name": "What is AI Roadmap Generator?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "RoadmapFinder is an AI-powered platform that generates personalized learning roadmaps for programming, web development, app development, UI/UX design, backend development, AI ML, data science, DevOps and 50+ tech skills. It provides curated YouTube courses in both Hindi and English, making tech education accessible to everyone."
+                                            "text": "AI Roadmap Generator is an open-source platform that creates industry-ready tech skills roadmaps using AI. Each roadmap includes curated YouTube courses in Hindi and English, links to official documentation, real-world projects to build, and comprehensive FAQ sections. It covers web development, AI ML, programming, app development, and 50+ tech skills."
                                         }
                                     },
                                     {
                                         "@type": "Question",
-                                        "name": "How do I find the best programming roadmap?",
+                                        "name": "What resources are included in each roadmap?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Simply visit RoadmapFinder and select your desired tech skill (programming, web dev, app dev, etc.). Our AI will generate a personalized roadmap with step-by-step learning path, resources, and curated courses tailored to your skill level and goals."
+                                            "text": "Every roadmap on AI Roadmap Generator includes: (1) Industry-ready learning path, (2) Curated YouTube courses in both Hindi and English, (3) Links to official documentation, (4) Real-world projects to build for portfolio, (5) Comprehensive FAQ section answering common questions. This ensures you have all resources needed to become job-ready."
                                         }
                                     },
                                     {
                                         "@type": "Question",
-                                        "name": "Does RoadmapFinder offer courses in Hindi?",
+                                        "name": "Are the YouTube courses available in Hindi?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Yes, RoadmapFinder curates the best YouTube courses in both Hindi and English. This makes programming and tech education accessible to Indian learners and students who prefer learning in their native language."
+                                            "text": "Yes! AI Roadmap Generator curates the best YouTube courses in both Hindi and English languages. This makes tech education accessible to Indian learners and students who prefer learning in their native language while also providing English resources for comprehensive learning."
                                         }
                                     },
                                     {
                                         "@type": "Question",
-                                        "name": "What roadmaps are available on RoadmapFinder?",
+                                        "name": "What makes these roadmaps industry-ready?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "RoadmapFinder offers comprehensive roadmaps for: Full Stack Web Development, Frontend Development, Backend Development, Mobile App Development (iOS, Android, React Native, Flutter), UI/UX Design, AI & Machine Learning, Data Science, DevOps, Cloud Computing, Cybersecurity, and many more tech skills. All roadmaps are AI-generated and personalized to your learning needs."
+                                            "text": "Our roadmaps are industry-ready because they include: real-world projects to build for your portfolio, links to official documentation used by professionals, curated resources covering industry-standard tools and technologies, practical skills needed in actual job roles, and FAQ sections addressing real developer challenges."
                                         }
                                     },
                                     {
                                         "@type": "Question",
-                                        "name": "Is RoadmapFinder free to use?",
+                                        "name": "Is AI Roadmap Generator free and open source?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Yes, RoadmapFinder is completely free to use. You can generate unlimited roadmaps and access curated learning resources without any cost."
+                                            "text": "Yes, is completely free to use and open source. You can access unlimited roadmaps, YouTube courses, official docs, projects, and FAQs without any cost. Our mission is to make quality tech education accessible to everyone."
                                         }
                                     },
                                     {
                                         "@type": "Question",
-                                        "name": "How does the AI roadmap generator work?",
+                                        "name": "What tech skills roadmaps are available?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "Our AI roadmap generator analyzes your goals, current skill level, and learning preferences to create a personalized step-by-step learning path. It curates the best resources, courses, and projects to help you master your chosen tech skill efficiently."
+                                            "text": "Roadmapfinder offers industry-ready roadmaps for: Full Stack Web Development, Frontend Development, Backend Development, Mobile App Development (React Native, Flutter, iOS, Android), UI/UX Design, AI & Machine Learning, Data Science, DevOps, Cloud Computing, Python, JavaScript, React, Node.js, and many more. Each includes YouTube resources, official docs, projects, and FAQs."
                                         }
                                     },
                                     {
                                         "@type": "Question",
-                                        "name": "What is the best roadmap for web development beginners?",
+                                        "name": "How do the projects help in learning?",
                                         "acceptedAnswer": {
                                             "@type": "Answer",
-                                            "text": "For web development beginners, start with our Full Stack Web Development Roadmap. It covers HTML, CSS, JavaScript fundamentals, then progresses to frameworks like React, backend with Node.js, databases, and deployment. The roadmap includes beginner-friendly courses in both Hindi and English."
+                                            "text": "Each roadmap includes real-world projects to build that help you: apply concepts practically, build a strong portfolio for job applications, gain hands-on experience with industry tools, solve actual problems developers face, and demonstrate skills to potential employers."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Why are official docs included in roadmaps?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Official documentation is crucial for industry-ready learning because it provides: accurate, up-to-date information directly from source, industry-standard practices and conventions, comprehensive reference for advanced topics, the same resources professional developers use daily."
                                         }
                                     }
                                 ]
@@ -665,8 +678,8 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 330,
-                        columnNumber: 11
+                        lineNumber: 334,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
@@ -692,8 +705,8 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 399,
-                        columnNumber: 11
+                        lineNumber: 411,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                         type: "application/ld+json",
@@ -701,19 +714,19 @@ function RootLayout({ children }) {
                             __html: JSON.stringify({
                                 "@context": "https://schema.org",
                                 "@type": "EducationalOrganization",
-                                "name": "RoadmapFinder",
+                                "name": "AI Roadmap Generator",
                                 "url": "https://roadmapfinder.tech",
-                                "description": "Free AI-powered platform for tech education and career guidance",
+                                "description": "Free open-source AI-powered platform for industry-ready tech education with YouTube resources, official docs, projects & FAQs",
                                 "hasOfferCatalog": {
                                     "@type": "OfferCatalog",
-                                    "name": "Tech Learning Roadmaps",
+                                    "name": "Industry-Ready Tech Learning Roadmaps",
                                     "itemListElement": [
                                         {
                                             "@type": "Offer",
                                             "itemOffered": {
                                                 "@type": "Course",
                                                 "name": "Programming Roadmaps",
-                                                "description": "Comprehensive programming learning paths"
+                                                "description": "Industry-ready programming paths with YouTube courses (Hindi & English), official docs, projects & FAQs"
                                             }
                                         },
                                         {
@@ -721,7 +734,7 @@ function RootLayout({ children }) {
                                             "itemOffered": {
                                                 "@type": "Course",
                                                 "name": "Web Development Roadmaps",
-                                                "description": "Full stack, frontend, and backend development paths"
+                                                "description": "Full stack, frontend, backend paths with curated resources, official docs, projects & FAQs"
                                             }
                                         },
                                         {
@@ -729,7 +742,15 @@ function RootLayout({ children }) {
                                             "itemOffered": {
                                                 "@type": "Course",
                                                 "name": "App Development Roadmaps",
-                                                "description": "Mobile app development for iOS and Android"
+                                                "description": "Mobile app development for iOS and Android with YouTube tutorials, official docs, projects & FAQs"
+                                            }
+                                        },
+                                        {
+                                            "@type": "Offer",
+                                            "itemOffered": {
+                                                "@type": "Course",
+                                                "name": "AI & Machine Learning Roadmaps",
+                                                "description": "AI ML paths with comprehensive resources, official docs, ML projects & FAQs"
                                             }
                                         }
                                     ]
@@ -738,14 +759,14 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 424,
-                        columnNumber: 11
+                        lineNumber: 436,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.js",
-                lineNumber: 79,
-                columnNumber: 9
+                lineNumber: 78,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
                 className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$sora_e8a69026$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].className} bg-[#F9FAFB] text-gray-900 antialiased`,
@@ -760,18 +781,18 @@ function RootLayout({ children }) {
                         },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                children: "RoadmapFinder - Best Programming Roadmap Generator"
+                                children: "Roadmapfinder - Industry-Ready Tech Skills Roadmaps"
                             }, void 0, false, {
                                 fileName: "[project]/app/layout.js",
-                                lineNumber: 471,
-                                columnNumber: 13
+                                lineNumber: 491,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                children: "Find the best roadmap for programming, web development, app development, and 50+ tech skills."
+                                children: "Open-source platform providing industry-ready tech roadmaps with YouTube courses in Hindi & English, official documentation, real-world projects to build, and comprehensive FAQs."
                             }, void 0, false, {
                                 fileName: "[project]/app/layout.js",
-                                lineNumber: 472,
-                                columnNumber: 13
+                                lineNumber: 492,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                                 "aria-label": "Main roadmaps",
@@ -780,216 +801,216 @@ function RootLayout({ children }) {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Full-Stack",
-                                                children: "Full Stack Web Development Roadmap"
+                                                children: "Full Stack Web Development Roadmap with Projects & Docs"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 475,
-                                                columnNumber: 21
+                                                lineNumber: 495,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 475,
-                                            columnNumber: 17
+                                            lineNumber: 495,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Frontend",
-                                                children: "Frontend Development Roadmap"
+                                                children: "Frontend Development Roadmap with YouTube Resources"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 476,
-                                                columnNumber: 21
+                                                lineNumber: 496,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 476,
-                                            columnNumber: 17
+                                            lineNumber: 496,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Backend",
-                                                children: "Backend Development Roadmap"
+                                                children: "Backend Development Roadmap with Official Docs"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 477,
-                                                columnNumber: 21
+                                                lineNumber: 497,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 477,
-                                            columnNumber: 17
+                                            lineNumber: 497,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Android",
-                                                children: "Mobile App Development Roadmap"
+                                                children: "Mobile App Development Roadmap with Projects"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 478,
-                                                columnNumber: 21
+                                                lineNumber: 498,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 478,
-                                            columnNumber: 17
+                                            lineNumber: 498,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/UIUX",
-                                                children: "UI/UX Design Roadmap"
+                                                children: "UI/UX Design Roadmap with Portfolio Projects"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 479,
-                                                columnNumber: 21
+                                                lineNumber: 499,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 479,
-                                            columnNumber: 17
+                                            lineNumber: 499,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Aiml",
-                                                children: "AI Machine Learning Roadmap"
+                                                children: "AI Machine Learning Roadmap with ML Projects"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 480,
-                                                columnNumber: 21
+                                                lineNumber: 500,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 480,
-                                            columnNumber: 17
+                                            lineNumber: 500,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Data-Science",
-                                                children: "Data Science Roadmap"
+                                                children: "Data Science Roadmap with Real Projects"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 481,
-                                                columnNumber: 21
+                                                lineNumber: 501,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 481,
-                                            columnNumber: 17
+                                            lineNumber: 501,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Devops",
-                                                children: "DevOps Roadmap"
+                                                children: "DevOps Roadmap with Industry Tools"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 482,
-                                                columnNumber: 21
+                                                lineNumber: 502,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 482,
-                                            columnNumber: 17
+                                            lineNumber: 502,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Python",
-                                                children: "Python Programming Roadmap"
+                                                children: "Python Programming Roadmap with Projects & FAQs"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 483,
-                                                columnNumber: 21
+                                                lineNumber: 503,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 483,
-                                            columnNumber: 17
+                                            lineNumber: 503,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Javascript",
-                                                children: "JavaScript Roadmap"
+                                                children: "JavaScript Roadmap with Official Docs"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 484,
-                                                columnNumber: 21
+                                                lineNumber: 504,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 484,
-                                            columnNumber: 17
+                                            lineNumber: 504,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/React",
-                                                children: "React Developer Roadmap"
+                                                children: "React Developer Roadmap with Real Projects"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 485,
-                                                columnNumber: 21
+                                                lineNumber: 505,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 485,
-                                            columnNumber: 17
+                                            lineNumber: 505,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/Nodejs",
-                                                children: "Node.js Backend Roadmap"
+                                                children: "Node.js Backend Roadmap with YouTube Resources"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/layout.js",
-                                                lineNumber: 486,
-                                                columnNumber: 21
+                                                lineNumber: 506,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/layout.js",
-                                            lineNumber: 486,
-                                            columnNumber: 17
+                                            lineNumber: 506,
+                                            columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/layout.js",
-                                    lineNumber: 474,
-                                    columnNumber: 15
+                                    lineNumber: 494,
+                                    columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/layout.js",
-                                lineNumber: 473,
-                                columnNumber: 13
+                                lineNumber: 493,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 470,
-                        columnNumber: 11
+                        lineNumber: 490,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                         children: children
                     }, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 491,
-                        columnNumber: 11
+                        lineNumber: 511,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 492,
-                        columnNumber: 11
+                        lineNumber: 512,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$speed$2d$insights$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SpeedInsights"], {}, void 0, false, {
                         fileName: "[project]/app/layout.js",
-                        lineNumber: 493,
-                        columnNumber: 11
+                        lineNumber: 513,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.js",
-                lineNumber: 468,
-                columnNumber: 9
+                lineNumber: 488,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/layout.js",
-        lineNumber: 78,
-        columnNumber: 7
+        lineNumber: 77,
+        columnNumber: 5
     }, this);
 }
 }),
