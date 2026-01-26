@@ -1,6 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
 import { Sora } from "next/font/google";
 
@@ -20,12 +19,12 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "AI Roadmap Generator - Free Industry-Ready Tech Skills Roadmaps with YouTube Resources 2025",
+  title: "Roadmapfinder - Free Industry-Ready Tech Skills Roadmaps with YouTube Resources 2026",
   description:
-    "Open-source AI roadmap generator for industry-ready tech skills. Get comprehensive roadmaps for web development, AI ML, programming, app development with curated YouTube courses in Hindi & English, official docs, projects & FAQs. Free learning platform for developers.",
+    "Open-source  for industry-ready tech skills. Get comprehensive roadmaps for web development, AI ML, programming, app development with curated YouTube courses in Hindi & English, official docs, projects & FAQs. Free learning platform for developers.",
   keywords:
-    "AI roadmap generator, tech skills roadmap, industry ready roadmap, programming roadmap, web development roadmap, AI ML roadmap, app development roadmap, open source roadmap, YouTube courses Hindi, YouTube courses English, free tech roadmap, developer roadmap, full stack roadmap, backend roadmap, frontend roadmap, mobile app roadmap, data science roadmap, DevOps roadmap, official documentation, tech projects, coding roadmap 2025, learn programming free, tech career path, roadmap with projects, roadmap with FAQ",
-  applicationName: "AI Roadmap Generator",
+    "roadmapfinder, tech skills roadmap, industry ready roadmap, programming roadmap, web development roadmap, AI ML roadmap, app development roadmap, open source roadmap, YouTube courses Hindi, YouTube courses English, free tech roadmap, developer roadmap, full stack roadmap, backend roadmap, frontend roadmap, mobile app roadmap, data science roadmap, DevOps roadmap, official documentation, tech projects, coding roadmap 2025, learn programming free, tech career path, roadmap with projects, roadmap with FAQ",
+  applicationName: "Roadmapfinder",
   authors: [{ name: "Sohel Khan", url: "https://roadmapfinder.tech" }],
   creator: "Sohel Khan",
   publisher: "Roadmapfinder",

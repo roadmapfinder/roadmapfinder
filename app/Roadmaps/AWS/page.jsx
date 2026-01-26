@@ -7,7 +7,7 @@ import Faq from './faq';
 import { downloadRoadmapPDF } from './downloadPdf';
 import { phases } from './roadmapData';
 
-const AIMLMasteryRoadmap = () => {
+const AwsRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -229,4 +229,4 @@ const AIMLMasteryRoadmap = () => {
   );
 };
 
-export default AIMLMasteryRoadmap;
+export default AwsRoadmap;

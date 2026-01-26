@@ -89,6 +89,7 @@ import spark from "./roadmaps-icons/spark.png"
 import photoshop from "./roadmaps-icons/photoshop.png"
 import illustrator from "./roadmaps-icons/illustrator.png"
 import canva from "./roadmaps-icons/Canva.png"
+import effects from "./roadmaps-icons/after-effects.png"
 
 
 
@@ -634,6 +635,14 @@ export const roadmapsData = [
     description: "Network engineering fundamentals",
   },
   {
+    id: "after-effects",
+    title: "After Effects",
+    icon: <RoadmapIcon src={effects} alt="after-effects" />,
+    link: "/Roadmaps/After-Effects",
+    category: "trending",
+    description: "creating motion graphics, visual effects (VFX), and cinematic titles",
+  },
+  {
     id: "video",
     title: "Video Editing",
     icon: <RoadmapIcon src={videoIcon} alt="Video Editing" />,
@@ -803,14 +812,7 @@ export const roadmapsData = [
     category: "trending",
     description: "Product management fundamentals",
   },
-  {
-    id: "pern",
-    title: "PERN Stack",
-    icon: <RoadmapIcon src={pernIcon} alt="PERN Stack" />,
-    link: "/Roadmaps/pern",
-    category: "trending",
-    description: "PostgreSQL, Express, React, Node.js stack",
-  },
+
   {
     id: "context",
     title: "Context API",
