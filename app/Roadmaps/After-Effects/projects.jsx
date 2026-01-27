@@ -9,7 +9,7 @@ const projects = [
     title: "Kinetic Typography Promo",
     description:
       "Create a 20–30 second kinetic typography video using text animators, keyframes, easing, graph editor, and motion blur. Focus on timing and rhythm.",
-    url: "https://helpx.adobe.com/after-effects/tutorials.html"
+    url: "https://youtu.be/UahA-6QYfC0?si=xmlUShEGMkbLM_BO"
   },
   {
     id: "phase1-logo-reveal",
@@ -17,7 +17,7 @@ const projects = [
     title: "Logo Reveal Animation",
     description:
       "Animate a clean logo reveal using shape layers, trim paths, masks, and smooth easing. Learn professional logo animation workflow.",
-    url: "https://helpx.adobe.com/after-effects/using/animating-shapes.html"
+    url: "https://youtu.be/jeVcB0fYPcI?si=TU2qiJcxWulqRkY5"
   },
 
   // 🌿 Intermediate
@@ -27,7 +27,7 @@ const projects = [
     title: "Explainer Video Scene",
     description:
       "Design a short explainer video scene using icons, shape animation, text, and storytelling principles. Learn pre-compositions and clean timelines.",
-    url: "https://www.adobe.com/learn/after-effects"
+    url: "https://youtu.be/Up_QkN8UhmU?si=3rEAeKFd9IopVAhf"
   },
   {
     id: "phase2-reel-edit",
@@ -35,7 +35,7 @@ const projects = [
     title: "Instagram Reel / YouTube Short",
     description:
       "Create a fast-paced vertical video synced to music beats. Learn speed ramps, transitions, typography overlays, and social-media-ready exports.",
-    url: "https://helpx.adobe.com/after-effects/using/rendering-exporting.html"
+    url: "https://youtu.be/fYvXeEVrN7Q?si=E1NHX_WALed69K81"
   },
 
   // 🌳 Advanced
@@ -45,7 +45,7 @@ const projects = [
     title: "Product Promo / Ad Video",
     description:
       "Build a cinematic product promo using 3D layers, camera animation, lighting, color grading, and polished motion design techniques.",
-    url: "https://helpx.adobe.com/after-effects/using/3d-layers.html"
+    url: "https://youtu.be/Fu659J3qOCw?si=-5jGcdMSZNooKkY1"
   },
   {
     id: "phase3-vfx-composite",
@@ -53,7 +53,7 @@ const projects = [
     title: "VFX Composite Shot",
     description:
       "Create a realistic VFX shot using masking, rotoscoping, tracking, blend modes, and compositing techniques to integrate effects into live footage.",
-    url: "https://helpx.adobe.com/after-effects/using/rotoscoping.html"
+    url: "https://youtu.be/Ytr05GmPRWA?si=AUUny7dClsA0WWgB"
   }
 ];
 

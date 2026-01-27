@@ -67,7 +67,6 @@ import genAiIcon from "./roadmaps-icons/ai.png";
 import gitIcon from "./roadmaps-icons/GitHub.png";
 import tailwindIcon from "./roadmaps-icons/Tailwind CSS.png";
 import productManagerIcon from "./roadmaps-icons/app.png";
-import pernIcon from "./roadmaps-icons/pern.png";
 import contextIcon from "./roadmaps-icons/system.png";
 import electron from "./roadmaps-icons/Electron.png";
 import css from "./roadmaps-icons/Css.png";
@@ -91,6 +90,7 @@ import illustrator from "./roadmaps-icons/illustrator.png"
 import canva from "./roadmaps-icons/Canva.png"
 import effects from "./roadmaps-icons/after-effects.png"
 import capcut from "./roadmaps-icons/capcut-icon.png"
+import davinci from "./roadmaps-icons/davinci.png"
 
 
 
@@ -650,6 +650,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Capcut",
     category: "trending",
     description: "Creating, editing, and enhancing short-form content with features like AI-powered effects",
+  },
+  {
+    id: "davinci",
+    title: "DaVinci Resolve",
+    icon: <RoadmapIcon src={davinci} alt="davinci" />,
+    link: "/Roadmaps/Davinci",
+    category: "trending",
+    description: "professional video editing, advanced color correction/grading, visual effects (VFX), motion graphics, and audio post-production (Fairlight)",
   },
   {
     id: "video",

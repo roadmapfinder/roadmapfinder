@@ -34,13 +34,25 @@
       "id": 1,
       "category": "Web Development",
       "title": "Complete Web Development Bootcamp",
-      "level": "Beginner to Intermediate",
-      "rating": 4.8,
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
       "image": "sigma",
       "videoId": "https://youtu.be/tVzUXW6siu0?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
       "badge": "TRENDING",
       "language": "Hindi",
       "docs": "/Docs/sigma"
+    },
+    {
+      "id": 1,
+      "category": "Web Development",
+      "title": "Full Stack engineer complete course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "fullstack",
+      "videoId": "https://youtu.be/LzMnsfqjzkA?si=Yws7tCEIiMIcU5H8",
+      "badge": "TRENDING",
+      "language": "English",
+      "docs": "/Docs/full-stack"
     },
     {
       "id": 2,
