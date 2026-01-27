@@ -90,6 +90,7 @@ import photoshop from "./roadmaps-icons/photoshop.png"
 import illustrator from "./roadmaps-icons/illustrator.png"
 import canva from "./roadmaps-icons/Canva.png"
 import effects from "./roadmaps-icons/after-effects.png"
+import capcut from "./roadmaps-icons/capcut-icon.png"
 
 
 
@@ -641,6 +642,14 @@ export const roadmapsData = [
     link: "/Roadmaps/After-Effects",
     category: "trending",
     description: "creating motion graphics, visual effects (VFX), and cinematic titles",
+  },
+  {
+    id: "capcut",
+    title: "Capcut",
+    icon: <RoadmapIcon src={capcut} alt="capcut" />,
+    link: "/Roadmaps/Capcut",
+    category: "trending",
+    description: "Creating, editing, and enhancing short-form content with features like AI-powered effects",
   },
   {
     id: "video",
