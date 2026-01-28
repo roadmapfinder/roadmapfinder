@@ -91,6 +91,7 @@ import canva from "./roadmaps-icons/Canva.png"
 import effects from "./roadmaps-icons/after-effects.png"
 import capcut from "./roadmaps-icons/capcut-icon.png"
 import davinci from "./roadmaps-icons/davinci.png"
+import fastify from "./roadmaps-icons/Fastify.png"
 
 
 
@@ -303,6 +304,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Expressjs",
     category: "featured",
     description: "Server-side development and APIs",
+  },
+  {
+    id: "fastify",
+    title: "Fastify",
+    icon: <RoadmapIcon src={fastify} alt="fastify" />,
+    link: "/Roadmaps/Fastify",
+    category: "featured",
+    description: "Scalable and efficient backend applications, particularly REST APIs and microservices",
   },
   {
     id: "Electron js",

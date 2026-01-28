@@ -1089,7 +1089,7 @@
     {
       "id": 63,
       "category": "Frameworks & Libraries",
-      "title": "Complet node js masterclass in depth",
+      "title": "Complete node js masterclass in depth",
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "nodejs",
@@ -1097,6 +1097,18 @@
       "badge": "HOT",
       "language": "Hindi",
       "docs": "/Docs/nodejs"
+    },
+    {
+      "id": 63,
+      "category": "Frameworks & Libraries",
+      "title": "Complete fastify course",
+      "level": "Beginner to Intermediate",
+      "rating": 4.9,
+      "image": "fastify",
+      "videoId": "https://youtube.com/watch?v=T23qRC58MpM",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/fastify"
     },
     {
       "id": 63,
