@@ -36,9 +36,9 @@ export default function NotificationPage() {
       id: 5,
       type: 'course',
       icon: '⚛️',
-      title: 'Next.js Fundamentals',
-      message: 'New chapter on App Router and Server Components',
-      timestamp: '1 week ago',
+      title: 'Full-Stack complete course in english',
+      message: 'covers mern and next js and deployment',
+      timestamp: '1 day ago',
       read: false,
       createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
     }

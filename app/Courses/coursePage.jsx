@@ -134,6 +134,8 @@ import powerb from "./CoursesImage/powerb.jpg"
 import testing from "./CoursesImage/testing.jpg"
 import pytorch from "./CoursesImage/pytorch.jpg"
 import fullstack from "./CoursesImage/fullstack.jpg"
+import css from "./CoursesImage/css.jpg"
+import html from "./CoursesImage/html.jpg"
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -146,6 +148,7 @@ import creator7 from "../Images/babbar.jpg";
 import creator8 from "../Images/ansh.png"
 import creator9 from "../Images/freecodecamp.jpg"
 import creator10 from "../Images/sagar.jpg"
+
 
 
 
@@ -174,7 +177,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css
 };
 
 // Creator images array

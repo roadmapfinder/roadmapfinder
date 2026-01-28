@@ -45,6 +45,30 @@
     {
       "id": 1,
       "category": "Web Development",
+      "title": "Complete Html course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "html",
+      "videoId": "https://youtube.com/watch?v=iVCzmDwIQpA",
+      "badge": "TRENDING",
+      "language": "Hindi",
+      "docs": "/Docs/html"
+    },
+    {
+      "id": 1,
+      "category": "Web Development",
+      "title": "Complete Css Bootcamp",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "css",
+      "videoId": "https://youtu.be/ksD9g8cT8lI?si=Dh1YUFhAAk28n4RS",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/css"
+    },
+    {
+      "id": 1,
+      "category": "Web Development",
       "title": "Full Stack engineer complete course",
       "level": "Beginner to Advanced",
       "rating": 4.9,
