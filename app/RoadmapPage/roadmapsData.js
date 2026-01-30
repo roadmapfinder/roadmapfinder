@@ -93,6 +93,7 @@ import capcut from "./roadmaps-icons/capcut-icon.png"
 import davinci from "./roadmaps-icons/davinci.png"
 import fastify from "./roadmaps-icons/Fastify.png"
 import net from "./roadmaps-icons/NET.png"
+import automation from "./roadmaps-icons/automation.png"
 
 
 
@@ -153,6 +154,14 @@ export const roadmapsData = [
     link: "/Roadmaps/AI-Agent",
     category: "featured",
     description: "No code AI agents and applications",
+  },
+  {
+    id: "ai automation",
+    title: "AI Automation",
+    icon: <RoadmapIcon src={automation} alt="AI automation" />,
+    link: "/Roadmaps/AI-Automation",
+    category: "featured",
+    description: "AI automation uses machine learning, natural language processing (NLP), and cognitive technologies to handle complex, repetitive tasks—such",
   },
   {
     id: "langchain",
