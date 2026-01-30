@@ -12,7 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import roadmap from "../Images/roadmap.png";
-import defaultUserImage from "../Images/user.jpg";
+
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);

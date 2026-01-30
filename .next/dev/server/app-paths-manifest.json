@@ -1,1 +1,4 @@
-{}
+{
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/page": "app/page.js"
+}

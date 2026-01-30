@@ -10,7 +10,7 @@ const projects = [
     title: "Authentication & Authorization API",
     description:
       "Build a Fastify authentication system with user registration, login, password hashing, JWT access & refresh tokens, role-based access control, and protected routes using Fastify plugins.",
-    url: "https://fastify.dev/docs/latest/Guides/Authentication/"
+    url: "https://youtu.be/xJA8tP74KD0?si=BM3ObB6j2ib8O2vg"
   },
   {
     id: "phase1-crud-api",
@@ -18,17 +18,17 @@ const projects = [
     title: "RESTful CRUD API",
     description:
       "Create a REST API using Fastify to manage resources like tasks or notes. Implement CRUD operations, schema validation, pagination, filtering, centralized error handling, and proper response serialization.",
-    url: "https://fastify.dev/docs/latest/Reference/Routes/"
+    url: "https://youtu.be/LMoMHP44-xM?si=bEaMH69K1lMEUUqb"
   },
 
   // ⚙️ Intermediate Phase
   {
     id: "phase2-blog-backend",
     level: "Intermediate (2–3 months)",
-    title: "Blog / CMS Backend",
+    title: "Blog website",
     description:
       "Develop a CMS backend using Fastify with users, posts, comments, categories, draft & publish workflows, admin roles, database integration, and clean plugin-based architecture.",
-    url: "https://fastify.dev/docs/latest/Guides/Ecosystem/"
+    url: "https://youtu.be/1hROFu5WLzg?si=2xvnidTOSpvHL32w/"
   },
   {
     id: "phase2-notes-api",
@@ -36,7 +36,7 @@ const projects = [
     title: "Notes App Backend (Fastify + MongoDB)",
     description:
       "Build a notes application backend using Fastify and MongoDB with authentication, authorization, schema validation, indexing, and clean repository/service separation.",
-    url: "https://github.com/fastify/fastify-mongodb"
+    url: "https://youtu.be/xENx639mPxg?si=FuT2fUxQ4XiJ6wnv"
   },
 
   // 🚀 Advanced / Industry-Ready Phase
@@ -46,7 +46,7 @@ const projects = [
     title: "File Upload & Streaming Service",
     description:
       "Implement large file uploads and streaming downloads using Fastify streams and multipart handling. Focus on memory safety, backpressure, and production-grade error handling.",
-    url: "https://github.com/fastify/fastify-multipart"
+    url: "https://www.youtube.com/live/IcGsgGTkwSo?si=hoNRgXkUrCUnHQxG"
   },
   {
     id: "phase3-saas-backend",
@@ -54,7 +54,7 @@ const projects = [
     title: "Multi-Tenant SaaS Backend",
     description:
       "Create a production-grade SaaS backend with organizations, users, roles, subscriptions, usage limits, API versioning, audit logs, rate limiting, and deployment-ready Fastify architecture.",
-    url: "https://fastify.dev/docs/latest/Guides/Plugins-Guide/"
+    url: "https://youtu.be/b6VhN_HHDiQ?si=pAHKTaMNP49OrKuj"
   }
 ];
 
@@ -97,7 +97,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
                 >
-                  Official Reference ▶
+                  View Tutorial ▶
                 </a>
               )}
             </article>

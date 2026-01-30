@@ -92,6 +92,7 @@ import effects from "./roadmaps-icons/after-effects.png"
 import capcut from "./roadmaps-icons/capcut-icon.png"
 import davinci from "./roadmaps-icons/davinci.png"
 import fastify from "./roadmaps-icons/Fastify.png"
+import net from "./roadmaps-icons/NET.png"
 
 
 
@@ -208,6 +209,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Fastapi",
     category: "featured",
     description: "Scalable web application using python",
+  },
+  {
+    id: ".net",
+    title: ".Net",
+    icon: <RoadmapIcon src={net} alt=".net" />,
+    link: "/Roadmaps/.Net",
+    category: "featured",
+    description: "Build, run, and deploy various applications across Windows, Linux, macOS, iOS, and Android",
   },
   {
     id: "react",
