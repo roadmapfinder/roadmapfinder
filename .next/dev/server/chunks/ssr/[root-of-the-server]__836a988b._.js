@@ -4,201 +4,530 @@ module.exports = [
 
 __turbopack_context__.s([
     "default",
-    ()=>__TURBOPACK__default__export__
+    ()=>AiAutomationDocs
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/external-link.js [app-ssr] (ecmascript) <export default as ExternalLink>");
 ;
 ;
-const Docs = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-white rounded-xl shadow-sm border border-gray-200 p-8",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                className: "text-2xl font-bold text-gray-900 mb-4",
-                children: "Documentation"
-            }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                lineNumber: 6,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-gray-600 mb-6",
-                children: "Detailed documentation and learning resources for AI Automation Engineering."
-            }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                lineNumber: 7,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-4",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-4 bg-blue-50 rounded-lg border border-blue-100",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-semibold text-blue-900",
-                                children: "Getting Started"
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                                lineNumber: 12,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-blue-800 mt-1",
-                                children: "Foundational concepts and setup guides."
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                                lineNumber: 13,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                        lineNumber: 11,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-4 bg-green-50 rounded-lg border border-green-100",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-semibold text-green-900",
-                                children: "Advanced Topics"
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                                lineNumber: 16,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-green-800 mt-1",
-                                children: "Deep dives into LLMs, RAG, and Agentic workflows."
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                                lineNumber: 17,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                        lineNumber: 15,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
+;
+const docsList = [
+    {
+        title: "OpenAI API Documentation (Official)",
+        description: "Official OpenAI API documentation covering GPT models, embeddings, function calling, assistants, streaming, pricing, and best practices.",
+        url: "https://platform.openai.com/docs",
+        citation: "OpenAI Official"
+    },
+    {
+        title: "Google Gemini API Documentation",
+        description: "Official Gemini API docs by Google — multimodal models, prompt design, safety, SDKs, and enterprise-ready generative AI workflows.",
+        url: "https://ai.google.dev/gemini-api/docs",
+        citation: "Google AI Official"
+    },
+    {
+        title: "Anthropic Claude API Docs",
+        description: "Official Claude API documentation — system prompts, tool use, long context, safety design, and structured outputs.",
+        url: "https://docs.anthropic.com/",
+        citation: "Anthropic Official"
+    },
+    {
+        title: "LangChain Documentation",
+        description: "Core framework for building LLM-powered applications — chains, agents, tools, memory, RAG, and production patterns.",
+        url: "https://python.langchain.com/docs/",
+        citation: "LangChain Docs"
+    },
+    {
+        title: "LlamaIndex Documentation",
+        description: "Official documentation for LlamaIndex — data connectors, indexing, retrieval, RAG pipelines, and agent integrations.",
+        url: "https://docs.llamaindex.ai/",
+        citation: "LlamaIndex Official"
+    },
+    {
+        title: "CrewAI Documentation",
+        description: "Agent orchestration framework documentation — multi-agent systems, task delegation, tools, and autonomous workflows.",
+        url: "https://docs.crewai.com/",
+        citation: "CrewAI Official"
+    },
+    {
+        title: "n8n Automation Platform Docs",
+        description: "Official n8n documentation — workflow automation, triggers, webhooks, AI integrations, retries, and error handling.",
+        url: "https://docs.n8n.io/",
+        citation: "n8n Official"
+    },
+    {
+        title: "Pipedream Developer Docs",
+        description: "Code-first automation platform documentation — event-driven workflows, APIs, cron jobs, and AI integrations.",
+        url: "https://docs.pipedream.com/",
+        citation: "Pipedream Docs"
+    },
+    {
+        title: "FastAPI Documentation",
+        description: "High-performance backend framework used in AI automation — async APIs, auth, background tasks, and OpenAPI support.",
+        url: "https://fastapi.tiangolo.com/",
+        citation: "FastAPI Official"
+    },
+    {
+        title: "PostgreSQL Official Docs",
+        description: "Official PostgreSQL documentation — schemas, indexing, transactions, performance tuning, and production usage.",
+        url: "https://www.postgresql.org/docs/",
+        citation: "PostgreSQL Official"
+    },
+    {
+        title: "Pinecone Vector Database Docs",
+        description: "Official Pinecone documentation — embeddings storage, similarity search, hybrid search, and scalable vector indexing.",
+        url: "https://docs.pinecone.io/",
+        citation: "Pinecone Official"
+    },
+    {
+        title: "Docker Documentation",
+        description: "Official Docker docs — containerization, Dockerfiles, images, volumes, and production deployment workflows.",
+        url: "https://docs.docker.com/",
+        citation: "Docker Official"
+    },
+    {
+        title: "AWS Documentation",
+        description: "Amazon Web Services official documentation — EC2, Lambda, S3, IAM, and cloud infrastructure for AI automation.",
+        url: "https://docs.aws.amazon.com/",
+        citation: "AWS Official"
+    },
+    {
+        title: "LangSmith (LLM Observability)",
+        description: "Official LangSmith documentation — debugging, monitoring, testing, and evaluating LLM-based automation pipelines.",
+        url: "https://docs.smith.langchain.com/",
+        citation: "LangSmith Official"
+    }
+];
+function AiAutomationDocs() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "px-6 py-12 bg-gray-50 min-h-screen",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-6xl mx-auto",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    className: "text-3xl font-bold text-gray-900 mb-6",
+                    children: "🤖 AI Automation Engineer – Official Documentation"
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                    lineNumber: 109,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "text-gray-600 mb-10 max-w-3xl",
+                    children: "Curated official documentation every AI Automation Engineer must know — covering LLM APIs, agents, automation platforms, backend systems, vector databases, deployment, and production best practices."
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                    lineNumber: 112,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",
+                    children: docsList.map((doc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: doc.url,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-start justify-between gap-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-lg font-semibold text-gray-900 group-hover:text-indigo-600 leading-snug",
+                                            children: doc.title
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                                            lineNumber: 128,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
+                                            size: 18,
+                                            className: "text-gray-400 group-hover:text-indigo-600 shrink-0 mt-1",
+                                            "aria-hidden": "true"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                                            lineNumber: 131,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                                    lineNumber: 127,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-3 text-sm text-gray-600 leading-relaxed",
+                                    children: doc.description
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                                    lineNumber: 138,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-4 text-xs text-indigo-600 font-medium",
+                                    children: doc.citation
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                                    lineNumber: 142,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, doc.title, true, {
+                            fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                            lineNumber: 120,
+                            columnNumber: 13
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+                    lineNumber: 118,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
+            lineNumber: 108,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/app/Roadmaps/AI-Automation/docs.jsx",
-        lineNumber: 5,
+        lineNumber: 107,
         columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
-};
-const __TURBOPACK__default__export__ = Docs;
+    }, this);
+}
 }),
 "[project]/app/Roadmaps/AI-Automation/projects.jsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
     "default",
-    ()=>__TURBOPACK__default__export__
+    ()=>AiAutomationProjects
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/external-link.js [app-ssr] (ecmascript) <export default as ExternalLink>");
 ;
 ;
-const Projects = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-white rounded-xl shadow-sm border border-gray-200 p-8",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                className: "text-2xl font-bold text-gray-900 mb-4",
-                children: "Hands-on Projects"
-            }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                lineNumber: 6,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-gray-600 mb-6",
-                children: "Build these projects to solidify your AI automation skills."
-            }, void 0, false, {
-                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                lineNumber: 7,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid md:grid-cols-2 gap-6",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-6 border border-gray-100 rounded-xl hover:shadow-md transition-shadow",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-bold text-lg text-gray-800 mb-2",
-                                children: "Multi-Agent Workflow"
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                                lineNumber: 12,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-gray-600",
-                                children: "Create a system where multiple AI agents collaborate to solve complex tasks."
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                                lineNumber: 13,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                        lineNumber: 11,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-6 border border-gray-100 rounded-xl hover:shadow-md transition-shadow",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "font-bold text-lg text-gray-800 mb-2",
-                                children: "Custom RAG Application"
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                                lineNumber: 16,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-gray-600",
-                                children: "Build a question-answering system using your own private data and vector databases."
-                            }, void 0, false, {
-                                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                                lineNumber: 17,
-                                columnNumber: 11
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                        lineNumber: 15,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
+;
+const projectsList = [
+    {
+        title: "AI Workflow Automation Platform (Mini Zapier + AI)",
+        description: "Build a platform where users create automation workflows combining triggers, AI decision-making, and actions. Example: Form submission → AI intent detection → route to CRM, Email, or Slack.",
+        skills: "LLM orchestration, workflow automation, APIs, retries, logging",
+        outcome: "Proves ability to design reusable AI-powered automation systems used by businesses."
+    },
+    {
+        title: "Autonomous AI Agent (Planner → Executor → Reporter)",
+        description: "Create an AI agent that receives a goal, breaks it into steps, selects tools, executes tasks autonomously, and generates a final structured report.",
+        skills: "Agents, reasoning loops, tool calling, long-running tasks",
+        outcome: "Demonstrates advanced agent design and real-world autonomous behavior."
+    },
+    {
+        title: "AI Customer Support Automation System",
+        description: "Automate customer support by classifying tickets, retrieving answers from knowledge bases using RAG, drafting replies, and escalating complex cases to humans.",
+        skills: "RAG pipelines, classification, safety rules, integrations",
+        outcome: "Shows ability to replace manual human workflows with reliable AI systems."
+    },
+    {
+        title: "Resume Screening & Hiring Automation",
+        description: "Build an AI system that parses resumes, matches them against job descriptions, scores candidates, and generates interview questions automatically.",
+        skills: "Document parsing, embeddings, scoring logic, structured output",
+        outcome: "Proves business-focused AI automation and decision-support skills."
+    },
+    {
+        title: "Enterprise AI Knowledge Base (RAG System)",
+        description: "Develop a knowledge assistant where users upload documents and ask questions with source-based answers, citations, and controlled hallucination.",
+        skills: "Vector databases, embeddings, retrieval, prompt design",
+        outcome: "Core project expected from every AI Automation / LLM Engineer."
+    },
+    {
+        title: "AI Email & CRM Automation Engine",
+        description: "Automate inbound email processing by extracting intent, updating CRM records, drafting replies, and scheduling follow-ups automatically.",
+        skills: "Email APIs, workflow automation, intent detection",
+        outcome: "Demonstrates real-world business automation with measurable ROI."
+    },
+    {
+        title: "AI Monitoring & Ops Automation Bot",
+        description: "Build an AI bot that monitors logs and metrics, detects anomalies, explains issues in plain English, and sends alerts with suggested fixes.",
+        skills: "Observability, anomaly detection, AI-assisted debugging",
+        outcome: "Advanced project showing AI + DevOps automation expertise."
+    },
+    {
+        title: "AI Research & Content Automation Agent",
+        description: "Create an agent that researches topics, verifies sources, generates structured content, and publishes results to CMS or Notion automatically.",
+        skills: "Multi-step pipelines, web tools, content generation",
+        outcome: "Proves ability to control AI quality and factual consistency."
+    },
+    {
+        title: "AI Automation SaaS Platform (Capstone)",
+        description: "Build a full SaaS where users design AI automations with authentication, billing, usage tracking, logs, and cloud deployment.",
+        skills: "End-to-end system design, SaaS architecture, scaling",
+        outcome: "Industry-ready capstone proving you can ship real AI products."
+    }
+];
+function AiAutomationProjects() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "px-6 py-12 bg-gray-50 min-h-screen",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-6xl mx-auto",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    className: "text-3xl font-bold text-gray-900 mb-6",
+                    children: "⚙️ AI Automation Engineer – Must Build Projects"
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                    lineNumber: 92,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "text-gray-600 mb-10 max-w-3xl",
+                    children: "These 9 projects are carefully selected to transform a learner into an industry-ready AI Automation Engineer. Each project mirrors real-world systems used by startups and enterprises."
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                    lineNumber: 95,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",
+                    children: projectsList.map((project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-start justify-between gap-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-lg font-semibold text-gray-900 group-hover:text-indigo-600 leading-snug",
+                                            children: project.title
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                            lineNumber: 108,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
+                                            size: 18,
+                                            className: "text-gray-400 group-hover:text-indigo-600 shrink-0 mt-1",
+                                            "aria-hidden": "true"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                            lineNumber: 111,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                    lineNumber: 107,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-3 text-sm text-gray-600 leading-relaxed",
+                                    children: project.description
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                    lineNumber: 118,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-4 text-xs text-gray-500",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-semibold text-gray-700",
+                                            children: "Skills:"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                            lineNumber: 123,
+                                            columnNumber: 17
+                                        }, this),
+                                        " ",
+                                        project.skills
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                    lineNumber: 122,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-2 text-xs text-indigo-600 font-medium",
+                                    children: project.outcome
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                                    lineNumber: 127,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, project.title, true, {
+                            fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                            lineNumber: 103,
+                            columnNumber: 13
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+                    lineNumber: 101,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
+            lineNumber: 91,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/app/Roadmaps/AI-Automation/projects.jsx",
-        lineNumber: 5,
+        lineNumber: 90,
         columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
-};
-const __TURBOPACK__default__export__ = Projects;
+    }, this);
+}
 }),
-"[project]/app/Roadmaps/AI-Automation/faq.jsx [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/app/Roadmaps/AI-Automation/faq.jsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
+__turbopack_context__.s([
+    "default",
+    ()=>Faq
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript) <export default as ChevronDown>");
+"use client";
+;
+;
+;
+const faqs = [
+    {
+        question: "What does an AI Automation Engineer actually do?",
+        answer: "An AI Automation Engineer designs and builds systems that automate real-world workflows using AI models, APIs, agents, and tools. This includes automating customer support, data processing, decision-making, research, and business operations using LLMs and automation platforms."
+    },
+    {
+        question: "Do I need deep math or machine learning knowledge?",
+        answer: "No. This role is not math-heavy. You need a practical understanding of how AI models work, prompt engineering, APIs, and system design. Most real-world AI automation focuses on orchestration, reliability, and integration rather than training models from scratch."
+    },
+    {
+        question: "Which programming language should I learn first?",
+        answer: "Python is the best starting point for AI Automation Engineers due to its strong ecosystem for AI, automation, APIs, and backend development. JavaScript is also useful, especially for frontend and workflow tools."
+    },
+    {
+        question: "Is this roadmap beginner-friendly?",
+        answer: "Yes. The roadmap starts from fundamentals like programming and APIs, then gradually moves into AI, automation tools, agents, and production systems. Even beginners can follow it step by step with consistent practice."
+    },
+    {
+        question: "What tools are most important to master?",
+        answer: "Key tools include OpenAI or Gemini APIs, LangChain or LlamaIndex, automation platforms like n8n or Zapier, vector databases like Pinecone, and backend frameworks such as FastAPI. Cloud deployment tools are also essential."
+    },
+    {
+        question: "Will I be industry-ready after completing the projects?",
+        answer: "Yes. The projects are designed to mirror real-world systems used by startups and enterprises. Completing them with proper documentation and deployment makes you job-ready for AI Automation and LLM-focused roles."
+    },
+    {
+        question: "Can I get a job without building all projects?",
+        answer: "You don’t need all projects, but you should build at least 3–5 strong, well-documented projects. Quality, real-world relevance, and clarity matter more than quantity."
+    },
+    {
+        question: "What job roles can I apply for after this roadmap?",
+        answer: "You can apply for roles like AI Automation Engineer, LLM Engineer, AI Workflow Engineer, Solutions Engineer, Automation Consultant, or AI Product Engineer."
+    },
+    {
+        question: "Is AI Automation a long-term career?",
+        answer: "Yes. AI automation is becoming core to how companies operate. Engineers who can combine AI, software, and business workflows will remain in high demand across industries."
+    }
+];
+function Faq() {
+    const [openIndex, setOpenIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const toggle = (index)=>{
+        setOpenIndex(openIndex === index ? null : index);
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "px-6 py-16 bg-white",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-4xl mx-auto",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mb-12 text-center",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "text-3xl font-bold text-gray-900",
+                            children: "❓ Frequently Asked Questions"
+                        }, void 0, false, {
+                            fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                            lineNumber: 66,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "mt-4 text-gray-600 max-w-2xl mx-auto",
+                            children: "Everything you need to know before starting your journey as an AI Automation Engineer."
+                        }, void 0, false, {
+                            fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                            lineNumber: 69,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                    lineNumber: 65,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "space-y-4",
+                    children: faqs.map((faq, index)=>{
+                        const isOpen = openIndex === index;
+                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "border border-gray-200 rounded-2xl bg-gray-50 overflow-hidden transition",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>toggle(index),
+                                    className: "w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none",
+                                    "aria-expanded": isOpen,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-base font-semibold text-gray-900",
+                                            children: faq.question
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                                            lineNumber: 90,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                                            size: 20,
+                                            className: `text-gray-500 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                                            lineNumber: 93,
+                                            columnNumber: 19
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                                    lineNumber: 85,
+                                    columnNumber: 17
+                                }, this),
+                                isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "px-6 pb-6 text-sm text-gray-600 leading-relaxed",
+                                    children: faq.answer
+                                }, void 0, false, {
+                                    fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                                    lineNumber: 102,
+                                    columnNumber: 19
+                                }, this)
+                            ]
+                        }, index, true, {
+                            fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                            lineNumber: 81,
+                            columnNumber: 15
+                        }, this);
+                    })
+                }, void 0, false, {
+                    fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+                    lineNumber: 76,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+            lineNumber: 63,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/Roadmaps/AI-Automation/faq.jsx",
+        lineNumber: 62,
+        columnNumber: 5
+    }, this);
+}
 }),
 "[externals]/@react-pdf/renderer [external] (@react-pdf/renderer, esm_import)", ((__turbopack_context__) => {
 "use strict";

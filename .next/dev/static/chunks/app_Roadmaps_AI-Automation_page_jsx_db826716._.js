@@ -11,7 +11,7 @@
   "static/chunks/node_modules_yoga-layout_dist_b5bffb70._.js",
   "static/chunks/node_modules_@react-pdf_layout_lib_index_035642ed.js",
   "static/chunks/node_modules_@react-pdf_reconciler_lib_6fedbd67._.js",
-  "static/chunks/node_modules_33955627._.js"
+  "static/chunks/node_modules_3ee45144._.js"
 ],
     source: "dynamic"
 });

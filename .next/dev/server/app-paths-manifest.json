@@ -1,3 +1,5 @@
 {
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/AI-Automation/page": "app/Roadmaps/AI-Automation/page.js",
   "/page": "app/page.js"
 }
