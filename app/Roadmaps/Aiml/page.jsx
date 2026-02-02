@@ -3,22 +3,19 @@ import React, { useState } from 'react';
 import { Brain, Download, Map, FileText, FolderOpen, HelpCircle, ChevronDown, Menu, X, Loader2 } from 'lucide-react';
 import Docs from './docs';
 import Projects from './projects';
-import Faq from './Faq';
+import Faq from './faq';
 import { downloadRoadmapPDF } from './downloadPdf';
-import { phases, capstoneProjects, resources, timeline, finalTips } from './roadmapData';
+import { phases } from './roadmapData';
 
-
-const AIMLMasteryRoadmap = () => {
+const AimlRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
-
 
   // Handle PDF download with loading state
   const handlePDFDownload = async () => {
     setIsDownloading(true);
     try {
-      // Pass a generic user identifier or remove userId requirement
       const result = await downloadRoadmapPDF(phases);
       if (result.success) {
         console.log(`PDF downloaded successfully: ${result.filename}`);
@@ -103,74 +100,8 @@ const AIMLMasteryRoadmap = () => {
               ))}
             </div>
 
-            {/* Capstone Projects Section */}
-            <div className="text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-                🚀 Capstone Projects (Industry-Ready Portfolio)
-              </h2>
-              <p className="text-gray-700 mb-6">Build 3–4 production-grade projects to showcase your expertise:</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                {capstoneProjects.map((project, index) => (
-                  <div key={index} className={`bg-white p-4 rounded-lg border ${project.color}`}>
-                    <h3 className={`font-semibold ${project.bgColor} mb-2`}>{project.title}</h3>
-                    <p className="text-sm text-gray-600">{project.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Resources Section */}
-            <div className="text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-                📚 Key Resources & Tools by Phase
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {resources.map((resource, index) => (
-                  <div key={index} className={`bg-white p-4 rounded-lg border ${resource.color}`}>
-                    <h3 className={`font-semibold ${resource.bgColor} mb-2`}>{resource.title}</h3>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {resource.items.map((item, itemIndex) => (
-                        <li key={itemIndex}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Timeline Section */}
-            <div className="text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border border-indigo-200">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-                ⏳ Suggested Timeline (12-15 hrs/week)
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                {timeline.map((item, index) => (
-                  <div key={index} className={`bg-white p-4 rounded-lg border ${item.color}`}>
-                    <h3 className={`font-semibold ${item.bgColor} mb-2`}>{item.phase}</h3>
-                    <p className={`text-2xl font-bold ${item.bgColor}`}>{item.duration}</p>
-                    <p className="text-sm text-gray-600">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Final Message */}
-            <div className="text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-                🏆 Final Tips to Become Industry-Ready
-              </h2>
-              <p className="text-gray-700 text-base md:text-lg mb-4">
-                Congratulations! You've completed the AI/ML Mastery Roadmap and are ready to tackle real-world AI challenges.
-              </p>
-              <div className="bg-white p-4 rounded-lg border border-blue-300 mt-4">
-                <h3 className="font-semibold text-blue-600 mb-2">🎯 Next Steps for Success</h3>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  {finalTips.map((tip, index) => (
-                    <li key={index}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         );
     }
@@ -185,7 +116,7 @@ const AIMLMasteryRoadmap = () => {
             <Brain className="text-blue-600" size={32} />
             <h1 className="text-xl md:text-3xl font-bold text-gray-900">
               AI/ML <span className="text-blue-600">Mastery Roadmap</span>
-              <span className="text-sm md:text-base font-normal text-gray-600 ml-2">(2025 Edition)</span>
+              <span className="text-sm md:text-base font-normal text-gray-600 ml-2">(2026 Edition)</span>
             </h1>
           </div>
 
@@ -298,4 +229,4 @@ const AIMLMasteryRoadmap = () => {
   );
 };
 
-export default AIMLMasteryRoadmap;
+export default AimlRoadmap;

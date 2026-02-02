@@ -24,7 +24,8 @@
     "AI Agents",
     "DevOps",
     "Aptitude",
-    "Software Architecture"
+    "Software Architecture",
+    "AI Automation"
     
 
   ],
@@ -714,6 +715,7 @@
       "language": "Hindi",
       "docs": "/Docs/ai_basics"
     },
+    
     {
       "id": 39,
       "category": "AI & ML",
@@ -1355,7 +1357,7 @@
       "docs": "/Docs/software"
     },
     {
-      "id": 97,
+      "id": 98,
       "category": "Software Testing",
       "title": "Complete Software Testing course in with Projects",
       "level": "Beginner to Advanced",
@@ -1365,8 +1367,31 @@
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/testing"
-    }
+    },
     
-
+    {
+      "id": 99,
+      "category": "AI Automation",
+      "title": "AI Automation for beginners",
+      "level": "Beginner to Intermediate",
+      "rating": 4.7,
+      "image": "automation",
+      "videoId": "https://youtube.com/watch?v=5TxSqvPbnWw",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/automation"
+    },
+    {
+      "id": 100,
+      "category": "AI Automation",
+      "title": "AI Automation Masterclass with building a project",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "automate",
+      "videoId": "https://youtube.com/watch?v=UdicyJwjlLQ",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/automation_hindi"
+    }
   ]
 }

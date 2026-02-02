@@ -3,7 +3,10 @@
     "[project]/app/RoadmapPage/page": [
       "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
     ],
-    "[project]/app/Roadmaps/AI-Automation/page": [
+    "[project]/app/Roadmaps/Aiml/page": [
+      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
+    ],
+    "[project]/app/Roadmaps/Nginx/page": [
       "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
     ],
     "[project]/app/page": [

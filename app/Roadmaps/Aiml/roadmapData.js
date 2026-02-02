@@ -1,384 +1,571 @@
-// AI/ML Roadmap data structured according to your AI/ML Mastery content
 export const phases = [
   {
+    id: 0,
+    title: "Mindset & Foundations",
+    subtitle: "Stage 0",
+    description: "Know why you want to enter AI/ML, set expectations, and pick a learning strategy.",
+    color: "bg-gray-500",
+    sections: [
+      {
+        title: "🎯 Goal",
+        items: [
+          "Decide focus: Research / Prod Engineering / MLOps / Data Science",
+          "Create a weekly study plan (Hours / Projects / Resources)",
+          "Learn how to learn: spaced repetition, active recall, systematic reading"
+        ]
+      }
+    ]
+  },
+  {
     id: 1,
-    title: "Core Foundations",
-    subtitle: "Beginner Level",
-    description: "Build strong math, programming, and data fundamentals.",
+    title: "Mathematics",
+    subtitle: "Core Fundamentals",
+    description: "Build the mathematical base for everything ahead.",
     color: "bg-blue-500",
     sections: [
       {
-        title: "🧮 Mathematics for ML",
+        title: "⏱️ Duration: 6–8 weeks",
+        items: []
+      },
+      {
+        title: "📊 Linear Algebra",
         items: [
-          "Linear Algebra → Vectors, matrices, eigenvalues, SVD",
-          "Probability & Statistics → Bayes theorem, distributions, hypothesis testing",
-          "Calculus → Derivatives, gradients, chain rule, optimization basics",
-          "Khan Academy Linear Algebra & MIT OCW Statistics courses"
+          "Vector spaces",
+          "Embeddings",
+          "SVD",
+          "PCA"
         ]
       },
       {
-        title: "💻 Programming & Tools",
+        title: "📈 Calculus",
         items: [
-          "Python (NumPy, Pandas, Matplotlib, Seaborn)",
-          "Jupyter Notebook / Google Colab",
-          "Git + GitHub version control",
-          "Python Official Docs, NumPy, Pandas documentation"
+          "Gradients",
+          "Derivatives",
+          "Optimization"
         ]
       },
       {
-        title: "🎯 Foundation Projects",
+        title: "📉 Probability & Statistics",
         items: [
-          "✅ Basic data cleaning (Titanic dataset)",
-          "✅ Visualization dashboard (COVID-19, Stock market trends)",
-          "Data manipulation and exploration exercises",
-          "Statistical analysis on real-world datasets"
+          "Uncertainty",
+          "Likelihood",
+          "Hypothesis testing"
+        ]
+      },
+      {
+        title: "📚 Resources",
+        items: [
+          "Khan Academy: Linear Algebra & Probability",
+          "3Blue1Brown Essence of Calculus series",
+          "MIT OCW Math"
         ]
       }
     ]
   },
   {
     id: 2,
-    title: "Core Machine Learning",
-    subtitle: "Intermediate Level",
-    description: "Master ML algorithms & model building.",
+    title: "Python & Software Fundamentals",
+    subtitle: "Core Fundamentals",
+    description: "Learn Python deeply and essential development tools.",
     color: "bg-green-500",
     sections: [
       {
-        title: "📊 Supervised Learning",
+        title: "⏱️ Duration: 4–6 weeks",
+        items: []
+      },
+      {
+        title: "🐍 Python Must-Know",
         items: [
-          "Regression: Linear, Polynomial, Ridge/Lasso",
-          "Classification: Logistic Regression, Decision Trees, Random Forests, SVMs",
-          "Evaluation: Confusion matrix, Precision/Recall, ROC-AUC",
-          "Model selection and performance metrics"
+          "Data types, control flow, OOP, modules",
+          "Virtual environments (venv, conda)",
+          "Debugging, logging"
         ]
       },
       {
-        title: "🔍 Unsupervised Learning",
+        title: "🛠️ Tools",
         items: [
-          "Clustering (KMeans, DBSCAN, Hierarchical)",
-          "Dimensionality Reduction (PCA, t-SNE)",
-          "Anomaly detection techniques",
-          "Association rule learning"
+          "Git & GitHub",
+          "Jupyter Notebooks",
+          "VS Code"
         ]
       },
       {
-        title: "⚡ Model Improvement",
+        title: "🚀 Projects",
         items: [
-          "Cross-validation, Hyperparameter tuning (GridSearchCV, RandomizedSearchCV)",
-          "Feature engineering, Regularization",
-          "Scikit-learn, XGBoost, LightGBM",
-          "Ensemble methods and model stacking"
-        ]
-      },
-      {
-        title: "🚀 ML Projects",
-        items: [
-          "✅ Spam Email Classifier",
-          "✅ Customer Segmentation using Clustering",
-          "✅ House Price Prediction",
-          "End-to-end ML pipeline development"
+          "✅ CLI-based expense tracker",
+          "✅ CRUD file system app"
         ]
       }
     ]
   },
   {
     id: 3,
-    title: "Deep Learning",
-    subtitle: "Advanced Level",
-    description: "Learn neural networks and modern DL frameworks.",
+    title: "Data Handling",
+    subtitle: "Core Fundamentals",
+    description: "Master data wrangling, visualization, and SQL.",
     color: "bg-purple-500",
     sections: [
       {
-        title: "🧠 Neural Networks Basics",
+        title: "⏱️ Duration: 4–6 weeks",
+        items: []
+      },
+      {
+        title: "📊 Data Wrangling",
         items: [
-          "Perceptron, Multi-Layer Perceptron (MLP)",
-          "Activation functions (ReLU, Sigmoid, Tanh, Softmax)",
-          "Backpropagation & optimization (SGD, Adam, RMSProp)",
-          "Loss functions and gradient descent variants"
+          "pandas",
+          "NumPy"
         ]
       },
       {
-        title: "🔧 Deep Learning Frameworks",
+        title: "📈 Visualization",
         items: [
-          "TensorFlow ecosystem and Keras API",
-          "PyTorch framework and dynamic computation graphs",
-          "Model architecture design patterns",
-          "GPU acceleration and distributed training"
+          "matplotlib",
+          "seaborn"
         ]
       },
       {
-        title: "👁️ Computer Vision",
+        title: "🗄️ SQL",
         items: [
-          "CNNs (Convolutional Neural Networks)",
-          "Transfer Learning (ResNet, VGG, EfficientNet)",
-          "Object Detection (YOLO, Faster R-CNN)",
-          "Image segmentation and GANs"
+          "Basics to advanced joins"
         ]
       },
       {
-        title: "📝 Natural Language Processing",
+        title: "🚀 Mini Projects",
         items: [
-          "Word Embeddings (Word2Vec, GloVe, FastText)",
-          "RNN, LSTM, GRU architectures",
-          "Transformers & Attention mechanisms",
-          "Text preprocessing and tokenization"
-        ]
-      },
-      {
-        title: "🎯 Deep Learning Projects",
-        items: [
-          "✅ Handwritten Digit Recognition (MNIST)",
-          "✅ Image Classifier with Transfer Learning",
-          "✅ Sentiment Analysis on Tweets",
-          "Multi-modal learning projects"
+          "✅ Data cleaning challenge on open datasets",
+          "✅ EDA reports with insights"
         ]
       }
     ]
   },
   {
     id: 4,
-    title: "Modern AI & Industry-Ready Skills",
-    subtitle: "Advanced Level",
-    description: "Master cutting-edge AI/ML for real-world applications.",
+    title: "Supervised & Unsupervised Learning",
+    subtitle: "ML Essentials",
+    description: "Core machine learning algorithms and evaluation.",
     color: "bg-orange-500",
     sections: [
       {
-        title: "🤖 Large Language Models (LLMs)",
+        title: "⏱️ Duration: 8–10 weeks",
+        items: []
+      },
+      {
+        title: "🤖 Core Algorithms",
         items: [
-          "Transformers in detail (BERT, GPT, T5)",
-          "Fine-tuning & Prompt Engineering",
-          "Hugging Face Transformers library",
-          "LLM deployment and optimization"
+          "Linear & Logistic Regression",
+          "Decision Trees, Random Forests",
+          "KNN, SVM",
+          "K-Means, PCA"
         ]
       },
       {
-        title: "🚀 MLOps & Deployment",
+        title: "📊 Evaluation",
         items: [
-          "Model Serving (Flask, FastAPI, Streamlit, Gradio)",
-          "Docker, Kubernetes basics for ML",
-          "MLflow for experiment tracking",
-          "CI/CD for ML models"
+          "Train/Test split, CV, Metrics (accuracy, precision, recall)",
+          "Hyperparameter tuning"
         ]
       },
       {
-        title: "☁️ Cloud & Big Data",
+        title: "🛠️ Tools",
         items: [
-          "AWS/GCP/Azure ML services",
-          "Big Data processing (Spark, Hadoop basics)",
-          "Distributed training and inference",
-          "Auto-scaling and model monitoring"
+          "scikit-learn"
         ]
       },
       {
-        title: "⚖️ Ethics & AI Safety",
+        title: "🚀 Projects",
         items: [
-          "Fairness, Bias detection and mitigation in ML",
-          "Responsible AI practices and guidelines",
-          "Model interpretability and explainability",
-          "Privacy-preserving ML techniques"
-        ]
-      },
-      {
-        title: "📈 Industry Projects",
-        items: [
-          "✅ AI-powered Chatbot with Transformers",
-          "✅ Image Captioning System",
-          "✅ Model Deployment on AWS/GCP with Docker",
-          "Production-ready ML systems"
+          "✅ Kaggle classification + regression",
+          "✅ Clustering for customer segmentation"
         ]
       }
     ]
   },
   {
     id: 5,
-    title: "Specializations",
-    subtitle: "Expert Level",
-    description: "Master niche domains in AI/ML - Choose one or more paths.",
+    title: "Introduction to Deep Learning",
+    subtitle: "ML Essentials",
+    description: "Neural networks, optimization, and frameworks.",
     color: "bg-red-500",
     sections: [
       {
-        title: "👁️ Computer Vision Specialization",
+        title: "⏱️ Duration: 8–12 weeks",
+        items: []
+      },
+      {
+        title: "🧠 Fundamentals",
         items: [
-          "Advanced object detection and tracking",
-          "Medical imaging and diagnostic AI",
-          "Generative Adversarial Networks (GANs)",
-          "Real-time video processing and analysis"
+          "Neuron intuition",
+          "Loss & optimization",
+          "Backpropagation"
         ]
       },
       {
-        title: "💬 NLP Specialization",
+        title: "🔧 Framework",
         items: [
-          "Advanced chatbots and conversational AI",
-          "Question-answering systems",
-          "Document summarization and information extraction",
-          "Multilingual and cross-lingual NLP"
+          "PyTorch (industry standard)",
+          "TensorFlow basics"
         ]
       },
       {
-        title: "🎨 Generative AI",
+        title: "🎯 Key Models",
         items: [
-          "GANs and Variational Autoencoders",
-          "Diffusion models and Stable Diffusion",
-          "Text-to-image and image-to-image generation",
-          "Creative AI applications"
+          "MLPs",
+          "Activation functions",
+          "Optimizers (SGD, Adam)"
         ]
       },
       {
-        title: "🎮 Reinforcement Learning",
+        title: "🚀 Projects",
         items: [
-          "Q-Learning and Deep Q-Networks (DQN)",
-          "Policy Gradient Methods (PPO, A3C)",
-          "Multi-agent reinforcement learning",
-          "RL for robotics and game AI"
+          "✅ Handwritten Digit Classifier",
+          "✅ Simple NLP with embeddings"
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "Computer Vision (CV)",
+    subtitle: "Advanced ML & DL",
+    description: "CNNs, transfer learning, and image processing.",
+    color: "bg-indigo-500",
+    sections: [
+      {
+        title: "⏱️ Duration: 6–8 weeks",
+        items: []
+      },
+      {
+        title: "👁️ Core Concepts",
+        items: [
+          "Convolutional Neural Networks (CNNs)",
+          "Transfer Learning",
+          "Augmentation"
         ]
       },
       {
-        title: "🔧 AI for Edge/Robotics",
+        title: "🛠️ Tools",
         items: [
-          "Model optimization (TensorRT, ONNX)",
-          "IoT AI and edge computing",
-          "Robotics perception and control",
-          "Real-time inference on embedded systems"
+          "OpenCV",
+          "Torchvision"
+        ]
+      },
+      {
+        title: "🚀 Projects",
+        items: [
+          "✅ Object detection",
+          "✅ Semantic segmentation"
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "Natural Language Processing (NLP)",
+    subtitle: "Advanced ML & DL",
+    description: "Transformers, embeddings, and language models.",
+    color: "bg-pink-500",
+    sections: [
+      {
+        title: "⏱️ Duration: 8–10 weeks",
+        items: []
+      },
+      {
+        title: "📝 Fundamentals",
+        items: [
+          "Tokenization",
+          "Embeddings (Word2Vec, GloVe)",
+          "Transformers & Attention"
+        ]
+      },
+      {
+        title: "📚 Libraries",
+        items: [
+          "Hugging Face Transformers",
+          "spaCy"
+        ]
+      },
+      {
+        title: "🚀 Projects",
+        items: [
+          "✅ Sentiment analysis",
+          "✅ Text summarization",
+          "✅ Chatbot using Transformer"
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: "Time Series & Forecasting",
+    subtitle: "Advanced ML & DL",
+    description: "Sequential data and prediction models.",
+    color: "bg-teal-500",
+    sections: [
+      {
+        title: "⏱️ Duration: 4 weeks",
+        items: []
+      },
+      {
+        title: "📊 Core Topics",
+        items: [
+          "Decomposition",
+          "ARIMA",
+          "LSTM & Transformers for sequential data"
+        ]
+      },
+      {
+        title: "🚀 Projects",
+        items: [
+          "✅ Stock price prediction",
+          "✅ IoT sensor series forecasting"
+        ]
+      }
+    ]
+  },
+  {
+    id: 9,
+    title: "Model Optimization & Efficiency",
+    subtitle: "Engineering & Scaling",
+    description: "Make models faster and smaller.",
+    color: "bg-cyan-500",
+    sections: [
+      {
+        title: "⏱️ Duration: 3–4 weeks",
+        items: []
+      },
+      {
+        title: "⚡ Techniques",
+        items: [
+          "Quantization",
+          "Pruning",
+          "Knowledge distillation"
+        ]
+      },
+      {
+        title: "🛠️ Tools",
+        items: [
+          "ONNX",
+          "TensorRT"
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    title: "MLOps & Deployment",
+    subtitle: "Engineering & Scaling",
+    description: "Move from notebooks to production systems.",
+    color: "bg-amber-500",
+    sections: [
+      {
+        title: "⏱️ Duration: 8–12 weeks",
+        items: []
+      },
+      {
+        title: "🐋 Docker/Containers",
+        items: [
+          "Docker"
+        ]
+      },
+      {
+        title: "📦 Versioning",
+        items: [
+          "DVC"
+        ]
+      },
+      {
+        title: "🔄 Pipelines",
+        items: [
+          "Airflow"
+        ]
+      },
+      {
+        title: "☁️ Cloud Services",
+        items: [
+          "AWS/GCP/Azure"
+        ]
+      },
+      {
+        title: "🚀 Serving",
+        items: [
+          "FastAPI",
+          "Flask",
+          "REST APIs",
+          "Serverless",
+          "Edge devices"
+        ]
+      },
+      {
+        title: "🚀 Projects",
+        items: [
+          "✅ Deploy a CV model as API",
+          "✅ CI/CD for model retraining"
+        ]
+      }
+    ]
+  },
+  {
+    id: 11,
+    title: "Ethics & Responsible AI",
+    subtitle: "Engineering & Scaling",
+    description: "Build fair, explainable, and secure AI.",
+    color: "bg-emerald-500",
+    sections: [
+      {
+        title: "⏱️ Duration: 2–3 weeks",
+        items: []
+      },
+      {
+        title: "⚖️ Core Topics",
+        items: [
+          "Bias detection",
+          "Fairness metrics",
+          "Explainability (SHAP, LIME)",
+          "Privacy & security fundamentals"
+        ]
+      }
+    ]
+  },
+  {
+    id: 12,
+    title: "Real Industry Projects",
+    subtitle: "Industry Readiness",
+    description: "Solve real problems with real use cases.",
+    color: "bg-slate-500",
+    sections: [
+      {
+        title: "🔥 Project Clusters",
+        items: [
+          "✅ End-to-End ML System (Data ingestion → training → monitoring → deployment)",
+          "✅ Recommendation System (Collaborative + content filtering)",
+          "✅ Advanced NLP Chatbot",
+          "✅ CV System for Manufacturing QC",
+          "✅ Forecasting Platform with Alerts",
+          "✅ AI Monitoring Dashboard"
+        ]
+      },
+      {
+        title: "📌 Open-Source & Research Exposure",
+        items: [
+          "GitHub contributions",
+          "Read ML papers regularly",
+          "Use Papers with Code benchmarks"
+        ]
+      }
+    ]
+  },
+  {
+    id: 13,
+    title: "Soft Skills & Job Preparation",
+    subtitle: "Final Stage",
+    description: "Prepare for interviews and professional work.",
+    color: "bg-violet-500",
+    sections: [
+      {
+        title: "🧠 Soft Skills",
+        items: [
+          "Problem breakdown",
+          "A/B testing understanding",
+          "Documentation"
+        ]
+      },
+      {
+        title: "💼 Interview Prep",
+        items: [
+          "System design",
+          "ML case studies",
+          "Coding rounds"
+        ]
+      },
+      {
+        title: "🎯 Practice Platforms",
+        items: [
+          "LeetCode",
+          "Kaggle",
+          "Project portfolios"
+        ]
+      }
+    ]
+  },
+  {
+    id: 14,
+    title: "Tech Stack Mastery",
+    subtitle: "VERY IMPORTANT",
+    description: "Technologies you must master.",
+    color: "bg-fuchsia-500",
+    sections: [
+      {
+        title: "🛠️ Must-Know Stack",
+        items: [
+          "Python",
+          "PyTorch",
+          "Hugging Face",
+          "scikit-learn",
+          "SQL",
+          "Docker",
+          "FastAPI",
+          "Cloud: AWS / GCP / Azure",
+          "Git + GitHub",
+          "CI/CD + MLOps"
+        ]
+      }
+    ]
+  },
+  {
+    id: 15,
+    title: "Industry Readiness Milestones",
+    subtitle: "Reality Check",
+    description: "Know you're ready when you hit these.",
+    color: "bg-rose-500",
+    sections: [
+      {
+        title: "🏆 You're Ready When:",
+        items: [
+          "✔ You've shipped models to production",
+          "✔ You maintain & retrain models",
+          "✔ You can explain biases & metrics",
+          "✔ You understand model debug & optimization",
+          "✔ You can lead small teams & projects"
+        ]
+      },
+      {
+        title: "📌 Portfolio Checklist",
+        items: [
+          "✅ 6–8 diverse projects (CV, NLP, TS, Deployment)",
+          "✅ Open-source contributions",
+          "✅ Blog / Medium / LinkedIn posts",
+          "✅ GitHub (clean, documented repos)",
+          "✅ Resume + Case studies"
+        ]
+      }
+    ]
+  },
+  {
+    id: 16,
+    title: "Timeline & Bonus Tips",
+    subtitle: "Planning",
+    description: "Suggested timeline and extra guidance.",
+    color: "bg-lime-500",
+    sections: [
+      {
+        title: "📆 Suggested Timeline",
+        items: [
+          "Basics: 4 months",
+          "ML & DL: 6 months",
+          "Production & Projects: 6 months",
+          "Total: ~1–1.5 years",
+          "Can be accelerated or extended based on hours available"
+        ]
+      },
+      {
+        title: "🔥 Bonus Tips",
+        items: [
+          "👉 Attend ML meetups + hackathons",
+          "👉 Participate in Kaggle competitions",
+          "👉 Read major blogs (Distill, DeepMind, OpenAI)",
+          "👉 Watch conference talks (NeurIPS, ICML)"
         ]
       }
     ]
   }
-];
-
-// Additional roadmap content sections
-export const capstoneProjects = [
-  {
-    title: "🏗️ End-to-End ML Pipeline",
-    description: "Complete workflow: Data → Training → Deployment → Monitoring",
-    color: "border-green-300",
-    bgColor: "text-green-600"
-  },
-  {
-    title: "🤖 LLM-Powered AI Assistant",
-    description: "Chatbot with LangChain + OpenAI API/HuggingFace",
-    color: "border-blue-300",
-    bgColor: "text-blue-600"
-  },
-  {
-    title: "👁️ Computer Vision App",
-    description: "Real-time Object Detection with YOLO",
-    color: "border-purple-300",
-    bgColor: "text-purple-600"
-  },
-  {
-    title: "📝 NLP System",
-    description: "Document Summarizer/Search Engine",
-    color: "border-orange-300",
-    bgColor: "text-orange-600"
-  }
-];
-
-export const resources = [
-  {
-    title: "🔤 Mathematics",
-    color: "border-blue-300",
-    bgColor: "text-blue-600",
-    items: [
-      "• Khan Academy Linear Algebra",
-      "• MIT OCW Statistics",
-      "• 3Blue1Brown YouTube"
-    ]
-  },
-  {
-    title: "🐍 Programming",
-    color: "border-green-300",
-    bgColor: "text-green-600",
-    items: [
-      "• Python Official Docs",
-      "• NumPy, Pandas, Matplotlib",
-      "• Jupyter Notebooks"
-    ]
-  },
-  {
-    title: "🧠 Deep Learning",
-    color: "border-purple-300",
-    bgColor: "text-purple-600",
-    items: [
-      "• TensorFlow & PyTorch",
-      "• Fast.ai Course",
-      "• Deep Learning Specialization"
-    ]
-  },
-  {
-    title: "☁️ MLOps",
-    color: "border-orange-300",
-    bgColor: "text-orange-600",
-    items: [
-      "• Docker & Kubernetes",
-      "• MLflow, Weights & Biases",
-      "• AWS/GCP/Azure ML"
-    ]
-  },
-  {
-    title: "🤖 Advanced AI",
-    color: "border-red-300",
-    bgColor: "text-red-600",
-    items: [
-      "• Hugging Face Hub",
-      "• Papers with Code",
-      "• OpenAI Gymnasium"
-    ]
-  },
-  {
-    title: "📖 Research",
-    color: "border-indigo-300",
-    bgColor: "text-indigo-600",
-    items: [
-      "• ArXiv papers",
-      "• Google Scholar",
-      "• AI/ML conferences"
-    ]
-  }
-];
-
-export const timeline = [
-  {
-    phase: "Phase 1",
-    duration: "2-3 months",
-    description: "Foundations",
-    color: "border-blue-300",
-    bgColor: "text-blue-600"
-  },
-  {
-    phase: "Phase 2",
-    duration: "3-4 months",
-    description: "Core ML",
-    color: "border-green-300",
-    bgColor: "text-green-600"
-  },
-  {
-    phase: "Phase 3",
-    duration: "4-6 months",
-    description: "Deep Learning",
-    color: "border-purple-300",
-    bgColor: "text-purple-600"
-  },
-  {
-    phase: "Phase 4",
-    duration: "3-4 months",
-    description: "Modern AI",
-    color: "border-orange-300",
-    bgColor: "text-orange-600"
-  },
-  {
-    phase: "Phase 5",
-    duration: "Ongoing",
-    description: "Specialization",
-    color: "border-red-300",
-    bgColor: "text-red-600"
-  }
-];
-
-export const finalTips = [
-  "• Contribute to open-source AI projects (HuggingFace, Scikit-learn, PyTorch)",
-  "• Build portfolio projects & showcase on GitHub + LinkedIn",
-  "• Write blogs/tutorials to explain your work and share knowledge",
-  "• Stay updated via paperswithcode.com, ArXiv, and AI newsletters",
-  "• Join AI/ML communities and participate in competitions (Kaggle, DrivenData)",
-  "• Attend conferences and workshops to network with professionals"
 ];

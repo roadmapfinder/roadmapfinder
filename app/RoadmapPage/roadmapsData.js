@@ -94,6 +94,8 @@ import davinci from "./roadmaps-icons/davinci.png"
 import fastify from "./roadmaps-icons/Fastify.png"
 import net from "./roadmaps-icons/NET.png"
 import automation from "./roadmaps-icons/automation.png"
+import tableau  from "./roadmaps-icons/tableau.svg" 
+import nginx from "./roadmaps-icons/NGINX.png"
 
 
 
@@ -307,6 +309,15 @@ export const roadmapsData = [
     category: "featured",
     description: "Server-side development and APIs",
   },
+  {
+    id: "nginx",
+    title: "Nginx",
+    icon: <RoadmapIcon src={nginx} alt="Nginx" />,
+    link: "/Roadmaps/Nginx",
+    category: "featured",
+    description: "Web server, reverse proxy, load balancer, and HTTP cache",
+  },
+  
   {
     id: "nodejs",
     title: "Node js",
@@ -563,6 +574,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Matplotlib",
     category: "trending",
     description: "Creating high-quality, static, animated, and interactive data visualizations",
+  },
+  {
+    id: "tableau",
+    title: "Tableau",
+    icon: <RoadmapIcon src={tableau} alt="tableau" />,
+    link: "/Roadmaps/Tableau",
+    category: "trending",
+    description: "Connect, analyze, and visualize data from multiple sources in real-time",
   },
   {
     id: "tensorflow",
