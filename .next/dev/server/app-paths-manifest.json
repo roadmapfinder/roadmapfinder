@@ -1,4 +1,7 @@
 {
+  "/Courses/page": "app/Courses/page.js",
+  "/Docs/automate/page": "app/Docs/automate/page.js",
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }
