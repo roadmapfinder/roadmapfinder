@@ -6,7 +6,7 @@ const MakeAutomationMusharafKhan = () => {
     <div className="max-w-4xl mx-auto p-8 bg-white">
       <article className="prose prose-lg max-w-none">
         {/* Title */}
-        <h1 className="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-indigo-500 pb-4">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-indigo-500 pb-4">a
           Make.com Automation Masterclass — Musharaf Khan
         </h1>
 
