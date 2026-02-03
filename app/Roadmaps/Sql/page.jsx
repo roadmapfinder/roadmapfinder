@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Building2, Download, Map, FileText, FolderOpen, HelpCircle, ChevronDown, Menu, X, Loader2,capstoneProjects} from 'lucide-react';
+import { Building2, FileDown, Map, FileText, FolderOpen, HelpCircle, ChevronDown, Menu, X, Loader2, BookOpen } from 'lucide-react';
 import Docs from './docs';
 import Projects from './projects';
 import Faq from './faq';
@@ -19,8 +19,10 @@ const SQL = () => {
       const result = await downloadRoadmapPDF(phases);
       if (result.success) {
         console.log(`PDF downloaded successfully: ${result.filename}`);
+        // Optional: Show success message to user
       } else {
         console.error('PDF download failed:', result.error);
+        // Optional: Show error message to user
       }
     } catch (error) {
       console.error('PDF download error:', error);
@@ -100,12 +102,6 @@ const SQL = () => {
               ))}
             </div>
 
-
-
-
-
-
-
             {/* Final Message */}
             <div className="text-center mt-8 md:mt-12 mx-4 p-6 md:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
@@ -115,6 +111,29 @@ const SQL = () => {
                 Congratulations! You've completed the SQL Engineer Mastery Roadmap and are ready to design scalable, robust systems.
               </p>
 
+              {/* CTA for PDF Download */}
+              <div className="mt-6 p-4 bg-white rounded-lg shadow-sm border border-blue-100">
+                <p className="text-gray-600 text-sm mb-3">
+                  📥 Want a detailed execution plan to guide your learning journey?
+                </p>
+                <button
+                  onClick={handlePDFDownload}
+                  disabled={isDownloading}
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-blue-400 disabled:to-indigo-400 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200"
+                >
+                  {isDownloading ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      <span>Creating Your Plan...</span>
+                    </>
+                  ) : (
+                    <>
+                      <BookOpen size={20} />
+                      <span>Create My Execution Plan</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         );
@@ -138,14 +157,19 @@ const SQL = () => {
           <button 
             onClick={handlePDFDownload}
             disabled={isDownloading}
-            className="hidden md:flex bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg items-center space-x-2 transition-colors"
+            className="hidden md:flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-blue-400 disabled:to-indigo-400 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-lg items-center space-x-2 transition-all duration-200 shadow-md hover:shadow-lg"
           >
             {isDownloading ? (
-              <Loader2 size={18} className="animate-spin" />
+              <>
+                <Loader2 size={18} className="animate-spin" />
+                <span>Creating Plan...</span>
+              </>
             ) : (
-              <Download size={18} />
+              <>
+                <BookOpen size={18} />
+                <span>Create Execution Plan</span>
+              </>
             )}
-            <span>{isDownloading ? 'Generating PDF...' : 'Download PDF'}</span>
           </button>
 
           {/* Mobile Menu Button */}
@@ -162,14 +186,19 @@ const SQL = () => {
           <button 
             onClick={handlePDFDownload}
             disabled={isDownloading}
-            className="w-full bg-red-500 hover:bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-blue-400 disabled:to-indigo-400 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all duration-200 shadow-md"
           >
             {isDownloading ? (
-              <Loader2 size={18} className="animate-spin" />
+              <>
+                <Loader2 size={18} className="animate-spin" />
+                <span>Creating Your Plan...</span>
+              </>
             ) : (
-              <Download size={18} />
+              <>
+                <BookOpen size={18} />
+                <span>Create Execution Plan</span>
+              </>
             )}
-            <span>{isDownloading ? 'Generating PDF...' : 'Download PDF'}</span>
           </button>
         </div>
 

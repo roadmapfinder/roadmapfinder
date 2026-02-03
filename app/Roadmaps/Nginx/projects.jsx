@@ -9,7 +9,7 @@ const projects = [
     title: "Static Website Hosting & Optimization",
     description:
       "Host a production-ready static website using NGINX. Learn server blocks, root/index, custom error pages, gzip compression, browser caching, and HTTP/2.",
-    url: "https://nginx.org/en/docs/beginners_guide.html",
+    url: "https://youtu.be/eJ6Taw1UaNc?si=kP_vD1QY42lS7_ZE",
   },
   {
     id: "phase1-reverse-proxy",
@@ -17,7 +17,7 @@ const projects = [
     title: "Reverse Proxy for Backend Application",
     description:
       "Configure NGINX as a reverse proxy in front of a backend (Node.js, Python, or Java). Learn proxy_pass, headers, timeouts, buffering, and SPA routing.",
-    url: "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/",
+    url: "https://youtu.be/eJ6Taw1UaNc?si=kP_vD1QY42lS7_ZE",
   },
 
   // Phase 2 — Intermediate

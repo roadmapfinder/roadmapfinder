@@ -1381,17 +1381,7 @@
       "language": "English",
       "docs": "/Docs/automation"
     },
-    {
-      "id": 100,
-      "category": "AI Automation",
-      "title": "AI Automation Masterclass with building a project",
-      "level": "Beginner to Advanced",
-      "rating": 4.9,
-      "image": "automate",
-      "videoId": "https://youtube.com/watch?v=UdicyJwjlLQ",
-      "badge": "NEW",
-      "language": "Hindi",
-      "docs": "/Docs/automate"
+   
     }
   ]
 }
