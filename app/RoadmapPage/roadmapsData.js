@@ -96,6 +96,7 @@ import net from "./roadmaps-icons/NET.png"
 import automation from "./roadmaps-icons/automation.png"
 import tableau  from "./roadmaps-icons/tableau.svg" 
 import nginx from "./roadmaps-icons/NGINX.png"
+import d3 from "./roadmaps-icons/D3.js.png"
 
 
 
@@ -582,6 +583,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Tableau",
     category: "trending",
     description: "Connect, analyze, and visualize data from multiple sources in real-time",
+  },
+  {
+    id: "d3",
+    title: "D3.js",
+    icon: <RoadmapIcon src={d3} alt="d3" />,
+    link: "/Roadmaps/D3",
+    category: "trending",
+    description: "Producing dynamic, interactive data visualizations in web browsers",
   },
   {
     id: "tensorflow",

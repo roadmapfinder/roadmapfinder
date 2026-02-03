@@ -27,7 +27,7 @@ const projects = [
     title: "Load Balancer with High Availability",
     description:
       "Distribute traffic across multiple backend servers using upstreams. Implement load balancing algorithms, failover, health checks, and sticky sessions.",
-    url: "https://docs.nginx.com/nginx/admin-guide/load-balancer/",
+    url: "https://youtu.be/hPfk0qd4xEY?si=f-C1xyZXbEcyc8DV",
   },
   {
     id: "phase2-https-security",
@@ -35,7 +35,7 @@ const projects = [
     title: "HTTPS & Security Hardening",
     description:
       "Secure an internet-facing server using HTTPS. Configure TLS, Let’s Encrypt, HTTP→HTTPS redirects, HSTS, rate limiting, and IP-based access control.",
-    url: "https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/",
+    url: "https://youtu.be/HaY8QB5kkGw?si=KuxlNUTJsLcFUlWV",
   },
 
   // Phase 3 — Advanced
@@ -45,7 +45,7 @@ const projects = [
     title: "NGINX API Gateway",
     description:
       "Use NGINX as an API gateway for multiple microservices. Implement routing, rate limiting per user, JWT-based auth patterns, CORS, and canary releases.",
-    url: "https://docs.nginx.com/nginx/admin-guide/security-controls/",
+    url: "https://youtu.be/9f4LUALgyAU?si=GzcyGgqQIEKkOQGZ",
   },
   {
     id: "phase3-docker-k8s",
@@ -53,7 +53,7 @@ const projects = [
     title: "Docker & Kubernetes NGINX Ingress",
     description:
       "Deploy NGINX using Docker and Kubernetes. Configure NGINX Ingress, service routing, zero-downtime reloads, and basic observability.",
-    url: "https://docs.nginx.com/nginx-ingress-controller/",
+    url: "https://youtu.be/72zYxSxifpM?si=Y6g2wQG7X2cizsrU",
   },
 ];
 
