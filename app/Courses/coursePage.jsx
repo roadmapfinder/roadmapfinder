@@ -137,7 +137,7 @@ import fullstack from "./CoursesImage/fullstack.jpg"
 import css from "./CoursesImage/css.jpg"
 import html from "./CoursesImage/html.jpg"
 import automation from "./CoursesImage/automation.jpg"
-import automate from "./CoursesImage/automate.jpg"
+
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -179,7 +179,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, automate
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation
 };
 
 // Creator images array
