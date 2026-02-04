@@ -97,6 +97,7 @@ import automation from "./roadmaps-icons/automation.png"
 import tableau  from "./roadmaps-icons/tableau.svg" 
 import nginx from "./roadmaps-icons/NGINX.png"
 import d3 from "./roadmaps-icons/D3.js.png"
+import kafka from "./roadmaps-icons/kafka.png"
 
 
 
@@ -771,6 +772,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Blockchain",
     category: "trending",
     description: "Blockchain and cryptocurrency development",
+  },
+  {
+    id: "kafka",
+    title: "kafka",
+    icon: <RoadmapIcon src={kafka} alt="kafka" />,
+    link: "/Roadmaps/kafka",
+    category: "trending",
+    description: "Ingest, process, store, and publish high-volume data streams in real-time",
   },
   {
     id: "system",

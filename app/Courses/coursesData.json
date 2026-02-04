@@ -83,7 +83,7 @@
       "id": 2,
       "category": "Web Development",
       "title": "Complete Mern Stack Course",
-      "level": "Beginner to Intermediate",
+      "level": "Beginner to Advanced",
       "rating": 4.9,
       "image": "babbar",
       "videoId": "https://youtu.be/Vi9bxu-M-ag?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD",
@@ -102,6 +102,18 @@
       "badge": "POPULAR",
       "language": "Hindi",
       "docs": "/Docs/nodejs_backend"
+    },
+    {
+      "id": 3,
+      "category": "Web Development",
+      "title": "Complete Nginx Course",
+      "level": "Beginner to advance",
+      "rating": 4.8,
+      "image": "nginx",
+      "videoId": "https://youtube.com/watch?v=2LhoCfjm8R4",
+      "badge": "POPULAR",
+      "language": "Hindi",
+      "docs": "/Docs/nginx"
     },
     {
       "id": 4,
@@ -633,6 +645,18 @@
     {
       "id": 80,
       "category": "Data Analysis & Science",
+      "title": "D3.js complete crash course ",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "d3",
+      "videoId": "https://youtube.com/watch?v=2LhoCfjm8R4",
+      "badge": "POPULAR",
+      "language": "English",
+      "docs": "/Docs/d3"
+    },
+    {
+      "id": 80,
+      "category": "Data Analysis & Science",
       "title": "PyTorch complete crash course",
       "level": "Beginner to Advanced",
       "rating": 4.9,
@@ -641,6 +665,18 @@
       "badge": "New",
       "language": "Hindi",
       "docs": "/Docs/pytorch"
+    },
+    {
+      "id": 80,
+      "category": "Data Analysis & Science",
+      "title": "Tensorflow complete crash course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "tensorflow",
+      "videoId": "https://youtu.be/Mubj_fqiAv8?si=YBneWAsSrAw_j-ep",
+      "badge": "New",
+      "language": "English",
+      "docs": "/Docs/tensorflow"
     },
     {
       "id": 35,
@@ -1291,6 +1327,18 @@
       "level": "Beginner to Advance",
       "rating": 4.9,
       "image": "docker",
+      "videoId": "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/docker"
+    },
+    {
+      "id": 73,
+      "category": "DevOps",
+      "title": "Kafka complete  course",
+      "level": "Beginner to Advance",
+      "rating": 4.9,
+      "image": "kafka",
       "videoId": "https://youtu.be/exmSJpJvIPs?si=Rx0-1xeXY_wgjEdB",
       "badge": "NEW",
       "language": "Hindi",

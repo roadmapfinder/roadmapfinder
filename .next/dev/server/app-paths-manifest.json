@@ -1,4 +1,10 @@
 {
   "/Courses/page": "app/Courses/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/Docs/d3/page": "app/Docs/d3/page.js",
+  "/Docs/nginx/page": "app/Docs/nginx/page.js",
+  "/Docs/tensorflow/page": "app/Docs/tensorflow/page.js",
+  "/RoadmapPage/page": "app/RoadmapPage/page.js",
+  "/Roadmaps/kafka/page": "app/Roadmaps/kafka/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
 }
