@@ -499,6 +499,18 @@
       "docs": "/Docs/dbms"
     },
     {
+      "id": 30,
+      "category": "Database",
+      "title": "Supabase Complete Course",
+      "level": "Beginner to Advanced",
+      "rating": 4.7,
+      "image": "supabase",
+      "videoId": "https://youtu.be/dU7GwCOgvNY?si=X_f0bjQBJKiDUbAZ",
+      "badge": "POPULAR",
+      "language": "English",
+      "docs": "/Docs/supabase"
+    },
+    {
       "id": 31,
       "category": "Database",
       "title": "SQL Complete Course",

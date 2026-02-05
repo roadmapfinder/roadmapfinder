@@ -138,6 +138,7 @@
     --color-emerald-300: #5ee9b5;
     --color-emerald-500: #00bb7f;
     --color-emerald-600: #009767;
+    --color-emerald-700: #007956;
     --color-teal-500: #00baa7;
     --color-teal-600: #009588;
     --color-cyan-50: #ecfeff;
@@ -337,6 +338,7 @@
       --color-emerald-300: lab(83.9203% -48.7124 13.8849);
       --color-emerald-500: lab(66.9756% -58.27 19.5419);
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
+      --color-emerald-700: lab(44.4871% -41.0396 11.0361);
       --color-teal-500: lab(67.3859% -49.0983 -2.63511);
       --color-teal-600: lab(55.0223% -41.0774 -3.90277);
       --color-cyan-50: lab(98.3304% -5.97432 -2.62108);
@@ -1191,6 +1193,10 @@
     display: flex;
   }
 
+  .flow-root {
+    display: flow-root;
+  }
+
   .grid {
     display: grid;
   }
@@ -1211,8 +1217,52 @@
     display: inline-flex;
   }
 
+  .inline-grid {
+    display: inline-grid;
+  }
+
+  .inline-table {
+    display: inline-table;
+  }
+
+  .list-item {
+    display: list-item;
+  }
+
   .table {
     display: table;
+  }
+
+  .table-caption {
+    display: table-caption;
+  }
+
+  .table-cell {
+    display: table-cell;
+  }
+
+  .table-column {
+    display: table-column;
+  }
+
+  .table-column-group {
+    display: table-column-group;
+  }
+
+  .table-footer-group {
+    display: table-footer-group;
+  }
+
+  .table-header-group {
+    display: table-header-group;
+  }
+
+  .table-row {
+    display: table-row;
+  }
+
+  .table-row-group {
+    display: table-row-group;
   }
 
   .h-0 {
@@ -2454,6 +2504,10 @@
     background-color: var(--color-emerald-500);
   }
 
+  .bg-emerald-600 {
+    background-color: var(--color-emerald-600);
+  }
+
   .bg-fuchsia-500 {
     background-color: var(--color-fuchsia-500);
   }
@@ -2632,6 +2686,10 @@
 
   .bg-pink-500 {
     background-color: var(--color-pink-500);
+  }
+
+  .bg-pink-600 {
+    background-color: var(--color-pink-600);
   }
 
   .bg-purple-50 {
@@ -4058,6 +4116,10 @@
     letter-spacing: var(--tracking-wide);
   }
 
+  .break-all {
+    word-break: break-all;
+  }
+
   .whitespace-nowrap {
     white-space: nowrap;
   }
@@ -4116,6 +4178,10 @@
 
   .text-emerald-600 {
     color: var(--color-emerald-600);
+  }
+
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
   }
 
   .text-gray-100 {
@@ -4362,6 +4428,10 @@
 
   .line-through {
     text-decoration-line: line-through;
+  }
+
+  .overline {
+    text-decoration-line: overline;
   }
 
   .underline {
@@ -4911,6 +4981,12 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:text-emerald-600:is(:where(.group):hover *) {
+      color: var(--color-emerald-600);
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:text-gray-700:is(:where(.group):hover *) {
       color: var(--color-gray-700);
     }
@@ -5103,6 +5179,12 @@
   @media (hover: hover) {
     .hover\:bg-blue-700:hover {
       background-color: var(--color-blue-700);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-emerald-700:hover {
+      background-color: var(--color-emerald-700);
     }
   }
 
@@ -5348,6 +5430,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:text-emerald-600:hover {
+      color: var(--color-emerald-600);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:text-gray-600:hover {
       color: var(--color-gray-600);
     }
@@ -5478,6 +5566,10 @@
 
   .focus\:ring-blue-600:focus {
     --tw-ring-color: var(--color-blue-600);
+  }
+
+  .focus\:ring-emerald-300:focus {
+    --tw-ring-color: var(--color-emerald-300);
   }
 
   .focus\:ring-green-300:focus {

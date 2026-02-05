@@ -98,6 +98,7 @@ import tableau  from "./roadmaps-icons/tableau.svg"
 import nginx from "./roadmaps-icons/NGINX.png"
 import d3 from "./roadmaps-icons/D3.js.png"
 import kafka from "./roadmaps-icons/kafka.png"
+import supabase from "./roadmaps-icons/supabase.svg"
 
 
 
@@ -359,6 +360,14 @@ export const roadmapsData = [
     link: "/Roadmaps/MongoDB",
     category: "featured",
     description: "Cloud Database",
+  },
+  {
+    id: "supabase",
+    title: "Supabase",
+    icon: <RoadmapIcon src={supabase} alt="supabase" />,
+    link: "/Roadmaps/Supabase",
+    category: "featured",
+    description: "Cloud database, authentication, real-time subscriptions, and storage to build secure, scalable, and full-stack applications without managing backend infrastructure ",
   },
   {
     id: "angular",
