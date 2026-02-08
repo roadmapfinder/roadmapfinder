@@ -141,6 +141,11 @@ import d3 from "./CoursesImage/d3.jpg"
 import nginx from "./CoursesImage/nginx.jpg"
 import tensorflow from "./CoursesImage/tensorflow.jpg"
 import supabase from "./CoursesImage/supabase.jpg"
+import excel from "./CoursesImage/excel.jpg"
+import pyweb from "./CoursesImage/py-eng.jpg"
+
+
+
 
 // Import creator images (adjust paths as needed)
 import creator1 from "../Images/hitesh.jpg";
@@ -182,7 +187,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase, excel, pyweb
 };
 
 // Creator images array

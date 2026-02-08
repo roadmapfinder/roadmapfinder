@@ -94,14 +94,14 @@
     {
       "id": 3,
       "category": "Web Development",
-      "title": "Complete Backend Course",
+      "title": "Complete ]Python Web Development Course",
       "level": "Beginner to advance",
-      "rating": 4.7,
-      "image": "backend",
-      "videoId": "https://youtu.be/ohIAiuHMKMI?list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo",
+      "rating": 4.8,
+      "image": "pyweb",
+      "videoId": "https://youtu.be/yBDHkveJUf4?si=drupZfJNlJXY4bLq",
       "badge": "POPULAR",
-      "language": "Hindi",
-      "docs": "/Docs/nodejs_backend"
+      "language": "English",
+      "docs": "/Docs/pyweb"
     },
     {
       "id": 3,
@@ -617,6 +617,18 @@
       "badge": "HOT",
       "language": "Hindi",
       "docs": "/Docs/pandas"
+    },
+    {
+      "id": 77,
+      "category": "Data Analysis & Science",
+      "title": "Excel complete  course in Depth",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "excel",
+      "videoId": "https://youtu.be/Zr0sNpeClV4?si=kJngcOMKG7_ZXuhY",
+      "badge": "NEW",
+      "language": "Hindi",
+      "docs": "/Docs/excel"
     },
     {
       "id": 78,

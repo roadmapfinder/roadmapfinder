@@ -1,17 +1,5 @@
 {
   "app": {
-    "[project]/app/Courses/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/Docs/supabase/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/RoadmapPage/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
-    "[project]/app/Roadmaps/Supabase/page": [
-      "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
-    ],
     "[project]/app/page": [
       "static/media/c41ca59f1c34ba31.p.e20f337c.woff2"
     ]

@@ -102,6 +102,7 @@ import supabase from "./roadmaps-icons/supabase.svg"
 
 
 
+
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt }) => (
   <div className="w-full h-full flex items-center justify-center">
@@ -408,6 +409,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Python",
     category: "trending",
     description: "Python programming language",
+  },
+  {
+    id: "pythonwebdev",
+    title: "Python WebDevelopment",
+    icon: <RoadmapIcon src={pythonIcon} alt="Python" />,
+    link: "/Roadmaps/PythonWebDev",
+    category: "trending",
+    description: "Web application using python",
   },
   {
     id: "java",
