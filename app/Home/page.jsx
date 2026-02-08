@@ -48,8 +48,8 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
-import Testimonials from "./Testimonials";
-import Footer from "./Footer";
+import Testimonials from "../Testimonial/Testimonials";
+import Footer from "../Footer/Footer";
 
 export default function HomePage() {
   const [username, setUsername] = useState("User");
