@@ -34,7 +34,8 @@ import {
   Clock,
   Lightbulb,
   Contact,
-  Info
+  Info,
+  MessageCircle,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -48,21 +49,12 @@ import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
 
-
-
-
-
 export default function HomePage() {
-  // Use Clerk's user hook
-
   const [username, setUsername] = useState("User");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(true);
   const [activeTab, setActiveTab] = useState("popular");
   const router = useRouter();
-
-  // Set username from Clerk if available
-
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -77,6 +69,11 @@ export default function HomePage() {
   // Direct signup navigation handler
   const handleSignupClick = () => {
     router.push("/RoadmapPage");
+  };
+
+  // WhatsApp community handler
+  const handleCommunityClick = () => {
+    window.open("https://chat.whatsapp.com/Jl8VQQ2r1hTJjBmWo2emtk", "_blank");
   };
 
   // Close mobile menu when screen gets larger
@@ -116,12 +113,16 @@ export default function HomePage() {
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
     },
-   
- 
-
+    {
+      name: "Join Community",
+      icon: <MessageCircle size={24} className="mr-3" />,
+      href: "#",
+      onClick: () => {
+        window.open("https://chat.whatsapp.com/Jl8VQQ2r1hTJjBmWo2emtk", "_blank");
+      },
+      isNew: true,
+    },
   ];
-
-
 
   return (
     <div className="min-h-screen bg-white font-['Sora']">
@@ -160,38 +161,60 @@ export default function HomePage() {
             <div className="p-5 flex-grow overflow-y-auto">
               <nav className="space-y-2">
                 {navItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className={`flex items-center relative ${
-                      item.href === "/"
-                        ? "text-blue-600 font-semibold bg-blue-50"
-                        : "text-gray-600"
-                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
-                  >
-                    <div className={isSidebarCollapsed ? "mx-auto" : ""}>
-                      {item.icon}
-                    </div>
-                    {!isSidebarCollapsed && (
-                      <>
-                        <span>{item.name}</span>
-                        {item.isNew && (
-                          <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                            New
-                          </span>
-                        )}
-                      </>
-                    )}
-                    {isSidebarCollapsed && item.isNew && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    )}
-                  </Link>
+                  item.onClick ? (
+                    <button
+                      key={index}
+                      onClick={item.onClick}
+                      className={`flex items-center relative w-full text-left text-gray-600 hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                    >
+                      <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                        {item.icon}
+                      </div>
+                      {!isSidebarCollapsed && (
+                        <>
+                          <span>{item.name}</span>
+                          {item.isNew && (
+                            <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                              New
+                            </span>
+                          )}
+                        </>
+                      )}
+                      {isSidebarCollapsed && item.isNew && (
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      )}
+                    </button>
+                  ) : (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      className={`flex items-center relative ${
+                        item.href === "/"
+                          ? "text-blue-600 font-semibold bg-blue-50"
+                          : "text-gray-600"
+                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                    >
+                      <div className={isSidebarCollapsed ? "mx-auto" : ""}>
+                        {item.icon}
+                      </div>
+                      {!isSidebarCollapsed && (
+                        <>
+                          <span>{item.name}</span>
+                          {item.isNew && (
+                            <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                              New
+                            </span>
+                          )}
+                        </>
+                      )}
+                      {isSidebarCollapsed && item.isNew && (
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      )}
+                    </Link>
+                  )
                 ))}
               </nav>
             </div>
-
-            {/* Logout Section */}
-          
           </div>
         </aside>
 
@@ -222,30 +245,45 @@ export default function HomePage() {
           <div className="p-5 overflow-y-auto h-full pb-20">
             <nav className="space-y-2">
               {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={`flex items-center relative ${
-                    item.href === "/"
-                      ? "text-blue-600 font-semibold bg-blue-50"
-                      : "text-gray-600"
-                  } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
-                  onClick={toggleMobileMenu}
-                >
-                  {item.icon}
-                  <span>{item.name}</span>
-                  {item.isNew && (
-                    <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                      New
-                    </span>
-                  )}
-                </Link>
+                item.onClick ? (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      item.onClick();
+                      toggleMobileMenu();
+                    }}
+                    className={`flex items-center relative w-full text-left text-gray-600 hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
+                    {item.isNew && (
+                      <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                        New
+                      </span>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className={`flex items-center relative ${
+                      item.href === "/"
+                        ? "text-blue-600 font-semibold bg-blue-50"
+                        : "text-gray-600"
+                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                    onClick={toggleMobileMenu}
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
+                    {item.isNew && (
+                      <span className="ml-auto bg-gradient-to-r from-green-400 to-green-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                        New
+                      </span>
+                    )}
+                  </Link>
+                )
               ))}
             </nav>
-
-       
-            
-   
           </div>
         </div>
 
@@ -258,16 +296,20 @@ export default function HomePage() {
           {/* Mobile Header - Only visible on mobile */}
           <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
             <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
-            <div className="flex gap-3 items-center">
-              
-                <button className="text-gray-800 p-2">
-                  <Link href="/Notification">
-                    <Bell size={20} />
-                  </Link>
-                </button>
-            
-              <button className="text-gray-800 p-2" onClick={toggleMobileMenu}>
-                <Menu size={24} />
+            <div className="flex gap-2 items-center">
+              <button className="text-gray-800 p-2">
+                <Link href="/Notification">
+                  <Bell size={20} />
+                </Link>
+              </button>
+
+              {/* Join Community Button - Replaces Menu on Mobile */}
+              <button
+                onClick={handleCommunityClick}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 py-2 rounded-lg text-xs font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-1.5 shadow-md"
+              >
+                <MessageCircle size={14} />
+                <span>Join Community</span>
               </button>
             </div>
           </header>
@@ -275,29 +317,33 @@ export default function HomePage() {
           {/* Desktop Header - Only visible on desktop */}
           <header className="hidden md:flex justify-between items-center p-8 bg-gray-50">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Welcome, User</h2>
-            
+              <h2 className="text-2xl font-bold text-gray-900">
+                Welcome, User
+              </h2>
             </div>
             <div className="flex items-center gap-4">
-           
-                <>
-                  <button className="p-3 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
-                    <Link href="/Notification">
-                      <Bell size={22} className="text-gray-700" />
-                    </Link>
-                    <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-                  </button>
-                  
-                </>
-            
-                <button
-                  onClick={handleSignupClick}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
-                >
-                  <Rocket size={18} />
-                  Start Your Journey
-                </button>
-       
+              <button className="p-3 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
+                <Link href="/Notification">
+                  <Bell size={22} className="text-gray-700" />
+                </Link>
+                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+              </button>
+
+              <button
+                onClick={handleCommunityClick}
+                className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
+              >
+                <MessageCircle size={18} />
+                Join Community
+              </button>
+
+              <button
+                onClick={handleSignupClick}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
+              >
+                <Rocket size={18} />
+                Start Your Journey
+              </button>
             </div>
           </header>
 
@@ -316,8 +362,6 @@ export default function HomePage() {
               <ChooseUs />
             </div>
           </div>
-
-          
         </main>
       </div>
     </div>

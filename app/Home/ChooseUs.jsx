@@ -20,8 +20,8 @@ const ChooseUs = () => {
     },
     {
       step: "3",
-      title: "AI Roadmap Generator",
-      description: "Access premium AI Roadmap Generator for your personalized learning",
+      title: "Community Support",
+      description: "Enhance your learning with our community mentor",
       icon: <Zap size={24} className="text-emerald-600" />,
       color: "emerald"
     }
@@ -29,13 +29,13 @@ const ChooseUs = () => {
 
   const stats = [
     {
-      number: "1K+",
+      number: "10K+",
       label: "Active Learners",
       icon: <Users size={32} className="text-blue-500" />,
       description: "Join our growing community"
     },
     {
-      number: "50+",
+      number: "250+",
       label: "Learning Paths",
       icon: <Star size={32} className="text-purple-500" />,
       description: "Curated by industry experts"
@@ -58,7 +58,7 @@ const ChooseUs = () => {
     "Expert-curated learning paths",
     "Industry-relevant Courses", 
     "Official Tech blogs",
-    "AI Powered Roadmap Generator",
+    "24x7 Community support",
     "Recommend Best Projects , Documenatation with Roadmaps",
     "Regular updates with latest trends"
   ];
@@ -179,7 +179,7 @@ const ChooseUs = () => {
               </h3>
 
               <p className="text-lg text-gray-600 mb-8">
-                We don't just provide courses – we provide a complete ecosystem designed to accelerate your learning and career growth with personalized guidance every step of the way.
+                We don't just provide courses – we provide a complete ecosystem designed to accelerate your learning and career growth with personalized roadmap every step of the way.
               </p>
 
               <div className="grid grid-cols-1 gap-4">
