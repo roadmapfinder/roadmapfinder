@@ -48,6 +48,7 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
+import Footer from "./Footer";
 
 export default function HomePage() {
   const [username, setUsername] = useState("User");
@@ -297,18 +298,14 @@ export default function HomePage() {
           <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
             <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-2 items-center">
-              <button className="text-gray-800 p-2">
-                <Link href="/Notification">
-                  <Bell size={20} />
-                </Link>
-              </button>
+           
 
               {/* Join Community Button - Replaces Menu on Mobile */}
               <button
                 onClick={handleCommunityClick}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 py-2 rounded-lg text-xs font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-1.5 shadow-md"
               >
-                <MessageCircle size={14} />
+                <MessageCircle size={13} />
                 <span>Join Community</span>
               </button>
             </div>
@@ -360,6 +357,7 @@ export default function HomePage() {
 
               <Features />
               <ChooseUs />
+              <Footer />
             </div>
           </div>
         </main>
