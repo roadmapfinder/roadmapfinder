@@ -2571,46 +2571,46 @@ const Footer = ()=>{
         social: [
             {
                 name: "Twitter / X",
-                href: "#",
+                href: "https://x.com/roadmapfinder",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$twitter$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Twitter$3e$__["Twitter"], {
                     size: 20
                 }, void 0, false, {
                     fileName: "[project]/app/Home/Footer.jsx",
                     lineNumber: 26,
-                    columnNumber: 47
+                    columnNumber: 73
                 }, ("TURBOPACK compile-time value", void 0))
             },
             {
                 name: "LinkedIn",
-                href: "#",
+                href: "https://www.linkedin.com/in/sohel-khan-266498352?utm_source=share_via&utm_content=profile&utm_medium=member_android",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Linkedin$3e$__["Linkedin"], {
                     size: 20
                 }, void 0, false, {
                     fileName: "[project]/app/Home/Footer.jsx",
                     lineNumber: 27,
-                    columnNumber: 44
+                    columnNumber: 158
                 }, ("TURBOPACK compile-time value", void 0))
             },
             {
                 name: "Instagram",
-                href: "#",
+                href: "https://www.instagram.com/its_sohel346?igsh=MXZ5ajNva2pqaGpoNw==",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$instagram$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Instagram$3e$__["Instagram"], {
                     size: 20
                 }, void 0, false, {
                     fileName: "[project]/app/Home/Footer.jsx",
                     lineNumber: 28,
-                    columnNumber: 45
+                    columnNumber: 108
                 }, ("TURBOPACK compile-time value", void 0))
             },
             {
                 name: "Threads",
-                href: "#",
+                href: "https://www.threads.com/@its_sohel346",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                     size: 20
                 }, void 0, false, {
                     fileName: "[project]/app/Home/Footer.jsx",
                     lineNumber: 29,
-                    columnNumber: 43
+                    columnNumber: 79
                 }, ("TURBOPACK compile-time value", void 0))
             }
         ]

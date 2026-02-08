@@ -48,6 +48,7 @@ import RoadmapTrending from "./RoadmapTrending";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import ChooseUs from "./ChooseUs";
+import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 
 export default function HomePage() {
@@ -357,6 +358,7 @@ export default function HomePage() {
 
               <Features />
               <ChooseUs />
+              <Testimonials />
               <Footer />
             </div>
           </div>

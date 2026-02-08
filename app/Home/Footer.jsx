@@ -23,10 +23,10 @@ const Footer = () => {
       { name: "Join Community", href: "https://chat.whatsapp.com/Jl8VQQ2r1hTJjBmWo2emtk", isExternal: true },
     ],
     social: [
-      { name: "Twitter / X", href: "#", icon: <Twitter size={20} /> },
-      { name: "LinkedIn", href: "#", icon: <Linkedin size={20} /> },
-      { name: "Instagram", href: "#", icon: <Instagram size={20} /> },
-      { name: "Threads", href: "#", icon: <Send size={20} /> },
+      { name: "Twitter / X", href: "https://x.com/roadmapfinder", icon: <Twitter size={20} /> },
+      { name: "LinkedIn", href: "https://www.linkedin.com/in/sohel-khan-266498352?utm_source=share_via&utm_content=profile&utm_medium=member_android", icon: <Linkedin size={20} /> },
+      { name: "Instagram", href: "https://www.instagram.com/its_sohel346?igsh=MXZ5ajNva2pqaGpoNw==", icon: <Instagram size={20} /> },
+      { name: "Threads", href: "https://www.threads.com/@its_sohel346", icon: <Send size={20} /> },
     ]
   };
 
