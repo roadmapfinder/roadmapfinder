@@ -1197,6 +1197,18 @@
       "docs": "/Docs/vue"
     },
     {
+      "id": 63,
+      "category": "Frameworks & Libraries",
+      "title": "Astro.js complete Course with project",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "astro",
+      "videoId": "https://youtu.be/XoIHKO6AkoM?si=D5z7IHnwHyY24irp",
+      "badge": "NEW",
+      "language": "English",
+      "docs": "/Docs/astro"
+    },
+    {
       "id": 64,
       "category": "Web Development",
       "title": "Complete backend course",

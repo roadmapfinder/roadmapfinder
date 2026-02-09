@@ -99,6 +99,7 @@ import nginx from "./roadmaps-icons/NGINX.png"
 import d3 from "./roadmaps-icons/D3.js.png"
 import kafka from "./roadmaps-icons/kafka.png"
 import supabase from "./roadmaps-icons/supabase.svg"
+import astro from "./roadmaps-icons/Astro.png"
 
 
 
@@ -377,6 +378,14 @@ export const roadmapsData = [
     link: "/Roadmaps/Angular",
     category: "featured",
     description: "Single page application development",
+  },
+  {
+    id: "astro",
+    title: "Astro.js",
+    icon: <RoadmapIcon src={astro} alt="Astro" />,
+    link: "/Roadmaps/Astro",
+    category: "featured",
+    description: "Building fast, content-driven websites such as blogs, marketing sites, documentation, and e-commerce platforms",
   },
   {
     id: "vue",
