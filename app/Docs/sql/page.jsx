@@ -1,113 +1,162 @@
 "use client";
 import React from "react";
 
-const SqlApnaCollege = () => {
+const SQLCodeWithHarryPage = () => {
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white">
       <article className="prose prose-lg max-w-none">
-
         {/* Title */}
-        <h1 className="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-green-500 pb-4">
-          Complete SQL in One Shot — Apna College (Shradha Khapra)
+        <h1 className="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-emerald-500 pb-4">
+          SQL Tutorial for Beginners (Complete Course using MySQL)
         </h1>
 
-        {/* Course Overview */}
+        {/* Overview */}
         <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">
-          Overview
+          Course Overview
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          This is a one-shot <strong>SQL crash course</strong> designed for 
-          quick revision and placement preparation. Taught by 
-          <strong> Shradha Khapra</strong>, co-founder of Apna College, 
-          the session covers all fundamental SQL concepts in a single video. 
-          Supporting <em>lecture slides (notes)</em> are also available on 
-          Apna College’s website for structured reinforcement.
+          This is a <strong>complete beginner-friendly SQL course</strong> by
+          <strong> CodeWithHarry</strong> that teaches{" "}
+          <strong>Structured Query Language (SQL)</strong> using{" "}
+          <strong>MySQL</strong>. The course focuses on building strong database
+          fundamentals through hands-on queries, real examples, and practical
+          relational database concepts.
         </p>
 
-        {/* Course Format & Resources */}
+        {/* Modules */}
         <h2 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">
-          Course Format & Resources
+          Course Modules & Syllabus
         </h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li><strong>Delivery:</strong> Single, comprehensive video session covering SQL end-to-end.</li>
-          <li><strong>Materials:</strong> Downloadable lecture slides (PDFs) from Apna College’s Notes section.</li>
+
+        <ul className="list-disc list-inside text-gray-700 space-y-4 mb-6">
+          <li>
+            <strong>Module 1: Introduction to SQL</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>What is SQL and why it is used</li>
+              <li>Role of SQL in software development & data analysis</li>
+              <li>Introduction to MySQL</li>
+              <li>Installing MySQL on Windows, Linux & macOS</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 2: Database & Table Fundamentals</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>Creating and deleting databases</li>
+              <li>Creating tables</li>
+              <li>Understanding SQL data types</li>
+              <li>Table constraints (NOT NULL, UNIQUE)</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 3: CRUD Operations</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>INSERT records into tables</li>
+              <li>SELECT queries and filtering data</li>
+              <li>UPDATE existing records</li>
+              <li>DELETE records safely</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 4: Constraints & Keys</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>Primary Key</li>
+              <li>Foreign Key</li>
+              <li>Auto Increment</li>
+              <li>Maintaining data integrity</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 5: Altering Tables</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>ALTER TABLE operations</li>
+              <li>Adding and removing columns</li>
+              <li>Modifying data types</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 6: SQL Joins</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>INNER JOIN</li>
+              <li>LEFT JOIN & RIGHT JOIN</li>
+              <li>Joining multiple tables</li>
+              <li>Real-world relational examples</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 7: Grouping & Aggregate Functions</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>COUNT, SUM, AVG, MIN, MAX</li>
+              <li>GROUP BY clause</li>
+              <li>HAVING vs WHERE</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 8: Subqueries & Nested Queries</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>Subqueries in SELECT</li>
+              <li>Subqueries in WHERE clause</li>
+              <li>Real problem-solving examples</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 9: Views & Indexes</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>Creating and using views</li>
+              <li>Indexes for performance optimization</li>
+              <li>Understanding query efficiency</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 10: Stored Procedures & Triggers</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>Introduction to stored procedures</li>
+              <li>Creating and calling procedures</li>
+              <li>Triggers for automatic database actions</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Module 11: Transactions & Advanced Concepts</strong>
+            <ul className="list-disc list-inside ml-6 mt-2">
+              <li>Transactions & commit/rollback</li>
+              <li>Auto-commit behavior</li>
+              <li>Best practices for SQL usage</li>
+            </ul>
+          </li>
         </ul>
 
-        {/* Core Topics */}
+        {/* Outcomes */}
         <h2 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">
-          Core Topics Likely Covered
+          Learning Outcomes
         </h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li><strong>Introduction to SQL & Databases:</strong> RDBMS basics, importance of SQL.</li>
-          <li><strong>Data Types & Table Structures:</strong> INT, VARCHAR, DATE; schema definitions.</li>
-          <li><strong>Basic Queries:</strong> SELECT, WHERE, ORDER BY, LIMIT.</li>
-          <li><strong>Data Manipulation:</strong> INSERT, UPDATE, DELETE.</li>
-          <li><strong>Joins & Set Operations:</strong> INNER, LEFT, RIGHT, FULL OUTER joins.</li>
-          <li><strong>Aggregation & Grouping:</strong> COUNT, SUM, AVG, GROUP BY, HAVING.</li>
-          <li><strong>Schema & Constraints:</strong> CREATE, ALTER, DROP; PRIMARY/FOREIGN keys, NOT NULL.</li>
-          <li><strong>Subqueries:</strong> Nested queries for advanced filtering.</li>
-          <li><strong>Views & Indexing:</strong> Creating views, optimizing with indexes.</li>
+          <li>Write efficient SQL queries with confidence</li>
+          <li>Design relational databases</li>
+          <li>Use joins, subqueries, and aggregation</li>
+          <li>Understand real-world database workflows</li>
         </ul>
 
-        {/* Suggested Learning Flow */}
-        <h2 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">
-          Suggested Learning Flow
-        </h2>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          To maximize learning and retention, follow this structure:
-        </p>
-        <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li>Watch the complete video in one go to understand the flow.</li>
-          <li>Pause at each concept and practice queries in a database environment.</li>
-          <li>Use Apna College slides as a structured checklist.</li>
-          <li>Revise commands regularly for better placement prep.</li>
-        </ul>
-
-        {/* What You'll Gain */}
-        <h2 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">
-          What You’ll Gain
-        </h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li>Strong foundational understanding of relational databases.</li>
-          <li>Ability to confidently write SQL queries for real-world scenarios.</li>
-          <li>Concise revision toolset (video + notes) tailored for interviews and placements.</li>
-        </ul>
-
-        {/* Next Steps */}
-        <h2 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">
-          Next Steps
-        </h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-          <li>Practice on MySQL, PostgreSQL, or SQLite to solidify concepts.</li>
-          <li>Solve SQL exercises on HackerRank or LeetCode.</li>
-          <li>Pair this tutorial with Apna College’s DBMS crash course for deeper understanding.</li>
-        </ul>
-
-        {/* Course Summary */}
-        <h2 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">
-          Summary
-        </h2>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          <em>“Complete SQL in One Shot”</em> by Shradha Khapra is a 
-          concise, placement-oriented course that balances conceptual clarity 
-          with hands-on SQL query writing. Its combination of a 
-          <strong> comprehensive video session </strong> and 
-          <strong> downloadable notes </strong> makes it perfect for 
-          both revision and interview preparation.
-        </p>
-
-        {/* Meta Info */}
+        {/* Meta */}
         <hr className="my-8 border-gray-300" />
         <div className="text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
-          <p className="mb-1"><strong>Platform:</strong> YouTube (Apna College)</p>
-          <p className="mb-1"><strong>Instructor:</strong> Shradha Khapra</p>
-          <p className="mb-1"><strong>Language:</strong> Hindi</p>
-          <p><strong>Level:</strong> Beginner to Intermediate</p>
+          <p><strong>Instructor:</strong> CodeWithHarry</p>
+          <p><strong>Platform:</strong> YouTube</p>
+          <p><strong>Database:</strong> MySQL</p>
+          <p><strong>Language:</strong> Hindi</p>
+          <p><strong>Level:</strong> Beginner → Intermediate</p>
         </div>
-
       </article>
     </div>
   );
 };
 
-export default SqlApnaCollege;
+export default SQLCodeWithHarryPage;

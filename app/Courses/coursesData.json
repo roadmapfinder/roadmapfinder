@@ -514,10 +514,10 @@
       "id": 31,
       "category": "Database",
       "title": "SQL Complete Course",
-      "level": "Beginner to Intermediate",
-      "rating": 4.8,
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
       "image": "sql",
-      "videoId": "https://youtu.be/hlGoQC332VM",
+      "videoId": "https://youtube.com/watch?v=yE6tIle64tU",
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/sql"
