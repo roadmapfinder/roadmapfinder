@@ -1,362 +1,484 @@
+// downloadPdf.jsx - Pixel-Perfect Python Web Developer Roadmap PDF Generator
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, pdf } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, pdf, Font } from '@react-pdf/renderer';
 import { saveAs } from 'file-saver';
 
-// Define styles for the PDF
+
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'column',
-    backgroundColor: '#f8fafc',
-    padding: 30,
-    fontFamily: 'Helvetica',
-  },
-  header: {
-    marginBottom: 30,
-    textAlign: 'center',
+    backgroundColor: '#FFFFFF',
+    paddingTop: 20,
     paddingBottom: 20,
-    borderBottomWidth: 2,
-    borderBottomColor: '#3b82f6',
+    paddingHorizontal: 20,
+    fontFamily: 'Helvetica',
+    fontSize: 10,
   },
-  title: {
+
+  // Cover Page Styles
+  coverHeader: {
+    backgroundColor: '#4299E1', // Blue header
+    width: '100%',
+    marginLeft: -20,
+    marginRight: -20,
+    marginTop: -20,
+    paddingVertical: 30,
+    paddingHorizontal: 20,
+    marginBottom: 25,
+  },
+  coverTitle: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#1f2937',
+    color: '#FFFFFF',
+    textAlign: 'center',
     marginBottom: 8,
   },
-  subtitle: {
-    fontSize: 16,
-    color: '#6b7280',
-    fontWeight: 'normal',
+  coverSubtitle: {
+    fontSize: 18,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginBottom: 8,
   },
+  coverEdition: {
+    fontSize: 11,
+    color: '#FFFFFF',
+    textAlign: 'center',
+  },
+
+  // Introduction Section
+  introSection: {
+    marginBottom: 20,
+  },
+  introTitle: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: '#1A202C',
+    marginBottom: 8,
+  },
+  introText: {
+    fontSize: 9.5,
+    color: '#4A5568',
+    lineHeight: 1.6,
+    marginBottom: 10,
+  },
+  instructionsList: {
+    marginTop: 8,
+    marginLeft: 5,
+  },
+  instructionItem: {
+    fontSize: 9.5,
+    color: '#4A5568',
+    lineHeight: 1.6,
+    marginBottom: 5,
+  },
+
+  // Phase Header Styles
   phaseContainer: {
-    marginBottom: 25,
-    backgroundColor: '#ffffff',
-    borderRadius: 8,
-    padding: 20,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
+    marginBottom: 20,
   },
   phaseHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 15,
+    borderRadius: 3,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    marginBottom: 8,
   },
   phaseNumber: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#3b82f6',
-    color: '#ffffff',
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 'bold',
-    textAlign: 'center',
-    lineHeight: 40,
-    marginRight: 15,
-  },
-  phaseTitleContainer: {
-    flex: 1,
+    color: '#FFFFFF',
+    marginBottom: 4,
   },
   phaseTitle: {
-    fontSize: 20,
+    fontSize: 13,
     fontWeight: 'bold',
-    color: '#1f2937',
-    marginBottom: 2,
+    color: '#FFFFFF',
   },
   phaseSubtitle: {
-    fontSize: 12,
-    color: '#6b7280',
-    marginBottom: 2,
+    fontSize: 9.5,
+    fontStyle: 'italic',
+    color: '#4A5568',
+    marginTop: 6,
   },
   phaseDescription: {
-    fontSize: 14,
-    color: '#374151',
-    fontWeight: 'normal',
+    fontSize: 9.5,
+    color: '#4A5568',
+    lineHeight: 1.5,
+    marginTop: 4,
+    marginBottom: 10,
   },
+
+  // Section Box Styles
   sectionsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 15,
+    gap: 8,
+    marginBottom: 12,
   },
-  section: {
-    flex: '1 1 45%',
-    backgroundColor: '#f8fafc',
-    borderRadius: 6,
-    padding: 15,
-    borderLeftWidth: 4,
-    borderLeftColor: '#3b82f6',
-    marginBottom: 10,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#3b82f6',
-    marginBottom: 10,
-  },
-  itemsList: {
-    gap: 6,
-  },
-  item: {
-    fontSize: 11,
-    color: '#374151',
-    lineHeight: 1.4,
-    paddingLeft: 12,
-    marginBottom: 4,
-  },
-  itemNumber: {
-    fontWeight: 'bold',
-    color: '#1f2937',
-  },
-  phaseConnector: {
-    alignSelf: 'center',
-    marginVertical: 15,
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    backgroundColor: '#f3f4f6',
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: '#d1d5db',
-  },
-  connectorText: {
-    fontSize: 12,
-    color: '#6b7280',
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  footer: {
-    marginTop: 30,
-    padding: 20,
-    backgroundColor: '#ecfdf5',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#10b981',
-    textAlign: 'center',
-  },
-  footerTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#065f46',
+  sectionBox: {
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    border: '0.5pt solid #CBD5E0',
+    borderRadius: 2,
     marginBottom: 8,
   },
-  footerText: {
-    fontSize: 14,
-    color: '#047857',
+  sectionHeader: {
+    paddingVertical: 6,
+    paddingHorizontal: 6,
+  },
+  sectionTitle: {
+    fontSize: 10.5,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  sectionContent: {
+    paddingHorizontal: 8,
+    paddingVertical: 8,
+  },
+  sectionItem: {
+    flexDirection: 'row',
+    marginBottom: 4,
+    alignItems: 'flex-start',
+  },
+  itemBullet: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#1A202C',
+    width: 15,
+    marginRight: 3,
+  },
+  itemText: {
+    fontSize: 9,
+    color: '#1A202C',
     lineHeight: 1.5,
+    flex: 1,
+  },
+
+  // Final Tips Section
+  finalTipsContainer: {
+    marginTop: 15,
+  },
+  finalTipsHeader: {
+    backgroundColor: '#4299E1',
+    borderRadius: 3,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginBottom: 12,
+  },
+  finalTipsTitle: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+  },
+  finalTipsMessage: {
+    fontSize: 10,
+    color: '#1A202C',
+    lineHeight: 1.6,
+    marginBottom: 12,
+  },
+  skillsTitle: {
+    fontSize: 10.5,
+    fontWeight: 'bold',
+    color: '#1A202C',
+    marginBottom: 8,
+  },
+  skillItem: {
+    fontSize: 9.5,
+    color: '#1A202C',
+    lineHeight: 1.6,
+    marginBottom: 3,
+  },
+  reminderBox: {
+    backgroundColor: '#F0FFF4',
+    border: '0.5pt solid #48BB78',
+    borderRadius: 2,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginTop: 12,
+  },
+  reminderTitle: {
+    fontSize: 9.5,
+    fontWeight: 'bold',
+    color: '#1A202C',
+    marginBottom: 5,
+  },
+  reminderText: {
+    fontSize: 9,
+    color: '#1A202C',
+    lineHeight: 1.5,
+  },
+
+  // Footer Styles
+  footer: {
+    position: 'absolute',
+    bottom: 15,
+    left: 20,
+    right: 20,
+    textAlign: 'center',
+    fontSize: 8,
+    color: '#718096',
+    fontStyle: 'italic',
   },
   pageNumber: {
     position: 'absolute',
-    fontSize: 10,
-    bottom: 20,
-    right: 30,
-    color: '#6b7280',
-  },
-  watermark: {
-    position: 'absolute',
-    top: 50,
-    right: 30,
+    bottom: 10,
+    right: 20,
     fontSize: 8,
-    color: '#d1d5db',
-    opacity: 0.5,
-  }
+    color: '#718096',
+  },
+
+  // Icon/Emoji styles
+  emoji: {
+    fontSize: 11,
+    marginRight: 3,
+  },
 });
 
+// Phase color mapping - exact colors from the OS PDF
+const getPhaseColor = (phaseId) => {
+  const colors = {
+    1: '#48BB78',   // Green - Phase 1
+    2: '#4299E1',   // Blue - Phase 2
+    3: '#9F7AEA',   // Purple - Phase 3
+    4: '#F56565',   // Red - Phase 4
+    5: '#ED8936',   // Orange - Phase 5
+    6: '#667EEA',   // Indigo - Phase 6
+    7: '#ED64A6',   // Pink - Phase 7
+    8: '#38B2AC',   // Teal - Phase 8
+    9: '#ECC94B',   // Yellow - Phase 9
+    10: '#4A5568',  // Gray - Phase 10
+  };
+  return colors[phaseId] || '#4299E1';
+};
+
+// Icon mapping based on section content
+const getIconForSection = (title) => {
+  const icons = {
+    'Python Core': '🔷',
+    'Object-Oriented': '🧩',
+    'How the Web Works': '🌐',
+    'Frontend Basics': '🎨',
+    'Flask': '🔥',
+    'Django': '🎯',
+    'FastAPI': '⚡',
+    'SQL': '🗄️',
+    'ORM': '🔗',
+    'NoSQL': '📦',
+    'Auth': '🔐',
+    'Security': '🛡️',
+    'API': '🔌',
+    'Async': '⚙️',
+    'Caching': '💾',
+    'Performance': '🚀',
+    'Testing': '✅',
+    'Linux': '🐧',
+    'Docker': '🐳',
+    'Web Servers': '⚙️',
+    'Cloud': '☁️',
+    'System Design': '🏗️',
+    'Design Patterns': '📐',
+    'Logging': '📊',
+    'Portfolio': '💼',
+    'Git': '🌿',
+    'Interview': '💡',
+    'Resume': '📄',
+  };
+
+  for (const [key, icon] of Object.entries(icons)) {
+    if (title.includes(key)) return icon;
+  }
+  return '📌';
+};
+
 // PDF Document Component
-const RoadmapPDFDocument = ({ phases }) => (
+const RoadmapDocument = ({ phases }) => (
   <Document>
+    {/* Cover Page */}
     <Page size="A4" style={styles.page}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.title}>PythonWebDev Roadmap</Text>
-        <Text style={styles.subtitle}>Your Complete Journey from Beginner to Professional</Text>
+      <View style={styles.coverHeader}>
+        <Text style={styles.coverTitle}>Python Web Development</Text>
+        <Text style={styles.coverSubtitle}>A Comprehensive Learning Roadmap</Text>
+        <Text style={styles.coverEdition}>2025 Edition</Text>
       </View>
 
+      <View style={styles.introSection}>
+        <Text style={styles.introTitle}>
+          Welcome to Your Python Web Development Journey
+        </Text>
+        <Text style={styles.introText}>
+          This comprehensive roadmap will guide you from absolute beginner to industry-ready 
+          Python web developer. Each phase builds upon the previous one, ensuring you develop 
+          a solid foundation and practical skills that companies value.
+        </Text>
 
-
-      {/* Phases */}
-      {phases.map((phase, index) => (
-        <View key={phase.id} wrap={false}>
-          <View style={styles.phaseContainer}>
-            {/* Phase Header */}
-            <View style={styles.phaseHeader}>
-              <Text style={[styles.phaseNumber, { backgroundColor: getPhaseColor(phase.color) }]}>
-                {phase.id}
-              </Text>
-              <View style={styles.phaseTitleContainer}>
-                <Text style={styles.phaseTitle}>{phase.title}</Text>
-                <Text style={styles.phaseSubtitle}>{phase.subtitle}</Text>
-                <Text style={styles.phaseDescription}>{phase.description}</Text>
-              </View>
-            </View>
-
-            {/* Sections */}
-            <View style={styles.sectionsContainer}>
-              {phase.sections.map((section, sectionIndex) => (
-                <View key={sectionIndex} style={styles.section}>
-                  <Text style={styles.sectionTitle}>{section.title}</Text>
-                  <View style={styles.itemsList}>
-                    {section.items.map((item, itemIndex) => (
-                      <Text key={itemIndex} style={styles.item}>
-                        <Text style={styles.itemNumber}>{itemIndex + 1}.</Text> {item}
-                      </Text>
-                    ))}
-                  </View>
-                </View>
-              ))}
-            </View>
-          </View>
-
-          {/* Phase Connector */}
-          {index < phases.length - 1 && (
-            <View style={styles.phaseConnector}>
-              <Text style={styles.connectorText}>
-                ↓ Next: Phase {phase.id + 1}
-              </Text>
-            </View>
-          )}
+        <Text style={styles.introTitle}>How to Use This Roadmap:</Text>
+        <View style={styles.instructionsList}>
+          <Text style={styles.instructionItem}>
+            • Follow each phase sequentially - they build upon each other
+          </Text>
+          <Text style={styles.instructionItem}>
+            • Complete the practice projects - they solidify your understanding
+          </Text>
+          <Text style={styles.instructionItem}>
+            • Take your time - depth matters more than speed
+          </Text>
+          <Text style={styles.instructionItem}>
+            • Build a portfolio as you learn - document your projects on GitHub
+          </Text>
+          <Text style={styles.instructionItem}>
+            • Join communities and engage with other learners
+          </Text>
         </View>
-      ))}
+      </View>
 
-
-
-      {/* Page Number */}
-      <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
-        `${pageNumber} / ${totalPages}`
-      )} fixed />
+      <Text style={styles.footer}>
+        Generated with Python Web Development Roadmap • 2025 Edition
+      </Text>
     </Page>
-  </Document>
-);
 
-// Helper function to convert Tailwind colors to hex
-const getPhaseColor = (tailwindColor) => {
-  const colorMap = {
-    'bg-blue-500': '#3b82f6',
-    'bg-purple-500': '#8b5cf6',
-    'bg-green-500': '#10b981',
-    'bg-orange-500': '#f59e0b',
-    'bg-red-500': '#ef4444',
-  };
-  return colorMap[tailwindColor] || '#3b82f6';
-};
-
-// Main download function
-export const downloadRoadmapPDF = async (phases) => {
-  try {
-    // Create the PDF blob
-    const blob = await pdf(<RoadmapPDFDocument phases={phases} />).toBlob();
-
-    // Generate filename with current date
-    const currentDate = new Date().toISOString().split('T')[0];
-    const filename = `PythonWebDev-roadmap-${currentDate}.pdf`;
-
-    // Save the file
-    saveAs(blob, filename);
-
-    return { success: true, filename };
-  } catch (error) {
-    console.error('Error generating PDF:', error);
-    return { success: false, error: error.message };
-  }
-};
-
-// React Component for PDF Download Link (alternative approach)
-export const PDFDownloadButton = ({ phases, className = "", children = "Download PDF" }) => (
-  <PDFDownloadLink
-    document={<RoadmapPDFDocument phases={phases} />}
-    fileName={`PythonWebDev-roadmap-${new Date().toISOString().split('T')[0]}.pdf`}
-    className={className}
-  >
-    {({ blob, url, loading, error }) => {
-      if (loading) return 'Generating PDF...';
-      if (error) return 'Error generating PDF';
-      return children;
-    }}
-  </PDFDownloadLink>
-  );
-
-// Advanced PDF generation with custom options
-export const downloadAdvancedRoadmapPDF = async (phases, options = {}) => {
-  const {
-    includeWatermark = true,
-    customTitle = "PythonWebDev Roadmap",
-    customSubtitle = "Your Complete Journey from Beginner to Professional",
-    pageSize = "A4",
-    orientation = "portrait"
-  } = options;
-
-  try {
-    const AdvancedPDFDocument = () => (
-      <Document>
-        <Page size={pageSize} orientation={orientation} style={styles.page}>
-          {/* Custom Header */}
-          <View style={styles.header}>
-            <Text style={styles.title}>{customTitle}</Text>
-            <Text style={styles.subtitle}>{customSubtitle}</Text>
+    {/* Phase Pages */}
+    {phases.map((phase, phaseIndex) => (
+      <Page key={phase.id} size="A4" style={styles.page}>
+        {/* Phase Header */}
+        <View style={styles.phaseContainer}>
+          <View style={[styles.phaseHeader, { backgroundColor: getPhaseColor(phase.id) }]}>
+            <Text style={styles.phaseNumber}>PHASE {phase.id}</Text>
+            <Text style={styles.phaseTitle}>{phase.title}</Text>
           </View>
 
+          <Text style={styles.phaseSubtitle}>{phase.subtitle}</Text>
+          <Text style={styles.phaseDescription}>{phase.description}</Text>
 
-          {/* Content remains the same */}
-          {phases.map((phase, index) => (
-            <View key={phase.id} wrap={false}>
-              <View style={styles.phaseContainer}>
-                <View style={styles.phaseHeader}>
-                  <Text style={[styles.phaseNumber, { backgroundColor: getPhaseColor(phase.color) }]}>
-                    {phase.id}
+          {/* Sections */}
+          <View style={styles.sectionsContainer}>
+            {phase.sections.map((section, sectionIndex) => (
+              <View key={sectionIndex} style={styles.sectionBox}>
+                {/* Section Header */}
+                <View style={[
+                  styles.sectionHeader,
+                  { backgroundColor: getPhaseColor(phase.id) }
+                ]}>
+                  <Text style={styles.sectionTitle}>
+                    {getIconForSection(section.title)} {section.title}
                   </Text>
-                  <View style={styles.phaseTitleContainer}>
-                    <Text style={styles.phaseTitle}>{phase.title}</Text>
-                    <Text style={styles.phaseSubtitle}>{phase.subtitle}</Text>
-                    <Text style={styles.phaseDescription}>{phase.description}</Text>
-                  </View>
                 </View>
 
-                <View style={styles.sectionsContainer}>
-                  {phase.sections.map((section, sectionIndex) => (
-                    <View key={sectionIndex} style={styles.section}>
-                      <Text style={styles.sectionTitle}>{section.title}</Text>
-                      <View style={styles.itemsList}>
-                        {section.items.map((item, itemIndex) => (
-                          <Text key={itemIndex} style={styles.item}>
-                            <Text style={styles.itemNumber}>{itemIndex + 1}.</Text> {item}
-                          </Text>
-                        ))}
-                      </View>
+                {/* Section Items */}
+                <View style={styles.sectionContent}>
+                  {section.items.map((item, itemIndex) => (
+                    <View key={itemIndex} style={styles.sectionItem}>
+                      <Text style={styles.itemBullet}>{itemIndex + 1}.</Text>
+                      <Text style={styles.itemText}>{item}</Text>
                     </View>
                   ))}
                 </View>
               </View>
-
-              {index < phases.length - 1 && (
-                <View style={styles.phaseConnector}>
-                  <Text style={styles.connectorText}>
-                    ↓ Next: Phase {phase.id + 1}
-                  </Text>
-                </View>
-              )}
-            </View>
-          ))}
-
-          <View style={styles.footer}>
-            <Text style={styles.footerTitle}>🎉 Congratulations!</Text>
-            <Text style={styles.footerText}>
-              You've completed the PythonWebDev Roadmap and are now ready to take on professional  challenges.
-            </Text>
+            ))}
           </View>
+        </View>
 
-          <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
-            `${pageNumber} / ${totalPages}`
-          )} fixed />
-        </Page>
-      </Document>
-    );
+        <Text 
+          style={styles.pageNumber} 
+          render={({ pageNumber, totalPages }) => `Page ${pageNumber} of ${totalPages}`}
+          fixed
+        />
+      </Page>
+    ))}
 
-    const blob = await pdf(<AdvancedPDFDocument />).toBlob();
-    const currentDate = new Date().toISOString().split('T')[0];
-    const filename = `${customTitle.toLowerCase().replace(/\s+/g, '-')}-${currentDate}.pdf`;
+    {/* Final Tips Page */}
+    <Page size="A4" style={styles.page}>
+      <View style={styles.finalTipsContainer}>
+        <View style={styles.finalTipsHeader}>
+          <Text style={styles.finalTipsTitle}>
+            🏆 Final Tips to Become Industry-Ready
+          </Text>
+        </View>
 
+        <Text style={styles.finalTipsMessage}>
+          Congratulations! You've completed the Python Web Development Mastery Roadmap and 
+          are ready to design scalable, robust web applications.
+        </Text>
+
+        <Text style={styles.skillsTitle}>What Makes You Industry-Ready:</Text>
+
+        <View style={{ marginBottom: 12 }}>
+          <Text style={styles.skillItem}>
+            ✅ Build secure, production-grade APIs with authentication and authorization
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Design efficient databases with proper indexing and query optimization
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Write comprehensive tests to ensure code quality and reliability
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Deploy applications to cloud platforms with CI/CD pipelines
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Scale applications to handle increasing user loads
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Debug and resolve production issues effectively
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Collaborate in teams using Git and code review processes
+          </Text>
+          <Text style={styles.skillItem}>
+            ✅ Understand system architecture and design patterns
+          </Text>
+        </View>
+
+        <View style={styles.reminderBox}>
+          <Text style={styles.reminderTitle}>💡 Remember:</Text>
+          <Text style={styles.reminderText}>
+            This is what companies pay for. Focus on building real projects, contribute to 
+            open source, and continuously learn. The journey never truly ends in tech!
+          </Text>
+        </View>
+      </View>
+
+      <View style={[styles.footer, { textAlign: 'center' }]}>
+        <Text>Generated with Python Web Development Roadmap • 2025 Edition</Text>
+        <Text style={{ marginTop: 3 }}>Keep Learning, Keep Building! 🚀</Text>
+      </View>
+
+      <Text 
+        style={styles.pageNumber} 
+        render={({ pageNumber, totalPages }) => `Page ${pageNumber} of ${totalPages}`}
+        fixed
+      />
+    </Page>
+  </Document>
+);
+
+/**
+ * Generate and download the Python Web Developer roadmap as a PDF
+ * @param {Array} phases - Array of phase objects from roadmapData
+ * @returns {Object} - Success status and filename or error
+ */
+export const downloadRoadmapPDF = async (phases) => {
+  try {
+    // Generate PDF blob
+    const blob = await pdf(<RoadmapDocument phases={phases} />).toBlob();
+
+    // Create filename with timestamp
+    const timestamp = new Date().toISOString().split('T')[0];
+    const filename = `Python-WebDev-Roadmap-${timestamp}.pdf`;
+
+    // Save the PDF
     saveAs(blob, filename);
 
-    return { success: true, filename };
+    return {
+      success: true,
+      filename: filename
+    };
+
   } catch (error) {
-    console.error('Error generating advanced PDF:', error);
-    return { success: false, error: error.message };
+    console.error('Error generating PDF:', error);
+    return {
+      success: false,
+      error: error.message
+    };
   }
 };
+
+export default downloadRoadmapPDF;
