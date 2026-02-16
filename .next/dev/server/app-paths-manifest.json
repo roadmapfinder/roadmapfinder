@@ -1,5 +1,5 @@
 {
   "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/PythonWebDev/page": "app/Roadmaps/PythonWebDev/page.js",
+  "/Roadmaps/Laravel/page": "app/Roadmaps/Laravel/page.js",
   "/page": "app/page.js"
 }

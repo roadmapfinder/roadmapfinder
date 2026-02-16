@@ -12,7 +12,7 @@ export const phases = [
         items: [
           "Computer Architecture: CPU, ALU, registers, instruction cycle, caches, memory hierarchy",
           "Number Systems & Binary: Binary, Hex, bitwise operations, signed/unsigned integers",
-          "Compilation Pipeline: Source → Preprocessing → Compilation → Linking → Loading",
+          "Compil2ation Pipeline: Source → Preprocessing → Compilation → Linking → Loading",
           "Algorithms & Data Structures: Arrays, linked lists, stacks, trees, heaps, scheduling queues"
         ]
       },

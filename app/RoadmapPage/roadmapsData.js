@@ -100,6 +100,7 @@ import d3 from "./roadmaps-icons/D3.js.png"
 import kafka from "./roadmaps-icons/kafka.png"
 import supabase from "./roadmaps-icons/supabase.svg"
 import astro from "./roadmaps-icons/Astro.png"
+import laravel from "./roadmaps-icons/Laravel.png"
 
 
 
@@ -476,6 +477,14 @@ export const roadmapsData = [
     description: "PHP web development",
   },
   {
+    id: "laravel",
+    title: "laravel",
+    icon: <RoadmapIcon src={laravel} alt="laravel" />,
+    link: "/Roadmaps/Laravel",
+    category: "trending",
+    description: "Web Applications and rest api using php",
+  },
+  {
     id: "sql",
     title: "SQL",
     icon: <RoadmapIcon src={sqlIcon} alt="SQL" />,
@@ -483,6 +492,7 @@ export const roadmapsData = [
     category: "trending",
     description: "Database management and queries",
   },
+  
   {
     id: "postgre-sql",
     title: "Postgre Sql",
