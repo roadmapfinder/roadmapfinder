@@ -8,7 +8,7 @@ import Faq from './faq';
 import { downloadRoadmapPDF } from './downloadPdf';
 import { phases } from './roadmapData';
 
-const SolidityRoadmap = () => {
+const SoftwareRoadmap = () => {
   const [activeTab, setActiveTab] = useState('roadmap');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -238,4 +238,4 @@ const SolidityRoadmap = () => {
   );
 };
 
-export default SolidityRoadmap;
+export default SoftwareRoadmap;

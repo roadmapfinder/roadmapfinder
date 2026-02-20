@@ -3882,7 +3882,7 @@ const roadmapsData = [
             lineNumber: 888,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
-        link: "/Roadmaps/Software-Testing",
+        link: "/Roadmaps/Software-Tester",
         category: "trending",
         description: "Testing of API & Software"
     },

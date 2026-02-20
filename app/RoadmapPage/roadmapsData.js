@@ -886,7 +886,7 @@ export const roadmapsData = [
     id: "Software Testing",
     title: "Software Testing",
     icon: <RoadmapIcon src={testing} alt="testing" />,
-    link: "/Roadmaps/Software-Testing",
+    link: "/Roadmaps/Software-Tester",
     category: "trending",
     description: "Testing of API & Software",
   },
