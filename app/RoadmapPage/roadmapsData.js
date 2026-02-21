@@ -101,6 +101,7 @@ import kafka from "./roadmaps-icons/kafka.png"
 import supabase from "./roadmaps-icons/supabase.svg"
 import astro from "./roadmaps-icons/Astro.png"
 import laravel from "./roadmaps-icons/Laravel.png"
+import vector from "./roadmaps-icons/vector.png"
 
 
 
@@ -899,6 +900,14 @@ export const roadmapsData = [
     description: "Game Development and applications",
   },
   {
+    id: "vector db",
+    title: "Vector DB",
+    icon: <RoadmapIcon src={vector} alt="Vector DB" />,
+    link: "/Roadmaps/Vectordb",
+    category: "trending",
+    description: "Vector databases are specialized systems designed to store, index, and query high-dimensional vector embeddings, enabling fast semantic similarity search for unstructured data like text, images, and audio",
+  },
+  {
     id: "genai",
     title: "Generative AI",
     icon: <RoadmapIcon src={genAiIcon} alt="Generative AI" />,
@@ -940,6 +949,7 @@ export const roadmapsData = [
     description: "React Context API for state management",
   },
 ];
+
 
 // Utility functions for roadmaps
 export const getRoadmapsByCategory = (category) => {

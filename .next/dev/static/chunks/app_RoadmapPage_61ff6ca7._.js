@@ -2445,6 +2445,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadma
 ;
 ;
 ;
+ipo;
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full h-full flex items-center justify-center",
@@ -2456,12 +2457,12 @@ const RoadmapIcon = ({ src, alt })=>/*#__PURE__*/ (0, __TURBOPACK__imported__mod
             className: "w-full h-full object-contain"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 111,
+            lineNumber: 112,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-        lineNumber: 110,
+        lineNumber: 111,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 _c = RoadmapIcon;
@@ -2484,7 +2485,7 @@ const roadmapsData = [
             alt: "AI & ML"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 138,
+            lineNumber: 139,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Aiml",
@@ -2499,7 +2500,7 @@ const roadmapsData = [
             alt: "AI & ML"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 146,
+            lineNumber: 147,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Html",
@@ -2514,7 +2515,7 @@ const roadmapsData = [
             alt: "AI & ML"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 153,
+            lineNumber: 154,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Css",
@@ -2529,7 +2530,7 @@ const roadmapsData = [
             alt: "AI Agents"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 161,
+            lineNumber: 162,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/AI-Agent",
@@ -2544,7 +2545,7 @@ const roadmapsData = [
             alt: "AI automation"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 169,
+            lineNumber: 170,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/AI-Automation",
@@ -2559,7 +2560,7 @@ const roadmapsData = [
             alt: "Langchain"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 177,
+            lineNumber: 178,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Langchain",
@@ -2574,7 +2575,7 @@ const roadmapsData = [
             alt: "API Development"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 185,
+            lineNumber: 186,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Api",
@@ -2589,7 +2590,7 @@ const roadmapsData = [
             alt: "WordPress"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 193,
+            lineNumber: 194,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Wordpress",
@@ -2604,7 +2605,7 @@ const roadmapsData = [
             alt: "Shopify"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 201,
+            lineNumber: 202,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Shopify",
@@ -2619,7 +2620,7 @@ const roadmapsData = [
             alt: "Django"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 209,
+            lineNumber: 210,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Django",
@@ -2634,7 +2635,7 @@ const roadmapsData = [
             alt: "flask"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 217,
+            lineNumber: 218,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Flask",
@@ -2649,7 +2650,7 @@ const roadmapsData = [
             alt: "fastapi"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 225,
+            lineNumber: 226,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Fastapi",
@@ -2664,7 +2665,7 @@ const roadmapsData = [
             alt: ".net"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 233,
+            lineNumber: 234,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/.Net",
@@ -2679,7 +2680,7 @@ const roadmapsData = [
             alt: "React"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 241,
+            lineNumber: 242,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/React",
@@ -2694,7 +2695,7 @@ const roadmapsData = [
             alt: "Next.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 249,
+            lineNumber: 250,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Next",
@@ -2709,7 +2710,7 @@ const roadmapsData = [
             alt: "Nest.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 257,
+            lineNumber: 258,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Nestjs",
@@ -2724,7 +2725,7 @@ const roadmapsData = [
             alt: "React Native"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 265,
+            lineNumber: 266,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Reactnative",
@@ -2739,7 +2740,7 @@ const roadmapsData = [
             alt: "Software Architect"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 273,
+            lineNumber: 274,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Software",
@@ -2754,7 +2755,7 @@ const roadmapsData = [
             alt: "Flutter"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 281,
+            lineNumber: 282,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Flutter",
@@ -2769,7 +2770,7 @@ const roadmapsData = [
             alt: "Full-Stack"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 289,
+            lineNumber: 290,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Full-Stack",
@@ -2784,7 +2785,7 @@ const roadmapsData = [
             alt: "Frontend"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 297,
+            lineNumber: 298,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Frontend",
@@ -2799,7 +2800,7 @@ const roadmapsData = [
             alt: "MERN Stack"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 305,
+            lineNumber: 306,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Mern",
@@ -2814,7 +2815,7 @@ const roadmapsData = [
             alt: "Backend"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 313,
+            lineNumber: 314,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Backend",
@@ -2829,7 +2830,7 @@ const roadmapsData = [
             alt: "Nginx"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 321,
+            lineNumber: 322,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Nginx",
@@ -2844,7 +2845,7 @@ const roadmapsData = [
             alt: "Node.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 330,
+            lineNumber: 331,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Nodejs",
@@ -2859,7 +2860,7 @@ const roadmapsData = [
             alt: "Express.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 338,
+            lineNumber: 339,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Expressjs",
@@ -2874,7 +2875,7 @@ const roadmapsData = [
             alt: "fastify"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 346,
+            lineNumber: 347,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Fastify",
@@ -2889,7 +2890,7 @@ const roadmapsData = [
             alt: "Electron.js"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 354,
+            lineNumber: 355,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Electron",
@@ -2904,7 +2905,7 @@ const roadmapsData = [
             alt: "MongoDB"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 362,
+            lineNumber: 363,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/MongoDB",
@@ -2919,7 +2920,7 @@ const roadmapsData = [
             alt: "supabase"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 370,
+            lineNumber: 371,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Supabase",
@@ -2934,7 +2935,7 @@ const roadmapsData = [
             alt: "Angular"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 378,
+            lineNumber: 379,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Angular",
@@ -2949,7 +2950,7 @@ const roadmapsData = [
             alt: "Astro"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 386,
+            lineNumber: 387,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Astro",
@@ -2964,7 +2965,7 @@ const roadmapsData = [
             alt: "Vue"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 394,
+            lineNumber: 395,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Vue",
@@ -2979,7 +2980,7 @@ const roadmapsData = [
             alt: "JavaScript"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 402,
+            lineNumber: 403,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Javascript",
@@ -2994,7 +2995,7 @@ const roadmapsData = [
             alt: "TypeScript"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 410,
+            lineNumber: 411,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Typescript",
@@ -3009,7 +3010,7 @@ const roadmapsData = [
             alt: "Python"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 418,
+            lineNumber: 419,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Python",
@@ -3024,7 +3025,7 @@ const roadmapsData = [
             alt: "Python"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 426,
+            lineNumber: 427,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/PythonWebDev",
@@ -3039,7 +3040,7 @@ const roadmapsData = [
             alt: "Java"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 434,
+            lineNumber: 435,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Java",
@@ -3054,7 +3055,7 @@ const roadmapsData = [
             alt: "Java Full-Stack"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 442,
+            lineNumber: 443,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/JavaFullStack",
@@ -3069,7 +3070,7 @@ const roadmapsData = [
             alt: "Rust"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 450,
+            lineNumber: 451,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Rust",
@@ -3084,7 +3085,7 @@ const roadmapsData = [
             alt: "iOS"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 458,
+            lineNumber: 459,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Ios",
@@ -3099,7 +3100,7 @@ const roadmapsData = [
             alt: "Android"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 466,
+            lineNumber: 467,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Android",
@@ -3114,7 +3115,7 @@ const roadmapsData = [
             alt: "PHP"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 474,
+            lineNumber: 475,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Php",
@@ -3129,7 +3130,7 @@ const roadmapsData = [
             alt: "laravel"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 482,
+            lineNumber: 483,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Laravel",
@@ -3144,7 +3145,7 @@ const roadmapsData = [
             alt: "SQL"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 490,
+            lineNumber: 491,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Sql",
@@ -3159,7 +3160,7 @@ const roadmapsData = [
             alt: "PostgreSQL"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 499,
+            lineNumber: 500,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Postgre-Sql",
@@ -3174,7 +3175,7 @@ const roadmapsData = [
             alt: "Go"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 507,
+            lineNumber: 508,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Go",
@@ -3189,7 +3190,7 @@ const roadmapsData = [
             alt: "Swift"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 515,
+            lineNumber: 516,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Swift",
@@ -3204,7 +3205,7 @@ const roadmapsData = [
             alt: "C++"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 523,
+            lineNumber: 524,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Cpp",
@@ -3219,7 +3220,7 @@ const roadmapsData = [
             alt: "C"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 531,
+            lineNumber: 532,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/C",
@@ -3234,7 +3235,7 @@ const roadmapsData = [
             alt: "Kotlin"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 539,
+            lineNumber: 540,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Kotlin",
@@ -3249,7 +3250,7 @@ const roadmapsData = [
             alt: "Spring"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 547,
+            lineNumber: 548,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Spring",
@@ -3264,7 +3265,7 @@ const roadmapsData = [
             alt: "Spring Boot"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 555,
+            lineNumber: 556,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Springboot",
@@ -3279,7 +3280,7 @@ const roadmapsData = [
             alt: "Data Engineering"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 563,
+            lineNumber: 564,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Data",
@@ -3294,7 +3295,7 @@ const roadmapsData = [
             alt: "Data Science"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 571,
+            lineNumber: 572,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Data-Science",
@@ -3309,7 +3310,7 @@ const roadmapsData = [
             alt: "Data Analysis"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 579,
+            lineNumber: 580,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Data-Analysis",
@@ -3324,7 +3325,7 @@ const roadmapsData = [
             alt: "NumPy"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 587,
+            lineNumber: 588,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Powerbi",
@@ -3339,7 +3340,7 @@ const roadmapsData = [
             alt: "NumPy"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 596,
+            lineNumber: 597,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Numpy",
@@ -3354,7 +3355,7 @@ const roadmapsData = [
             alt: "Pandas"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 604,
+            lineNumber: 605,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Pandaas",
@@ -3369,7 +3370,7 @@ const roadmapsData = [
             alt: "matplotlib"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 612,
+            lineNumber: 613,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Matplotlib",
@@ -3384,7 +3385,7 @@ const roadmapsData = [
             alt: "tableau"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 620,
+            lineNumber: 621,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Tableau",
@@ -3399,7 +3400,7 @@ const roadmapsData = [
             alt: "d3"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 628,
+            lineNumber: 629,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/D3",
@@ -3414,7 +3415,7 @@ const roadmapsData = [
             alt: "Tensorflow"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 636,
+            lineNumber: 637,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Tensorflow",
@@ -3429,7 +3430,7 @@ const roadmapsData = [
             alt: "pyspark"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 644,
+            lineNumber: 645,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Pyspark",
@@ -3444,7 +3445,7 @@ const roadmapsData = [
             alt: "pytorch"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 652,
+            lineNumber: 653,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Pytorch",
@@ -3459,7 +3460,7 @@ const roadmapsData = [
             alt: "Product Designer"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 662,
+            lineNumber: 663,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/ProductDesigner",
@@ -3474,7 +3475,7 @@ const roadmapsData = [
             alt: "Database"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 670,
+            lineNumber: 671,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Database",
@@ -3489,7 +3490,7 @@ const roadmapsData = [
             alt: "Excel"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 678,
+            lineNumber: 679,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Excel",
@@ -3504,7 +3505,7 @@ const roadmapsData = [
             alt: "UI/UX"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 686,
+            lineNumber: 687,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/UIUX",
@@ -3519,7 +3520,7 @@ const roadmapsData = [
             alt: "Cloud"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 694,
+            lineNumber: 695,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Cloud",
@@ -3534,7 +3535,7 @@ const roadmapsData = [
             alt: "AWS"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 702,
+            lineNumber: 703,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/AWS",
@@ -3549,7 +3550,7 @@ const roadmapsData = [
             alt: "docker"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 710,
+            lineNumber: 711,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Docker",
@@ -3564,7 +3565,7 @@ const roadmapsData = [
             alt: "kubernetes"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 718,
+            lineNumber: 719,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Kubernetes",
@@ -3579,7 +3580,7 @@ const roadmapsData = [
             alt: "Networking"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 726,
+            lineNumber: 727,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Networking",
@@ -3594,7 +3595,7 @@ const roadmapsData = [
             alt: "after-effects"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 734,
+            lineNumber: 735,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/After-Effects",
@@ -3609,7 +3610,7 @@ const roadmapsData = [
             alt: "capcut"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 742,
+            lineNumber: 743,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Capcut",
@@ -3624,7 +3625,7 @@ const roadmapsData = [
             alt: "davinci"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 750,
+            lineNumber: 751,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Davinci",
@@ -3639,7 +3640,7 @@ const roadmapsData = [
             alt: "Video Editing"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 758,
+            lineNumber: 759,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Video",
@@ -3654,7 +3655,7 @@ const roadmapsData = [
             alt: "canva"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 766,
+            lineNumber: 767,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Canva",
@@ -3669,7 +3670,7 @@ const roadmapsData = [
             alt: "photoshop"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 774,
+            lineNumber: 775,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Photoshop",
@@ -3684,7 +3685,7 @@ const roadmapsData = [
             alt: "illustrator"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 782,
+            lineNumber: 783,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Illustrator",
@@ -3699,7 +3700,7 @@ const roadmapsData = [
             alt: "Graphic Design"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 790,
+            lineNumber: 791,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Graphic",
@@ -3714,7 +3715,7 @@ const roadmapsData = [
             alt: "Blockchain"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 799,
+            lineNumber: 800,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Solidity",
@@ -3729,7 +3730,7 @@ const roadmapsData = [
             alt: "Blockchain"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 808,
+            lineNumber: 809,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Blockchain",
@@ -3744,7 +3745,7 @@ const roadmapsData = [
             alt: "kafka"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 816,
+            lineNumber: 817,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/kafka",
@@ -3759,7 +3760,7 @@ const roadmapsData = [
             alt: "System Design"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 824,
+            lineNumber: 825,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/System",
@@ -3774,7 +3775,7 @@ const roadmapsData = [
             alt: "Linux"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 832,
+            lineNumber: 833,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Linux",
@@ -3789,7 +3790,7 @@ const roadmapsData = [
             alt: "Operating System"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 840,
+            lineNumber: 841,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/OS",
@@ -3804,7 +3805,7 @@ const roadmapsData = [
             alt: "DevOps"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 848,
+            lineNumber: 849,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Devops",
@@ -3819,7 +3820,7 @@ const roadmapsData = [
             alt: "DSA"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 856,
+            lineNumber: 857,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/DSA",
@@ -3834,7 +3835,7 @@ const roadmapsData = [
             alt: "Cybersecurity"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 864,
+            lineNumber: 865,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/CyberSecurity",
@@ -3849,7 +3850,7 @@ const roadmapsData = [
             alt: "Prompt Engineering"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 872,
+            lineNumber: 873,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Prompt",
@@ -3864,7 +3865,7 @@ const roadmapsData = [
             alt: "IoT"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 880,
+            lineNumber: 881,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/IOT",
@@ -3879,7 +3880,7 @@ const roadmapsData = [
             alt: "testing"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 888,
+            lineNumber: 889,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Software-Tester",
@@ -3894,12 +3895,27 @@ const roadmapsData = [
             alt: "Game Development"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 896,
+            lineNumber: 897,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Game",
         category: "trending",
         description: "Game Development and applications"
+    },
+    {
+        id: "vector db",
+        title: "Vector DB",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapIcon, {
+            src: vector,
+            alt: "Vector DB"
+        }, void 0, false, {
+            fileName: "[project]/app/RoadmapPage/roadmapsData.js",
+            lineNumber: 905,
+            columnNumber: 11
+        }, ("TURBOPACK compile-time value", void 0)),
+        link: "/Roadmaps/Vectordb",
+        category: "trending",
+        description: "Vector databases are specialized systems designed to store, index, and query high-dimensional vector embeddings, enabling fast semantic similarity search for unstructured data like text, images, and audio"
     },
     {
         id: "genai",
@@ -3909,7 +3925,7 @@ const roadmapsData = [
             alt: "Generative AI"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 904,
+            lineNumber: 913,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/GenAi",
@@ -3924,7 +3940,7 @@ const roadmapsData = [
             alt: "Git"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 912,
+            lineNumber: 921,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Git_Github",
@@ -3939,7 +3955,7 @@ const roadmapsData = [
             alt: "Tailwind CSS"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 920,
+            lineNumber: 929,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Tailwind",
@@ -3954,7 +3970,7 @@ const roadmapsData = [
             alt: "Product Manager"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 928,
+            lineNumber: 937,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Product-Manager",
@@ -3969,7 +3985,7 @@ const roadmapsData = [
             alt: "Context API"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
-            lineNumber: 937,
+            lineNumber: 946,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         link: "/Roadmaps/Context",

@@ -2706,6 +2706,10 @@
     background-color: var(--color-indigo-600);
   }
 
+  .bg-indigo-700 {
+    background-color: var(--color-indigo-700);
+  }
+
   .bg-lime-500 {
     background-color: var(--color-lime-500);
   }

@@ -1949,6 +1949,27 @@ const __TURBOPACK__default__export__ = {
     blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAA8UlEQVR42h1PS0tCYRD9olW0jigiiqBNQY9FmVFBYZBZEbYIfNz7zcw3373ea2r2QHpZIQi6cuHvdcbFcGDOOXPOmC7YwidgTrHs08VC3DIPUWO+4tOl27g5a0ZB2XcQz3s2LDaJD4CTtW+Aqza5oz9r70yd/O4b0hlwbT120fYLumwX4PoHID8MqxWTuminJc6Qk9U2cVbcecHMF0DuQ6Kngld0xzInSqJc6tvgcRyUkoCTFY3Y07xfsDfs4k0VP5HffyY+1MJGPrgkrm1I/lYH6aLK6bIYMrqbCopRY06L/lt7P5BS70inJV9fEHJGBROs8ltiEJer+wAAAABJRU5ErkJggg=="
 };
 }),
+"[project]/app/RoadmapPage/roadmaps-icons/vector.png (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.v("/_next/static/media/vector.5ef774d7.png");}),
+"[project]/app/RoadmapPage/roadmaps-icons/vector.png.mjs { IMAGE => \"[project]/app/RoadmapPage/roadmaps-icons/vector.png (static in ecmascript, tag client)\" } [app-ssr] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$vector$2e$png__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/app/RoadmapPage/roadmaps-icons/vector.png (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$vector$2e$png__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 512,
+    height: 512,
+    blurWidth: 8,
+    blurHeight: 8,
+    blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAABE0lEQVR42gEIAff+AAAAAAAAAAAGMS0gc1tOOc9lTjrmZU465ltOOc84NCWDAAAAAAEBAQEXcWM7zZeBUf+CaUv/gmlL/5eBUf+BckTpAA0HBkFBPT2wlYJO8dS1Xv+UiVT/l4pX/9KzXf+UfkLrAE9ISNWFgoP/q5hi/86vW/9laDf4Wm46/JOIRv+YgUPrAGxubet3e3b/molZ/76iVP8/OR6hO0opwnN8P/9+bDjrAFhcVuNkbFr4noxX/dS1Xv9WVCzUTWI05YGAQv+Oej/rABEREkIXFxZUindB2s6vW/95eUP/dXhE/72lVf+YgkTpAAAAAAAAAAAGNy8Yc4ZzPM9+cUnmgnRL5odzPM8+NRyDfk51geNjtKAAAAAASUVORK5CYII="
+};
+}),
 "[project]/app/RoadmapPage/roadmapsData.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -2065,6 +2086,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadma
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$supabase$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$supabase$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/RoadmapPage/roadmaps-icons/supabase.svg.mjs { IMAGE => "[project]/app/RoadmapPage/roadmaps-icons/supabase.svg (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$Astro$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$Astro$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/RoadmapPage/roadmaps-icons/Astro.png.mjs { IMAGE => "[project]/app/RoadmapPage/roadmaps-icons/Astro.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$Laravel$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$Laravel$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/RoadmapPage/roadmaps-icons/Laravel.png.mjs { IMAGE => "[project]/app/RoadmapPage/roadmaps-icons/Laravel.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$vector$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$vector$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/app/RoadmapPage/roadmaps-icons/vector.png.mjs { IMAGE => "[project]/app/RoadmapPage/roadmaps-icons/vector.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 ;
 ;
 ;
@@ -2166,7 +2188,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadma
 ;
 ;
 ;
-ipo;
+;
 // Helper component to render icons consistently
 const RoadmapIcon = ({ src, alt })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full h-full flex items-center justify-center",
@@ -3626,7 +3648,7 @@ const roadmapsData = [
         id: "vector db",
         title: "Vector DB",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(RoadmapIcon, {
-            src: vector,
+            src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$vector$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$app$2f$RoadmapPage$2f$roadmaps$2d$icons$2f$vector$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
             alt: "Vector DB"
         }, void 0, false, {
             fileName: "[project]/app/RoadmapPage/roadmapsData.js",
@@ -4538,4 +4560,4 @@ function TechRoadmap() {
 }),
 ];
 
-//# sourceMappingURL=app_RoadmapPage_f10e149b._.js.map
+//# sourceMappingURL=app_RoadmapPage_866dfd69._.js.map
