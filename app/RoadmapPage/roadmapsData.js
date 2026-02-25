@@ -102,6 +102,7 @@ import supabase from "./roadmaps-icons/supabase.svg"
 import astro from "./roadmaps-icons/Astro.png"
 import laravel from "./roadmaps-icons/Laravel.png"
 import vector from "./roadmaps-icons/vector.png"
+import csharp from "./roadmaps-icons/csharp.png"
 
 
 
@@ -533,6 +534,14 @@ export const roadmapsData = [
     link: "/Roadmaps/C",
     category: "trending",
     description: "C programming fundamentals",
+  },
+  {
+    id: "C#",
+    title: "C# language",
+    icon: <RoadmapIcon src={csharp} alt="C" />,
+    link: "/Roadmaps/Csharp",
+    category: "trending",
+    description: "C# programming fundamentals",
   },
   {
     id: "kotlin",

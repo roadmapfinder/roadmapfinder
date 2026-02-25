@@ -1,5 +1,4 @@
 {
-  "/RoadmapPage/page": "app/RoadmapPage/page.js",
-  "/Roadmaps/Vectordb/page": "app/Roadmaps/Vectordb/page.js",
+  "/Roadmaps/Csharp/page": "app/Roadmaps/Csharp/page.js",
   "/page": "app/page.js"
 }

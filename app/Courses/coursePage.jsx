@@ -34,7 +34,7 @@ import graphics from "./CoursesImage/graphics.jpg";
 import logo from "./CoursesImage/logo.jpg";
 import canva from "./CoursesImage/canva.jpg";
 import js from "./CoursesImage/js.jpg";
-import python from "./CoursesImage/python.jpg";
+import python from "./CoursesImage/py.jpg";
 import java from "./CoursesImage/java.jpg";
 import cpp from "./CoursesImage/cpp.jpg";
 import c from "./CoursesImage/c.jpg";
@@ -146,6 +146,7 @@ import pyweb from "./CoursesImage/py-eng.jpg"
 import astro from "./CoursesImage/astro.jpg"
 import fastify from "./CoursesImage/fastify.jpg"
 import kafka from "./CoursesImage/kafka.jpg"
+import csharp from "./CoursesImage/csharp.jpg"
 
 
 
@@ -190,7 +191,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase, excel, pyweb,astro, fastify, kafka 
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase, excel, pyweb,astro, fastify, kafka, csharp 
 };
 
 // Creator images array

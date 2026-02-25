@@ -301,8 +301,8 @@
       "level": "Beginner to Intermediate",
       "rating": 4.9,
       "image": "python",
-      "videoId": "https://youtu.be/ERCMXc8x7mc",
-      "badge": "BESTSELLER",
+      "videoId": "https://youtu.be/v9bOWjwdTlg?si=JABPiT3RC6GXtyCE",
+      "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/python"
     },
@@ -341,6 +341,18 @@
       "badge": "NEW",
       "language": "Hindi",
       "docs": "/Docs/c"
+    },
+    {
+      "id": 20,
+      "category": "Programming",
+      "title": "C# Complete Course",
+      "level": "Beginner to Advanced",
+      "rating": 4.9,
+      "image": "csharp",
+      "videoId": "https://youtu.be/wxznTygnRfQ?si=DUPnTpQW4f7jKSAU",
+      "badge": "POPULAR",
+      "language": "Hindi",
+      "docs": "/Docs/csharp"
     },
     {
       "id": 21,
