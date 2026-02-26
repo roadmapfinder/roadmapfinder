@@ -147,6 +147,8 @@ import astro from "./CoursesImage/astro.jpg"
 import fastify from "./CoursesImage/fastify.jpg"
 import kafka from "./CoursesImage/kafka.jpg"
 import csharp from "./CoursesImage/csharp.jpg"
+import firebase from "./CoursesImage/firebase.jpg"
+import cppe from "./CoursesImage/cpp-eng.jpg"
 
 
 
@@ -191,7 +193,7 @@ const imageMap = {
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
   springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase, excel, pyweb,astro, fastify, kafka, csharp 
+  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase, excel, pyweb,astro, fastify, kafka, csharp, firebase,cppe
 };
 
 // Creator images array

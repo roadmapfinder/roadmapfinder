@@ -357,6 +357,18 @@
     {
       "id": 21,
       "category": "Programming",
+      "title": "C++ Complete Course for beginners",
+      "level": "Beginner to Advance",
+      "rating": 4.8,
+      "image": "cppe",
+      "videoId": "https://youtu.be/-TkoO8Z07hI?si=yeLZjALaj7mJFaaY",
+      "badge": "TRENDING",
+      "language": "English",
+      "docs": "/Docs/Cpp"
+    },
+    {
+      "id": 21,
+      "category": "Programming",
       "title": "C++ Complete Course",
       "level": "Beginner to Advance",
       "rating": 4.8,
@@ -521,6 +533,18 @@
       "badge": "POPULAR",
       "language": "English",
       "docs": "/Docs/supabase"
+    },
+    {
+      "id": 30,
+      "category": "Database",
+      "title": "Firebase Complete Course",
+      "level": "Beginner to Advanced",
+      "rating": 4.7,
+      "image": "firebase",
+      "videoId": "https://youtu.be/fgdpvwEWJ9M?si=Vtl6fyzc9uwadY4v",
+      "badge": "POPULAR",
+      "language": "English",
+      "docs": "/Docs/firebase"
     },
     {
       "id": 31,

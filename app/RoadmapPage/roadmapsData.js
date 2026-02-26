@@ -103,6 +103,7 @@ import astro from "./roadmaps-icons/Astro.png"
 import laravel from "./roadmaps-icons/Laravel.png"
 import vector from "./roadmaps-icons/vector.png"
 import csharp from "./roadmaps-icons/csharp.png"
+import firebase from "./roadmaps-icons/Firebase.png"
 
 
 
@@ -365,6 +366,14 @@ export const roadmapsData = [
     link: "/Roadmaps/MongoDB",
     category: "featured",
     description: "Cloud Database",
+  },
+  {
+    id: "firebase",
+    title: "Firebase",
+    icon: <RoadmapIcon src={firebase} alt="firebase" />,
+    link: "/Roadmaps/Firebase",
+    category: "featured",
+    description: "It is commonly used for authentication, real-time data storage, cloud hosting, analytics, and messaging, allowing developers to build apps without managing server infrastructure",
   },
   {
     id: "supabase",
