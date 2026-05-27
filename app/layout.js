@@ -25,24 +25,24 @@ export const metadata = {
   keywords:
     "roadmapfinder, tech skills roadmap, industry ready roadmap, programming roadmap, web development roadmap, AI ML roadmap, app development roadmap, open source roadmap, YouTube courses Hindi, YouTube courses English, free tech roadmap, developer roadmap, full stack roadmap, backend roadmap, frontend roadmap, mobile app roadmap, data science roadmap, DevOps roadmap, official documentation, tech projects, coding roadmap 2026, learn programming free, tech career path, roadmap with projects, roadmap with FAQ, tech skills learning path, career roadmap technology",
   applicationName: "Roadmapfinder",
-  authors: [{ name: "Sohel Khan", url: "https://roadmapfinder.tech" }],
+  authors: [{ name: "Sohel Khan", url: "https://roadmapfinder.com" }],
   creator: "Sohel Khan",
   publisher: "Roadmapfinder",
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   alternates: {
-    canonical: "https://roadmapfinder.tech",
+    canonical: "https://roadmapfinder.com",
   },
   openGraph: {
     title: "Roadmapfinder - Industry-Ready Tech Skills Roadmaps with Free Resources",
     description:
       "Open-source platform for industry-ready tech skills roadmaps. Comprehensive learning paths with YouTube courses (Hindi & English), official docs, projects & FAQs. Free roadmaps for web dev, AI ML, programming & more.",
-    url: "https://roadmapfinder.tech",
+    url: "https://roadmapfinder.com",
     siteName: "Roadmapfinder",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://roadmapfinder.tech/og-image.png",
+        url: "https://roadmapfinder.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Roadmapfinder - Industry-Ready Tech Skills Roadmaps",
@@ -56,9 +56,9 @@ export const metadata = {
       "Open-source platform with industry-ready tech skills roadmaps, YouTube courses in Hindi & English, official docs, projects & FAQs. Learn web dev, AI ML, programming & more.",
     site: "@roadmapfinder",
     creator: "@sohelkhan_dev",
-    images: ["https://roadmapfinder.tech/og-image.png"],
+    images: ["https://roadmapfinder.com/og-image.png"],
   },
-  metadataBase: new URL("https://roadmapfinder.tech"),
+  metadataBase: new URL("https://roadmapfinder.com"),
   verification: {
     google: "Pcule-Lkxly8lgZaFN0VfX2fsPd3vl7xi-P7b1rMwzs",
   },
@@ -90,9 +90,9 @@ export default function RootLayout({ children }) {
         <meta name="geo.placename" content="India" />
 
         {/* Canonical & Sitemap */}
-        <link rel="canonical" href="https://roadmapfinder.tech" />
-        <link rel="sitemap" type="application/xml" href="https://roadmapfinder.tech/sitemap.xml" />
-        <link rel="robots" href="https://roadmapfinder.tech/robots.txt" />
+        <link rel="canonical" href="https://roadmapfinder.com" />
+        <link rel="sitemap" type="application/xml" href="https://roadmapfinder.com/sitemap.xml" />
+        <link rel="robots" href="https://roadmapfinder.com/robots.txt" />
 
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
@@ -101,14 +101,14 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
 
         {/* Enhanced SEO Internal Links with More Keywords */}
-        <link rel="alternate" href="https://roadmapfinder.tech/Full-Stack" title="Full Stack Web Development Roadmap - Industry-Ready with Projects & Resources" />
-        <link rel="alternate" href="https://roadmapfinder.tech/UIUX" title="UI/UX Design Roadmap - Complete Guide with Official Docs & Projects" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Aiml" title="AI & Machine Learning Roadmap - Industry Skills with Projects & FAQs" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Backend" title="Backend Development Roadmap - Production-Ready Skills & Resources" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Frontend" title="Frontend Development Roadmap - Modern Web Dev with Projects" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Android" title="Mobile App Development Roadmap - iOS & Android with Official Docs" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Devops" title="DevOps Roadmap - Industry-Ready CI/CD, Docker, Kubernetes" />
-        <link rel="alternate" href="https://roadmapfinder.tech/Data-Science" title="Data Science Roadmap - Complete Path with Projects & Resources" />
+        <link rel="alternate" href="https://roadmapfinder.com/Full-Stack" title="Full Stack Web Development Roadmap - Industry-Ready with Projects & Resources" />
+        <link rel="alternate" href="https://roadmapfinder.com/UIUX" title="UI/UX Design Roadmap - Complete Guide with Official Docs & Projects" />
+        <link rel="alternate" href="https://roadmapfinder.com/Aiml" title="AI & Machine Learning Roadmap - Industry Skills with Projects & FAQs" />
+        <link rel="alternate" href="https://roadmapfinder.com/Backend" title="Backend Development Roadmap - Production-Ready Skills & Resources" />
+        <link rel="alternate" href="https://roadmapfinder.com/Frontend" title="Frontend Development Roadmap - Modern Web Dev with Projects" />
+        <link rel="alternate" href="https://roadmapfinder.com/Android" title="Mobile App Development Roadmap - iOS & Android with Official Docs" />
+        <link rel="alternate" href="https://roadmapfinder.com/Devops" title="DevOps Roadmap - Industry-Ready CI/CD, Docker, Kubernetes" />
+        <link rel="alternate" href="https://roadmapfinder.com/Data-Science" title="Data Science Roadmap - Complete Path with Projects & Resources" />
 
         {/* DNS Prefetch for Performance */}
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
@@ -134,7 +134,7 @@ export default function RootLayout({ children }) {
               "name": "Roadmapfinder - Industry-Ready Tech Skills Platform",
               "alternateName": ["Roadmapfinder", "Tech Skills Roadmap", "Open Source Learning Platform"],
               "applicationCategory": "EducationalApplication",
-              "url": "https://roadmapfinder.tech",
+              "url": "https://roadmapfinder.com",
               "description": "Open-source tech learning platform providing industry-ready tech skills roadmaps with curated YouTube courses in Hindi and English, official documentation, real-world projects, and comprehensive FAQs. Free platform for web development, AI ML, programming, app development and 50+ tech skills.",
               "operatingSystem": "Web Browser, iOS, Android",
               "browserRequirements": "Requires JavaScript. Modern browser recommended.",
@@ -174,23 +174,23 @@ export default function RootLayout({ children }) {
               "author": {
                 "@type": "Person",
                 "name": "Sohel Khan",
-                "url": "https://roadmapfinder.tech",
+                "url": "https://roadmapfinder.com",
                 "jobTitle": "Software Engineer & Educator"
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "Roadmapfinder",
-                "url": "https://roadmapfinder.tech",
+                "url": "https://roadmapfinder.com",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://roadmapfinder.tech/roadmapfinder.svg"
+                  "url": "https://roadmapfinder.com/roadmapfinder.svg"
                 }
               },
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://roadmapfinder.tech/search?q={search_term_string}"
+                  "urlTemplate": "https://roadmapfinder.com/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }
@@ -215,7 +215,7 @@ export default function RootLayout({ children }) {
                     "@type": "Course",
                     "name": "Full Stack Web Development Roadmap",
                     "description": "Industry-ready full stack developer roadmap with frontend (HTML, CSS, JavaScript, React) and backend (Node.js, databases, APIs). Includes curated YouTube courses in Hindi & English, official documentation, real-world projects to build, and comprehensive FAQs.",
-                    "url": "https://roadmapfinder.tech/Full-Stack",
+                    "url": "https://roadmapfinder.com/Full-Stack",
                     "provider": {
                       "@type": "Organization",
                       "name": "Roadmapfinder"
@@ -231,7 +231,7 @@ export default function RootLayout({ children }) {
                     "@type": "Course",
                     "name": "UI/UX Design Roadmap",
                     "description": "Industry-ready UI/UX design roadmap covering design principles, Figma, user research, prototyping. Features YouTube resources in Hindi & English, official design docs, portfolio projects, and design FAQs.",
-                    "url": "https://roadmapfinder.tech/UIUX",
+                    "url": "https://roadmapfinder.com/UIUX",
                     "provider": {
                       "@type": "Organization",
                       "name": "Roadmapfinder"
@@ -247,7 +247,7 @@ export default function RootLayout({ children }) {
                     "@type": "Course",
                     "name": "AI & Machine Learning Roadmap",
                     "description": "Comprehensive AI ML tech skills roadmap with Python, deep learning, neural networks, NLP. Includes YouTube tutorials (Hindi & English), official ML docs, hands-on projects, and AI/ML FAQs for industry readiness.",
-                    "url": "https://roadmapfinder.tech/Aiml",
+                    "url": "https://roadmapfinder.com/Aiml",
                     "provider": {
                       "@type": "Organization",
                       "name": "Roadmapfinder"
@@ -263,7 +263,7 @@ export default function RootLayout({ children }) {
                     "@type": "Course",
                     "name": "Backend Development Roadmap",
                     "description": "Production-ready backend development tech skills roadmap with server programming, databases (SQL, NoSQL), REST APIs, authentication. Features YouTube courses in both languages, official backend docs, real-world projects, and backend FAQs.",
-                    "url": "https://roadmapfinder.tech/Backend",
+                    "url": "https://roadmapfinder.com/Backend",
                     "provider": {
                       "@type": "Organization",
                       "name": "Roadmapfinder"
@@ -279,7 +279,7 @@ export default function RootLayout({ children }) {
                     "@type": "Course",
                     "name": "Mobile App Development Roadmap",
                     "description": "Industry-ready mobile app development tech skills roadmap for iOS and Android. Covers React Native, Flutter, Swift, Kotlin with YouTube tutorials (Hindi & English), official mobile docs, app projects to build, and mobile dev FAQs.",
-                    "url": "https://roadmapfinder.tech/Android",
+                    "url": "https://roadmapfinder.com/Android",
                     "provider": {
                       "@type": "Organization",
                       "name": "Roadmapfinder"
@@ -302,10 +302,10 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "Roadmapfinder",
               "alternateName": "Open Source Tech Learning Platform",
-              "url": "https://roadmapfinder.tech",
+              "url": "https://roadmapfinder.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://roadmapfinder.tech/roadmapfinder.svg",
+                "url": "https://roadmapfinder.com/roadmapfinder.svg",
                 "width": 250,
                 "height": 250
               },
@@ -418,13 +418,13 @@ export default function RootLayout({ children }) {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://roadmapfinder.tech"
+                  "item": "https://roadmapfinder.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Roadmaps",
-                  "item": "https://roadmapfinder.tech/RoadmapPage"
+                  "item": "https://roadmapfinder.com/RoadmapPage"
                 }
               ]
             })
@@ -439,7 +439,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
               "name": "Roadmapfinder",
-              "url": "https://roadmapfinder.tech",
+              "url": "https://roadmapfinder.com",
               "description": "Free open-source platform for industry-ready tech skills roadmaps with YouTube resources, official docs, projects & FAQs",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",

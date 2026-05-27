@@ -170,7 +170,7 @@ RoadmapFinder aims to cut through the noise—offering clarity, structure, and d
 Got suggestions, feedback, or feature ideas?
 I’d love to hear from you!
 
-🌐 Visit: roadmapfinder.tech
+🌐 Visit: roadmapfinder.com
 
 📩 Contribute: Open an issue or PR on GitHub
 ⭐ Support: If you like the project, give it a star on GitHub—it helps more learners discover RoadmapFinder!
