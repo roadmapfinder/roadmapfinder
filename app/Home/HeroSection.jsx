@@ -62,7 +62,7 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mb-10">
                   <a
                     href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                    download="application-a74c634f-833f-4306-8ede-166469a59259.apk"
+                    download="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
                     className="w-[85%] max-w-[260px] sm:max-w-none sm:w-auto bg-blue-600 text-white py-2.5 px-6 sm:py-3 sm:px-6 rounded-xl text-sm sm:text-base font-bold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30 group relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
