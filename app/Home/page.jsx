@@ -36,6 +36,7 @@ import {
   Contact,
   Info,
   MessageCircle,
+  Smartphone,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -115,15 +116,6 @@ export default function HomePage() {
       icon: <BookOpen size={24} className="mr-3" />,
       href: "/Courses",
     },
-    {
-      name: "Join Community",
-      icon: <MessageCircle size={24} className="mr-3" />,
-      href: "#",
-      onClick: () => {
-        window.open("https://chat.whatsapp.com/Jl8VQQ2r1hTJjBmWo2emtk", "_blank");
-      },
-      isNew: true,
-    },
   ];
 
   return (
@@ -138,9 +130,8 @@ export default function HomePage() {
         >
           <div className="flex flex-col h-full">
             <div
-              className={`p-5 flex ${
-                isSidebarCollapsed ? "justify-center" : "justify-between"
-              } items-center border-b`}
+              className={`p-5 flex ${isSidebarCollapsed ? "justify-center" : "justify-between"
+                } items-center border-b`}
             >
               {!isSidebarCollapsed && (
                 <h1 className="text-xl font-bold text-blue-600">
@@ -190,11 +181,10 @@ export default function HomePage() {
                     <Link
                       key={index}
                       href={item.href}
-                      className={`flex items-center relative ${
-                        item.href === "/"
-                          ? "text-blue-600 font-semibold bg-blue-50"
-                          : "text-gray-600"
-                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                      className={`flex items-center relative ${item.href === "/"
+                        ? "text-blue-600 font-semibold bg-blue-50"
+                        : "text-gray-600"
+                        } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
                     >
                       <div className={isSidebarCollapsed ? "mx-auto" : ""}>
                         {item.icon}
@@ -222,19 +212,17 @@ export default function HomePage() {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 bg-gray-800 md:hidden transition-opacity duration-300 ease-in-out z-30 ${
-            isMobileMenuOpen
-              ? "opacity-75 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          }`}
+          className={`fixed inset-0 bg-gray-800 md:hidden transition-opacity duration-300 ease-in-out z-30 ${isMobileMenuOpen
+            ? "opacity-75 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+            }`}
           onClick={toggleMobileMenu}
         ></div>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center p-5 border-b">
@@ -268,11 +256,10 @@ export default function HomePage() {
                   <Link
                     key={index}
                     href={item.href}
-                    className={`flex items-center relative ${
-                      item.href === "/"
-                        ? "text-blue-600 font-semibold bg-blue-50"
-                        : "text-gray-600"
-                    } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
+                    className={`flex items-center relative ${item.href === "/"
+                      ? "text-blue-600 font-semibold bg-blue-50"
+                      : "text-gray-600"
+                      } hover:text-blue-600 transition-colors py-3 px-3 rounded-lg hover:bg-blue-50`}
                     onClick={toggleMobileMenu}
                   >
                     {item.icon}
@@ -299,49 +286,36 @@ export default function HomePage() {
           <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
             <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex gap-2 items-center">
-           
-
-              {/* Join Community Button - Replaces Menu on Mobile */}
-              <button
-                onClick={handleCommunityClick}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 py-2 rounded-lg text-xs font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-1.5 shadow-md"
+              {/* Download App Button */}
+              <a
+                href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
+                download="application-a74c634f-833f-4306-8ede-166469a59259.apk"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl text-base font-bold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-indigo-500/30 group relative overflow-hidden"
               >
-                <MessageCircle size={13} />
-                <span>Join Community</span>
-              </button>
+                <Smartphone size={14} />
+                <span>Download App</span>
+              </a>
             </div>
           </header>
 
           {/* Desktop Header - Only visible on desktop */}
-          <header className="hidden md:flex justify-between items-center p-8 bg-gray-50">
+          <header className="hidden md:flex justify-between items-center px-8 py-5 bg-gray-50 border-b border-gray-100">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="text-xl font-bold text-gray-900">
                 Welcome, User
               </h2>
             </div>
             <div className="flex items-center gap-4">
-              <button className="p-3 relative bg-white rounded-full shadow-sm hover:shadow-md transition-all">
-                <Link href="/Notification">
-                  <Bell size={22} className="text-gray-700" />
-                </Link>
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
+              <a
 
-              <button
-                onClick={handleCommunityClick}
-                className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
-              >
-                <MessageCircle size={18} />
-                Join Community
-              </button>
+                href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
+                download="application-a74c634f-833f-4306-8ede-166469a59259.apk"
 
-              <button
-                onClick={handleSignupClick}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-md flex items-center gap-2"
               >
-                <Rocket size={18} />
-                Start Your Journey
-              </button>
+                <Smartphone size={16} />
+                Download App
+              </a>
             </div>
           </header>
 

@@ -18,9 +18,7 @@ const Splash = () => {
 
   return (
     <div className="fixed inset-0 bg-white flex items-center justify-center">
-      <Image src={logo} alt="Logo" className="w-
-        80 h-80 object-contain" priority />
-   
+      <Image src={logo} alt="Logo" className="w-80 h-80 object-contain" priority />
     </div>
     
   );

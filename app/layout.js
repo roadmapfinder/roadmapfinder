@@ -2,6 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Sora } from "next/font/google";
+import Script from "next/script";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -118,11 +119,12 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Google AdSense */}
-        <script
-          async
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1366157018323318"
           crossOrigin="anonymous"
-        ></script>
+        />
 
         {/* Enhanced Structured Data (JSON-LD) - WebApplication */}
         <script
