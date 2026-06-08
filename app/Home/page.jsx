@@ -287,10 +287,9 @@ export default function HomePage() {
             <h1 className="text-medium font-bold text-blue-600">RoadmapFinder</h1>
             <div className="flex items-center">
               <a
-                href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                download="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                className="
-        sm:w-auto
+                href="https://drive.google.com/uc?export=download&id=1NKuTcehh7BpfHVDW1o5OFBB1Fn8tk4lu&confirm=t"
+                download="roadmapfinder.apk"
+                className="sm:w-auto
         bg-blue-600 hover:bg-blue-700
         text-white
         py-2.5 sm:py-3
@@ -321,8 +320,8 @@ export default function HomePage() {
             <div className="flex items-center gap-4">
               <a
 
-                href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                download="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
+                href="https://drive.google.com/uc?export=download&id=1NKuTcehh7BpfHVDW1o5OFBB1Fn8tk4lu&confirm=t"
+                download="roadmapfinder.apk"
 
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-md flex items-center gap-2"
               >

@@ -3,13 +3,16 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Star, Users, Award, Smartphone, ArrowRight, Play, CheckCircle, Lock, LockOpen, Zap, Flame, Target, Cpu, ChevronLeft, ChevronRight, Sparkles, BookOpen, Clock, Bell, Map, Check, Palette, FileText, FolderOpen, ChevronDown, Menu } from "lucide-react";
 
+
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeScreen, setActiveScreen] = useState('onboarding1'); // 'onboarding1', 'onboarding2', 'home' or 'roadmap'
   const router = useRouter();
 
+
   useEffect(() => {
     setIsVisible(true);
+
 
     // Auto-cycle screens every 4 seconds
     const interval = setInterval(() => {
@@ -21,12 +24,15 @@ const HeroSection = () => {
       });
     }, 4000);
 
+
     return () => clearInterval(interval);
   }, []);
+
 
   const handleNavigation = (path) => {
     router.push(path);
   };
+
 
   return (
     <div className="px-3 xs:px-4 sm:px-6 lg:px-8">
@@ -37,38 +43,46 @@ const HeroSection = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
           <div className="flex flex-col lg:flex-row min-h-[550px]">
 
+
             {/* Left Content Column */}
             <div className="lg:w-[55%] p-6 sm:p-10 xl:p-14 flex flex-col justify-center relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
 
+
               <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
 
-                {/* Headline */}
+
+                {/* Headline - Fullstack-focused, high-impact hook */}
                 <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.15] tracking-tight mb-6">
-                  <span className="block mb-2">Stop Wasting Time on <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-600">Random Tutorials</span>.</span>
+                  <span className="block mb-2">
+                    Stop Leveling Up on <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-600">Random Tutorials</span>.
+                  </span>
                   <span className="relative inline-block mt-2 lg:mt-0">
-                    Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AI Roadmap</span> Starts Here.
+                    Build Real <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Fullstack Skills</span>. From Zero to Job-Ready.
                     <svg className="absolute -bottom-2 sm:-bottom-3 left-0 w-full" height="12" viewBox="0 0 100 12" preserveAspectRatio="none">
                       <path d="M0,10 Q25,2 50,6 T100,10" stroke="#818CF8" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.6" />
                     </svg>
                   </span>
                 </h1>
 
-                {/* Subheadline */}
+
+                {/* Subheadline - AI roadmap + fullstack learning + assignments + proof */}
                 <p className="text-base text-gray-600 mb-8 max-w-xl leading-relaxed">
-                  Backed by the best YouTube tutorials, with assignments to prove you actually learned it. <span className="font-semibold text-gray-800">Track streaks, earn XP, and go from zero to job-ready.</span>
+                  An AI-powered fullstack roadmap that’s built around your current level, goal, and language. <span className="font-semibold text-gray-800">Watch the best YouTube lessons, complete real assignments, and prove you actually learned it.</span>
                 </p>
 
-                {/* CTAs */}
+
+                {/* CTAs (unchanged) */}
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mb-10">
                   <a
-                    href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                    download="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
+                    href="https://drive.google.com/uc?export=download&id=1NKuTcehh7BpfHVDW1o5OFBB1Fn8tk4lu&confirm=t"
+                    download="roadmapfinder.apk"
                     className="w-[85%] max-w-[260px] sm:max-w-none sm:w-auto bg-blue-600 text-white py-2.5 px-6 sm:py-3 sm:px-6 rounded-xl text-sm sm:text-base font-bold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30 group relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                     <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 relative z-10 animate-bounce-slow" />
                     <span className="relative z-10">Download the App</span>
                   </a>
+
 
                   <button
                     onClick={() => handleNavigation("/RoadmapPage")}
@@ -79,7 +93,8 @@ const HeroSection = () => {
                   </button>
                 </div>
 
-                {/* Trust Indicators */}
+
+                {/* Trust Indicators (unchanged) */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-gray-500 font-medium bg-white/50 backdrop-blur-sm py-3 px-5 rounded-2xl border border-gray-100 shadow-sm">
                   <div className="flex items-center gap-1.5">
                     <Users className="w-4 h-4 text-blue-500" />
@@ -95,23 +110,28 @@ const HeroSection = () => {
                   </div>
                 </div>
 
+
               </div>
             </div>
 
-            {/* Right Content Column - Emulator Mockup */}
+
+            {/* Right Content Column - Emulator Mockup (unchanged) */}
             <div className="w-full lg:w-[45%] relative flex items-center justify-center p-8 lg:p-4 xl:p-8 bg-gray-50 overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-100">
               {/* Background Decorative Blobs */}
               <div className="absolute top-1/4 -right-20 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
               <div className="absolute top-1/3 -left-20 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
               <div className="absolute -bottom-8 left-20 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
+
               {/* Phone Frame */}
               <div className="relative z-10 w-[280px] h-[580px] xl:w-[300px] xl:h-[600px] bg-black rounded-[40px] shadow-2xl border-[8px] border-black overflow-hidden transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 flex-shrink-0">
                 {/* Notch */}
                 <div className="absolute top-0 inset-x-0 h-6 bg-black z-50 rounded-b-2xl w-40 mx-auto"></div>
 
+
                 {/* Screen Content Container */}
                 <div className="relative w-full h-full bg-gray-50 overflow-hidden">
+
 
                   {/* Onboarding Screen 1 UI */}
                   <div className={`absolute inset-0 transition-opacity duration-700 bg-[#f5f6fa] ${activeScreen === 'onboarding1' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
@@ -126,6 +146,7 @@ const HeroSection = () => {
                         <span className="text-[10px] font-medium text-gray-400">Step 2 of 4</span>
                       </div>
 
+
                       {/* Content */}
                       <div className="flex-1 px-5 pt-4">
                         <div className="flex justify-center mb-4">
@@ -137,6 +158,7 @@ const HeroSection = () => {
                         <p className="text-xs text-center text-gray-500 mb-6 leading-relaxed">
                           We'll adjust the difficulty based on your current knowledge.
                         </p>
+
 
                         <div className="space-y-2.5">
                           {/* Option 1 */}
@@ -166,6 +188,7 @@ const HeroSection = () => {
                         </div>
                       </div>
 
+
                       {/* Footer */}
                       <div className="p-5 pb-8">
                         <button className="w-full bg-blue-600 text-white flex items-center justify-center gap-2 py-3.5 rounded-xl text-[13px] font-bold shadow-[0_4px_12px_rgba(37,99,235,0.35)]">
@@ -175,6 +198,7 @@ const HeroSection = () => {
                       </div>
                     </div>
                   </div>
+
 
                   {/* Onboarding Screen 2 UI */}
                   <div className={`absolute inset-0 transition-opacity duration-700 bg-[#f5f6fa] ${activeScreen === 'onboarding2' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
@@ -189,6 +213,7 @@ const HeroSection = () => {
                         <span className="text-[10px] font-medium text-gray-400">Step 4 of 4</span>
                       </div>
 
+
                       {/* Content */}
                       <div className="flex-1 px-5 pt-4">
                         <div className="flex justify-center mb-4">
@@ -200,6 +225,7 @@ const HeroSection = () => {
                         <p className="text-xs text-center text-gray-500 mb-6 leading-relaxed">
                           We'll tailor your roadmap based on your ultimate objective.
                         </p>
+
 
                         <div className="space-y-2.5">
                           {/* Option 1 */}
@@ -238,6 +264,7 @@ const HeroSection = () => {
                         </div>
                       </div>
 
+
                       {/* Footer */}
                       <div className="p-5 pb-8">
                         <button className="w-full bg-blue-600 text-white flex items-center justify-center gap-2 py-3.5 rounded-xl text-[13px] font-bold shadow-[0_4px_12px_rgba(37,99,235,0.35)]">
@@ -247,6 +274,7 @@ const HeroSection = () => {
                       </div>
                     </div>
                   </div>
+
 
                   {/* Home Screen UI */}
                   <div className={`absolute inset-0 transition-opacity duration-700 bg-[#F1F5F9] ${activeScreen === 'home' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
@@ -267,6 +295,7 @@ const HeroSection = () => {
                           </div>
                         </div>
                       </div>
+
 
                       <div className="flex-1 px-4 overflow-hidden">
                         {/* Stats Banner */}
@@ -310,11 +339,13 @@ const HeroSection = () => {
                           </div>
                         </div>
 
+
                         {/* Current Path */}
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-[13px] font-extrabold text-slate-900">Current path</span>
                           <span className="text-[10px] font-bold text-blue-600">View roadmap →</span>
                         </div>
+
 
                         <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm mb-4">
                           <div className="flex items-start mb-3">
@@ -339,6 +370,7 @@ const HeroSection = () => {
                         </div>
                       </div>
 
+
                       {/* Bottom Nav Mockup */}
                       <div className="absolute bottom-0 inset-x-0 h-14 bg-white border-t border-slate-200 flex justify-around items-center px-4 pb-2 z-10 shadow-[0_-4px_12px_rgba(0,0,0,0.02)]">
                         <div className="flex flex-col items-center gap-1">
@@ -354,6 +386,7 @@ const HeroSection = () => {
                       </div>
                     </div>
                   </div>
+
 
                   {/* Roadmap Screen UI */}
                   <div className={`absolute inset-0 transition-opacity duration-700 bg-[#F8FAFF] ${activeScreen === 'roadmap' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
@@ -376,6 +409,7 @@ const HeroSection = () => {
                           </div>
                         </div>
 
+
                         {/* Header Metrics */}
                         <div className="flex items-center justify-between px-6 mt-2">
                           <div className="flex flex-col items-center">
@@ -395,7 +429,9 @@ const HeroSection = () => {
                         </div>
                       </div>
 
+
                       {/* Content Scroll */}
+
 
 
                       {/* Intro */}
@@ -407,6 +443,7 @@ const HeroSection = () => {
                           <Play className="w-3 h-3 text-[#2563EB] fill-[#2563EB]" />
                           <span className="text-[8px] font-bold text-[#2563EB]">Curated masterclasses included in every topic</span>
                         </div>
+
 
 
                         {/* Phase Block */}
@@ -425,9 +462,11 @@ const HeroSection = () => {
                             </div>
                           </div>
 
+
                           {/* Phase Body */}
                           <div className="flex pl-4">
                             <div className="w-0.5 rounded-full bg-[#2563EB] opacity-20 mr-4"></div>
+
 
                             {/* Topic Stack */}
                             <div className="flex-1 space-y-3 pb-4">
@@ -457,6 +496,7 @@ const HeroSection = () => {
                                   <ChevronRight className="w-3 h-3 text-[#2563EB]" />
                                 </div>
                               </div>
+
 
                               {/* Locked Topic Card */}
                               <div className="bg-white rounded-[16px] p-3 shadow-[0_6px_12px_rgba(0,0,0,0.03)] border border-[#F1F5F9] opacity-65">
@@ -488,7 +528,9 @@ const HeroSection = () => {
                           </div>
                         </div>
 
+
                       </div>
+
 
                       {/* Bottom Nav Mockup */}
                       <div className="absolute bottom-0 inset-x-0 h-14 bg-white border-t border-[#E2E8F0] flex justify-around items-center px-4 pb-2 z-10 shadow-[0_-4px_12px_rgba(0,0,0,0.02)]">
@@ -506,13 +548,16 @@ const HeroSection = () => {
                     </div>
                   </div>
 
+
                 </div>
               </div>
             </div>
 
+
           </div>
         </div>
       </section>
+
 
       <style jsx>{`
         .animate-bounce-slow {
@@ -537,5 +582,6 @@ const HeroSection = () => {
     </div>
   );
 };
+
 
 export default HeroSection;
