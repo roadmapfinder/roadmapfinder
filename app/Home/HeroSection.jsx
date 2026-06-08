@@ -59,23 +59,23 @@ const HeroSection = () => {
                 </p>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-10">
+                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mb-10">
                   <a
                     href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
                     download="application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl text-base font-bold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-indigo-500/30 group relative overflow-hidden"
+                    className="w-[85%] max-w-[260px] sm:max-w-none sm:w-auto bg-blue-600 text-white py-2.5 px-6 sm:py-3 sm:px-6 rounded-xl text-sm sm:text-base font-bold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30 group relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                    <Smartphone className="w-6 h-6 relative z-10 animate-bounce-slow" />
+                    <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 relative z-10 animate-bounce-slow" />
                     <span className="relative z-10">Download the App</span>
                   </a>
 
                   <button
                     onClick={() => handleNavigation("/RoadmapPage")}
-                    className="w-full sm:w-auto bg-white text-gray-700 py-3 px-6 rounded-xl text-base font-semibold border border-gray-200 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 group"
+                    className="w-[85%] max-w-[260px] sm:max-w-none sm:w-auto bg-white text-gray-700 py-2.5 px-6 sm:py-3 sm:px-6 rounded-xl text-sm sm:text-base font-semibold border border-gray-200 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 group"
                   >
                     <span>Continue on Web</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                   </button>
                 </div>
 

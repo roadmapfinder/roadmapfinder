@@ -284,20 +284,33 @@ export default function HomePage() {
         >
           {/* Mobile Header - Only visible on mobile */}
           <header className="flex justify-between items-center p-4 bg-white shadow-sm md:hidden sticky top-0 z-10">
-            <h1 className="text-lg font-bold text-blue-600">RoadmapFinder</h1>
-            <div className="flex gap-2 items-center">
-              {/* Download App Button */}
+            <h1 className="text-medium font-bold text-blue-600">RoadmapFinder</h1>
+            <div className="flex items-center">
               <a
                 href="/application-a74c634f-833f-4306-8ede-166469a59259.apk"
                 download="application-a74c634f-833f-4306-8ede-166469a59259.apk"
-                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl text-base font-bold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-indigo-500/30 group relative overflow-hidden"
+                className="
+        sm:w-auto
+        bg-blue-600 hover:bg-blue-700
+        text-white
+        py-2.5 sm:py-3
+        px-4 sm:px-6
+        rounded-xl
+        text-sm sm:text-base
+        font-bold
+        transition-all duration-300
+        flex items-center justify-center 
+        shadow-lg hover:shadow-blue-500/30
+        hover:-translate-y-1
+        mr-5
+        gap-1.5
+      "
               >
-                <Smartphone size={14} />
+                <Smartphone size={16} />
                 <span>Download App</span>
               </a>
             </div>
           </header>
-
           {/* Desktop Header - Only visible on desktop */}
           <header className="hidden md:flex justify-between items-center px-8 py-5 bg-gray-50 border-b border-gray-100">
             <div>
