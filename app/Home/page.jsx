@@ -340,7 +340,7 @@ export default function HomePage() {
 
             {/* Additional Content Sections */}
             <div className="w-full">
-              <RoadmapTrending />
+
 
               <Features />
               <ChooseUs />
