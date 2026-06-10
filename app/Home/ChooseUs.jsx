@@ -1,222 +1,234 @@
 "use client";
 
-import { Star, Users, Zap, Globe, CheckCircle, TrendingUp, Smartphone, BookOpen, Award, Flame } from "lucide-react";
+import { useState } from "react";
 
-const ChooseUs = () => {
-  const steps = [
-    {
-      step: "1",
-      title: "Get Your AI Fullstack Roadmap",
-      description: "Paste your current level, goal, and language. We generate a personalized fullstack path that adapts to YOU.",
-      icon: <Smartphone size={24} className="text-blue-600" />,
-      color: "blue"
-    },
-    {
-      step: "2",
-      title: "Learn with Best YouTube Courses",
-      description: "Follow curated, high-quality YouTube lessons for each topic. No random tutorials—only what actually builds skills.",
-      icon: <BookOpen size={24} className="text-purple-600" />,
-      color: "purple"
-    },
-    {
-      step: "3",
-      title: "Prove You Learned It",
-      description: "Complete real assignments after each phase. Upload code or screenshots—our AI mentor checks your output and guides you.",
-      icon: <Zap size={24} className="text-indigo-600" />,
-      color: "indigo"
-    }
-  ];
+const features = [
+  {
+    label: "Personalized roadmap",
+    description: "A learning path built around your goals and current skill level.",
+    roadmapfinder: { status: "yes", note: "AI-generated for you" },
+    chatgpt: { status: "maybe", note: "Only with manual prompting" },
+    youtube: { status: "no", note: "No personalization" },
+  },
+  {
+    label: "Structured learning path",
+    description: "Clear phases from beginner to job-ready, in the right order.",
+    roadmapfinder: { status: "yes", note: "Phase-based progression" },
+    chatgpt: { status: "maybe", note: "Inconsistent across sessions" },
+    youtube: { status: "no", note: "You assemble it yourself" },
+  },
+  {
+    label: "Progress tracking",
+    description: "XP, streaks, and milestones that keep you moving forward.",
+    roadmapfinder: { status: "yes", note: "XP points & streaks" },
+    chatgpt: { status: "no", note: "No memory between sessions" },
+    youtube: { status: "no", note: "Watch history only" },
+  },
+  {
+    label: "Curated resources",
+    description: "Hand-picked YouTube videos and official docs, not random results.",
+    roadmapfinder: { status: "yes", note: "Vetted videos & docs" },
+    chatgpt: { status: "maybe", note: "Links vary in quality" },
+    youtube: { status: "maybe", note: "Algorithm-driven, inconsistent" },
+  },
+  {
+    label: "Career-focused path",
+    description: "Built to take you from zero to a job-ready fullstack developer.",
+    roadmapfinder: { status: "yes", note: "Job-ready by design" },
+    chatgpt: { status: "maybe", note: "Depends on your prompts" },
+    youtube: { status: "no", note: "No career framing" },
+  },
+];
 
-  const stats = [
-    {
-      number: "10K+",
-      label: "Active Learners",
-      icon: <Users size={32} className="text-blue-600" />,
-      description: "Join our growing community"
-    },
-    {
-      number: "250+",
-      label: "Learning Paths",
-      icon: <Award size={32} className="text-purple-600" />,
-      description: "Fullstack & tech specializations"
-    },
-    {
-      number: "95%",
-      label: "Success Rate",
-      icon: <CheckCircle size={32} className="text-indigo-600" />,
-      description: "Students land jobs with our help"
-    },
-    {
-      number: "24/7",
-      label: "AI Mentor Support",
-      icon: <Globe size={32} className="text-orange-500" />,
-      description: "Always here to solve doubts"
-    }
-  ];
-
-  const benefits = [
-    "AI-powered personalized fullstack roadmap",
-    "Best YouTube lessons for each topic",
-    "Real assignments with AI output checking",
-    "Hindi + English + Hinglish support",
-    "XP points, streaks & gamification",
-    "Job-ready skills from zero"
-  ];
-
+const StatusIcon = ({ status, note }) => {
+  if (status === "yes") {
+    return (
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-xl" aria-label="Yes">✅</span>
+        <span className="text-xs text-green-700 font-medium leading-snug text-center max-w-[110px]">{note}</span>
+      </div>
+    );
+  }
+  if (status === "maybe") {
+    return (
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-xl" aria-label="Partial">⚠️</span>
+        <span className="text-xs text-amber-700 font-medium leading-snug text-center max-w-[110px]">{note}</span>
+      </div>
+    );
+  }
   return (
-    <>
-      {/* How it Works Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-              How RoadmapFinder Works
-            </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Your AI-powered fullstack journey in 3 steps: personalized roadmap, best YouTube lessons, and proof through assignments.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Connecting Lines for Desktop */}
-            <div className="hidden md:block absolute top-24 left-1/3 w-1/3 h-0.5 border-t-2 border-dashed border-blue-200"></div>
-            <div className="hidden md:block absolute top-24 right-1/3 w-1/3 h-0.5 border-t-2 border-dashed border-purple-200"></div>
-
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 group hover:-translate-y-1"
-              >
-                {/* Step Number Badge */}
-                <div className={`absolute -top-4 left-8 w-8 h-8 bg-white border-2 border-${step.color}-600 rounded-full flex items-center justify-center shadow-sm`}>
-                  <span className={`text-${step.color}-600 font-bold text-sm`}>{step.step}</span>
-                </div>
-
-                {/* Icon */}
-                <div className={`w-16 h-16 rounded-2xl ${step.color === 'blue' ? 'bg-blue-100' :
-                    step.color === 'purple' ? 'bg-purple-100' :
-                      'bg-indigo-100'
-                  } flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  {step.icon}
-                </div>
-
-                {/* Content */}
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  {step.title}
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-              Trusted by Developers Worldwide
-            </h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join thousands of developers who transformed their careers with AI-powered fullstack learning
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center group p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="w-20 h-20 mx-auto mb-4 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-gray-200 transition-all duration-300 group-hover:scale-110">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl md:text-4xl font-extrabold mb-2 text-gray-900">
-                  {stat.number}
-                </div>
-                <div className="text-lg font-bold text-gray-700 mb-1">
-                  {stat.label}
-                </div>
-                <div className="text-sm text-gray-500">
-                  {stat.description}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div>
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
-                <Star size={16} />
-                Why Choose RoadmapFinder
-              </div>
-
-              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
-                The smartest way to learn
-                <span className="text-blue-600"> fullstack from zero</span>
-              </h3>
-
-              <p className="text-lg text-gray-600 mb-8">
-                We don't just give roadmaps—we give a complete ecosystem: AI-personalized fullstack path, curated YouTube lessons, and assignments that prove you learned it.
-              </p>
-
-              <div className="grid grid-cols-1 gap-3">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-200 hover:bg-blue-50 transition-all duration-200"
-                  >
-                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                      <CheckCircle size={14} className="text-white" />
-                    </div>
-                    <span className="text-gray-700 font-medium">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Visual Element */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300 border border-gray-200">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Flame size={32} className="text-white" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                    Start Your Fullstack Journey
-                  </h4>
-                  <p className="text-gray-600 mb-6">
-                    Join developers who chose the smart path to job-ready fullstack skills
-                  </p>
-                  <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-                    <div className="text-sm text-gray-600 mb-2 font-medium">Success Rate</div>
-                    <div className="text-3xl font-extrabold text-blue-600">
-                      95%
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full animate-pulse"></div>
-              <div className="absolute top-1/2 -left-8 w-4 h-4 bg-blue-400 rounded-full animate-ping"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    <div className="flex flex-col items-center gap-1">
+      <span className="text-xl" aria-label="No">❌</span>
+      <span className="text-xs text-red-500 font-medium leading-snug text-center max-w-[110px]">{note}</span>
+    </div>
   );
 };
 
-export default ChooseUs;
+export default function WhyDifferentSection() {
+  const [hoveredRow, setHoveredRow] = useState(null);
+
+  return (
+    <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block text-blue-600 text-sm font-semibold tracking-widest uppercase mb-4 border border-blue-100 bg-blue-50 px-3 py-1 rounded-full">
+            Why RoadmapFinder
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-5 max-w-3xl mx-auto">
+            Stop patching together a curriculum from ChatGPT and YouTube.
+          </h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            ChatGPT answers questions. YouTube hosts videos. Neither gives you a
+            structured, career-focused path with a coach watching your progress.
+            RoadmapFinder does all three.
+          </p>
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden md:block">
+          <div className="rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+
+            {/* Column headers */}
+            <div className="grid grid-cols-4 bg-gray-50 border-b border-gray-200">
+              <div className="px-6 py-4 text-sm font-semibold text-gray-400 uppercase tracking-wide">
+                Feature
+              </div>
+              {/* RoadmapFinder header — highlighted */}
+              <div className="px-6 py-4 bg-blue-600 flex flex-col items-center justify-center gap-1">
+                <span className="text-white font-bold text-sm tracking-wide">RoadmapFinder</span>
+                <span className="text-blue-200 text-xs font-medium">Your guided system</span>
+              </div>
+              <div className="px-6 py-4 flex flex-col items-center justify-center gap-1">
+                <span className="text-gray-700 font-semibold text-sm">ChatGPT</span>
+                <span className="text-gray-400 text-xs">AI assistant</span>
+              </div>
+              <div className="px-6 py-4 flex flex-col items-center justify-center gap-1">
+                <span className="text-gray-700 font-semibold text-sm">YouTube</span>
+                <span className="text-gray-400 text-xs">Video platform</span>
+              </div>
+            </div>
+
+            {/* Rows */}
+            {features.map((feature, idx) => (
+              <div
+                key={feature.label}
+                className={[
+                  "grid grid-cols-4 border-b border-gray-100 last:border-b-0 transition-colors duration-150",
+                  hoveredRow === idx ? "bg-gray-50" : "bg-white",
+                ].join(" ")}
+                onMouseEnter={() => setHoveredRow(idx)}
+                onMouseLeave={() => setHoveredRow(null)}
+              >
+                {/* Feature label */}
+                <div className="px-6 py-5 flex flex-col justify-center gap-1">
+                  <span className="text-sm font-semibold text-gray-800">{feature.label}</span>
+                  <span className="text-xs text-gray-400 leading-snug">{feature.description}</span>
+                </div>
+
+                {/* RoadmapFinder cell */}
+                <div className="px-6 py-5 flex items-center justify-center bg-blue-50 border-x border-blue-100">
+                  <StatusIcon {...feature.roadmapfinder} />
+                </div>
+
+                {/* ChatGPT cell */}
+                <div className="px-6 py-5 flex items-center justify-center">
+                  <StatusIcon {...feature.chatgpt} />
+                </div>
+
+                {/* YouTube cell */}
+                <div className="px-6 py-5 flex items-center justify-center">
+                  <StatusIcon {...feature.youtube} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          {features.map((feature) => (
+            <div
+              key={feature.label}
+              className="rounded-xl border border-gray-200 overflow-hidden shadow-sm"
+            >
+              {/* Feature title */}
+              <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                <p className="text-sm font-bold text-gray-800">{feature.label}</p>
+                <p className="text-xs text-gray-400 mt-0.5">{feature.description}</p>
+              </div>
+
+              {/* Three tool rows */}
+              <div className="divide-y divide-gray-100">
+                {/* RoadmapFinder */}
+                <div className="flex items-center justify-between px-4 py-3 bg-blue-50">
+                  <span className="text-xs font-semibold text-blue-700">RoadmapFinder</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">
+                      {feature.roadmapfinder.status === "yes" ? "✅" : feature.roadmapfinder.status === "maybe" ? "⚠️" : "❌"}
+                    </span>
+                    <span className={[
+                      "text-xs font-medium",
+                      feature.roadmapfinder.status === "yes" ? "text-green-700" : feature.roadmapfinder.status === "maybe" ? "text-amber-700" : "text-red-500"
+                    ].join(" ")}>{feature.roadmapfinder.note}</span>
+                  </div>
+                </div>
+
+                {/* ChatGPT */}
+                <div className="flex items-center justify-between px-4 py-3">
+                  <span className="text-xs font-semibold text-gray-500">ChatGPT</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">
+                      {feature.chatgpt.status === "yes" ? "✅" : feature.chatgpt.status === "maybe" ? "⚠️" : "❌"}
+                    </span>
+                    <span className={[
+                      "text-xs font-medium",
+                      feature.chatgpt.status === "yes" ? "text-green-700" : feature.chatgpt.status === "maybe" ? "text-amber-700" : "text-red-500"
+                    ].join(" ")}>{feature.chatgpt.note}</span>
+                  </div>
+                </div>
+
+                {/* YouTube */}
+                <div className="flex items-center justify-between px-4 py-3">
+                  <span className="text-xs font-semibold text-gray-500">YouTube</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">
+                      {feature.youtube.status === "yes" ? "✅" : feature.youtube.status === "maybe" ? "⚠️" : "❌"}
+                    </span>
+                    <span className={[
+                      "text-xs font-medium",
+                      feature.youtube.status === "yes" ? "text-green-700" : feature.youtube.status === "maybe" ? "text-amber-700" : "text-red-500"
+                    ].join(" ")}>{feature.youtube.note}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom reassurance */}
+        <div className="mt-14 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gray-50 border border-gray-200 rounded-2xl px-8 py-6">
+            <div className="text-left">
+              <p className="text-gray-900 font-semibold text-base">
+                Built for fullstack learners who want a guided, job-ready path.
+              </p>
+              <p className="text-gray-500 text-sm mt-1">
+                Not a search engine. Not a chatbot. A structured system with a coach.
+              </p>
+            </div>
+            <a
+              href="#"
+              className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors duration-150 whitespace-nowrap"
+            >
+              Start your AI roadmap →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
