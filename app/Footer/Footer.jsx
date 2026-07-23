@@ -44,8 +44,9 @@ const Footer = () => {
                   className="w-10 h-10 object-contain"
                 />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                RoadmapFinder
+              <span className="text-2xl font-bold font-['Space_Grotesk']">
+                <span className="text-blue-600">Roadmap</span>
+                <span className="text-gray-900">Finder</span>
               </span>
             </Link>
             <p className="text-gray-600 text-lg leading-relaxed max-w-md mb-8">

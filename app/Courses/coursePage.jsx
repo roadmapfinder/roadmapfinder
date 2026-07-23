@@ -124,8 +124,8 @@ import software from "./CoursesImage/software.jpg"
 import nest from "./CoursesImage/nest.jpg"
 import aibasics from "./CoursesImage/ai_basic.jpg"
 import javaf from "./CoursesImage/javaF.jpg"
-import Js from "./CoursesImage/Js.jpg"
-import Ts from "./CoursesImage/Ts.jpg"
+import Js from "./CoursesImage/js.jpg"
+import Ts from "./CoursesImage/ts.jpg"
 import flask from "./CoursesImage/flask.jpg"
 import fastapi from "./CoursesImage/fastapi.jpg"
 import solidity from "./CoursesImage/solidity.jpg"
@@ -177,7 +177,7 @@ const YouTubeIcon = ({ size = 32, className = "" }) => (
     fill="currentColor"
     className={className}
   >
-    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
 
   </svg>
 );
@@ -192,12 +192,12 @@ const imageMap = {
   git, githube, githubh, os, linux, osf, osb,
   networking, networkingk, networkingf, cybere, cyberh,
   capcut, premire, davanci, video, reactjs, next, express,
-  springboot, laravel, django, backendh,ts,swift,post,gen,gene,iot,IOTh,rust,go,
-  prompth,prompte, devops , aws, docker, kubernetes,genaijs, electron, photoshop, appdesign,numpy,pandas,powerbi,pyspark,matplotlib,redis, aptitude,nodejs, angular, tailwindcss, vectorDB,spring,ios,bigdata,data,datadesign,dataproject,aiagents,n8n,n8nh,software,nest,aibasics,javaf, Ts, Js, solidity, flask, fastapi, vue, solidity,powerb, testing, pytorch, fullstack,html,css,automation, d3,nginx,tensorflow, supabase, excel, pyweb,astro, fastify, kafka, csharp, firebase,cppe
+  springboot, laravel, django, backendh, ts, swift, post, gen, gene, iot, IOTh, rust, go,
+  prompth, prompte, devops, aws, docker, kubernetes, genaijs, electron, photoshop, appdesign, numpy, pandas, powerbi, pyspark, matplotlib, redis, aptitude, nodejs, angular, tailwindcss, vectorDB, spring, ios, bigdata, data, datadesign, dataproject, aiagents, n8n, n8nh, software, nest, aibasics, javaf, Ts, Js, solidity, flask, fastapi, vue, solidity, powerb, testing, pytorch, fullstack, html, css, automation, d3, nginx, tensorflow, supabase, excel, pyweb, astro, fastify, kafka, csharp, firebase, cppe
 };
 
 // Creator images array
-const creatorImages = [creator1, creator2, creator3, creator4, creator5, creator6, creator7 ,creator8, creator9,creator10];
+const creatorImages = [creator1, creator2, creator3, creator4, creator5, creator6, creator7, creator8, creator9, creator10];
 
 export default function CoursePage() {
   const [activeTab, setActiveTab] = useState("All");
@@ -298,9 +298,9 @@ export default function CoursePage() {
           </div>
           <p className="text-medium md:text-xl text-gray-100 mb-3 font-medium">
             Master Tech Skills with Industry Experts • Hindi & English • Latest Content
-          
+
           </p>
-        
+
 
           {/* Creator Images */}
           <div className="flex justify-center items-center space-x-3 mt-6">
@@ -347,11 +347,10 @@ export default function CoursePage() {
           <button
             key={tab}
             onClick={() => handleTabClick(tab)}
-            className={`px-4 py-1.5 text-sm rounded-full transition-all whitespace-nowrap ${
-              activeTab === tab
+            className={`px-4 py-1.5 text-sm rounded-full transition-all whitespace-nowrap ${activeTab === tab
                 ? "bg-blue-600 text-white shadow-md"
                 : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
-            }`}
+              }`}
           >
             {tab}
           </button>
@@ -445,8 +444,7 @@ export default function CoursePage() {
                         {course.badge && (
                           <div className="absolute top-2 right-2">
                             <span
-                              className={`text-xs font-bold px-2 py-1 rounded ${
-                                course.badge === "HOT"
+                              className={`text-xs font-bold px-2 py-1 rounded ${course.badge === "HOT"
                                   ? "bg-red-500 text-white"
                                   : course.badge === "NEW"
                                     ? "bg-green-500 text-white"
@@ -457,7 +455,7 @@ export default function CoursePage() {
                                         : course.badge === "POPULAR"
                                           ? "bg-blue-500 text-white"
                                           : "bg-gray-700 text-white"
-                              }`}
+                                }`}
                             >
                               {course.badge}
                             </span>
@@ -472,8 +470,8 @@ export default function CoursePage() {
                           </span>
                         </div>
 
-                       
-                       
+
+
                       </div>
 
                       <div className="p-3">

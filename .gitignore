@@ -1,3 +1,29 @@
-.env.local
-# clerk configuration (can include secrets)
+# dependencies
+/node_modules
+/.pnpm-store
+
+# Next.js build output
+/.next/
+/out/
+/build
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+.env
 /.clerk/
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+
+# Large binaries & build artifacts
+*.apk
+*.zip
+*.tar.gz

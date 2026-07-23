@@ -9,7 +9,8 @@ import {
   Star,
   ArrowRight,
   Filter,
-  Loader2
+  Loader2,
+  Youtube
 } from "lucide-react";
 import { 
   roadmapsData, 
@@ -250,12 +251,24 @@ export default function TechRoadmap() {
               </div>
             </Link>
 
-            <button 
-              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
-              aria-label="Open filters"
-            >
-              <Filter className="w-5 h-5 text-gray-600 dark:text-gray-400" aria-hidden="true" />
-            </button>
+            <div className="flex items-center space-x-3">
+              <a
+                href="https://www.youtube.com/@roadmapfinder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[#FF0000] hover:bg-[#CC0000] text-white px-3.5 py-1.5 rounded-full font-medium text-xs sm:text-sm shadow-sm hover:shadow-md transition-all active:scale-95"
+              >
+                <Youtube className="w-4 h-4 fill-white" />
+                <span>Explore free courses</span>
+              </a>
+
+              <button 
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
+                aria-label="Open filters"
+              >
+                <Filter className="w-5 h-5 text-gray-600 dark:text-gray-400" aria-hidden="true" />
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -268,9 +281,23 @@ export default function TechRoadmap() {
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Roadmaps</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4">
             Discover expertly curated learning paths for various tech domains and programming languages
           </p>
+
+          {/* Header YouTube Banner CTA */}
+          <div className="mb-6 flex justify-center">
+            <a
+              href="https://www.youtube.com/@roadmapfinder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-[#FF0000] hover:bg-[#D90000] text-white px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg hover:shadow-red-500/20 transition-all transform hover:-translate-y-0.5 active:scale-95"
+            >
+              <Youtube className="w-5 h-5 fill-white" />
+              <span>Explore free courses</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
 
           {/* Search Bar - Enhanced */}
           <div className="max-w-2xl mx-auto mb-6">

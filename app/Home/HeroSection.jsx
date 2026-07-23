@@ -1,587 +1,407 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Star, Users, Award, Smartphone, ArrowRight, Play, CheckCircle, Lock, LockOpen, Zap, Flame, Target, Cpu, ChevronLeft, ChevronRight, Sparkles, BookOpen, Clock, Bell, Map, Check, Palette, FileText, FolderOpen, ChevronDown, Menu } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { Globe, ArrowRight, Sparkles, Check, Briefcase, Compass, Rocket, Laptop, School, HardwareChip, Flame, Play, CheckCircle2 } from "lucide-react";
+import AppNoticeModal from "./AppNoticeModal";
 
+export default function HeroSection() {
+  const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-const HeroSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [activeScreen, setActiveScreen] = useState('onboarding1'); // 'onboarding1', 'onboarding2', 'home' or 'roadmap'
-  const router = useRouter();
+  // 4 Onboarding & HomeScreen steps matching exact roadmapfinder-AI app UI
+  const steps = [
+    // 1. GOAL SELECTION SCREEN (roadmapfinder-AI/app/main/onboardings/Goal.jsx)
+    {
+      id: "goal",
+      title: "Goal Selection",
+      render: () => (
+        <div className="p-4 flex flex-col justify-between h-full bg-[#f8fafc] text-[#191c1e]">
+          <div>
+            {/* Top Bar */}
+            <div className="flex items-center justify-between mb-3 text-[11px] font-semibold text-[#737686]">
+              <span>Learning Path</span>
+              <span className="text-[#2563EB] font-bold">Step 2 of 4</span>
+            </div>
 
+            {/* AI Icon Header */}
+            <div className="w-10 h-10 rounded-2xl bg-[#2563EB]/10 flex items-center justify-center text-[#2563EB] mb-3">
+              <Sparkles size={20} />
+            </div>
 
+            <h4 className="font-['Space_Grotesk'] text-base font-bold text-[#0F172A] mb-1">
+              Why are you learning?
+            </h4>
+            <p className="font-['Inter'] text-[11px] text-[#475569] mb-3 leading-tight">
+              We'll tailor your roadmap based on your ultimate objective.
+            </p>
+
+            {/* Cards */}
+            <div className="space-y-2">
+              {/* Card 1 - Job (Selected) */}
+              <div className="p-2.5 bg-white rounded-xl border-2 border-[#2563EB] shadow-sm flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center">
+                  <Briefcase size={16} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <p className="font-['Inter'] text-xs font-bold text-[#0F172A]">Job</p>
+                    <div className="w-4 h-4 rounded-full bg-[#2563EB] text-white flex items-center justify-center">
+                      <Check size={10} />
+                    </div>
+                  </div>
+                  <p className="font-['Inter'] text-[9px] text-[#64748B]">Advancing career or finding new role</p>
+                </div>
+              </div>
+
+              {/* Card 2 - Explore */}
+              <div className="p-2.5 bg-white rounded-xl border border-[#E2E8F0] flex items-center gap-2.5 opacity-75">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 text-[#64748B] flex items-center justify-center">
+                  <Compass size={16} />
+                </div>
+                <div className="flex-1">
+                  <p className="font-['Inter'] text-xs font-bold text-[#0F172A]">Explore</p>
+                  <p className="font-['Inter'] text-[9px] text-[#64748B]">Discovering new fields</p>
+                </div>
+              </div>
+
+              {/* Card 3 - Startup */}
+              <div className="p-2.5 bg-white rounded-xl border border-[#E2E8F0] flex items-center gap-2.5 opacity-75">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 text-[#64748B] flex items-center justify-center">
+                  <Rocket size={16} />
+                </div>
+                <div className="flex-1">
+                  <p className="font-['Inter'] text-xs font-bold text-[#0F172A]">Startup</p>
+                  <p className="font-['Inter'] text-[9px] text-[#64748B]">Building product or company</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-auto pt-2">
+            <button className="w-full bg-[#2563EB] text-white py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1 shadow-md">
+              Continue <ArrowRight size={14} />
+            </button>
+          </div>
+        </div>
+      ),
+    },
+
+    // 2. LEVEL SELECTION SCREEN (roadmapfinder-AI/app/main/onboardings/Level.jsx)
+    {
+      id: "level",
+      title: "Level Selection",
+      render: () => (
+        <div className="p-4 flex flex-col justify-between h-full bg-[#f8fafc] text-[#191c1e]">
+          <div>
+            {/* Top Progress Track */}
+            <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden mb-3">
+              <div className="bg-[#2563EB] h-full w-[75%] rounded-full"></div>
+            </div>
+
+            <div className="flex items-center justify-between mb-3 text-[11px] font-semibold text-[#737686]">
+              <span>Experience Level</span>
+              <span className="text-[#2563EB] font-bold">Step 3 of 4</span>
+            </div>
+
+            <h4 className="font-['Space_Grotesk'] text-base font-bold text-[#0F172A] mb-1">
+              Select your level
+            </h4>
+            <p className="font-['Inter'] text-[11px] text-[#475569] mb-3 leading-tight">
+              We'll tailor your journey based on your experience.
+            </p>
+
+            <div className="space-y-2">
+              {/* Card 1 - Freelancer (Recommended & Selected) */}
+              <div className="p-2.5 bg-white rounded-xl border-2 border-[#2563EB] shadow-sm relative">
+                <span className="absolute -top-2 right-3 text-[8px] font-extrabold bg-[#2563EB] text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  RECOMMENDED
+                </span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center">
+                    <Laptop size={16} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-['Inter'] text-xs font-bold text-[#0F172A]">Freelancer</p>
+                    <p className="font-['Inter'] text-[9px] text-[#64748B]">Independent, expanding skillsets</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 - Student */}
+              <div className="p-2.5 bg-white rounded-xl border border-[#E2E8F0] flex items-center gap-2.5 opacity-75">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 text-[#64748B] flex items-center justify-center">
+                  <School size={16} />
+                </div>
+                <div className="flex-1">
+                  <p className="font-['Inter'] text-xs font-bold text-[#0F172A]">Student</p>
+                  <p className="font-['Inter'] text-[9px] text-[#64748B]">Building foundational knowledge</p>
+                </div>
+              </div>
+
+              {/* Card 3 - Experienced */}
+              <div className="p-2.5 bg-white rounded-xl border border-[#E2E8F0] flex items-center gap-2.5 opacity-75">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 text-[#64748B] flex items-center justify-center">
+                  <Briefcase size={16} />
+                </div>
+                <div className="flex-1">
+                  <p className="font-['Inter'] text-xs font-bold text-[#0F172A]">Experienced</p>
+                  <p className="font-['Inter'] text-[9px] text-[#64748B]">Mastering advanced concepts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-auto pt-2">
+            <button className="w-full bg-[#2563EB] text-white py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1 shadow-md">
+              Generate AI Roadmap <Sparkles size={14} />
+            </button>
+          </div>
+        </div>
+      ),
+    },
+
+    // 3. GENERATING ROADMAP SCREEN (roadmapfinder-AI/app/main/onboardings/Generate.jsx)
+    {
+      id: "generate",
+      title: "AI Generation",
+      render: () => (
+        <div className="p-5 flex flex-col items-center justify-between h-full bg-[#0F172A] text-white text-center">
+          <div className="my-auto space-y-4">
+            <div className="w-16 h-16 rounded-2xl bg-[#2563EB]/20 border border-[#2563EB]/40 flex items-center justify-center mx-auto shadow-lg shadow-[#2563EB]/20 animate-pulse">
+              <Sparkles size={32} className="text-[#38BDF8]" />
+            </div>
+
+            <h4 className="font-['Space_Grotesk'] text-lg font-bold text-white">
+              Crafting AI Roadmap...
+            </h4>
+            <p className="font-['Inter'] text-[11px] text-slate-400 max-w-[200px] mx-auto leading-relaxed">
+              Curating 1% top YouTube resources, official docs & capstone projects...
+            </p>
+
+            {/* Progress Bar */}
+            <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+              <div className="bg-[#2563EB] h-full w-[92%] rounded-full animate-pulse"></div>
+            </div>
+
+            {/* Live Logs */}
+            <div className="space-y-1.5 text-[10px] text-left bg-slate-900/80 p-3 rounded-xl border border-slate-800 font-mono text-slate-300">
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-400">✓</span> Full Stack Path Selected
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-400">✓</span> 90-Day Schedule Formatted
+              </div>
+              <div className="flex items-center gap-2 text-sky-400">
+                <span className="animate-spin">⚡</span> Finalizing Daily XP Tasks...
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+
+    // 4. HOMESCREEN (roadmapfinder-AI/app/main/screens/HomeScreen.jsx)
+    {
+      id: "home",
+      title: "App HomeScreen",
+      render: () => (
+        <div className="flex flex-col h-full bg-[#F1F5F9] text-[#0F172A]">
+          {/* Header */}
+          <div className="p-3 bg-white border-b border-slate-200 flex items-center justify-between">
+            <div>
+              <p className="text-[9px] text-slate-500 leading-none">Good morning,</p>
+              <p className="text-xs font-bold text-[#0F172A] leading-tight font-['Space_Grotesk']">
+                Sohel 👋
+              </p>
+            </div>
+            <div className="flex items-center gap-1 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full text-amber-700 font-bold text-[10px]">
+              <Flame size={12} className="text-amber-500 fill-amber-500" /> 4 Days
+            </div>
+          </div>
+
+          {/* Body */}
+          <div className="flex-1 p-3 space-y-2.5 overflow-hidden">
+            {/* Active Roadmap Hero Card (#0F172A) */}
+            <div className="p-3.5 bg-[#0F172A] text-white rounded-2xl shadow-md space-y-2">
+              <div className="flex items-center justify-between text-[9px]">
+                <span className="text-slate-400 font-semibold uppercase tracking-wider">Active Roadmap</span>
+                <span className="bg-[#2563EB] text-white px-2 py-0.5 rounded font-extrabold text-[8px]">
+                  INTERMEDIATE
+                </span>
+              </div>
+              <h5 className="font-['Space_Grotesk'] text-xs font-bold text-white">
+                Full Stack Engineer Path
+              </h5>
+
+              {/* Progress Bar */}
+              <div className="space-y-1">
+                <div className="flex justify-between text-[9px] text-slate-300 font-medium">
+                  <span>Overall Progress</span>
+                  <span className="font-bold text-[#60A5FA]">45%</span>
+                </div>
+                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                  <div className="bg-[#2563EB] h-full w-[45%] rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Week Day Tracker circles */}
+              <div className="flex justify-between pt-1 border-t border-slate-800 text-[8px] text-slate-400">
+                {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, idx) => (
+                  <div key={idx} className="flex flex-col items-center gap-0.5">
+                    <span>{d}</span>
+                    <div className={`w-3.5 h-3.5 rounded-full flex items-center justify-center ${
+                      idx < 4 ? "bg-[#60A5FA] text-white" : idx === 4 ? "bg-white text-[#2563EB]" : "bg-slate-800"
+                    }`}>
+                      {idx < 4 && <Check size={8} />}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Today's Task Card */}
+            <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] font-bold text-[#2563EB] bg-[#2563EB]/10 px-2 py-0.5 rounded-full">
+                  Today's Lesson
+                </span>
+                <span className="text-[9px] text-emerald-600 font-bold">
+                  +250 XP
+                </span>
+              </div>
+              <p className="text-xs font-bold text-[#0F172A]">
+                🌐 Web Foundations & React Hooks
+              </p>
+              <div className="flex items-center justify-between pt-1 text-[9px] text-slate-500">
+                <span>⏱️ 25 mins • Video + Quiz</span>
+                <span className="text-[#2563EB] font-bold flex items-center gap-0.5">
+                  Start ▶
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Tab Bar */}
+          <div className="h-11 bg-white border-t border-slate-200 flex items-center justify-around px-2 text-[9px] text-slate-500">
+            <div className="flex flex-col items-center text-[#2563EB] font-bold">
+              <div className="w-1 h-1 rounded-full bg-[#2563EB] mb-0.5"></div>
+              Home
+            </div>
+            <div className="flex flex-col items-center">Roadmaps</div>
+            <div className="flex flex-col items-center">Courses</div>
+            <div className="flex flex-col items-center">AI Mentor</div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  // Auto cycle screens smoothly
   useEffect(() => {
-    setIsVisible(true);
-
-
-    // Auto-cycle screens every 4 seconds
+    if (isPaused) return;
     const interval = setInterval(() => {
-      setActiveScreen(prev => {
-        if (prev === 'onboarding1') return 'onboarding2';
-        if (prev === 'onboarding2') return 'home';
-        if (prev === 'home') return 'roadmap';
-        return 'onboarding1';
-      });
-    }, 4000);
-
-
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 3500);
     return () => clearInterval(interval);
-  }, []);
-
-
-  const handleNavigation = (path) => {
-    router.push(path);
-  };
-
+  }, [isPaused, steps.length]);
 
   return (
-    <div className="px-3 xs:px-4 sm:px-6 lg:px-8">
+    <>
       <section
-        className={`mb-6 xs:mb-8 lg:mb-12 transform transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+        className="pt-[95px] md:pt-[110px] pb-10 px-5 md:px-10 max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 min-h-[calc(100vh-100px)]"
+        id="hero"
       >
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-          <div className="flex flex-col lg:flex-row min-h-[550px]">
+        {/* Left Text Content */}
+        <div className="flex-1 space-y-5 text-left max-w-xl">
+          <span className="inline-block px-3.5 py-1 bg-[#39b8fd]/10 text-[#004ac6] rounded-full font-['Inter'] text-xs font-bold tracking-wider uppercase">
+            AI-powered learning companion
+          </span>
+          <h1 className="font-['Space_Grotesk'] text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#191c1e]">
+            From <span className="text-[#004ac6]">Zero to Job-Ready.</span>
+          </h1>
+          <p className="font-['Inter'] text-base sm:text-lg text-[#434655] leading-relaxed">
+            Master <strong>Full Stack Skills</strong> on your journey to becoming a professional engineer. We curate the best free resources and guide you day-by-day.
+          </p>
 
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-3.5 pt-2">
+            {/* Primary CTA: Continue on Web */}
+            <Link
+              href="/RoadmapPage"
+              className="bg-[#004ac6] text-white px-8 py-3.5 rounded-full flex items-center gap-2.5 font-['Inter'] text-sm font-semibold hover:bg-[#003ea8] shadow-lg hover:shadow-xl transition-all active:scale-95"
+            >
+              <Globe size={18} />
+              Continue on Web
+              <ArrowRight size={16} />
+            </Link>
 
-            {/* Left Content Column */}
-            <div className="lg:w-[55%] p-6 sm:p-10 xl:p-14 flex flex-col justify-center relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
+            {/* Secondary CTA: Android App Notice Trigger */}
+            <button
+              onClick={() => setIsNoticeModalOpen(true)}
+              className="border border-[#c3c6d7] bg-[#f7f9fb] text-[#191c1e] px-6 py-3.5 rounded-full flex items-center gap-2 font-['Inter'] text-sm font-semibold hover:bg-[#f2f4f6] transition-all active:scale-95"
+            >
+              <span className="material-symbols-outlined text-green-600 text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
+                android
+              </span>
+              Download for Android
+              <span className="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full uppercase">
+                Soon
+              </span>
+            </button>
+          </div>
+        </div>
 
-
-              <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
-
-
-                {/* Headline - Fullstack-focused, high-impact hook */}
-                <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.15] tracking-tight mb-6">
-                  <span className="block mb-2">
-                    Stop Leveling Up on <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-600">Random Tutorials</span>.
-                  </span>
-                  <span className="relative inline-block mt-2 lg:mt-0">
-                    Build Real <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Fullstack Skills</span>. From Zero to Job-Ready.
-                    <svg className="absolute -bottom-2 sm:-bottom-3 left-0 w-full" height="12" viewBox="0 0 100 12" preserveAspectRatio="none">
-                      <path d="M0,10 Q25,2 50,6 T100,10" stroke="#818CF8" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.6" />
-                    </svg>
-                  </span>
-                </h1>
-
-
-                {/* Subheadline - AI roadmap + fullstack learning + assignments + proof */}
-                <p className="text-base text-gray-600 mb-8 max-w-xl leading-relaxed">
-                  An AI-powered fullstack roadmap that’s built around your current level, goal, and language. <span className="font-semibold text-gray-800">Watch the best YouTube lessons, complete real assignments, and prove you actually learned it.</span>
-                </p>
-
-
-                {/* CTAs (unchanged) */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mb-10">
-                  <a
-                    href="https://drive.google.com/uc?export=download&id=1LNgtjVEwh2YEc2fiVCTXpaXt8ivYSfu8"
-                    download="roadmapfinder (3).apk"
-                    className="w-[85%] max-w-[260px] sm:max-w-none sm:w-auto bg-blue-600 text-white py-2.5 px-6 sm:py-3 sm:px-6 rounded-xl text-sm sm:text-base font-bold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/30 group relative overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                    <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 relative z-10 animate-bounce-slow" />
-                    <span className="relative z-10">Download the App</span>
-                  </a>
-
-
-                  <button
-                    onClick={() => handleNavigation("/RoadmapPage")}
-                    className="w-[85%] max-w-[260px] sm:max-w-none sm:w-auto bg-white text-gray-700 py-2.5 px-6 sm:py-3 sm:px-6 rounded-xl text-sm sm:text-base font-semibold border border-gray-200 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 group"
-                  >
-                    <span>Continue on Web</span>
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                  </button>
-                </div>
-
-
-                {/* Trust Indicators (unchanged) */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-gray-500 font-medium bg-white/50 backdrop-blur-sm py-3 px-5 rounded-2xl border border-gray-100 shadow-sm">
-                  <div className="flex items-center gap-1.5">
-                    <Users className="w-4 h-4 text-blue-500" />
-                    <span>10K+ Users</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                    <span>4.8 Rating</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Award className="w-4 h-4 text-purple-500" />
-                    <span>Expert Verified</span>
-                  </div>
-                </div>
-
-
-              </div>
+        {/* Right Perfectly Balanced 3D Phone Emulator with App Onboarding -> HomeScreen Flow */}
+        <div
+          className="flex-1 relative w-full max-w-[310px] sm:max-w-[325px] mx-auto flex flex-col items-center"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Phone Bezel Container */}
+          <div className="relative w-full h-[530px] sm:h-[560px] bg-[#0F172A] rounded-[2.5rem] sm:rounded-[3rem] border-[8px] sm:border-[10px] border-[#0F172A] overflow-hidden shadow-2xl transition-all border-[#1e293b]">
+            {/* Camera Notch */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-[#0F172A] z-40 rounded-full flex items-center justify-end px-2">
+              <div className="w-2.5 h-2.5 rounded-full bg-black border border-slate-700"></div>
             </div>
 
-
-            {/* Right Content Column - Emulator Mockup (unchanged) */}
-            <div className="w-full lg:w-[45%] relative flex items-center justify-center p-8 lg:p-4 xl:p-8 bg-gray-50 overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-100">
-              {/* Background Decorative Blobs */}
-              <div className="absolute top-1/4 -right-20 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-              <div className="absolute top-1/3 -left-20 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-              <div className="absolute -bottom-8 left-20 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
-
-              {/* Phone Frame */}
-              <div className="relative z-10 w-[280px] h-[580px] xl:w-[300px] xl:h-[600px] bg-black rounded-[40px] shadow-2xl border-[8px] border-black overflow-hidden transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 flex-shrink-0">
-                {/* Notch */}
-                <div className="absolute top-0 inset-x-0 h-6 bg-black z-50 rounded-b-2xl w-40 mx-auto"></div>
-
-
-                {/* Screen Content Container */}
-                <div className="relative w-full h-full bg-gray-50 overflow-hidden">
-
-
-                  {/* Onboarding Screen 1 UI */}
-                  <div className={`absolute inset-0 transition-opacity duration-700 bg-[#f5f6fa] ${activeScreen === 'onboarding1' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
-                    <div className="h-full flex flex-col pt-6">
-                      {/* Header */}
-                      <div className="flex items-center px-4 py-2 gap-2">
-                        <ChevronLeft className="w-5 h-5 text-gray-800" />
-                        <span className="text-sm font-bold text-gray-900 mr-2">Experience</span>
-                        <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="w-[50%] h-full bg-blue-600 rounded-full"></div>
-                        </div>
-                        <span className="text-[10px] font-medium text-gray-400">Step 2 of 4</span>
-                      </div>
-
-
-                      {/* Content */}
-                      <div className="flex-1 px-5 pt-4">
-                        <div className="flex justify-center mb-4">
-                          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
-                            <Star className="w-8 h-8 text-blue-600" />
-                          </div>
-                        </div>
-                        <h2 className="text-xl font-extrabold text-center text-gray-900 tracking-tight mb-2">What's your level?</h2>
-                        <p className="text-xs text-center text-gray-500 mb-6 leading-relaxed">
-                          We'll adjust the difficulty based on your current knowledge.
-                        </p>
-
-
-                        <div className="space-y-2.5">
-                          {/* Option 1 */}
-                          <div className="flex items-center p-3 rounded-xl bg-white border-2 border-blue-600 shadow-[0_4px_12px_rgba(37,99,235,0.12)]">
-                            <div className="flex-1">
-                              <div className="text-[13px] font-bold text-blue-700">Absolute Beginner</div>
-                              <div className="text-[10px] text-gray-500">I'm just starting out.</div>
-                            </div>
-                            <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center ml-2">
-                              <Check className="w-3 h-3 text-blue-600" />
-                            </div>
-                          </div>
-                          {/* Option 2 */}
-                          <div className="flex items-center p-3 rounded-xl bg-white border border-gray-200 shadow-sm">
-                            <div className="flex-1">
-                              <div className="text-[13px] font-bold text-gray-900">Some Experience</div>
-                              <div className="text-[10px] text-gray-400">I know the basics.</div>
-                            </div>
-                          </div>
-                          {/* Option 3 */}
-                          <div className="flex items-center p-3 rounded-xl bg-white border border-gray-200 shadow-sm">
-                            <div className="flex-1">
-                              <div className="text-[13px] font-bold text-gray-900">Advanced</div>
-                              <div className="text-[10px] text-gray-400">I'm looking to master it.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      {/* Footer */}
-                      <div className="p-5 pb-8">
-                        <button className="w-full bg-blue-600 text-white flex items-center justify-center gap-2 py-3.5 rounded-xl text-[13px] font-bold shadow-[0_4px_12px_rgba(37,99,235,0.35)]">
-                          <span>Continue</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  {/* Onboarding Screen 2 UI */}
-                  <div className={`absolute inset-0 transition-opacity duration-700 bg-[#f5f6fa] ${activeScreen === 'onboarding2' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
-                    <div className="h-full flex flex-col pt-6">
-                      {/* Header */}
-                      <div className="flex items-center px-4 py-2 gap-2">
-                        <ChevronLeft className="w-5 h-5 text-gray-800" />
-                        <span className="text-sm font-bold text-gray-900 mr-2">Learning Path</span>
-                        <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="w-[83%] h-full bg-blue-600 rounded-full"></div>
-                        </div>
-                        <span className="text-[10px] font-medium text-gray-400">Step 4 of 4</span>
-                      </div>
-
-
-                      {/* Content */}
-                      <div className="flex-1 px-5 pt-4">
-                        <div className="flex justify-center mb-4">
-                          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center">
-                            <Cpu className="w-8 h-8 text-blue-600" />
-                          </div>
-                        </div>
-                        <h2 className="text-xl font-extrabold text-center text-gray-900 tracking-tight mb-2">Why are you learning?</h2>
-                        <p className="text-xs text-center text-gray-500 mb-6 leading-relaxed">
-                          We'll tailor your roadmap based on your ultimate objective.
-                        </p>
-
-
-                        <div className="space-y-2.5">
-                          {/* Option 1 */}
-                          <div className="flex items-center p-3 rounded-xl bg-white border border-gray-200 shadow-sm">
-                            <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center mr-3">
-                              <Star className="w-4 h-4 text-gray-400" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-[13px] font-bold text-gray-900">For Fun</div>
-                              <div className="text-[10px] text-gray-400">Learning as a hobby or personal interest.</div>
-                            </div>
-                          </div>
-                          {/* Option 2 */}
-                          <div className="flex items-center p-3 rounded-xl bg-white border-2 border-blue-600 shadow-[0_4px_12px_rgba(37,99,235,0.12)]">
-                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center mr-3">
-                              <Target className="w-4 h-4 text-blue-600" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-[13px] font-bold text-blue-700">Job</div>
-                              <div className="text-[10px] text-gray-500">Advancing your career or finding a new role.</div>
-                            </div>
-                            <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center ml-2">
-                              <Check className="w-3 h-3 text-blue-600" />
-                            </div>
-                          </div>
-                          {/* Option 3 */}
-                          <div className="flex items-center p-3 rounded-xl bg-white border border-gray-200 shadow-sm">
-                            <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center mr-3">
-                              <Zap className="w-4 h-4 text-gray-400" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-[13px] font-bold text-gray-900">Startup</div>
-                              <div className="text-[10px] text-gray-400">Building your own product or company.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      {/* Footer */}
-                      <div className="p-5 pb-8">
-                        <button className="w-full bg-blue-600 text-white flex items-center justify-center gap-2 py-3.5 rounded-xl text-[13px] font-bold shadow-[0_4px_12px_rgba(37,99,235,0.35)]">
-                          <span>Generate My Roadmap</span>
-                          <Sparkles className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  {/* Home Screen UI */}
-                  <div className={`absolute inset-0 transition-opacity duration-700 bg-[#F1F5F9] ${activeScreen === 'home' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
-                    <div className="h-full flex flex-col relative pb-14 pt-6">
-                      {/* App Header */}
-                      <div className="px-4 py-3 flex justify-between items-center">
-                        <div>
-                          <div className="text-[10px] text-slate-500 font-medium">Good morning,</div>
-                          <div className="text-base font-extrabold text-slate-900 tracking-tight">Learner 👋</div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-[10px] bg-white border border-slate-200 flex items-center justify-center relative shadow-sm">
-                            <Bell className="w-4 h-4 text-slate-600" />
-                            <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border border-white"></div>
-                          </div>
-                          <div className="w-8 h-8 rounded-[10px] bg-blue-800 flex items-center justify-center text-white font-bold text-xs shadow-sm">
-                            L
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div className="flex-1 px-4 overflow-hidden">
-                        {/* Stats Banner */}
-                        <div className="bg-blue-600 rounded-2xl p-4 shadow-lg mb-4 shadow-blue-600/20">
-                          <div className="flex justify-between items-center mb-3">
-                            <div className="flex flex-col items-center flex-1">
-                              <div className="flex items-center gap-1 mb-0.5">
-                                <span className="text-sm">🔥</span>
-                                <span className="text-lg font-black text-white">4</span>
-                              </div>
-                              <span className="text-[7px] font-bold text-white/60 tracking-wider">DAY STREAK</span>
-                            </div>
-                            <div className="w-px h-8 bg-white/10 mx-1"></div>
-                            <div className="flex flex-col items-center flex-1">
-                              <div className="flex items-center gap-1 mb-0.5">
-                                <span className="text-sm">⚡</span>
-                                <span className="text-lg font-black text-white">450</span>
-                              </div>
-                              <span className="text-[7px] font-bold text-white/60 tracking-wider">XP EARNED</span>
-                            </div>
-                            <div className="w-px h-8 bg-white/10 mx-1"></div>
-                            <div className="flex flex-col items-center flex-1">
-                              <div className="flex items-center gap-1 mb-0.5">
-                                <span className="text-sm">📚</span>
-                                <span className="text-lg font-black text-white">12</span>
-                              </div>
-                              <span className="text-[7px] font-bold text-white/60 tracking-wider">TOPICS DONE</span>
-                            </div>
-                          </div>
-                          <div className="h-px bg-white/10 mb-3"></div>
-                          <div className="flex justify-between items-end">
-                            {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-                              <div key={i} className="flex flex-col items-center gap-1">
-                                <span className={`text-[8px] font-bold ${i === 3 ? 'text-white' : 'text-white/50'}`}>{day}</span>
-                                <div className={`w-6 h-6 rounded-full flex items-center justify-center ${i === 3 ? 'bg-white' : i < 3 ? 'bg-blue-400' : 'border border-white/20'}`}>
-                                  {i < 3 && <Check className="w-3 h-3 text-white" />}
-                                  {i === 3 && <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-
-                        {/* Current Path */}
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-[13px] font-extrabold text-slate-900">Current path</span>
-                          <span className="text-[10px] font-bold text-blue-600">View roadmap →</span>
-                        </div>
-
-
-                        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm mb-4">
-                          <div className="flex items-start mb-3">
-                            <div className="flex-1 pr-2">
-                              <div className="inline-block px-2 py-0.5 bg-blue-50 rounded text-[8px] font-bold text-blue-700 mb-1.5">PHASE 3 OF 12</div>
-                              <h3 className="text-[13px] font-extrabold text-slate-900 mb-0.5 leading-tight">Full Stack Web Dev</h3>
-                              <p className="text-[9px] font-medium text-slate-500">48 topics across 12 phases</p>
-                            </div>
-                            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg shrink-0">🌐</div>
-                          </div>
-                          <div className="flex items-center gap-2 bg-blue-50 rounded-lg px-2 py-1.5 mb-3">
-                            <BookOpen className="w-3 h-3 text-blue-600" />
-                            <span className="text-[9px] font-bold text-blue-700 flex-1 truncate">Now: React Basics</span>
-                            <div className="flex items-center gap-1 shrink-0">
-                              <Clock className="w-3 h-3 text-slate-500" />
-                              <span className="text-[8px] font-bold text-slate-500">2h</span>
-                            </div>
-                          </div>
-                          <button className="w-full bg-slate-900 text-white flex items-center justify-center gap-2 py-2 rounded-xl text-[11px] font-bold">
-                            Continue Learning <ArrowRight className="w-3 h-3" />
-                          </button>
-                        </div>
-                      </div>
-
-
-                      {/* Bottom Nav Mockup */}
-                      <div className="absolute bottom-0 inset-x-0 h-14 bg-white border-t border-slate-200 flex justify-around items-center px-4 pb-2 z-10 shadow-[0_-4px_12px_rgba(0,0,0,0.02)]">
-                        <div className="flex flex-col items-center gap-1">
-                          <Map className="w-5 h-5 text-blue-600 fill-blue-600/20" />
-                          <div className="w-1 h-1 bg-blue-600 rounded-full"></div>
-                        </div>
-                        <div className="flex flex-col items-center gap-1">
-                          <BookOpen className="w-5 h-5 text-slate-400" />
-                        </div>
-                        <div className="flex flex-col items-center gap-1">
-                          <Users className="w-5 h-5 text-slate-400" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  {/* Roadmap Screen UI */}
-                  <div className={`absolute inset-0 transition-opacity duration-700 bg-[#F8FAFF] ${activeScreen === 'roadmap' ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}>
-                    <div className="h-full flex flex-col relative pb-14 pt-6">
-                      {/* Premium Header Architecture */}
-                      <div className="bg-white border-b border-[#E2E8F0] shadow-[0_4px_12px_rgba(0,0,0,0.03)] z-10 pb-3">
-                        <div className="flex items-center justify-between px-4 h-12">
-                          <div className="w-8 h-8 rounded-xl bg-[#F8FAFF] flex items-center justify-center border border-[#F1F5F9]">
-                            <ChevronLeft className="w-5 h-5 text-[#111827]" />
-                          </div>
-                          <div className="flex-1 text-center">
-                            <h2 className="text-[14px] font-black text-[#111827] truncate px-2">Learning Path</h2>
-                          </div>
-                          <div className="w-8 h-8 rounded-xl flex items-center justify-center">
-                            <div className="flex flex-col gap-[3px]">
-                              <div className="w-[3px] h-[3px] bg-[#111827] rounded-full"></div>
-                              <div className="w-[3px] h-[3px] bg-[#111827] rounded-full"></div>
-                              <div className="w-[3px] h-[3px] bg-[#111827] rounded-full"></div>
-                            </div>
-                          </div>
-                        </div>
-
-
-                        {/* Header Metrics */}
-                        <div className="flex items-center justify-between px-6 mt-2">
-                          <div className="flex flex-col items-center">
-                            <span className="text-[14px] font-black text-[#111827]">4</span>
-                            <span className="text-[8px] font-bold text-[#94A3B8] mt-0.5">Phases</span>
-                          </div>
-                          <div className="w-px h-6 bg-[#E2E8F0]"></div>
-                          <div className="flex flex-col items-center">
-                            <span className="text-[14px] font-black text-[#111827]">12</span>
-                            <span className="text-[8px] font-bold text-[#94A3B8] mt-0.5">Topics</span>
-                          </div>
-                          <div className="w-px h-6 bg-[#E2E8F0]"></div>
-                          <div className="flex flex-col items-center">
-                            <span className="text-[14px] font-black text-[#111827]">0%</span>
-                            <span className="text-[8px] font-bold text-[#94A3B8] mt-0.5">Mastered</span>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      {/* Content Scroll */}
-
-
-
-                      {/* Intro */}
-                      <div className="px-2 mb-2 flex flex-col items-center">
-                        <p className="text-[10px] text-[#64748B] text-center mb-3 leading-relaxed">
-                          Master your craft with industry-standard curriculum.
-                        </p>
-                        <div className="flex items-center gap-2 bg-[#EFF6FF] px-3 py-2 rounded-xl border border-[#DBEAFE]">
-                          <Play className="w-3 h-3 text-[#2563EB] fill-[#2563EB]" />
-                          <span className="text-[8px] font-bold text-[#2563EB]">Curated masterclasses included in every topic</span>
-                        </div>
-
-
-
-                        {/* Phase Block */}
-                        <div className="mb-6">
-                          {/* Phase Header */}
-                          <div className="flex items-center mb-4">
-                            <div className="w-10 h-10 rounded-xl bg-[#2563EB] flex items-center justify-center mr-3 shadow-[0_4px_8px_rgba(37,99,235,0.25)]">
-                              <span className="text-white text-[14px] font-black">1</span>
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-[7px] font-extrabold text-[#94A3B8] tracking-widest mb-0.5">STEP 1</div>
-                              <div className="text-[14px] font-black text-[#111827]">Fundamentals</div>
-                            </div>
-                            <div className="bg-white px-2 py-1 rounded-lg border border-[#E2E8F0]">
-                              <span className="text-[7px] font-extrabold text-[#64748B]">Flexible</span>
-                            </div>
-                          </div>
-
-
-                          {/* Phase Body */}
-                          <div className="flex pl-4">
-                            <div className="w-0.5 rounded-full bg-[#2563EB] opacity-20 mr-4"></div>
-
-
-                            {/* Topic Stack */}
-                            <div className="flex-1 space-y-3 pb-4">
-                              {/* Topic Card */}
-                              <div className="bg-white rounded-[16px] p-3 shadow-[0_6px_12px_rgba(0,0,0,0.03)] border border-[#F1F5F9]">
-                                <div className="flex justify-between mb-2">
-                                  <div className="flex-1 pr-2">
-                                    <h3 className="text-[11px] font-extrabold text-[#111827] mb-1.5 leading-tight">Introduction to UX</h3>
-                                    <div className="flex items-center gap-1.5">
-                                      <div className="px-1.5 py-0.5 rounded-md bg-[#10B98112]">
-                                        <span className="text-[6px] font-extrabold text-[#10B981]">STUDENT</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="w-[70px] h-[45px] rounded-xl bg-black overflow-hidden relative">
-                                    <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=300&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" alt="Video preview" />
-                                    <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                                      <div className="w-5 h-5 rounded-full bg-white/40 flex items-center justify-center">
-                                        <Play className="w-2.5 h-2.5 text-white fill-white ml-0.5" />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <p className="text-[8px] text-[#64748B] leading-[1.4] mb-3 line-clamp-2">Learn the basics of User Experience design and why it matters in modern app development.</p>
-                                <div className="flex items-center gap-1">
-                                  <span className="text-[9px] font-extrabold text-[#2563EB]">Start Lesson</span>
-                                  <ChevronRight className="w-3 h-3 text-[#2563EB]" />
-                                </div>
-                              </div>
-
-
-                              {/* Locked Topic Card */}
-                              <div className="bg-white rounded-[16px] p-3 shadow-[0_6px_12px_rgba(0,0,0,0.03)] border border-[#F1F5F9] opacity-65">
-                                <div className="flex justify-between mb-2">
-                                  <div className="flex-1 pr-2">
-                                    <h3 className="text-[11px] font-extrabold text-[#111827] mb-1.5 leading-tight">Design Thinking Process</h3>
-                                    <div className="flex items-center gap-1.5">
-                                      <div className="px-1.5 py-0.5 rounded-md bg-[#64748B12]">
-                                        <span className="text-[6px] font-extrabold text-[#64748B]">LOCKED</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="w-[70px] h-[45px] rounded-xl bg-black overflow-hidden relative">
-                                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=300&auto=format&fit=crop" className="w-full h-full object-cover opacity-40" alt="Locked video" />
-                                    <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                                      <div className="w-5 h-5 rounded-full bg-black/50 flex items-center justify-center">
-                                        <Lock className="w-2.5 h-2.5 text-white" />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <p className="text-[8px] text-[#64748B] leading-[1.4] mb-3 line-clamp-2">A step-by-step walkthrough of the five stages of design thinking.</p>
-                                <div className="flex items-center gap-1">
-                                  <span className="text-[9px] font-extrabold text-[#64748B]">Locked</span>
-                                  <Lock className="w-2.5 h-2.5 text-[#64748B] ml-0.5" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-
-
-                      {/* Bottom Nav Mockup */}
-                      <div className="absolute bottom-0 inset-x-0 h-14 bg-white border-t border-[#E2E8F0] flex justify-around items-center px-4 pb-2 z-10 shadow-[0_-4px_12px_rgba(0,0,0,0.02)]">
-                        <div className="flex flex-col items-center gap-1">
-                          <Map className="w-5 h-5 text-[#2563EB] fill-[#2563EB]/20" />
-                          <div className="w-1 h-1 bg-[#2563EB] rounded-full"></div>
-                        </div>
-                        <div className="flex flex-col items-center gap-1">
-                          <BookOpen className="w-5 h-5 text-[#94A3B8]" />
-                        </div>
-                        <div className="flex flex-col items-center gap-1">
-                          <Users className="w-5 h-5 text-[#94A3B8]" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div>
-              </div>
+            {/* Active Screen */}
+            <div className="w-full h-full pt-5 bg-white overflow-hidden relative">
+              {steps[activeStep].render()}
             </div>
+          </div>
 
+          {/* Bottom Screen Indicator Dots */}
+          <div className="flex items-center gap-1.5 mt-3">
+            {steps.map((s, idx) => (
+              <button
+                key={s.id}
+                onClick={() => setActiveStep(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  activeStep === idx
+                    ? "w-6 bg-[#004ac6]"
+                    : "w-2 bg-[#c3c6d7] hover:bg-[#737686]"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
 
+          {/* XP Badge Floater */}
+          <div className="absolute top-8 -right-4 sm:-right-8 p-3 bg-white shadow-xl rounded-2xl flex items-center gap-2.5 animate-bounce border border-[#eceef0] z-30">
+            <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+              <CheckCircle2 size={18} />
+            </div>
+            <div>
+              <p className="text-[11px] font-bold text-[#191c1e]">Roadmap Unlocked!</p>
+              <p className="text-[9px] text-[#737686] font-semibold">+250 XP earned</p>
+            </div>
           </div>
         </div>
       </section>
 
-
-      <style jsx>{`
-        .animate-bounce-slow {
-          animation: bounce 3s infinite;
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-      `}</style>
-    </div>
+      {/* App Notice Modal */}
+      <AppNoticeModal isOpen={isNoticeModalOpen} onClose={() => setIsNoticeModalOpen(false)} />
+    </>
   );
-};
-
-
-export default HeroSection;
+}

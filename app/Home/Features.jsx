@@ -239,7 +239,7 @@ export default function FeaturesSection() {
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-100 rounded-full px-3 py-1.5">
                   <GitBranch className="w-3.5 h-3.5" />
                   AI-Powered
-                </div>
+      bbb          </div>
               </div>
               <RoadmapTrack />
               <div className="mt-6 flex items-center justify-between text-xs text-gray-500">
