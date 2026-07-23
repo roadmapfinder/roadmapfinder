@@ -1,23 +1,23 @@
 "use client";
 import React, { useState, useEffect, useMemo, useCallback, memo } from "react";
 import Link from "next/link";
-import { 
-  ChevronLeft, 
-  Search, 
+import {
+  ChevronLeft,
+  Search,
   X,
   TrendingUp,
   Star,
   ArrowRight,
   Filter,
   Loader2,
-  Youtube
+  GraduationCap
 } from "lucide-react";
-import { 
-  roadmapsData, 
-  popularTags, 
-  getFeaturedRoadmaps, 
-  getTrendingRoadmaps, 
-  searchRoadmaps 
+import {
+  roadmapsData,
+  popularTags,
+  getFeaturedRoadmaps,
+  getTrendingRoadmaps,
+  searchRoadmaps
 } from "./roadmapsData";
 import { useRouter } from "next/navigation";
 
@@ -98,8 +98,8 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
   }, [setHoveredCard]);
 
   return (
-    <Link 
-      href={category.link} 
+    <Link
+      href={category.link}
       passHref
       aria-label={`Explore ${category.title} roadmap`}
     >
@@ -110,7 +110,7 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
         role="article"
       >
         {/* Gradient overlay on hover */}
-        <div 
+        <div
           className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           aria-hidden="true"
         />
@@ -127,7 +127,7 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
 
         <div className="relative z-10">
           {/* Icon */}
-          <div 
+          <div
             className="w-full h-32 flex items-center justify-center mb-4 group-hover:scale-105 transition-all duration-300"
             aria-hidden="true"
           >
@@ -140,10 +140,9 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
           </h3>
 
           {/* Description */}
-          <p 
-            className={`text-gray-600 dark:text-gray-400 text-sm mb-4 transition-all duration-300 ${
-              isHovered ? 'opacity-100 max-h-20' : 'opacity-70 max-h-12'
-            } line-clamp-2`}
+          <p
+            className={`text-gray-600 dark:text-gray-400 text-sm mb-4 transition-all duration-300 ${isHovered ? 'opacity-100 max-h-20' : 'opacity-70 max-h-12'
+              } line-clamp-2`}
           >
             {category.description}
           </p>
@@ -156,7 +155,7 @@ const RoadmapCard = memo(({ category, hoveredCard, setHoveredCard, isTrending = 
         </div>
 
         {/* Bottom gradient accent */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
           aria-hidden="true"
         />
@@ -234,7 +233,7 @@ export default function TechRoadmap() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 transition-colors duration-300">
       {/* Navigation Bar */}
-      <nav 
+      <nav
         className="border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 dark:border-gray-800"
         role="navigation"
         aria-label="Main navigation"
@@ -243,31 +242,24 @@ export default function TechRoadmap() {
           <div className="flex items-center justify-between h-16">
             <Link href="/" passHref aria-label="Go back to home page">
               <div className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-200 cursor-pointer group">
-                <ChevronLeft 
-                  className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" 
+                <ChevronLeft
+                  className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200"
                   aria-hidden="true"
                 />
                 <span className="font-semibold text-sm">Back to Home</span>
               </div>
             </Link>
 
-            <div className="flex items-center space-x-3">
-              <a
-                href="https://www.youtube.com/@roadmapfinder"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#FF0000] hover:bg-[#CC0000] text-white px-3.5 py-1.5 rounded-full font-medium text-xs sm:text-sm shadow-sm hover:shadow-md transition-all active:scale-95"
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <Link
+                href="/Courses"
+                className="flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm shadow-sm hover:shadow-md hover:shadow-blue-500/25 transition-all duration-200 active:scale-95"
               >
-                <Youtube className="w-4 h-4 fill-white" />
-                <span>Explore free courses</span>
-              </a>
+                <GraduationCap className="w-4 h-4 text-white shrink-0" />
+                <span className="whitespace-nowrap">Explore Courses</span>
+              </Link>
 
-              <button 
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
-                aria-label="Open filters"
-              >
-                <Filter className="w-5 h-5 text-gray-600 dark:text-gray-400" aria-hidden="true" />
-              </button>
+
             </div>
           </div>
         </div>
@@ -281,28 +273,16 @@ export default function TechRoadmap() {
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Roadmaps</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-5">
             Discover expertly curated learning paths for various tech domains and programming languages
           </p>
 
-          {/* Header YouTube Banner CTA */}
-          <div className="mb-6 flex justify-center">
-            <a
-              href="https://www.youtube.com/@roadmapfinder"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[#FF0000] hover:bg-[#D90000] text-white px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg hover:shadow-red-500/20 transition-all transform hover:-translate-y-0.5 active:scale-95"
-            >
-              <Youtube className="w-5 h-5 fill-white" />
-              <span>Explore free courses</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+
 
           {/* Search Bar - Enhanced */}
           <div className="max-w-2xl mx-auto mb-6">
             <div className={`relative transition-all duration-300 ${isSearchFocused ? 'transform scale-105' : ''}`}>
-              <div 
+              <div
                 className={`absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur-xl opacity-20 transition-opacity duration-300 ${isSearchFocused ? 'opacity-30' : 'opacity-0'}`}
                 aria-hidden="true"
               />
@@ -311,13 +291,13 @@ export default function TechRoadmap() {
                 <label htmlFor="roadmap-search" className="sr-only">
                   Search for roadmaps, technologies, or skills
                 </label>
-                <Search 
-                  className="w-5 h-5 text-gray-400 absolute left-5 top-1/2 -translate-y-1/2 z-10 pointer-events-none" 
+                <Search
+                  className="w-5 h-5 text-gray-400 absolute left-5 top-1/2 -translate-y-1/2 z-10 pointer-events-none"
                   aria-hidden="true"
                 />
                 {isSearching && (
-                  <Loader2 
-                    className="w-5 h-5 text-blue-500 absolute right-14 top-1/2 -translate-y-1/2 z-10 animate-spin" 
+                  <Loader2
+                    className="w-5 h-5 text-blue-500 absolute right-14 top-1/2 -translate-y-1/2 z-10 animate-spin"
                     aria-hidden="true"
                   />
                 )}
@@ -349,7 +329,7 @@ export default function TechRoadmap() {
             </div>
 
             {/* Popular Tags */}
-            <div 
+            <div
               className="flex flex-wrap items-center justify-center gap-2 mt-4"
               role="group"
               aria-label="Popular search tags"
@@ -381,8 +361,8 @@ export default function TechRoadmap() {
                   {debouncedSearchQuery ? `Search Results` : "Featured Paths"}
                 </h2>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {debouncedSearchQuery 
-                    ? `${displayFeatured.length} result${displayFeatured.length !== 1 ? 's' : ''} found` 
+                  {debouncedSearchQuery
+                    ? `${displayFeatured.length} result${displayFeatured.length !== 1 ? 's' : ''} found`
                     : "Most popular learning roadmaps"
                   }
                 </p>
@@ -391,7 +371,7 @@ export default function TechRoadmap() {
           </div>
 
           {displayFeatured.length > 0 && (
-            <div 
+            <div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               role="list"
             >
@@ -427,7 +407,7 @@ export default function TechRoadmap() {
               </div>
             </div>
 
-            <div 
+            <div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               role="list"
             >
