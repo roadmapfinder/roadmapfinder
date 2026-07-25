@@ -22,9 +22,9 @@ export default function ProblemSection() {
 
         {/* Card 1 */}
         <ScrollReveal delay={0.1} direction="up">
-          <div className="bg-white p-8 rounded-2xl border border-[#c3c6d7] hover:border-[#ba1a1a] transition-all group shadow-sm hover:shadow-md h-full">
+          <div className="bg-white p-8 rounded-2xl border border-[#c3c6d7] hover:border-[#1E3A8A] transition-all group shadow-sm hover:shadow-md h-full">
             <div className="w-12 h-12 bg-[#f2f4f6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ba1a1a]/10 transition-colors">
-              <span className="material-symbols-outlined text-[#737686] group-hover:text-[#ba1a1a] transition-colors">
+              <span className="material-symbols-outlined text-[#737686] group-hover:text-[#1E3A8A] transition-colors">
                 bookmark_add
               </span>
             </div>
@@ -37,9 +37,9 @@ export default function ProblemSection() {
 
         {/* Card 2 */}
         <ScrollReveal delay={0.2} direction="up">
-          <div className="bg-white p-8 rounded-2xl border border-[#c3c6d7] hover:border-[#ba1a1a] transition-all group shadow-sm hover:shadow-md h-full">
+          <div className="bg-white p-8 rounded-2xl border border-[#c3c6d7] hover:border-[#1E3A8A] transition-all group shadow-sm hover:shadow-md h-full">
             <div className="w-12 h-12 bg-[#f2f4f6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ba1a1a]/10 transition-colors">
-              <span className="material-symbols-outlined text-[#737686] group-hover:text-[#ba1a1a] transition-colors">
+              <span className="material-symbols-outlined text-[#737686] group-hover:text-[#1E3A8A] transition-colors">
                 help_center
               </span>
             </div>
@@ -52,9 +52,9 @@ export default function ProblemSection() {
 
         {/* Card 3 */}
         <ScrollReveal delay={0.3} direction="up">
-          <div className="bg-white p-8 rounded-2xl border border-[#c3c6d7] hover:border-[#ba1a1a] transition-all group shadow-sm hover:shadow-md h-full">
+          <div className="bg-white p-8 rounded-2xl border border-[#c3c6d7] hover:border-[#1E3A8A] transition-all group shadow-sm hover:shadow-md h-full">
             <div className="w-12 h-12 bg-[#f2f4f6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ba1a1a]/10 transition-colors">
-              <span className="material-symbols-outlined text-[#737686] group-hover:text-[#ba1a1a] transition-colors">
+              <span className="material-symbols-outlined text-[#737686] group-hover:text-[#1E3A8A] transition-colors">
                 trending_down
               </span>
             </div>

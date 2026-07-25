@@ -387,16 +387,7 @@ export default function HeroSection() {
             ))}
           </div>
 
-          {/* XP Badge Floater */}
-          <div className="absolute top-8 -right-4 sm:-right-8 p-3 bg-white shadow-xl rounded-2xl flex items-center gap-2.5 animate-bounce border border-[#eceef0] z-30">
-            <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-              <CheckCircle2 size={18} />
-            </div>
-            <div>
-              <p className="text-[11px] font-bold text-[#191c1e]">Roadmap Unlocked!</p>
-              <p className="text-[9px] text-[#737686] font-semibold">+250 XP earned</p>
-            </div>
-          </div>
+
         </div>
       </section>
 
