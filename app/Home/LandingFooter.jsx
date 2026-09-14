@@ -70,6 +70,18 @@ export default function LandingFooter() {
                 Roadmaps
               </Link>
             </li>
+            <li>
+              <a
+                className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors hover:underline flex items-center gap-1.5"
+                href="/RoadmapFinder.apk"
+                download="RoadmapFinder.apk"
+              >
+                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  android
+                </span>
+                Download Android App
+              </a>
+            </li>
           </ul>
         </div>
 

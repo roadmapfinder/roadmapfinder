@@ -63,11 +63,18 @@ export default function AppNoticeModal({ isOpen, onClose }) {
               </div>
             </div>
             <div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200/60 text-amber-800 text-[11px] font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-                Launching Q3 2026
-              </span>
-              <p className="text-[11px] text-slate-400 font-medium mt-0.5">Android & iOS Native Apps</p>
+              {platform === "android" ? (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-800 text-[11px] font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Ready to Download • v1.0.0
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200/60 text-amber-800 text-[11px] font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                  Launching Soon
+                </span>
+              )}
+              <p className="text-[11px] text-slate-400 font-medium mt-0.5">Android APK & iOS Mobile Experience</p>
             </div>
           </div>
 
@@ -77,14 +84,14 @@ export default function AppNoticeModal({ isOpen, onClose }) {
               onClick={() => setPlatform("android")}
               className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                 platform === "android"
-                  ? "bg-white text-[#004ac6] shadow-sm font-bold"
+                  ? "bg-white text-emerald-700 shadow-sm font-bold"
                   : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                 android
               </span>
-              Android App
+              Android App (Ready)
             </button>
             <button
               onClick={() => setPlatform("ios")}
@@ -104,70 +111,99 @@ export default function AppNoticeModal({ isOpen, onClose }) {
           {/* Main Headline & Description */}
           <div>
             <h3 className="font-['Space_Grotesk'] text-2xl font-bold text-slate-900 mb-2 leading-tight">
-              {platform === "android" ? "Android App in Development" : "iOS Experience Coming Soon"}
+              {platform === "android" ? "Download RoadmapFinder for Android" : "iOS Experience Coming Soon"}
             </h3>
             <p className="font-['Inter'] text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We are crafting native performance, offline roadmap access, and daily push reminders to help you master full-stack skills on the go.
+              {platform === "android"
+                ? "Experience full offline roadmap learning, fast interactive track navigation, and full-stack skill building right on your Android phone."
+                : "We are crafting native performance, offline roadmap access, and daily push reminders to help you master full-stack skills on the go."}
             </p>
           </div>
 
-          {/* Clean Feature List */}
-          <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-2.5">
-            <div className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
-              <div className="w-5 h-5 rounded-full bg-blue-100 text-[#004ac6] flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
-                ✓
-              </div>
-              <span>Offline Roadmap & Learning Resource Access</span>
-            </div>
-            <div className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
-              <div className="w-5 h-5 rounded-full bg-blue-100 text-[#004ac6] flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
-                ✓
-              </div>
-              <span>Daily XP Streaks & Push Reminders</span>
-            </div>
-            <div className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
-              <div className="w-5 h-5 rounded-full bg-blue-100 text-[#004ac6] flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
-                ✓
-              </div>
-              <span>24/7 Pocket AI Career & Code Mentor</span>
-            </div>
-          </div>
+          {/* Android Direct Download Box */}
+          {platform === "android" ? (
+            <div className="space-y-3">
+              <a
+                href="/RoadmapFinder.apk"
+                download="RoadmapFinder.apk"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 px-6 rounded-2xl text-sm font-bold flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-600/25 transition-all hover:scale-[1.01] active:scale-95"
+              >
+                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  download
+                </span>
+                <span>Download Android APK (70 MB)</span>
+              </a>
 
-          {/* Email Waitlist Form */}
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-2">
-              <label className="block text-xs font-semibold text-slate-700 flex items-center gap-1.5">
-                <Bell size={13} className="text-[#004ac6]" />
-                Get early access when beta drops:
-              </label>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#004ac6] focus:ring-2 focus:ring-[#004ac6]/10 transition-all"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#004ac6] hover:bg-[#003ea8] text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shadow-md shadow-[#004ac6]/20 active:scale-95 whitespace-nowrap flex items-center gap-1"
-                >
-                  Notify Me
-                  <ArrowRight size={13} />
-                </button>
-              </div>
-            </form>
-          ) : (
-            <div className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-3.5 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 font-bold">
-                <Check size={16} />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-emerald-900">You're on the early access list! 🎉</p>
-                <p className="text-[11px] text-emerald-700">We'll email <span className="font-semibold">{email}</span> as soon as beta builds drop.</p>
+              <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 text-[11px] text-slate-500 leading-relaxed flex items-start gap-2">
+                <span className="material-symbols-outlined text-base text-slate-400 flex-shrink-0 mt-0.5">
+                  info
+                </span>
+                <span>
+                  <strong>Installation tip:</strong> Tap the download button, open the downloaded file on your phone, and follow the prompts. If Android asks, tap <em>"Install anyway"</em> or allow installations from this source.
+                </span>
               </div>
             </div>
+          ) : (
+            <>
+              {/* Clean Feature List */}
+              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-2.5">
+                <div className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-[#004ac6] flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
+                    ✓
+                  </div>
+                  <span>Offline Roadmap & Learning Resource Access</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-[#004ac6] flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
+                    ✓
+                  </div>
+                  <span>Daily XP Streaks & Push Reminders</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-[#004ac6] flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
+                    ✓
+                  </div>
+                  <span>24/7 Pocket AI Career & Code Mentor</span>
+                </div>
+              </div>
+
+              {/* Email Waitlist Form */}
+              {!isSubmitted ? (
+                <form onSubmit={handleSubmit} className="space-y-2">
+                  <label className="block text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+                    <Bell size={13} className="text-[#004ac6]" />
+                    Get early access when iOS beta drops:
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="flex-1 bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#004ac6] focus:ring-2 focus:ring-[#004ac6]/10 transition-all"
+                    />
+                    <button
+                      type="submit"
+                      className="bg-[#004ac6] hover:bg-[#003ea8] text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shadow-md shadow-[#004ac6]/20 active:scale-95 whitespace-nowrap flex items-center gap-1"
+                    >
+                      Notify Me
+                      <ArrowRight size={13} />
+                    </button>
+                  </div>
+                </form>
+              ) : (
+                <div className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-3.5 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 font-bold">
+                    <Check size={16} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-emerald-900">You're on the early access list! 🎉</p>
+                    <p className="text-[11px] text-emerald-700">We'll email <span className="font-semibold">{email}</span> as soon as iOS beta drops.</p>
+                  </div>
+                </div>
+              )}
+            </>
           )}
 
           {/* Action Buttons */}

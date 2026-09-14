@@ -336,19 +336,20 @@ export default function HeroSection() {
               <ArrowRight size={16} />
             </Link>
 
-            {/* Secondary CTA: Android App Notice Trigger */}
-            <button
-              onClick={() => setIsNoticeModalOpen(true)}
-              className="border border-[#c3c6d7] bg-[#f7f9fb] text-[#191c1e] px-6 py-3.5 rounded-full flex items-center gap-2 font-['Inter'] text-sm font-semibold hover:bg-[#f2f4f6] transition-all active:scale-95"
+            {/* Secondary CTA: Direct Android APK Download */}
+            <a
+              href="/RoadmapFinder.apk"
+              download="RoadmapFinder.apk"
+              className="border-2 border-emerald-500/30 bg-emerald-50 hover:bg-emerald-600 text-emerald-900 hover:text-white px-7 py-3.5 rounded-full flex items-center gap-2.5 font-['Inter'] text-sm font-semibold transition-all shadow-sm hover:shadow-lg active:scale-95 group"
             >
-              <span className="material-symbols-outlined text-green-600 text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <span className="material-symbols-outlined text-emerald-600 group-hover:text-white text-xl transition-colors" style={{ fontVariationSettings: "'FILL' 1" }}>
                 android
               </span>
-              Download for Android
-              <span className="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full uppercase">
-                Soon
+              <span>Download for Android</span>
+              <span className="text-[10px] bg-emerald-200/80 group-hover:bg-white/20 text-emerald-900 group-hover:text-white font-bold px-2 py-0.5 rounded-full uppercase transition-colors">
+                Free APK
               </span>
-            </button>
+            </a>
           </div>
         </div>
 

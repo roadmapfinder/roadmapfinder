@@ -35,19 +35,20 @@ export default function FinalCTA() {
               <ArrowRight size={18} />
             </Link>
 
-            {/* Android App Notice Trigger */}
-            <button
-              onClick={() => setIsNoticeModalOpen(true)}
-              className="border border-[#c3c6d7] bg-white text-[#191c1e] px-8 py-5 rounded-full flex items-center gap-2.5 font-['Inter'] text-base font-semibold hover:scale-105 hover:bg-[#f7f9fb] transition-all shadow-md active:scale-95"
+            {/* Direct Android APK Download */}
+            <a
+              href="/RoadmapFinder.apk"
+              download="RoadmapFinder.apk"
+              className="border-2 border-emerald-500/40 bg-emerald-50 hover:bg-emerald-600 text-emerald-950 hover:text-white px-9 py-5 rounded-full flex items-center gap-3 font-['Inter'] text-base font-semibold hover:scale-105 transition-all shadow-md hover:shadow-xl active:scale-95 group"
             >
-              <span className="material-symbols-outlined text-green-600 text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <span className="material-symbols-outlined text-emerald-600 group-hover:text-white text-2xl transition-colors" style={{ fontVariationSettings: "'FILL' 1" }}>
                 android
               </span>
-              Download for Android
-              <span className="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full uppercase">
-                Soon
+              <span>Download for Android</span>
+              <span className="text-[11px] bg-emerald-200/80 group-hover:bg-white/20 text-emerald-900 group-hover:text-white font-bold px-2.5 py-0.5 rounded-full uppercase transition-colors">
+                Free APK
               </span>
-            </button>
+            </a>
           </div>
         </ScrollReveal>
 

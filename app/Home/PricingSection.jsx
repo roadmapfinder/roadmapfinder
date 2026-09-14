@@ -6,7 +6,7 @@ import ScrollReveal from "./ScrollReveal";
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
 
-  const APK_URL = "https://drive.google.com/uc?export=download&id=1LNgtjVEwh2YEc2fiVCTXpaXt8ivYSfu8";
+  const APK_URL = "/RoadmapFinder.apk";
 
   return (
     <section className="py-16 md:py-24 px-5 md:px-10 max-w-[1280px] mx-auto" id="pricing">

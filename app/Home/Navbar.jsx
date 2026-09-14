@@ -41,19 +41,27 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/RoadmapPage"
-              className="bg-[#004ac6] text-white px-6 py-2.5 rounded-full font-['Inter'] text-sm font-semibold hover:bg-[#003ea8] shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-2"
+              className="bg-[#004ac6] text-white px-5 py-2.5 rounded-full font-['Inter'] text-sm font-semibold hover:bg-[#003ea8] shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-2"
             >
               <Globe size={16} />
               Continue on Web
             </Link>
-            <button
-              onClick={() => setIsNoticeModalOpen(true)}
-              className="border border-[#c3c6d7] text-[#191c1e] px-4 py-2.5 rounded-full font-['Inter'] text-xs font-semibold hover:bg-[#f2f4f6] transition-all flex items-center gap-1.5"
+            <a
+              href="/RoadmapFinder.apk"
+              download="RoadmapFinder.apk"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-['Inter'] text-sm font-semibold shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-green-600 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <span className="material-symbols-outlined text-white text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                 android
               </span>
-              App Notice
+              Download App
+            </a>
+            <button
+              onClick={() => setIsNoticeModalOpen(true)}
+              className="border border-[#c3c6d7] text-[#191c1e] px-3 py-2 rounded-full font-['Inter'] text-xs font-semibold hover:bg-[#f2f4f6] transition-all flex items-center gap-1 text-slate-600"
+              title="App information & iOS status"
+            >
+              Info
             </button>
           </div>
 
@@ -107,6 +115,17 @@ export default function Navbar() {
             </Link>
 
             <div className="pt-2 space-y-2">
+              <a
+                href="/RoadmapFinder.apk"
+                download="RoadmapFinder.apk"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-full font-['Inter'] text-base font-semibold shadow-md active:scale-95 transition-all"
+              >
+                <span className="material-symbols-outlined text-white text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  android
+                </span>
+                Download Android APK
+              </a>
               <Link
                 href="/RoadmapPage"
                 onClick={() => setMobileMenuOpen(false)}
@@ -119,9 +138,9 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   setIsNoticeModalOpen(true);
                 }}
-                className="block w-full text-center border border-[#c3c6d7] text-[#434655] py-2.5 rounded-full font-['Inter'] text-sm font-semibold hover:bg-[#f7f9fb] transition-all"
+                className="block w-full text-center border border-[#c3c6d7] text-[#434655] py-2 rounded-full font-['Inter'] text-xs font-semibold hover:bg-[#f7f9fb] transition-all"
               >
-                App Info (Coming Soon)
+                App Info & iOS Status
               </button>
             </div>
           </div>

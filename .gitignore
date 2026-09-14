@@ -25,5 +25,7 @@ yarn-error.log*
 
 # Large binaries & build artifacts
 *.apk
+!public/RoadmapFinder.apk
+!public/roadmapfinder.apk
 *.zip
 *.tar.gz
